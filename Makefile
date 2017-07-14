@@ -59,10 +59,24 @@ protos.js: $(JS_PROTO_TARGETS)
 
 SWIFT_PROTO_TARGETS ?= $(patsubst %.proto,%.pb.swift,$(shell $(PROTO_FILES)))
 SWIFT_PROTOC_FLAGS ?= $(PROTOC_INCLUDES) \
-	--swiftgrpc_out=:$(GO_PATH)/src \
+	--swiftgrpc_out=:$(PWD) \
 	--swift_out=:$(GO_PATH)/src
 
 protos.swift: $(SWIFT_PROTO_TARGETS)
+	mv broker.client.pb.swift broker
+	mv broker.server.pb.swift broker
+	mv discovery.client.pb.swift discovery
+	mv discovery.server.pb.swift discovery
+	mv handler.client.pb.swift handler
+	mv handler.server.pb.swift handler
+	mv lorawan.client.pb.swift protocol/lorawan
+	mv lorawan.server.pb.swift protocol/lorawan
+	mv monitor.client.pb.swift monitor
+	mv monitor.server.pb.swift monitor
+	mv networkserver.client.pb.swift networkserver
+	mv networkserver.server.pb.swift networkserver
+	mv router.client.pb.swift router
+	mv router.server.pb.swift router
 
 %.pb.swift: %.proto
 	protoc $(SWIFT_PROTOC_FLAGS) $(PWD)/$<
