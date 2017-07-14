@@ -1,0 +1,38 @@
+// Copyright © 2017 The Things Network
+// Use of this source code is governed by the MIT license that can be found in the LICENSE file.
+
+syntax = "proto3";
+
+import "github.com/TheThingsNetwork/api/protocol/lorawan/lorawan.proto";
+
+package protocol;
+
+option csharp_namespace = "TheThingsNetwork.API.Protocol";
+option go_package = "github.com/TheThingsNetwork/api/protocol";
+option java_package = "org.thethingsnetwork.api.protocol";
+option java_outer_classname = "ProtocolProto";
+option java_multiple_files = true;
+
+message Message {
+  oneof protocol {
+    lorawan.Message lorawan = 1;
+  }
+}
+
+message RxMetadata {
+  oneof protocol {
+    lorawan.Metadata lorawan = 1;
+  }
+}
+
+message TxConfiguration {
+  oneof protocol {
+    lorawan.TxConfiguration lorawan = 1;
+  }
+}
+
+message ActivationMetadata {
+  oneof protocol {
+    lorawan.ActivationMetadata lorawan = 1;
+  }
+}

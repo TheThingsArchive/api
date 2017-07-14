@@ -1,0 +1,38 @@
+// Copyright © 2017 The Things Network
+// Use of this source code is governed by the MIT license that can be found in the LICENSE file.
+
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+import "github.com/TheThingsNetwork/api/gateway/gateway.proto";
+import "github.com/TheThingsNetwork/api/router/router.proto";
+import "github.com/TheThingsNetwork/api/broker/broker.proto";
+import "github.com/TheThingsNetwork/api/handler/handler.proto";
+import "github.com/TheThingsNetwork/api/networkserver/networkserver.proto";
+
+package monitor;
+
+option csharp_namespace = "TheThingsNetwork.API.Monitor";
+option go_package = "github.com/TheThingsNetwork/api/monitor";
+option java_package = "org.thethingsnetwork.api.monitor";
+option java_outer_classname = "MonitorProto";
+option java_multiple_files = true;
+
+service Monitor {
+  rpc RouterStatus(stream router.Status) returns (google.protobuf.Empty);
+
+  rpc GatewayStatus(stream gateway.Status) returns (google.protobuf.Empty);
+  rpc GatewayUplink(stream router.UplinkMessage) returns (google.protobuf.Empty);
+  rpc GatewayDownlink(stream router.DownlinkMessage) returns (google.protobuf.Empty);
+
+  rpc BrokerStatus(stream broker.Status) returns (google.protobuf.Empty);
+  rpc BrokerUplink(stream broker.DeduplicatedUplinkMessage) returns (google.protobuf.Empty);
+  rpc BrokerDownlink(stream broker.DownlinkMessage) returns (google.protobuf.Empty);
+
+  rpc HandlerStatus(stream handler.Status) returns (google.protobuf.Empty);
+  rpc HandlerUplink(stream broker.DeduplicatedUplinkMessage) returns (google.protobuf.Empty);
+  rpc HandlerDownlink(stream broker.DownlinkMessage) returns (google.protobuf.Empty);
+
+  rpc NetworkServerStatus(stream networkserver.Status) returns (google.protobuf.Empty);
+}
