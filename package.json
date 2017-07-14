@@ -1,0 +1,19 @@
+{
+  "name": "ttnapi",
+  "version": "2.0.0",
+  "description": "The Things Network API",
+  "dependencies": {
+    "google-protobuf": "^3.3.0",
+    "grpc": "^1.4.1"
+  },
+  "devDependencies": {
+    "grpc-tools": "^1.4.1"
+  },
+  "repository": "git+https://github.com/TheThingsNetwork/api.git",
+  "author": "Hylke Visser <hylke@thethingsnetwork.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheThingsNetwork/api/issues"
+  },
+  "homepage": "https://www.thethingsnetwork.org"
+}
