@@ -80,3 +80,31 @@ protos.swift: $(SWIFT_PROTO_TARGETS)
 
 %.pb.swift: %.proto
 	protoc $(SWIFT_PROTOC_FLAGS) $(PWD)/$<
+
+# PHP
+
+PHP_PROTO_TARGETS ?= $(patsubst %.proto,%.pb.php,$(shell $(PROTO_FILES)))
+PHP_PROTOC_FLAGS ?= $(PROTOC_INCLUDES) \
+	--plugin=protoc-gen-grpc-php=$(GOPATH)/src/github.com/grpc/grpc/bins/opt/grpc_php_plugin \
+	--grpc-php_out=$(PWD)/php \
+	--php_out=:$(PWD)/php
+
+protos.php: $(PHP_PROTO_TARGETS)
+
+%.pb.php: %.proto
+	protoc $(PHP_PROTOC_FLAGS) $(PWD)/$<
+
+# Ruby
+
+RUBY_PROTO_TARGETS ?= $(patsubst %.proto,%_pb.rb,$(shell $(PROTO_FILES)))
+RUBY_PROTOC_FLAGS ?= $(PROTOC_INCLUDES) \
+	--plugin=protoc-gen-grpc-ruby=$(GOPATH)/src/github.com/grpc/grpc/bins/opt/grpc_ruby_plugin \
+	--grpc-ruby_out=$(GO_PATH)/src \
+	--ruby_out=:$(GO_PATH)/src
+RUBY_SED ?= -e "s|github.com/TheThingsNetwork/api/||g"
+
+protos.ruby: $(RUBY_PROTO_TARGETS)
+	sed -i '' $(RUBY_SED) $(shell $(ALL_FILES) | grep "\_pb.rb$$")
+
+%_pb.rb: %.proto
+	protoc $(RUBY_PROTOC_FLAGS) $(PWD)/$<

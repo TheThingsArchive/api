@@ -8,6 +8,17 @@ We're going to need to install quite some stuff, as these protos will be compile
 - Set your GOPATH to your HOME dir: `export GOPATH="$HOME"`
 - Install [protoc-3.3.0-YOURPLATFORM](https://github.com/google/protobuf/releases/tag/v3.3.0) to `/usr/local`
 
+For C++, C#, Objective-C, PHP, Python, Ruby:
+
+Install [gRPC](https://github.com/grpc/grpc/blob/master/INSTALL.md)
+
+```
+git clone https://github.com/grpc/grpc $GOPATH/src/github.com/grpc/grpc
+cd $GOPATH/src/github.com/grpc/grpc
+make
+make install
+```
+
 For Go:
 
 - Install Go
@@ -52,7 +63,7 @@ make
 And finally set the correct PATH:
 
 ```
-export PATH="$PATH:$GOPATH/bin:$GOPATH/src/github.com/grpc/grpc-swift/Plugin:$GOPATH/src/github.com/grpc/grpc-java/compiler/build/exe/java_plugin"
+export PATH="$PATH:$GOPATH/bin:$GOPATH/src/github.com/grpc/grpc-swift/Plugin:$GOPATH/src/github.com/grpc/grpc-java/compiler/build/exe/java_plugin:$GOPATH/src/github.com/grpc/grpc/bins/opt"
 ```
 
 Now you should be able to update the generated files:
