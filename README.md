@@ -1,5 +1,21 @@
 # The Things Network API
 
+## Languages
+
+| **Language** | **Status**  | **Maintainer** |
+| ------------ | ----------- | -------------- |
+| C            | planned     | **core team**  |
+| C#           | help wanted | you?           |
+| C++          | help wanted | you?           |
+| Go           | [sdk available](https://github.com/TheThingsNetwork/go-app-sdk) | **core team** |
+| Java         | [sdk available](https://github.com/TheThingsNetwork/java-app-sdk) | @cambierr |
+| Javascript   | [sdk available](https://github.com/TheThingsNetwork/node-app-sdk) | **core team** |
+| Objective-C  | help wanted | you?           |
+| PHP          | help wanted | you?           |
+| Python       | help wanted | you?           |
+| Ruby         | help wanted | you?           |
+| Swift        | help wanted | you?           |
+
 ## Updating the generated files
 
 We're going to need to install quite some stuff, as these protos will be compiled to different languages.
