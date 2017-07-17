@@ -8,7 +8,7 @@
 | C#           | help wanted | you?           |
 | C++          | help wanted | you?           |
 | Go           | [sdk available](https://github.com/TheThingsNetwork/go-app-sdk) | **core team** |
-| Java         | [sdk available](https://github.com/TheThingsNetwork/java-app-sdk) | @cambierr |
+| Java         | [sdk available](https://github.com/TheThingsNetwork/java-app-sdk) | [@cambierr](https://github.com/cambierr) |
 | Javascript   | [sdk available](https://github.com/TheThingsNetwork/node-app-sdk) | **core team** |
 | Objective-C  | help wanted | you?           |
 | PHP          | help wanted | you?           |
