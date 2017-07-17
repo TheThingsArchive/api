@@ -4,19 +4,21 @@
 
 | **Language** | **Status**  | **Maintainer** |
 | ------------ | ----------- | -------------- |
-| C            | planned     | **core team**  |
-| C#           | help wanted | you?           |
-| C++          | help wanted | you?           |
+| C            | structs only (no gRPC) | **core team** |
+| C#           | nothing yet; help wanted | you? |
+| C++          | nothing yet; help wanted | you? |
 | Go           | [sdk available](https://github.com/TheThingsNetwork/go-app-sdk) | **core team** |
 | Java         | [sdk available](https://github.com/TheThingsNetwork/java-app-sdk) | [@cambierr](https://github.com/cambierr) |
 | Javascript   | [sdk available](https://github.com/TheThingsNetwork/node-app-sdk) | **core team** |
-| Objective-C  | help wanted | you?           |
-| PHP          | help wanted | you?           |
-| Python       | help wanted | you?           |
-| Ruby         | help wanted | you?           |
-| Swift        | help wanted | you?           |
+| Objective-C  | nothing yet; help wanted | you? |
+| PHP          | files generated; not tested; help wanted | you? |
+| Python       | files generated; not tested; help wanted | you? |
+| Ruby         | files generated; not tested; help wanted | you? |
+| Swift        | files generated; not tested; help wanted | you? |
 
 ## Updating the generated files
+
+⚠️ Warning: this will be a complicated process. We'll do our best to improve the documentation.
 
 We're going to need to install quite some stuff, as these protos will be compiled to different languages.
 
@@ -76,10 +78,20 @@ cd $GOPATH/src/github.com/grpc/grpc-swift/Plugin
 make
 ```
 
+For C:
+
+- Install [protobuf-c](https://github.com/protobuf-c/protobuf-c)
+
+```
+git clone https://github.com/protobuf-c/protobuf-c $GOPATH/src/github.com/protobuf-c/protobuf-c
+cd $GOPATH/src/github.com/protobuf-c/protobuf-c
+./autogen.sh && ./configure && make
+```
+
 And finally set the correct PATH:
 
 ```
-export PATH="$PATH:$GOPATH/bin:$GOPATH/src/github.com/grpc/grpc-swift/Plugin:$GOPATH/src/github.com/grpc/grpc-java/compiler/build/exe/java_plugin:$GOPATH/src/github.com/grpc/grpc/bins/opt"
+export PATH="$PATH:$GOPATH/bin:$GOPATH/src/github.com/grpc/grpc-swift/Plugin:$GOPATH/src/github.com/grpc/grpc-java/compiler/build/exe/java_plugin:$GOPATH/src/github.com/grpc/grpc/bins/opt:$GOPATH/src/github.com/TheThingsNetwork/protobuf-c/protobuf-c/protoc-c"
 ```
 
 Now you should be able to update the generated files:

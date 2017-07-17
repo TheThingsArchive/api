@@ -108,3 +108,25 @@ protos.ruby: $(RUBY_PROTO_TARGETS)
 
 %_pb.rb: %.proto
 	protoc $(RUBY_PROTOC_FLAGS) $(PWD)/$<
+
+# C
+
+C_PROTO_TARGETS ?= $(patsubst %.proto,%.pb-c.c,$(shell $(PROTO_FILES)))
+C_PROTOC_FLAGS ?= $(PROTOC_INCLUDES) \
+	--c_out=:$(GO_PATH)/src
+
+protos.c: $(C_PROTO_TARGETS)
+	protoc-c $(C_PROTOC_FLAGS) $(GO_PATH)/src/github.com/gogo/protobuf/protobuf/google/protobuf/*.proto
+	mkdir -p lib/google/protobuf
+	mv $(GO_PATH)/src/github.com/gogo/protobuf/protobuf/google/protobuf/*.pb-c.* lib/google/protobuf
+
+	protoc-c $(C_PROTOC_FLAGS) $(GO_PATH)/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis/google/api/annotations.proto
+	mkdir -p lib/google/api
+	mv $(GO_PATH)/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis/google/api/*.pb-c.* lib/google/api
+
+	protoc-c $(C_PROTOC_FLAGS) $(GO_PATH)/src/github.com/gogo/protobuf/gogoproto/gogo.proto
+	mkdir -p lib/github.com/gogo/protobuf/gogoproto
+	mv $(GO_PATH)/src/github.com/gogo/protobuf/gogoproto/*.pb-c.* lib/github.com/gogo/protobuf/gogoproto
+
+%.pb-c.c: %.proto
+	protoc-c $(C_PROTOC_FLAGS) $(PWD)/$<
