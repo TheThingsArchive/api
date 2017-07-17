@@ -1,4 +1,6 @@
-all: protos.go protos.js protos.java protos.swift
+.PHONY: all
+
+all: protos.go protos.js protos.java protos.swift protos.php protos.ruby protos.c
 
 # Hacks for Make
 EMPTY :=
@@ -19,6 +21,8 @@ GO_PROTOC_FLAGS ?= $(PROTOC_INCLUDES) \
 	--gogofast_out=plugins=grpc,$(GO_PROTO_TYPE_CONVERSIONS):$(GO_PATH)/src \
 	--grpc-gateway_out=:$(GO_PATH)/src
 
+.PHONY: protos.go
+
 protos.go: $(GO_PROTO_TARGETS)
 
 %.pb.go: %.proto
@@ -30,6 +34,8 @@ JAVA_PROTO_TARGETS ?= $(patsubst %.proto,%.pb.java,$(shell $(PROTO_FILES)))
 JAVA_PROTOC_FLAGS ?= $(PROTOC_INCLUDES) \
 	--grpc-java_out=:$(PWD)/java/src \
 	--java_out=:$(PWD)/java/src
+
+.PHONY: protos.java
 
 protos.java: $(JAVA_PROTO_TARGETS)
 
@@ -49,6 +55,8 @@ JS_SED ?= -e 's/github.com_/github_com_/g' \
 	-e '/github_com_gogo_protobuf_gogoproto_gogo_pb/d' \
 	-e '/google_api_annotations_pb/d'
 
+.PHONY: protos.js
+
 protos.js: $(JS_PROTO_TARGETS)
 	sed -i '' $(JS_SED) $(shell $(ALL_FILES) | grep "\_pb.js$$")
 
@@ -61,6 +69,8 @@ SWIFT_PROTO_TARGETS ?= $(patsubst %.proto,%.pb.swift,$(shell $(PROTO_FILES)))
 SWIFT_PROTOC_FLAGS ?= $(PROTOC_INCLUDES) \
 	--swiftgrpc_out=:$(PWD) \
 	--swift_out=:$(GO_PATH)/src
+
+.PHONY: protos.swift
 
 protos.swift: $(SWIFT_PROTO_TARGETS)
 	mv broker.client.pb.swift broker
@@ -89,6 +99,8 @@ PHP_PROTOC_FLAGS ?= $(PROTOC_INCLUDES) \
 	--grpc-php_out=$(PWD)/php \
 	--php_out=:$(PWD)/php
 
+.PHONY: protos.php
+
 protos.php: $(PHP_PROTO_TARGETS)
 
 %.pb.php: %.proto
@@ -103,6 +115,8 @@ RUBY_PROTOC_FLAGS ?= $(PROTOC_INCLUDES) \
 	--ruby_out=:$(GO_PATH)/src
 RUBY_SED ?= -e "s|github.com/TheThingsNetwork/api/||g"
 
+.PHONY: protos.ruby
+
 protos.ruby: $(RUBY_PROTO_TARGETS)
 	sed -i '' $(RUBY_SED) $(shell $(ALL_FILES) | grep "\_pb.rb$$")
 
@@ -114,6 +128,8 @@ protos.ruby: $(RUBY_PROTO_TARGETS)
 C_PROTO_TARGETS ?= $(patsubst %.proto,%.pb-c.c,$(shell $(PROTO_FILES)))
 C_PROTOC_FLAGS ?= $(PROTOC_INCLUDES) \
 	--c_out=:$(PWD)/c
+
+.PHONY: protos.c
 
 protos.c: $(C_PROTO_TARGETS)
 	protoc-c $(C_PROTOC_FLAGS) $(GO_PATH)/src/github.com/gogo/protobuf/protobuf/google/protobuf/*.proto
