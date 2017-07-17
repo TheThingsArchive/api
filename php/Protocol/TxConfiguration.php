@@ -21,7 +21,7 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.TxConfiguration lorawan = 1;</code>
+     * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
      */
     public function getLorawan()
     {
@@ -29,7 +29,7 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.TxConfiguration lorawan = 1;</code>
+     * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
      */
     public function setLorawan(&$var)
     {

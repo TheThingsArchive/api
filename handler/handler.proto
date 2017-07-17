@@ -95,7 +95,7 @@ message Device {
 
   // The device can be of different kinds
   oneof device {
-    lorawan.Device lorawan_device = 3;
+    lorawan.Device lorawan_device = 3 [(gogoproto.customname) = "LoRaWANDevice"];
   }
 
   float latitude  = 10;

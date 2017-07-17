@@ -28,11 +28,11 @@ public interface DeviceOrBuilder extends
       getDevIdBytes();
 
   /**
-   * <code>.lorawan.Device lorawan_device = 3;</code>
+   * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.Device getLorawanDevice();
   /**
-   * <code>.lorawan.Device lorawan_device = 3;</code>
+   * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.DeviceOrBuilder getLorawanDeviceOrBuilder();
 

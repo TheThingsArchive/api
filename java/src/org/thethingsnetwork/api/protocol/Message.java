@@ -117,7 +117,7 @@ public  final class Message extends
 
   public static final int LORAWAN_FIELD_NUMBER = 1;
   /**
-   * <code>.lorawan.Message lorawan = 1;</code>
+   * <code>.lorawan.Message lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
    */
   public org.thethingsnetwork.api.protocol.lorawan.Message getLorawan() {
     if (protocolCase_ == 1) {
@@ -126,7 +126,7 @@ public  final class Message extends
     return org.thethingsnetwork.api.protocol.lorawan.Message.getDefaultInstance();
   }
   /**
-   * <code>.lorawan.Message lorawan = 1;</code>
+   * <code>.lorawan.Message lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
    */
   public org.thethingsnetwork.api.protocol.lorawan.MessageOrBuilder getLorawanOrBuilder() {
     if (protocolCase_ == 1) {
@@ -461,7 +461,7 @@ public  final class Message extends
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.Message, org.thethingsnetwork.api.protocol.lorawan.Message.Builder, org.thethingsnetwork.api.protocol.lorawan.MessageOrBuilder> lorawanBuilder_;
     /**
-     * <code>.lorawan.Message lorawan = 1;</code>
+     * <code>.lorawan.Message lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.Message getLorawan() {
       if (lorawanBuilder_ == null) {
@@ -477,7 +477,7 @@ public  final class Message extends
       }
     }
     /**
-     * <code>.lorawan.Message lorawan = 1;</code>
+     * <code>.lorawan.Message lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
      */
     public Builder setLorawan(org.thethingsnetwork.api.protocol.lorawan.Message value) {
       if (lorawanBuilder_ == null) {
@@ -493,7 +493,7 @@ public  final class Message extends
       return this;
     }
     /**
-     * <code>.lorawan.Message lorawan = 1;</code>
+     * <code>.lorawan.Message lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
      */
     public Builder setLorawan(
         org.thethingsnetwork.api.protocol.lorawan.Message.Builder builderForValue) {
@@ -507,7 +507,7 @@ public  final class Message extends
       return this;
     }
     /**
-     * <code>.lorawan.Message lorawan = 1;</code>
+     * <code>.lorawan.Message lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
      */
     public Builder mergeLorawan(org.thethingsnetwork.api.protocol.lorawan.Message value) {
       if (lorawanBuilder_ == null) {
@@ -529,7 +529,7 @@ public  final class Message extends
       return this;
     }
     /**
-     * <code>.lorawan.Message lorawan = 1;</code>
+     * <code>.lorawan.Message lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
      */
     public Builder clearLorawan() {
       if (lorawanBuilder_ == null) {
@@ -548,13 +548,13 @@ public  final class Message extends
       return this;
     }
     /**
-     * <code>.lorawan.Message lorawan = 1;</code>
+     * <code>.lorawan.Message lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.Message.Builder getLorawanBuilder() {
       return getLorawanFieldBuilder().getBuilder();
     }
     /**
-     * <code>.lorawan.Message lorawan = 1;</code>
+     * <code>.lorawan.Message lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.MessageOrBuilder getLorawanOrBuilder() {
       if ((protocolCase_ == 1) && (lorawanBuilder_ != null)) {
@@ -567,7 +567,7 @@ public  final class Message extends
       }
     }
     /**
-     * <code>.lorawan.Message lorawan = 1;</code>
+     * <code>.lorawan.Message lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.Message, org.thethingsnetwork.api.protocol.lorawan.Message.Builder, org.thethingsnetwork.api.protocol.lorawan.MessageOrBuilder> 

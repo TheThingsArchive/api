@@ -87,7 +87,7 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.Device lorawan_device = 3;</code>
+     * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
      */
     public function getLorawanDevice()
     {
@@ -95,7 +95,7 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.Device lorawan_device = 3;</code>
+     * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
      */
     public function setLorawanDevice(&$var)
     {

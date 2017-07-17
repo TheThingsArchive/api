@@ -21,7 +21,7 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.Metadata lorawan = 1;</code>
+     * <code>.lorawan.Metadata lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
      */
     public function getLorawan()
     {
@@ -29,7 +29,7 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.Metadata lorawan = 1;</code>
+     * <code>.lorawan.Metadata lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
      */
     public function setLorawan(&$var)
     {

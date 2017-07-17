@@ -253,7 +253,7 @@ public  final class Device extends
 
   public static final int LORAWAN_DEVICE_FIELD_NUMBER = 3;
   /**
-   * <code>.lorawan.Device lorawan_device = 3;</code>
+   * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
    */
   public org.thethingsnetwork.api.protocol.lorawan.Device getLorawanDevice() {
     if (deviceCase_ == 3) {
@@ -262,7 +262,7 @@ public  final class Device extends
     return org.thethingsnetwork.api.protocol.lorawan.Device.getDefaultInstance();
   }
   /**
-   * <code>.lorawan.Device lorawan_device = 3;</code>
+   * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
    */
   public org.thethingsnetwork.api.protocol.lorawan.DeviceOrBuilder getLorawanDeviceOrBuilder() {
     if (deviceCase_ == 3) {
@@ -1037,7 +1037,7 @@ public  final class Device extends
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.Device, org.thethingsnetwork.api.protocol.lorawan.Device.Builder, org.thethingsnetwork.api.protocol.lorawan.DeviceOrBuilder> lorawanDeviceBuilder_;
     /**
-     * <code>.lorawan.Device lorawan_device = 3;</code>
+     * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.Device getLorawanDevice() {
       if (lorawanDeviceBuilder_ == null) {
@@ -1053,7 +1053,7 @@ public  final class Device extends
       }
     }
     /**
-     * <code>.lorawan.Device lorawan_device = 3;</code>
+     * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
      */
     public Builder setLorawanDevice(org.thethingsnetwork.api.protocol.lorawan.Device value) {
       if (lorawanDeviceBuilder_ == null) {
@@ -1069,7 +1069,7 @@ public  final class Device extends
       return this;
     }
     /**
-     * <code>.lorawan.Device lorawan_device = 3;</code>
+     * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
      */
     public Builder setLorawanDevice(
         org.thethingsnetwork.api.protocol.lorawan.Device.Builder builderForValue) {
@@ -1083,7 +1083,7 @@ public  final class Device extends
       return this;
     }
     /**
-     * <code>.lorawan.Device lorawan_device = 3;</code>
+     * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
      */
     public Builder mergeLorawanDevice(org.thethingsnetwork.api.protocol.lorawan.Device value) {
       if (lorawanDeviceBuilder_ == null) {
@@ -1105,7 +1105,7 @@ public  final class Device extends
       return this;
     }
     /**
-     * <code>.lorawan.Device lorawan_device = 3;</code>
+     * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
      */
     public Builder clearLorawanDevice() {
       if (lorawanDeviceBuilder_ == null) {
@@ -1124,13 +1124,13 @@ public  final class Device extends
       return this;
     }
     /**
-     * <code>.lorawan.Device lorawan_device = 3;</code>
+     * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.Device.Builder getLorawanDeviceBuilder() {
       return getLorawanDeviceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.lorawan.Device lorawan_device = 3;</code>
+     * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.DeviceOrBuilder getLorawanDeviceOrBuilder() {
       if ((deviceCase_ == 3) && (lorawanDeviceBuilder_ != null)) {
@@ -1143,7 +1143,7 @@ public  final class Device extends
       }
     }
     /**
-     * <code>.lorawan.Device lorawan_device = 3;</code>
+     * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.Device, org.thethingsnetwork.api.protocol.lorawan.Device.Builder, org.thethingsnetwork.api.protocol.lorawan.DeviceOrBuilder> 

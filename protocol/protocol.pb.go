@@ -18,6 +18,7 @@ package protocol
 import proto "github.com/gogo/protobuf/proto"
 import fmt "fmt"
 import math "math"
+import _ "github.com/gogo/protobuf/gogoproto"
 import lorawan "github.com/TheThingsNetwork/api/protocol/lorawan"
 
 import io "io"
@@ -35,7 +36,7 @@ const _ = proto.GoGoProtoPackageIsVersion2 // please upgrade the proto package
 
 type Message struct {
 	// Types that are valid to be assigned to Protocol:
-	//	*Message_Lorawan
+	//	*Message_LoRaWAN
 	Protocol isMessage_Protocol `protobuf_oneof:"protocol"`
 }
 
@@ -50,11 +51,11 @@ type isMessage_Protocol interface {
 	Size() int
 }
 
-type Message_Lorawan struct {
-	Lorawan *lorawan.Message `protobuf:"bytes,1,opt,name=lorawan,oneof"`
+type Message_LoRaWAN struct {
+	LoRaWAN *lorawan.Message `protobuf:"bytes,1,opt,name=lorawan,oneof"`
 }
 
-func (*Message_Lorawan) isMessage_Protocol() {}
+func (*Message_LoRaWAN) isMessage_Protocol() {}
 
 func (m *Message) GetProtocol() isMessage_Protocol {
 	if m != nil {
@@ -63,9 +64,9 @@ func (m *Message) GetProtocol() isMessage_Protocol {
 	return nil
 }
 
-func (m *Message) GetLorawan() *lorawan.Message {
-	if x, ok := m.GetProtocol().(*Message_Lorawan); ok {
-		return x.Lorawan
+func (m *Message) GetLoRaWAN() *lorawan.Message {
+	if x, ok := m.GetProtocol().(*Message_LoRaWAN); ok {
+		return x.LoRaWAN
 	}
 	return nil
 }
@@ -73,7 +74,7 @@ func (m *Message) GetLorawan() *lorawan.Message {
 // XXX_OneofFuncs is for the internal use of the proto package.
 func (*Message) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
 	return _Message_OneofMarshaler, _Message_OneofUnmarshaler, _Message_OneofSizer, []interface{}{
-		(*Message_Lorawan)(nil),
+		(*Message_LoRaWAN)(nil),
 	}
 }
 
@@ -81,9 +82,9 @@ func _Message_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
 	m := msg.(*Message)
 	// protocol
 	switch x := m.Protocol.(type) {
-	case *Message_Lorawan:
+	case *Message_LoRaWAN:
 		_ = b.EncodeVarint(1<<3 | proto.WireBytes)
-		if err := b.EncodeMessage(x.Lorawan); err != nil {
+		if err := b.EncodeMessage(x.LoRaWAN); err != nil {
 			return err
 		}
 	case nil:
@@ -102,7 +103,7 @@ func _Message_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer
 		}
 		msg := new(lorawan.Message)
 		err := b.DecodeMessage(msg)
-		m.Protocol = &Message_Lorawan{msg}
+		m.Protocol = &Message_LoRaWAN{msg}
 		return true, err
 	default:
 		return false, nil
@@ -113,8 +114,8 @@ func _Message_OneofSizer(msg proto.Message) (n int) {
 	m := msg.(*Message)
 	// protocol
 	switch x := m.Protocol.(type) {
-	case *Message_Lorawan:
-		s := proto.Size(x.Lorawan)
+	case *Message_LoRaWAN:
+		s := proto.Size(x.LoRaWAN)
 		n += proto.SizeVarint(1<<3 | proto.WireBytes)
 		n += proto.SizeVarint(uint64(s))
 		n += s
@@ -127,7 +128,7 @@ func _Message_OneofSizer(msg proto.Message) (n int) {
 
 type RxMetadata struct {
 	// Types that are valid to be assigned to Protocol:
-	//	*RxMetadata_Lorawan
+	//	*RxMetadata_LoRaWAN
 	Protocol isRxMetadata_Protocol `protobuf_oneof:"protocol"`
 }
 
@@ -142,11 +143,11 @@ type isRxMetadata_Protocol interface {
 	Size() int
 }
 
-type RxMetadata_Lorawan struct {
-	Lorawan *lorawan.Metadata `protobuf:"bytes,1,opt,name=lorawan,oneof"`
+type RxMetadata_LoRaWAN struct {
+	LoRaWAN *lorawan.Metadata `protobuf:"bytes,1,opt,name=lorawan,oneof"`
 }
 
-func (*RxMetadata_Lorawan) isRxMetadata_Protocol() {}
+func (*RxMetadata_LoRaWAN) isRxMetadata_Protocol() {}
 
 func (m *RxMetadata) GetProtocol() isRxMetadata_Protocol {
 	if m != nil {
@@ -155,9 +156,9 @@ func (m *RxMetadata) GetProtocol() isRxMetadata_Protocol {
 	return nil
 }
 
-func (m *RxMetadata) GetLorawan() *lorawan.Metadata {
-	if x, ok := m.GetProtocol().(*RxMetadata_Lorawan); ok {
-		return x.Lorawan
+func (m *RxMetadata) GetLoRaWAN() *lorawan.Metadata {
+	if x, ok := m.GetProtocol().(*RxMetadata_LoRaWAN); ok {
+		return x.LoRaWAN
 	}
 	return nil
 }
@@ -165,7 +166,7 @@ func (m *RxMetadata) GetLorawan() *lorawan.Metadata {
 // XXX_OneofFuncs is for the internal use of the proto package.
 func (*RxMetadata) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
 	return _RxMetadata_OneofMarshaler, _RxMetadata_OneofUnmarshaler, _RxMetadata_OneofSizer, []interface{}{
-		(*RxMetadata_Lorawan)(nil),
+		(*RxMetadata_LoRaWAN)(nil),
 	}
 }
 
@@ -173,9 +174,9 @@ func _RxMetadata_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
 	m := msg.(*RxMetadata)
 	// protocol
 	switch x := m.Protocol.(type) {
-	case *RxMetadata_Lorawan:
+	case *RxMetadata_LoRaWAN:
 		_ = b.EncodeVarint(1<<3 | proto.WireBytes)
-		if err := b.EncodeMessage(x.Lorawan); err != nil {
+		if err := b.EncodeMessage(x.LoRaWAN); err != nil {
 			return err
 		}
 	case nil:
@@ -194,7 +195,7 @@ func _RxMetadata_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buf
 		}
 		msg := new(lorawan.Metadata)
 		err := b.DecodeMessage(msg)
-		m.Protocol = &RxMetadata_Lorawan{msg}
+		m.Protocol = &RxMetadata_LoRaWAN{msg}
 		return true, err
 	default:
 		return false, nil
@@ -205,8 +206,8 @@ func _RxMetadata_OneofSizer(msg proto.Message) (n int) {
 	m := msg.(*RxMetadata)
 	// protocol
 	switch x := m.Protocol.(type) {
-	case *RxMetadata_Lorawan:
-		s := proto.Size(x.Lorawan)
+	case *RxMetadata_LoRaWAN:
+		s := proto.Size(x.LoRaWAN)
 		n += proto.SizeVarint(1<<3 | proto.WireBytes)
 		n += proto.SizeVarint(uint64(s))
 		n += s
@@ -219,7 +220,7 @@ func _RxMetadata_OneofSizer(msg proto.Message) (n int) {
 
 type TxConfiguration struct {
 	// Types that are valid to be assigned to Protocol:
-	//	*TxConfiguration_Lorawan
+	//	*TxConfiguration_LoRaWAN
 	Protocol isTxConfiguration_Protocol `protobuf_oneof:"protocol"`
 }
 
@@ -234,11 +235,11 @@ type isTxConfiguration_Protocol interface {
 	Size() int
 }
 
-type TxConfiguration_Lorawan struct {
-	Lorawan *lorawan.TxConfiguration `protobuf:"bytes,1,opt,name=lorawan,oneof"`
+type TxConfiguration_LoRaWAN struct {
+	LoRaWAN *lorawan.TxConfiguration `protobuf:"bytes,1,opt,name=lorawan,oneof"`
 }
 
-func (*TxConfiguration_Lorawan) isTxConfiguration_Protocol() {}
+func (*TxConfiguration_LoRaWAN) isTxConfiguration_Protocol() {}
 
 func (m *TxConfiguration) GetProtocol() isTxConfiguration_Protocol {
 	if m != nil {
@@ -247,9 +248,9 @@ func (m *TxConfiguration) GetProtocol() isTxConfiguration_Protocol {
 	return nil
 }
 
-func (m *TxConfiguration) GetLorawan() *lorawan.TxConfiguration {
-	if x, ok := m.GetProtocol().(*TxConfiguration_Lorawan); ok {
-		return x.Lorawan
+func (m *TxConfiguration) GetLoRaWAN() *lorawan.TxConfiguration {
+	if x, ok := m.GetProtocol().(*TxConfiguration_LoRaWAN); ok {
+		return x.LoRaWAN
 	}
 	return nil
 }
@@ -257,7 +258,7 @@ func (m *TxConfiguration) GetLorawan() *lorawan.TxConfiguration {
 // XXX_OneofFuncs is for the internal use of the proto package.
 func (*TxConfiguration) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
 	return _TxConfiguration_OneofMarshaler, _TxConfiguration_OneofUnmarshaler, _TxConfiguration_OneofSizer, []interface{}{
-		(*TxConfiguration_Lorawan)(nil),
+		(*TxConfiguration_LoRaWAN)(nil),
 	}
 }
 
@@ -265,9 +266,9 @@ func _TxConfiguration_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
 	m := msg.(*TxConfiguration)
 	// protocol
 	switch x := m.Protocol.(type) {
-	case *TxConfiguration_Lorawan:
+	case *TxConfiguration_LoRaWAN:
 		_ = b.EncodeVarint(1<<3 | proto.WireBytes)
-		if err := b.EncodeMessage(x.Lorawan); err != nil {
+		if err := b.EncodeMessage(x.LoRaWAN); err != nil {
 			return err
 		}
 	case nil:
@@ -286,7 +287,7 @@ func _TxConfiguration_OneofUnmarshaler(msg proto.Message, tag, wire int, b *prot
 		}
 		msg := new(lorawan.TxConfiguration)
 		err := b.DecodeMessage(msg)
-		m.Protocol = &TxConfiguration_Lorawan{msg}
+		m.Protocol = &TxConfiguration_LoRaWAN{msg}
 		return true, err
 	default:
 		return false, nil
@@ -297,8 +298,8 @@ func _TxConfiguration_OneofSizer(msg proto.Message) (n int) {
 	m := msg.(*TxConfiguration)
 	// protocol
 	switch x := m.Protocol.(type) {
-	case *TxConfiguration_Lorawan:
-		s := proto.Size(x.Lorawan)
+	case *TxConfiguration_LoRaWAN:
+		s := proto.Size(x.LoRaWAN)
 		n += proto.SizeVarint(1<<3 | proto.WireBytes)
 		n += proto.SizeVarint(uint64(s))
 		n += s
@@ -311,7 +312,7 @@ func _TxConfiguration_OneofSizer(msg proto.Message) (n int) {
 
 type ActivationMetadata struct {
 	// Types that are valid to be assigned to Protocol:
-	//	*ActivationMetadata_Lorawan
+	//	*ActivationMetadata_LoRaWAN
 	Protocol isActivationMetadata_Protocol `protobuf_oneof:"protocol"`
 }
 
@@ -326,11 +327,11 @@ type isActivationMetadata_Protocol interface {
 	Size() int
 }
 
-type ActivationMetadata_Lorawan struct {
-	Lorawan *lorawan.ActivationMetadata `protobuf:"bytes,1,opt,name=lorawan,oneof"`
+type ActivationMetadata_LoRaWAN struct {
+	LoRaWAN *lorawan.ActivationMetadata `protobuf:"bytes,1,opt,name=lorawan,oneof"`
 }
 
-func (*ActivationMetadata_Lorawan) isActivationMetadata_Protocol() {}
+func (*ActivationMetadata_LoRaWAN) isActivationMetadata_Protocol() {}
 
 func (m *ActivationMetadata) GetProtocol() isActivationMetadata_Protocol {
 	if m != nil {
@@ -339,9 +340,9 @@ func (m *ActivationMetadata) GetProtocol() isActivationMetadata_Protocol {
 	return nil
 }
 
-func (m *ActivationMetadata) GetLorawan() *lorawan.ActivationMetadata {
-	if x, ok := m.GetProtocol().(*ActivationMetadata_Lorawan); ok {
-		return x.Lorawan
+func (m *ActivationMetadata) GetLoRaWAN() *lorawan.ActivationMetadata {
+	if x, ok := m.GetProtocol().(*ActivationMetadata_LoRaWAN); ok {
+		return x.LoRaWAN
 	}
 	return nil
 }
@@ -349,7 +350,7 @@ func (m *ActivationMetadata) GetLorawan() *lorawan.ActivationMetadata {
 // XXX_OneofFuncs is for the internal use of the proto package.
 func (*ActivationMetadata) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
 	return _ActivationMetadata_OneofMarshaler, _ActivationMetadata_OneofUnmarshaler, _ActivationMetadata_OneofSizer, []interface{}{
-		(*ActivationMetadata_Lorawan)(nil),
+		(*ActivationMetadata_LoRaWAN)(nil),
 	}
 }
 
@@ -357,9 +358,9 @@ func _ActivationMetadata_OneofMarshaler(msg proto.Message, b *proto.Buffer) erro
 	m := msg.(*ActivationMetadata)
 	// protocol
 	switch x := m.Protocol.(type) {
-	case *ActivationMetadata_Lorawan:
+	case *ActivationMetadata_LoRaWAN:
 		_ = b.EncodeVarint(1<<3 | proto.WireBytes)
-		if err := b.EncodeMessage(x.Lorawan); err != nil {
+		if err := b.EncodeMessage(x.LoRaWAN); err != nil {
 			return err
 		}
 	case nil:
@@ -378,7 +379,7 @@ func _ActivationMetadata_OneofUnmarshaler(msg proto.Message, tag, wire int, b *p
 		}
 		msg := new(lorawan.ActivationMetadata)
 		err := b.DecodeMessage(msg)
-		m.Protocol = &ActivationMetadata_Lorawan{msg}
+		m.Protocol = &ActivationMetadata_LoRaWAN{msg}
 		return true, err
 	default:
 		return false, nil
@@ -389,8 +390,8 @@ func _ActivationMetadata_OneofSizer(msg proto.Message) (n int) {
 	m := msg.(*ActivationMetadata)
 	// protocol
 	switch x := m.Protocol.(type) {
-	case *ActivationMetadata_Lorawan:
-		s := proto.Size(x.Lorawan)
+	case *ActivationMetadata_LoRaWAN:
+		s := proto.Size(x.LoRaWAN)
 		n += proto.SizeVarint(1<<3 | proto.WireBytes)
 		n += proto.SizeVarint(uint64(s))
 		n += s
@@ -432,13 +433,13 @@ func (m *Message) MarshalTo(dAtA []byte) (int, error) {
 	return i, nil
 }
 
-func (m *Message_Lorawan) MarshalTo(dAtA []byte) (int, error) {
+func (m *Message_LoRaWAN) MarshalTo(dAtA []byte) (int, error) {
 	i := 0
-	if m.Lorawan != nil {
+	if m.LoRaWAN != nil {
 		dAtA[i] = 0xa
 		i++
-		i = encodeVarintProtocol(dAtA, i, uint64(m.Lorawan.Size()))
-		n2, err := m.Lorawan.MarshalTo(dAtA[i:])
+		i = encodeVarintProtocol(dAtA, i, uint64(m.LoRaWAN.Size()))
+		n2, err := m.LoRaWAN.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
@@ -471,13 +472,13 @@ func (m *RxMetadata) MarshalTo(dAtA []byte) (int, error) {
 	return i, nil
 }
 
-func (m *RxMetadata_Lorawan) MarshalTo(dAtA []byte) (int, error) {
+func (m *RxMetadata_LoRaWAN) MarshalTo(dAtA []byte) (int, error) {
 	i := 0
-	if m.Lorawan != nil {
+	if m.LoRaWAN != nil {
 		dAtA[i] = 0xa
 		i++
-		i = encodeVarintProtocol(dAtA, i, uint64(m.Lorawan.Size()))
-		n4, err := m.Lorawan.MarshalTo(dAtA[i:])
+		i = encodeVarintProtocol(dAtA, i, uint64(m.LoRaWAN.Size()))
+		n4, err := m.LoRaWAN.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
@@ -510,13 +511,13 @@ func (m *TxConfiguration) MarshalTo(dAtA []byte) (int, error) {
 	return i, nil
 }
 
-func (m *TxConfiguration_Lorawan) MarshalTo(dAtA []byte) (int, error) {
+func (m *TxConfiguration_LoRaWAN) MarshalTo(dAtA []byte) (int, error) {
 	i := 0
-	if m.Lorawan != nil {
+	if m.LoRaWAN != nil {
 		dAtA[i] = 0xa
 		i++
-		i = encodeVarintProtocol(dAtA, i, uint64(m.Lorawan.Size()))
-		n6, err := m.Lorawan.MarshalTo(dAtA[i:])
+		i = encodeVarintProtocol(dAtA, i, uint64(m.LoRaWAN.Size()))
+		n6, err := m.LoRaWAN.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
@@ -549,13 +550,13 @@ func (m *ActivationMetadata) MarshalTo(dAtA []byte) (int, error) {
 	return i, nil
 }
 
-func (m *ActivationMetadata_Lorawan) MarshalTo(dAtA []byte) (int, error) {
+func (m *ActivationMetadata_LoRaWAN) MarshalTo(dAtA []byte) (int, error) {
 	i := 0
-	if m.Lorawan != nil {
+	if m.LoRaWAN != nil {
 		dAtA[i] = 0xa
 		i++
-		i = encodeVarintProtocol(dAtA, i, uint64(m.Lorawan.Size()))
-		n8, err := m.Lorawan.MarshalTo(dAtA[i:])
+		i = encodeVarintProtocol(dAtA, i, uint64(m.LoRaWAN.Size()))
+		n8, err := m.LoRaWAN.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
@@ -599,11 +600,11 @@ func (m *Message) Size() (n int) {
 	return n
 }
 
-func (m *Message_Lorawan) Size() (n int) {
+func (m *Message_LoRaWAN) Size() (n int) {
 	var l int
 	_ = l
-	if m.Lorawan != nil {
-		l = m.Lorawan.Size()
+	if m.LoRaWAN != nil {
+		l = m.LoRaWAN.Size()
 		n += 1 + l + sovProtocol(uint64(l))
 	}
 	return n
@@ -617,11 +618,11 @@ func (m *RxMetadata) Size() (n int) {
 	return n
 }
 
-func (m *RxMetadata_Lorawan) Size() (n int) {
+func (m *RxMetadata_LoRaWAN) Size() (n int) {
 	var l int
 	_ = l
-	if m.Lorawan != nil {
-		l = m.Lorawan.Size()
+	if m.LoRaWAN != nil {
+		l = m.LoRaWAN.Size()
 		n += 1 + l + sovProtocol(uint64(l))
 	}
 	return n
@@ -635,11 +636,11 @@ func (m *TxConfiguration) Size() (n int) {
 	return n
 }
 
-func (m *TxConfiguration_Lorawan) Size() (n int) {
+func (m *TxConfiguration_LoRaWAN) Size() (n int) {
 	var l int
 	_ = l
-	if m.Lorawan != nil {
-		l = m.Lorawan.Size()
+	if m.LoRaWAN != nil {
+		l = m.LoRaWAN.Size()
 		n += 1 + l + sovProtocol(uint64(l))
 	}
 	return n
@@ -653,11 +654,11 @@ func (m *ActivationMetadata) Size() (n int) {
 	return n
 }
 
-func (m *ActivationMetadata_Lorawan) Size() (n int) {
+func (m *ActivationMetadata_LoRaWAN) Size() (n int) {
 	var l int
 	_ = l
-	if m.Lorawan != nil {
-		l = m.Lorawan.Size()
+	if m.LoRaWAN != nil {
+		l = m.LoRaWAN.Size()
 		n += 1 + l + sovProtocol(uint64(l))
 	}
 	return n
@@ -707,7 +708,7 @@ func (m *Message) Unmarshal(dAtA []byte) error {
 		switch fieldNum {
 		case 1:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Lorawan", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field LoRaWAN", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -735,7 +736,7 @@ func (m *Message) Unmarshal(dAtA []byte) error {
 			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
-			m.Protocol = &Message_Lorawan{v}
+			m.Protocol = &Message_LoRaWAN{v}
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -789,7 +790,7 @@ func (m *RxMetadata) Unmarshal(dAtA []byte) error {
 		switch fieldNum {
 		case 1:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Lorawan", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field LoRaWAN", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -817,7 +818,7 @@ func (m *RxMetadata) Unmarshal(dAtA []byte) error {
 			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
-			m.Protocol = &RxMetadata_Lorawan{v}
+			m.Protocol = &RxMetadata_LoRaWAN{v}
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -871,7 +872,7 @@ func (m *TxConfiguration) Unmarshal(dAtA []byte) error {
 		switch fieldNum {
 		case 1:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Lorawan", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field LoRaWAN", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -899,7 +900,7 @@ func (m *TxConfiguration) Unmarshal(dAtA []byte) error {
 			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
-			m.Protocol = &TxConfiguration_Lorawan{v}
+			m.Protocol = &TxConfiguration_LoRaWAN{v}
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -953,7 +954,7 @@ func (m *ActivationMetadata) Unmarshal(dAtA []byte) error {
 		switch fieldNum {
 		case 1:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Lorawan", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field LoRaWAN", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -981,7 +982,7 @@ func (m *ActivationMetadata) Unmarshal(dAtA []byte) error {
 			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
-			m.Protocol = &ActivationMetadata_Lorawan{v}
+			m.Protocol = &ActivationMetadata_LoRaWAN{v}
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -1114,23 +1115,25 @@ func init() {
 }
 
 var fileDescriptorProtocol = []byte{
-	// 276 bytes of a gzipped FileDescriptorProto
+	// 310 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x32, 0x4f, 0xcf, 0x2c, 0xc9,
 	0x28, 0x4d, 0xd2, 0x4b, 0xce, 0xcf, 0xd5, 0x0f, 0xc9, 0x48, 0x0d, 0xc9, 0xc8, 0xcc, 0x4b, 0x2f,
 	0xf6, 0x4b, 0x2d, 0x29, 0xcf, 0x2f, 0xca, 0xd6, 0x4f, 0x2c, 0xc8, 0xd4, 0x2f, 0x28, 0xca, 0x2f,
-	0xc9, 0x4f, 0xce, 0xcf, 0x81, 0x33, 0xf4, 0xc0, 0x0c, 0x21, 0x0e, 0x18, 0x5f, 0xca, 0x8e, 0x68,
-	0x23, 0x72, 0xf2, 0x8b, 0x12, 0xcb, 0x13, 0xf3, 0x60, 0x34, 0xc4, 0x24, 0x25, 0x67, 0x2e, 0x76,
-	0xdf, 0xd4, 0xe2, 0xe2, 0xc4, 0xf4, 0x54, 0x21, 0x1d, 0x2e, 0x76, 0xa8, 0x9c, 0x04, 0xa3, 0x02,
-	0xa3, 0x06, 0xb7, 0x91, 0x80, 0x1e, 0x4c, 0x2d, 0x54, 0x89, 0x07, 0x43, 0x10, 0x4c, 0x89, 0x13,
-	0x17, 0x17, 0xdc, 0x11, 0x4a, 0xee, 0x5c, 0x5c, 0x41, 0x15, 0xbe, 0xa9, 0x25, 0x89, 0x29, 0x89,
-	0x25, 0x89, 0x42, 0xba, 0xe8, 0xe6, 0x08, 0x22, 0x99, 0x03, 0x51, 0x83, 0xcb, 0xa0, 0x60, 0x2e,
-	0xfe, 0x90, 0x0a, 0xe7, 0xfc, 0xbc, 0xb4, 0xcc, 0xf4, 0xd2, 0xa2, 0xc4, 0x92, 0xcc, 0xfc, 0x3c,
-	0x21, 0x13, 0x74, 0xd3, 0x24, 0xe0, 0xa6, 0xa1, 0x29, 0xc5, 0x65, 0x68, 0x24, 0x97, 0x90, 0x63,
-	0x72, 0x49, 0x66, 0x19, 0x58, 0x11, 0xdc, 0x95, 0xe6, 0xe8, 0xe6, 0x4a, 0xc3, 0xcd, 0xc5, 0x54,
-	0x8d, 0xc3, 0x68, 0xa7, 0x2e, 0xc6, 0x13, 0x8f, 0xe4, 0x18, 0x2f, 0x3c, 0x92, 0x63, 0x7c, 0xf0,
-	0x48, 0x8e, 0x91, 0x4b, 0x31, 0xbf, 0x28, 0x5d, 0xaf, 0x24, 0x23, 0xb5, 0x04, 0x1c, 0x0b, 0x79,
-	0x90, 0x58, 0xd0, 0x4b, 0x2c, 0xc8, 0xd4, 0x83, 0xeb, 0xe0, 0x0d, 0x80, 0xb2, 0xc0, 0x74, 0x00,
-	0x63, 0x94, 0x06, 0xb1, 0x11, 0xb8, 0x8a, 0x49, 0x16, 0x5d, 0x5e, 0xcf, 0x31, 0xc0, 0x53, 0x0f,
-	0x66, 0x60, 0x12, 0x1b, 0x58, 0xa5, 0x31, 0x20, 0x00, 0x00, 0xff, 0xff, 0x89, 0x46, 0x7a, 0x66,
-	0x56, 0x02, 0x00, 0x00,
+	0xc9, 0x4f, 0xce, 0xcf, 0x81, 0x33, 0xf4, 0xc0, 0x0c, 0x21, 0x0e, 0x18, 0x5f, 0x4a, 0x17, 0xc9,
+	0x88, 0xf4, 0xfc, 0xf4, 0x7c, 0x88, 0xca, 0xa4, 0xd2, 0x34, 0x30, 0x0f, 0xcc, 0x01, 0xb3, 0x20,
+	0x1a, 0xa5, 0xec, 0x88, 0xb6, 0x31, 0x27, 0xbf, 0x28, 0xb1, 0x3c, 0x31, 0x0f, 0x46, 0x43, 0xf4,
+	0x2b, 0x05, 0x70, 0xb1, 0xfb, 0xa6, 0x16, 0x17, 0x27, 0xa6, 0xa7, 0x0a, 0x59, 0x72, 0xb1, 0x43,
+	0xe5, 0x24, 0x18, 0x15, 0x18, 0x35, 0xb8, 0x8d, 0x04, 0xf4, 0x60, 0x6a, 0xa1, 0x4a, 0x9c, 0xb8,
+	0x1f, 0xdd, 0x93, 0x67, 0xf7, 0xc9, 0x0f, 0x4a, 0x0c, 0x77, 0xf4, 0xf3, 0x60, 0x08, 0x82, 0xa9,
+	0x77, 0xe2, 0xe2, 0x82, 0x7b, 0x40, 0x29, 0x84, 0x8b, 0x2b, 0xa8, 0xc2, 0x37, 0xb5, 0x24, 0x31,
+	0x25, 0xb1, 0x24, 0x51, 0xc8, 0x0a, 0xdd, 0x50, 0x41, 0x24, 0x43, 0x21, 0x6a, 0x88, 0x32, 0x35,
+	0x81, 0x8b, 0x3f, 0xa4, 0xc2, 0x39, 0x3f, 0x2f, 0x2d, 0x33, 0xbd, 0xb4, 0x28, 0xb1, 0x24, 0x33,
+	0x3f, 0x4f, 0xc8, 0x11, 0xdd, 0x68, 0x09, 0xb8, 0xd1, 0x68, 0x4a, 0x89, 0xb2, 0x21, 0x8d, 0x4b,
+	0xc8, 0x31, 0xb9, 0x24, 0xb3, 0x0c, 0xac, 0x03, 0xee, 0x7e, 0x17, 0x74, 0x4b, 0xa4, 0xe1, 0x96,
+	0x60, 0xaa, 0x26, 0xc6, 0x1e, 0xa7, 0x2e, 0xc6, 0x13, 0x8f, 0xe4, 0x18, 0x2f, 0x3c, 0x92, 0x63,
+	0x7c, 0xf0, 0x48, 0x8e, 0x91, 0x4b, 0x31, 0xbf, 0x28, 0x5d, 0xaf, 0x24, 0x23, 0xb5, 0x04, 0x1c,
+	0x73, 0x79, 0x90, 0x98, 0xd3, 0x4b, 0x2c, 0xc8, 0xd4, 0x83, 0xeb, 0xe0, 0x0d, 0x80, 0xb2, 0xc0,
+	0x74, 0x00, 0x63, 0x94, 0x06, 0xb1, 0x91, 0xbe, 0x8a, 0x49, 0x16, 0x5d, 0x5e, 0xcf, 0x31, 0xc0,
+	0x53, 0x0f, 0x66, 0x60, 0x12, 0x1b, 0x58, 0xa5, 0x31, 0x20, 0x00, 0x00, 0xff, 0xff, 0xac, 0x77,
+	0xa0, 0xb9, 0xb9, 0x02, 0x00, 0x00,
 }

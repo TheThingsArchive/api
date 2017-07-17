@@ -8,11 +8,11 @@ public interface ActivationMetadataOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.lorawan.ActivationMetadata lorawan = 1;</code>
+   * <code>.lorawan.ActivationMetadata lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.ActivationMetadata getLorawan();
   /**
-   * <code>.lorawan.ActivationMetadata lorawan = 1;</code>
+   * <code>.lorawan.ActivationMetadata lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.ActivationMetadataOrBuilder getLorawanOrBuilder();
 
