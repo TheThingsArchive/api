@@ -74,7 +74,7 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
      * Received signal strength in dBm
      * </pre>
      *
-     * <code>float rssi = 32;</code>
+     * <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
      */
     private $rssi = 0.0;
     /**
@@ -82,7 +82,7 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
      * Signal-to-noise-ratio in dB
      * </pre>
      *
-     * <code>float snr = 33;</code>
+     * <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
      */
     private $snr = 0.0;
     /**
@@ -293,7 +293,7 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
      * Received signal strength in dBm
      * </pre>
      *
-     * <code>float rssi = 32;</code>
+     * <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
      */
     public function getRssi()
     {
@@ -305,7 +305,7 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
      * Received signal strength in dBm
      * </pre>
      *
-     * <code>float rssi = 32;</code>
+     * <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
      */
     public function setRssi($var)
     {
@@ -318,7 +318,7 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
      * Signal-to-noise-ratio in dB
      * </pre>
      *
-     * <code>float snr = 33;</code>
+     * <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
      */
     public function getSnr()
     {
@@ -330,7 +330,7 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
      * Signal-to-noise-ratio in dB
      * </pre>
      *
-     * <code>float snr = 33;</code>
+     * <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
      */
     public function setSnr($var)
     {

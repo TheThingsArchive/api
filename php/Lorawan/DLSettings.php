@@ -14,11 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class DLSettings extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>uint32 rx1_dr_offset = 1;</code>
+     * <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      */
     private $rx1_dr_offset = 0;
     /**
-     * <code>uint32 rx2_dr = 2;</code>
+     * <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
      */
     private $rx2_dr = 0;
 
@@ -28,7 +28,7 @@ class DLSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 rx1_dr_offset = 1;</code>
+     * <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      */
     public function getRx1DrOffset()
     {
@@ -36,7 +36,7 @@ class DLSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 rx1_dr_offset = 1;</code>
+     * <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      */
     public function setRx1DrOffset($var)
     {
@@ -45,7 +45,7 @@ class DLSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 rx2_dr = 2;</code>
+     * <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
      */
     public function getRx2Dr()
     {
@@ -53,7 +53,7 @@ class DLSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 rx2_dr = 2;</code>
+     * <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
      */
     public function setRx2Dr($var)
     {

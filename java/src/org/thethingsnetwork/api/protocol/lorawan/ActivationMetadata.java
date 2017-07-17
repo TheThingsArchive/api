@@ -166,7 +166,7 @@ public  final class ActivationMetadata extends
   public static final int RX1_DR_OFFSET_FIELD_NUMBER = 11;
   private int rx1DrOffset_;
   /**
-   * <code>uint32 rx1_dr_offset = 11;</code>
+   * <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
    */
   public int getRx1DrOffset() {
     return rx1DrOffset_;
@@ -175,7 +175,7 @@ public  final class ActivationMetadata extends
   public static final int RX2_DR_FIELD_NUMBER = 12;
   private int rx2Dr_;
   /**
-   * <code>uint32 rx2_dr = 12;</code>
+   * <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
    */
   public int getRx2Dr() {
     return rx2Dr_;
@@ -193,19 +193,19 @@ public  final class ActivationMetadata extends
   public static final int CF_LIST_FIELD_NUMBER = 14;
   private org.thethingsnetwork.api.protocol.lorawan.CFList cfList_;
   /**
-   * <code>.lorawan.CFList cf_list = 14;</code>
+   * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
    */
   public boolean hasCfList() {
     return cfList_ != null;
   }
   /**
-   * <code>.lorawan.CFList cf_list = 14;</code>
+   * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
    */
   public org.thethingsnetwork.api.protocol.lorawan.CFList getCfList() {
     return cfList_ == null ? org.thethingsnetwork.api.protocol.lorawan.CFList.getDefaultInstance() : cfList_;
   }
   /**
-   * <code>.lorawan.CFList cf_list = 14;</code>
+   * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
    */
   public org.thethingsnetwork.api.protocol.lorawan.CFListOrBuilder getCfListOrBuilder() {
     return getCfList();
@@ -773,13 +773,13 @@ public  final class ActivationMetadata extends
 
     private int rx1DrOffset_ ;
     /**
-     * <code>uint32 rx1_dr_offset = 11;</code>
+     * <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      */
     public int getRx1DrOffset() {
       return rx1DrOffset_;
     }
     /**
-     * <code>uint32 rx1_dr_offset = 11;</code>
+     * <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      */
     public Builder setRx1DrOffset(int value) {
       
@@ -788,7 +788,7 @@ public  final class ActivationMetadata extends
       return this;
     }
     /**
-     * <code>uint32 rx1_dr_offset = 11;</code>
+     * <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      */
     public Builder clearRx1DrOffset() {
       
@@ -799,13 +799,13 @@ public  final class ActivationMetadata extends
 
     private int rx2Dr_ ;
     /**
-     * <code>uint32 rx2_dr = 12;</code>
+     * <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
      */
     public int getRx2Dr() {
       return rx2Dr_;
     }
     /**
-     * <code>uint32 rx2_dr = 12;</code>
+     * <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
      */
     public Builder setRx2Dr(int value) {
       
@@ -814,7 +814,7 @@ public  final class ActivationMetadata extends
       return this;
     }
     /**
-     * <code>uint32 rx2_dr = 12;</code>
+     * <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
      */
     public Builder clearRx2Dr() {
       
@@ -853,13 +853,13 @@ public  final class ActivationMetadata extends
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.CFList, org.thethingsnetwork.api.protocol.lorawan.CFList.Builder, org.thethingsnetwork.api.protocol.lorawan.CFListOrBuilder> cfListBuilder_;
     /**
-     * <code>.lorawan.CFList cf_list = 14;</code>
+     * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
      */
     public boolean hasCfList() {
       return cfListBuilder_ != null || cfList_ != null;
     }
     /**
-     * <code>.lorawan.CFList cf_list = 14;</code>
+     * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.CFList getCfList() {
       if (cfListBuilder_ == null) {
@@ -869,7 +869,7 @@ public  final class ActivationMetadata extends
       }
     }
     /**
-     * <code>.lorawan.CFList cf_list = 14;</code>
+     * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
      */
     public Builder setCfList(org.thethingsnetwork.api.protocol.lorawan.CFList value) {
       if (cfListBuilder_ == null) {
@@ -885,7 +885,7 @@ public  final class ActivationMetadata extends
       return this;
     }
     /**
-     * <code>.lorawan.CFList cf_list = 14;</code>
+     * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
      */
     public Builder setCfList(
         org.thethingsnetwork.api.protocol.lorawan.CFList.Builder builderForValue) {
@@ -899,7 +899,7 @@ public  final class ActivationMetadata extends
       return this;
     }
     /**
-     * <code>.lorawan.CFList cf_list = 14;</code>
+     * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
      */
     public Builder mergeCfList(org.thethingsnetwork.api.protocol.lorawan.CFList value) {
       if (cfListBuilder_ == null) {
@@ -917,7 +917,7 @@ public  final class ActivationMetadata extends
       return this;
     }
     /**
-     * <code>.lorawan.CFList cf_list = 14;</code>
+     * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
      */
     public Builder clearCfList() {
       if (cfListBuilder_ == null) {
@@ -931,7 +931,7 @@ public  final class ActivationMetadata extends
       return this;
     }
     /**
-     * <code>.lorawan.CFList cf_list = 14;</code>
+     * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.CFList.Builder getCfListBuilder() {
       
@@ -939,7 +939,7 @@ public  final class ActivationMetadata extends
       return getCfListFieldBuilder().getBuilder();
     }
     /**
-     * <code>.lorawan.CFList cf_list = 14;</code>
+     * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.CFListOrBuilder getCfListOrBuilder() {
       if (cfListBuilder_ != null) {
@@ -950,7 +950,7 @@ public  final class ActivationMetadata extends
       }
     }
     /**
-     * <code>.lorawan.CFList cf_list = 14;</code>
+     * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.CFList, org.thethingsnetwork.api.protocol.lorawan.CFList.Builder, org.thethingsnetwork.api.protocol.lorawan.CFListOrBuilder> 

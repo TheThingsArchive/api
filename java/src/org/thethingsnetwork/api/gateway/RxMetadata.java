@@ -171,7 +171,7 @@ public  final class RxMetadata extends
      * Received signal power in dBm
      * </pre>
      *
-     * <code>float rssi = 3;</code>
+     * <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
      */
     float getRssi();
 
@@ -180,7 +180,7 @@ public  final class RxMetadata extends
      * Received channel power in dBm
      * </pre>
      *
-     * <code>float channel_rssi = 5;</code>
+     * <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
      */
     float getChannelRssi();
 
@@ -189,7 +189,7 @@ public  final class RxMetadata extends
      * Standard deviation of the RSSI
      * </pre>
      *
-     * <code>float rssi_standard_deviation = 6;</code>
+     * <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
      */
     float getRssiStandardDeviation();
 
@@ -207,7 +207,7 @@ public  final class RxMetadata extends
      * Signal-to-noise-ratio in dB
      * </pre>
      *
-     * <code>float snr = 4;</code>
+     * <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
      */
     float getSnr();
 
@@ -355,7 +355,7 @@ public  final class RxMetadata extends
      * Received signal power in dBm
      * </pre>
      *
-     * <code>float rssi = 3;</code>
+     * <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
      */
     public float getRssi() {
       return rssi_;
@@ -368,7 +368,7 @@ public  final class RxMetadata extends
      * Received channel power in dBm
      * </pre>
      *
-     * <code>float channel_rssi = 5;</code>
+     * <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
      */
     public float getChannelRssi() {
       return channelRssi_;
@@ -381,7 +381,7 @@ public  final class RxMetadata extends
      * Standard deviation of the RSSI
      * </pre>
      *
-     * <code>float rssi_standard_deviation = 6;</code>
+     * <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
      */
     public float getRssiStandardDeviation() {
       return rssiStandardDeviation_;
@@ -407,7 +407,7 @@ public  final class RxMetadata extends
      * Signal-to-noise-ratio in dB
      * </pre>
      *
-     * <code>float snr = 4;</code>
+     * <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
      */
     public float getSnr() {
       return snr_;
@@ -896,7 +896,7 @@ public  final class RxMetadata extends
        * Received signal power in dBm
        * </pre>
        *
-       * <code>float rssi = 3;</code>
+       * <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
        */
       public float getRssi() {
         return rssi_;
@@ -906,7 +906,7 @@ public  final class RxMetadata extends
        * Received signal power in dBm
        * </pre>
        *
-       * <code>float rssi = 3;</code>
+       * <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
        */
       public Builder setRssi(float value) {
         
@@ -919,7 +919,7 @@ public  final class RxMetadata extends
        * Received signal power in dBm
        * </pre>
        *
-       * <code>float rssi = 3;</code>
+       * <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
        */
       public Builder clearRssi() {
         
@@ -934,7 +934,7 @@ public  final class RxMetadata extends
        * Received channel power in dBm
        * </pre>
        *
-       * <code>float channel_rssi = 5;</code>
+       * <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
        */
       public float getChannelRssi() {
         return channelRssi_;
@@ -944,7 +944,7 @@ public  final class RxMetadata extends
        * Received channel power in dBm
        * </pre>
        *
-       * <code>float channel_rssi = 5;</code>
+       * <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
        */
       public Builder setChannelRssi(float value) {
         
@@ -957,7 +957,7 @@ public  final class RxMetadata extends
        * Received channel power in dBm
        * </pre>
        *
-       * <code>float channel_rssi = 5;</code>
+       * <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
        */
       public Builder clearChannelRssi() {
         
@@ -972,7 +972,7 @@ public  final class RxMetadata extends
        * Standard deviation of the RSSI
        * </pre>
        *
-       * <code>float rssi_standard_deviation = 6;</code>
+       * <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
        */
       public float getRssiStandardDeviation() {
         return rssiStandardDeviation_;
@@ -982,7 +982,7 @@ public  final class RxMetadata extends
        * Standard deviation of the RSSI
        * </pre>
        *
-       * <code>float rssi_standard_deviation = 6;</code>
+       * <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
        */
       public Builder setRssiStandardDeviation(float value) {
         
@@ -995,7 +995,7 @@ public  final class RxMetadata extends
        * Standard deviation of the RSSI
        * </pre>
        *
-       * <code>float rssi_standard_deviation = 6;</code>
+       * <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
        */
       public Builder clearRssiStandardDeviation() {
         
@@ -1048,7 +1048,7 @@ public  final class RxMetadata extends
        * Signal-to-noise-ratio in dB
        * </pre>
        *
-       * <code>float snr = 4;</code>
+       * <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
        */
       public float getSnr() {
         return snr_;
@@ -1058,7 +1058,7 @@ public  final class RxMetadata extends
        * Signal-to-noise-ratio in dB
        * </pre>
        *
-       * <code>float snr = 4;</code>
+       * <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
        */
       public Builder setSnr(float value) {
         
@@ -1071,7 +1071,7 @@ public  final class RxMetadata extends
        * Signal-to-noise-ratio in dB
        * </pre>
        *
-       * <code>float snr = 4;</code>
+       * <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
        */
       public Builder clearSnr() {
         
@@ -1329,7 +1329,7 @@ public  final class RxMetadata extends
    * Received signal strength in dBm
    * </pre>
    *
-   * <code>float rssi = 32;</code>
+   * <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
    */
   public float getRssi() {
     return rssi_;
@@ -1342,7 +1342,7 @@ public  final class RxMetadata extends
    * Signal-to-noise-ratio in dB
    * </pre>
    *
-   * <code>float snr = 33;</code>
+   * <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
    */
   public float getSnr() {
     return snr_;
@@ -2460,7 +2460,7 @@ public  final class RxMetadata extends
      * Received signal strength in dBm
      * </pre>
      *
-     * <code>float rssi = 32;</code>
+     * <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
      */
     public float getRssi() {
       return rssi_;
@@ -2470,7 +2470,7 @@ public  final class RxMetadata extends
      * Received signal strength in dBm
      * </pre>
      *
-     * <code>float rssi = 32;</code>
+     * <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
      */
     public Builder setRssi(float value) {
       
@@ -2483,7 +2483,7 @@ public  final class RxMetadata extends
      * Received signal strength in dBm
      * </pre>
      *
-     * <code>float rssi = 32;</code>
+     * <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
      */
     public Builder clearRssi() {
       
@@ -2498,7 +2498,7 @@ public  final class RxMetadata extends
      * Signal-to-noise-ratio in dB
      * </pre>
      *
-     * <code>float snr = 33;</code>
+     * <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
      */
     public float getSnr() {
       return snr_;
@@ -2508,7 +2508,7 @@ public  final class RxMetadata extends
      * Signal-to-noise-ratio in dB
      * </pre>
      *
-     * <code>float snr = 33;</code>
+     * <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
      */
     public Builder setSnr(float value) {
       
@@ -2521,7 +2521,7 @@ public  final class RxMetadata extends
      * Signal-to-noise-ratio in dB
      * </pre>
      *
-     * <code>float snr = 33;</code>
+     * <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
      */
     public Builder clearSnr() {
       

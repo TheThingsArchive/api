@@ -190,7 +190,7 @@ public  final class Message extends
   public static final int MIC_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString mic_;
   /**
-   * <code>bytes mic = 2;</code>
+   * <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
    */
   public com.google.protobuf.ByteString getMic() {
     return mic_;
@@ -198,7 +198,7 @@ public  final class Message extends
 
   public static final int MAC_PAYLOAD_FIELD_NUMBER = 3;
   /**
-   * <code>.lorawan.MACPayload mac_payload = 3;</code>
+   * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
    */
   public org.thethingsnetwork.api.protocol.lorawan.MACPayload getMacPayload() {
     if (payloadCase_ == 3) {
@@ -207,7 +207,7 @@ public  final class Message extends
     return org.thethingsnetwork.api.protocol.lorawan.MACPayload.getDefaultInstance();
   }
   /**
-   * <code>.lorawan.MACPayload mac_payload = 3;</code>
+   * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
    */
   public org.thethingsnetwork.api.protocol.lorawan.MACPayloadOrBuilder getMacPayloadOrBuilder() {
     if (payloadCase_ == 3) {
@@ -797,13 +797,13 @@ public  final class Message extends
 
     private com.google.protobuf.ByteString mic_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes mic = 2;</code>
+     * <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
      */
     public com.google.protobuf.ByteString getMic() {
       return mic_;
     }
     /**
-     * <code>bytes mic = 2;</code>
+     * <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
      */
     public Builder setMic(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -815,7 +815,7 @@ public  final class Message extends
       return this;
     }
     /**
-     * <code>bytes mic = 2;</code>
+     * <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
      */
     public Builder clearMic() {
       
@@ -827,7 +827,7 @@ public  final class Message extends
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.MACPayload, org.thethingsnetwork.api.protocol.lorawan.MACPayload.Builder, org.thethingsnetwork.api.protocol.lorawan.MACPayloadOrBuilder> macPayloadBuilder_;
     /**
-     * <code>.lorawan.MACPayload mac_payload = 3;</code>
+     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.MACPayload getMacPayload() {
       if (macPayloadBuilder_ == null) {
@@ -843,7 +843,7 @@ public  final class Message extends
       }
     }
     /**
-     * <code>.lorawan.MACPayload mac_payload = 3;</code>
+     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      */
     public Builder setMacPayload(org.thethingsnetwork.api.protocol.lorawan.MACPayload value) {
       if (macPayloadBuilder_ == null) {
@@ -859,7 +859,7 @@ public  final class Message extends
       return this;
     }
     /**
-     * <code>.lorawan.MACPayload mac_payload = 3;</code>
+     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      */
     public Builder setMacPayload(
         org.thethingsnetwork.api.protocol.lorawan.MACPayload.Builder builderForValue) {
@@ -873,7 +873,7 @@ public  final class Message extends
       return this;
     }
     /**
-     * <code>.lorawan.MACPayload mac_payload = 3;</code>
+     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      */
     public Builder mergeMacPayload(org.thethingsnetwork.api.protocol.lorawan.MACPayload value) {
       if (macPayloadBuilder_ == null) {
@@ -895,7 +895,7 @@ public  final class Message extends
       return this;
     }
     /**
-     * <code>.lorawan.MACPayload mac_payload = 3;</code>
+     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      */
     public Builder clearMacPayload() {
       if (macPayloadBuilder_ == null) {
@@ -914,13 +914,13 @@ public  final class Message extends
       return this;
     }
     /**
-     * <code>.lorawan.MACPayload mac_payload = 3;</code>
+     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.MACPayload.Builder getMacPayloadBuilder() {
       return getMacPayloadFieldBuilder().getBuilder();
     }
     /**
-     * <code>.lorawan.MACPayload mac_payload = 3;</code>
+     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.MACPayloadOrBuilder getMacPayloadOrBuilder() {
       if ((payloadCase_ == 3) && (macPayloadBuilder_ != null)) {
@@ -933,7 +933,7 @@ public  final class Message extends
       }
     }
     /**
-     * <code>.lorawan.MACPayload mac_payload = 3;</code>
+     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.MACPayload, org.thethingsnetwork.api.protocol.lorawan.MACPayload.Builder, org.thethingsnetwork.api.protocol.lorawan.MACPayloadOrBuilder> 

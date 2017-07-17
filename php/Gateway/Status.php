@@ -50,7 +50,7 @@ class Status extends \Google\Protobuf\Internal\Message
      */
     private $boot_time = 0;
     /**
-     * <code>repeated string ip = 11;</code>
+     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
      */
     private $ip;
     /**
@@ -94,7 +94,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * Version of Gateway FPGA
      * </pre>
      *
-     * <code>uint32 fpga = 18;</code>
+     * <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
      */
     private $fpga = 0;
     /**
@@ -102,7 +102,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * Version of Gateway DSP software
      * </pre>
      *
-     * <code>uint32 dsp = 19;</code>
+     * <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
      */
     private $dsp = 0;
     /**
@@ -110,7 +110,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * Version of gateway driver (in X.X.X format)
      * </pre>
      *
-     * <code>string hal = 20;</code>
+     * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
      */
     private $hal = '';
     /**
@@ -122,7 +122,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * Round-trip time to the server in milliseconds
      * </pre>
      *
-     * <code>uint32 rtt = 31;</code>
+     * <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
      */
     private $rtt = 0;
     /**
@@ -186,11 +186,11 @@ class Status extends \Google\Protobuf\Internal\Message
      * Number of lost PPS pulses
      * </pre>
      *
-     * <code>uint32 l_pps = 48;</code>
+     * <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
      */
     private $l_pps = 0;
     /**
-     * <code>.gateway.Status.OSMetrics os = 51;</code>
+     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
      */
     private $os = null;
     /**
@@ -308,7 +308,7 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>repeated string ip = 11;</code>
+     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
      */
     public function getIp()
     {
@@ -316,7 +316,7 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>repeated string ip = 11;</code>
+     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
      */
     public function setIp(&$var)
     {
@@ -455,7 +455,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * Version of Gateway FPGA
      * </pre>
      *
-     * <code>uint32 fpga = 18;</code>
+     * <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
      */
     public function getFpga()
     {
@@ -467,7 +467,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * Version of Gateway FPGA
      * </pre>
      *
-     * <code>uint32 fpga = 18;</code>
+     * <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
      */
     public function setFpga($var)
     {
@@ -480,7 +480,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * Version of Gateway DSP software
      * </pre>
      *
-     * <code>uint32 dsp = 19;</code>
+     * <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
      */
     public function getDsp()
     {
@@ -492,7 +492,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * Version of Gateway DSP software
      * </pre>
      *
-     * <code>uint32 dsp = 19;</code>
+     * <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
      */
     public function setDsp($var)
     {
@@ -505,7 +505,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * Version of gateway driver (in X.X.X format)
      * </pre>
      *
-     * <code>string hal = 20;</code>
+     * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
      */
     public function getHal()
     {
@@ -517,7 +517,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * Version of gateway driver (in X.X.X format)
      * </pre>
      *
-     * <code>string hal = 20;</code>
+     * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
      */
     public function setHal($var)
     {
@@ -547,7 +547,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * Round-trip time to the server in milliseconds
      * </pre>
      *
-     * <code>uint32 rtt = 31;</code>
+     * <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
      */
     public function getRtt()
     {
@@ -559,7 +559,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * Round-trip time to the server in milliseconds
      * </pre>
      *
-     * <code>uint32 rtt = 31;</code>
+     * <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
      */
     public function setRtt($var)
     {
@@ -747,7 +747,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * Number of lost PPS pulses
      * </pre>
      *
-     * <code>uint32 l_pps = 48;</code>
+     * <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
      */
     public function getLPps()
     {
@@ -759,7 +759,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * Number of lost PPS pulses
      * </pre>
      *
-     * <code>uint32 l_pps = 48;</code>
+     * <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
      */
     public function setLPps($var)
     {
@@ -768,7 +768,7 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.gateway.Status.OSMetrics os = 51;</code>
+     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
      */
     public function getOs()
     {
@@ -776,7 +776,7 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.gateway.Status.OSMetrics os = 51;</code>
+     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
      */
     public function setOs(&$var)
     {

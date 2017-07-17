@@ -21,16 +21,16 @@ public interface MessageOrBuilder extends
   org.thethingsnetwork.api.protocol.lorawan.MHDROrBuilder getMHdrOrBuilder();
 
   /**
-   * <code>bytes mic = 2;</code>
+   * <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
    */
   com.google.protobuf.ByteString getMic();
 
   /**
-   * <code>.lorawan.MACPayload mac_payload = 3;</code>
+   * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.MACPayload getMacPayload();
   /**
-   * <code>.lorawan.MACPayload mac_payload = 3;</code>
+   * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.MACPayloadOrBuilder getMacPayloadOrBuilder();
 

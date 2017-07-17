@@ -190,19 +190,19 @@ public  final class JoinAcceptPayload extends
   public static final int CF_LIST_FIELD_NUMBER = 7;
   private org.thethingsnetwork.api.protocol.lorawan.CFList cfList_;
   /**
-   * <code>.lorawan.CFList cf_list = 7;</code>
+   * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
    */
   public boolean hasCfList() {
     return cfList_ != null;
   }
   /**
-   * <code>.lorawan.CFList cf_list = 7;</code>
+   * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
    */
   public org.thethingsnetwork.api.protocol.lorawan.CFList getCfList() {
     return cfList_ == null ? org.thethingsnetwork.api.protocol.lorawan.CFList.getDefaultInstance() : cfList_;
   }
   /**
-   * <code>.lorawan.CFList cf_list = 7;</code>
+   * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
    */
   public org.thethingsnetwork.api.protocol.lorawan.CFListOrBuilder getCfListOrBuilder() {
     return getCfList();
@@ -879,13 +879,13 @@ public  final class JoinAcceptPayload extends
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.CFList, org.thethingsnetwork.api.protocol.lorawan.CFList.Builder, org.thethingsnetwork.api.protocol.lorawan.CFListOrBuilder> cfListBuilder_;
     /**
-     * <code>.lorawan.CFList cf_list = 7;</code>
+     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
      */
     public boolean hasCfList() {
       return cfListBuilder_ != null || cfList_ != null;
     }
     /**
-     * <code>.lorawan.CFList cf_list = 7;</code>
+     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.CFList getCfList() {
       if (cfListBuilder_ == null) {
@@ -895,7 +895,7 @@ public  final class JoinAcceptPayload extends
       }
     }
     /**
-     * <code>.lorawan.CFList cf_list = 7;</code>
+     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
      */
     public Builder setCfList(org.thethingsnetwork.api.protocol.lorawan.CFList value) {
       if (cfListBuilder_ == null) {
@@ -911,7 +911,7 @@ public  final class JoinAcceptPayload extends
       return this;
     }
     /**
-     * <code>.lorawan.CFList cf_list = 7;</code>
+     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
      */
     public Builder setCfList(
         org.thethingsnetwork.api.protocol.lorawan.CFList.Builder builderForValue) {
@@ -925,7 +925,7 @@ public  final class JoinAcceptPayload extends
       return this;
     }
     /**
-     * <code>.lorawan.CFList cf_list = 7;</code>
+     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
      */
     public Builder mergeCfList(org.thethingsnetwork.api.protocol.lorawan.CFList value) {
       if (cfListBuilder_ == null) {
@@ -943,7 +943,7 @@ public  final class JoinAcceptPayload extends
       return this;
     }
     /**
-     * <code>.lorawan.CFList cf_list = 7;</code>
+     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
      */
     public Builder clearCfList() {
       if (cfListBuilder_ == null) {
@@ -957,7 +957,7 @@ public  final class JoinAcceptPayload extends
       return this;
     }
     /**
-     * <code>.lorawan.CFList cf_list = 7;</code>
+     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.CFList.Builder getCfListBuilder() {
       
@@ -965,7 +965,7 @@ public  final class JoinAcceptPayload extends
       return getCfListFieldBuilder().getBuilder();
     }
     /**
-     * <code>.lorawan.CFList cf_list = 7;</code>
+     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.CFListOrBuilder getCfListOrBuilder() {
       if (cfListBuilder_ != null) {
@@ -976,7 +976,7 @@ public  final class JoinAcceptPayload extends
       }
     }
     /**
-     * <code>.lorawan.CFList cf_list = 7;</code>
+     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.CFList, org.thethingsnetwork.api.protocol.lorawan.CFList.Builder, org.thethingsnetwork.api.protocol.lorawan.CFListOrBuilder> 

@@ -44,20 +44,20 @@ public interface StatusOrBuilder extends
   long getBootTime();
 
   /**
-   * <code>repeated string ip = 11;</code>
+   * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
    */
   java.util.List<java.lang.String>
       getIpList();
   /**
-   * <code>repeated string ip = 11;</code>
+   * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
    */
   int getIpCount();
   /**
-   * <code>repeated string ip = 11;</code>
+   * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
    */
   java.lang.String getIp(int index);
   /**
-   * <code>repeated string ip = 11;</code>
+   * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
    */
   com.google.protobuf.ByteString
       getIpBytes(int index);
@@ -151,7 +151,7 @@ public interface StatusOrBuilder extends
    * Version of Gateway FPGA
    * </pre>
    *
-   * <code>uint32 fpga = 18;</code>
+   * <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
    */
   int getFpga();
 
@@ -160,7 +160,7 @@ public interface StatusOrBuilder extends
    * Version of Gateway DSP software
    * </pre>
    *
-   * <code>uint32 dsp = 19;</code>
+   * <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
    */
   int getDsp();
 
@@ -169,7 +169,7 @@ public interface StatusOrBuilder extends
    * Version of gateway driver (in X.X.X format)
    * </pre>
    *
-   * <code>string hal = 20;</code>
+   * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
    */
   java.lang.String getHal();
   /**
@@ -177,7 +177,7 @@ public interface StatusOrBuilder extends
    * Version of gateway driver (in X.X.X format)
    * </pre>
    *
-   * <code>string hal = 20;</code>
+   * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
    */
   com.google.protobuf.ByteString
       getHalBytes();
@@ -200,7 +200,7 @@ public interface StatusOrBuilder extends
    * Round-trip time to the server in milliseconds
    * </pre>
    *
-   * <code>uint32 rtt = 31;</code>
+   * <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
    */
   int getRtt();
 
@@ -272,20 +272,20 @@ public interface StatusOrBuilder extends
    * Number of lost PPS pulses
    * </pre>
    *
-   * <code>uint32 l_pps = 48;</code>
+   * <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
    */
   int getLPps();
 
   /**
-   * <code>.gateway.Status.OSMetrics os = 51;</code>
+   * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
    */
   boolean hasOs();
   /**
-   * <code>.gateway.Status.OSMetrics os = 51;</code>
+   * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
    */
   org.thethingsnetwork.api.gateway.Status.OSMetrics getOs();
   /**
-   * <code>.gateway.Status.OSMetrics os = 51;</code>
+   * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
    */
   org.thethingsnetwork.api.gateway.Status.OSMetricsOrBuilder getOsOrBuilder();
 

@@ -26,7 +26,7 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
      * Received signal power in dBm
      * </pre>
      *
-     * <code>float rssi = 3;</code>
+     * <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
      */
     private $rssi = 0.0;
     /**
@@ -34,7 +34,7 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
      * Received channel power in dBm
      * </pre>
      *
-     * <code>float channel_rssi = 5;</code>
+     * <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
      */
     private $channel_rssi = 0.0;
     /**
@@ -42,7 +42,7 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
      * Standard deviation of the RSSI
      * </pre>
      *
-     * <code>float rssi_standard_deviation = 6;</code>
+     * <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
      */
     private $rssi_standard_deviation = 0.0;
     /**
@@ -58,7 +58,7 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
      * Signal-to-noise-ratio in dB
      * </pre>
      *
-     * <code>float snr = 4;</code>
+     * <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
      */
     private $snr = 0.0;
     /**
@@ -114,7 +114,7 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
      * Received signal power in dBm
      * </pre>
      *
-     * <code>float rssi = 3;</code>
+     * <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
      */
     public function getRssi()
     {
@@ -126,7 +126,7 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
      * Received signal power in dBm
      * </pre>
      *
-     * <code>float rssi = 3;</code>
+     * <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
      */
     public function setRssi($var)
     {
@@ -139,7 +139,7 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
      * Received channel power in dBm
      * </pre>
      *
-     * <code>float channel_rssi = 5;</code>
+     * <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
      */
     public function getChannelRssi()
     {
@@ -151,7 +151,7 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
      * Received channel power in dBm
      * </pre>
      *
-     * <code>float channel_rssi = 5;</code>
+     * <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
      */
     public function setChannelRssi($var)
     {
@@ -164,7 +164,7 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
      * Standard deviation of the RSSI
      * </pre>
      *
-     * <code>float rssi_standard_deviation = 6;</code>
+     * <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
      */
     public function getRssiStandardDeviation()
     {
@@ -176,7 +176,7 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
      * Standard deviation of the RSSI
      * </pre>
      *
-     * <code>float rssi_standard_deviation = 6;</code>
+     * <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
      */
     public function setRssiStandardDeviation($var)
     {
@@ -214,7 +214,7 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
      * Signal-to-noise-ratio in dB
      * </pre>
      *
-     * <code>float snr = 4;</code>
+     * <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
      */
     public function getSnr()
     {
@@ -226,7 +226,7 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
      * Signal-to-noise-ratio in dB
      * </pre>
      *
-     * <code>float snr = 4;</code>
+     * <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
      */
     public function setSnr($var)
     {

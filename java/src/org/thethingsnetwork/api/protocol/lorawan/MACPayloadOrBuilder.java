@@ -26,7 +26,7 @@ public interface MACPayloadOrBuilder extends
   int getFPort();
 
   /**
-   * <code>bytes frm_payload = 3;</code>
+   * <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
    */
   com.google.protobuf.ByteString getFrmPayload();
 }

@@ -28,12 +28,12 @@ public interface ActivationMetadataOrBuilder extends
   com.google.protobuf.ByteString getNwkSKey();
 
   /**
-   * <code>uint32 rx1_dr_offset = 11;</code>
+   * <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
    */
   int getRx1DrOffset();
 
   /**
-   * <code>uint32 rx2_dr = 12;</code>
+   * <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
    */
   int getRx2Dr();
 
@@ -43,15 +43,15 @@ public interface ActivationMetadataOrBuilder extends
   int getRxDelay();
 
   /**
-   * <code>.lorawan.CFList cf_list = 14;</code>
+   * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
    */
   boolean hasCfList();
   /**
-   * <code>.lorawan.CFList cf_list = 14;</code>
+   * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.CFList getCfList();
   /**
-   * <code>.lorawan.CFList cf_list = 14;</code>
+   * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.CFListOrBuilder getCfListOrBuilder();
 

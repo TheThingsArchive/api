@@ -98,7 +98,7 @@ public final class LoRaWANProtocolProto {
       "n.FrequencyPlan\"\203\001\n\017TxConfiguration\022\'\n\nm" +
       "odulation\030\013 \001(\0162\023.lorawan.Modulation\022\021\n\t" +
       "data_rate\030\014 \001(\t\022\020\n\010bit_rate\030\r \001(\r\022\023\n\013cod",
-      "ing_rate\030\016 \001(\t\022\r\n\005f_cnt\030\017 \001(\r\"\330\003\n\022Activa" +
+      "ing_rate\030\016 \001(\t\022\r\n\005f_cnt\030\017 \001(\r\"\200\004\n\022Activa" +
       "tionMetadata\022P\n\007app_eui\030\001 \001(\014B?\342\336\037\006AppEU" +
       "I\332\336\0371github.com/TheThingsNetwork/ttn/cor" +
       "e/types.AppEUI\022P\n\007dev_eui\030\002 \001(\014B?\342\336\037\006Dev" +
@@ -107,60 +107,63 @@ public final class LoRaWANProtocolProto {
       "github.com/TheThingsNetwork/ttn/core/typ" +
       "es.DevAddr\022I\n\tnwk_s_key\030\004 \001(\014B6\332\336\0372githu" +
       "b.com/TheThingsNetwork/ttn/core/types.Nw" +
-      "kSKey\022\025\n\rrx1_dr_offset\030\013 \001(\r\022\016\n\006rx2_dr\030\014",
-      " \001(\r\022\020\n\010rx_delay\030\r \001(\r\022 \n\007cf_list\030\016 \001(\0132" +
-      "\017.lorawan.CFList\022.\n\016frequency_plan\030\017 \001(\016" +
-      "2\026.lorawan.FrequencyPlan\"\355\001\n\007Message\022&\n\005" +
-      "m_hdr\030\001 \001(\0132\r.lorawan.MHDRB\010\320\336\037\001\310\336\037\000\022\013\n\003" +
-      "mic\030\002 \001(\014\022*\n\013mac_payload\030\003 \001(\0132\023.lorawan" +
-      ".MACPayloadH\000\022;\n\024join_request_payload\030\004 " +
-      "\001(\0132\033.lorawan.JoinRequestPayloadH\000\0229\n\023jo" +
-      "in_accept_payload\030\005 \001(\0132\032.lorawan.JoinAc" +
-      "ceptPayloadH\000B\t\n\007Payload\"E\n\004MHDR\022\036\n\006m_ty" +
-      "pe\030\001 \001(\0162\016.lorawan.MType\022\035\n\005major\030\002 \001(\0162",
-      "\016.lorawan.Major\"Y\n\nMACPayload\022&\n\005f_hdr\030\001" +
-      " \001(\0132\r.lorawan.FHDRB\010\320\336\037\001\310\336\037\000\022\016\n\006f_port\030" +
-      "\002 \001(\005\022\023\n\013frm_payload\030\003 \001(\014\"\270\001\n\004FHDR\022L\n\010d" +
-      "ev_addr\030\001 \001(\014B:\310\336\037\000\332\336\0372github.com/TheThi" +
-      "ngsNetwork/ttn/core/types.DevAddr\022(\n\006f_c" +
-      "trl\030\002 \001(\0132\016.lorawan.FCtrlB\010\320\336\037\001\310\336\037\000\022\r\n\005f" +
-      "_cnt\030\003 \001(\r\022)\n\006f_opts\030\004 \003(\0132\023.lorawan.MAC" +
-      "CommandB\004\310\336\037\000\"I\n\005FCtrl\022\013\n\003adr\030\001 \001(\010\022\023\n\013a" +
-      "dr_ack_req\030\002 \001(\010\022\013\n\003ack\030\003 \001(\010\022\021\n\tf_pendi" +
-      "ng\030\004 \001(\010\"*\n\nMACCommand\022\013\n\003cid\030\001 \001(\r\022\017\n\007p",
-      "ayload\030\002 \001(\014\"\220\002\n\022JoinRequestPayload\022T\n\007a" +
-      "pp_eui\030\001 \001(\014BC\310\336\037\000\342\336\037\006AppEUI\332\336\0371github.c" +
-      "om/TheThingsNetwork/ttn/core/types.AppEU" +
-      "I\022T\n\007dev_eui\030\002 \001(\014BC\310\336\037\000\342\336\037\006DevEUI\332\336\0371gi" +
-      "thub.com/TheThingsNetwork/ttn/core/types" +
-      ".DevEUI\022N\n\tdev_nonce\030\003 \001(\014B;\310\336\037\000\332\336\0373gith" +
-      "ub.com/TheThingsNetwork/ttn/core/types.D" +
-      "evNonce\"\377\002\n\021JoinAcceptPayload\022\021\n\tencrypt" +
-      "ed\030\001 \001(\014\022N\n\tapp_nonce\030\002 \001(\014B;\310\336\037\000\332\336\0373git" +
-      "hub.com/TheThingsNetwork/ttn/core/types.",
-      "AppNonce\022Q\n\006net_id\030\003 \001(\014BA\310\336\037\000\342\336\037\005NetID\332" +
-      "\336\0370github.com/TheThingsNetwork/ttn/core/" +
-      "types.NetID\022L\n\010dev_addr\030\004 \001(\014B:\310\336\037\000\332\336\0372g" +
-      "ithub.com/TheThingsNetwork/ttn/core/type" +
-      "s.DevAddr\0222\n\013dl_settings\030\005 \001(\0132\023.lorawan" +
-      ".DLSettingsB\010\320\336\037\001\310\336\037\000\022\020\n\010rx_delay\030\006 \001(\r\022" +
-      " \n\007cf_list\030\007 \001(\0132\017.lorawan.CFList\"3\n\nDLS" +
-      "ettings\022\025\n\rrx1_dr_offset\030\001 \001(\r\022\016\n\006rx2_dr" +
-      "\030\002 \001(\r\"\026\n\006CFList\022\014\n\004freq\030\001 \003(\r*\037\n\nModula" +
-      "tion\022\010\n\004LORA\020\000\022\007\n\003FSK\020\001*\267\001\n\rFrequencyPla",
-      "n\022\016\n\nEU_863_870\020\000\022\016\n\nUS_902_928\020\001\022\016\n\nCN_" +
-      "779_787\020\002\022\n\n\006EU_433\020\003\022\016\n\nAU_915_928\020\004\022\016\n" +
-      "\nCN_470_510\020\005\022\n\n\006AS_923\020\006\022\016\n\nAS_920_923\020" +
-      "=\022\016\n\nAS_923_925\020>\022\016\n\nKR_920_923\020\007\022\016\n\nIN_" +
-      "865_867\020\010*\027\n\005Major\022\016\n\nLORAWAN_R1\020\000*z\n\005MT" +
-      "ype\022\020\n\014JOIN_REQUEST\020\000\022\017\n\013JOIN_ACCEPT\020\001\022\022" +
-      "\n\016UNCONFIRMED_UP\020\002\022\024\n\020UNCONFIRMED_DOWN\020\003" +
-      "\022\020\n\014CONFIRMED_UP\020\004\022\022\n\016CONFIRMED_DOWN\020\005B\234" +
-      "\001\n)org.thethingsnetwork.api.protocol.lor" +
-      "awanB\024LoRaWANProtocolProtoP\001Z0github.com",
-      "/TheThingsNetwork/api/protocol/lorawan\252\002" +
-      "$TheThingsNetwork.API.LoRaWANProtocolb\006p" +
-      "roto3"
+      "kSKey\022&\n\rrx1_dr_offset\030\013 \001(\rB\017\342\336\037\013Rx1DRO",
+      "ffset\022\031\n\006rx2_dr\030\014 \001(\rB\t\342\336\037\005Rx2DR\022\020\n\010rx_d" +
+      "elay\030\r \001(\r\022,\n\007cf_list\030\016 \001(\0132\017.lorawan.CF" +
+      "ListB\n\342\336\037\006CFList\022.\n\016frequency_plan\030\017 \001(\016" +
+      "2\026.lorawan.FrequencyPlan\"\206\002\n\007Message\022&\n\005" +
+      "m_hdr\030\001 \001(\0132\r.lorawan.MHDRB\010\320\336\037\001\310\336\037\000\022\024\n\003" +
+      "mic\030\002 \001(\014B\007\342\336\037\003MIC\022:\n\013mac_payload\030\003 \001(\0132" +
+      "\023.lorawan.MACPayloadB\016\342\336\037\nMACPayloadH\000\022;" +
+      "\n\024join_request_payload\030\004 \001(\0132\033.lorawan.J" +
+      "oinRequestPayloadH\000\0229\n\023join_accept_paylo" +
+      "ad\030\005 \001(\0132\032.lorawan.JoinAcceptPayloadH\000B\t",
+      "\n\007Payload\"E\n\004MHDR\022\036\n\006m_type\030\001 \001(\0162\016.lora" +
+      "wan.MType\022\035\n\005major\030\002 \001(\0162\016.lorawan.Major" +
+      "\"i\n\nMACPayload\022&\n\005f_hdr\030\001 \001(\0132\r.lorawan." +
+      "FHDRB\010\320\336\037\001\310\336\037\000\022\016\n\006f_port\030\002 \001(\005\022#\n\013frm_pa" +
+      "yload\030\003 \001(\014B\016\342\336\037\nFRMPayload\"\270\001\n\004FHDR\022L\n\010" +
+      "dev_addr\030\001 \001(\014B:\310\336\037\000\332\336\0372github.com/TheTh" +
+      "ingsNetwork/ttn/core/types.DevAddr\022(\n\006f_" +
+      "ctrl\030\002 \001(\0132\016.lorawan.FCtrlB\010\320\336\037\001\310\336\037\000\022\r\n\005" +
+      "f_cnt\030\003 \001(\r\022)\n\006f_opts\030\004 \003(\0132\023.lorawan.MA" +
+      "CCommandB\004\310\336\037\000\"a\n\005FCtrl\022\024\n\003adr\030\001 \001(\010B\007\342\336",
+      "\037\003ADR\022\"\n\013adr_ack_req\030\002 \001(\010B\r\342\336\037\tADRAckRe" +
+      "q\022\013\n\003ack\030\003 \001(\010\022\021\n\tf_pending\030\004 \001(\010\"3\n\nMAC" +
+      "Command\022\024\n\003cid\030\001 \001(\rB\007\342\336\037\003CID\022\017\n\007payload" +
+      "\030\002 \001(\014\"\220\002\n\022JoinRequestPayload\022T\n\007app_eui" +
+      "\030\001 \001(\014BC\310\336\037\000\342\336\037\006AppEUI\332\336\0371github.com/The" +
+      "ThingsNetwork/ttn/core/types.AppEUI\022T\n\007d" +
+      "ev_eui\030\002 \001(\014BC\310\336\037\000\342\336\037\006DevEUI\332\336\0371github.c" +
+      "om/TheThingsNetwork/ttn/core/types.DevEU" +
+      "I\022N\n\tdev_nonce\030\003 \001(\014B;\310\336\037\000\332\336\0373github.com" +
+      "/TheThingsNetwork/ttn/core/types.DevNonc",
+      "e\"\213\003\n\021JoinAcceptPayload\022\021\n\tencrypted\030\001 \001" +
+      "(\014\022N\n\tapp_nonce\030\002 \001(\014B;\310\336\037\000\332\336\0373github.co" +
+      "m/TheThingsNetwork/ttn/core/types.AppNon" +
+      "ce\022Q\n\006net_id\030\003 \001(\014BA\310\336\037\000\342\336\037\005NetID\332\336\0370git" +
+      "hub.com/TheThingsNetwork/ttn/core/types." +
+      "NetID\022L\n\010dev_addr\030\004 \001(\014B:\310\336\037\000\332\336\0372github." +
+      "com/TheThingsNetwork/ttn/core/types.DevA" +
+      "ddr\0222\n\013dl_settings\030\005 \001(\0132\023.lorawan.DLSet" +
+      "tingsB\010\320\336\037\001\310\336\037\000\022\020\n\010rx_delay\030\006 \001(\r\022,\n\007cf_" +
+      "list\030\007 \001(\0132\017.lorawan.CFListB\n\342\336\037\006CFList\"",
+      "O\n\nDLSettings\022&\n\rrx1_dr_offset\030\001 \001(\rB\017\342\336" +
+      "\037\013Rx1DROffset\022\031\n\006rx2_dr\030\002 \001(\rB\t\342\336\037\005Rx2DR" +
+      "\"\026\n\006CFList\022\014\n\004freq\030\001 \003(\r*\037\n\nModulation\022\010" +
+      "\n\004LORA\020\000\022\007\n\003FSK\020\001*\267\001\n\rFrequencyPlan\022\016\n\nE" +
+      "U_863_870\020\000\022\016\n\nUS_902_928\020\001\022\016\n\nCN_779_78" +
+      "7\020\002\022\n\n\006EU_433\020\003\022\016\n\nAU_915_928\020\004\022\016\n\nCN_47" +
+      "0_510\020\005\022\n\n\006AS_923\020\006\022\016\n\nAS_920_923\020=\022\016\n\nA" +
+      "S_923_925\020>\022\016\n\nKR_920_923\020\007\022\016\n\nIN_865_86" +
+      "7\020\010*\027\n\005Major\022\016\n\nLORAWAN_R1\020\000*z\n\005MType\022\020\n" +
+      "\014JOIN_REQUEST\020\000\022\017\n\013JOIN_ACCEPT\020\001\022\022\n\016UNCO",
+      "NFIRMED_UP\020\002\022\024\n\020UNCONFIRMED_DOWN\020\003\022\020\n\014CO" +
+      "NFIRMED_UP\020\004\022\022\n\016CONFIRMED_DOWN\020\005B\234\001\n)org" +
+      ".thethingsnetwork.api.protocol.lorawanB\024" +
+      "LoRaWANProtocolProtoP\001Z0github.com/TheTh" +
+      "ingsNetwork/api/protocol/lorawan\252\002$TheTh" +
+      "ingsNetwork.API.LoRaWANProtocolb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

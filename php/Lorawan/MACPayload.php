@@ -22,7 +22,7 @@ class MACPayload extends \Google\Protobuf\Internal\Message
      */
     private $f_port = 0;
     /**
-     * <code>bytes frm_payload = 3;</code>
+     * <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
      */
     private $frm_payload = '';
 
@@ -66,7 +66,7 @@ class MACPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes frm_payload = 3;</code>
+     * <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
      */
     public function getFrmPayload()
     {
@@ -74,7 +74,7 @@ class MACPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes frm_payload = 3;</code>
+     * <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
      */
     public function setFrmPayload($var)
     {

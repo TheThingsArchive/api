@@ -80,7 +80,7 @@ public  final class DLSettings extends
   public static final int RX1_DR_OFFSET_FIELD_NUMBER = 1;
   private int rx1DrOffset_;
   /**
-   * <code>uint32 rx1_dr_offset = 1;</code>
+   * <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
    */
   public int getRx1DrOffset() {
     return rx1DrOffset_;
@@ -89,7 +89,7 @@ public  final class DLSettings extends
   public static final int RX2_DR_FIELD_NUMBER = 2;
   private int rx2Dr_;
   /**
-   * <code>uint32 rx2_dr = 2;</code>
+   * <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
    */
   public int getRx2Dr() {
     return rx2Dr_;
@@ -394,13 +394,13 @@ public  final class DLSettings extends
 
     private int rx1DrOffset_ ;
     /**
-     * <code>uint32 rx1_dr_offset = 1;</code>
+     * <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      */
     public int getRx1DrOffset() {
       return rx1DrOffset_;
     }
     /**
-     * <code>uint32 rx1_dr_offset = 1;</code>
+     * <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      */
     public Builder setRx1DrOffset(int value) {
       
@@ -409,7 +409,7 @@ public  final class DLSettings extends
       return this;
     }
     /**
-     * <code>uint32 rx1_dr_offset = 1;</code>
+     * <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      */
     public Builder clearRx1DrOffset() {
       
@@ -420,13 +420,13 @@ public  final class DLSettings extends
 
     private int rx2Dr_ ;
     /**
-     * <code>uint32 rx2_dr = 2;</code>
+     * <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
      */
     public int getRx2Dr() {
       return rx2Dr_;
     }
     /**
-     * <code>uint32 rx2_dr = 2;</code>
+     * <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
      */
     public Builder setRx2Dr(int value) {
       
@@ -435,7 +435,7 @@ public  final class DLSettings extends
       return this;
     }
     /**
-     * <code>uint32 rx2_dr = 2;</code>
+     * <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
      */
     public Builder clearRx2Dr() {
       

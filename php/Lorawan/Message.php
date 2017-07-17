@@ -18,7 +18,7 @@ class Message extends \Google\Protobuf\Internal\Message
      */
     private $m_hdr = null;
     /**
-     * <code>bytes mic = 2;</code>
+     * <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
      */
     private $mic = '';
     protected $Payload;
@@ -46,7 +46,7 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes mic = 2;</code>
+     * <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
      */
     public function getMic()
     {
@@ -54,7 +54,7 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes mic = 2;</code>
+     * <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
      */
     public function setMic($var)
     {
@@ -63,7 +63,7 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.MACPayload mac_payload = 3;</code>
+     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      */
     public function getMacPayload()
     {
@@ -71,7 +71,7 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.MACPayload mac_payload = 3;</code>
+     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      */
     public function setMacPayload(&$var)
     {

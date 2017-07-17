@@ -14,11 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class FCtrl extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>bool adr = 1;</code>
+     * <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
      */
     private $adr = false;
     /**
-     * <code>bool adr_ack_req = 2;</code>
+     * <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
      */
     private $adr_ack_req = false;
     /**
@@ -36,7 +36,7 @@ class FCtrl extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bool adr = 1;</code>
+     * <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
      */
     public function getAdr()
     {
@@ -44,7 +44,7 @@ class FCtrl extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bool adr = 1;</code>
+     * <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
      */
     public function setAdr($var)
     {
@@ -53,7 +53,7 @@ class FCtrl extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bool adr_ack_req = 2;</code>
+     * <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
      */
     public function getAdrAckReq()
     {
@@ -61,7 +61,7 @@ class FCtrl extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bool adr_ack_req = 2;</code>
+     * <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
      */
     public function setAdrAckReq($var)
     {

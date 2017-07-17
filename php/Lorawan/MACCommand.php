@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class MACCommand extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>uint32 cid = 1;</code>
+     * <code>uint32 cid = 1 [(.gogoproto.customname) = "CID"];</code>
      */
     private $cid = 0;
     /**
@@ -28,7 +28,7 @@ class MACCommand extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 cid = 1;</code>
+     * <code>uint32 cid = 1 [(.gogoproto.customname) = "CID"];</code>
      */
     public function getCid()
     {
@@ -36,7 +36,7 @@ class MACCommand extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 cid = 1;</code>
+     * <code>uint32 cid = 1 [(.gogoproto.customname) = "CID"];</code>
      */
     public function setCid($var)
     {

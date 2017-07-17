@@ -30,7 +30,7 @@ class Status_OSMetrics extends \Google\Protobuf\Internal\Message
      */
     private $load_15 = 0.0;
     /**
-     * <code>float cpu_percentage = 11;</code>
+     * <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
      */
     private $cpu_percentage = 0.0;
     /**
@@ -99,7 +99,7 @@ class Status_OSMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float cpu_percentage = 11;</code>
+     * <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
      */
     public function getCpuPercentage()
     {
@@ -107,7 +107,7 @@ class Status_OSMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float cpu_percentage = 11;</code>
+     * <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
      */
     public function setCpuPercentage($var)
     {

@@ -101,7 +101,7 @@ public interface RxMetadataOrBuilder extends
    * Received signal strength in dBm
    * </pre>
    *
-   * <code>float rssi = 32;</code>
+   * <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
    */
   float getRssi();
 
@@ -110,7 +110,7 @@ public interface RxMetadataOrBuilder extends
    * Signal-to-noise-ratio in dB
    * </pre>
    *
-   * <code>float snr = 33;</code>
+   * <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
    */
   float getSnr();
 

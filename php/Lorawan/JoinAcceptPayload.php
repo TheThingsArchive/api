@@ -38,7 +38,7 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
      */
     private $rx_delay = 0;
     /**
-     * <code>.lorawan.CFList cf_list = 7;</code>
+     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
      */
     private $cf_list = null;
 
@@ -150,7 +150,7 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.CFList cf_list = 7;</code>
+     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
      */
     public function getCfList()
     {
@@ -158,7 +158,7 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.CFList cf_list = 7;</code>
+     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
      */
     public function setCfList(&$var)
     {

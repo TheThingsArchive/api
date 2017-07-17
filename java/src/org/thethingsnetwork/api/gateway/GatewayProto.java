@@ -62,41 +62,46 @@ public final class GatewayProto {
       "teway.LocationMetadata.LocationSource\"T\n" +
       "\016LocationSource\022\013\n\007UNKNOWN\020\000\022\007\n\003GPS\020\001\022\n\n" +
       "\006CONFIG\020\002\022\014\n\010REGISTRY\020\003\022\022\n\016IP_GEOLOCATIO" +
-      "N\020\004\"\340\003\n\nRxMetadata\022!\n\ngateway_id\030\001 \001(\tB\r",
+      "N\020\004\"\262\004\n\nRxMetadata\022!\n\ngateway_id\030\001 \001(\tB\r",
       "\342\336\037\tGatewayID\022\027\n\017gateway_trusted\030\002 \001(\010\022\021" +
       "\n\ttimestamp\030\013 \001(\r\022\014\n\004time\030\014 \001(\003\022\026\n\016encry" +
       "pted_time\030\r \001(\014\022\020\n\010rf_chain\030\025 \001(\r\022\017\n\007cha" +
       "nnel\030\026 \001(\r\022-\n\010antennas\030\036 \003(\0132\033.gateway.R" +
-      "xMetadata.Antenna\022\021\n\tfrequency\030\037 \001(\004\022\014\n\004" +
-      "rssi\030  \001(\002\022\013\n\003snr\030! \001(\002\022+\n\010location\030) \001(" +
-      "\0132\031.gateway.LocationMetadata\032\257\001\n\007Antenna" +
-      "\022\017\n\007antenna\030\001 \001(\r\022\017\n\007channel\030\002 \001(\r\022\014\n\004rs" +
-      "si\030\003 \001(\002\022\024\n\014channel_rssi\030\005 \001(\002\022\037\n\027rssi_s" +
-      "tandard_deviation\030\006 \001(\002\022\030\n\020frequency_off",
-      "set\030\007 \001(\003\022\013\n\003snr\030\004 \001(\002\022\026\n\016encrypted_time" +
-      "\030\n \001(\014\"\225\001\n\017TxConfiguration\022\021\n\ttimestamp\030" +
-      "\013 \001(\r\022\020\n\010rf_chain\030\025 \001(\r\022\021\n\tfrequency\030\026 \001" +
-      "(\004\022\r\n\005power\030\027 \001(\005\022\036\n\026polarization_invers" +
-      "ion\030\037 \001(\010\022\033\n\023frequency_deviation\030  \001(\r\"\361" +
-      "\004\n\006Status\022\021\n\ttimestamp\030\001 \001(\r\022\014\n\004time\030\002 \001" +
-      "(\003\022\027\n\017gateway_trusted\030\003 \001(\010\022\021\n\tboot_time" +
-      "\030\004 \001(\003\022\n\n\002ip\030\013 \003(\t\022\020\n\010platform\030\014 \001(\t\022\025\n\r" +
-      "contact_email\030\r \001(\t\022\023\n\013description\030\016 \001(\t" +
-      "\022\026\n\016frequency_plan\030\017 \001(\t\022\016\n\006bridge\030\020 \001(\t",
-      "\022\016\n\006router\030\021 \001(\t\022\014\n\004fpga\030\022 \001(\r\022\013\n\003dsp\030\023 " +
-      "\001(\r\022\013\n\003hal\030\024 \001(\t\022+\n\010location\030\025 \001(\0132\031.gat" +
-      "eway.LocationMetadata\022\013\n\003rtt\030\037 \001(\r\022\r\n\005rx" +
-      "_in\030) \001(\r\022\r\n\005rx_ok\030* \001(\r\022\r\n\005tx_in\030+ \001(\r\022" +
-      "\r\n\005tx_ok\030, \001(\r\022\r\n\005lm_ok\030- \001(\r\022\r\n\005lm_st\030." +
-      " \001(\r\022\r\n\005lm_nw\030/ \001(\r\022\r\n\005l_pps\0300 \001(\r\022%\n\002os" +
-      "\0303 \001(\0132\031.gateway.Status.OSMetrics\022\020\n\010mes" +
-      "sages\0304 \003(\t\032\204\001\n\tOSMetrics\022\016\n\006load_1\030\001 \001(" +
-      "\002\022\016\n\006load_5\030\002 \001(\002\022\017\n\007load_15\030\003 \001(\002\022\026\n\016cp" +
-      "u_percentage\030\013 \001(\002\022\031\n\021memory_percentage\030",
-      "\025 \001(\002\022\023\n\013temperature\030\037 \001(\002Bz\n org.thethi" +
-      "ngsnetwork.api.gatewayB\014GatewayProtoP\001Z\'" +
-      "github.com/TheThingsNetwork/api/gateway\252" +
-      "\002\034TheThingsNetwork.API.Gatewayb\006proto3"
+      "xMetadata.Antenna\022\021\n\tfrequency\030\037 \001(\004\022\026\n\004" +
+      "rssi\030  \001(\002B\010\342\336\037\004RSSI\022\024\n\003snr\030! \001(\002B\007\342\336\037\003S" +
+      "NR\022+\n\010location\030) \001(\0132\031.gateway.LocationM" +
+      "etadata\032\356\001\n\007Antenna\022\017\n\007antenna\030\001 \001(\r\022\017\n\007" +
+      "channel\030\002 \001(\r\022\026\n\004rssi\030\003 \001(\002B\010\342\336\037\004RSSI\022%\n" +
+      "\014channel_rssi\030\005 \001(\002B\017\342\336\037\013ChannelRSSI\022:\n\027",
+      "rssi_standard_deviation\030\006 \001(\002B\031\342\336\037\025RSSIS" +
+      "tandardDeviation\022\030\n\020frequency_offset\030\007 \001" +
+      "(\003\022\024\n\003snr\030\004 \001(\002B\007\342\336\037\003SNR\022\026\n\016encrypted_ti" +
+      "me\030\n \001(\014\"\225\001\n\017TxConfiguration\022\021\n\ttimestam" +
+      "p\030\013 \001(\r\022\020\n\010rf_chain\030\025 \001(\r\022\021\n\tfrequency\030\026" +
+      " \001(\004\022\r\n\005power\030\027 \001(\005\022\036\n\026polarization_inve" +
+      "rsion\030\037 \001(\010\022\033\n\023frequency_deviation\030  \001(\r" +
+      "\"\303\005\n\006Status\022\021\n\ttimestamp\030\001 \001(\r\022\014\n\004time\030\002" +
+      " \001(\003\022\027\n\017gateway_trusted\030\003 \001(\010\022\021\n\tboot_ti" +
+      "me\030\004 \001(\003\022\022\n\002ip\030\013 \003(\tB\006\342\336\037\002IP\022\020\n\010platform",
+      "\030\014 \001(\t\022\025\n\rcontact_email\030\r \001(\t\022\023\n\013descrip" +
+      "tion\030\016 \001(\t\022\026\n\016frequency_plan\030\017 \001(\t\022\016\n\006br" +
+      "idge\030\020 \001(\t\022\016\n\006router\030\021 \001(\t\022\026\n\004fpga\030\022 \001(\r" +
+      "B\010\342\336\037\004FPGA\022\024\n\003dsp\030\023 \001(\rB\007\342\336\037\003DSP\022\024\n\003hal\030" +
+      "\024 \001(\tB\007\342\336\037\003HAL\022+\n\010location\030\025 \001(\0132\031.gatew" +
+      "ay.LocationMetadata\022\024\n\003rtt\030\037 \001(\rB\007\342\336\037\003RT" +
+      "T\022\r\n\005rx_in\030) \001(\r\022\r\n\005rx_ok\030* \001(\r\022\r\n\005tx_in" +
+      "\030+ \001(\r\022\r\n\005tx_ok\030, \001(\r\022\r\n\005lm_ok\030- \001(\r\022\r\n\005" +
+      "lm_st\030. \001(\r\022\r\n\005lm_nw\030/ \001(\r\022\027\n\005l_pps\0300 \001(" +
+      "\rB\010\342\336\037\004LPPS\022-\n\002os\0303 \001(\0132\031.gateway.Status",
+      ".OSMetricsB\006\342\336\037\002OS\022\020\n\010messages\0304 \003(\t\032\227\001\n" +
+      "\tOSMetrics\022\016\n\006load_1\030\001 \001(\002\022\016\n\006load_5\030\002 \001" +
+      "(\002\022\017\n\007load_15\030\003 \001(\002\022)\n\016cpu_percentage\030\013 " +
+      "\001(\002B\021\342\336\037\rCPUPercentage\022\031\n\021memory_percent" +
+      "age\030\025 \001(\002\022\023\n\013temperature\030\037 \001(\002Bz\n org.th" +
+      "ethingsnetwork.api.gatewayB\014GatewayProto" +
+      "P\001Z\'github.com/TheThingsNetwork/api/gate" +
+      "way\252\002\034TheThingsNetwork.API.Gatewayb\006prot" +
+      "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

@@ -46,15 +46,15 @@ public interface JoinAcceptPayloadOrBuilder extends
   int getRxDelay();
 
   /**
-   * <code>.lorawan.CFList cf_list = 7;</code>
+   * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
    */
   boolean hasCfList();
   /**
-   * <code>.lorawan.CFList cf_list = 7;</code>
+   * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.CFList getCfList();
   /**
-   * <code>.lorawan.CFList cf_list = 7;</code>
+   * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.CFListOrBuilder getCfListOrBuilder();
 }

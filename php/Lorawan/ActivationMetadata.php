@@ -30,11 +30,11 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
      */
     private $nwk_s_key = '';
     /**
-     * <code>uint32 rx1_dr_offset = 11;</code>
+     * <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      */
     private $rx1_dr_offset = 0;
     /**
-     * <code>uint32 rx2_dr = 12;</code>
+     * <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
      */
     private $rx2_dr = 0;
     /**
@@ -42,7 +42,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
      */
     private $rx_delay = 0;
     /**
-     * <code>.lorawan.CFList cf_list = 14;</code>
+     * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
      */
     private $cf_list = null;
     /**
@@ -124,7 +124,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 rx1_dr_offset = 11;</code>
+     * <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      */
     public function getRx1DrOffset()
     {
@@ -132,7 +132,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 rx1_dr_offset = 11;</code>
+     * <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      */
     public function setRx1DrOffset($var)
     {
@@ -141,7 +141,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 rx2_dr = 12;</code>
+     * <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
      */
     public function getRx2Dr()
     {
@@ -149,7 +149,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 rx2_dr = 12;</code>
+     * <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
      */
     public function setRx2Dr($var)
     {
@@ -175,7 +175,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.CFList cf_list = 14;</code>
+     * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
      */
     public function getCfList()
     {
@@ -183,7 +183,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.CFList cf_list = 14;</code>
+     * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
      */
     public function setCfList(&$var)
     {

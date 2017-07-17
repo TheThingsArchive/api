@@ -280,7 +280,7 @@ public  final class Status extends
     float getLoad15();
 
     /**
-     * <code>float cpu_percentage = 11;</code>
+     * <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
      */
     float getCpuPercentage();
 
@@ -426,7 +426,7 @@ public  final class Status extends
     public static final int CPU_PERCENTAGE_FIELD_NUMBER = 11;
     private float cpuPercentage_;
     /**
-     * <code>float cpu_percentage = 11;</code>
+     * <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
      */
     public float getCpuPercentage() {
       return cpuPercentage_;
@@ -917,13 +917,13 @@ public  final class Status extends
 
       private float cpuPercentage_ ;
       /**
-       * <code>float cpu_percentage = 11;</code>
+       * <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
        */
       public float getCpuPercentage() {
         return cpuPercentage_;
       }
       /**
-       * <code>float cpu_percentage = 11;</code>
+       * <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
        */
       public Builder setCpuPercentage(float value) {
         
@@ -932,7 +932,7 @@ public  final class Status extends
         return this;
       }
       /**
-       * <code>float cpu_percentage = 11;</code>
+       * <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
        */
       public Builder clearCpuPercentage() {
         
@@ -1097,26 +1097,26 @@ public  final class Status extends
   public static final int IP_FIELD_NUMBER = 11;
   private com.google.protobuf.LazyStringList ip_;
   /**
-   * <code>repeated string ip = 11;</code>
+   * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
    */
   public com.google.protobuf.ProtocolStringList
       getIpList() {
     return ip_;
   }
   /**
-   * <code>repeated string ip = 11;</code>
+   * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
    */
   public int getIpCount() {
     return ip_.size();
   }
   /**
-   * <code>repeated string ip = 11;</code>
+   * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
    */
   public java.lang.String getIp(int index) {
     return ip_.get(index);
   }
   /**
-   * <code>repeated string ip = 11;</code>
+   * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
    */
   public com.google.protobuf.ByteString
       getIpBytes(int index) {
@@ -1358,7 +1358,7 @@ public  final class Status extends
    * Version of Gateway FPGA
    * </pre>
    *
-   * <code>uint32 fpga = 18;</code>
+   * <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
    */
   public int getFpga() {
     return fpga_;
@@ -1371,7 +1371,7 @@ public  final class Status extends
    * Version of Gateway DSP software
    * </pre>
    *
-   * <code>uint32 dsp = 19;</code>
+   * <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
    */
   public int getDsp() {
     return dsp_;
@@ -1384,7 +1384,7 @@ public  final class Status extends
    * Version of gateway driver (in X.X.X format)
    * </pre>
    *
-   * <code>string hal = 20;</code>
+   * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
    */
   public java.lang.String getHal() {
     java.lang.Object ref = hal_;
@@ -1403,7 +1403,7 @@ public  final class Status extends
    * Version of gateway driver (in X.X.X format)
    * </pre>
    *
-   * <code>string hal = 20;</code>
+   * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
    */
   public com.google.protobuf.ByteString
       getHalBytes() {
@@ -1447,7 +1447,7 @@ public  final class Status extends
    * Round-trip time to the server in milliseconds
    * </pre>
    *
-   * <code>uint32 rtt = 31;</code>
+   * <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
    */
   public int getRtt() {
     return rtt_;
@@ -1551,7 +1551,7 @@ public  final class Status extends
    * Number of lost PPS pulses
    * </pre>
    *
-   * <code>uint32 l_pps = 48;</code>
+   * <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
    */
   public int getLPps() {
     return lPps_;
@@ -1560,19 +1560,19 @@ public  final class Status extends
   public static final int OS_FIELD_NUMBER = 51;
   private org.thethingsnetwork.api.gateway.Status.OSMetrics os_;
   /**
-   * <code>.gateway.Status.OSMetrics os = 51;</code>
+   * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
    */
   public boolean hasOs() {
     return os_ != null;
   }
   /**
-   * <code>.gateway.Status.OSMetrics os = 51;</code>
+   * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
    */
   public org.thethingsnetwork.api.gateway.Status.OSMetrics getOs() {
     return os_ == null ? org.thethingsnetwork.api.gateway.Status.OSMetrics.getDefaultInstance() : os_;
   }
   /**
-   * <code>.gateway.Status.OSMetrics os = 51;</code>
+   * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
    */
   public org.thethingsnetwork.api.gateway.Status.OSMetricsOrBuilder getOsOrBuilder() {
     return getOs();
@@ -2559,33 +2559,33 @@ public  final class Status extends
        }
     }
     /**
-     * <code>repeated string ip = 11;</code>
+     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
      */
     public com.google.protobuf.ProtocolStringList
         getIpList() {
       return ip_.getUnmodifiableView();
     }
     /**
-     * <code>repeated string ip = 11;</code>
+     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
      */
     public int getIpCount() {
       return ip_.size();
     }
     /**
-     * <code>repeated string ip = 11;</code>
+     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
      */
     public java.lang.String getIp(int index) {
       return ip_.get(index);
     }
     /**
-     * <code>repeated string ip = 11;</code>
+     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
      */
     public com.google.protobuf.ByteString
         getIpBytes(int index) {
       return ip_.getByteString(index);
     }
     /**
-     * <code>repeated string ip = 11;</code>
+     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
      */
     public Builder setIp(
         int index, java.lang.String value) {
@@ -2598,7 +2598,7 @@ public  final class Status extends
       return this;
     }
     /**
-     * <code>repeated string ip = 11;</code>
+     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
      */
     public Builder addIp(
         java.lang.String value) {
@@ -2611,7 +2611,7 @@ public  final class Status extends
       return this;
     }
     /**
-     * <code>repeated string ip = 11;</code>
+     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
      */
     public Builder addAllIp(
         java.lang.Iterable<java.lang.String> values) {
@@ -2622,7 +2622,7 @@ public  final class Status extends
       return this;
     }
     /**
-     * <code>repeated string ip = 11;</code>
+     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
      */
     public Builder clearIp() {
       ip_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -2631,7 +2631,7 @@ public  final class Status extends
       return this;
     }
     /**
-     * <code>repeated string ip = 11;</code>
+     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
      */
     public Builder addIpBytes(
         com.google.protobuf.ByteString value) {
@@ -3125,7 +3125,7 @@ public  final class Status extends
      * Version of Gateway FPGA
      * </pre>
      *
-     * <code>uint32 fpga = 18;</code>
+     * <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
      */
     public int getFpga() {
       return fpga_;
@@ -3135,7 +3135,7 @@ public  final class Status extends
      * Version of Gateway FPGA
      * </pre>
      *
-     * <code>uint32 fpga = 18;</code>
+     * <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
      */
     public Builder setFpga(int value) {
       
@@ -3148,7 +3148,7 @@ public  final class Status extends
      * Version of Gateway FPGA
      * </pre>
      *
-     * <code>uint32 fpga = 18;</code>
+     * <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
      */
     public Builder clearFpga() {
       
@@ -3163,7 +3163,7 @@ public  final class Status extends
      * Version of Gateway DSP software
      * </pre>
      *
-     * <code>uint32 dsp = 19;</code>
+     * <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
      */
     public int getDsp() {
       return dsp_;
@@ -3173,7 +3173,7 @@ public  final class Status extends
      * Version of Gateway DSP software
      * </pre>
      *
-     * <code>uint32 dsp = 19;</code>
+     * <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
      */
     public Builder setDsp(int value) {
       
@@ -3186,7 +3186,7 @@ public  final class Status extends
      * Version of Gateway DSP software
      * </pre>
      *
-     * <code>uint32 dsp = 19;</code>
+     * <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
      */
     public Builder clearDsp() {
       
@@ -3201,7 +3201,7 @@ public  final class Status extends
      * Version of gateway driver (in X.X.X format)
      * </pre>
      *
-     * <code>string hal = 20;</code>
+     * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
      */
     public java.lang.String getHal() {
       java.lang.Object ref = hal_;
@@ -3220,7 +3220,7 @@ public  final class Status extends
      * Version of gateway driver (in X.X.X format)
      * </pre>
      *
-     * <code>string hal = 20;</code>
+     * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
      */
     public com.google.protobuf.ByteString
         getHalBytes() {
@@ -3240,7 +3240,7 @@ public  final class Status extends
      * Version of gateway driver (in X.X.X format)
      * </pre>
      *
-     * <code>string hal = 20;</code>
+     * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
      */
     public Builder setHal(
         java.lang.String value) {
@@ -3257,7 +3257,7 @@ public  final class Status extends
      * Version of gateway driver (in X.X.X format)
      * </pre>
      *
-     * <code>string hal = 20;</code>
+     * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
      */
     public Builder clearHal() {
       
@@ -3270,7 +3270,7 @@ public  final class Status extends
      * Version of gateway driver (in X.X.X format)
      * </pre>
      *
-     * <code>string hal = 20;</code>
+     * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
      */
     public Builder setHalBytes(
         com.google.protobuf.ByteString value) {
@@ -3407,7 +3407,7 @@ public  final class Status extends
      * Round-trip time to the server in milliseconds
      * </pre>
      *
-     * <code>uint32 rtt = 31;</code>
+     * <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
      */
     public int getRtt() {
       return rtt_;
@@ -3417,7 +3417,7 @@ public  final class Status extends
      * Round-trip time to the server in milliseconds
      * </pre>
      *
-     * <code>uint32 rtt = 31;</code>
+     * <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
      */
     public Builder setRtt(int value) {
       
@@ -3430,7 +3430,7 @@ public  final class Status extends
      * Round-trip time to the server in milliseconds
      * </pre>
      *
-     * <code>uint32 rtt = 31;</code>
+     * <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
      */
     public Builder clearRtt() {
       
@@ -3711,7 +3711,7 @@ public  final class Status extends
      * Number of lost PPS pulses
      * </pre>
      *
-     * <code>uint32 l_pps = 48;</code>
+     * <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
      */
     public int getLPps() {
       return lPps_;
@@ -3721,7 +3721,7 @@ public  final class Status extends
      * Number of lost PPS pulses
      * </pre>
      *
-     * <code>uint32 l_pps = 48;</code>
+     * <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
      */
     public Builder setLPps(int value) {
       
@@ -3734,7 +3734,7 @@ public  final class Status extends
      * Number of lost PPS pulses
      * </pre>
      *
-     * <code>uint32 l_pps = 48;</code>
+     * <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
      */
     public Builder clearLPps() {
       
@@ -3747,13 +3747,13 @@ public  final class Status extends
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.gateway.Status.OSMetrics, org.thethingsnetwork.api.gateway.Status.OSMetrics.Builder, org.thethingsnetwork.api.gateway.Status.OSMetricsOrBuilder> osBuilder_;
     /**
-     * <code>.gateway.Status.OSMetrics os = 51;</code>
+     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
      */
     public boolean hasOs() {
       return osBuilder_ != null || os_ != null;
     }
     /**
-     * <code>.gateway.Status.OSMetrics os = 51;</code>
+     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
      */
     public org.thethingsnetwork.api.gateway.Status.OSMetrics getOs() {
       if (osBuilder_ == null) {
@@ -3763,7 +3763,7 @@ public  final class Status extends
       }
     }
     /**
-     * <code>.gateway.Status.OSMetrics os = 51;</code>
+     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
      */
     public Builder setOs(org.thethingsnetwork.api.gateway.Status.OSMetrics value) {
       if (osBuilder_ == null) {
@@ -3779,7 +3779,7 @@ public  final class Status extends
       return this;
     }
     /**
-     * <code>.gateway.Status.OSMetrics os = 51;</code>
+     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
      */
     public Builder setOs(
         org.thethingsnetwork.api.gateway.Status.OSMetrics.Builder builderForValue) {
@@ -3793,7 +3793,7 @@ public  final class Status extends
       return this;
     }
     /**
-     * <code>.gateway.Status.OSMetrics os = 51;</code>
+     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
      */
     public Builder mergeOs(org.thethingsnetwork.api.gateway.Status.OSMetrics value) {
       if (osBuilder_ == null) {
@@ -3811,7 +3811,7 @@ public  final class Status extends
       return this;
     }
     /**
-     * <code>.gateway.Status.OSMetrics os = 51;</code>
+     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
      */
     public Builder clearOs() {
       if (osBuilder_ == null) {
@@ -3825,7 +3825,7 @@ public  final class Status extends
       return this;
     }
     /**
-     * <code>.gateway.Status.OSMetrics os = 51;</code>
+     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
      */
     public org.thethingsnetwork.api.gateway.Status.OSMetrics.Builder getOsBuilder() {
       
@@ -3833,7 +3833,7 @@ public  final class Status extends
       return getOsFieldBuilder().getBuilder();
     }
     /**
-     * <code>.gateway.Status.OSMetrics os = 51;</code>
+     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
      */
     public org.thethingsnetwork.api.gateway.Status.OSMetricsOrBuilder getOsOrBuilder() {
       if (osBuilder_ != null) {
@@ -3844,7 +3844,7 @@ public  final class Status extends
       }
     }
     /**
-     * <code>.gateway.Status.OSMetrics os = 51;</code>
+     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.gateway.Status.OSMetrics, org.thethingsnetwork.api.gateway.Status.OSMetrics.Builder, org.thethingsnetwork.api.gateway.Status.OSMetricsOrBuilder> 

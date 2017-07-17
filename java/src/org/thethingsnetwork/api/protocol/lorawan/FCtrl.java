@@ -92,7 +92,7 @@ public  final class FCtrl extends
   public static final int ADR_FIELD_NUMBER = 1;
   private boolean adr_;
   /**
-   * <code>bool adr = 1;</code>
+   * <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
    */
   public boolean getAdr() {
     return adr_;
@@ -101,7 +101,7 @@ public  final class FCtrl extends
   public static final int ADR_ACK_REQ_FIELD_NUMBER = 2;
   private boolean adrAckReq_;
   /**
-   * <code>bool adr_ack_req = 2;</code>
+   * <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
    */
   public boolean getAdrAckReq() {
     return adrAckReq_;
@@ -462,13 +462,13 @@ public  final class FCtrl extends
 
     private boolean adr_ ;
     /**
-     * <code>bool adr = 1;</code>
+     * <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
      */
     public boolean getAdr() {
       return adr_;
     }
     /**
-     * <code>bool adr = 1;</code>
+     * <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
      */
     public Builder setAdr(boolean value) {
       
@@ -477,7 +477,7 @@ public  final class FCtrl extends
       return this;
     }
     /**
-     * <code>bool adr = 1;</code>
+     * <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
      */
     public Builder clearAdr() {
       
@@ -488,13 +488,13 @@ public  final class FCtrl extends
 
     private boolean adrAckReq_ ;
     /**
-     * <code>bool adr_ack_req = 2;</code>
+     * <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
      */
     public boolean getAdrAckReq() {
       return adrAckReq_;
     }
     /**
-     * <code>bool adr_ack_req = 2;</code>
+     * <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
      */
     public Builder setAdrAckReq(boolean value) {
       
@@ -503,7 +503,7 @@ public  final class FCtrl extends
       return this;
     }
     /**
-     * <code>bool adr_ack_req = 2;</code>
+     * <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
      */
     public Builder clearAdrAckReq() {
       

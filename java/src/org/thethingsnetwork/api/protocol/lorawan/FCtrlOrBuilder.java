@@ -8,12 +8,12 @@ public interface FCtrlOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>bool adr = 1;</code>
+   * <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
    */
   boolean getAdr();
 
   /**
-   * <code>bool adr_ack_req = 2;</code>
+   * <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
    */
   boolean getAdrAckReq();
 

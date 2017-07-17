@@ -123,7 +123,7 @@ public  final class MACPayload extends
   public static final int FRM_PAYLOAD_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString frmPayload_;
   /**
-   * <code>bytes frm_payload = 3;</code>
+   * <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
    */
   public com.google.protobuf.ByteString getFrmPayload() {
     return frmPayload_;
@@ -601,13 +601,13 @@ public  final class MACPayload extends
 
     private com.google.protobuf.ByteString frmPayload_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes frm_payload = 3;</code>
+     * <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
      */
     public com.google.protobuf.ByteString getFrmPayload() {
       return frmPayload_;
     }
     /**
-     * <code>bytes frm_payload = 3;</code>
+     * <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
      */
     public Builder setFrmPayload(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -619,7 +619,7 @@ public  final class MACPayload extends
       return this;
     }
     /**
-     * <code>bytes frm_payload = 3;</code>
+     * <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
      */
     public Builder clearFrmPayload() {
       

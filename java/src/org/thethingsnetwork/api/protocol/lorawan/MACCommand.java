@@ -80,7 +80,7 @@ public  final class MACCommand extends
   public static final int CID_FIELD_NUMBER = 1;
   private int cid_;
   /**
-   * <code>uint32 cid = 1;</code>
+   * <code>uint32 cid = 1 [(.gogoproto.customname) = "CID"];</code>
    */
   public int getCid() {
     return cid_;
@@ -394,13 +394,13 @@ public  final class MACCommand extends
 
     private int cid_ ;
     /**
-     * <code>uint32 cid = 1;</code>
+     * <code>uint32 cid = 1 [(.gogoproto.customname) = "CID"];</code>
      */
     public int getCid() {
       return cid_;
     }
     /**
-     * <code>uint32 cid = 1;</code>
+     * <code>uint32 cid = 1 [(.gogoproto.customname) = "CID"];</code>
      */
     public Builder setCid(int value) {
       
@@ -409,7 +409,7 @@ public  final class MACCommand extends
       return this;
     }
     /**
-     * <code>uint32 cid = 1;</code>
+     * <code>uint32 cid = 1 [(.gogoproto.customname) = "CID"];</code>
      */
     public Builder clearCid() {
       
