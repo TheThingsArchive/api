@@ -82,7 +82,7 @@ public  final class ApplicationHandlerRegistration extends
   public static final int APP_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object appId_;
   /**
-   * <code>string app_id = 1;</code>
+   * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
    */
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
@@ -97,7 +97,7 @@ public  final class ApplicationHandlerRegistration extends
     }
   }
   /**
-   * <code>string app_id = 1;</code>
+   * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
    */
   public com.google.protobuf.ByteString
       getAppIdBytes() {
@@ -116,7 +116,7 @@ public  final class ApplicationHandlerRegistration extends
   public static final int HANDLER_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object handlerId_;
   /**
-   * <code>string handler_id = 2;</code>
+   * <code>string handler_id = 2 [(.gogoproto.customname) = "HandlerID"];</code>
    */
   public java.lang.String getHandlerId() {
     java.lang.Object ref = handlerId_;
@@ -131,7 +131,7 @@ public  final class ApplicationHandlerRegistration extends
     }
   }
   /**
-   * <code>string handler_id = 2;</code>
+   * <code>string handler_id = 2 [(.gogoproto.customname) = "HandlerID"];</code>
    */
   public com.google.protobuf.ByteString
       getHandlerIdBytes() {
@@ -446,7 +446,7 @@ public  final class ApplicationHandlerRegistration extends
 
     private java.lang.Object appId_ = "";
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     public java.lang.String getAppId() {
       java.lang.Object ref = appId_;
@@ -461,7 +461,7 @@ public  final class ApplicationHandlerRegistration extends
       }
     }
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     public com.google.protobuf.ByteString
         getAppIdBytes() {
@@ -477,7 +477,7 @@ public  final class ApplicationHandlerRegistration extends
       }
     }
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     public Builder setAppId(
         java.lang.String value) {
@@ -490,7 +490,7 @@ public  final class ApplicationHandlerRegistration extends
       return this;
     }
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     public Builder clearAppId() {
       
@@ -499,7 +499,7 @@ public  final class ApplicationHandlerRegistration extends
       return this;
     }
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     public Builder setAppIdBytes(
         com.google.protobuf.ByteString value) {
@@ -515,7 +515,7 @@ public  final class ApplicationHandlerRegistration extends
 
     private java.lang.Object handlerId_ = "";
     /**
-     * <code>string handler_id = 2;</code>
+     * <code>string handler_id = 2 [(.gogoproto.customname) = "HandlerID"];</code>
      */
     public java.lang.String getHandlerId() {
       java.lang.Object ref = handlerId_;
@@ -530,7 +530,7 @@ public  final class ApplicationHandlerRegistration extends
       }
     }
     /**
-     * <code>string handler_id = 2;</code>
+     * <code>string handler_id = 2 [(.gogoproto.customname) = "HandlerID"];</code>
      */
     public com.google.protobuf.ByteString
         getHandlerIdBytes() {
@@ -546,7 +546,7 @@ public  final class ApplicationHandlerRegistration extends
       }
     }
     /**
-     * <code>string handler_id = 2;</code>
+     * <code>string handler_id = 2 [(.gogoproto.customname) = "HandlerID"];</code>
      */
     public Builder setHandlerId(
         java.lang.String value) {
@@ -559,7 +559,7 @@ public  final class ApplicationHandlerRegistration extends
       return this;
     }
     /**
-     * <code>string handler_id = 2;</code>
+     * <code>string handler_id = 2 [(.gogoproto.customname) = "HandlerID"];</code>
      */
     public Builder clearHandlerId() {
       
@@ -568,7 +568,7 @@ public  final class ApplicationHandlerRegistration extends
       return this;
     }
     /**
-     * <code>string handler_id = 2;</code>
+     * <code>string handler_id = 2 [(.gogoproto.customname) = "HandlerID"];</code>
      */
     public Builder setHandlerIdBytes(
         com.google.protobuf.ByteString value) {

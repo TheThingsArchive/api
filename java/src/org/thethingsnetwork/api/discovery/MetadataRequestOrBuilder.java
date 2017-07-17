@@ -12,7 +12,7 @@ public interface MetadataRequestOrBuilder extends
    * The ID of the service that should be modified
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
    */
   java.lang.String getId();
   /**
@@ -20,7 +20,7 @@ public interface MetadataRequestOrBuilder extends
    * The ID of the service that should be modified
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
    */
   com.google.protobuf.ByteString
       getIdBytes();

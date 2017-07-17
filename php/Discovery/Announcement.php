@@ -22,7 +22,7 @@ class Announcement extends \Google\Protobuf\Internal\Message
      * The ID of the component
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     private $id = '';
     /**
@@ -150,7 +150,7 @@ class Announcement extends \Google\Protobuf\Internal\Message
      * The ID of the component
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     public function getId()
     {
@@ -162,7 +162,7 @@ class Announcement extends \Google\Protobuf\Internal\Message
      * The ID of the component
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     public function setId($var)
     {

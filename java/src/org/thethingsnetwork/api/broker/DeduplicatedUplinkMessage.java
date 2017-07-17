@@ -206,7 +206,7 @@ public  final class DeduplicatedUplinkMessage extends
   public static final int DEV_EUI_FIELD_NUMBER = 11;
   private com.google.protobuf.ByteString devEui_;
   /**
-   * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];</code>
+   * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
    */
   public com.google.protobuf.ByteString getDevEui() {
     return devEui_;
@@ -215,7 +215,7 @@ public  final class DeduplicatedUplinkMessage extends
   public static final int APP_EUI_FIELD_NUMBER = 12;
   private com.google.protobuf.ByteString appEui_;
   /**
-   * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];</code>
+   * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
    */
   public com.google.protobuf.ByteString getAppEui() {
     return appEui_;
@@ -224,7 +224,7 @@ public  final class DeduplicatedUplinkMessage extends
   public static final int APP_ID_FIELD_NUMBER = 13;
   private volatile java.lang.Object appId_;
   /**
-   * <code>string app_id = 13;</code>
+   * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
    */
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
@@ -239,7 +239,7 @@ public  final class DeduplicatedUplinkMessage extends
     }
   }
   /**
-   * <code>string app_id = 13;</code>
+   * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
    */
   public com.google.protobuf.ByteString
       getAppIdBytes() {
@@ -258,7 +258,7 @@ public  final class DeduplicatedUplinkMessage extends
   public static final int DEV_ID_FIELD_NUMBER = 14;
   private volatile java.lang.Object devId_;
   /**
-   * <code>string dev_id = 14;</code>
+   * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
    */
   public java.lang.String getDevId() {
     java.lang.Object ref = devId_;
@@ -273,7 +273,7 @@ public  final class DeduplicatedUplinkMessage extends
     }
   }
   /**
-   * <code>string dev_id = 14;</code>
+   * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
    */
   public com.google.protobuf.ByteString
       getDevIdBytes() {
@@ -1093,13 +1093,13 @@ public  final class DeduplicatedUplinkMessage extends
 
     private com.google.protobuf.ByteString devEui_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];</code>
+     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     public com.google.protobuf.ByteString getDevEui() {
       return devEui_;
     }
     /**
-     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];</code>
+     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     public Builder setDevEui(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1111,7 +1111,7 @@ public  final class DeduplicatedUplinkMessage extends
       return this;
     }
     /**
-     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];</code>
+     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     public Builder clearDevEui() {
       
@@ -1122,13 +1122,13 @@ public  final class DeduplicatedUplinkMessage extends
 
     private com.google.protobuf.ByteString appEui_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];</code>
+     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     public com.google.protobuf.ByteString getAppEui() {
       return appEui_;
     }
     /**
-     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];</code>
+     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     public Builder setAppEui(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1140,7 +1140,7 @@ public  final class DeduplicatedUplinkMessage extends
       return this;
     }
     /**
-     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];</code>
+     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     public Builder clearAppEui() {
       
@@ -1151,7 +1151,7 @@ public  final class DeduplicatedUplinkMessage extends
 
     private java.lang.Object appId_ = "";
     /**
-     * <code>string app_id = 13;</code>
+     * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
      */
     public java.lang.String getAppId() {
       java.lang.Object ref = appId_;
@@ -1166,7 +1166,7 @@ public  final class DeduplicatedUplinkMessage extends
       }
     }
     /**
-     * <code>string app_id = 13;</code>
+     * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
      */
     public com.google.protobuf.ByteString
         getAppIdBytes() {
@@ -1182,7 +1182,7 @@ public  final class DeduplicatedUplinkMessage extends
       }
     }
     /**
-     * <code>string app_id = 13;</code>
+     * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
      */
     public Builder setAppId(
         java.lang.String value) {
@@ -1195,7 +1195,7 @@ public  final class DeduplicatedUplinkMessage extends
       return this;
     }
     /**
-     * <code>string app_id = 13;</code>
+     * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
      */
     public Builder clearAppId() {
       
@@ -1204,7 +1204,7 @@ public  final class DeduplicatedUplinkMessage extends
       return this;
     }
     /**
-     * <code>string app_id = 13;</code>
+     * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
      */
     public Builder setAppIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1220,7 +1220,7 @@ public  final class DeduplicatedUplinkMessage extends
 
     private java.lang.Object devId_ = "";
     /**
-     * <code>string dev_id = 14;</code>
+     * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
      */
     public java.lang.String getDevId() {
       java.lang.Object ref = devId_;
@@ -1235,7 +1235,7 @@ public  final class DeduplicatedUplinkMessage extends
       }
     }
     /**
-     * <code>string dev_id = 14;</code>
+     * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
      */
     public com.google.protobuf.ByteString
         getDevIdBytes() {
@@ -1251,7 +1251,7 @@ public  final class DeduplicatedUplinkMessage extends
       }
     }
     /**
-     * <code>string dev_id = 14;</code>
+     * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
      */
     public Builder setDevId(
         java.lang.String value) {
@@ -1264,7 +1264,7 @@ public  final class DeduplicatedUplinkMessage extends
       return this;
     }
     /**
-     * <code>string dev_id = 14;</code>
+     * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
      */
     public Builder clearDevId() {
       
@@ -1273,7 +1273,7 @@ public  final class DeduplicatedUplinkMessage extends
       return this;
     }
     /**
-     * <code>string dev_id = 14;</code>
+     * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
      */
     public Builder setDevIdBytes(
         com.google.protobuf.ByteString value) {

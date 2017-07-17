@@ -145,7 +145,7 @@ public  final class Metadata extends
    * This metadata can only be added if the requesting client is authorized to manage this AppID.
    * </pre>
    *
-   * <code>string app_id = 30;</code>
+   * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
    */
   public java.lang.String getAppId() {
     java.lang.Object ref = "";
@@ -170,7 +170,7 @@ public  final class Metadata extends
    * This metadata can only be added if the requesting client is authorized to manage this AppID.
    * </pre>
    *
-   * <code>string app_id = 30;</code>
+   * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
    */
   public com.google.protobuf.ByteString
       getAppIdBytes() {
@@ -198,7 +198,7 @@ public  final class Metadata extends
    * Only authorized Join Handlers can announce APP_EUI metadata (and we don't have any of those yet).
    * </pre>
    *
-   * <code>bytes app_eui = 31;</code>
+   * <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
    */
   public com.google.protobuf.ByteString getAppEui() {
     if (metadataCase_ == 31) {
@@ -632,7 +632,7 @@ public  final class Metadata extends
      * This metadata can only be added if the requesting client is authorized to manage this AppID.
      * </pre>
      *
-     * <code>string app_id = 30;</code>
+     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
      */
     public java.lang.String getAppId() {
       java.lang.Object ref = "";
@@ -657,7 +657,7 @@ public  final class Metadata extends
      * This metadata can only be added if the requesting client is authorized to manage this AppID.
      * </pre>
      *
-     * <code>string app_id = 30;</code>
+     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
      */
     public com.google.protobuf.ByteString
         getAppIdBytes() {
@@ -683,7 +683,7 @@ public  final class Metadata extends
      * This metadata can only be added if the requesting client is authorized to manage this AppID.
      * </pre>
      *
-     * <code>string app_id = 30;</code>
+     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
      */
     public Builder setAppId(
         java.lang.String value) {
@@ -701,7 +701,7 @@ public  final class Metadata extends
      * This metadata can only be added if the requesting client is authorized to manage this AppID.
      * </pre>
      *
-     * <code>string app_id = 30;</code>
+     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
      */
     public Builder clearAppId() {
       if (metadataCase_ == 30) {
@@ -717,7 +717,7 @@ public  final class Metadata extends
      * This metadata can only be added if the requesting client is authorized to manage this AppID.
      * </pre>
      *
-     * <code>string app_id = 30;</code>
+     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
      */
     public Builder setAppIdBytes(
         com.google.protobuf.ByteString value) {
@@ -737,7 +737,7 @@ public  final class Metadata extends
      * Only authorized Join Handlers can announce APP_EUI metadata (and we don't have any of those yet).
      * </pre>
      *
-     * <code>bytes app_eui = 31;</code>
+     * <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
      */
     public com.google.protobuf.ByteString getAppEui() {
       if (metadataCase_ == 31) {
@@ -751,7 +751,7 @@ public  final class Metadata extends
      * Only authorized Join Handlers can announce APP_EUI metadata (and we don't have any of those yet).
      * </pre>
      *
-     * <code>bytes app_eui = 31;</code>
+     * <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
      */
     public Builder setAppEui(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -768,7 +768,7 @@ public  final class Metadata extends
      * Only authorized Join Handlers can announce APP_EUI metadata (and we don't have any of those yet).
      * </pre>
      *
-     * <code>bytes app_eui = 31;</code>
+     * <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
      */
     public Builder clearAppEui() {
       if (metadataCase_ == 31) {

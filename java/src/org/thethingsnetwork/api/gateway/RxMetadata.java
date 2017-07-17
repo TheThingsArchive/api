@@ -1173,7 +1173,7 @@ public  final class RxMetadata extends
   public static final int GATEWAY_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object gatewayId_;
   /**
-   * <code>string gateway_id = 1;</code>
+   * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
    */
   public java.lang.String getGatewayId() {
     java.lang.Object ref = gatewayId_;
@@ -1188,7 +1188,7 @@ public  final class RxMetadata extends
     }
   }
   /**
-   * <code>string gateway_id = 1;</code>
+   * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
    */
   public com.google.protobuf.ByteString
       getGatewayIdBytes() {
@@ -1902,7 +1902,7 @@ public  final class RxMetadata extends
 
     private java.lang.Object gatewayId_ = "";
     /**
-     * <code>string gateway_id = 1;</code>
+     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     public java.lang.String getGatewayId() {
       java.lang.Object ref = gatewayId_;
@@ -1917,7 +1917,7 @@ public  final class RxMetadata extends
       }
     }
     /**
-     * <code>string gateway_id = 1;</code>
+     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     public com.google.protobuf.ByteString
         getGatewayIdBytes() {
@@ -1933,7 +1933,7 @@ public  final class RxMetadata extends
       }
     }
     /**
-     * <code>string gateway_id = 1;</code>
+     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     public Builder setGatewayId(
         java.lang.String value) {
@@ -1946,7 +1946,7 @@ public  final class RxMetadata extends
       return this;
     }
     /**
-     * <code>string gateway_id = 1;</code>
+     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     public Builder clearGatewayId() {
       
@@ -1955,7 +1955,7 @@ public  final class RxMetadata extends
       return this;
     }
     /**
-     * <code>string gateway_id = 1;</code>
+     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     public Builder setGatewayIdBytes(
         com.google.protobuf.ByteString value) {

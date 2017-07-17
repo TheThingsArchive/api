@@ -199,7 +199,7 @@ public  final class DeviceActivationRequest extends
   public static final int DEV_EUI_FIELD_NUMBER = 11;
   private com.google.protobuf.ByteString devEui_;
   /**
-   * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];</code>
+   * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
    */
   public com.google.protobuf.ByteString getDevEui() {
     return devEui_;
@@ -208,7 +208,7 @@ public  final class DeviceActivationRequest extends
   public static final int APP_EUI_FIELD_NUMBER = 12;
   private com.google.protobuf.ByteString appEui_;
   /**
-   * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];</code>
+   * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
    */
   public com.google.protobuf.ByteString getAppEui() {
     return appEui_;
@@ -1008,13 +1008,13 @@ public  final class DeviceActivationRequest extends
 
     private com.google.protobuf.ByteString devEui_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];</code>
+     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     public com.google.protobuf.ByteString getDevEui() {
       return devEui_;
     }
     /**
-     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];</code>
+     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     public Builder setDevEui(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1026,7 +1026,7 @@ public  final class DeviceActivationRequest extends
       return this;
     }
     /**
-     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];</code>
+     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     public Builder clearDevEui() {
       
@@ -1037,13 +1037,13 @@ public  final class DeviceActivationRequest extends
 
     private com.google.protobuf.ByteString appEui_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];</code>
+     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     public com.google.protobuf.ByteString getAppEui() {
       return appEui_;
     }
     /**
-     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];</code>
+     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     public Builder setAppEui(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1055,7 +1055,7 @@ public  final class DeviceActivationRequest extends
       return this;
     }
     /**
-     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];</code>
+     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     public Builder clearAppEui() {
       

@@ -58,7 +58,7 @@ type DownlinkOption struct {
 	// String that identifies this downlink option in the Router
 	Identifier string `protobuf:"bytes,1,opt,name=identifier,proto3" json:"identifier,omitempty"`
 	// ID of the gateway where this downlink should be sent
-	GatewayId string `protobuf:"bytes,2,opt,name=gateway_id,json=gatewayId,proto3" json:"gateway_id,omitempty"`
+	GatewayID string `protobuf:"bytes,2,opt,name=gateway_id,json=gatewayId,proto3" json:"gateway_id,omitempty"`
 	// Score of this downlink option. Lower is better.
 	Score uint32 `protobuf:"varint,3,opt,name=score,proto3" json:"score,omitempty"`
 	// deadline time at server represented as Unix nanoseconds
@@ -79,9 +79,9 @@ func (m *DownlinkOption) GetIdentifier() string {
 	return ""
 }
 
-func (m *DownlinkOption) GetGatewayId() string {
+func (m *DownlinkOption) GetGatewayID() string {
 	if m != nil {
-		return m.GatewayId
+		return m.GatewayID
 	}
 	return ""
 }
@@ -118,10 +118,10 @@ func (m *DownlinkOption) GetGatewayConfiguration() *gateway.TxConfiguration {
 type UplinkMessage struct {
 	Payload          []byte                                             `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
 	Message          *protocol.Message                                  `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
-	DevEui           *github_com_TheThingsNetwork_ttn_core_types.DevEUI `protobuf:"bytes,11,opt,name=dev_eui,json=devEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevEUI" json:"dev_eui,omitempty"`
-	AppEui           *github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,12,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui,omitempty"`
-	AppId            string                                             `protobuf:"bytes,13,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
-	DevId            string                                             `protobuf:"bytes,14,opt,name=dev_id,json=devId,proto3" json:"dev_id,omitempty"`
+	DevEUI           *github_com_TheThingsNetwork_ttn_core_types.DevEUI `protobuf:"bytes,11,opt,name=dev_eui,json=devEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevEUI" json:"dev_eui,omitempty"`
+	AppEUI           *github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,12,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui,omitempty"`
+	AppID            string                                             `protobuf:"bytes,13,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
+	DevID            string                                             `protobuf:"bytes,14,opt,name=dev_id,json=devId,proto3" json:"dev_id,omitempty"`
 	ProtocolMetadata *protocol.RxMetadata                               `protobuf:"bytes,21,opt,name=protocol_metadata,json=protocolMetadata" json:"protocol_metadata,omitempty"`
 	GatewayMetadata  *gateway.RxMetadata                                `protobuf:"bytes,22,opt,name=gateway_metadata,json=gatewayMetadata" json:"gateway_metadata,omitempty"`
 	DownlinkOptions  []*DownlinkOption                                  `protobuf:"bytes,31,rep,name=downlink_options,json=downlinkOptions" json:"downlink_options,omitempty"`
@@ -147,16 +147,16 @@ func (m *UplinkMessage) GetMessage() *protocol.Message {
 	return nil
 }
 
-func (m *UplinkMessage) GetAppId() string {
+func (m *UplinkMessage) GetAppID() string {
 	if m != nil {
-		return m.AppId
+		return m.AppID
 	}
 	return ""
 }
 
-func (m *UplinkMessage) GetDevId() string {
+func (m *UplinkMessage) GetDevID() string {
 	if m != nil {
-		return m.DevId
+		return m.DevID
 	}
 	return ""
 }
@@ -193,10 +193,10 @@ func (m *UplinkMessage) GetTrace() *trace.Trace {
 type DownlinkMessage struct {
 	Payload        []byte                                             `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
 	Message        *protocol.Message                                  `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
-	DevEui         *github_com_TheThingsNetwork_ttn_core_types.DevEUI `protobuf:"bytes,11,opt,name=dev_eui,json=devEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevEUI" json:"dev_eui,omitempty"`
-	AppEui         *github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,12,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui,omitempty"`
-	AppId          string                                             `protobuf:"bytes,13,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
-	DevId          string                                             `protobuf:"bytes,14,opt,name=dev_id,json=devId,proto3" json:"dev_id,omitempty"`
+	DevEUI         *github_com_TheThingsNetwork_ttn_core_types.DevEUI `protobuf:"bytes,11,opt,name=dev_eui,json=devEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevEUI" json:"dev_eui,omitempty"`
+	AppEUI         *github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,12,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui,omitempty"`
+	AppID          string                                             `protobuf:"bytes,13,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
+	DevID          string                                             `protobuf:"bytes,14,opt,name=dev_id,json=devId,proto3" json:"dev_id,omitempty"`
 	DownlinkOption *DownlinkOption                                    `protobuf:"bytes,21,opt,name=downlink_option,json=downlinkOption" json:"downlink_option,omitempty"`
 	Trace          *trace.Trace                                       `protobuf:"bytes,31,opt,name=trace" json:"trace,omitempty"`
 }
@@ -220,16 +220,16 @@ func (m *DownlinkMessage) GetMessage() *protocol.Message {
 	return nil
 }
 
-func (m *DownlinkMessage) GetAppId() string {
+func (m *DownlinkMessage) GetAppID() string {
 	if m != nil {
-		return m.AppId
+		return m.AppID
 	}
 	return ""
 }
 
-func (m *DownlinkMessage) GetDevId() string {
+func (m *DownlinkMessage) GetDevID() string {
 	if m != nil {
-		return m.DevId
+		return m.DevID
 	}
 	return ""
 }
@@ -293,10 +293,10 @@ func (m *DeviceActivationResponse) GetTrace() *trace.Trace {
 type DeduplicatedUplinkMessage struct {
 	Payload          []byte                                             `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
 	Message          *protocol.Message                                  `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
-	DevEui           *github_com_TheThingsNetwork_ttn_core_types.DevEUI `protobuf:"bytes,11,opt,name=dev_eui,json=devEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevEUI" json:"dev_eui,omitempty"`
-	AppEui           *github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,12,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui,omitempty"`
-	AppId            string                                             `protobuf:"bytes,13,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
-	DevId            string                                             `protobuf:"bytes,14,opt,name=dev_id,json=devId,proto3" json:"dev_id,omitempty"`
+	DevEUI           *github_com_TheThingsNetwork_ttn_core_types.DevEUI `protobuf:"bytes,11,opt,name=dev_eui,json=devEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevEUI" json:"dev_eui,omitempty"`
+	AppEUI           *github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,12,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui,omitempty"`
+	AppID            string                                             `protobuf:"bytes,13,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
+	DevID            string                                             `protobuf:"bytes,14,opt,name=dev_id,json=devId,proto3" json:"dev_id,omitempty"`
 	ProtocolMetadata *protocol.RxMetadata                               `protobuf:"bytes,21,opt,name=protocol_metadata,json=protocolMetadata" json:"protocol_metadata,omitempty"`
 	GatewayMetadata  []*gateway.RxMetadata                              `protobuf:"bytes,22,rep,name=gateway_metadata,json=gatewayMetadata" json:"gateway_metadata,omitempty"`
 	ServerTime       int64                                              `protobuf:"varint,23,opt,name=server_time,json=serverTime,proto3" json:"server_time,omitempty"`
@@ -323,16 +323,16 @@ func (m *DeduplicatedUplinkMessage) GetMessage() *protocol.Message {
 	return nil
 }
 
-func (m *DeduplicatedUplinkMessage) GetAppId() string {
+func (m *DeduplicatedUplinkMessage) GetAppID() string {
 	if m != nil {
-		return m.AppId
+		return m.AppID
 	}
 	return ""
 }
 
-func (m *DeduplicatedUplinkMessage) GetDevId() string {
+func (m *DeduplicatedUplinkMessage) GetDevID() string {
 	if m != nil {
-		return m.DevId
+		return m.DevID
 	}
 	return ""
 }
@@ -376,8 +376,8 @@ func (m *DeduplicatedUplinkMessage) GetTrace() *trace.Trace {
 type DeviceActivationRequest struct {
 	Payload            []byte                                             `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
 	Message            *protocol.Message                                  `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
-	DevEui             *github_com_TheThingsNetwork_ttn_core_types.DevEUI `protobuf:"bytes,11,opt,name=dev_eui,json=devEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevEUI" json:"dev_eui,omitempty"`
-	AppEui             *github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,12,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui,omitempty"`
+	DevEUI             *github_com_TheThingsNetwork_ttn_core_types.DevEUI `protobuf:"bytes,11,opt,name=dev_eui,json=devEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevEUI" json:"dev_eui,omitempty"`
+	AppEUI             *github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,12,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui,omitempty"`
 	ProtocolMetadata   *protocol.RxMetadata                               `protobuf:"bytes,21,opt,name=protocol_metadata,json=protocolMetadata" json:"protocol_metadata,omitempty"`
 	GatewayMetadata    *gateway.RxMetadata                                `protobuf:"bytes,22,opt,name=gateway_metadata,json=gatewayMetadata" json:"gateway_metadata,omitempty"`
 	ActivationMetadata *protocol.ActivationMetadata                       `protobuf:"bytes,23,opt,name=activation_metadata,json=activationMetadata" json:"activation_metadata,omitempty"`
@@ -443,10 +443,10 @@ func (m *DeviceActivationRequest) GetTrace() *trace.Trace {
 type DeduplicatedDeviceActivationRequest struct {
 	Payload            []byte                                             `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
 	Message            *protocol.Message                                  `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
-	DevEui             *github_com_TheThingsNetwork_ttn_core_types.DevEUI `protobuf:"bytes,11,opt,name=dev_eui,json=devEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevEUI" json:"dev_eui,omitempty"`
-	AppEui             *github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,12,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui,omitempty"`
-	AppId              string                                             `protobuf:"bytes,13,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
-	DevId              string                                             `protobuf:"bytes,14,opt,name=dev_id,json=devId,proto3" json:"dev_id,omitempty"`
+	DevEUI             *github_com_TheThingsNetwork_ttn_core_types.DevEUI `protobuf:"bytes,11,opt,name=dev_eui,json=devEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevEUI" json:"dev_eui,omitempty"`
+	AppEUI             *github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,12,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui,omitempty"`
+	AppID              string                                             `protobuf:"bytes,13,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
+	DevID              string                                             `protobuf:"bytes,14,opt,name=dev_id,json=devId,proto3" json:"dev_id,omitempty"`
 	ProtocolMetadata   *protocol.RxMetadata                               `protobuf:"bytes,21,opt,name=protocol_metadata,json=protocolMetadata" json:"protocol_metadata,omitempty"`
 	GatewayMetadata    []*gateway.RxMetadata                              `protobuf:"bytes,22,rep,name=gateway_metadata,json=gatewayMetadata" json:"gateway_metadata,omitempty"`
 	ActivationMetadata *protocol.ActivationMetadata                       `protobuf:"bytes,23,opt,name=activation_metadata,json=activationMetadata" json:"activation_metadata,omitempty"`
@@ -476,16 +476,16 @@ func (m *DeduplicatedDeviceActivationRequest) GetMessage() *protocol.Message {
 	return nil
 }
 
-func (m *DeduplicatedDeviceActivationRequest) GetAppId() string {
+func (m *DeduplicatedDeviceActivationRequest) GetAppID() string {
 	if m != nil {
-		return m.AppId
+		return m.AppID
 	}
 	return ""
 }
 
-func (m *DeduplicatedDeviceActivationRequest) GetDevId() string {
+func (m *DeduplicatedDeviceActivationRequest) GetDevID() string {
 	if m != nil {
-		return m.DevId
+		return m.DevID
 	}
 	return ""
 }
@@ -535,10 +535,10 @@ func (m *DeduplicatedDeviceActivationRequest) GetTrace() *trace.Trace {
 type ActivationChallengeRequest struct {
 	Payload []byte                                             `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
 	Message *protocol.Message                                  `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
-	DevEui  *github_com_TheThingsNetwork_ttn_core_types.DevEUI `protobuf:"bytes,11,opt,name=dev_eui,json=devEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevEUI" json:"dev_eui,omitempty"`
-	AppEui  *github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,12,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui,omitempty"`
-	AppId   string                                             `protobuf:"bytes,13,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
-	DevId   string                                             `protobuf:"bytes,14,opt,name=dev_id,json=devId,proto3" json:"dev_id,omitempty"`
+	DevEUI  *github_com_TheThingsNetwork_ttn_core_types.DevEUI `protobuf:"bytes,11,opt,name=dev_eui,json=devEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevEUI" json:"dev_eui,omitempty"`
+	AppEUI  *github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,12,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui,omitempty"`
+	AppID   string                                             `protobuf:"bytes,13,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
+	DevID   string                                             `protobuf:"bytes,14,opt,name=dev_id,json=devId,proto3" json:"dev_id,omitempty"`
 }
 
 func (m *ActivationChallengeRequest) Reset()                    { *m = ActivationChallengeRequest{} }
@@ -560,16 +560,16 @@ func (m *ActivationChallengeRequest) GetMessage() *protocol.Message {
 	return nil
 }
 
-func (m *ActivationChallengeRequest) GetAppId() string {
+func (m *ActivationChallengeRequest) GetAppID() string {
 	if m != nil {
-		return m.AppId
+		return m.AppID
 	}
 	return ""
 }
 
-func (m *ActivationChallengeRequest) GetDevId() string {
+func (m *ActivationChallengeRequest) GetDevID() string {
 	if m != nil {
-		return m.DevId
+		return m.DevID
 	}
 	return ""
 }
@@ -708,8 +708,8 @@ func (m *Status) GetConnectedHandlers() uint32 {
 }
 
 type ApplicationHandlerRegistration struct {
-	AppId     string `protobuf:"bytes,1,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
-	HandlerId string `protobuf:"bytes,2,opt,name=handler_id,json=handlerId,proto3" json:"handler_id,omitempty"`
+	AppID     string `protobuf:"bytes,1,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
+	HandlerID string `protobuf:"bytes,2,opt,name=handler_id,json=handlerId,proto3" json:"handler_id,omitempty"`
 }
 
 func (m *ApplicationHandlerRegistration) Reset()         { *m = ApplicationHandlerRegistration{} }
@@ -719,16 +719,16 @@ func (*ApplicationHandlerRegistration) Descriptor() ([]byte, []int) {
 	return fileDescriptorBroker, []int{12}
 }
 
-func (m *ApplicationHandlerRegistration) GetAppId() string {
+func (m *ApplicationHandlerRegistration) GetAppID() string {
 	if m != nil {
-		return m.AppId
+		return m.AppID
 	}
 	return ""
 }
 
-func (m *ApplicationHandlerRegistration) GetHandlerId() string {
+func (m *ApplicationHandlerRegistration) GetHandlerID() string {
 	if m != nil {
-		return m.HandlerId
+		return m.HandlerID
 	}
 	return ""
 }
@@ -1146,11 +1146,11 @@ func (m *DownlinkOption) MarshalTo(dAtA []byte) (int, error) {
 		i = encodeVarintBroker(dAtA, i, uint64(len(m.Identifier)))
 		i += copy(dAtA[i:], m.Identifier)
 	}
-	if len(m.GatewayId) > 0 {
+	if len(m.GatewayID) > 0 {
 		dAtA[i] = 0x12
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(len(m.GatewayId)))
-		i += copy(dAtA[i:], m.GatewayId)
+		i = encodeVarintBroker(dAtA, i, uint64(len(m.GatewayID)))
+		i += copy(dAtA[i:], m.GatewayID)
 	}
 	if m.Score != 0 {
 		dAtA[i] = 0x18
@@ -1216,37 +1216,37 @@ func (m *UplinkMessage) MarshalTo(dAtA []byte) (int, error) {
 		}
 		i += n3
 	}
-	if m.DevEui != nil {
+	if m.DevEUI != nil {
 		dAtA[i] = 0x5a
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(m.DevEui.Size()))
-		n4, err := m.DevEui.MarshalTo(dAtA[i:])
+		i = encodeVarintBroker(dAtA, i, uint64(m.DevEUI.Size()))
+		n4, err := m.DevEUI.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n4
 	}
-	if m.AppEui != nil {
+	if m.AppEUI != nil {
 		dAtA[i] = 0x62
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(m.AppEui.Size()))
-		n5, err := m.AppEui.MarshalTo(dAtA[i:])
+		i = encodeVarintBroker(dAtA, i, uint64(m.AppEUI.Size()))
+		n5, err := m.AppEUI.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n5
 	}
-	if len(m.AppId) > 0 {
+	if len(m.AppID) > 0 {
 		dAtA[i] = 0x6a
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(len(m.AppId)))
-		i += copy(dAtA[i:], m.AppId)
+		i = encodeVarintBroker(dAtA, i, uint64(len(m.AppID)))
+		i += copy(dAtA[i:], m.AppID)
 	}
-	if len(m.DevId) > 0 {
+	if len(m.DevID) > 0 {
 		dAtA[i] = 0x72
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(len(m.DevId)))
-		i += copy(dAtA[i:], m.DevId)
+		i = encodeVarintBroker(dAtA, i, uint64(len(m.DevID)))
+		i += copy(dAtA[i:], m.DevID)
 	}
 	if m.ProtocolMetadata != nil {
 		dAtA[i] = 0xaa
@@ -1332,37 +1332,37 @@ func (m *DownlinkMessage) MarshalTo(dAtA []byte) (int, error) {
 		}
 		i += n9
 	}
-	if m.DevEui != nil {
+	if m.DevEUI != nil {
 		dAtA[i] = 0x5a
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(m.DevEui.Size()))
-		n10, err := m.DevEui.MarshalTo(dAtA[i:])
+		i = encodeVarintBroker(dAtA, i, uint64(m.DevEUI.Size()))
+		n10, err := m.DevEUI.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n10
 	}
-	if m.AppEui != nil {
+	if m.AppEUI != nil {
 		dAtA[i] = 0x62
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(m.AppEui.Size()))
-		n11, err := m.AppEui.MarshalTo(dAtA[i:])
+		i = encodeVarintBroker(dAtA, i, uint64(m.AppEUI.Size()))
+		n11, err := m.AppEUI.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n11
 	}
-	if len(m.AppId) > 0 {
+	if len(m.AppID) > 0 {
 		dAtA[i] = 0x6a
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(len(m.AppId)))
-		i += copy(dAtA[i:], m.AppId)
+		i = encodeVarintBroker(dAtA, i, uint64(len(m.AppID)))
+		i += copy(dAtA[i:], m.AppID)
 	}
-	if len(m.DevId) > 0 {
+	if len(m.DevID) > 0 {
 		dAtA[i] = 0x72
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(len(m.DevId)))
-		i += copy(dAtA[i:], m.DevId)
+		i = encodeVarintBroker(dAtA, i, uint64(len(m.DevID)))
+		i += copy(dAtA[i:], m.DevID)
 	}
 	if m.DownlinkOption != nil {
 		dAtA[i] = 0xaa
@@ -1478,37 +1478,37 @@ func (m *DeduplicatedUplinkMessage) MarshalTo(dAtA []byte) (int, error) {
 		}
 		i += n17
 	}
-	if m.DevEui != nil {
+	if m.DevEUI != nil {
 		dAtA[i] = 0x5a
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(m.DevEui.Size()))
-		n18, err := m.DevEui.MarshalTo(dAtA[i:])
+		i = encodeVarintBroker(dAtA, i, uint64(m.DevEUI.Size()))
+		n18, err := m.DevEUI.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n18
 	}
-	if m.AppEui != nil {
+	if m.AppEUI != nil {
 		dAtA[i] = 0x62
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(m.AppEui.Size()))
-		n19, err := m.AppEui.MarshalTo(dAtA[i:])
+		i = encodeVarintBroker(dAtA, i, uint64(m.AppEUI.Size()))
+		n19, err := m.AppEUI.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n19
 	}
-	if len(m.AppId) > 0 {
+	if len(m.AppID) > 0 {
 		dAtA[i] = 0x6a
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(len(m.AppId)))
-		i += copy(dAtA[i:], m.AppId)
+		i = encodeVarintBroker(dAtA, i, uint64(len(m.AppID)))
+		i += copy(dAtA[i:], m.AppID)
 	}
-	if len(m.DevId) > 0 {
+	if len(m.DevID) > 0 {
 		dAtA[i] = 0x72
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(len(m.DevId)))
-		i += copy(dAtA[i:], m.DevId)
+		i = encodeVarintBroker(dAtA, i, uint64(len(m.DevID)))
+		i += copy(dAtA[i:], m.DevID)
 	}
 	if m.ProtocolMetadata != nil {
 		dAtA[i] = 0xaa
@@ -1601,21 +1601,21 @@ func (m *DeviceActivationRequest) MarshalTo(dAtA []byte) (int, error) {
 		}
 		i += n23
 	}
-	if m.DevEui != nil {
+	if m.DevEUI != nil {
 		dAtA[i] = 0x5a
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(m.DevEui.Size()))
-		n24, err := m.DevEui.MarshalTo(dAtA[i:])
+		i = encodeVarintBroker(dAtA, i, uint64(m.DevEUI.Size()))
+		n24, err := m.DevEUI.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n24
 	}
-	if m.AppEui != nil {
+	if m.AppEUI != nil {
 		dAtA[i] = 0x62
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(m.AppEui.Size()))
-		n25, err := m.AppEui.MarshalTo(dAtA[i:])
+		i = encodeVarintBroker(dAtA, i, uint64(m.AppEUI.Size()))
+		n25, err := m.AppEUI.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
@@ -1717,37 +1717,37 @@ func (m *DeduplicatedDeviceActivationRequest) MarshalTo(dAtA []byte) (int, error
 		}
 		i += n30
 	}
-	if m.DevEui != nil {
+	if m.DevEUI != nil {
 		dAtA[i] = 0x5a
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(m.DevEui.Size()))
-		n31, err := m.DevEui.MarshalTo(dAtA[i:])
+		i = encodeVarintBroker(dAtA, i, uint64(m.DevEUI.Size()))
+		n31, err := m.DevEUI.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n31
 	}
-	if m.AppEui != nil {
+	if m.AppEUI != nil {
 		dAtA[i] = 0x62
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(m.AppEui.Size()))
-		n32, err := m.AppEui.MarshalTo(dAtA[i:])
+		i = encodeVarintBroker(dAtA, i, uint64(m.AppEUI.Size()))
+		n32, err := m.AppEUI.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n32
 	}
-	if len(m.AppId) > 0 {
+	if len(m.AppID) > 0 {
 		dAtA[i] = 0x6a
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(len(m.AppId)))
-		i += copy(dAtA[i:], m.AppId)
+		i = encodeVarintBroker(dAtA, i, uint64(len(m.AppID)))
+		i += copy(dAtA[i:], m.AppID)
 	}
-	if len(m.DevId) > 0 {
+	if len(m.DevID) > 0 {
 		dAtA[i] = 0x72
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(len(m.DevId)))
-		i += copy(dAtA[i:], m.DevId)
+		i = encodeVarintBroker(dAtA, i, uint64(len(m.DevID)))
+		i += copy(dAtA[i:], m.DevID)
 	}
 	if m.ProtocolMetadata != nil {
 		dAtA[i] = 0xaa
@@ -1852,37 +1852,37 @@ func (m *ActivationChallengeRequest) MarshalTo(dAtA []byte) (int, error) {
 		}
 		i += n37
 	}
-	if m.DevEui != nil {
+	if m.DevEUI != nil {
 		dAtA[i] = 0x5a
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(m.DevEui.Size()))
-		n38, err := m.DevEui.MarshalTo(dAtA[i:])
+		i = encodeVarintBroker(dAtA, i, uint64(m.DevEUI.Size()))
+		n38, err := m.DevEUI.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n38
 	}
-	if m.AppEui != nil {
+	if m.AppEUI != nil {
 		dAtA[i] = 0x62
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(m.AppEui.Size()))
-		n39, err := m.AppEui.MarshalTo(dAtA[i:])
+		i = encodeVarintBroker(dAtA, i, uint64(m.AppEUI.Size()))
+		n39, err := m.AppEUI.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n39
 	}
-	if len(m.AppId) > 0 {
+	if len(m.AppID) > 0 {
 		dAtA[i] = 0x6a
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(len(m.AppId)))
-		i += copy(dAtA[i:], m.AppId)
+		i = encodeVarintBroker(dAtA, i, uint64(len(m.AppID)))
+		i += copy(dAtA[i:], m.AppID)
 	}
-	if len(m.DevId) > 0 {
+	if len(m.DevID) > 0 {
 		dAtA[i] = 0x72
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(len(m.DevId)))
-		i += copy(dAtA[i:], m.DevId)
+		i = encodeVarintBroker(dAtA, i, uint64(len(m.DevID)))
+		i += copy(dAtA[i:], m.DevID)
 	}
 	return i, nil
 }
@@ -2086,17 +2086,17 @@ func (m *ApplicationHandlerRegistration) MarshalTo(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
-	if len(m.AppId) > 0 {
+	if len(m.AppID) > 0 {
 		dAtA[i] = 0xa
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(len(m.AppId)))
-		i += copy(dAtA[i:], m.AppId)
+		i = encodeVarintBroker(dAtA, i, uint64(len(m.AppID)))
+		i += copy(dAtA[i:], m.AppID)
 	}
-	if len(m.HandlerId) > 0 {
+	if len(m.HandlerID) > 0 {
 		dAtA[i] = 0x12
 		i++
-		i = encodeVarintBroker(dAtA, i, uint64(len(m.HandlerId)))
-		i += copy(dAtA[i:], m.HandlerId)
+		i = encodeVarintBroker(dAtA, i, uint64(len(m.HandlerID)))
+		i += copy(dAtA[i:], m.HandlerID)
 	}
 	return i, nil
 }
@@ -2135,7 +2135,7 @@ func (m *DownlinkOption) Size() (n int) {
 	if l > 0 {
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	l = len(m.GatewayId)
+	l = len(m.GatewayID)
 	if l > 0 {
 		n += 1 + l + sovBroker(uint64(l))
 	}
@@ -2167,19 +2167,19 @@ func (m *UplinkMessage) Size() (n int) {
 		l = m.Message.Size()
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	if m.DevEui != nil {
-		l = m.DevEui.Size()
+	if m.DevEUI != nil {
+		l = m.DevEUI.Size()
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	if m.AppEui != nil {
-		l = m.AppEui.Size()
+	if m.AppEUI != nil {
+		l = m.AppEUI.Size()
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	l = len(m.AppId)
+	l = len(m.AppID)
 	if l > 0 {
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	l = len(m.DevId)
+	l = len(m.DevID)
 	if l > 0 {
 		n += 1 + l + sovBroker(uint64(l))
 	}
@@ -2215,19 +2215,19 @@ func (m *DownlinkMessage) Size() (n int) {
 		l = m.Message.Size()
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	if m.DevEui != nil {
-		l = m.DevEui.Size()
+	if m.DevEUI != nil {
+		l = m.DevEUI.Size()
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	if m.AppEui != nil {
-		l = m.AppEui.Size()
+	if m.AppEUI != nil {
+		l = m.AppEUI.Size()
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	l = len(m.AppId)
+	l = len(m.AppID)
 	if l > 0 {
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	l = len(m.DevId)
+	l = len(m.DevID)
 	if l > 0 {
 		n += 1 + l + sovBroker(uint64(l))
 	}
@@ -2275,19 +2275,19 @@ func (m *DeduplicatedUplinkMessage) Size() (n int) {
 		l = m.Message.Size()
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	if m.DevEui != nil {
-		l = m.DevEui.Size()
+	if m.DevEUI != nil {
+		l = m.DevEUI.Size()
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	if m.AppEui != nil {
-		l = m.AppEui.Size()
+	if m.AppEUI != nil {
+		l = m.AppEUI.Size()
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	l = len(m.AppId)
+	l = len(m.AppID)
 	if l > 0 {
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	l = len(m.DevId)
+	l = len(m.DevID)
 	if l > 0 {
 		n += 1 + l + sovBroker(uint64(l))
 	}
@@ -2326,12 +2326,12 @@ func (m *DeviceActivationRequest) Size() (n int) {
 		l = m.Message.Size()
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	if m.DevEui != nil {
-		l = m.DevEui.Size()
+	if m.DevEUI != nil {
+		l = m.DevEUI.Size()
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	if m.AppEui != nil {
-		l = m.AppEui.Size()
+	if m.AppEUI != nil {
+		l = m.AppEUI.Size()
 		n += 1 + l + sovBroker(uint64(l))
 	}
 	if m.ProtocolMetadata != nil {
@@ -2370,19 +2370,19 @@ func (m *DeduplicatedDeviceActivationRequest) Size() (n int) {
 		l = m.Message.Size()
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	if m.DevEui != nil {
-		l = m.DevEui.Size()
+	if m.DevEUI != nil {
+		l = m.DevEUI.Size()
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	if m.AppEui != nil {
-		l = m.AppEui.Size()
+	if m.AppEUI != nil {
+		l = m.AppEUI.Size()
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	l = len(m.AppId)
+	l = len(m.AppID)
 	if l > 0 {
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	l = len(m.DevId)
+	l = len(m.DevID)
 	if l > 0 {
 		n += 1 + l + sovBroker(uint64(l))
 	}
@@ -2425,19 +2425,19 @@ func (m *ActivationChallengeRequest) Size() (n int) {
 		l = m.Message.Size()
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	if m.DevEui != nil {
-		l = m.DevEui.Size()
+	if m.DevEUI != nil {
+		l = m.DevEUI.Size()
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	if m.AppEui != nil {
-		l = m.AppEui.Size()
+	if m.AppEUI != nil {
+		l = m.AppEUI.Size()
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	l = len(m.AppId)
+	l = len(m.AppID)
 	if l > 0 {
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	l = len(m.DevId)
+	l = len(m.DevID)
 	if l > 0 {
 		n += 1 + l + sovBroker(uint64(l))
 	}
@@ -2517,11 +2517,11 @@ func (m *Status) Size() (n int) {
 func (m *ApplicationHandlerRegistration) Size() (n int) {
 	var l int
 	_ = l
-	l = len(m.AppId)
+	l = len(m.AppID)
 	if l > 0 {
 		n += 1 + l + sovBroker(uint64(l))
 	}
-	l = len(m.HandlerId)
+	l = len(m.HandlerID)
 	if l > 0 {
 		n += 1 + l + sovBroker(uint64(l))
 	}
@@ -2601,7 +2601,7 @@ func (m *DownlinkOption) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field GatewayId", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field GatewayID", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -2626,7 +2626,7 @@ func (m *DownlinkOption) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.GatewayId = string(dAtA[iNdEx:postIndex])
+			m.GatewayID = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 3:
 			if wireType != 0 {
@@ -2848,7 +2848,7 @@ func (m *UplinkMessage) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 11:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field DevEui", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field DevEUI", wireType)
 			}
 			var byteLen int
 			for shift := uint(0); ; shift += 7 {
@@ -2873,14 +2873,14 @@ func (m *UplinkMessage) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			var v github_com_TheThingsNetwork_ttn_core_types.DevEUI
-			m.DevEui = &v
-			if err := m.DevEui.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.DevEUI = &v
+			if err := m.DevEUI.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		case 12:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AppEui", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field AppEUI", wireType)
 			}
 			var byteLen int
 			for shift := uint(0); ; shift += 7 {
@@ -2905,14 +2905,14 @@ func (m *UplinkMessage) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			var v github_com_TheThingsNetwork_ttn_core_types.AppEUI
-			m.AppEui = &v
-			if err := m.AppEui.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.AppEUI = &v
+			if err := m.AppEUI.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		case 13:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AppId", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field AppID", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -2937,11 +2937,11 @@ func (m *UplinkMessage) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.AppId = string(dAtA[iNdEx:postIndex])
+			m.AppID = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 14:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field DevId", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field DevID", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -2966,7 +2966,7 @@ func (m *UplinkMessage) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.DevId = string(dAtA[iNdEx:postIndex])
+			m.DevID = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 21:
 			if wireType != 2 {
@@ -3214,7 +3214,7 @@ func (m *DownlinkMessage) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 11:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field DevEui", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field DevEUI", wireType)
 			}
 			var byteLen int
 			for shift := uint(0); ; shift += 7 {
@@ -3239,14 +3239,14 @@ func (m *DownlinkMessage) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			var v github_com_TheThingsNetwork_ttn_core_types.DevEUI
-			m.DevEui = &v
-			if err := m.DevEui.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.DevEUI = &v
+			if err := m.DevEUI.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		case 12:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AppEui", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field AppEUI", wireType)
 			}
 			var byteLen int
 			for shift := uint(0); ; shift += 7 {
@@ -3271,14 +3271,14 @@ func (m *DownlinkMessage) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			var v github_com_TheThingsNetwork_ttn_core_types.AppEUI
-			m.AppEui = &v
-			if err := m.AppEui.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.AppEUI = &v
+			if err := m.AppEUI.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		case 13:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AppId", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field AppID", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -3303,11 +3303,11 @@ func (m *DownlinkMessage) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.AppId = string(dAtA[iNdEx:postIndex])
+			m.AppID = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 14:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field DevId", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field DevID", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -3332,7 +3332,7 @@ func (m *DownlinkMessage) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.DevId = string(dAtA[iNdEx:postIndex])
+			m.DevID = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 21:
 			if wireType != 2 {
@@ -3696,7 +3696,7 @@ func (m *DeduplicatedUplinkMessage) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 11:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field DevEui", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field DevEUI", wireType)
 			}
 			var byteLen int
 			for shift := uint(0); ; shift += 7 {
@@ -3721,14 +3721,14 @@ func (m *DeduplicatedUplinkMessage) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			var v github_com_TheThingsNetwork_ttn_core_types.DevEUI
-			m.DevEui = &v
-			if err := m.DevEui.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.DevEUI = &v
+			if err := m.DevEUI.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		case 12:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AppEui", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field AppEUI", wireType)
 			}
 			var byteLen int
 			for shift := uint(0); ; shift += 7 {
@@ -3753,14 +3753,14 @@ func (m *DeduplicatedUplinkMessage) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			var v github_com_TheThingsNetwork_ttn_core_types.AppEUI
-			m.AppEui = &v
-			if err := m.AppEui.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.AppEUI = &v
+			if err := m.AppEUI.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		case 13:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AppId", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field AppID", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -3785,11 +3785,11 @@ func (m *DeduplicatedUplinkMessage) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.AppId = string(dAtA[iNdEx:postIndex])
+			m.AppID = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 14:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field DevId", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field DevID", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -3814,7 +3814,7 @@ func (m *DeduplicatedUplinkMessage) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.DevId = string(dAtA[iNdEx:postIndex])
+			m.DevID = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 21:
 			if wireType != 2 {
@@ -4081,7 +4081,7 @@ func (m *DeviceActivationRequest) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 11:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field DevEui", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field DevEUI", wireType)
 			}
 			var byteLen int
 			for shift := uint(0); ; shift += 7 {
@@ -4106,14 +4106,14 @@ func (m *DeviceActivationRequest) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			var v github_com_TheThingsNetwork_ttn_core_types.DevEUI
-			m.DevEui = &v
-			if err := m.DevEui.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.DevEUI = &v
+			if err := m.DevEUI.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		case 12:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AppEui", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field AppEUI", wireType)
 			}
 			var byteLen int
 			for shift := uint(0); ; shift += 7 {
@@ -4138,8 +4138,8 @@ func (m *DeviceActivationRequest) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			var v github_com_TheThingsNetwork_ttn_core_types.AppEUI
-			m.AppEui = &v
-			if err := m.AppEui.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.AppEUI = &v
+			if err := m.AppEUI.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -4422,7 +4422,7 @@ func (m *DeduplicatedDeviceActivationRequest) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 11:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field DevEui", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field DevEUI", wireType)
 			}
 			var byteLen int
 			for shift := uint(0); ; shift += 7 {
@@ -4447,14 +4447,14 @@ func (m *DeduplicatedDeviceActivationRequest) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			var v github_com_TheThingsNetwork_ttn_core_types.DevEUI
-			m.DevEui = &v
-			if err := m.DevEui.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.DevEUI = &v
+			if err := m.DevEUI.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		case 12:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AppEui", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field AppEUI", wireType)
 			}
 			var byteLen int
 			for shift := uint(0); ; shift += 7 {
@@ -4479,14 +4479,14 @@ func (m *DeduplicatedDeviceActivationRequest) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			var v github_com_TheThingsNetwork_ttn_core_types.AppEUI
-			m.AppEui = &v
-			if err := m.AppEui.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.AppEUI = &v
+			if err := m.AppEUI.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		case 13:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AppId", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field AppID", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -4511,11 +4511,11 @@ func (m *DeduplicatedDeviceActivationRequest) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.AppId = string(dAtA[iNdEx:postIndex])
+			m.AppID = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 14:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field DevId", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field DevID", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -4540,7 +4540,7 @@ func (m *DeduplicatedDeviceActivationRequest) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.DevId = string(dAtA[iNdEx:postIndex])
+			m.DevID = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 21:
 			if wireType != 2 {
@@ -4840,7 +4840,7 @@ func (m *ActivationChallengeRequest) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 11:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field DevEui", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field DevEUI", wireType)
 			}
 			var byteLen int
 			for shift := uint(0); ; shift += 7 {
@@ -4865,14 +4865,14 @@ func (m *ActivationChallengeRequest) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			var v github_com_TheThingsNetwork_ttn_core_types.DevEUI
-			m.DevEui = &v
-			if err := m.DevEui.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.DevEUI = &v
+			if err := m.DevEUI.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		case 12:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AppEui", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field AppEUI", wireType)
 			}
 			var byteLen int
 			for shift := uint(0); ; shift += 7 {
@@ -4897,14 +4897,14 @@ func (m *ActivationChallengeRequest) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			var v github_com_TheThingsNetwork_ttn_core_types.AppEUI
-			m.AppEui = &v
-			if err := m.AppEui.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.AppEUI = &v
+			if err := m.AppEUI.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		case 13:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AppId", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field AppID", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -4929,11 +4929,11 @@ func (m *ActivationChallengeRequest) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.AppId = string(dAtA[iNdEx:postIndex])
+			m.AppID = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 14:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field DevId", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field DevID", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -4958,7 +4958,7 @@ func (m *ActivationChallengeRequest) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.DevId = string(dAtA[iNdEx:postIndex])
+			m.DevID = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -5578,7 +5578,7 @@ func (m *ApplicationHandlerRegistration) Unmarshal(dAtA []byte) error {
 		switch fieldNum {
 		case 1:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AppId", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field AppID", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -5603,11 +5603,11 @@ func (m *ApplicationHandlerRegistration) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.AppId = string(dAtA[iNdEx:postIndex])
+			m.AppID = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field HandlerId", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field HandlerID", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -5632,7 +5632,7 @@ func (m *ApplicationHandlerRegistration) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.HandlerId = string(dAtA[iNdEx:postIndex])
+			m.HandlerID = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -5765,84 +5765,86 @@ func init() {
 }
 
 var fileDescriptorBroker = []byte{
-	// 1253 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xec, 0x58, 0x4d, 0x6f, 0xdb, 0x46,
-	0x13, 0x06, 0xfd, 0x21, 0xc7, 0x23, 0xcb, 0x96, 0x37, 0xb1, 0xcd, 0x28, 0x6f, 0x6c, 0xbf, 0x2a,
-	0x10, 0x28, 0x48, 0x43, 0x25, 0x0a, 0xd2, 0xa2, 0x40, 0xd1, 0x40, 0x8e, 0x83, 0xd6, 0x05, 0x94,
-	0x1a, 0x8c, 0xd3, 0x43, 0x51, 0x40, 0x58, 0x91, 0x13, 0x6a, 0x11, 0x8a, 0x64, 0xb8, 0x4b, 0x25,
-	0xbe, 0xf6, 0x5a, 0xa0, 0xbf, 0xa1, 0xcd, 0xb1, 0xb7, 0x1e, 0x7b, 0xe9, 0xb1, 0xe8, 0xb1, 0xe7,
-	0x1e, 0xda, 0x22, 0xbf, 0xa4, 0xe0, 0xee, 0x92, 0x14, 0xe5, 0x28, 0x0e, 0x82, 0xa0, 0x1f, 0x48,
-	0x2e, 0x12, 0x77, 0xe6, 0x99, 0x87, 0xbb, 0x33, 0xb3, 0x0f, 0x97, 0x84, 0x1b, 0x1e, 0x13, 0xc3,
-	0x64, 0x60, 0x39, 0xe1, 0xa8, 0x7d, 0x34, 0xc4, 0xa3, 0x21, 0x0b, 0x3c, 0x7e, 0x17, 0xc5, 0xe3,
-	0x30, 0x7e, 0xd8, 0xa6, 0x11, 0x6b, 0x0f, 0xe2, 0xf0, 0x21, 0xc6, 0xfa, 0xcf, 0x8a, 0xe2, 0x50,
-	0x84, 0xa4, 0xa2, 0x46, 0x8d, 0x0b, 0x5e, 0x18, 0x7a, 0x3e, 0xb6, 0xa5, 0x75, 0x90, 0x3c, 0x68,
-	0xe3, 0x28, 0x12, 0xc7, 0x0a, 0xd4, 0xb8, 0x3a, 0xc1, 0xec, 0x85, 0x5e, 0x58, 0xa0, 0xd2, 0x91,
-	0x1c, 0xc8, 0x2b, 0x0d, 0xbf, 0x7c, 0xda, 0x44, 0x68, 0xc4, 0x34, 0xf4, 0xfd, 0xd3, 0xa0, 0x12,
-	0xe6, 0x84, 0x7e, 0x7e, 0xa1, 0x03, 0x6f, 0x9e, 0x16, 0xe8, 0x51, 0x81, 0x8f, 0xe9, 0x71, 0xf6,
-	0xaf, 0xc3, 0xae, 0x9f, 0x16, 0x26, 0x62, 0xea, 0xa0, 0xfa, 0x55, 0x21, 0xcd, 0xa7, 0x73, 0xb0,
-	0xba, 0x1f, 0x3e, 0x0e, 0x7c, 0x16, 0x3c, 0xfc, 0x2c, 0x12, 0x2c, 0x0c, 0xc8, 0x36, 0x00, 0x73,
-	0x31, 0x10, 0xec, 0x01, 0xc3, 0xd8, 0x34, 0x76, 0x8d, 0xd6, 0xb2, 0x3d, 0x61, 0x21, 0x17, 0x01,
-	0xf4, 0x6d, 0xfb, 0xcc, 0x35, 0xe7, 0xa4, 0x7f, 0x59, 0x5b, 0x0e, 0x5c, 0x72, 0x0e, 0x16, 0xb9,
-	0x13, 0xc6, 0x68, 0xce, 0xef, 0x1a, 0xad, 0x9a, 0xad, 0x06, 0xa4, 0x01, 0x67, 0x5c, 0xa4, 0xae,
-	0xcf, 0x02, 0x34, 0x17, 0x76, 0x8d, 0xd6, 0xbc, 0x9d, 0x8f, 0xc9, 0x21, 0x6c, 0x66, 0xeb, 0xef,
-	0x3b, 0x61, 0xf0, 0x80, 0x79, 0x49, 0x4c, 0xd3, 0xa9, 0x98, 0x8b, 0xbb, 0x46, 0xab, 0xda, 0x39,
-	0x6f, 0xe5, 0xe9, 0x39, 0x7a, 0x72, 0x7b, 0x12, 0x60, 0x6f, 0x64, 0x9e, 0x92, 0x99, 0xf4, 0x60,
-	0x23, 0x9b, 0x62, 0x99, 0xb0, 0x22, 0x09, 0x4d, 0x2b, 0xcb, 0xdb, 0x34, 0xdf, 0x39, 0xed, 0x28,
-	0x59, 0x9b, 0xdf, 0x2c, 0x40, 0xed, 0x7e, 0x94, 0xa6, 0xa8, 0x87, 0x9c, 0x53, 0x0f, 0x89, 0x09,
-	0x4b, 0x11, 0x3d, 0xf6, 0x43, 0xea, 0xca, 0x04, 0xad, 0xd8, 0xd9, 0x90, 0x5c, 0x81, 0xa5, 0x91,
-	0x02, 0xc9, 0xd4, 0x54, 0x3b, 0xeb, 0xc5, 0xec, 0x75, 0xb4, 0x9d, 0x21, 0xc8, 0x5d, 0x58, 0x72,
-	0x71, 0xdc, 0xc7, 0x84, 0x99, 0xd5, 0x94, 0x66, 0xef, 0xe6, 0x6f, 0xbf, 0xef, 0xbc, 0xb0, 0x8a,
-	0x42, 0x04, 0xed, 0x34, 0xa1, 0x6d, 0x71, 0x1c, 0x21, 0xb7, 0xf6, 0x71, 0x7c, 0xe7, 0xfe, 0x81,
-	0x5d, 0x71, 0x71, 0x7c, 0x27, 0x61, 0x29, 0x1f, 0x8d, 0x22, 0xc9, 0xb7, 0xf2, 0x4a, 0x7c, 0xdd,
-	0x28, 0x92, 0x7c, 0x34, 0x8a, 0x52, 0xbe, 0x0d, 0x48, 0xaf, 0xd2, 0x32, 0xd7, 0x64, 0x99, 0x17,
-	0x69, 0x14, 0x1d, 0xb8, 0xa9, 0x39, 0x9d, 0x36, 0x73, 0xcd, 0x55, 0x65, 0x76, 0x71, 0x7c, 0xe0,
-	0x92, 0x2e, 0xac, 0xe7, 0x75, 0x1c, 0xa1, 0xa0, 0x2e, 0x15, 0xd4, 0xdc, 0x90, 0x49, 0x38, 0x57,
-	0x24, 0xc1, 0x7e, 0xd2, 0xd3, 0x3e, 0xbb, 0x9e, 0x19, 0x33, 0x0b, 0xf9, 0x08, 0xea, 0x59, 0xe1,
-	0x72, 0x86, 0x4d, 0xc9, 0x70, 0x36, 0xaf, 0xd9, 0x04, 0xc1, 0x9a, 0xb6, 0xe5, 0xf1, 0x5d, 0xa8,
-	0xbb, 0xba, 0x9b, 0xfb, 0xa1, 0x6c, 0x67, 0x6e, 0xee, 0xec, 0xce, 0xb7, 0xaa, 0x9d, 0x4d, 0x4b,
-	0x2b, 0x43, 0xb9, 0xdb, 0xed, 0x35, 0xb7, 0x34, 0xe6, 0xa4, 0x09, 0x8b, 0x72, 0x83, 0x98, 0x97,
-	0xe5, 0x7d, 0x57, 0x2c, 0xb5, 0x5d, 0x8e, 0xd2, 0x5f, 0x5b, 0xb9, 0x9a, 0x5f, 0xcf, 0xc3, 0x5a,
-	0xc6, 0xf3, 0xb6, 0x25, 0x5e, 0xd0, 0x12, 0xb7, 0x60, 0x6d, 0xaa, 0x1e, 0xba, 0x21, 0x66, 0x95,
-	0x63, 0xb5, 0x5c, 0x8e, 0xa2, 0x1a, 0x3b, 0xb3, 0xab, 0xf1, 0xb3, 0x01, 0xe6, 0x3e, 0x8e, 0x99,
-	0x83, 0x5d, 0x47, 0xb0, 0xb1, 0xda, 0xc9, 0xc8, 0xa3, 0x30, 0xe0, 0xaf, 0xad, 0x2c, 0xcf, 0x59,
-	0x48, 0xf5, 0xd5, 0x16, 0xb2, 0x31, 0x7b, 0x21, 0x3f, 0x2d, 0xc0, 0xf9, 0x7d, 0x74, 0x93, 0xc8,
-	0x67, 0x0e, 0x15, 0xe8, 0xbe, 0xd5, 0x9c, 0x7f, 0x4e, 0x73, 0xe6, 0x5f, 0x5a, 0x73, 0x76, 0xa0,
-	0xca, 0x31, 0x1e, 0x63, 0xdc, 0x17, 0x6c, 0x84, 0xe6, 0x96, 0x7c, 0xba, 0x81, 0x32, 0x1d, 0xb1,
-	0x11, 0x92, 0x7d, 0x58, 0x8f, 0x75, 0x3b, 0xf6, 0x05, 0x8e, 0x22, 0x9f, 0x8a, 0xac, 0x9f, 0xb7,
-	0xa6, 0xbb, 0x27, 0x2b, 0x57, 0x3d, 0x8b, 0x38, 0xd2, 0x01, 0x2f, 0xa5, 0x4b, 0x3f, 0x2e, 0xc0,
-	0xd6, 0xc9, 0x9d, 0xf0, 0x28, 0x41, 0x2e, 0xde, 0x94, 0xf6, 0xf9, 0x17, 0x3c, 0x84, 0x7a, 0x70,
-	0x96, 0xe6, 0xe9, 0x2f, 0x28, 0xb6, 0x24, 0xc5, 0xff, 0x8a, 0x49, 0x14, 0x35, 0xca, 0xb9, 0x08,
-	0x3d, 0x61, 0xfb, 0xbb, 0x9e, 0x69, 0xdf, 0x2e, 0xc2, 0x3b, 0x93, 0xe2, 0xf3, 0x86, 0xf7, 0xd1,
-	0x7f, 0x4e, 0x86, 0x5e, 0x73, 0xd7, 0x4d, 0xa9, 0x9a, 0x79, 0x42, 0xd5, 0x7a, 0xb3, 0x55, 0x6d,
-	0x37, 0xef, 0xcb, 0x19, 0x4f, 0xe5, 0x57, 0x94, 0xb7, 0x1f, 0xe6, 0xa0, 0x51, 0x90, 0xdd, 0x1e,
-	0x52, 0xdf, 0xc7, 0xc0, 0xc3, 0xb7, 0x9d, 0x39, 0xbb, 0x33, 0x9b, 0x2e, 0x5c, 0x78, 0x6e, 0xca,
-	0x5e, 0xeb, 0xf1, 0xa8, 0x49, 0xa0, 0x7e, 0x2f, 0x19, 0x70, 0x27, 0x66, 0x83, 0xac, 0x1c, 0xcd,
-	0x35, 0xa8, 0xdd, 0x13, 0x54, 0x24, 0x3c, 0x33, 0xfc, 0x31, 0x0f, 0x15, 0x65, 0x21, 0x2d, 0xa8,
-	0xf0, 0x63, 0x2e, 0x70, 0x24, 0xef, 0x5a, 0xed, 0xd4, 0xad, 0xf4, 0xad, 0xf9, 0x9e, 0x34, 0xa5,
-	0x10, 0x6e, 0x6b, 0x3f, 0xb9, 0x0e, 0xcb, 0x4e, 0x38, 0x8a, 0xc2, 0x00, 0x03, 0xa1, 0x27, 0x72,
-	0x56, 0x82, 0x6f, 0x67, 0x56, 0x85, 0x2f, 0x50, 0xa4, 0x09, 0x95, 0x44, 0x9e, 0x9c, 0xf4, 0x11,
-	0x0d, 0x24, 0xde, 0xa6, 0x02, 0xb9, 0xad, 0x3d, 0xa4, 0x0d, 0x35, 0x75, 0xd5, 0x4f, 0x02, 0xf6,
-	0x28, 0x41, 0x59, 0x9a, 0x32, 0x74, 0x45, 0x01, 0xee, 0x4b, 0x3f, 0xb9, 0x04, 0x67, 0x32, 0x55,
-	0x95, 0x79, 0x2f, 0x63, 0x73, 0x1f, 0x79, 0x17, 0xaa, 0xc5, 0x6e, 0xe2, 0xb2, 0x16, 0x65, 0xe8,
-	0xa4, 0x9b, 0x7c, 0x00, 0x13, 0x7b, 0x8f, 0x67, 0x73, 0x59, 0x3b, 0x11, 0xb4, 0x3e, 0x81, 0xd2,
-	0x13, 0x7a, 0x0f, 0x6a, 0x6e, 0x2e, 0xd7, 0xe9, 0x79, 0xb4, 0x3e, 0x91, 0xc9, 0x43, 0x8c, 0x9d,
-	0xf4, 0x85, 0xdd, 0x47, 0x6e, 0x97, 0x61, 0xe4, 0x0a, 0xac, 0x3b, 0x61, 0x10, 0xa0, 0x23, 0xd0,
-	0xed, 0xc7, 0x61, 0x22, 0x30, 0xe6, 0x52, 0xaa, 0x6a, 0x76, 0x3d, 0x77, 0xd8, 0xca, 0x4e, 0xae,
-	0x02, 0x29, 0xc0, 0x43, 0x1a, 0xb8, 0x7e, 0x8a, 0xde, 0x94, 0xe8, 0x82, 0xe6, 0x13, 0xed, 0x68,
-	0x7e, 0x0e, 0xdb, 0xdd, 0x28, 0xbf, 0x95, 0x36, 0xdb, 0xe8, 0x31, 0x2e, 0xf4, 0x9b, 0x79, 0xd1,
-	0xbc, 0xc6, 0x64, 0xf3, 0x5e, 0x04, 0xd0, 0xec, 0x13, 0xdf, 0x14, 0xb4, 0xe5, 0xc0, 0xed, 0x3c,
-	0x9d, 0x83, 0xca, 0x9e, 0x94, 0x14, 0x72, 0x0b, 0x96, 0xbb, 0x9c, 0x87, 0x0e, 0x4b, 0x45, 0x63,
-	0x23, 0x13, 0x9a, 0xd2, 0x49, 0xb9, 0x31, 0xeb, 0x54, 0xd5, 0x32, 0xae, 0x19, 0xe4, 0x53, 0x58,
-	0xce, 0x5b, 0x95, 0x98, 0x19, 0x72, 0xba, 0x7b, 0x1b, 0xff, 0x2f, 0x34, 0x6c, 0xc6, 0x81, 0xfc,
-	0x9a, 0x41, 0x3e, 0x84, 0xa5, 0xc3, 0x64, 0xe0, 0x33, 0x3e, 0x24, 0xb3, 0xee, 0xd9, 0xd8, 0xb4,
-	0xd4, 0xc7, 0x27, 0x2b, 0xfb, 0xac, 0x64, 0xdd, 0x19, 0x45, 0xe2, 0xb8, 0x65, 0x90, 0x1e, 0x9c,
-	0xd1, 0x5b, 0x13, 0xc9, 0xce, 0x6c, 0xc9, 0x54, 0xf3, 0x39, 0x55, 0x53, 0x3b, 0xdf, 0x19, 0x50,
-	0x53, 0x49, 0xea, 0xd1, 0x80, 0x7a, 0x18, 0x93, 0x2f, 0xa1, 0xa1, 0x92, 0x8f, 0xf1, 0xc9, 0xb2,
-	0x90, 0x4b, 0x19, 0xe3, 0x8b, 0x4b, 0x36, 0x6b, 0x01, 0xa4, 0x03, 0xcb, 0x1f, 0xa3, 0xd0, 0x1b,
-	0x3a, 0xaf, 0x44, 0x69, 0xcb, 0x37, 0x56, 0xcb, 0xe6, 0xbd, 0xaf, 0x8c, 0x5f, 0x9e, 0x6d, 0x1b,
-	0xbf, 0x3e, 0xdb, 0x36, 0xfe, 0x7c, 0xb6, 0x6d, 0xc0, 0x4e, 0x18, 0x7b, 0x96, 0x18, 0xa2, 0x90,
-	0xf2, 0x17, 0x28, 0xf9, 0x93, 0x0d, 0xac, 0xc2, 0xf6, 0xaa, 0x6a, 0x41, 0x87, 0xe9, 0x9d, 0x0f,
-	0x8d, 0x2f, 0x2e, 0xbd, 0xdc, 0x47, 0xc0, 0xef, 0xe7, 0x2e, 0x4c, 0x7b, 0xad, 0xee, 0xe1, 0x81,
-	0xa5, 0xc8, 0x06, 0x15, 0xb9, 0x90, 0x1b, 0x7f, 0x05, 0x00, 0x00, 0xff, 0xff, 0x83, 0x81, 0xaf,
-	0x00, 0x53, 0x14, 0x00, 0x00,
+	// 1294 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xec, 0x58, 0x5f, 0x6b, 0x1b, 0xc7,
+	0x16, 0x67, 0xfd, 0x47, 0x8e, 0x8e, 0x2c, 0x5b, 0x9e, 0xc4, 0xf6, 0x46, 0xb9, 0x58, 0xba, 0xba,
+	0x10, 0x14, 0x92, 0xac, 0x12, 0x85, 0x7b, 0x2f, 0x85, 0xd2, 0x20, 0x47, 0x21, 0x55, 0x41, 0xad,
+	0xd9, 0x38, 0x50, 0x4a, 0x41, 0x8c, 0x76, 0x4f, 0xa4, 0x21, 0xd2, 0xee, 0x64, 0x77, 0x56, 0x89,
+	0x5f, 0xfb, 0x4d, 0xda, 0xc7, 0xbe, 0xf5, 0xa1, 0xd0, 0x4f, 0x50, 0x4a, 0xa1, 0xd0, 0xe7, 0x16,
+	0xdc, 0xe2, 0xa7, 0x7e, 0x8c, 0xb2, 0x33, 0xb3, 0xbb, 0x92, 0x1c, 0xc5, 0x21, 0x98, 0xd2, 0x3f,
+	0x7e, 0xb1, 0x76, 0xce, 0xf9, 0x9d, 0xdf, 0xcc, 0x9c, 0x73, 0xe6, 0xb7, 0xe3, 0x85, 0x7b, 0x03,
+	0x26, 0x86, 0x51, 0xdf, 0x72, 0xfc, 0x71, 0xe3, 0x70, 0x88, 0x87, 0x43, 0xe6, 0x0d, 0xc2, 0x0f,
+	0x51, 0xbc, 0xf0, 0x83, 0x67, 0x0d, 0xca, 0x59, 0xa3, 0x1f, 0xf8, 0xcf, 0x30, 0xd0, 0x3f, 0x16,
+	0x0f, 0x7c, 0xe1, 0x93, 0x9c, 0x1a, 0x95, 0xaf, 0x0d, 0x7c, 0x7f, 0x30, 0xc2, 0x86, 0xb4, 0xf6,
+	0xa3, 0xa7, 0x0d, 0x1c, 0x73, 0x71, 0xa4, 0x40, 0xe5, 0xdb, 0x53, 0xcc, 0x03, 0x7f, 0xe0, 0x67,
+	0xa8, 0x78, 0x24, 0x07, 0xf2, 0x49, 0xc3, 0x6f, 0x9c, 0xb5, 0x10, 0xca, 0x99, 0x86, 0xfe, 0xff,
+	0x2c, 0xa8, 0x84, 0x39, 0xfe, 0x28, 0x7d, 0xd0, 0x81, 0xff, 0x3d, 0x2b, 0x70, 0x40, 0x05, 0xbe,
+	0xa0, 0x47, 0xc9, 0xaf, 0x0e, 0xbb, 0x7b, 0x56, 0x98, 0x08, 0xa8, 0x83, 0xea, 0xaf, 0x0a, 0xa9,
+	0x7d, 0xb5, 0x04, 0x1b, 0x6d, 0xff, 0x85, 0x37, 0x62, 0xde, 0xb3, 0x8f, 0xb8, 0x60, 0xbe, 0x47,
+	0xf6, 0x00, 0x98, 0x8b, 0x9e, 0x60, 0x4f, 0x19, 0x06, 0xa6, 0x51, 0x35, 0xea, 0x79, 0x7b, 0xca,
+	0x42, 0x6e, 0x01, 0xe8, 0x69, 0x7b, 0xcc, 0x35, 0x97, 0x62, 0xff, 0x7e, 0xf1, 0xe4, 0xb8, 0x92,
+	0x7f, 0xa4, 0xac, 0x9d, 0xb6, 0x9d, 0xd7, 0x80, 0x8e, 0x4b, 0xae, 0xc0, 0x6a, 0xe8, 0xf8, 0x01,
+	0x9a, 0xcb, 0x55, 0xa3, 0x5e, 0xb4, 0xd5, 0x80, 0x94, 0xe1, 0x92, 0x8b, 0xd4, 0x1d, 0x31, 0x0f,
+	0xcd, 0x95, 0xaa, 0x51, 0x5f, 0xb6, 0xd3, 0x31, 0x39, 0x80, 0x9d, 0x24, 0x1d, 0x3d, 0xc7, 0xf7,
+	0x9e, 0xb2, 0x41, 0x14, 0xd0, 0x78, 0x65, 0xe6, 0x6a, 0xd5, 0xa8, 0x17, 0x9a, 0x57, 0xad, 0x34,
+	0x5b, 0x87, 0x2f, 0x1f, 0x4c, 0x03, 0xec, 0xed, 0xc4, 0x33, 0x63, 0x26, 0x5d, 0xd8, 0x4e, 0x56,
+	0x3c, 0x4b, 0x98, 0x93, 0x84, 0xa6, 0x95, 0xa4, 0x71, 0x9e, 0xef, 0x8a, 0x76, 0xcc, 0x58, 0x6b,
+	0xdf, 0xac, 0x40, 0xf1, 0x09, 0x8f, 0x33, 0xd6, 0xc5, 0x30, 0xa4, 0x03, 0x24, 0x26, 0xac, 0x71,
+	0x7a, 0x34, 0xf2, 0xa9, 0x2b, 0xf3, 0xb5, 0x6e, 0x27, 0x43, 0x72, 0x13, 0xd6, 0xc6, 0x0a, 0x24,
+	0x33, 0x55, 0x68, 0x6e, 0x65, 0xab, 0xd7, 0xd1, 0x76, 0x82, 0x20, 0x1f, 0xc3, 0x9a, 0x8b, 0x93,
+	0x1e, 0x46, 0xcc, 0x2c, 0xc4, 0x34, 0xfb, 0xf7, 0x7f, 0x3a, 0xae, 0xbc, 0xb6, 0xa8, 0x42, 0x78,
+	0x8d, 0x38, 0xa1, 0x0d, 0x71, 0xc4, 0x31, 0xb4, 0xda, 0x38, 0x79, 0xf8, 0xa4, 0x73, 0x72, 0x5c,
+	0xc9, 0xa9, 0x27, 0x3b, 0xe7, 0xe2, 0xe4, 0x61, 0xc4, 0x62, 0x66, 0xca, 0xb9, 0x64, 0x5e, 0x7f,
+	0x2b, 0xe6, 0x16, 0xe7, 0x9a, 0x59, 0x3d, 0xd9, 0x39, 0xca, 0x79, 0xcc, 0x5c, 0x85, 0xf8, 0x29,
+	0xee, 0x84, 0xa2, 0xec, 0x84, 0xfc, 0xc9, 0x71, 0x65, 0xb5, 0xc5, 0x79, 0xa7, 0x6d, 0xaf, 0x52,
+	0xce, 0x3b, 0x6e, 0x8c, 0x88, 0x77, 0xc5, 0x5c, 0x73, 0x23, 0x43, 0xb4, 0x71, 0x12, 0x23, 0x5c,
+	0x9c, 0x74, 0x5c, 0xd2, 0x82, 0xad, 0xb4, 0xe2, 0x63, 0x14, 0xd4, 0xa5, 0x82, 0x9a, 0xdb, 0x32,
+	0x5d, 0x57, 0xb2, 0x74, 0xd9, 0x2f, 0xbb, 0xda, 0x67, 0x97, 0x12, 0x63, 0x62, 0x21, 0xef, 0x41,
+	0x29, 0x29, 0x71, 0xca, 0xb0, 0x23, 0x19, 0x2e, 0xa7, 0xd5, 0x9d, 0x22, 0xd8, 0xd4, 0xb6, 0x34,
+	0xbe, 0x05, 0x25, 0x57, 0x1f, 0x83, 0x9e, 0x2f, 0xcf, 0x41, 0x68, 0x56, 0xaa, 0xcb, 0xf5, 0x42,
+	0x73, 0xc7, 0xd2, 0x92, 0x32, 0x7b, 0x4c, 0xec, 0x4d, 0x77, 0x66, 0x1c, 0x92, 0x1a, 0xac, 0xca,
+	0x93, 0x65, 0xde, 0x90, 0xf3, 0xae, 0x5b, 0xea, 0x9c, 0x1d, 0xc6, 0x7f, 0x6d, 0xe5, 0xaa, 0x7d,
+	0xbd, 0x0c, 0x9b, 0x09, 0xcf, 0x45, 0xf3, 0x9c, 0x4b, 0xf3, 0xdc, 0x87, 0xcd, 0xb9, 0xca, 0xe9,
+	0xd6, 0x59, 0x54, 0xb8, 0x8d, 0xd9, 0xc2, 0x65, 0x75, 0xab, 0x2c, 0xae, 0xdb, 0xb7, 0x06, 0x98,
+	0x6d, 0x9c, 0x30, 0x07, 0x5b, 0x8e, 0x60, 0x13, 0xa5, 0x0e, 0x18, 0x72, 0xdf, 0x0b, 0xcf, 0xad,
+	0x80, 0xaf, 0xd8, 0x48, 0xe1, 0xed, 0x36, 0xb2, 0xbd, 0x78, 0x23, 0xbf, 0xad, 0xc0, 0xd5, 0x36,
+	0xba, 0x11, 0x1f, 0x31, 0x87, 0x0a, 0x74, 0x2f, 0x74, 0xec, 0xaf, 0xa0, 0x63, 0xcb, 0x6f, 0xac,
+	0x63, 0x15, 0x28, 0x84, 0x18, 0x4c, 0x30, 0xe8, 0x09, 0x36, 0x46, 0x73, 0x57, 0xbe, 0x5b, 0x41,
+	0x99, 0x0e, 0xd9, 0x18, 0x49, 0x1b, 0xb6, 0x02, 0xdd, 0xb8, 0x3d, 0x81, 0x63, 0x3e, 0xa2, 0x22,
+	0xe9, 0xfc, 0xdd, 0xf9, 0x3e, 0x4b, 0x0a, 0x5b, 0x4a, 0x22, 0x0e, 0x75, 0xc0, 0x1b, 0x69, 0xdd,
+	0x0f, 0x2b, 0xb0, 0x7b, 0xfa, 0xcc, 0x3c, 0x8f, 0x30, 0x14, 0xff, 0xe4, 0x46, 0xfb, 0x13, 0xbc,
+	0xec, 0xba, 0x70, 0x99, 0xa6, 0x25, 0xc9, 0x28, 0x76, 0x25, 0xc5, 0xbf, 0xb2, 0x45, 0x64, 0x75,
+	0x4b, 0xb9, 0x08, 0x3d, 0x65, 0xfb, 0xa3, 0xde, 0x9d, 0xdf, 0xaf, 0xc2, 0x7f, 0xa6, 0xa5, 0xeb,
+	0xa2, 0xb7, 0xfe, 0xae, 0x22, 0x76, 0xce, 0xfd, 0x39, 0xa7, 0x89, 0xe6, 0x29, 0x4d, 0xec, 0x2e,
+	0xd6, 0xc4, 0x6a, 0xda, 0xc1, 0x0b, 0xde, 0xfe, 0x6f, 0x29, 0x8e, 0x3f, 0x2f, 0x41, 0x39, 0x23,
+	0x7b, 0x30, 0xa4, 0xa3, 0x11, 0x7a, 0x03, 0xbc, 0xe8, 0xe1, 0xf3, 0xe8, 0xe1, 0x9a, 0x0b, 0xd7,
+	0x5e, 0x99, 0xdc, 0x73, 0xbd, 0xb0, 0xd5, 0x08, 0x94, 0x1e, 0x47, 0xfd, 0xd0, 0x09, 0x58, 0x3f,
+	0x29, 0x5c, 0x6d, 0x13, 0x8a, 0x8f, 0x05, 0x15, 0x51, 0x98, 0x18, 0x7e, 0x59, 0x86, 0x9c, 0xb2,
+	0x90, 0x3a, 0xe4, 0xc2, 0xa3, 0x50, 0xe0, 0x58, 0xce, 0x5a, 0x68, 0x96, 0x2c, 0xca, 0x99, 0xf5,
+	0x58, 0x9a, 0x62, 0x48, 0x68, 0x6b, 0x3f, 0xb9, 0x0b, 0x79, 0xc7, 0x1f, 0x73, 0xdf, 0x43, 0x4f,
+	0xe8, 0x85, 0x5c, 0x96, 0xe0, 0x07, 0x89, 0x55, 0xe1, 0x33, 0x14, 0xa9, 0x41, 0x2e, 0x92, 0x77,
+	0x39, 0x7d, 0x69, 0x04, 0x89, 0xb7, 0xa9, 0xc0, 0xd0, 0xd6, 0x1e, 0xd2, 0x80, 0xa2, 0x7a, 0xea,
+	0x45, 0x1e, 0x7b, 0x1e, 0xa1, 0x2c, 0xdd, 0x2c, 0x74, 0x5d, 0x01, 0x9e, 0x48, 0x3f, 0xb9, 0x0e,
+	0x97, 0x12, 0xa5, 0x96, 0xd5, 0x98, 0xc5, 0xa6, 0x3e, 0x72, 0x0b, 0x0a, 0xd9, 0xb9, 0x0b, 0x65,
+	0x59, 0x66, 0xa1, 0xd3, 0x6e, 0xf2, 0x0e, 0x4c, 0x9d, 0xd2, 0x30, 0x59, 0xcb, 0xe6, 0xa9, 0xa0,
+	0xad, 0x29, 0x94, 0x5e, 0xd0, 0xff, 0xa0, 0xe8, 0xa6, 0xaf, 0x80, 0xf8, 0x86, 0x5c, 0x9a, 0xca,
+	0xe4, 0x01, 0x06, 0x0e, 0x7a, 0x82, 0x8d, 0x30, 0xb4, 0x67, 0x61, 0xe4, 0x26, 0x6c, 0x39, 0xbe,
+	0xe7, 0xa1, 0x23, 0xd0, 0xed, 0x05, 0x7e, 0x24, 0x30, 0x08, 0xa5, 0xa8, 0x15, 0xed, 0x52, 0xea,
+	0xb0, 0x95, 0x9d, 0xdc, 0x06, 0x92, 0x81, 0x87, 0xd4, 0x73, 0x47, 0x31, 0x7a, 0x47, 0xa2, 0x33,
+	0x9a, 0xf7, 0xb5, 0xa3, 0xc6, 0x61, 0xaf, 0xc5, 0xd3, 0xa9, 0xb4, 0xd9, 0xc6, 0x01, 0x0b, 0x85,
+	0xfe, 0xfe, 0x90, 0xb5, 0xb4, 0xb1, 0xa0, 0xa5, 0x6f, 0x01, 0xe8, 0x89, 0xe6, 0xbe, 0xa9, 0x68,
+	0xba, 0x4e, 0xdb, 0xce, 0x6b, 0x40, 0xc7, 0x6d, 0x7e, 0xb1, 0x04, 0xb9, 0x7d, 0x29, 0x4b, 0xe4,
+	0x3e, 0xe4, 0x5b, 0x61, 0xe8, 0x3b, 0x2c, 0x16, 0x9e, 0xed, 0x44, 0xac, 0x66, 0x6e, 0xf5, 0xe5,
+	0x45, 0xf7, 0xba, 0xba, 0x71, 0xc7, 0x20, 0x1f, 0x40, 0x3e, 0x6d, 0x62, 0x62, 0x26, 0xc8, 0xf9,
+	0xbe, 0x2e, 0xff, 0x3b, 0xd3, 0xc1, 0x05, 0xff, 0x3c, 0xdc, 0x31, 0xc8, 0xbb, 0xb0, 0x76, 0x10,
+	0xf5, 0x47, 0x2c, 0x1c, 0x92, 0x45, 0x73, 0x96, 0x77, 0x2c, 0xf5, 0x2d, 0xce, 0x4a, 0xbe, 0xb2,
+	0x59, 0x0f, 0xc7, 0x5c, 0x1c, 0xd5, 0x0d, 0xd2, 0x85, 0x4b, 0xfa, 0xd0, 0x22, 0xa9, 0x2c, 0x96,
+	0x5d, 0xb5, 0x9e, 0x33, 0x75, 0xb9, 0xf9, 0xb9, 0x01, 0x45, 0x95, 0xa4, 0x2e, 0xf5, 0xe8, 0x00,
+	0x03, 0xf2, 0x29, 0x94, 0x55, 0x59, 0x30, 0x38, 0x5d, 0x30, 0x72, 0x3d, 0x61, 0x7c, 0x7d, 0x31,
+	0x17, 0x6d, 0x80, 0x34, 0x21, 0xff, 0x08, 0x85, 0x3e, 0xea, 0x69, 0x25, 0x66, 0xc4, 0xa0, 0xbc,
+	0x31, 0x6b, 0xde, 0xff, 0xcc, 0xf8, 0xee, 0x64, 0xcf, 0xf8, 0xf1, 0x64, 0xcf, 0xf8, 0xf5, 0x64,
+	0xcf, 0x80, 0x8a, 0x1f, 0x0c, 0x2c, 0x31, 0x44, 0x21, 0x85, 0xd3, 0x53, 0xc2, 0x29, 0x5b, 0x5b,
+	0x85, 0xed, 0x17, 0xd4, 0x86, 0x0e, 0xe2, 0x99, 0x0f, 0x8c, 0x4f, 0xae, 0xbf, 0xd9, 0x37, 0xd1,
+	0x2f, 0x97, 0xae, 0xcd, 0x7b, 0xad, 0xd6, 0x41, 0xc7, 0x52, 0x64, 0xfd, 0x9c, 0xdc, 0xc8, 0xbd,
+	0xdf, 0x03, 0x00, 0x00, 0xff, 0xff, 0xf7, 0xf4, 0x05, 0x39, 0x62, 0x15, 0x00, 0x00,
 }

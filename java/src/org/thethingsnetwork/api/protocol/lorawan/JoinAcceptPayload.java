@@ -142,7 +142,7 @@ public  final class JoinAcceptPayload extends
   public static final int NET_ID_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString netId_;
   /**
-   * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID"];</code>
+   * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
    */
   public com.google.protobuf.ByteString getNetId() {
     return netId_;
@@ -676,13 +676,13 @@ public  final class JoinAcceptPayload extends
 
     private com.google.protobuf.ByteString netId_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID"];</code>
+     * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
      */
     public com.google.protobuf.ByteString getNetId() {
       return netId_;
     }
     /**
-     * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID"];</code>
+     * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
      */
     public Builder setNetId(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -694,7 +694,7 @@ public  final class JoinAcceptPayload extends
       return this;
     }
     /**
-     * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID"];</code>
+     * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
      */
     public Builder clearNetId() {
       

@@ -58,7 +58,7 @@ func request_ApplicationManager_GetApplication_0(ctx context.Context, marshaler 
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "app_id")
 	}
 
-	protoReq.AppId, err = runtime.String(val)
+	protoReq.AppID, err = runtime.String(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "app_id", err)
@@ -89,7 +89,7 @@ func request_ApplicationManager_SetApplication_0(ctx context.Context, marshaler 
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "app_id")
 	}
 
-	protoReq.AppId, err = runtime.String(val)
+	protoReq.AppID, err = runtime.String(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "app_id", err)
@@ -120,7 +120,7 @@ func request_ApplicationManager_SetApplication_1(ctx context.Context, marshaler 
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "app_id")
 	}
 
-	protoReq.AppId, err = runtime.String(val)
+	protoReq.AppID, err = runtime.String(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "app_id", err)
@@ -147,7 +147,7 @@ func request_ApplicationManager_DeleteApplication_0(ctx context.Context, marshal
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "app_id")
 	}
 
-	protoReq.AppId, err = runtime.String(val)
+	protoReq.AppID, err = runtime.String(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "app_id", err)
@@ -174,7 +174,7 @@ func request_ApplicationManager_GetDevice_0(ctx context.Context, marshaler runti
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "app_id")
 	}
 
-	protoReq.AppId, err = runtime.String(val)
+	protoReq.AppID, err = runtime.String(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "app_id", err)
@@ -185,7 +185,7 @@ func request_ApplicationManager_GetDevice_0(ctx context.Context, marshaler runti
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "dev_id")
 	}
 
-	protoReq.DevId, err = runtime.String(val)
+	protoReq.DevID, err = runtime.String(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "dev_id", err)
@@ -216,7 +216,7 @@ func request_ApplicationManager_SetDevice_0(ctx context.Context, marshaler runti
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "app_id")
 	}
 
-	protoReq.AppId, err = runtime.String(val)
+	protoReq.AppID, err = runtime.String(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "app_id", err)
@@ -227,7 +227,7 @@ func request_ApplicationManager_SetDevice_0(ctx context.Context, marshaler runti
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "dev_id")
 	}
 
-	protoReq.DevId, err = runtime.String(val)
+	protoReq.DevID, err = runtime.String(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "dev_id", err)
@@ -258,7 +258,7 @@ func request_ApplicationManager_SetDevice_1(ctx context.Context, marshaler runti
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "app_id")
 	}
 
-	protoReq.AppId, err = runtime.String(val)
+	protoReq.AppID, err = runtime.String(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "app_id", err)
@@ -269,7 +269,7 @@ func request_ApplicationManager_SetDevice_1(ctx context.Context, marshaler runti
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "dev_id")
 	}
 
-	protoReq.DevId, err = runtime.String(val)
+	protoReq.DevID, err = runtime.String(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "dev_id", err)
@@ -300,7 +300,7 @@ func request_ApplicationManager_SetDevice_2(ctx context.Context, marshaler runti
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "app_id")
 	}
 
-	protoReq.AppId, err = runtime.String(val)
+	protoReq.AppID, err = runtime.String(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "app_id", err)
@@ -331,7 +331,7 @@ func request_ApplicationManager_SetDevice_3(ctx context.Context, marshaler runti
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "app_id")
 	}
 
-	protoReq.AppId, err = runtime.String(val)
+	protoReq.AppID, err = runtime.String(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "app_id", err)
@@ -358,7 +358,7 @@ func request_ApplicationManager_DeleteDevice_0(ctx context.Context, marshaler ru
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "app_id")
 	}
 
-	protoReq.AppId, err = runtime.String(val)
+	protoReq.AppID, err = runtime.String(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "app_id", err)
@@ -369,7 +369,7 @@ func request_ApplicationManager_DeleteDevice_0(ctx context.Context, marshaler ru
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "dev_id")
 	}
 
-	protoReq.DevId, err = runtime.String(val)
+	protoReq.DevID, err = runtime.String(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "dev_id", err)
@@ -396,7 +396,7 @@ func request_ApplicationManager_GetDevicesForApplication_0(ctx context.Context, 
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "app_id")
 	}
 
-	protoReq.AppId, err = runtime.String(val)
+	protoReq.AppID, err = runtime.String(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "app_id", err)

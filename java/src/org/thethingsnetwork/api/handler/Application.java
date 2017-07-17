@@ -121,7 +121,7 @@ public  final class Application extends
   public static final int APP_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object appId_;
   /**
-   * <code>string app_id = 1;</code>
+   * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
    */
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
@@ -136,7 +136,7 @@ public  final class Application extends
     }
   }
   /**
-   * <code>string app_id = 1;</code>
+   * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
    */
   public com.google.protobuf.ByteString
       getAppIdBytes() {
@@ -804,7 +804,7 @@ public  final class Application extends
 
     private java.lang.Object appId_ = "";
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     public java.lang.String getAppId() {
       java.lang.Object ref = appId_;
@@ -819,7 +819,7 @@ public  final class Application extends
       }
     }
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     public com.google.protobuf.ByteString
         getAppIdBytes() {
@@ -835,7 +835,7 @@ public  final class Application extends
       }
     }
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     public Builder setAppId(
         java.lang.String value) {
@@ -848,7 +848,7 @@ public  final class Application extends
       return this;
     }
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     public Builder clearAppId() {
       
@@ -857,7 +857,7 @@ public  final class Application extends
       return this;
     }
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     public Builder setAppIdBytes(
         com.google.protobuf.ByteString value) {

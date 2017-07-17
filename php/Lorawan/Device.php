@@ -18,7 +18,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
      * </pre>
      *
-     * <code>bytes app_eui = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];</code>
+     * <code>bytes app_eui = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     private $app_eui = '';
     /**
@@ -26,7 +26,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The DevEUI is a unique, 8 byte identifier for the device.
      * </pre>
      *
-     * <code>bytes dev_eui = 2 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];</code>
+     * <code>bytes dev_eui = 2 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     private $dev_eui = '';
     /**
@@ -34,7 +34,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string app_id = 3;</code>
+     * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
      */
     private $app_id = '';
     /**
@@ -42,7 +42,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string dev_id = 4;</code>
+     * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
      */
     private $dev_id = '';
     /**
@@ -139,7 +139,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
      * </pre>
      *
-     * <code>bytes app_eui = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];</code>
+     * <code>bytes app_eui = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     public function getAppEui()
     {
@@ -151,7 +151,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
      * </pre>
      *
-     * <code>bytes app_eui = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];</code>
+     * <code>bytes app_eui = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     public function setAppEui($var)
     {
@@ -164,7 +164,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The DevEUI is a unique, 8 byte identifier for the device.
      * </pre>
      *
-     * <code>bytes dev_eui = 2 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];</code>
+     * <code>bytes dev_eui = 2 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     public function getDevEui()
     {
@@ -176,7 +176,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The DevEUI is a unique, 8 byte identifier for the device.
      * </pre>
      *
-     * <code>bytes dev_eui = 2 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];</code>
+     * <code>bytes dev_eui = 2 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     public function setDevEui($var)
     {
@@ -189,7 +189,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string app_id = 3;</code>
+     * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
      */
     public function getAppId()
     {
@@ -201,7 +201,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string app_id = 3;</code>
+     * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
      */
     public function setAppId($var)
     {
@@ -214,7 +214,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string dev_id = 4;</code>
+     * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
      */
     public function getDevId()
     {
@@ -226,7 +226,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string dev_id = 4;</code>
+     * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
      */
     public function setDevId($var)
     {

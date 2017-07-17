@@ -166,7 +166,7 @@ public  final class DownlinkOption extends
    * ID of the gateway where this downlink should be sent
    * </pre>
    *
-   * <code>string gateway_id = 2;</code>
+   * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
    */
   public java.lang.String getGatewayId() {
     java.lang.Object ref = gatewayId_;
@@ -185,7 +185,7 @@ public  final class DownlinkOption extends
    * ID of the gateway where this downlink should be sent
    * </pre>
    *
-   * <code>string gateway_id = 2;</code>
+   * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
    */
   public com.google.protobuf.ByteString
       getGatewayIdBytes() {
@@ -756,7 +756,7 @@ public  final class DownlinkOption extends
      * ID of the gateway where this downlink should be sent
      * </pre>
      *
-     * <code>string gateway_id = 2;</code>
+     * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     public java.lang.String getGatewayId() {
       java.lang.Object ref = gatewayId_;
@@ -775,7 +775,7 @@ public  final class DownlinkOption extends
      * ID of the gateway where this downlink should be sent
      * </pre>
      *
-     * <code>string gateway_id = 2;</code>
+     * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     public com.google.protobuf.ByteString
         getGatewayIdBytes() {
@@ -795,7 +795,7 @@ public  final class DownlinkOption extends
      * ID of the gateway where this downlink should be sent
      * </pre>
      *
-     * <code>string gateway_id = 2;</code>
+     * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     public Builder setGatewayId(
         java.lang.String value) {
@@ -812,7 +812,7 @@ public  final class DownlinkOption extends
      * ID of the gateway where this downlink should be sent
      * </pre>
      *
-     * <code>string gateway_id = 2;</code>
+     * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     public Builder clearGatewayId() {
       
@@ -825,7 +825,7 @@ public  final class DownlinkOption extends
      * ID of the gateway where this downlink should be sent
      * </pre>
      *
-     * <code>string gateway_id = 2;</code>
+     * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     public Builder setGatewayIdBytes(
         com.google.protobuf.ByteString value) {

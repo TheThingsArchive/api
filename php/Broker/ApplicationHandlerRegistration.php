@@ -14,11 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class ApplicationHandlerRegistration extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     private $app_id = '';
     /**
-     * <code>string handler_id = 2;</code>
+     * <code>string handler_id = 2 [(.gogoproto.customname) = "HandlerID"];</code>
      */
     private $handler_id = '';
 
@@ -28,7 +28,7 @@ class ApplicationHandlerRegistration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     public function getAppId()
     {
@@ -36,7 +36,7 @@ class ApplicationHandlerRegistration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     public function setAppId($var)
     {
@@ -45,7 +45,7 @@ class ApplicationHandlerRegistration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string handler_id = 2;</code>
+     * <code>string handler_id = 2 [(.gogoproto.customname) = "HandlerID"];</code>
      */
     public function getHandlerId()
     {
@@ -53,7 +53,7 @@ class ApplicationHandlerRegistration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string handler_id = 2;</code>
+     * <code>string handler_id = 2 [(.gogoproto.customname) = "HandlerID"];</code>
      */
     public function setHandlerId($var)
     {

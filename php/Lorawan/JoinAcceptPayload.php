@@ -22,7 +22,7 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
      */
     private $app_nonce = '';
     /**
-     * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID"];</code>
+     * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
      */
     private $net_id = '';
     /**
@@ -82,7 +82,7 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID"];</code>
+     * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
      */
     public function getNetId()
     {
@@ -90,7 +90,7 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID"];</code>
+     * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
      */
     public function setNetId($var)
     {

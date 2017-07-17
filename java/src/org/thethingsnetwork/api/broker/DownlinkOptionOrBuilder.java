@@ -30,7 +30,7 @@ public interface DownlinkOptionOrBuilder extends
    * ID of the gateway where this downlink should be sent
    * </pre>
    *
-   * <code>string gateway_id = 2;</code>
+   * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
    */
   java.lang.String getGatewayId();
   /**
@@ -38,7 +38,7 @@ public interface DownlinkOptionOrBuilder extends
    * ID of the gateway where this downlink should be sent
    * </pre>
    *
-   * <code>string gateway_id = 2;</code>
+   * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
    */
   com.google.protobuf.ByteString
       getGatewayIdBytes();

@@ -14,11 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeviceIdentifier extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     private $app_id = '';
     /**
-     * <code>string dev_id = 2;</code>
+     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      */
     private $dev_id = '';
 
@@ -28,7 +28,7 @@ class DeviceIdentifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     public function getAppId()
     {
@@ -36,7 +36,7 @@ class DeviceIdentifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     public function setAppId($var)
     {
@@ -45,7 +45,7 @@ class DeviceIdentifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string dev_id = 2;</code>
+     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      */
     public function getDevId()
     {
@@ -53,7 +53,7 @@ class DeviceIdentifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string dev_id = 2;</code>
+     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      */
     public function setDevId($var)
     {

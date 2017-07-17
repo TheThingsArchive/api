@@ -22,7 +22,7 @@ class Trace extends \Google\Protobuf\Internal\Message
      * Generated ID
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     private $id = '';
     /**
@@ -38,7 +38,7 @@ class Trace extends \Google\Protobuf\Internal\Message
      * The ID of the component
      * </pre>
      *
-     * <code>string service_id = 3;</code>
+     * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
      */
     private $service_id = '';
     /**
@@ -84,7 +84,7 @@ class Trace extends \Google\Protobuf\Internal\Message
      * Generated ID
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     public function getId()
     {
@@ -96,7 +96,7 @@ class Trace extends \Google\Protobuf\Internal\Message
      * Generated ID
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     public function setId($var)
     {
@@ -134,7 +134,7 @@ class Trace extends \Google\Protobuf\Internal\Message
      * The ID of the component
      * </pre>
      *
-     * <code>string service_id = 3;</code>
+     * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
      */
     public function getServiceId()
     {
@@ -146,7 +146,7 @@ class Trace extends \Google\Protobuf\Internal\Message
      * The ID of the component
      * </pre>
      *
-     * <code>string service_id = 3;</code>
+     * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
      */
     public function setServiceId($var)
     {

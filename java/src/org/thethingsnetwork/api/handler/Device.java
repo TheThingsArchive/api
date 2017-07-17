@@ -186,7 +186,7 @@ public  final class Device extends
   public static final int APP_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object appId_;
   /**
-   * <code>string app_id = 1;</code>
+   * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
    */
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
@@ -201,7 +201,7 @@ public  final class Device extends
     }
   }
   /**
-   * <code>string app_id = 1;</code>
+   * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
    */
   public com.google.protobuf.ByteString
       getAppIdBytes() {
@@ -220,7 +220,7 @@ public  final class Device extends
   public static final int DEV_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object devId_;
   /**
-   * <code>string dev_id = 2;</code>
+   * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
    */
   public java.lang.String getDevId() {
     java.lang.Object ref = devId_;
@@ -235,7 +235,7 @@ public  final class Device extends
     }
   }
   /**
-   * <code>string dev_id = 2;</code>
+   * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
    */
   public com.google.protobuf.ByteString
       getDevIdBytes() {
@@ -898,7 +898,7 @@ public  final class Device extends
 
     private java.lang.Object appId_ = "";
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     public java.lang.String getAppId() {
       java.lang.Object ref = appId_;
@@ -913,7 +913,7 @@ public  final class Device extends
       }
     }
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     public com.google.protobuf.ByteString
         getAppIdBytes() {
@@ -929,7 +929,7 @@ public  final class Device extends
       }
     }
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     public Builder setAppId(
         java.lang.String value) {
@@ -942,7 +942,7 @@ public  final class Device extends
       return this;
     }
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     public Builder clearAppId() {
       
@@ -951,7 +951,7 @@ public  final class Device extends
       return this;
     }
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     public Builder setAppIdBytes(
         com.google.protobuf.ByteString value) {
@@ -967,7 +967,7 @@ public  final class Device extends
 
     private java.lang.Object devId_ = "";
     /**
-     * <code>string dev_id = 2;</code>
+     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      */
     public java.lang.String getDevId() {
       java.lang.Object ref = devId_;
@@ -982,7 +982,7 @@ public  final class Device extends
       }
     }
     /**
-     * <code>string dev_id = 2;</code>
+     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      */
     public com.google.protobuf.ByteString
         getDevIdBytes() {
@@ -998,7 +998,7 @@ public  final class Device extends
       }
     }
     /**
-     * <code>string dev_id = 2;</code>
+     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      */
     public Builder setDevId(
         java.lang.String value) {
@@ -1011,7 +1011,7 @@ public  final class Device extends
       return this;
     }
     /**
-     * <code>string dev_id = 2;</code>
+     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      */
     public Builder clearDevId() {
       
@@ -1020,7 +1020,7 @@ public  final class Device extends
       return this;
     }
     /**
-     * <code>string dev_id = 2;</code>
+     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      */
     public Builder setDevIdBytes(
         com.google.protobuf.ByteString value) {

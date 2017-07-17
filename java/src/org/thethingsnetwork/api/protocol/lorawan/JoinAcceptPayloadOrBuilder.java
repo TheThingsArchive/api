@@ -18,7 +18,7 @@ public interface JoinAcceptPayloadOrBuilder extends
   com.google.protobuf.ByteString getAppNonce();
 
   /**
-   * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID"];</code>
+   * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
    */
   com.google.protobuf.ByteString getNetId();
 

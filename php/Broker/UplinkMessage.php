@@ -26,19 +26,19 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
      */
     private $message = null;
     /**
-     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];</code>
+     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     private $dev_eui = '';
     /**
-     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];</code>
+     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     private $app_eui = '';
     /**
-     * <code>string app_id = 13;</code>
+     * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
      */
     private $app_id = '';
     /**
-     * <code>string dev_id = 14;</code>
+     * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
      */
     private $dev_id = '';
     /**
@@ -98,7 +98,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];</code>
+     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     public function getDevEui()
     {
@@ -106,7 +106,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];</code>
+     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     public function setDevEui($var)
     {
@@ -115,7 +115,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];</code>
+     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     public function getAppEui()
     {
@@ -123,7 +123,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];</code>
+     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     public function setAppEui($var)
     {
@@ -132,7 +132,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string app_id = 13;</code>
+     * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
      */
     public function getAppId()
     {
@@ -140,7 +140,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string app_id = 13;</code>
+     * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
      */
     public function setAppId($var)
     {
@@ -149,7 +149,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string dev_id = 14;</code>
+     * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
      */
     public function getDevId()
     {
@@ -157,7 +157,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string dev_id = 14;</code>
+     * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
      */
     public function setDevId($var)
     {

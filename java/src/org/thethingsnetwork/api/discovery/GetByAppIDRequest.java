@@ -79,7 +79,7 @@ public  final class GetByAppIDRequest extends
    * compatible with Metadata message
    * </pre>
    *
-   * <code>string app_id = 30;</code>
+   * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
    */
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
@@ -98,7 +98,7 @@ public  final class GetByAppIDRequest extends
    * compatible with Metadata message
    * </pre>
    *
-   * <code>string app_id = 30;</code>
+   * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
    */
   public com.google.protobuf.ByteString
       getAppIdBytes() {
@@ -400,7 +400,7 @@ public  final class GetByAppIDRequest extends
      * compatible with Metadata message
      * </pre>
      *
-     * <code>string app_id = 30;</code>
+     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
      */
     public java.lang.String getAppId() {
       java.lang.Object ref = appId_;
@@ -419,7 +419,7 @@ public  final class GetByAppIDRequest extends
      * compatible with Metadata message
      * </pre>
      *
-     * <code>string app_id = 30;</code>
+     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
      */
     public com.google.protobuf.ByteString
         getAppIdBytes() {
@@ -439,7 +439,7 @@ public  final class GetByAppIDRequest extends
      * compatible with Metadata message
      * </pre>
      *
-     * <code>string app_id = 30;</code>
+     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
      */
     public Builder setAppId(
         java.lang.String value) {
@@ -456,7 +456,7 @@ public  final class GetByAppIDRequest extends
      * compatible with Metadata message
      * </pre>
      *
-     * <code>string app_id = 30;</code>
+     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
      */
     public Builder clearAppId() {
       
@@ -469,7 +469,7 @@ public  final class GetByAppIDRequest extends
      * compatible with Metadata message
      * </pre>
      *
-     * <code>string app_id = 30;</code>
+     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
      */
     public Builder setAppIdBytes(
         com.google.protobuf.ByteString value) {

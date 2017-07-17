@@ -22,7 +22,7 @@ class GetRequest extends \Google\Protobuf\Internal\Message
      * The ID of the service
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     private $id = '';
     /**
@@ -44,7 +44,7 @@ class GetRequest extends \Google\Protobuf\Internal\Message
      * The ID of the service
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     public function getId()
     {
@@ -56,7 +56,7 @@ class GetRequest extends \Google\Protobuf\Internal\Message
      * The ID of the service
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     public function setId($var)
     {

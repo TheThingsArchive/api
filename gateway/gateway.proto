@@ -47,7 +47,7 @@ message LocationMetadata {
 }
 
 message RxMetadata {
-  string  gateway_id = 1;
+  string  gateway_id = 1 [(gogoproto.customname) = "GatewayID"];
 
   // Indicates whether the gateway is trusted. Components that are able to verify gateway trust MUST do so and set this value accordingly
   bool    gateway_trusted = 2;

@@ -22,7 +22,7 @@ class MetadataRequest extends \Google\Protobuf\Internal\Message
      * The ID of the service that should be modified
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     private $id = '';
     /**
@@ -52,7 +52,7 @@ class MetadataRequest extends \Google\Protobuf\Internal\Message
      * The ID of the service that should be modified
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     public function getId()
     {
@@ -64,7 +64,7 @@ class MetadataRequest extends \Google\Protobuf\Internal\Message
      * The ID of the service that should be modified
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     public function setId($var)
     {

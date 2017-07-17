@@ -55,7 +55,7 @@ class Metadata extends \Google\Protobuf\Internal\Message
      * This metadata can only be added if the requesting client is authorized to manage this AppID.
      * </pre>
      *
-     * <code>string app_id = 30;</code>
+     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
      */
     public function getAppId()
     {
@@ -68,7 +68,7 @@ class Metadata extends \Google\Protobuf\Internal\Message
      * This metadata can only be added if the requesting client is authorized to manage this AppID.
      * </pre>
      *
-     * <code>string app_id = 30;</code>
+     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
      */
     public function setAppId($var)
     {
@@ -82,7 +82,7 @@ class Metadata extends \Google\Protobuf\Internal\Message
      * Only authorized Join Handlers can announce APP_EUI metadata (and we don't have any of those yet).
      * </pre>
      *
-     * <code>bytes app_eui = 31;</code>
+     * <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
      */
     public function getAppEui()
     {
@@ -95,7 +95,7 @@ class Metadata extends \Google\Protobuf\Internal\Message
      * Only authorized Join Handlers can announce APP_EUI metadata (and we don't have any of those yet).
      * </pre>
      *
-     * <code>bytes app_eui = 31;</code>
+     * <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
      */
     public function setAppEui($var)
     {

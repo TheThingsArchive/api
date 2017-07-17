@@ -12,7 +12,7 @@ public interface DeviceOrBuilder extends
    * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
    * </pre>
    *
-   * <code>bytes app_eui = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];</code>
+   * <code>bytes app_eui = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
    */
   com.google.protobuf.ByteString getAppEui();
 
@@ -21,7 +21,7 @@ public interface DeviceOrBuilder extends
    * The DevEUI is a unique, 8 byte identifier for the device.
    * </pre>
    *
-   * <code>bytes dev_eui = 2 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];</code>
+   * <code>bytes dev_eui = 2 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
    */
   com.google.protobuf.ByteString getDevEui();
 
@@ -30,7 +30,7 @@ public interface DeviceOrBuilder extends
    * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
    * </pre>
    *
-   * <code>string app_id = 3;</code>
+   * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
    */
   java.lang.String getAppId();
   /**
@@ -38,7 +38,7 @@ public interface DeviceOrBuilder extends
    * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
    * </pre>
    *
-   * <code>string app_id = 3;</code>
+   * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
    */
   com.google.protobuf.ByteString
       getAppIdBytes();
@@ -48,7 +48,7 @@ public interface DeviceOrBuilder extends
    * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
    * </pre>
    *
-   * <code>string dev_id = 4;</code>
+   * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
    */
   java.lang.String getDevId();
   /**
@@ -56,7 +56,7 @@ public interface DeviceOrBuilder extends
    * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
    * </pre>
    *
-   * <code>string dev_id = 4;</code>
+   * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
    */
   com.google.protobuf.ByteString
       getDevIdBytes();

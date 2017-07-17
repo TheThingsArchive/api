@@ -159,7 +159,7 @@ public  final class Device extends
    * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
    * </pre>
    *
-   * <code>bytes app_eui = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];</code>
+   * <code>bytes app_eui = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
    */
   public com.google.protobuf.ByteString getAppEui() {
     return appEui_;
@@ -172,7 +172,7 @@ public  final class Device extends
    * The DevEUI is a unique, 8 byte identifier for the device.
    * </pre>
    *
-   * <code>bytes dev_eui = 2 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];</code>
+   * <code>bytes dev_eui = 2 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
    */
   public com.google.protobuf.ByteString getDevEui() {
     return devEui_;
@@ -185,7 +185,7 @@ public  final class Device extends
    * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
    * </pre>
    *
-   * <code>string app_id = 3;</code>
+   * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
    */
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
@@ -204,7 +204,7 @@ public  final class Device extends
    * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
    * </pre>
    *
-   * <code>string app_id = 3;</code>
+   * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
    */
   public com.google.protobuf.ByteString
       getAppIdBytes() {
@@ -227,7 +227,7 @@ public  final class Device extends
    * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
    * </pre>
    *
-   * <code>string dev_id = 4;</code>
+   * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
    */
   public java.lang.String getDevId() {
     java.lang.Object ref = devId_;
@@ -246,7 +246,7 @@ public  final class Device extends
    * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
    * </pre>
    *
-   * <code>string dev_id = 4;</code>
+   * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
    */
   public com.google.protobuf.ByteString
       getDevIdBytes() {
@@ -935,7 +935,7 @@ public  final class Device extends
      * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
      * </pre>
      *
-     * <code>bytes app_eui = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];</code>
+     * <code>bytes app_eui = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     public com.google.protobuf.ByteString getAppEui() {
       return appEui_;
@@ -945,7 +945,7 @@ public  final class Device extends
      * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
      * </pre>
      *
-     * <code>bytes app_eui = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];</code>
+     * <code>bytes app_eui = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     public Builder setAppEui(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -961,7 +961,7 @@ public  final class Device extends
      * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
      * </pre>
      *
-     * <code>bytes app_eui = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];</code>
+     * <code>bytes app_eui = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     public Builder clearAppEui() {
       
@@ -976,7 +976,7 @@ public  final class Device extends
      * The DevEUI is a unique, 8 byte identifier for the device.
      * </pre>
      *
-     * <code>bytes dev_eui = 2 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];</code>
+     * <code>bytes dev_eui = 2 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     public com.google.protobuf.ByteString getDevEui() {
       return devEui_;
@@ -986,7 +986,7 @@ public  final class Device extends
      * The DevEUI is a unique, 8 byte identifier for the device.
      * </pre>
      *
-     * <code>bytes dev_eui = 2 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];</code>
+     * <code>bytes dev_eui = 2 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     public Builder setDevEui(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1002,7 +1002,7 @@ public  final class Device extends
      * The DevEUI is a unique, 8 byte identifier for the device.
      * </pre>
      *
-     * <code>bytes dev_eui = 2 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];</code>
+     * <code>bytes dev_eui = 2 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     public Builder clearDevEui() {
       
@@ -1017,7 +1017,7 @@ public  final class Device extends
      * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string app_id = 3;</code>
+     * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
      */
     public java.lang.String getAppId() {
       java.lang.Object ref = appId_;
@@ -1036,7 +1036,7 @@ public  final class Device extends
      * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string app_id = 3;</code>
+     * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
      */
     public com.google.protobuf.ByteString
         getAppIdBytes() {
@@ -1056,7 +1056,7 @@ public  final class Device extends
      * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string app_id = 3;</code>
+     * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
      */
     public Builder setAppId(
         java.lang.String value) {
@@ -1073,7 +1073,7 @@ public  final class Device extends
      * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string app_id = 3;</code>
+     * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
      */
     public Builder clearAppId() {
       
@@ -1086,7 +1086,7 @@ public  final class Device extends
      * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string app_id = 3;</code>
+     * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
      */
     public Builder setAppIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1106,7 +1106,7 @@ public  final class Device extends
      * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string dev_id = 4;</code>
+     * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
      */
     public java.lang.String getDevId() {
       java.lang.Object ref = devId_;
@@ -1125,7 +1125,7 @@ public  final class Device extends
      * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string dev_id = 4;</code>
+     * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
      */
     public com.google.protobuf.ByteString
         getDevIdBytes() {
@@ -1145,7 +1145,7 @@ public  final class Device extends
      * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string dev_id = 4;</code>
+     * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
      */
     public Builder setDevId(
         java.lang.String value) {
@@ -1162,7 +1162,7 @@ public  final class Device extends
      * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string dev_id = 4;</code>
+     * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
      */
     public Builder clearDevId() {
       
@@ -1175,7 +1175,7 @@ public  final class Device extends
      * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string dev_id = 4;</code>
+     * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
      */
     public Builder setDevIdBytes(
         com.google.protobuf.ByteString value) {

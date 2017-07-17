@@ -12,7 +12,7 @@ public interface AnnouncementOrBuilder extends
    * The ID of the component
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
    */
   java.lang.String getId();
   /**
@@ -20,7 +20,7 @@ public interface AnnouncementOrBuilder extends
    * The ID of the component
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
    */
   com.google.protobuf.ByteString
       getIdBytes();

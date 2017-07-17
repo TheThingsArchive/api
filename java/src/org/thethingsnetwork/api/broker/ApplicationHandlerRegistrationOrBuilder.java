@@ -8,21 +8,21 @@ public interface ApplicationHandlerRegistrationOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string app_id = 1;</code>
+   * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
    */
   java.lang.String getAppId();
   /**
-   * <code>string app_id = 1;</code>
+   * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
    */
   com.google.protobuf.ByteString
       getAppIdBytes();
 
   /**
-   * <code>string handler_id = 2;</code>
+   * <code>string handler_id = 2 [(.gogoproto.customname) = "HandlerID"];</code>
    */
   java.lang.String getHandlerId();
   /**
-   * <code>string handler_id = 2;</code>
+   * <code>string handler_id = 2 [(.gogoproto.customname) = "HandlerID"];</code>
    */
   com.google.protobuf.ByteString
       getHandlerIdBytes();

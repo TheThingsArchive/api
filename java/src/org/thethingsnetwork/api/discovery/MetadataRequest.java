@@ -103,7 +103,7 @@ public  final class MetadataRequest extends
    * The ID of the service that should be modified
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -122,7 +122,7 @@ public  final class MetadataRequest extends
    * The ID of the service that should be modified
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
@@ -550,7 +550,7 @@ public  final class MetadataRequest extends
      * The ID of the service that should be modified
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -569,7 +569,7 @@ public  final class MetadataRequest extends
      * The ID of the service that should be modified
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -589,7 +589,7 @@ public  final class MetadataRequest extends
      * The ID of the service that should be modified
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     public Builder setId(
         java.lang.String value) {
@@ -606,7 +606,7 @@ public  final class MetadataRequest extends
      * The ID of the service that should be modified
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     public Builder clearId() {
       
@@ -619,7 +619,7 @@ public  final class MetadataRequest extends
      * The ID of the service that should be modified
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {

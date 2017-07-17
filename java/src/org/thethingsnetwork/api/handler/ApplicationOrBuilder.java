@@ -8,11 +8,11 @@ public interface ApplicationOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string app_id = 1;</code>
+   * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
    */
   java.lang.String getAppId();
   /**
-   * <code>string app_id = 1;</code>
+   * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
    */
   com.google.protobuf.ByteString
       getAppIdBytes();

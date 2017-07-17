@@ -8,21 +8,21 @@ public interface DeviceOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string app_id = 1;</code>
+   * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
    */
   java.lang.String getAppId();
   /**
-   * <code>string app_id = 1;</code>
+   * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
    */
   com.google.protobuf.ByteString
       getAppIdBytes();
 
   /**
-   * <code>string dev_id = 2;</code>
+   * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
    */
   java.lang.String getDevId();
   /**
-   * <code>string dev_id = 2;</code>
+   * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
    */
   com.google.protobuf.ByteString
       getDevIdBytes();

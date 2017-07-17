@@ -41,8 +41,8 @@ message DownlinkMessage {
 message DeviceActivationRequest {
   bytes                        payload              = 1;
   protocol.Message             message              = 2;
-  bytes                        dev_eui              = 11 [(gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];
-  bytes                        app_eui              = 12 [(gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];
+  bytes                        dev_eui              = 11 [(gogoproto.customname) = "DevEUI", (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];
+  bytes                        app_eui              = 12 [(gogoproto.customname) = "AppEUI", (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];
   protocol.RxMetadata          protocol_metadata    = 21;
   gateway.RxMetadata           gateway_metadata     = 22;
   protocol.ActivationMetadata  activation_metadata  = 23;
@@ -80,7 +80,7 @@ service Router {
 // message GatewayStatusRequest is used to request the status of a gateway from
 // this Router
 message GatewayStatusRequest {
-  string gateway_id = 1;
+  string gateway_id = 1 [(gogoproto.customname) = "GatewayID"];
 }
 
 message GatewayStatusResponse {

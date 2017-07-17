@@ -51,12 +51,12 @@ message Status {
 }
 
 message ApplicationIdentifier {
-  string app_id      = 1;
+  string app_id      = 1 [(gogoproto.customname) = "AppID"];
 }
 
 // The Application settings
 message Application {
-  string app_id         = 1;
+  string app_id         = 1 [(gogoproto.customname) = "AppID"];
 
   // The payload format indicates how payload is formatted.
   string payload_format = 6;
@@ -84,14 +84,14 @@ message Application {
 }
 
 message DeviceIdentifier {
-  string app_id      = 1;
-  string dev_id      = 2;
+  string app_id      = 1 [(gogoproto.customname) = "AppID"];
+  string dev_id      = 2 [(gogoproto.customname) = "DevID"];
 }
 
 // The Device settings
 message Device {
-  string app_id      = 1;
-  string dev_id      = 2;
+  string app_id      = 1 [(gogoproto.customname) = "AppID"];
+  string dev_id      = 2 [(gogoproto.customname) = "DevID"];
 
   // The device can be of different kinds
   oneof device {
@@ -135,8 +135,8 @@ message DryUplinkMessage {
 
 // SimulatedUplinkMessage is a simulated uplink message
 message SimulatedUplinkMessage {
-  string app_id       = 1;
-  string dev_id       = 2;
+  string app_id       = 1 [(gogoproto.customname) = "AppID"];
+  string dev_id       = 2 [(gogoproto.customname) = "DevID"];
 
   // The binary payload to use
   bytes  payload      = 3;

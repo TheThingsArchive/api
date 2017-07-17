@@ -26,7 +26,7 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
      * ID of the gateway where this downlink should be sent
      * </pre>
      *
-     * <code>string gateway_id = 2;</code>
+     * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     private $gateway_id = '';
     /**
@@ -89,7 +89,7 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
      * ID of the gateway where this downlink should be sent
      * </pre>
      *
-     * <code>string gateway_id = 2;</code>
+     * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     public function getGatewayId()
     {
@@ -101,7 +101,7 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
      * ID of the gateway where this downlink should be sent
      * </pre>
      *
-     * <code>string gateway_id = 2;</code>
+     * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     public function setGatewayId($var)
     {

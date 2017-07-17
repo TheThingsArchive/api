@@ -87,42 +87,43 @@ public final class RouterProto {
       "ocol_configuration\030\013 \001(\0132\031.protocol.TxCo" +
       "nfiguration\0227\n\025gateway_configuration\030\014 \001" +
       "(\0132\030.gateway.TxConfiguration\022\033\n\005trace\030\025 " +
-      "\001(\0132\014.trace.Trace\"\226\003\n\027DeviceActivationRe",
+      "\001(\0132\014.trace.Trace\"\252\003\n\027DeviceActivationRe",
       "quest\022\017\n\007payload\030\001 \001(\014\022\"\n\007message\030\002 \001(\0132" +
-      "\021.protocol.Message\022F\n\007dev_eui\030\013 \001(\014B5\332\336\037" +
-      "1github.com/TheThingsNetwork/ttn/core/ty" +
-      "pes.DevEUI\022F\n\007app_eui\030\014 \001(\014B5\332\336\0371github." +
-      "com/TheThingsNetwork/ttn/core/types.AppE" +
-      "UI\022/\n\021protocol_metadata\030\025 \001(\0132\024.protocol" +
-      ".RxMetadata\022-\n\020gateway_metadata\030\026 \001(\0132\023." +
-      "gateway.RxMetadata\0229\n\023activation_metadat" +
-      "a\030\027 \001(\0132\034.protocol.ActivationMetadata\022\033\n" +
-      "\005trace\030\037 \001(\0132\014.trace.Trace\"\032\n\030DeviceActi",
-      "vationResponse\"*\n\024GatewayStatusRequest\022\022" +
-      "\n\ngateway_id\030\001 \001(\t\"K\n\025GatewayStatusRespo" +
-      "nse\022\021\n\tlast_seen\030\001 \001(\003\022\037\n\006status\030\002 \001(\0132\017" +
-      ".gateway.Status\"\017\n\rStatusRequest\"\210\002\n\006Sta" +
-      "tus\022 \n\006system\030\001 \001(\0132\020.api.SystemStats\022&\n" +
-      "\tcomponent\030\002 \001(\0132\023.api.ComponentStats\022\"\n" +
-      "\016gateway_status\030\013 \001(\0132\n.api.Rates\022\032\n\006upl" +
-      "ink\030\014 \001(\0132\n.api.Rates\022\034\n\010downlink\030\r \001(\0132" +
-      "\n.api.Rates\022\037\n\013activations\030\016 \001(\0132\n.api.R" +
-      "ates\022\032\n\022connected_gateways\030\025 \001(\r\022\031\n\021conn",
-      "ected_brokers\030\026 \001(\r2\220\002\n\006Router\022:\n\rGatewa" +
-      "yStatus\022\017.gateway.Status\032\026.google.protob" +
-      "uf.Empty(\001\0229\n\006Uplink\022\025.router.UplinkMess" +
-      "age\032\026.google.protobuf.Empty(\001\022@\n\tSubscri" +
-      "be\022\030.router.SubscribeRequest\032\027.router.Do" +
-      "wnlinkMessage0\001\022M\n\010Activate\022\037.router.Dev" +
-      "iceActivationRequest\032 .router.DeviceActi" +
-      "vationResponse2\221\001\n\rRouterManager\022L\n\rGate" +
-      "wayStatus\022\034.router.GatewayStatusRequest\032" +
-      "\035.router.GatewayStatusResponse\0222\n\tGetSta",
-      "tus\022\025.router.StatusRequest\032\016.router.Stat" +
-      "usBv\n\037org.thethingsnetwork.api.routerB\013R" +
-      "outerProtoP\001Z&github.com/TheThingsNetwor" +
-      "k/api/router\252\002\033TheThingsNetwork.API.Rout" +
-      "erb\006proto3"
+      "\021.protocol.Message\022P\n\007dev_eui\030\013 \001(\014B?\342\336\037" +
+      "\006DevEUI\332\336\0371github.com/TheThingsNetwork/t" +
+      "tn/core/types.DevEUI\022P\n\007app_eui\030\014 \001(\014B?\342" +
+      "\336\037\006AppEUI\332\336\0371github.com/TheThingsNetwork" +
+      "/ttn/core/types.AppEUI\022/\n\021protocol_metad" +
+      "ata\030\025 \001(\0132\024.protocol.RxMetadata\022-\n\020gatew" +
+      "ay_metadata\030\026 \001(\0132\023.gateway.RxMetadata\0229" +
+      "\n\023activation_metadata\030\027 \001(\0132\034.protocol.A" +
+      "ctivationMetadata\022\033\n\005trace\030\037 \001(\0132\014.trace",
+      ".Trace\"\032\n\030DeviceActivationResponse\"9\n\024Ga" +
+      "tewayStatusRequest\022!\n\ngateway_id\030\001 \001(\tB\r" +
+      "\342\336\037\tGatewayID\"K\n\025GatewayStatusResponse\022\021" +
+      "\n\tlast_seen\030\001 \001(\003\022\037\n\006status\030\002 \001(\0132\017.gate" +
+      "way.Status\"\017\n\rStatusRequest\"\210\002\n\006Status\022 " +
+      "\n\006system\030\001 \001(\0132\020.api.SystemStats\022&\n\tcomp" +
+      "onent\030\002 \001(\0132\023.api.ComponentStats\022\"\n\016gate" +
+      "way_status\030\013 \001(\0132\n.api.Rates\022\032\n\006uplink\030\014" +
+      " \001(\0132\n.api.Rates\022\034\n\010downlink\030\r \001(\0132\n.api" +
+      ".Rates\022\037\n\013activations\030\016 \001(\0132\n.api.Rates\022",
+      "\032\n\022connected_gateways\030\025 \001(\r\022\031\n\021connected" +
+      "_brokers\030\026 \001(\r2\220\002\n\006Router\022:\n\rGatewayStat" +
+      "us\022\017.gateway.Status\032\026.google.protobuf.Em" +
+      "pty(\001\0229\n\006Uplink\022\025.router.UplinkMessage\032\026" +
+      ".google.protobuf.Empty(\001\022@\n\tSubscribe\022\030." +
+      "router.SubscribeRequest\032\027.router.Downlin" +
+      "kMessage0\001\022M\n\010Activate\022\037.router.DeviceAc" +
+      "tivationRequest\032 .router.DeviceActivatio" +
+      "nResponse2\221\001\n\rRouterManager\022L\n\rGatewaySt" +
+      "atus\022\034.router.GatewayStatusRequest\032\035.rou",
+      "ter.GatewayStatusResponse\0222\n\tGetStatus\022\025" +
+      ".router.StatusRequest\032\016.router.StatusBv\n" +
+      "\037org.thethingsnetwork.api.routerB\013Router" +
+      "ProtoP\001Z&github.com/TheThingsNetwork/api" +
+      "/router\252\002\033TheThingsNetwork.API.Routerb\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -198,6 +199,7 @@ public final class RouterProto {
         new java.lang.String[] { "System", "Component", "GatewayStatus", "Uplink", "Downlink", "Activations", "ConnectedGateways", "ConnectedBrokers", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.protobuf.GoGoProtos.customname);
     registry.add(com.google.protobuf.GoGoProtos.customtype);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);

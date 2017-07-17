@@ -8,11 +8,11 @@ public interface RxMetadataOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string gateway_id = 1;</code>
+   * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
    */
   java.lang.String getGatewayId();
   /**
-   * <code>string gateway_id = 1;</code>
+   * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
    */
   com.google.protobuf.ByteString
       getGatewayIdBytes();

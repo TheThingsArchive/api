@@ -24,7 +24,7 @@ public interface MetadataOrBuilder extends
    * This metadata can only be added if the requesting client is authorized to manage this AppID.
    * </pre>
    *
-   * <code>string app_id = 30;</code>
+   * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
    */
   java.lang.String getAppId();
   /**
@@ -33,7 +33,7 @@ public interface MetadataOrBuilder extends
    * This metadata can only be added if the requesting client is authorized to manage this AppID.
    * </pre>
    *
-   * <code>string app_id = 30;</code>
+   * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
    */
   com.google.protobuf.ByteString
       getAppIdBytes();
@@ -44,7 +44,7 @@ public interface MetadataOrBuilder extends
    * Only authorized Join Handlers can announce APP_EUI metadata (and we don't have any of those yet).
    * </pre>
    *
-   * <code>bytes app_eui = 31;</code>
+   * <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
    */
   com.google.protobuf.ByteString getAppEui();
 

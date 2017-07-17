@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class RxMetadata extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>string gateway_id = 1;</code>
+     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     private $gateway_id = '';
     /**
@@ -96,7 +96,7 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string gateway_id = 1;</code>
+     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     public function getGatewayId()
     {
@@ -104,7 +104,7 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string gateway_id = 1;</code>
+     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     public function setGatewayId($var)
     {
