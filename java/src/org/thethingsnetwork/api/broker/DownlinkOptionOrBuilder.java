@@ -62,28 +62,28 @@ public interface DownlinkOptionOrBuilder extends
   long getDeadline();
 
   /**
-   * <code>.protocol.TxConfiguration protocol_config = 5;</code>
+   * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
    */
-  boolean hasProtocolConfig();
+  boolean hasProtocolConfiguration();
   /**
-   * <code>.protocol.TxConfiguration protocol_config = 5;</code>
+   * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
    */
-  org.thethingsnetwork.api.protocol.TxConfiguration getProtocolConfig();
+  org.thethingsnetwork.api.protocol.TxConfiguration getProtocolConfiguration();
   /**
-   * <code>.protocol.TxConfiguration protocol_config = 5;</code>
+   * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
    */
-  org.thethingsnetwork.api.protocol.TxConfigurationOrBuilder getProtocolConfigOrBuilder();
+  org.thethingsnetwork.api.protocol.TxConfigurationOrBuilder getProtocolConfigurationOrBuilder();
 
   /**
-   * <code>.gateway.TxConfiguration gateway_config = 6;</code>
+   * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
    */
-  boolean hasGatewayConfig();
+  boolean hasGatewayConfiguration();
   /**
-   * <code>.gateway.TxConfiguration gateway_config = 6;</code>
+   * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
    */
-  org.thethingsnetwork.api.gateway.TxConfiguration getGatewayConfig();
+  org.thethingsnetwork.api.gateway.TxConfiguration getGatewayConfiguration();
   /**
-   * <code>.gateway.TxConfiguration gateway_config = 6;</code>
+   * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
    */
-  org.thethingsnetwork.api.gateway.TxConfigurationOrBuilder getGatewayConfigOrBuilder();
+  org.thethingsnetwork.api.gateway.TxConfigurationOrBuilder getGatewayConfigurationOrBuilder();
 }

@@ -77,8 +77,8 @@ proto.broker.DownlinkOption.toObject = function(includeInstance, msg) {
     gatewayId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     score: jspb.Message.getFieldWithDefault(msg, 3, 0),
     deadline: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    protocolConfig: (f = msg.getProtocolConfig()) && ttn_protocol_protocol_pb.TxConfiguration.toObject(includeInstance, f),
-    gatewayConfig: (f = msg.getGatewayConfig()) && ttn_gateway_gateway_pb.TxConfiguration.toObject(includeInstance, f)
+    protocolConfiguration: (f = msg.getProtocolConfiguration()) && ttn_protocol_protocol_pb.TxConfiguration.toObject(includeInstance, f),
+    gatewayConfiguration: (f = msg.getGatewayConfiguration()) && ttn_gateway_gateway_pb.TxConfiguration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -134,12 +134,12 @@ proto.broker.DownlinkOption.deserializeBinaryFromReader = function(msg, reader) 
     case 5:
       var value = new ttn_protocol_protocol_pb.TxConfiguration;
       reader.readMessage(value,ttn_protocol_protocol_pb.TxConfiguration.deserializeBinaryFromReader);
-      msg.setProtocolConfig(value);
+      msg.setProtocolConfiguration(value);
       break;
     case 6:
       var value = new ttn_gateway_gateway_pb.TxConfiguration;
       reader.readMessage(value,ttn_gateway_gateway_pb.TxConfiguration.deserializeBinaryFromReader);
-      msg.setGatewayConfig(value);
+      msg.setGatewayConfiguration(value);
       break;
     default:
       reader.skipField();
@@ -197,7 +197,7 @@ proto.broker.DownlinkOption.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getProtocolConfig();
+  f = message.getProtocolConfiguration();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -205,7 +205,7 @@ proto.broker.DownlinkOption.serializeBinaryToWriter = function(message, writer) 
       ttn_protocol_protocol_pb.TxConfiguration.serializeBinaryToWriter
     );
   }
-  f = message.getGatewayConfig();
+  f = message.getGatewayConfiguration();
   if (f != null) {
     writer.writeMessage(
       6,
@@ -277,23 +277,23 @@ proto.broker.DownlinkOption.prototype.setDeadline = function(value) {
 
 
 /**
- * optional protocol.TxConfiguration protocol_config = 5;
+ * optional protocol.TxConfiguration protocol_configuration = 5;
  * @return {?proto.protocol.TxConfiguration}
  */
-proto.broker.DownlinkOption.prototype.getProtocolConfig = function() {
+proto.broker.DownlinkOption.prototype.getProtocolConfiguration = function() {
   return /** @type{?proto.protocol.TxConfiguration} */ (
     jspb.Message.getWrapperField(this, ttn_protocol_protocol_pb.TxConfiguration, 5));
 };
 
 
 /** @param {?proto.protocol.TxConfiguration|undefined} value */
-proto.broker.DownlinkOption.prototype.setProtocolConfig = function(value) {
+proto.broker.DownlinkOption.prototype.setProtocolConfiguration = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
 
 
-proto.broker.DownlinkOption.prototype.clearProtocolConfig = function() {
-  this.setProtocolConfig(undefined);
+proto.broker.DownlinkOption.prototype.clearProtocolConfiguration = function() {
+  this.setProtocolConfiguration(undefined);
 };
 
 
@@ -301,29 +301,29 @@ proto.broker.DownlinkOption.prototype.clearProtocolConfig = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.broker.DownlinkOption.prototype.hasProtocolConfig = function() {
+proto.broker.DownlinkOption.prototype.hasProtocolConfiguration = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional gateway.TxConfiguration gateway_config = 6;
+ * optional gateway.TxConfiguration gateway_configuration = 6;
  * @return {?proto.gateway.TxConfiguration}
  */
-proto.broker.DownlinkOption.prototype.getGatewayConfig = function() {
+proto.broker.DownlinkOption.prototype.getGatewayConfiguration = function() {
   return /** @type{?proto.gateway.TxConfiguration} */ (
     jspb.Message.getWrapperField(this, ttn_gateway_gateway_pb.TxConfiguration, 6));
 };
 
 
 /** @param {?proto.gateway.TxConfiguration|undefined} value */
-proto.broker.DownlinkOption.prototype.setGatewayConfig = function(value) {
+proto.broker.DownlinkOption.prototype.setGatewayConfiguration = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
 
 
-proto.broker.DownlinkOption.prototype.clearGatewayConfig = function() {
-  this.setGatewayConfig(undefined);
+proto.broker.DownlinkOption.prototype.clearGatewayConfiguration = function() {
+  this.setGatewayConfiguration(undefined);
 };
 
 
@@ -331,7 +331,7 @@ proto.broker.DownlinkOption.prototype.clearGatewayConfig = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.broker.DownlinkOption.prototype.hasGatewayConfig = function() {
+proto.broker.DownlinkOption.prototype.hasGatewayConfiguration = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 

@@ -617,24 +617,24 @@ static const ProtobufCFieldDescriptor broker__downlink_option__field_descriptors
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
-    "protocol_config",
+    "protocol_configuration",
     5,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Broker__DownlinkOption, protocol_config),
+    offsetof(Broker__DownlinkOption, protocol_configuration),
     &protocol__tx_configuration__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
-    "gateway_config",
+    "gateway_configuration",
     6,
     PROTOBUF_C_LABEL_OPTIONAL,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Broker__DownlinkOption, gateway_config),
+    offsetof(Broker__DownlinkOption, gateway_configuration),
     &gateway__tx_configuration__descriptor,
     NULL,
     0,             /* flags */
@@ -643,10 +643,10 @@ static const ProtobufCFieldDescriptor broker__downlink_option__field_descriptors
 };
 static const unsigned broker__downlink_option__field_indices_by_name[] = {
   3,   /* field[3] = deadline */
-  5,   /* field[5] = gateway_config */
+  5,   /* field[5] = gateway_configuration */
   1,   /* field[1] = gateway_id */
   0,   /* field[0] = identifier */
-  4,   /* field[4] = protocol_config */
+  4,   /* field[4] = protocol_configuration */
   2,   /* field[2] = score */
 };
 static const ProtobufCIntRange broker__downlink_option__number_ranges[1 + 1] =

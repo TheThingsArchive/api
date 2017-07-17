@@ -70,26 +70,26 @@ public  final class DownlinkOption extends
           }
           case 42: {
             org.thethingsnetwork.api.protocol.TxConfiguration.Builder subBuilder = null;
-            if (protocolConfig_ != null) {
-              subBuilder = protocolConfig_.toBuilder();
+            if (protocolConfiguration_ != null) {
+              subBuilder = protocolConfiguration_.toBuilder();
             }
-            protocolConfig_ = input.readMessage(org.thethingsnetwork.api.protocol.TxConfiguration.parser(), extensionRegistry);
+            protocolConfiguration_ = input.readMessage(org.thethingsnetwork.api.protocol.TxConfiguration.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(protocolConfig_);
-              protocolConfig_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(protocolConfiguration_);
+              protocolConfiguration_ = subBuilder.buildPartial();
             }
 
             break;
           }
           case 50: {
             org.thethingsnetwork.api.gateway.TxConfiguration.Builder subBuilder = null;
-            if (gatewayConfig_ != null) {
-              subBuilder = gatewayConfig_.toBuilder();
+            if (gatewayConfiguration_ != null) {
+              subBuilder = gatewayConfiguration_.toBuilder();
             }
-            gatewayConfig_ = input.readMessage(org.thethingsnetwork.api.gateway.TxConfiguration.parser(), extensionRegistry);
+            gatewayConfiguration_ = input.readMessage(org.thethingsnetwork.api.gateway.TxConfiguration.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(gatewayConfig_);
-              gatewayConfig_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(gatewayConfiguration_);
+              gatewayConfiguration_ = subBuilder.buildPartial();
             }
 
             break;
@@ -227,46 +227,46 @@ public  final class DownlinkOption extends
     return deadline_;
   }
 
-  public static final int PROTOCOL_CONFIG_FIELD_NUMBER = 5;
-  private org.thethingsnetwork.api.protocol.TxConfiguration protocolConfig_;
+  public static final int PROTOCOL_CONFIGURATION_FIELD_NUMBER = 5;
+  private org.thethingsnetwork.api.protocol.TxConfiguration protocolConfiguration_;
   /**
-   * <code>.protocol.TxConfiguration protocol_config = 5;</code>
+   * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
    */
-  public boolean hasProtocolConfig() {
-    return protocolConfig_ != null;
+  public boolean hasProtocolConfiguration() {
+    return protocolConfiguration_ != null;
   }
   /**
-   * <code>.protocol.TxConfiguration protocol_config = 5;</code>
+   * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
    */
-  public org.thethingsnetwork.api.protocol.TxConfiguration getProtocolConfig() {
-    return protocolConfig_ == null ? org.thethingsnetwork.api.protocol.TxConfiguration.getDefaultInstance() : protocolConfig_;
+  public org.thethingsnetwork.api.protocol.TxConfiguration getProtocolConfiguration() {
+    return protocolConfiguration_ == null ? org.thethingsnetwork.api.protocol.TxConfiguration.getDefaultInstance() : protocolConfiguration_;
   }
   /**
-   * <code>.protocol.TxConfiguration protocol_config = 5;</code>
+   * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
    */
-  public org.thethingsnetwork.api.protocol.TxConfigurationOrBuilder getProtocolConfigOrBuilder() {
-    return getProtocolConfig();
+  public org.thethingsnetwork.api.protocol.TxConfigurationOrBuilder getProtocolConfigurationOrBuilder() {
+    return getProtocolConfiguration();
   }
 
-  public static final int GATEWAY_CONFIG_FIELD_NUMBER = 6;
-  private org.thethingsnetwork.api.gateway.TxConfiguration gatewayConfig_;
+  public static final int GATEWAY_CONFIGURATION_FIELD_NUMBER = 6;
+  private org.thethingsnetwork.api.gateway.TxConfiguration gatewayConfiguration_;
   /**
-   * <code>.gateway.TxConfiguration gateway_config = 6;</code>
+   * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
    */
-  public boolean hasGatewayConfig() {
-    return gatewayConfig_ != null;
+  public boolean hasGatewayConfiguration() {
+    return gatewayConfiguration_ != null;
   }
   /**
-   * <code>.gateway.TxConfiguration gateway_config = 6;</code>
+   * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
    */
-  public org.thethingsnetwork.api.gateway.TxConfiguration getGatewayConfig() {
-    return gatewayConfig_ == null ? org.thethingsnetwork.api.gateway.TxConfiguration.getDefaultInstance() : gatewayConfig_;
+  public org.thethingsnetwork.api.gateway.TxConfiguration getGatewayConfiguration() {
+    return gatewayConfiguration_ == null ? org.thethingsnetwork.api.gateway.TxConfiguration.getDefaultInstance() : gatewayConfiguration_;
   }
   /**
-   * <code>.gateway.TxConfiguration gateway_config = 6;</code>
+   * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
    */
-  public org.thethingsnetwork.api.gateway.TxConfigurationOrBuilder getGatewayConfigOrBuilder() {
-    return getGatewayConfig();
+  public org.thethingsnetwork.api.gateway.TxConfigurationOrBuilder getGatewayConfigurationOrBuilder() {
+    return getGatewayConfiguration();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -293,11 +293,11 @@ public  final class DownlinkOption extends
     if (deadline_ != 0L) {
       output.writeInt64(4, deadline_);
     }
-    if (protocolConfig_ != null) {
-      output.writeMessage(5, getProtocolConfig());
+    if (protocolConfiguration_ != null) {
+      output.writeMessage(5, getProtocolConfiguration());
     }
-    if (gatewayConfig_ != null) {
-      output.writeMessage(6, getGatewayConfig());
+    if (gatewayConfiguration_ != null) {
+      output.writeMessage(6, getGatewayConfiguration());
     }
   }
 
@@ -320,13 +320,13 @@ public  final class DownlinkOption extends
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, deadline_);
     }
-    if (protocolConfig_ != null) {
+    if (protocolConfiguration_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getProtocolConfig());
+        .computeMessageSize(5, getProtocolConfiguration());
     }
-    if (gatewayConfig_ != null) {
+    if (gatewayConfiguration_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getGatewayConfig());
+        .computeMessageSize(6, getGatewayConfiguration());
     }
     memoizedSize = size;
     return size;
@@ -352,15 +352,15 @@ public  final class DownlinkOption extends
         == other.getScore());
     result = result && (getDeadline()
         == other.getDeadline());
-    result = result && (hasProtocolConfig() == other.hasProtocolConfig());
-    if (hasProtocolConfig()) {
-      result = result && getProtocolConfig()
-          .equals(other.getProtocolConfig());
+    result = result && (hasProtocolConfiguration() == other.hasProtocolConfiguration());
+    if (hasProtocolConfiguration()) {
+      result = result && getProtocolConfiguration()
+          .equals(other.getProtocolConfiguration());
     }
-    result = result && (hasGatewayConfig() == other.hasGatewayConfig());
-    if (hasGatewayConfig()) {
-      result = result && getGatewayConfig()
-          .equals(other.getGatewayConfig());
+    result = result && (hasGatewayConfiguration() == other.hasGatewayConfiguration());
+    if (hasGatewayConfiguration()) {
+      result = result && getGatewayConfiguration()
+          .equals(other.getGatewayConfiguration());
     }
     return result;
   }
@@ -381,13 +381,13 @@ public  final class DownlinkOption extends
     hash = (37 * hash) + DEADLINE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getDeadline());
-    if (hasProtocolConfig()) {
-      hash = (37 * hash) + PROTOCOL_CONFIG_FIELD_NUMBER;
-      hash = (53 * hash) + getProtocolConfig().hashCode();
+    if (hasProtocolConfiguration()) {
+      hash = (37 * hash) + PROTOCOL_CONFIGURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getProtocolConfiguration().hashCode();
     }
-    if (hasGatewayConfig()) {
-      hash = (37 * hash) + GATEWAY_CONFIG_FIELD_NUMBER;
-      hash = (53 * hash) + getGatewayConfig().hashCode();
+    if (hasGatewayConfiguration()) {
+      hash = (37 * hash) + GATEWAY_CONFIGURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getGatewayConfiguration().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -526,17 +526,17 @@ public  final class DownlinkOption extends
 
       deadline_ = 0L;
 
-      if (protocolConfigBuilder_ == null) {
-        protocolConfig_ = null;
+      if (protocolConfigurationBuilder_ == null) {
+        protocolConfiguration_ = null;
       } else {
-        protocolConfig_ = null;
-        protocolConfigBuilder_ = null;
+        protocolConfiguration_ = null;
+        protocolConfigurationBuilder_ = null;
       }
-      if (gatewayConfigBuilder_ == null) {
-        gatewayConfig_ = null;
+      if (gatewayConfigurationBuilder_ == null) {
+        gatewayConfiguration_ = null;
       } else {
-        gatewayConfig_ = null;
-        gatewayConfigBuilder_ = null;
+        gatewayConfiguration_ = null;
+        gatewayConfigurationBuilder_ = null;
       }
       return this;
     }
@@ -564,15 +564,15 @@ public  final class DownlinkOption extends
       result.gatewayId_ = gatewayId_;
       result.score_ = score_;
       result.deadline_ = deadline_;
-      if (protocolConfigBuilder_ == null) {
-        result.protocolConfig_ = protocolConfig_;
+      if (protocolConfigurationBuilder_ == null) {
+        result.protocolConfiguration_ = protocolConfiguration_;
       } else {
-        result.protocolConfig_ = protocolConfigBuilder_.build();
+        result.protocolConfiguration_ = protocolConfigurationBuilder_.build();
       }
-      if (gatewayConfigBuilder_ == null) {
-        result.gatewayConfig_ = gatewayConfig_;
+      if (gatewayConfigurationBuilder_ == null) {
+        result.gatewayConfiguration_ = gatewayConfiguration_;
       } else {
-        result.gatewayConfig_ = gatewayConfigBuilder_.build();
+        result.gatewayConfiguration_ = gatewayConfigurationBuilder_.build();
       }
       onBuilt();
       return result;
@@ -629,11 +629,11 @@ public  final class DownlinkOption extends
       if (other.getDeadline() != 0L) {
         setDeadline(other.getDeadline());
       }
-      if (other.hasProtocolConfig()) {
-        mergeProtocolConfig(other.getProtocolConfig());
+      if (other.hasProtocolConfiguration()) {
+        mergeProtocolConfiguration(other.getProtocolConfiguration());
       }
-      if (other.hasGatewayConfig()) {
-        mergeGatewayConfig(other.getGatewayConfig());
+      if (other.hasGatewayConfiguration()) {
+        mergeGatewayConfiguration(other.getGatewayConfiguration());
       }
       onChanged();
       return this;
@@ -915,238 +915,238 @@ public  final class DownlinkOption extends
       return this;
     }
 
-    private org.thethingsnetwork.api.protocol.TxConfiguration protocolConfig_ = null;
+    private org.thethingsnetwork.api.protocol.TxConfiguration protocolConfiguration_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.thethingsnetwork.api.protocol.TxConfiguration, org.thethingsnetwork.api.protocol.TxConfiguration.Builder, org.thethingsnetwork.api.protocol.TxConfigurationOrBuilder> protocolConfigBuilder_;
+        org.thethingsnetwork.api.protocol.TxConfiguration, org.thethingsnetwork.api.protocol.TxConfiguration.Builder, org.thethingsnetwork.api.protocol.TxConfigurationOrBuilder> protocolConfigurationBuilder_;
     /**
-     * <code>.protocol.TxConfiguration protocol_config = 5;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      */
-    public boolean hasProtocolConfig() {
-      return protocolConfigBuilder_ != null || protocolConfig_ != null;
+    public boolean hasProtocolConfiguration() {
+      return protocolConfigurationBuilder_ != null || protocolConfiguration_ != null;
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_config = 5;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      */
-    public org.thethingsnetwork.api.protocol.TxConfiguration getProtocolConfig() {
-      if (protocolConfigBuilder_ == null) {
-        return protocolConfig_ == null ? org.thethingsnetwork.api.protocol.TxConfiguration.getDefaultInstance() : protocolConfig_;
+    public org.thethingsnetwork.api.protocol.TxConfiguration getProtocolConfiguration() {
+      if (protocolConfigurationBuilder_ == null) {
+        return protocolConfiguration_ == null ? org.thethingsnetwork.api.protocol.TxConfiguration.getDefaultInstance() : protocolConfiguration_;
       } else {
-        return protocolConfigBuilder_.getMessage();
+        return protocolConfigurationBuilder_.getMessage();
       }
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_config = 5;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      */
-    public Builder setProtocolConfig(org.thethingsnetwork.api.protocol.TxConfiguration value) {
-      if (protocolConfigBuilder_ == null) {
+    public Builder setProtocolConfiguration(org.thethingsnetwork.api.protocol.TxConfiguration value) {
+      if (protocolConfigurationBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        protocolConfig_ = value;
+        protocolConfiguration_ = value;
         onChanged();
       } else {
-        protocolConfigBuilder_.setMessage(value);
+        protocolConfigurationBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_config = 5;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      */
-    public Builder setProtocolConfig(
+    public Builder setProtocolConfiguration(
         org.thethingsnetwork.api.protocol.TxConfiguration.Builder builderForValue) {
-      if (protocolConfigBuilder_ == null) {
-        protocolConfig_ = builderForValue.build();
+      if (protocolConfigurationBuilder_ == null) {
+        protocolConfiguration_ = builderForValue.build();
         onChanged();
       } else {
-        protocolConfigBuilder_.setMessage(builderForValue.build());
+        protocolConfigurationBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_config = 5;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      */
-    public Builder mergeProtocolConfig(org.thethingsnetwork.api.protocol.TxConfiguration value) {
-      if (protocolConfigBuilder_ == null) {
-        if (protocolConfig_ != null) {
-          protocolConfig_ =
-            org.thethingsnetwork.api.protocol.TxConfiguration.newBuilder(protocolConfig_).mergeFrom(value).buildPartial();
+    public Builder mergeProtocolConfiguration(org.thethingsnetwork.api.protocol.TxConfiguration value) {
+      if (protocolConfigurationBuilder_ == null) {
+        if (protocolConfiguration_ != null) {
+          protocolConfiguration_ =
+            org.thethingsnetwork.api.protocol.TxConfiguration.newBuilder(protocolConfiguration_).mergeFrom(value).buildPartial();
         } else {
-          protocolConfig_ = value;
+          protocolConfiguration_ = value;
         }
         onChanged();
       } else {
-        protocolConfigBuilder_.mergeFrom(value);
+        protocolConfigurationBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_config = 5;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      */
-    public Builder clearProtocolConfig() {
-      if (protocolConfigBuilder_ == null) {
-        protocolConfig_ = null;
+    public Builder clearProtocolConfiguration() {
+      if (protocolConfigurationBuilder_ == null) {
+        protocolConfiguration_ = null;
         onChanged();
       } else {
-        protocolConfig_ = null;
-        protocolConfigBuilder_ = null;
+        protocolConfiguration_ = null;
+        protocolConfigurationBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_config = 5;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      */
-    public org.thethingsnetwork.api.protocol.TxConfiguration.Builder getProtocolConfigBuilder() {
+    public org.thethingsnetwork.api.protocol.TxConfiguration.Builder getProtocolConfigurationBuilder() {
       
       onChanged();
-      return getProtocolConfigFieldBuilder().getBuilder();
+      return getProtocolConfigurationFieldBuilder().getBuilder();
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_config = 5;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      */
-    public org.thethingsnetwork.api.protocol.TxConfigurationOrBuilder getProtocolConfigOrBuilder() {
-      if (protocolConfigBuilder_ != null) {
-        return protocolConfigBuilder_.getMessageOrBuilder();
+    public org.thethingsnetwork.api.protocol.TxConfigurationOrBuilder getProtocolConfigurationOrBuilder() {
+      if (protocolConfigurationBuilder_ != null) {
+        return protocolConfigurationBuilder_.getMessageOrBuilder();
       } else {
-        return protocolConfig_ == null ?
-            org.thethingsnetwork.api.protocol.TxConfiguration.getDefaultInstance() : protocolConfig_;
+        return protocolConfiguration_ == null ?
+            org.thethingsnetwork.api.protocol.TxConfiguration.getDefaultInstance() : protocolConfiguration_;
       }
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_config = 5;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.TxConfiguration, org.thethingsnetwork.api.protocol.TxConfiguration.Builder, org.thethingsnetwork.api.protocol.TxConfigurationOrBuilder> 
-        getProtocolConfigFieldBuilder() {
-      if (protocolConfigBuilder_ == null) {
-        protocolConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getProtocolConfigurationFieldBuilder() {
+      if (protocolConfigurationBuilder_ == null) {
+        protocolConfigurationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.thethingsnetwork.api.protocol.TxConfiguration, org.thethingsnetwork.api.protocol.TxConfiguration.Builder, org.thethingsnetwork.api.protocol.TxConfigurationOrBuilder>(
-                getProtocolConfig(),
+                getProtocolConfiguration(),
                 getParentForChildren(),
                 isClean());
-        protocolConfig_ = null;
+        protocolConfiguration_ = null;
       }
-      return protocolConfigBuilder_;
+      return protocolConfigurationBuilder_;
     }
 
-    private org.thethingsnetwork.api.gateway.TxConfiguration gatewayConfig_ = null;
+    private org.thethingsnetwork.api.gateway.TxConfiguration gatewayConfiguration_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.thethingsnetwork.api.gateway.TxConfiguration, org.thethingsnetwork.api.gateway.TxConfiguration.Builder, org.thethingsnetwork.api.gateway.TxConfigurationOrBuilder> gatewayConfigBuilder_;
+        org.thethingsnetwork.api.gateway.TxConfiguration, org.thethingsnetwork.api.gateway.TxConfiguration.Builder, org.thethingsnetwork.api.gateway.TxConfigurationOrBuilder> gatewayConfigurationBuilder_;
     /**
-     * <code>.gateway.TxConfiguration gateway_config = 6;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      */
-    public boolean hasGatewayConfig() {
-      return gatewayConfigBuilder_ != null || gatewayConfig_ != null;
+    public boolean hasGatewayConfiguration() {
+      return gatewayConfigurationBuilder_ != null || gatewayConfiguration_ != null;
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_config = 6;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      */
-    public org.thethingsnetwork.api.gateway.TxConfiguration getGatewayConfig() {
-      if (gatewayConfigBuilder_ == null) {
-        return gatewayConfig_ == null ? org.thethingsnetwork.api.gateway.TxConfiguration.getDefaultInstance() : gatewayConfig_;
+    public org.thethingsnetwork.api.gateway.TxConfiguration getGatewayConfiguration() {
+      if (gatewayConfigurationBuilder_ == null) {
+        return gatewayConfiguration_ == null ? org.thethingsnetwork.api.gateway.TxConfiguration.getDefaultInstance() : gatewayConfiguration_;
       } else {
-        return gatewayConfigBuilder_.getMessage();
+        return gatewayConfigurationBuilder_.getMessage();
       }
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_config = 6;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      */
-    public Builder setGatewayConfig(org.thethingsnetwork.api.gateway.TxConfiguration value) {
-      if (gatewayConfigBuilder_ == null) {
+    public Builder setGatewayConfiguration(org.thethingsnetwork.api.gateway.TxConfiguration value) {
+      if (gatewayConfigurationBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        gatewayConfig_ = value;
+        gatewayConfiguration_ = value;
         onChanged();
       } else {
-        gatewayConfigBuilder_.setMessage(value);
+        gatewayConfigurationBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_config = 6;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      */
-    public Builder setGatewayConfig(
+    public Builder setGatewayConfiguration(
         org.thethingsnetwork.api.gateway.TxConfiguration.Builder builderForValue) {
-      if (gatewayConfigBuilder_ == null) {
-        gatewayConfig_ = builderForValue.build();
+      if (gatewayConfigurationBuilder_ == null) {
+        gatewayConfiguration_ = builderForValue.build();
         onChanged();
       } else {
-        gatewayConfigBuilder_.setMessage(builderForValue.build());
+        gatewayConfigurationBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_config = 6;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      */
-    public Builder mergeGatewayConfig(org.thethingsnetwork.api.gateway.TxConfiguration value) {
-      if (gatewayConfigBuilder_ == null) {
-        if (gatewayConfig_ != null) {
-          gatewayConfig_ =
-            org.thethingsnetwork.api.gateway.TxConfiguration.newBuilder(gatewayConfig_).mergeFrom(value).buildPartial();
+    public Builder mergeGatewayConfiguration(org.thethingsnetwork.api.gateway.TxConfiguration value) {
+      if (gatewayConfigurationBuilder_ == null) {
+        if (gatewayConfiguration_ != null) {
+          gatewayConfiguration_ =
+            org.thethingsnetwork.api.gateway.TxConfiguration.newBuilder(gatewayConfiguration_).mergeFrom(value).buildPartial();
         } else {
-          gatewayConfig_ = value;
+          gatewayConfiguration_ = value;
         }
         onChanged();
       } else {
-        gatewayConfigBuilder_.mergeFrom(value);
+        gatewayConfigurationBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_config = 6;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      */
-    public Builder clearGatewayConfig() {
-      if (gatewayConfigBuilder_ == null) {
-        gatewayConfig_ = null;
+    public Builder clearGatewayConfiguration() {
+      if (gatewayConfigurationBuilder_ == null) {
+        gatewayConfiguration_ = null;
         onChanged();
       } else {
-        gatewayConfig_ = null;
-        gatewayConfigBuilder_ = null;
+        gatewayConfiguration_ = null;
+        gatewayConfigurationBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_config = 6;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      */
-    public org.thethingsnetwork.api.gateway.TxConfiguration.Builder getGatewayConfigBuilder() {
+    public org.thethingsnetwork.api.gateway.TxConfiguration.Builder getGatewayConfigurationBuilder() {
       
       onChanged();
-      return getGatewayConfigFieldBuilder().getBuilder();
+      return getGatewayConfigurationFieldBuilder().getBuilder();
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_config = 6;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      */
-    public org.thethingsnetwork.api.gateway.TxConfigurationOrBuilder getGatewayConfigOrBuilder() {
-      if (gatewayConfigBuilder_ != null) {
-        return gatewayConfigBuilder_.getMessageOrBuilder();
+    public org.thethingsnetwork.api.gateway.TxConfigurationOrBuilder getGatewayConfigurationOrBuilder() {
+      if (gatewayConfigurationBuilder_ != null) {
+        return gatewayConfigurationBuilder_.getMessageOrBuilder();
       } else {
-        return gatewayConfig_ == null ?
-            org.thethingsnetwork.api.gateway.TxConfiguration.getDefaultInstance() : gatewayConfig_;
+        return gatewayConfiguration_ == null ?
+            org.thethingsnetwork.api.gateway.TxConfiguration.getDefaultInstance() : gatewayConfiguration_;
       }
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_config = 6;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.gateway.TxConfiguration, org.thethingsnetwork.api.gateway.TxConfiguration.Builder, org.thethingsnetwork.api.gateway.TxConfigurationOrBuilder> 
-        getGatewayConfigFieldBuilder() {
-      if (gatewayConfigBuilder_ == null) {
-        gatewayConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getGatewayConfigurationFieldBuilder() {
+      if (gatewayConfigurationBuilder_ == null) {
+        gatewayConfigurationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.thethingsnetwork.api.gateway.TxConfiguration, org.thethingsnetwork.api.gateway.TxConfiguration.Builder, org.thethingsnetwork.api.gateway.TxConfigurationOrBuilder>(
-                getGatewayConfig(),
+                getGatewayConfiguration(),
                 getParentForChildren(),
                 isClean());
-        gatewayConfig_ = null;
+        gatewayConfiguration_ = null;
       }
-      return gatewayConfigBuilder_;
+      return gatewayConfigurationBuilder_;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {

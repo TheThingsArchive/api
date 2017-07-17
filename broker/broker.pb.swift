@@ -49,23 +49,23 @@ struct Broker_DownlinkOption: SwiftProtobuf.Message {
     set {_uniqueStorage()._deadline = newValue}
   }
 
-  var protocolConfig: Protocol_TxConfiguration {
-    get {return _storage._protocolConfig ?? Protocol_TxConfiguration()}
-    set {_uniqueStorage()._protocolConfig = newValue}
+  var protocolConfiguration: Protocol_TxConfiguration {
+    get {return _storage._protocolConfiguration ?? Protocol_TxConfiguration()}
+    set {_uniqueStorage()._protocolConfiguration = newValue}
   }
-  /// Returns true if `protocolConfig` has been explicitly set.
-  var hasProtocolConfig: Bool {return _storage._protocolConfig != nil}
-  /// Clears the value of `protocolConfig`. Subsequent reads from it will return its default value.
-  mutating func clearProtocolConfig() {_storage._protocolConfig = nil}
+  /// Returns true if `protocolConfiguration` has been explicitly set.
+  var hasProtocolConfiguration: Bool {return _storage._protocolConfiguration != nil}
+  /// Clears the value of `protocolConfiguration`. Subsequent reads from it will return its default value.
+  mutating func clearProtocolConfiguration() {_storage._protocolConfiguration = nil}
 
-  var gatewayConfig: Gateway_TxConfiguration {
-    get {return _storage._gatewayConfig ?? Gateway_TxConfiguration()}
-    set {_uniqueStorage()._gatewayConfig = newValue}
+  var gatewayConfiguration: Gateway_TxConfiguration {
+    get {return _storage._gatewayConfiguration ?? Gateway_TxConfiguration()}
+    set {_uniqueStorage()._gatewayConfiguration = newValue}
   }
-  /// Returns true if `gatewayConfig` has been explicitly set.
-  var hasGatewayConfig: Bool {return _storage._gatewayConfig != nil}
-  /// Clears the value of `gatewayConfig`. Subsequent reads from it will return its default value.
-  mutating func clearGatewayConfig() {_storage._gatewayConfig = nil}
+  /// Returns true if `gatewayConfiguration` has been explicitly set.
+  var hasGatewayConfiguration: Bool {return _storage._gatewayConfiguration != nil}
+  /// Clears the value of `gatewayConfiguration`. Subsequent reads from it will return its default value.
+  mutating func clearGatewayConfiguration() {_storage._gatewayConfiguration = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -84,8 +84,8 @@ struct Broker_DownlinkOption: SwiftProtobuf.Message {
         case 2: try decoder.decodeSingularStringField(value: &_storage._gatewayID)
         case 3: try decoder.decodeSingularUInt32Field(value: &_storage._score)
         case 4: try decoder.decodeSingularInt64Field(value: &_storage._deadline)
-        case 5: try decoder.decodeSingularMessageField(value: &_storage._protocolConfig)
-        case 6: try decoder.decodeSingularMessageField(value: &_storage._gatewayConfig)
+        case 5: try decoder.decodeSingularMessageField(value: &_storage._protocolConfiguration)
+        case 6: try decoder.decodeSingularMessageField(value: &_storage._gatewayConfiguration)
         default: break
         }
       }
@@ -110,10 +110,10 @@ struct Broker_DownlinkOption: SwiftProtobuf.Message {
       if _storage._deadline != 0 {
         try visitor.visitSingularInt64Field(value: _storage._deadline, fieldNumber: 4)
       }
-      if let v = _storage._protocolConfig {
+      if let v = _storage._protocolConfiguration {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
       }
-      if let v = _storage._gatewayConfig {
+      if let v = _storage._gatewayConfiguration {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
       }
     }
@@ -1331,8 +1331,8 @@ extension Broker_DownlinkOption: SwiftProtobuf._MessageImplementationBase, Swift
     2: .standard(proto: "gateway_id"),
     3: .same(proto: "score"),
     4: .same(proto: "deadline"),
-    5: .standard(proto: "protocol_config"),
-    6: .standard(proto: "gateway_config"),
+    5: .standard(proto: "protocol_configuration"),
+    6: .standard(proto: "gateway_configuration"),
   ]
 
   fileprivate class _StorageClass {
@@ -1340,8 +1340,8 @@ extension Broker_DownlinkOption: SwiftProtobuf._MessageImplementationBase, Swift
     var _gatewayID: String = String()
     var _score: UInt32 = 0
     var _deadline: Int64 = 0
-    var _protocolConfig: Protocol_TxConfiguration? = nil
-    var _gatewayConfig: Gateway_TxConfiguration? = nil
+    var _protocolConfiguration: Protocol_TxConfiguration? = nil
+    var _gatewayConfiguration: Gateway_TxConfiguration? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -1352,8 +1352,8 @@ extension Broker_DownlinkOption: SwiftProtobuf._MessageImplementationBase, Swift
       _gatewayID = source._gatewayID
       _score = source._score
       _deadline = source._deadline
-      _protocolConfig = source._protocolConfig
-      _gatewayConfig = source._gatewayConfig
+      _protocolConfiguration = source._protocolConfiguration
+      _gatewayConfiguration = source._gatewayConfiguration
     }
   }
 
@@ -1371,8 +1371,8 @@ extension Broker_DownlinkOption: SwiftProtobuf._MessageImplementationBase, Swift
         if _storage._gatewayID != other_storage._gatewayID {return false}
         if _storage._score != other_storage._score {return false}
         if _storage._deadline != other_storage._deadline {return false}
-        if _storage._protocolConfig != other_storage._protocolConfig {return false}
-        if _storage._gatewayConfig != other_storage._gatewayConfig {return false}
+        if _storage._protocolConfiguration != other_storage._protocolConfiguration {return false}
+        if _storage._gatewayConfiguration != other_storage._gatewayConfiguration {return false}
         return true
       }
       if !storagesAreEqual {return false}

@@ -14,8 +14,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :gateway_id, :string, 2
     optional :score, :uint32, 3
     optional :deadline, :int64, 4
-    optional :protocol_config, :message, 5, "protocol.TxConfiguration"
-    optional :gateway_config, :message, 6, "gateway.TxConfiguration"
+    optional :protocol_configuration, :message, 5, "protocol.TxConfiguration"
+    optional :gateway_configuration, :message, 6, "gateway.TxConfiguration"
   end
   add_message "broker.UplinkMessage" do
     optional :payload, :bytes, 1

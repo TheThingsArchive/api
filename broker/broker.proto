@@ -30,8 +30,8 @@ message DownlinkOption {
   // deadline time at server represented as Unix nanoseconds
   int64   deadline    = 4;
 
-  protocol.TxConfiguration protocol_config = 5;
-  gateway.TxConfiguration  gateway_config = 6;
+  protocol.TxConfiguration protocol_configuration = 5;
+  gateway.TxConfiguration  gateway_configuration = 6;
 }
 
 // received from the Router

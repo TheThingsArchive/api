@@ -62,8 +62,8 @@ struct  _Broker__DownlinkOption
    */
   protobuf_c_boolean has_deadline;
   int64_t deadline;
-  Protocol__TxConfiguration *protocol_config;
-  Gateway__TxConfiguration *gateway_config;
+  Protocol__TxConfiguration *protocol_configuration;
+  Gateway__TxConfiguration *gateway_configuration;
 };
 #define BROKER__DOWNLINK_OPTION__INIT \
  { PROTOBUF_C_MESSAGE_INIT (&broker__downlink_option__descriptor) \

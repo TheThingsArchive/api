@@ -46,13 +46,13 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
      */
     private $deadline = 0;
     /**
-     * <code>.protocol.TxConfiguration protocol_config = 5;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      */
-    private $protocol_config = null;
+    private $protocol_configuration = null;
     /**
-     * <code>.gateway.TxConfiguration gateway_config = 6;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      */
-    private $gateway_config = null;
+    private $gateway_configuration = null;
 
     public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Broker\Broker::initOnce();
@@ -160,37 +160,37 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.protocol.TxConfiguration protocol_config = 5;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      */
-    public function getProtocolConfig()
+    public function getProtocolConfiguration()
     {
-        return $this->protocol_config;
+        return $this->protocol_configuration;
     }
 
     /**
-     * <code>.protocol.TxConfiguration protocol_config = 5;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      */
-    public function setProtocolConfig(&$var)
+    public function setProtocolConfiguration(&$var)
     {
         GPBUtil::checkMessage($var, \Protocol\TxConfiguration::class);
-        $this->protocol_config = $var;
+        $this->protocol_configuration = $var;
     }
 
     /**
-     * <code>.gateway.TxConfiguration gateway_config = 6;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      */
-    public function getGatewayConfig()
+    public function getGatewayConfiguration()
     {
-        return $this->gateway_config;
+        return $this->gateway_configuration;
     }
 
     /**
-     * <code>.gateway.TxConfiguration gateway_config = 6;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      */
-    public function setGatewayConfig(&$var)
+    public function setGatewayConfiguration(&$var)
     {
         GPBUtil::checkMessage($var, \Gateway\TxConfiguration::class);
-        $this->gateway_config = $var;
+        $this->gateway_configuration = $var;
     }
 
 }
