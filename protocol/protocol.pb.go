@@ -590,6 +590,147 @@ func encodeVarintProtocol(dAtA []byte, offset int, v uint64) int {
 	dAtA[offset] = uint8(v)
 	return offset + 1
 }
+func newPopulatedMessage(r randyProtocol, easy bool) *Message {
+	this := &Message{}
+	oneofNumber_Protocol := []int32{1}[r.Intn(1)]
+	switch oneofNumber_Protocol {
+	case 1:
+		this.Protocol = NewPopulatedMessage_LoRaWAN(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func newPopulatedMessage_LoRaWAN(r randyProtocol, easy bool) *Message_LoRaWAN {
+	this := &Message_LoRaWAN{}
+	this.LoRaWAN = lorawan.NewPopulatedMessage(r, easy)
+	return this
+}
+func newPopulatedRxMetadata(r randyProtocol, easy bool) *RxMetadata {
+	this := &RxMetadata{}
+	oneofNumber_Protocol := []int32{1}[r.Intn(1)]
+	switch oneofNumber_Protocol {
+	case 1:
+		this.Protocol = NewPopulatedRxMetadata_LoRaWAN(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func newPopulatedRxMetadata_LoRaWAN(r randyProtocol, easy bool) *RxMetadata_LoRaWAN {
+	this := &RxMetadata_LoRaWAN{}
+	this.LoRaWAN = lorawan.NewPopulatedMetadata(r, easy)
+	return this
+}
+func newPopulatedTxConfiguration(r randyProtocol, easy bool) *TxConfiguration {
+	this := &TxConfiguration{}
+	oneofNumber_Protocol := []int32{1}[r.Intn(1)]
+	switch oneofNumber_Protocol {
+	case 1:
+		this.Protocol = NewPopulatedTxConfiguration_LoRaWAN(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func newPopulatedTxConfiguration_LoRaWAN(r randyProtocol, easy bool) *TxConfiguration_LoRaWAN {
+	this := &TxConfiguration_LoRaWAN{}
+	this.LoRaWAN = lorawan.NewPopulatedTxConfiguration(r, easy)
+	return this
+}
+func newPopulatedActivationMetadata(r randyProtocol, easy bool) *ActivationMetadata {
+	this := &ActivationMetadata{}
+	oneofNumber_Protocol := []int32{1}[r.Intn(1)]
+	switch oneofNumber_Protocol {
+	case 1:
+		this.Protocol = NewPopulatedActivationMetadata_LoRaWAN(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func newPopulatedActivationMetadata_LoRaWAN(r randyProtocol, easy bool) *ActivationMetadata_LoRaWAN {
+	this := &ActivationMetadata_LoRaWAN{}
+	this.LoRaWAN = lorawan.NewPopulatedActivationMetadata(r, easy)
+	return this
+}
+
+type randyProtocol interface {
+	Float32() float32
+	Float64() float64
+	Int63() int64
+	Int31() int32
+	Uint32() uint32
+	Intn(n int) int
+}
+
+func randUTF8RuneProtocol(r randyProtocol) rune {
+	ru := r.Intn(62)
+	if ru < 10 {
+		return rune(ru + 48)
+	} else if ru < 36 {
+		return rune(ru + 55)
+	}
+	return rune(ru + 61)
+}
+func randStringProtocol(r randyProtocol) string {
+	v1 := r.Intn(100)
+	tmps := make([]rune, v1)
+	for i := 0; i < v1; i++ {
+		tmps[i] = randUTF8RuneProtocol(r)
+	}
+	return string(tmps)
+}
+func randUnrecognizedProtocol(r randyProtocol, maxFieldNumber int) (dAtA []byte) {
+	l := r.Intn(5)
+	for i := 0; i < l; i++ {
+		wire := r.Intn(4)
+		if wire == 3 {
+			wire = 5
+		}
+		fieldNumber := maxFieldNumber + r.Intn(100)
+		dAtA = randFieldProtocol(dAtA, r, fieldNumber, wire)
+	}
+	return dAtA
+}
+func randFieldProtocol(dAtA []byte, r randyProtocol, fieldNumber int, wire int) []byte {
+	key := uint32(fieldNumber)<<3 | uint32(wire)
+	switch wire {
+	case 0:
+		dAtA = encodeVarintPopulateProtocol(dAtA, uint64(key))
+		v2 := r.Int63()
+		if r.Intn(2) == 0 {
+			v2 *= -1
+		}
+		dAtA = encodeVarintPopulateProtocol(dAtA, uint64(v2))
+	case 1:
+		dAtA = encodeVarintPopulateProtocol(dAtA, uint64(key))
+		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
+	case 2:
+		dAtA = encodeVarintPopulateProtocol(dAtA, uint64(key))
+		ll := r.Intn(100)
+		dAtA = encodeVarintPopulateProtocol(dAtA, uint64(ll))
+		for j := 0; j < ll; j++ {
+			dAtA = append(dAtA, byte(r.Intn(256)))
+		}
+	default:
+		dAtA = encodeVarintPopulateProtocol(dAtA, uint64(key))
+		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
+	}
+	return dAtA
+}
+func encodeVarintPopulateProtocol(dAtA []byte, v uint64) []byte {
+	for v >= 1<<7 {
+		dAtA = append(dAtA, uint8(uint64(v)&0x7f|0x80))
+		v >>= 7
+	}
+	dAtA = append(dAtA, uint8(v))
+	return dAtA
+}
 func (m *Message) Size() (n int) {
 	var l int
 	_ = l
@@ -1202,7 +1343,7 @@ func init() {
 }
 
 var fileDescriptorProtocol = []byte{
-	// 328 bytes of a gzipped FileDescriptorProto
+	// 332 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x32, 0x4f, 0xcf, 0x2c, 0xc9,
 	0x28, 0x4d, 0xd2, 0x4b, 0xce, 0xcf, 0xd5, 0x0f, 0xc9, 0x48, 0x0d, 0xc9, 0xc8, 0xcc, 0x4b, 0x2f,
 	0xf6, 0x4b, 0x2d, 0x29, 0xcf, 0x2f, 0xca, 0xd6, 0x4f, 0x2c, 0xc8, 0xd4, 0x2f, 0x28, 0xca, 0x2f,
@@ -1217,11 +1358,11 @@ var fileDescriptorProtocol = []byte{
 	0x81, 0x8b, 0x3f, 0xa4, 0xc2, 0x39, 0x3f, 0x2f, 0x2d, 0x33, 0xbd, 0xb4, 0x28, 0xb1, 0x24, 0x33,
 	0x3f, 0x4f, 0xc8, 0x11, 0xdd, 0x68, 0x09, 0xb8, 0xd1, 0x68, 0x4a, 0x89, 0xb2, 0x21, 0x8d, 0x4b,
 	0xc8, 0x31, 0xb9, 0x24, 0xb3, 0x0c, 0xac, 0x03, 0xee, 0x7e, 0x17, 0x74, 0x4b, 0xa4, 0xe1, 0x96,
-	0x60, 0xaa, 0x26, 0xc6, 0x1e, 0xa7, 0x59, 0x8c, 0x37, 0x1e, 0xca, 0x31, 0x34, 0x3c, 0x92, 0x63,
-	0x3c, 0xf1, 0x48, 0x8e, 0xf1, 0xc2, 0x23, 0x39, 0xc6, 0x07, 0x8f, 0xe4, 0x18, 0x5f, 0x3c, 0x92,
-	0x63, 0xf8, 0xf0, 0x48, 0x8e, 0x91, 0x4b, 0x31, 0xbf, 0x28, 0x5d, 0xaf, 0x24, 0x23, 0xb5, 0x04,
-	0x1c, 0x93, 0x79, 0x90, 0x98, 0xd4, 0x4b, 0x2c, 0xc8, 0xd4, 0x83, 0x9b, 0xc0, 0x1b, 0x00, 0x65,
-	0x81, 0xe9, 0x00, 0xc6, 0x28, 0x0d, 0x62, 0x13, 0xc1, 0x2a, 0x26, 0x59, 0x74, 0x79, 0x3d, 0xc7,
-	0x00, 0x4f, 0x3d, 0x98, 0x81, 0x49, 0x6c, 0x60, 0x95, 0xc6, 0x80, 0x00, 0x00, 0x00, 0xff, 0xff,
-	0x94, 0x61, 0x5b, 0xab, 0xc9, 0x02, 0x00, 0x00,
+	0x60, 0xaa, 0x26, 0xc6, 0x1e, 0xa7, 0x79, 0x8c, 0x37, 0x1e, 0xca, 0x31, 0xfc, 0x78, 0x28, 0xc7,
+	0xd8, 0xf0, 0x48, 0x8e, 0xf1, 0xc4, 0x23, 0x39, 0xc6, 0x0b, 0x8f, 0xe4, 0x18, 0x1f, 0x3c, 0x92,
+	0x63, 0x7c, 0xf1, 0x48, 0x8e, 0xe1, 0xc3, 0x23, 0x39, 0x46, 0x2e, 0xc5, 0xfc, 0xa2, 0x74, 0xbd,
+	0x92, 0x8c, 0xd4, 0x12, 0x70, 0x6c, 0xe6, 0x41, 0x62, 0x53, 0x2f, 0xb1, 0x20, 0x53, 0x0f, 0x6e,
+	0x0a, 0x6f, 0x00, 0x94, 0x05, 0xa6, 0x03, 0x18, 0xa3, 0x34, 0x88, 0x4d, 0x08, 0xab, 0x98, 0x64,
+	0xd1, 0xe5, 0xf5, 0x1c, 0x03, 0x3c, 0xf5, 0x60, 0x06, 0x26, 0xb1, 0x81, 0x55, 0x1a, 0x03, 0x02,
+	0x00, 0x00, 0xff, 0xff, 0xac, 0xbe, 0x0d, 0xe3, 0xcd, 0x02, 0x00, 0x00,
 }

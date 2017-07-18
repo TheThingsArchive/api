@@ -24,6 +24,8 @@ func main() {
 
 		vanity.TurnOffGoEnumStringerAll,
 		vanity.TurnOnEnumStringerAll,
+
+		vanity.TurnOnPopulateAll,
 	} {
 		vanity.ForEachFile(files, opt)
 	}

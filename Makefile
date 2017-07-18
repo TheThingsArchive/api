@@ -20,11 +20,13 @@ GO_PROTO_TYPE_CONVERSIONS = $(subst $(SPACE),$(COMMA),$(foreach type,$(GO_PROTO_
 GO_PROTOC_FLAGS ?= $(PROTOC_INCLUDES) \
 	--gogottn_out=plugins=grpc,$(GO_PROTO_TYPE_CONVERSIONS):$(GO_PATH)/src \
 	--grpc-gateway_out=:$(GO_PATH)/src
+GO_SED ?= -e 's/func NewPopulated/func newPopulated/g'
 GO_GW_SED ?= -e 's/\.AppId/\.AppID/g' -e 's/\.DevId/\.DevID/g' -e 's/\.AppEui/\.AppEUI/g' -e 's/\.DevEui/\.DevEUI/g' -e 's/\.Id/\.ID/g'
 
 .PHONY: protos.go
 
 protos.go: $(GO_PROTO_TARGETS)
+	sed -i '' $(GO_SED) $(shell $(ALL_FILES) | grep "\.pb\.go$$")
 	sed -i '' $(GO_GW_SED) $(shell $(ALL_FILES) | grep "\.pb\.gw\.go$$")
 
 %.pb.go: %.proto
