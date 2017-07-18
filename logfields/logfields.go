@@ -1,6 +1,8 @@
 // Copyright © 2017 The Things Network
 // Use of this source code is governed by the MIT license that can be found in the LICENSE file.
 
+// Package logfields helps extracting well-known fields from proto messages.
+// It extracts fields such as IDs/EUIs, Addresses, as well as Gateway/LoRaWAN metadata.
 package logfields
 
 import (
