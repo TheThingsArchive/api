@@ -61,11 +61,11 @@ func (*SubscribeRequest) ProtoMessage()               {}
 func (*SubscribeRequest) Descriptor() ([]byte, []int) { return fileDescriptorRouter, []int{0} }
 
 type UplinkMessage struct {
-	Payload          []byte               `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
-	Message          *protocol.Message    `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
-	ProtocolMetadata *protocol.RxMetadata `protobuf:"bytes,11,opt,name=protocol_metadata,json=protocolMetadata" json:"protocol_metadata,omitempty"`
-	GatewayMetadata  *gateway.RxMetadata  `protobuf:"bytes,12,opt,name=gateway_metadata,json=gatewayMetadata" json:"gateway_metadata,omitempty"`
-	Trace            *trace.Trace         `protobuf:"bytes,21,opt,name=trace" json:"trace,omitempty"`
+	Payload          []byte              `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
+	Message          *protocol.Message   `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
+	ProtocolMetadata protocol.RxMetadata `protobuf:"bytes,11,opt,name=protocol_metadata,json=protocolMetadata" json:"protocol_metadata"`
+	GatewayMetadata  gateway.RxMetadata  `protobuf:"bytes,12,opt,name=gateway_metadata,json=gatewayMetadata" json:"gateway_metadata"`
+	Trace            *trace.Trace        `protobuf:"bytes,21,opt,name=trace" json:"trace,omitempty"`
 }
 
 func (m *UplinkMessage) Reset()                    { *m = UplinkMessage{} }
@@ -86,18 +86,18 @@ func (m *UplinkMessage) GetMessage() *protocol.Message {
 	return nil
 }
 
-func (m *UplinkMessage) GetProtocolMetadata() *protocol.RxMetadata {
+func (m *UplinkMessage) GetProtocolMetadata() protocol.RxMetadata {
 	if m != nil {
 		return m.ProtocolMetadata
 	}
-	return nil
+	return protocol.RxMetadata{}
 }
 
-func (m *UplinkMessage) GetGatewayMetadata() *gateway.RxMetadata {
+func (m *UplinkMessage) GetGatewayMetadata() gateway.RxMetadata {
 	if m != nil {
 		return m.GatewayMetadata
 	}
-	return nil
+	return gateway.RxMetadata{}
 }
 
 func (m *UplinkMessage) GetTrace() *trace.Trace {
@@ -108,11 +108,11 @@ func (m *UplinkMessage) GetTrace() *trace.Trace {
 }
 
 type DownlinkMessage struct {
-	Payload               []byte                    `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
-	Message               *protocol.Message         `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
-	ProtocolConfiguration *protocol.TxConfiguration `protobuf:"bytes,11,opt,name=protocol_configuration,json=protocolConfiguration" json:"protocol_configuration,omitempty"`
-	GatewayConfiguration  *gateway.TxConfiguration  `protobuf:"bytes,12,opt,name=gateway_configuration,json=gatewayConfiguration" json:"gateway_configuration,omitempty"`
-	Trace                 *trace.Trace              `protobuf:"bytes,21,opt,name=trace" json:"trace,omitempty"`
+	Payload               []byte                   `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
+	Message               *protocol.Message        `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
+	ProtocolConfiguration protocol.TxConfiguration `protobuf:"bytes,11,opt,name=protocol_configuration,json=protocolConfiguration" json:"protocol_configuration"`
+	GatewayConfiguration  gateway.TxConfiguration  `protobuf:"bytes,12,opt,name=gateway_configuration,json=gatewayConfiguration" json:"gateway_configuration"`
+	Trace                 *trace.Trace             `protobuf:"bytes,21,opt,name=trace" json:"trace,omitempty"`
 }
 
 func (m *DownlinkMessage) Reset()                    { *m = DownlinkMessage{} }
@@ -133,18 +133,18 @@ func (m *DownlinkMessage) GetMessage() *protocol.Message {
 	return nil
 }
 
-func (m *DownlinkMessage) GetProtocolConfiguration() *protocol.TxConfiguration {
+func (m *DownlinkMessage) GetProtocolConfiguration() protocol.TxConfiguration {
 	if m != nil {
 		return m.ProtocolConfiguration
 	}
-	return nil
+	return protocol.TxConfiguration{}
 }
 
-func (m *DownlinkMessage) GetGatewayConfiguration() *gateway.TxConfiguration {
+func (m *DownlinkMessage) GetGatewayConfiguration() gateway.TxConfiguration {
 	if m != nil {
 		return m.GatewayConfiguration
 	}
-	return nil
+	return gateway.TxConfiguration{}
 }
 
 func (m *DownlinkMessage) GetTrace() *trace.Trace {
@@ -155,14 +155,14 @@ func (m *DownlinkMessage) GetTrace() *trace.Trace {
 }
 
 type DeviceActivationRequest struct {
-	Payload            []byte                                             `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
-	Message            *protocol.Message                                  `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
-	DevEUI             *github_com_TheThingsNetwork_ttn_core_types.DevEUI `protobuf:"bytes,11,opt,name=dev_eui,json=devEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevEUI" json:"dev_eui,omitempty"`
-	AppEUI             *github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,12,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui,omitempty"`
-	ProtocolMetadata   *protocol.RxMetadata                               `protobuf:"bytes,21,opt,name=protocol_metadata,json=protocolMetadata" json:"protocol_metadata,omitempty"`
-	GatewayMetadata    *gateway.RxMetadata                                `protobuf:"bytes,22,opt,name=gateway_metadata,json=gatewayMetadata" json:"gateway_metadata,omitempty"`
-	ActivationMetadata *protocol.ActivationMetadata                       `protobuf:"bytes,23,opt,name=activation_metadata,json=activationMetadata" json:"activation_metadata,omitempty"`
-	Trace              *trace.Trace                                       `protobuf:"bytes,31,opt,name=trace" json:"trace,omitempty"`
+	Payload            []byte                                            `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
+	Message            *protocol.Message                                 `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
+	DevEUI             github_com_TheThingsNetwork_ttn_core_types.DevEUI `protobuf:"bytes,11,opt,name=dev_eui,json=devEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevEUI" json:"dev_eui"`
+	AppEUI             github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,12,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui"`
+	ProtocolMetadata   protocol.RxMetadata                               `protobuf:"bytes,21,opt,name=protocol_metadata,json=protocolMetadata" json:"protocol_metadata"`
+	GatewayMetadata    gateway.RxMetadata                                `protobuf:"bytes,22,opt,name=gateway_metadata,json=gatewayMetadata" json:"gateway_metadata"`
+	ActivationMetadata *protocol.ActivationMetadata                      `protobuf:"bytes,23,opt,name=activation_metadata,json=activationMetadata" json:"activation_metadata,omitempty"`
+	Trace              *trace.Trace                                      `protobuf:"bytes,31,opt,name=trace" json:"trace,omitempty"`
 }
 
 func (m *DeviceActivationRequest) Reset()                    { *m = DeviceActivationRequest{} }
@@ -183,18 +183,18 @@ func (m *DeviceActivationRequest) GetMessage() *protocol.Message {
 	return nil
 }
 
-func (m *DeviceActivationRequest) GetProtocolMetadata() *protocol.RxMetadata {
+func (m *DeviceActivationRequest) GetProtocolMetadata() protocol.RxMetadata {
 	if m != nil {
 		return m.ProtocolMetadata
 	}
-	return nil
+	return protocol.RxMetadata{}
 }
 
-func (m *DeviceActivationRequest) GetGatewayMetadata() *gateway.RxMetadata {
+func (m *DeviceActivationRequest) GetGatewayMetadata() gateway.RxMetadata {
 	if m != nil {
 		return m.GatewayMetadata
 	}
-	return nil
+	return gateway.RxMetadata{}
 }
 
 func (m *DeviceActivationRequest) GetActivationMetadata() *protocol.ActivationMetadata {
@@ -236,8 +236,8 @@ func (m *GatewayStatusRequest) GetGatewayID() string {
 }
 
 type GatewayStatusResponse struct {
-	LastSeen int64           `protobuf:"varint,1,opt,name=last_seen,json=lastSeen,proto3" json:"last_seen,omitempty"`
-	Status   *gateway.Status `protobuf:"bytes,2,opt,name=status" json:"status,omitempty"`
+	LastSeen int64          `protobuf:"varint,1,opt,name=last_seen,json=lastSeen,proto3" json:"last_seen,omitempty"`
+	Status   gateway.Status `protobuf:"bytes,2,opt,name=status" json:"status"`
 }
 
 func (m *GatewayStatusResponse) Reset()                    { *m = GatewayStatusResponse{} }
@@ -251,11 +251,11 @@ func (m *GatewayStatusResponse) GetLastSeen() int64 {
 	return 0
 }
 
-func (m *GatewayStatusResponse) GetStatus() *gateway.Status {
+func (m *GatewayStatusResponse) GetStatus() gateway.Status {
 	if m != nil {
 		return m.Status
 	}
-	return nil
+	return gateway.Status{}
 }
 
 // message StatusRequest is used to request the status of this Router
@@ -268,12 +268,12 @@ func (*StatusRequest) Descriptor() ([]byte, []int) { return fileDescriptorRouter
 
 // message Status is the response to the StatusRequest
 type Status struct {
-	System        *api.SystemStats    `protobuf:"bytes,1,opt,name=system" json:"system,omitempty"`
-	Component     *api.ComponentStats `protobuf:"bytes,2,opt,name=component" json:"component,omitempty"`
-	GatewayStatus *api.Rates          `protobuf:"bytes,11,opt,name=gateway_status,json=gatewayStatus" json:"gateway_status,omitempty"`
-	Uplink        *api.Rates          `protobuf:"bytes,12,opt,name=uplink" json:"uplink,omitempty"`
-	Downlink      *api.Rates          `protobuf:"bytes,13,opt,name=downlink" json:"downlink,omitempty"`
-	Activations   *api.Rates          `protobuf:"bytes,14,opt,name=activations" json:"activations,omitempty"`
+	System        api.SystemStats    `protobuf:"bytes,1,opt,name=system" json:"system"`
+	Component     api.ComponentStats `protobuf:"bytes,2,opt,name=component" json:"component"`
+	GatewayStatus *api.Rates         `protobuf:"bytes,11,opt,name=gateway_status,json=gatewayStatus" json:"gateway_status,omitempty"`
+	Uplink        *api.Rates         `protobuf:"bytes,12,opt,name=uplink" json:"uplink,omitempty"`
+	Downlink      *api.Rates         `protobuf:"bytes,13,opt,name=downlink" json:"downlink,omitempty"`
+	Activations   *api.Rates         `protobuf:"bytes,14,opt,name=activations" json:"activations,omitempty"`
 	// Connections
 	ConnectedGateways uint32 `protobuf:"varint,21,opt,name=connected_gateways,json=connectedGateways,proto3" json:"connected_gateways,omitempty"`
 	ConnectedBrokers  uint32 `protobuf:"varint,22,opt,name=connected_brokers,json=connectedBrokers,proto3" json:"connected_brokers,omitempty"`
@@ -283,18 +283,18 @@ func (m *Status) Reset()                    { *m = Status{} }
 func (*Status) ProtoMessage()               {}
 func (*Status) Descriptor() ([]byte, []int) { return fileDescriptorRouter, []int{8} }
 
-func (m *Status) GetSystem() *api.SystemStats {
+func (m *Status) GetSystem() api.SystemStats {
 	if m != nil {
 		return m.System
 	}
-	return nil
+	return api.SystemStats{}
 }
 
-func (m *Status) GetComponent() *api.ComponentStats {
+func (m *Status) GetComponent() api.ComponentStats {
 	if m != nil {
 		return m.Component
 	}
-	return nil
+	return api.ComponentStats{}
 }
 
 func (m *Status) GetGatewayStatus() *api.Rates {
@@ -782,26 +782,22 @@ func (m *UplinkMessage) MarshalTo(dAtA []byte) (int, error) {
 		}
 		i += n1
 	}
-	if m.ProtocolMetadata != nil {
-		dAtA[i] = 0x5a
-		i++
-		i = encodeVarintRouter(dAtA, i, uint64(m.ProtocolMetadata.Size()))
-		n2, err := m.ProtocolMetadata.MarshalTo(dAtA[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n2
+	dAtA[i] = 0x5a
+	i++
+	i = encodeVarintRouter(dAtA, i, uint64(m.ProtocolMetadata.Size()))
+	n2, err := m.ProtocolMetadata.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
 	}
-	if m.GatewayMetadata != nil {
-		dAtA[i] = 0x62
-		i++
-		i = encodeVarintRouter(dAtA, i, uint64(m.GatewayMetadata.Size()))
-		n3, err := m.GatewayMetadata.MarshalTo(dAtA[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n3
+	i += n2
+	dAtA[i] = 0x62
+	i++
+	i = encodeVarintRouter(dAtA, i, uint64(m.GatewayMetadata.Size()))
+	n3, err := m.GatewayMetadata.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
 	}
+	i += n3
 	if m.Trace != nil {
 		dAtA[i] = 0xaa
 		i++
@@ -848,26 +844,22 @@ func (m *DownlinkMessage) MarshalTo(dAtA []byte) (int, error) {
 		}
 		i += n5
 	}
-	if m.ProtocolConfiguration != nil {
-		dAtA[i] = 0x5a
-		i++
-		i = encodeVarintRouter(dAtA, i, uint64(m.ProtocolConfiguration.Size()))
-		n6, err := m.ProtocolConfiguration.MarshalTo(dAtA[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n6
+	dAtA[i] = 0x5a
+	i++
+	i = encodeVarintRouter(dAtA, i, uint64(m.ProtocolConfiguration.Size()))
+	n6, err := m.ProtocolConfiguration.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
 	}
-	if m.GatewayConfiguration != nil {
-		dAtA[i] = 0x62
-		i++
-		i = encodeVarintRouter(dAtA, i, uint64(m.GatewayConfiguration.Size()))
-		n7, err := m.GatewayConfiguration.MarshalTo(dAtA[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n7
+	i += n6
+	dAtA[i] = 0x62
+	i++
+	i = encodeVarintRouter(dAtA, i, uint64(m.GatewayConfiguration.Size()))
+	n7, err := m.GatewayConfiguration.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
 	}
+	i += n7
 	if m.Trace != nil {
 		dAtA[i] = 0xaa
 		i++
@@ -914,50 +906,42 @@ func (m *DeviceActivationRequest) MarshalTo(dAtA []byte) (int, error) {
 		}
 		i += n9
 	}
-	if m.DevEUI != nil {
-		dAtA[i] = 0x5a
-		i++
-		i = encodeVarintRouter(dAtA, i, uint64(m.DevEUI.Size()))
-		n10, err := m.DevEUI.MarshalTo(dAtA[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n10
+	dAtA[i] = 0x5a
+	i++
+	i = encodeVarintRouter(dAtA, i, uint64(m.DevEUI.Size()))
+	n10, err := m.DevEUI.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
 	}
-	if m.AppEUI != nil {
-		dAtA[i] = 0x62
-		i++
-		i = encodeVarintRouter(dAtA, i, uint64(m.AppEUI.Size()))
-		n11, err := m.AppEUI.MarshalTo(dAtA[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n11
+	i += n10
+	dAtA[i] = 0x62
+	i++
+	i = encodeVarintRouter(dAtA, i, uint64(m.AppEUI.Size()))
+	n11, err := m.AppEUI.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
 	}
-	if m.ProtocolMetadata != nil {
-		dAtA[i] = 0xaa
-		i++
-		dAtA[i] = 0x1
-		i++
-		i = encodeVarintRouter(dAtA, i, uint64(m.ProtocolMetadata.Size()))
-		n12, err := m.ProtocolMetadata.MarshalTo(dAtA[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n12
+	i += n11
+	dAtA[i] = 0xaa
+	i++
+	dAtA[i] = 0x1
+	i++
+	i = encodeVarintRouter(dAtA, i, uint64(m.ProtocolMetadata.Size()))
+	n12, err := m.ProtocolMetadata.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
 	}
-	if m.GatewayMetadata != nil {
-		dAtA[i] = 0xb2
-		i++
-		dAtA[i] = 0x1
-		i++
-		i = encodeVarintRouter(dAtA, i, uint64(m.GatewayMetadata.Size()))
-		n13, err := m.GatewayMetadata.MarshalTo(dAtA[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n13
+	i += n12
+	dAtA[i] = 0xb2
+	i++
+	dAtA[i] = 0x1
+	i++
+	i = encodeVarintRouter(dAtA, i, uint64(m.GatewayMetadata.Size()))
+	n13, err := m.GatewayMetadata.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
 	}
+	i += n13
 	if m.ActivationMetadata != nil {
 		dAtA[i] = 0xba
 		i++
@@ -1047,16 +1031,14 @@ func (m *GatewayStatusResponse) MarshalTo(dAtA []byte) (int, error) {
 		i++
 		i = encodeVarintRouter(dAtA, i, uint64(m.LastSeen))
 	}
-	if m.Status != nil {
-		dAtA[i] = 0x12
-		i++
-		i = encodeVarintRouter(dAtA, i, uint64(m.Status.Size()))
-		n16, err := m.Status.MarshalTo(dAtA[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n16
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintRouter(dAtA, i, uint64(m.Status.Size()))
+	n16, err := m.Status.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
 	}
+	i += n16
 	return i, nil
 }
 
@@ -1093,26 +1075,22 @@ func (m *Status) MarshalTo(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
-	if m.System != nil {
-		dAtA[i] = 0xa
-		i++
-		i = encodeVarintRouter(dAtA, i, uint64(m.System.Size()))
-		n17, err := m.System.MarshalTo(dAtA[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n17
+	dAtA[i] = 0xa
+	i++
+	i = encodeVarintRouter(dAtA, i, uint64(m.System.Size()))
+	n17, err := m.System.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
 	}
-	if m.Component != nil {
-		dAtA[i] = 0x12
-		i++
-		i = encodeVarintRouter(dAtA, i, uint64(m.Component.Size()))
-		n18, err := m.Component.MarshalTo(dAtA[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n18
+	i += n17
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintRouter(dAtA, i, uint64(m.Component.Size()))
+	n18, err := m.Component.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
 	}
+	i += n18
 	if m.GatewayStatus != nil {
 		dAtA[i] = 0x5a
 		i++
@@ -1214,14 +1192,10 @@ func (m *UplinkMessage) Size() (n int) {
 		l = m.Message.Size()
 		n += 1 + l + sovRouter(uint64(l))
 	}
-	if m.ProtocolMetadata != nil {
-		l = m.ProtocolMetadata.Size()
-		n += 1 + l + sovRouter(uint64(l))
-	}
-	if m.GatewayMetadata != nil {
-		l = m.GatewayMetadata.Size()
-		n += 1 + l + sovRouter(uint64(l))
-	}
+	l = m.ProtocolMetadata.Size()
+	n += 1 + l + sovRouter(uint64(l))
+	l = m.GatewayMetadata.Size()
+	n += 1 + l + sovRouter(uint64(l))
 	if m.Trace != nil {
 		l = m.Trace.Size()
 		n += 2 + l + sovRouter(uint64(l))
@@ -1240,14 +1214,10 @@ func (m *DownlinkMessage) Size() (n int) {
 		l = m.Message.Size()
 		n += 1 + l + sovRouter(uint64(l))
 	}
-	if m.ProtocolConfiguration != nil {
-		l = m.ProtocolConfiguration.Size()
-		n += 1 + l + sovRouter(uint64(l))
-	}
-	if m.GatewayConfiguration != nil {
-		l = m.GatewayConfiguration.Size()
-		n += 1 + l + sovRouter(uint64(l))
-	}
+	l = m.ProtocolConfiguration.Size()
+	n += 1 + l + sovRouter(uint64(l))
+	l = m.GatewayConfiguration.Size()
+	n += 1 + l + sovRouter(uint64(l))
 	if m.Trace != nil {
 		l = m.Trace.Size()
 		n += 2 + l + sovRouter(uint64(l))
@@ -1266,22 +1236,14 @@ func (m *DeviceActivationRequest) Size() (n int) {
 		l = m.Message.Size()
 		n += 1 + l + sovRouter(uint64(l))
 	}
-	if m.DevEUI != nil {
-		l = m.DevEUI.Size()
-		n += 1 + l + sovRouter(uint64(l))
-	}
-	if m.AppEUI != nil {
-		l = m.AppEUI.Size()
-		n += 1 + l + sovRouter(uint64(l))
-	}
-	if m.ProtocolMetadata != nil {
-		l = m.ProtocolMetadata.Size()
-		n += 2 + l + sovRouter(uint64(l))
-	}
-	if m.GatewayMetadata != nil {
-		l = m.GatewayMetadata.Size()
-		n += 2 + l + sovRouter(uint64(l))
-	}
+	l = m.DevEUI.Size()
+	n += 1 + l + sovRouter(uint64(l))
+	l = m.AppEUI.Size()
+	n += 1 + l + sovRouter(uint64(l))
+	l = m.ProtocolMetadata.Size()
+	n += 2 + l + sovRouter(uint64(l))
+	l = m.GatewayMetadata.Size()
+	n += 2 + l + sovRouter(uint64(l))
 	if m.ActivationMetadata != nil {
 		l = m.ActivationMetadata.Size()
 		n += 2 + l + sovRouter(uint64(l))
@@ -1315,10 +1277,8 @@ func (m *GatewayStatusResponse) Size() (n int) {
 	if m.LastSeen != 0 {
 		n += 1 + sovRouter(uint64(m.LastSeen))
 	}
-	if m.Status != nil {
-		l = m.Status.Size()
-		n += 1 + l + sovRouter(uint64(l))
-	}
+	l = m.Status.Size()
+	n += 1 + l + sovRouter(uint64(l))
 	return n
 }
 
@@ -1331,14 +1291,10 @@ func (m *StatusRequest) Size() (n int) {
 func (m *Status) Size() (n int) {
 	var l int
 	_ = l
-	if m.System != nil {
-		l = m.System.Size()
-		n += 1 + l + sovRouter(uint64(l))
-	}
-	if m.Component != nil {
-		l = m.Component.Size()
-		n += 1 + l + sovRouter(uint64(l))
-	}
+	l = m.System.Size()
+	n += 1 + l + sovRouter(uint64(l))
+	l = m.Component.Size()
+	n += 1 + l + sovRouter(uint64(l))
 	if m.GatewayStatus != nil {
 		l = m.GatewayStatus.Size()
 		n += 1 + l + sovRouter(uint64(l))
@@ -1393,8 +1349,8 @@ func (this *UplinkMessage) String() string {
 	s := strings.Join([]string{`&UplinkMessage{`,
 		`Payload:` + fmt.Sprintf("%v", this.Payload) + `,`,
 		`Message:` + strings.Replace(fmt.Sprintf("%v", this.Message), "Message", "protocol.Message", 1) + `,`,
-		`ProtocolMetadata:` + strings.Replace(fmt.Sprintf("%v", this.ProtocolMetadata), "RxMetadata", "protocol.RxMetadata", 1) + `,`,
-		`GatewayMetadata:` + strings.Replace(fmt.Sprintf("%v", this.GatewayMetadata), "RxMetadata", "gateway.RxMetadata", 1) + `,`,
+		`ProtocolMetadata:` + strings.Replace(strings.Replace(this.ProtocolMetadata.String(), "RxMetadata", "protocol.RxMetadata", 1), `&`, ``, 1) + `,`,
+		`GatewayMetadata:` + strings.Replace(strings.Replace(this.GatewayMetadata.String(), "RxMetadata", "gateway.RxMetadata", 1), `&`, ``, 1) + `,`,
 		`Trace:` + strings.Replace(fmt.Sprintf("%v", this.Trace), "Trace", "trace.Trace", 1) + `,`,
 		`}`,
 	}, "")
@@ -1407,8 +1363,8 @@ func (this *DownlinkMessage) String() string {
 	s := strings.Join([]string{`&DownlinkMessage{`,
 		`Payload:` + fmt.Sprintf("%v", this.Payload) + `,`,
 		`Message:` + strings.Replace(fmt.Sprintf("%v", this.Message), "Message", "protocol.Message", 1) + `,`,
-		`ProtocolConfiguration:` + strings.Replace(fmt.Sprintf("%v", this.ProtocolConfiguration), "TxConfiguration", "protocol.TxConfiguration", 1) + `,`,
-		`GatewayConfiguration:` + strings.Replace(fmt.Sprintf("%v", this.GatewayConfiguration), "TxConfiguration", "gateway.TxConfiguration", 1) + `,`,
+		`ProtocolConfiguration:` + strings.Replace(strings.Replace(this.ProtocolConfiguration.String(), "TxConfiguration", "protocol.TxConfiguration", 1), `&`, ``, 1) + `,`,
+		`GatewayConfiguration:` + strings.Replace(strings.Replace(this.GatewayConfiguration.String(), "TxConfiguration", "gateway.TxConfiguration", 1), `&`, ``, 1) + `,`,
 		`Trace:` + strings.Replace(fmt.Sprintf("%v", this.Trace), "Trace", "trace.Trace", 1) + `,`,
 		`}`,
 	}, "")
@@ -1423,8 +1379,8 @@ func (this *DeviceActivationRequest) String() string {
 		`Message:` + strings.Replace(fmt.Sprintf("%v", this.Message), "Message", "protocol.Message", 1) + `,`,
 		`DevEUI:` + fmt.Sprintf("%v", this.DevEUI) + `,`,
 		`AppEUI:` + fmt.Sprintf("%v", this.AppEUI) + `,`,
-		`ProtocolMetadata:` + strings.Replace(fmt.Sprintf("%v", this.ProtocolMetadata), "RxMetadata", "protocol.RxMetadata", 1) + `,`,
-		`GatewayMetadata:` + strings.Replace(fmt.Sprintf("%v", this.GatewayMetadata), "RxMetadata", "gateway.RxMetadata", 1) + `,`,
+		`ProtocolMetadata:` + strings.Replace(strings.Replace(this.ProtocolMetadata.String(), "RxMetadata", "protocol.RxMetadata", 1), `&`, ``, 1) + `,`,
+		`GatewayMetadata:` + strings.Replace(strings.Replace(this.GatewayMetadata.String(), "RxMetadata", "gateway.RxMetadata", 1), `&`, ``, 1) + `,`,
 		`ActivationMetadata:` + strings.Replace(fmt.Sprintf("%v", this.ActivationMetadata), "ActivationMetadata", "protocol.ActivationMetadata", 1) + `,`,
 		`Trace:` + strings.Replace(fmt.Sprintf("%v", this.Trace), "Trace", "trace.Trace", 1) + `,`,
 		`}`,
@@ -1456,7 +1412,7 @@ func (this *GatewayStatusResponse) String() string {
 	}
 	s := strings.Join([]string{`&GatewayStatusResponse{`,
 		`LastSeen:` + fmt.Sprintf("%v", this.LastSeen) + `,`,
-		`Status:` + strings.Replace(fmt.Sprintf("%v", this.Status), "Status", "gateway.Status", 1) + `,`,
+		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "Status", "gateway.Status", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -1475,8 +1431,8 @@ func (this *Status) String() string {
 		return "nil"
 	}
 	s := strings.Join([]string{`&Status{`,
-		`System:` + strings.Replace(fmt.Sprintf("%v", this.System), "SystemStats", "api.SystemStats", 1) + `,`,
-		`Component:` + strings.Replace(fmt.Sprintf("%v", this.Component), "ComponentStats", "api.ComponentStats", 1) + `,`,
+		`System:` + strings.Replace(strings.Replace(this.System.String(), "SystemStats", "api.SystemStats", 1), `&`, ``, 1) + `,`,
+		`Component:` + strings.Replace(strings.Replace(this.Component.String(), "ComponentStats", "api.ComponentStats", 1), `&`, ``, 1) + `,`,
 		`GatewayStatus:` + strings.Replace(fmt.Sprintf("%v", this.GatewayStatus), "Rates", "api.Rates", 1) + `,`,
 		`Uplink:` + strings.Replace(fmt.Sprintf("%v", this.Uplink), "Rates", "api.Rates", 1) + `,`,
 		`Downlink:` + strings.Replace(fmt.Sprintf("%v", this.Downlink), "Rates", "api.Rates", 1) + `,`,
@@ -1664,9 +1620,6 @@ func (m *UplinkMessage) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if m.ProtocolMetadata == nil {
-				m.ProtocolMetadata = &protocol.RxMetadata{}
-			}
 			if err := m.ProtocolMetadata.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
@@ -1696,9 +1649,6 @@ func (m *UplinkMessage) Unmarshal(dAtA []byte) error {
 			postIndex := iNdEx + msglen
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
-			}
-			if m.GatewayMetadata == nil {
-				m.GatewayMetadata = &gateway.RxMetadata{}
 			}
 			if err := m.GatewayMetadata.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -1877,9 +1827,6 @@ func (m *DownlinkMessage) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if m.ProtocolConfiguration == nil {
-				m.ProtocolConfiguration = &protocol.TxConfiguration{}
-			}
 			if err := m.ProtocolConfiguration.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
@@ -1909,9 +1856,6 @@ func (m *DownlinkMessage) Unmarshal(dAtA []byte) error {
 			postIndex := iNdEx + msglen
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
-			}
-			if m.GatewayConfiguration == nil {
-				m.GatewayConfiguration = &gateway.TxConfiguration{}
 			}
 			if err := m.GatewayConfiguration.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -2090,8 +2034,6 @@ func (m *DeviceActivationRequest) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			var v github_com_TheThingsNetwork_ttn_core_types.DevEUI
-			m.DevEUI = &v
 			if err := m.DevEUI.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
@@ -2122,8 +2064,6 @@ func (m *DeviceActivationRequest) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			var v github_com_TheThingsNetwork_ttn_core_types.AppEUI
-			m.AppEUI = &v
 			if err := m.AppEUI.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
@@ -2154,9 +2094,6 @@ func (m *DeviceActivationRequest) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if m.ProtocolMetadata == nil {
-				m.ProtocolMetadata = &protocol.RxMetadata{}
-			}
 			if err := m.ProtocolMetadata.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
@@ -2186,9 +2123,6 @@ func (m *DeviceActivationRequest) Unmarshal(dAtA []byte) error {
 			postIndex := iNdEx + msglen
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
-			}
-			if m.GatewayMetadata == nil {
-				m.GatewayMetadata = &gateway.RxMetadata{}
 			}
 			if err := m.GatewayMetadata.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -2484,9 +2418,6 @@ func (m *GatewayStatusResponse) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if m.Status == nil {
-				m.Status = &gateway.Status{}
-			}
 			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
@@ -2617,9 +2548,6 @@ func (m *Status) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if m.System == nil {
-				m.System = &api.SystemStats{}
-			}
 			if err := m.System.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
@@ -2649,9 +2577,6 @@ func (m *Status) Unmarshal(dAtA []byte) error {
 			postIndex := iNdEx + msglen
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
-			}
-			if m.Component == nil {
-				m.Component = &api.ComponentStats{}
 			}
 			if err := m.Component.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -2958,66 +2883,66 @@ func init() {
 }
 
 var fileDescriptorRouter = []byte{
-	// 965 bytes of a gzipped FileDescriptorProto
+	// 975 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x56, 0xcf, 0x6f, 0xe3, 0x44,
-	0x14, 0x5e, 0x07, 0x70, 0x9b, 0x97, 0xb8, 0x4d, 0xa7, 0x4d, 0x6b, 0xd2, 0x25, 0xa9, 0x7c, 0x58,
-	0x8a, 0x76, 0xd7, 0xa1, 0x59, 0x21, 0x04, 0x07, 0xa0, 0xd9, 0x54, 0xab, 0x4a, 0x04, 0x55, 0x6e,
-	0x57, 0x42, 0x48, 0x28, 0x9a, 0x38, 0xb3, 0xae, 0xd5, 0xc4, 0x63, 0x3c, 0xe3, 0x74, 0x73, 0xe3,
-	0xcc, 0x09, 0xb8, 0xf3, 0x0f, 0xf0, 0x97, 0x70, 0xe4, 0x88, 0x38, 0x54, 0x90, 0x13, 0x27, 0xc4,
-	0x3f, 0x80, 0x84, 0x3c, 0x33, 0xb6, 0x93, 0xb4, 0xdd, 0x2c, 0xbf, 0x2e, 0xc9, 0xcc, 0x7b, 0xdf,
-	0xfb, 0x32, 0xf3, 0xcd, 0x37, 0xf3, 0x02, 0x8f, 0x3c, 0x9f, 0x9f, 0xc7, 0x7d, 0xdb, 0xa5, 0xa3,
-	0xe6, 0xd9, 0x39, 0x39, 0x3b, 0xf7, 0x03, 0x8f, 0x7d, 0x42, 0xf8, 0x25, 0x8d, 0x2e, 0x9a, 0x38,
-	0xf4, 0x9b, 0x11, 0x8d, 0x39, 0x89, 0xd4, 0x97, 0x1d, 0x46, 0x94, 0x53, 0xa4, 0xcb, 0x59, 0x6d,
-	0xd7, 0xa3, 0xd4, 0x1b, 0x92, 0xa6, 0x88, 0xf6, 0xe3, 0x67, 0x4d, 0x32, 0x0a, 0xf9, 0x44, 0x82,
-	0x6a, 0x0f, 0x67, 0x98, 0x3d, 0xea, 0xd1, 0x1c, 0x95, 0xcc, 0xc4, 0x44, 0x8c, 0x14, 0xfc, 0xad,
-	0x65, 0x0b, 0xc1, 0xa1, 0xaf, 0xa0, 0xef, 0x2e, 0x83, 0x0a, 0x98, 0x4b, 0x87, 0xd9, 0x40, 0x15,
-	0xbe, 0xb3, 0xac, 0xd0, 0xc3, 0x9c, 0x5c, 0xe2, 0x49, 0xfa, 0xad, 0xca, 0x0e, 0x96, 0x95, 0xf1,
-	0x08, 0xbb, 0x44, 0x7e, 0xca, 0x12, 0x0b, 0x41, 0xe5, 0x34, 0xee, 0x33, 0x37, 0xf2, 0xfb, 0xc4,
-	0x21, 0x5f, 0xc4, 0x84, 0x71, 0xeb, 0x4f, 0x0d, 0x8c, 0xa7, 0xe1, 0xd0, 0x0f, 0x2e, 0xba, 0x84,
-	0x31, 0xec, 0x11, 0x64, 0xc2, 0x4a, 0x88, 0x27, 0x43, 0x8a, 0x07, 0xa6, 0xb6, 0xa7, 0xed, 0x97,
-	0x9d, 0x74, 0x8a, 0xee, 0xc3, 0xca, 0x48, 0x82, 0xcc, 0xc2, 0x9e, 0xb6, 0x5f, 0x6a, 0x6d, 0xd8,
-	0xd9, 0x5e, 0x54, 0xb5, 0x93, 0x22, 0xd0, 0x21, 0x6c, 0xa4, 0xc9, 0xde, 0x88, 0x70, 0x3c, 0xc0,
-	0x1c, 0x9b, 0x25, 0x51, 0xb6, 0x95, 0x97, 0x39, 0xcf, 0xbb, 0x2a, 0xe7, 0x54, 0xd2, 0x60, 0x1a,
-	0x41, 0x1f, 0x40, 0x45, 0xed, 0x39, 0x67, 0x28, 0x0b, 0x86, 0x4d, 0x3b, 0x15, 0x63, 0x86, 0x60,
-	0x5d, 0xc5, 0xb2, 0x7a, 0x0b, 0x5e, 0x13, 0xdb, 0x37, 0xab, 0xa2, 0xa8, 0x6c, 0x4b, 0x31, 0xce,
-	0x92, 0x4f, 0x47, 0xa6, 0xac, 0xef, 0x0a, 0xb0, 0xde, 0xa1, 0x97, 0xc1, 0xff, 0xa0, 0xc0, 0x09,
-	0x6c, 0x67, 0x0a, 0xb8, 0x34, 0x78, 0xe6, 0x7b, 0x71, 0x84, 0xb9, 0x4f, 0x03, 0x25, 0xc3, 0xeb,
-	0x79, 0xed, 0xd9, 0xf3, 0xc7, 0xb3, 0x00, 0xa7, 0x9a, 0x66, 0xe6, 0xc2, 0xa8, 0x0b, 0xd5, 0x54,
-	0x90, 0x79, 0x42, 0xa9, 0x8a, 0x99, 0xa9, 0xb2, 0xc8, 0xb7, 0xa5, 0x12, 0xf3, 0x74, 0x2f, 0xa3,
-	0xcf, 0x57, 0xaf, 0xc2, 0x4e, 0x87, 0x8c, 0x7d, 0x97, 0x1c, 0xba, 0xdc, 0x1f, 0x4b, 0x3a, 0xe9,
-	0x9d, 0xff, 0x4a, 0xa7, 0x4f, 0x61, 0x65, 0x40, 0xc6, 0x3d, 0x12, 0xfb, 0x42, 0x98, 0x72, 0xfb,
-	0xc3, 0x9f, 0xaf, 0x1a, 0x2f, 0xb4, 0x37, 0xe7, 0x41, 0xd3, 0xa5, 0x11, 0x69, 0xf2, 0x49, 0x48,
-	0x98, 0xdd, 0x21, 0xe3, 0xa3, 0xa7, 0xc7, 0xd3, 0xab, 0x86, 0x2e, 0x47, 0x8e, 0x3e, 0x20, 0xe3,
-	0xa3, 0xd8, 0x4f, 0x98, 0x71, 0x18, 0x0a, 0xe6, 0xf2, 0x3f, 0x62, 0x3e, 0x0c, 0x43, 0xc5, 0x2c,
-	0x47, 0x8e, 0x8e, 0xc3, 0x30, 0x61, 0xbe, 0xd1, 0xdd, 0xd5, 0x7f, 0xed, 0xee, 0xed, 0xbf, 0xe1,
-	0xee, 0x2e, 0x6c, 0xe2, 0xec, 0x48, 0x72, 0x8a, 0x1d, 0x41, 0x71, 0x37, 0x5f, 0x44, 0x7e, 0x6e,
-	0x19, 0x17, 0xc2, 0xd7, 0x62, 0xb9, 0x19, 0x1a, 0xb7, 0x9b, 0xa1, 0x06, 0xe6, 0x75, 0x2f, 0xb0,
-	0x90, 0x06, 0x8c, 0x58, 0x1d, 0xd8, 0x7a, 0x22, 0x57, 0x78, 0xca, 0x31, 0x8f, 0x59, 0x6a, 0x92,
-	0x07, 0x00, 0xe9, 0x36, 0x7d, 0xe9, 0x93, 0x62, 0xdb, 0x98, 0x5e, 0x35, 0x8a, 0x0a, 0x7d, 0xdc,
-	0x71, 0x8a, 0x0a, 0x70, 0x3c, 0xb0, 0x3e, 0x87, 0xea, 0x02, 0x8b, 0xa4, 0x47, 0xbb, 0x50, 0x1c,
-	0x62, 0xc6, 0x7b, 0x8c, 0x90, 0x40, 0xb0, 0xbc, 0xe2, 0xac, 0x26, 0x81, 0x53, 0x42, 0x02, 0xf4,
-	0x26, 0xe8, 0x4c, 0xc0, 0x95, 0xdb, 0xd6, 0x33, 0x01, 0x15, 0x8b, 0x4a, 0x5b, 0xeb, 0x60, 0xcc,
-	0xad, 0xce, 0xfa, 0xbd, 0x00, 0xba, 0x8c, 0xa0, 0x7d, 0xd0, 0xd9, 0x84, 0x71, 0x32, 0x12, 0xf4,
-	0xa5, 0x56, 0xc5, 0x4e, 0x1e, 0xf7, 0x53, 0x11, 0x4a, 0x20, 0x09, 0x8b, 0x98, 0xa0, 0x03, 0x28,
-	0xba, 0x74, 0x14, 0xd2, 0x80, 0x04, 0x5c, 0xfd, 0xe2, 0xa6, 0x00, 0x3f, 0x4e, 0xa3, 0x12, 0x9f,
-	0xa3, 0xd0, 0x01, 0xac, 0xa5, 0x2a, 0xa8, 0x95, 0xca, 0x37, 0x00, 0x44, 0x9d, 0x83, 0x39, 0x61,
-	0x8e, 0xe1, 0xcd, 0xee, 0x1c, 0x59, 0xa0, 0xc7, 0xe2, 0x61, 0x56, 0xb7, 0x7b, 0x16, 0xaa, 0x32,
-	0xe8, 0x1e, 0xac, 0x0e, 0xd4, 0xe3, 0x65, 0x1a, 0xd7, 0x50, 0x59, 0x0e, 0x3d, 0x80, 0x52, 0x7e,
-	0xe4, 0xcc, 0x5c, 0xbb, 0x06, 0x9d, 0x4d, 0xa3, 0x87, 0x80, 0x5c, 0x1a, 0x04, 0xc4, 0xe5, 0x64,
-	0xd0, 0x53, 0x8b, 0x62, 0xc2, 0xdd, 0x86, 0xb3, 0x91, 0x65, 0xd4, 0x39, 0x31, 0x74, 0x1f, 0xf2,
-	0x60, 0xaf, 0x1f, 0xd1, 0x0b, 0x12, 0x31, 0xe1, 0x64, 0xc3, 0xa9, 0x64, 0x89, 0xb6, 0x8c, 0xb7,
-	0xbe, 0x2e, 0x80, 0xee, 0x88, 0x46, 0x8d, 0xde, 0x07, 0x63, 0xee, 0xac, 0xd1, 0xe2, 0xb1, 0xd5,
-	0xb6, 0x6d, 0xd9, 0xcb, 0xed, 0xb4, 0x4b, 0xdb, 0x47, 0x49, 0x2f, 0xdf, 0xd7, 0xd0, 0x7b, 0xa0,
-	0xcb, 0xae, 0x85, 0xaa, 0xb6, 0xfa, 0x17, 0x30, 0xd7, 0xc5, 0x5e, 0x50, 0xfa, 0x11, 0x14, 0xb3,
-	0x2e, 0x88, 0xcc, 0xb4, 0x7a, 0xb1, 0x31, 0xd6, 0x76, 0xd2, 0xcc, 0x42, 0x77, 0x78, 0x5b, 0x43,
-	0x5d, 0x58, 0x55, 0x17, 0x80, 0xa0, 0x46, 0x06, 0xbb, 0xf9, 0x91, 0xac, 0xed, 0xdd, 0x0e, 0x90,
-	0xd6, 0x6e, 0x7d, 0xa3, 0x81, 0x21, 0x25, 0xe9, 0xe2, 0x00, 0x7b, 0x24, 0x42, 0x1f, 0x2f, 0x2a,
-	0x73, 0x37, 0x25, 0xb9, 0xe9, 0x8a, 0xd5, 0xde, 0xb8, 0x25, 0xab, 0xae, 0x4e, 0x0b, 0x8a, 0x4f,
-	0x08, 0x57, 0x4c, 0x99, 0x5c, 0xf3, 0x14, 0x6b, 0xf3, 0xe1, 0xf6, 0xb7, 0xda, 0x4f, 0xbf, 0xd6,
-	0xef, 0x7c, 0x39, 0xad, 0x6b, 0x3f, 0x4c, 0xeb, 0xda, 0x8f, 0xd3, 0xba, 0xf6, 0xcb, 0xb4, 0xae,
-	0xfd, 0x36, 0xad, 0xdf, 0xf9, 0x63, 0x5a, 0xd7, 0xa0, 0x41, 0x23, 0xcf, 0xe6, 0xe7, 0x84, 0x8b,
-	0xc7, 0x33, 0x90, 0x8f, 0xa7, 0xb0, 0x93, 0xa4, 0x69, 0x97, 0xe4, 0x86, 0x4e, 0x12, 0xf1, 0x4f,
-	0xb4, 0xcf, 0xee, 0xbd, 0xdc, 0x1f, 0xba, 0xef, 0x0b, 0xbb, 0x8b, 0x59, 0xfb, 0xf0, 0xe4, 0xd8,
-	0x96, 0x64, 0x7d, 0x5d, 0x9c, 0xe5, 0xa3, 0xbf, 0x02, 0x00, 0x00, 0xff, 0xff, 0xd0, 0x61, 0xaf,
-	0x55, 0x1f, 0x0a, 0x00, 0x00,
+	0x18, 0x5d, 0x87, 0xc5, 0x6d, 0xbe, 0x24, 0x6d, 0x3a, 0x6d, 0x5a, 0x93, 0x2e, 0x49, 0xe5, 0xc3,
+	0xaa, 0x68, 0xb7, 0x0e, 0x9b, 0x15, 0x5a, 0xc1, 0x89, 0xa6, 0xa9, 0xaa, 0x4a, 0x04, 0x55, 0x4e,
+	0x97, 0x03, 0x42, 0x8a, 0x26, 0xce, 0xac, 0x6b, 0x35, 0xf1, 0x18, 0xcf, 0x38, 0xdd, 0xdc, 0xb8,
+	0x72, 0x03, 0xfe, 0x00, 0xee, 0xf0, 0x97, 0xec, 0x91, 0x23, 0xe2, 0x50, 0x41, 0x4e, 0x1c, 0x39,
+	0x73, 0x42, 0x9e, 0x19, 0xdb, 0xf9, 0xd1, 0x6e, 0x17, 0xb4, 0x5c, 0x12, 0xfb, 0xfb, 0xde, 0x7b,
+	0x9e, 0x79, 0xf3, 0x3c, 0x63, 0x78, 0xea, 0x7a, 0xfc, 0x22, 0xea, 0x5b, 0x0e, 0x1d, 0x35, 0xce,
+	0x2f, 0xc8, 0xf9, 0x85, 0xe7, 0xbb, 0xec, 0x73, 0xc2, 0xaf, 0x68, 0x78, 0xd9, 0xc0, 0x81, 0xd7,
+	0x08, 0x69, 0xc4, 0x49, 0xa8, 0xfe, 0xac, 0x20, 0xa4, 0x9c, 0x22, 0x5d, 0xde, 0x55, 0x77, 0x5d,
+	0x4a, 0xdd, 0x21, 0x69, 0x88, 0x6a, 0x3f, 0x7a, 0xd1, 0x20, 0xa3, 0x80, 0x4f, 0x24, 0xa8, 0x7a,
+	0x30, 0xa3, 0xec, 0x52, 0x97, 0x66, 0xa8, 0xf8, 0x4e, 0xdc, 0x88, 0x2b, 0x05, 0xff, 0xe0, 0xae,
+	0x81, 0xe0, 0xc0, 0x53, 0xd0, 0x67, 0x77, 0x41, 0x05, 0xcc, 0xa1, 0xc3, 0xf4, 0x42, 0x11, 0x3f,
+	0xba, 0x8b, 0xe8, 0x62, 0x4e, 0xae, 0xf0, 0x24, 0xf9, 0x57, 0xb4, 0x27, 0x77, 0xd1, 0x78, 0x88,
+	0x1d, 0x22, 0x7f, 0x25, 0xc5, 0x44, 0x50, 0xee, 0x46, 0x7d, 0xe6, 0x84, 0x5e, 0x9f, 0xd8, 0xe4,
+	0xeb, 0x88, 0x30, 0x6e, 0x7e, 0x9b, 0x83, 0xd2, 0xf3, 0x60, 0xe8, 0xf9, 0x97, 0x1d, 0xc2, 0x18,
+	0x76, 0x09, 0x32, 0x60, 0x25, 0xc0, 0x93, 0x21, 0xc5, 0x03, 0x43, 0xdb, 0xd3, 0xf6, 0x8b, 0x76,
+	0x72, 0x8b, 0x1e, 0xc1, 0xca, 0x48, 0x82, 0x8c, 0xdc, 0x9e, 0xb6, 0x5f, 0x68, 0x6e, 0x58, 0xe9,
+	0x5c, 0x14, 0xdb, 0x4e, 0x10, 0xe8, 0x04, 0x36, 0x92, 0x66, 0x6f, 0x44, 0x38, 0x1e, 0x60, 0x8e,
+	0x8d, 0x82, 0xa0, 0x6d, 0x65, 0x34, 0xfb, 0x65, 0x47, 0xf5, 0x5a, 0xf7, 0x5f, 0x5d, 0xd7, 0xef,
+	0xd9, 0xe5, 0xa4, 0x95, 0xd4, 0x51, 0x1b, 0xca, 0x6a, 0xe6, 0x99, 0x4e, 0x51, 0xe8, 0x6c, 0x5a,
+	0x89, 0x25, 0x4b, 0x32, 0xeb, 0xaa, 0x93, 0xaa, 0x98, 0xf0, 0xae, 0xb0, 0xc2, 0xa8, 0x08, 0x6a,
+	0xd1, 0x92, 0xc6, 0x9c, 0xc7, 0xbf, 0xb6, 0x6c, 0x99, 0x3f, 0xe5, 0x60, 0xbd, 0x4d, 0xaf, 0xfc,
+	0xff, 0xc1, 0x8d, 0x2f, 0x60, 0x3b, 0x75, 0xc3, 0xa1, 0xfe, 0x0b, 0xcf, 0x8d, 0x42, 0xcc, 0x3d,
+	0xea, 0x2b, 0x4b, 0xde, 0xcb, 0xb8, 0xe7, 0x2f, 0x8f, 0x66, 0x01, 0x6a, 0x42, 0x95, 0xa4, 0x3f,
+	0xd7, 0x44, 0x5d, 0xa8, 0x24, 0xe6, 0xcc, 0xcb, 0x4a, 0x87, 0x8c, 0xd4, 0xa1, 0x9b, 0x55, 0xb7,
+	0x54, 0x7b, 0x5e, 0xf4, 0x4d, 0xbc, 0xfa, 0xf1, 0x3e, 0xec, 0xb4, 0xc9, 0xd8, 0x73, 0xc8, 0xa1,
+	0xc3, 0xbd, 0xb1, 0x20, 0xaa, 0x4c, 0xbd, 0x2d, 0xcf, 0xbe, 0x82, 0x95, 0x01, 0x19, 0xf7, 0x48,
+	0xe4, 0x09, 0x93, 0x8a, 0xad, 0xa3, 0x78, 0xcc, 0xbf, 0x5d, 0xd7, 0x5f, 0x1b, 0x7d, 0xce, 0xfd,
+	0x86, 0x43, 0x43, 0xd2, 0xe0, 0x93, 0x80, 0x30, 0xab, 0x4d, 0xc6, 0xc7, 0xcf, 0x4f, 0xa7, 0xd7,
+	0x75, 0x5d, 0x5e, 0xd9, 0xfa, 0x80, 0x8c, 0x8f, 0x23, 0x2f, 0x56, 0xc7, 0x41, 0x20, 0xd4, 0x8b,
+	0xff, 0x59, 0xfd, 0x30, 0x08, 0x94, 0xba, 0xbc, 0xb2, 0x75, 0x1c, 0x04, 0xb1, 0xfa, 0x8d, 0xe9,
+	0xaf, 0xbc, 0xa5, 0xf4, 0x6f, 0xff, 0xeb, 0xf4, 0x77, 0x60, 0x13, 0xa7, 0xcb, 0x94, 0x09, 0xed,
+	0x08, 0xa1, 0x07, 0xd9, 0x80, 0xb2, 0xb5, 0x4c, 0xa8, 0x36, 0xc2, 0x4b, 0xb5, 0x2c, 0x20, 0xf5,
+	0xdb, 0x03, 0x52, 0x05, 0x63, 0x39, 0x1f, 0x2c, 0xa0, 0x3e, 0x23, 0x66, 0x1b, 0xb6, 0x4e, 0xe4,
+	0x08, 0xbb, 0x1c, 0xf3, 0x88, 0x25, 0xc1, 0x79, 0x0c, 0x90, 0x4c, 0xd6, 0x93, 0xd9, 0xc9, 0xb7,
+	0x4a, 0xd3, 0xeb, 0x7a, 0x5e, 0xa1, 0x4f, 0xdb, 0x76, 0x5e, 0x01, 0x4e, 0x07, 0xa6, 0x03, 0x95,
+	0x05, 0x15, 0x29, 0x8f, 0x76, 0x21, 0x3f, 0xc4, 0x8c, 0xf7, 0x18, 0x21, 0xbe, 0x50, 0x79, 0xc7,
+	0x5e, 0x8d, 0x0b, 0x5d, 0x42, 0x7c, 0x74, 0x00, 0x3a, 0x13, 0x70, 0x95, 0xc0, 0xf5, 0xd4, 0x46,
+	0xa9, 0xa2, 0x2c, 0x54, 0x20, 0x73, 0x1d, 0x4a, 0x73, 0x63, 0x34, 0xff, 0xce, 0x81, 0x2e, 0x2b,
+	0xc8, 0x02, 0x9d, 0x4d, 0x18, 0x27, 0x23, 0xf1, 0x90, 0x42, 0xb3, 0x6c, 0xc5, 0xc7, 0x41, 0x57,
+	0x94, 0x62, 0x48, 0xa6, 0x25, 0x4a, 0xe8, 0x19, 0xe4, 0x1d, 0x3a, 0x0a, 0xa8, 0x4f, 0x7c, 0xae,
+	0x9e, 0xbe, 0x29, 0x28, 0x47, 0x49, 0x75, 0x96, 0x95, 0x61, 0xd1, 0x13, 0x58, 0x4b, 0x7c, 0x51,
+	0x63, 0x97, 0xbb, 0x06, 0x08, 0xb6, 0x8d, 0x39, 0x61, 0x76, 0xc9, 0x9d, 0xf5, 0x02, 0x99, 0xa0,
+	0x47, 0x62, 0x5b, 0x57, 0x3b, 0xc1, 0x2c, 0x54, 0x75, 0xd0, 0x43, 0x58, 0x1d, 0xa8, 0xed, 0xce,
+	0x28, 0x2d, 0xa1, 0xd2, 0x1e, 0x7a, 0x0c, 0x85, 0x2c, 0x04, 0xcc, 0x58, 0x5b, 0x82, 0xce, 0xb6,
+	0xd1, 0x01, 0x20, 0x87, 0xfa, 0x3e, 0x71, 0x38, 0x19, 0xf4, 0xd4, 0xa0, 0x98, 0xc8, 0x7e, 0xc9,
+	0xde, 0x48, 0x3b, 0x6a, 0xe5, 0x18, 0x7a, 0x04, 0x59, 0xb1, 0xd7, 0x0f, 0xe9, 0x25, 0x09, 0x99,
+	0x48, 0x78, 0xc9, 0x2e, 0xa7, 0x8d, 0x96, 0xac, 0x37, 0xbf, 0xcb, 0x81, 0x6e, 0x8b, 0x63, 0x1e,
+	0x7d, 0x02, 0xa5, 0xb9, 0xd5, 0x47, 0x8b, 0x0b, 0x59, 0xdd, 0xb6, 0xe4, 0x97, 0x80, 0x95, 0x9c,
+	0xf1, 0xd6, 0x71, 0xfc, 0x25, 0xb0, 0xaf, 0xa1, 0x8f, 0x41, 0x97, 0x67, 0x1e, 0xaa, 0x58, 0xea,
+	0x1b, 0x62, 0xee, 0x0c, 0x7c, 0x0d, 0xf5, 0x53, 0xc8, 0xa7, 0x67, 0x28, 0x32, 0x12, 0xf6, 0xe2,
+	0xb1, 0x5a, 0xdd, 0x49, 0x3a, 0x0b, 0xe7, 0xc9, 0x87, 0x1a, 0xea, 0xc0, 0xaa, 0x7a, 0x25, 0x08,
+	0xaa, 0xa7, 0xb0, 0x9b, 0xb7, 0xd2, 0xea, 0xde, 0xed, 0x00, 0x19, 0xf6, 0xe6, 0xf7, 0x1a, 0x94,
+	0xa4, 0x25, 0x1d, 0xec, 0x63, 0x97, 0x84, 0xe8, 0xb3, 0x45, 0x67, 0x1e, 0x24, 0x22, 0x37, 0xbd,
+	0x74, 0xd5, 0xf7, 0x6f, 0xe9, 0xaa, 0x97, 0xa9, 0x09, 0xf9, 0x13, 0xc2, 0x95, 0x52, 0x6a, 0xd7,
+	0xbc, 0xc4, 0xda, 0x7c, 0xb9, 0xf5, 0x83, 0xf6, 0xeb, 0x1f, 0xb5, 0x7b, 0xdf, 0x4c, 0x6b, 0xda,
+	0xab, 0x69, 0x4d, 0xfb, 0x65, 0x5a, 0xd3, 0x7e, 0x9f, 0xd6, 0xb4, 0x3f, 0xa7, 0xb5, 0x7b, 0x7f,
+	0x4d, 0x6b, 0x1a, 0xd4, 0x69, 0xe8, 0x5a, 0xfc, 0x82, 0x70, 0xb1, 0xb5, 0xfa, 0x72, 0x6b, 0x15,
+	0x71, 0x92, 0x32, 0xad, 0x82, 0x9c, 0xd0, 0x59, 0x6c, 0xfe, 0x99, 0xf6, 0xe5, 0xc3, 0x37, 0xfb,
+	0x1c, 0xfc, 0x39, 0xb7, 0xbb, 0xd8, 0xb5, 0x0e, 0xcf, 0x4e, 0x2d, 0x29, 0xd6, 0xd7, 0xc5, 0x5a,
+	0x3e, 0xfd, 0x27, 0x00, 0x00, 0xff, 0xff, 0x8d, 0x17, 0x60, 0x53, 0x5d, 0x0a, 0x00, 0x00,
 }

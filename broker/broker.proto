@@ -30,8 +30,8 @@ message DownlinkOption {
   // deadline time at server represented as Unix nanoseconds
   int64   deadline    = 4;
 
-  protocol.TxConfiguration protocol_configuration = 5;
-  gateway.TxConfiguration  gateway_configuration = 6;
+  protocol.TxConfiguration protocol_configuration = 5 [(gogoproto.nullable) = false];
+  gateway.TxConfiguration  gateway_configuration = 6 [(gogoproto.nullable) = false];
 }
 
 // received from the Router
@@ -46,8 +46,8 @@ message UplinkMessage {
   string                   app_id             = 13 [(gogoproto.customname) = "AppID"];
   string                   dev_id             = 14 [(gogoproto.customname) = "DevID"];
 
-  protocol.RxMetadata      protocol_metadata  = 21;
-  gateway.RxMetadata       gateway_metadata   = 22;
+  protocol.RxMetadata      protocol_metadata  = 21 [(gogoproto.nullable) = false];
+  gateway.RxMetadata       gateway_metadata   = 22 [(gogoproto.nullable) = false];
   repeated DownlinkOption  downlink_options   = 31;
 
   trace.Trace              trace              = 41;
@@ -88,7 +88,7 @@ message DeduplicatedUplinkMessage {
   string                      app_id             = 13 [(gogoproto.customname) = "AppID"];
   string                      dev_id             = 14 [(gogoproto.customname) = "DevID"];
 
-  protocol.RxMetadata         protocol_metadata  = 21;
+  protocol.RxMetadata         protocol_metadata  = 21 [(gogoproto.nullable) = false];
   repeated gateway.RxMetadata gateway_metadata   = 22;
 
   int64                       server_time        = 23;
@@ -106,8 +106,8 @@ message DeviceActivationRequest {
   bytes                        dev_eui              = 11 [(gogoproto.customname) = "DevEUI", (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];
   bytes                        app_eui              = 12 [(gogoproto.customname) = "AppEUI", (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];
 
-  protocol.RxMetadata          protocol_metadata    = 21;
-  gateway.RxMetadata           gateway_metadata     = 22;
+  protocol.RxMetadata          protocol_metadata    = 21 [(gogoproto.nullable) = false];
+  gateway.RxMetadata           gateway_metadata     = 22 [(gogoproto.nullable) = false];
   protocol.ActivationMetadata  activation_metadata  = 23;
   repeated DownlinkOption      downlink_options     = 31;
 
@@ -124,7 +124,7 @@ message DeduplicatedDeviceActivationRequest {
   string                       app_id               = 13 [(gogoproto.customname) = "AppID"];
   string                       dev_id               = 14 [(gogoproto.customname) = "DevID"];
 
-  protocol.RxMetadata          protocol_metadata    = 21;
+  protocol.RxMetadata          protocol_metadata    = 21 [(gogoproto.nullable) = false];
   repeated gateway.RxMetadata  gateway_metadata     = 22;
   protocol.ActivationMetadata  activation_metadata  = 23;
 
@@ -172,8 +172,8 @@ service Broker {
 message StatusRequest {}
 
 message Status {
-  api.SystemStats    system     = 1;
-  api.ComponentStats component  = 2;
+  api.SystemStats    system     = 1 [(gogoproto.nullable) = false];
+  api.ComponentStats component  = 2 [(gogoproto.nullable) = false];
 
   api.Rates uplink              = 11;
   api.Rates uplink_unique       = 12;
