@@ -43,7 +43,7 @@ For Go:
 - Install the Go generators:
 
 ```
-go get -u github.com/gogo/protobuf/protoc-gen-gogofast
+go get -u github.com/TheThingsNetwork/api/utils/protoc-gen-gogottn
 go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
 ```
 

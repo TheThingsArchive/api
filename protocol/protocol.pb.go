@@ -21,6 +21,9 @@ import math "math"
 import _ "github.com/gogo/protobuf/gogoproto"
 import lorawan "github.com/TheThingsNetwork/api/protocol/lorawan"
 
+import strings "strings"
+import reflect "reflect"
+
 import io "io"
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -41,7 +44,6 @@ type Message struct {
 }
 
 func (m *Message) Reset()                    { *m = Message{} }
-func (m *Message) String() string            { return proto.CompactTextString(m) }
 func (*Message) ProtoMessage()               {}
 func (*Message) Descriptor() ([]byte, []int) { return fileDescriptorProtocol, []int{0} }
 
@@ -133,7 +135,6 @@ type RxMetadata struct {
 }
 
 func (m *RxMetadata) Reset()                    { *m = RxMetadata{} }
-func (m *RxMetadata) String() string            { return proto.CompactTextString(m) }
 func (*RxMetadata) ProtoMessage()               {}
 func (*RxMetadata) Descriptor() ([]byte, []int) { return fileDescriptorProtocol, []int{1} }
 
@@ -225,7 +226,6 @@ type TxConfiguration struct {
 }
 
 func (m *TxConfiguration) Reset()                    { *m = TxConfiguration{} }
-func (m *TxConfiguration) String() string            { return proto.CompactTextString(m) }
 func (*TxConfiguration) ProtoMessage()               {}
 func (*TxConfiguration) Descriptor() ([]byte, []int) { return fileDescriptorProtocol, []int{2} }
 
@@ -317,7 +317,6 @@ type ActivationMetadata struct {
 }
 
 func (m *ActivationMetadata) Reset()                    { *m = ActivationMetadata{} }
-func (m *ActivationMetadata) String() string            { return proto.CompactTextString(m) }
 func (*ActivationMetadata) ProtoMessage()               {}
 func (*ActivationMetadata) Descriptor() ([]byte, []int) { return fileDescriptorProtocol, []int{3} }
 
@@ -676,6 +675,94 @@ func sovProtocol(x uint64) (n int) {
 }
 func sozProtocol(x uint64) (n int) {
 	return sovProtocol(uint64((x << 1) ^ uint64((int64(x) >> 63))))
+}
+func (this *Message) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&Message{`,
+		`Protocol:` + fmt.Sprintf("%v", this.Protocol) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *Message_LoRaWAN) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&Message_LoRaWAN{`,
+		`LoRaWAN:` + strings.Replace(fmt.Sprintf("%v", this.LoRaWAN), "Message", "lorawan.Message", 1) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *RxMetadata) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&RxMetadata{`,
+		`Protocol:` + fmt.Sprintf("%v", this.Protocol) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *RxMetadata_LoRaWAN) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&RxMetadata_LoRaWAN{`,
+		`LoRaWAN:` + strings.Replace(fmt.Sprintf("%v", this.LoRaWAN), "Metadata", "lorawan.Metadata", 1) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *TxConfiguration) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&TxConfiguration{`,
+		`Protocol:` + fmt.Sprintf("%v", this.Protocol) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *TxConfiguration_LoRaWAN) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&TxConfiguration_LoRaWAN{`,
+		`LoRaWAN:` + strings.Replace(fmt.Sprintf("%v", this.LoRaWAN), "TxConfiguration", "lorawan.TxConfiguration", 1) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *ActivationMetadata) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&ActivationMetadata{`,
+		`Protocol:` + fmt.Sprintf("%v", this.Protocol) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *ActivationMetadata_LoRaWAN) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&ActivationMetadata_LoRaWAN{`,
+		`LoRaWAN:` + strings.Replace(fmt.Sprintf("%v", this.LoRaWAN), "ActivationMetadata", "lorawan.ActivationMetadata", 1) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func valueToStringProtocol(v interface{}) string {
+	rv := reflect.ValueOf(v)
+	if rv.IsNil() {
+		return "nil"
+	}
+	pv := reflect.Indirect(rv).Interface()
+	return fmt.Sprintf("*%v", pv)
 }
 func (m *Message) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
@@ -1115,7 +1202,7 @@ func init() {
 }
 
 var fileDescriptorProtocol = []byte{
-	// 310 bytes of a gzipped FileDescriptorProto
+	// 328 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x32, 0x4f, 0xcf, 0x2c, 0xc9,
 	0x28, 0x4d, 0xd2, 0x4b, 0xce, 0xcf, 0xd5, 0x0f, 0xc9, 0x48, 0x0d, 0xc9, 0xc8, 0xcc, 0x4b, 0x2f,
 	0xf6, 0x4b, 0x2d, 0x29, 0xcf, 0x2f, 0xca, 0xd6, 0x4f, 0x2c, 0xc8, 0xd4, 0x2f, 0x28, 0xca, 0x2f,
@@ -1130,10 +1217,11 @@ var fileDescriptorProtocol = []byte{
 	0x81, 0x8b, 0x3f, 0xa4, 0xc2, 0x39, 0x3f, 0x2f, 0x2d, 0x33, 0xbd, 0xb4, 0x28, 0xb1, 0x24, 0x33,
 	0x3f, 0x4f, 0xc8, 0x11, 0xdd, 0x68, 0x09, 0xb8, 0xd1, 0x68, 0x4a, 0x89, 0xb2, 0x21, 0x8d, 0x4b,
 	0xc8, 0x31, 0xb9, 0x24, 0xb3, 0x0c, 0xac, 0x03, 0xee, 0x7e, 0x17, 0x74, 0x4b, 0xa4, 0xe1, 0x96,
-	0x60, 0xaa, 0x26, 0xc6, 0x1e, 0xa7, 0x2e, 0xc6, 0x13, 0x8f, 0xe4, 0x18, 0x2f, 0x3c, 0x92, 0x63,
-	0x7c, 0xf0, 0x48, 0x8e, 0x91, 0x4b, 0x31, 0xbf, 0x28, 0x5d, 0xaf, 0x24, 0x23, 0xb5, 0x04, 0x1c,
-	0x73, 0x79, 0x90, 0x98, 0xd3, 0x4b, 0x2c, 0xc8, 0xd4, 0x83, 0xeb, 0xe0, 0x0d, 0x80, 0xb2, 0xc0,
-	0x74, 0x00, 0x63, 0x94, 0x06, 0xb1, 0x91, 0xbe, 0x8a, 0x49, 0x16, 0x5d, 0x5e, 0xcf, 0x31, 0xc0,
-	0x53, 0x0f, 0x66, 0x60, 0x12, 0x1b, 0x58, 0xa5, 0x31, 0x20, 0x00, 0x00, 0xff, 0xff, 0xac, 0x77,
-	0xa0, 0xb9, 0xb9, 0x02, 0x00, 0x00,
+	0x60, 0xaa, 0x26, 0xc6, 0x1e, 0xa7, 0x59, 0x8c, 0x37, 0x1e, 0xca, 0x31, 0x34, 0x3c, 0x92, 0x63,
+	0x3c, 0xf1, 0x48, 0x8e, 0xf1, 0xc2, 0x23, 0x39, 0xc6, 0x07, 0x8f, 0xe4, 0x18, 0x5f, 0x3c, 0x92,
+	0x63, 0xf8, 0xf0, 0x48, 0x8e, 0x91, 0x4b, 0x31, 0xbf, 0x28, 0x5d, 0xaf, 0x24, 0x23, 0xb5, 0x04,
+	0x1c, 0x93, 0x79, 0x90, 0x98, 0xd4, 0x4b, 0x2c, 0xc8, 0xd4, 0x83, 0x9b, 0xc0, 0x1b, 0x00, 0x65,
+	0x81, 0xe9, 0x00, 0xc6, 0x28, 0x0d, 0x62, 0x13, 0xc1, 0x2a, 0x26, 0x59, 0x74, 0x79, 0x3d, 0xc7,
+	0x00, 0x4f, 0x3d, 0x98, 0x81, 0x49, 0x6c, 0x60, 0x95, 0xc6, 0x80, 0x00, 0x00, 0x00, 0xff, 0xff,
+	0x94, 0x61, 0x5b, 0xab, 0xc9, 0x02, 0x00, 0x00,
 }
