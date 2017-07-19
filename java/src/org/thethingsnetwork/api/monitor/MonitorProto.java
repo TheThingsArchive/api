@@ -14,6 +14,11 @@ public final class MonitorProto {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_monitor_LogMessage_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_monitor_LogMessage_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -25,36 +30,45 @@ public final class MonitorProto {
     java.lang.String[] descriptorData = {
       "\n5github.com/TheThingsNetwork/api/monito" +
       "r/monitor.proto\022\007monitor\032\033google/protobu" +
-      "f/empty.proto\0325github.com/TheThingsNetwo" +
-      "rk/api/gateway/gateway.proto\0323github.com" +
-      "/TheThingsNetwork/api/router/router.prot" +
-      "o\0323github.com/TheThingsNetwork/api/broke" +
-      "r/broker.proto\0325github.com/TheThingsNetw" +
-      "ork/api/handler/handler.proto\032Agithub.co" +
-      "m/TheThingsNetwork/api/networkserver/net" +
-      "workserver.proto2\353\005\n\007Monitor\0228\n\014RouterSt",
-      "atus\022\016.router.Status\032\026.google.protobuf.E" +
-      "mpty(\001\022:\n\rGatewayStatus\022\017.gateway.Status" +
-      "\032\026.google.protobuf.Empty(\001\022@\n\rGatewayUpl" +
-      "ink\022\025.router.UplinkMessage\032\026.google.prot" +
-      "obuf.Empty(\001\022D\n\017GatewayDownlink\022\027.router" +
-      ".DownlinkMessage\032\026.google.protobuf.Empty" +
-      "(\001\0228\n\014BrokerStatus\022\016.broker.Status\032\026.goo" +
-      "gle.protobuf.Empty(\001\022K\n\014BrokerUplink\022!.b" +
-      "roker.DeduplicatedUplinkMessage\032\026.google" +
-      ".protobuf.Empty(\001\022C\n\016BrokerDownlink\022\027.br",
-      "oker.DownlinkMessage\032\026.google.protobuf.E" +
-      "mpty(\001\022:\n\rHandlerStatus\022\017.handler.Status" +
-      "\032\026.google.protobuf.Empty(\001\022L\n\rHandlerUpl" +
-      "ink\022!.broker.DeduplicatedUplinkMessage\032\026" +
-      ".google.protobuf.Empty(\001\022D\n\017HandlerDownl" +
-      "ink\022\027.broker.DownlinkMessage\032\026.google.pr" +
-      "otobuf.Empty(\001\022F\n\023NetworkServerStatus\022\025." +
-      "networkserver.Status\032\026.google.protobuf.E" +
-      "mpty(\001Bz\n org.thethingsnetwork.api.monit" +
-      "orB\014MonitorProtoP\001Z\'github.com/TheThings",
-      "Network/api/monitor\252\002\034TheThingsNetwork.A" +
-      "PI.Monitorb\006proto3"
+      "f/empty.proto\032\034google/protobuf/struct.pr" +
+      "oto\032\037google/protobuf/timestamp.proto\032-gi" +
+      "thub.com/gogo/protobuf/gogoproto/gogo.pr" +
+      "oto\0325github.com/TheThingsNetwork/api/gat" +
+      "eway/gateway.proto\0323github.com/TheThings" +
+      "Network/api/router/router.proto\0323github." +
+      "com/TheThingsNetwork/api/broker/broker.p" +
+      "roto\0325github.com/TheThingsNetwork/api/ha",
+      "ndler/handler.proto\032Agithub.com/TheThing" +
+      "sNetwork/api/networkserver/networkserver" +
+      ".proto\"\225\001\n\nLogMessage\022.\n\004time\030\001 \001(\0132\032.go" +
+      "ogle.protobuf.TimestampB\004\220\337\037\001\022\035\n\005level\030\002" +
+      " \001(\0162\016.monitor.Level\022\017\n\007message\030\003 \001(\t\022\'\n" +
+      "\006fields\030\004 \001(\0132\027.google.protobuf.Struct*<" +
+      "\n\005Level\022\t\n\005DEBUG\020\000\022\010\n\004INFO\020\001\022\010\n\004WARN\020\002\022\t" +
+      "\n\005ERROR\020\003\022\t\n\005FATAL\020\0042\242\006\n\007Monitor\0228\n\014Rout" +
+      "erStatus\022\016.router.Status\032\026.google.protob" +
+      "uf.Empty(\001\022:\n\rGatewayStatus\022\017.gateway.St",
+      "atus\032\026.google.protobuf.Empty(\001\022@\n\rGatewa" +
+      "yUplink\022\025.router.UplinkMessage\032\026.google." +
+      "protobuf.Empty(\001\022D\n\017GatewayDownlink\022\027.ro" +
+      "uter.DownlinkMessage\032\026.google.protobuf.E" +
+      "mpty(\001\0228\n\014BrokerStatus\022\016.broker.Status\032\026" +
+      ".google.protobuf.Empty(\001\022K\n\014BrokerUplink" +
+      "\022!.broker.DeduplicatedUplinkMessage\032\026.go" +
+      "ogle.protobuf.Empty(\001\022C\n\016BrokerDownlink\022" +
+      "\027.broker.DownlinkMessage\032\026.google.protob" +
+      "uf.Empty(\001\022:\n\rHandlerStatus\022\017.handler.St",
+      "atus\032\026.google.protobuf.Empty(\001\022L\n\rHandle" +
+      "rUplink\022!.broker.DeduplicatedUplinkMessa" +
+      "ge\032\026.google.protobuf.Empty(\001\022D\n\017HandlerD" +
+      "ownlink\022\027.broker.DownlinkMessage\032\026.googl" +
+      "e.protobuf.Empty(\001\022F\n\023NetworkServerStatu" +
+      "s\022\025.networkserver.Status\032\026.google.protob" +
+      "uf.Empty(\001\0225\n\004Logs\022\023.monitor.LogMessage\032" +
+      "\026.google.protobuf.Empty(\001Bz\n org.thethin" +
+      "gsnetwork.api.monitorB\014MonitorProtoP\001Z\'g" +
+      "ithub.com/TheThingsNetwork/api/monitor\252\002",
+      "\034TheThingsNetwork.API.Monitorb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -68,13 +82,30 @@ public final class MonitorProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.EmptyProto.getDescriptor(),
+          com.google.protobuf.StructProto.getDescriptor(),
+          com.google.protobuf.TimestampProto.getDescriptor(),
+          com.google.protobuf.GoGoProtos.getDescriptor(),
           org.thethingsnetwork.api.gateway.GatewayProto.getDescriptor(),
           org.thethingsnetwork.api.router.RouterProto.getDescriptor(),
           org.thethingsnetwork.api.broker.BrokerProto.getDescriptor(),
           org.thethingsnetwork.api.handler.HandlerProto.getDescriptor(),
           org.thethingsnetwork.api.networkserver.MonitorProto.getDescriptor(),
         }, assigner);
+    internal_static_monitor_LogMessage_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_monitor_LogMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_monitor_LogMessage_descriptor,
+        new java.lang.String[] { "Time", "Level", "Message", "Fields", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.protobuf.GoGoProtos.stdtime);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf.EmptyProto.getDescriptor();
+    com.google.protobuf.StructProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.protobuf.GoGoProtos.getDescriptor();
     org.thethingsnetwork.api.gateway.GatewayProto.getDescriptor();
     org.thethingsnetwork.api.router.RouterProto.getDescriptor();
     org.thethingsnetwork.api.broker.BrokerProto.getDescriptor();

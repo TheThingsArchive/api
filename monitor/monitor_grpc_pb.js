@@ -6,7 +6,10 @@
 //
 'use strict';
 var grpc = require('grpc');
+var ttn_monitor_monitor_pb = require('../monitor/monitor_pb.js');
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
+var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
+var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 var ttn_gateway_gateway_pb = require('../gateway/gateway_pb.js');
 var ttn_router_router_pb = require('../router/router_pb.js');
 var ttn_broker_broker_pb = require('../broker/broker_pb.js');
@@ -77,6 +80,17 @@ function serialize_handler_Status(arg) {
 
 function deserialize_handler_Status(buffer_arg) {
   return ttn_handler_handler_pb.Status.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_monitor_LogMessage(arg) {
+  if (!(arg instanceof ttn_monitor_monitor_pb.LogMessage)) {
+    throw new Error('Expected argument of type monitor.LogMessage');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_monitor_LogMessage(buffer_arg) {
+  return ttn_monitor_monitor_pb.LogMessage.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_networkserver_Status(arg) {
@@ -243,6 +257,17 @@ var MonitorService = exports.MonitorService = {
     responseType: google_protobuf_empty_pb.Empty,
     requestSerialize: serialize_networkserver_Status,
     requestDeserialize: deserialize_networkserver_Status,
+    responseSerialize: serialize_google_protobuf_Empty,
+    responseDeserialize: deserialize_google_protobuf_Empty,
+  },
+  logs: {
+    path: '/monitor.Monitor/Logs',
+    requestStream: true,
+    responseStream: false,
+    requestType: ttn_monitor_monitor_pb.LogMessage,
+    responseType: google_protobuf_empty_pb.Empty,
+    requestSerialize: serialize_monitor_LogMessage,
+    requestDeserialize: deserialize_monitor_LogMessage,
     responseSerialize: serialize_google_protobuf_Empty,
     responseDeserialize: deserialize_google_protobuf_Empty,
   },

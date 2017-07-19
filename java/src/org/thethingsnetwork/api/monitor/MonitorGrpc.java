@@ -159,6 +159,18 @@ public final class MonitorGrpc {
           .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
               com.google.protobuf.Empty.getDefaultInstance()))
           .build();
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.monitor.LogMessage,
+      com.google.protobuf.Empty> METHOD_LOGS =
+      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.monitor.LogMessage, com.google.protobuf.Empty>newBuilder()
+          .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+          .setFullMethodName(generateFullMethodName(
+              "monitor.Monitor", "Logs"))
+          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              org.thethingsnetwork.api.monitor.LogMessage.getDefaultInstance()))
+          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              com.google.protobuf.Empty.getDefaultInstance()))
+          .build();
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -264,6 +276,13 @@ public final class MonitorGrpc {
       return asyncUnimplementedStreamingCall(METHOD_NETWORK_SERVER_STATUS, responseObserver);
     }
 
+    /**
+     */
+    public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.monitor.LogMessage> logs(
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      return asyncUnimplementedStreamingCall(METHOD_LOGS, responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -343,6 +362,13 @@ public final class MonitorGrpc {
                 org.thethingsnetwork.api.networkserver.Status,
                 com.google.protobuf.Empty>(
                   this, METHODID_NETWORK_SERVER_STATUS)))
+          .addMethod(
+            METHOD_LOGS,
+            asyncClientStreamingCall(
+              new MethodHandlers<
+                org.thethingsnetwork.api.monitor.LogMessage,
+                com.google.protobuf.Empty>(
+                  this, METHODID_LOGS)))
           .build();
     }
   }
@@ -452,6 +478,14 @@ public final class MonitorGrpc {
       return asyncClientStreamingCall(
           getChannel().newCall(METHOD_NETWORK_SERVER_STATUS, getCallOptions()), responseObserver);
     }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.monitor.LogMessage> logs(
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      return asyncClientStreamingCall(
+          getChannel().newCall(METHOD_LOGS, getCallOptions()), responseObserver);
+    }
   }
 
   /**
@@ -503,6 +537,7 @@ public final class MonitorGrpc {
   private static final int METHODID_HANDLER_UPLINK = 8;
   private static final int METHODID_HANDLER_DOWNLINK = 9;
   private static final int METHODID_NETWORK_SERVER_STATUS = 10;
+  private static final int METHODID_LOGS = 11;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -564,6 +599,9 @@ public final class MonitorGrpc {
         case METHODID_NETWORK_SERVER_STATUS:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.networkServerStatus(
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+        case METHODID_LOGS:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.logs(
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -598,6 +636,7 @@ public final class MonitorGrpc {
               .addMethod(METHOD_HANDLER_UPLINK)
               .addMethod(METHOD_HANDLER_DOWNLINK)
               .addMethod(METHOD_NETWORK_SERVER_STATUS)
+              .addMethod(METHOD_LOGS)
               .build();
         }
       }

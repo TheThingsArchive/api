@@ -29,6 +29,7 @@ module Monitor
       rpc :HandlerUplink, stream(Broker::DeduplicatedUplinkMessage), Google::Protobuf::Empty
       rpc :HandlerDownlink, stream(Broker::DownlinkMessage), Google::Protobuf::Empty
       rpc :NetworkServerStatus, stream(Networkserver::Status), Google::Protobuf::Empty
+      rpc :Logs, stream(LogMessage), Google::Protobuf::Empty
     end
 
     Stub = Service.rpc_stub_class

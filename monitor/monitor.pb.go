@@ -8,6 +8,7 @@
 		github.com/TheThingsNetwork/api/monitor/monitor.proto
 
 	It has these top-level messages:
+		LogMessage
 */
 package monitor
 
@@ -15,27 +16,137 @@ import proto "github.com/gogo/protobuf/proto"
 import fmt "fmt"
 import math "math"
 import google_protobuf "github.com/gogo/protobuf/types"
+import google_protobuf1 "github.com/gogo/protobuf/types"
+import _ "github.com/gogo/protobuf/types"
+import _ "github.com/gogo/protobuf/gogoproto"
 import gateway "github.com/TheThingsNetwork/api/gateway"
 import router "github.com/TheThingsNetwork/api/router"
 import broker "github.com/TheThingsNetwork/api/broker"
 import handler "github.com/TheThingsNetwork/api/handler"
 import networkserver "github.com/TheThingsNetwork/api/networkserver"
 
+import time "time"
+
+import strconv "strconv"
+
 import (
 	context "golang.org/x/net/context"
 	grpc "google.golang.org/grpc"
 )
 
+import github_com_gogo_protobuf_types "github.com/gogo/protobuf/types"
+
+import strings "strings"
+import reflect "reflect"
+
+import io "io"
+
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
+var _ = time.Kitchen
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
 // A compilation error at this line likely means your copy of the
 // proto package needs to be updated.
 const _ = proto.GoGoProtoPackageIsVersion2 // please upgrade the proto package
+
+type Level int32
+
+const (
+	Level_DEBUG Level = 0
+	Level_INFO  Level = 1
+	Level_WARN  Level = 2
+	Level_ERROR Level = 3
+	Level_FATAL Level = 4
+)
+
+var Level_name = map[int32]string{
+	0: "DEBUG",
+	1: "INFO",
+	2: "WARN",
+	3: "ERROR",
+	4: "FATAL",
+}
+var Level_value = map[string]int32{
+	"DEBUG": 0,
+	"INFO":  1,
+	"WARN":  2,
+	"ERROR": 3,
+	"FATAL": 4,
+}
+
+func (Level) EnumDescriptor() ([]byte, []int) { return fileDescriptorMonitor, []int{0} }
+
+type LogMessage struct {
+	// Timestamp of the log message. Will be filled by the server if empty.
+	Time *time.Time `protobuf:"bytes,1,opt,name=time,stdtime" json:"time,omitempty"`
+	// The log level
+	// DEBUG: Messages that help debug the execution of some logic; SHOULD NOT be used in production.
+	// INFO:  Messages that inform about an event (request, uplink, ...); a single event MUST NOT trigger more than one INFO message.
+	// WARN:  Messages that warn about unexpected events, but the program can cope with those just fine (bad user input, something not found).
+	// ERROR: Messages that indicate a problem in the program that may require user intervention, but the program can keep running.
+	// FATAL: Messages that indicate a problem that prevents the program from continuing. FATAL messages trigger an "exit 1" after forwarding.
+	Level Level `protobuf:"varint,2,opt,name=level,proto3,enum=monitor.Level" json:"level,omitempty"`
+	// The log message is a short description of what's happening.
+	// - Log messages are full sentences that start with a capital letter.
+	// - Log messages do not shorten words (use "Could not" instead of "Couldn't")
+	// - Log messages do generally not end with a period (for example: "Connected to database").
+	// - Log messages can end with three periods (...) if something is about to happen (for example: "Connecting to database...").
+	Message string `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
+	// Structured log fields allow analyses
+	// - Add fields that are informative
+	// - Add fields that someone might want to use to filter the logs (for example: IDs/EUIs, ...)
+	// - Add fields that someone might want to use to visualize the logs (for example: number of results per query, duration, ...)
+	// - Log field names use PascalCase
+	Fields *google_protobuf1.Struct `protobuf:"bytes,4,opt,name=fields" json:"fields,omitempty"`
+}
+
+func (m *LogMessage) Reset()                    { *m = LogMessage{} }
+func (*LogMessage) ProtoMessage()               {}
+func (*LogMessage) Descriptor() ([]byte, []int) { return fileDescriptorMonitor, []int{0} }
+
+func (m *LogMessage) GetTime() *time.Time {
+	if m != nil {
+		return m.Time
+	}
+	return nil
+}
+
+func (m *LogMessage) GetLevel() Level {
+	if m != nil {
+		return m.Level
+	}
+	return Level_DEBUG
+}
+
+func (m *LogMessage) GetMessage() string {
+	if m != nil {
+		return m.Message
+	}
+	return ""
+}
+
+func (m *LogMessage) GetFields() *google_protobuf1.Struct {
+	if m != nil {
+		return m.Fields
+	}
+	return nil
+}
+
+func init() {
+	proto.RegisterType((*LogMessage)(nil), "monitor.LogMessage")
+	proto.RegisterEnum("monitor.Level", Level_name, Level_value)
+}
+func (x Level) String() string {
+	s, ok := Level_name[int32(x)]
+	if ok {
+		return s
+	}
+	return strconv.Itoa(int(x))
+}
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
@@ -59,6 +170,7 @@ type MonitorClient interface {
 	HandlerUplink(ctx context.Context, opts ...grpc.CallOption) (Monitor_HandlerUplinkClient, error)
 	HandlerDownlink(ctx context.Context, opts ...grpc.CallOption) (Monitor_HandlerDownlinkClient, error)
 	NetworkServerStatus(ctx context.Context, opts ...grpc.CallOption) (Monitor_NetworkServerStatusClient, error)
+	Logs(ctx context.Context, opts ...grpc.CallOption) (Monitor_LogsClient, error)
 }
 
 type monitorClient struct {
@@ -443,6 +555,40 @@ func (x *monitorNetworkServerStatusClient) CloseAndRecv() (*google_protobuf.Empt
 	return m, nil
 }
 
+func (c *monitorClient) Logs(ctx context.Context, opts ...grpc.CallOption) (Monitor_LogsClient, error) {
+	stream, err := grpc.NewClientStream(ctx, &_Monitor_serviceDesc.Streams[11], c.cc, "/monitor.Monitor/Logs", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &monitorLogsClient{stream}
+	return x, nil
+}
+
+type Monitor_LogsClient interface {
+	Send(*LogMessage) error
+	CloseAndRecv() (*google_protobuf.Empty, error)
+	grpc.ClientStream
+}
+
+type monitorLogsClient struct {
+	grpc.ClientStream
+}
+
+func (x *monitorLogsClient) Send(m *LogMessage) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *monitorLogsClient) CloseAndRecv() (*google_protobuf.Empty, error) {
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	m := new(google_protobuf.Empty)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // Server API for Monitor service
 
 type MonitorServer interface {
@@ -457,6 +603,7 @@ type MonitorServer interface {
 	HandlerUplink(Monitor_HandlerUplinkServer) error
 	HandlerDownlink(Monitor_HandlerDownlinkServer) error
 	NetworkServerStatus(Monitor_NetworkServerStatusServer) error
+	Logs(Monitor_LogsServer) error
 }
 
 func RegisterMonitorServer(s *grpc.Server, srv MonitorServer) {
@@ -749,6 +896,32 @@ func (x *monitorNetworkServerStatusServer) Recv() (*networkserver.Status, error)
 	return m, nil
 }
 
+func _Monitor_Logs_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(MonitorServer).Logs(&monitorLogsServer{stream})
+}
+
+type Monitor_LogsServer interface {
+	SendAndClose(*google_protobuf.Empty) error
+	Recv() (*LogMessage, error)
+	grpc.ServerStream
+}
+
+type monitorLogsServer struct {
+	grpc.ServerStream
+}
+
+func (x *monitorLogsServer) SendAndClose(m *google_protobuf.Empty) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *monitorLogsServer) Recv() (*LogMessage, error) {
+	m := new(LogMessage)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 var _Monitor_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "monitor.Monitor",
 	HandlerType: (*MonitorServer)(nil),
@@ -809,42 +982,459 @@ var _Monitor_serviceDesc = grpc.ServiceDesc{
 			Handler:       _Monitor_NetworkServerStatus_Handler,
 			ClientStreams: true,
 		},
+		{
+			StreamName:    "Logs",
+			Handler:       _Monitor_Logs_Handler,
+			ClientStreams: true,
+		},
 	},
 	Metadata: "github.com/TheThingsNetwork/api/monitor/monitor.proto",
 }
+
+func (m *LogMessage) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *LogMessage) MarshalTo(dAtA []byte) (int, error) {
+	var i int
+	_ = i
+	var l int
+	_ = l
+	if m.Time != nil {
+		dAtA[i] = 0xa
+		i++
+		i = encodeVarintMonitor(dAtA, i, uint64(github_com_gogo_protobuf_types.SizeOfStdTime(*m.Time)))
+		n1, err := github_com_gogo_protobuf_types.StdTimeMarshalTo(*m.Time, dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n1
+	}
+	if m.Level != 0 {
+		dAtA[i] = 0x10
+		i++
+		i = encodeVarintMonitor(dAtA, i, uint64(m.Level))
+	}
+	if len(m.Message) > 0 {
+		dAtA[i] = 0x1a
+		i++
+		i = encodeVarintMonitor(dAtA, i, uint64(len(m.Message)))
+		i += copy(dAtA[i:], m.Message)
+	}
+	if m.Fields != nil {
+		dAtA[i] = 0x22
+		i++
+		i = encodeVarintMonitor(dAtA, i, uint64(m.Fields.Size()))
+		n2, err := m.Fields.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n2
+	}
+	return i, nil
+}
+
+func encodeFixed64Monitor(dAtA []byte, offset int, v uint64) int {
+	dAtA[offset] = uint8(v)
+	dAtA[offset+1] = uint8(v >> 8)
+	dAtA[offset+2] = uint8(v >> 16)
+	dAtA[offset+3] = uint8(v >> 24)
+	dAtA[offset+4] = uint8(v >> 32)
+	dAtA[offset+5] = uint8(v >> 40)
+	dAtA[offset+6] = uint8(v >> 48)
+	dAtA[offset+7] = uint8(v >> 56)
+	return offset + 8
+}
+func encodeFixed32Monitor(dAtA []byte, offset int, v uint32) int {
+	dAtA[offset] = uint8(v)
+	dAtA[offset+1] = uint8(v >> 8)
+	dAtA[offset+2] = uint8(v >> 16)
+	dAtA[offset+3] = uint8(v >> 24)
+	return offset + 4
+}
+func encodeVarintMonitor(dAtA []byte, offset int, v uint64) int {
+	for v >= 1<<7 {
+		dAtA[offset] = uint8(v&0x7f | 0x80)
+		v >>= 7
+		offset++
+	}
+	dAtA[offset] = uint8(v)
+	return offset + 1
+}
+func (m *LogMessage) Size() (n int) {
+	var l int
+	_ = l
+	if m.Time != nil {
+		l = github_com_gogo_protobuf_types.SizeOfStdTime(*m.Time)
+		n += 1 + l + sovMonitor(uint64(l))
+	}
+	if m.Level != 0 {
+		n += 1 + sovMonitor(uint64(m.Level))
+	}
+	l = len(m.Message)
+	if l > 0 {
+		n += 1 + l + sovMonitor(uint64(l))
+	}
+	if m.Fields != nil {
+		l = m.Fields.Size()
+		n += 1 + l + sovMonitor(uint64(l))
+	}
+	return n
+}
+
+func sovMonitor(x uint64) (n int) {
+	for {
+		n++
+		x >>= 7
+		if x == 0 {
+			break
+		}
+	}
+	return n
+}
+func sozMonitor(x uint64) (n int) {
+	return sovMonitor(uint64((x << 1) ^ uint64((int64(x) >> 63))))
+}
+func (this *LogMessage) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&LogMessage{`,
+		`Time:` + strings.Replace(fmt.Sprintf("%v", this.Time), "Timestamp", "google_protobuf2.Timestamp", 1) + `,`,
+		`Level:` + fmt.Sprintf("%v", this.Level) + `,`,
+		`Message:` + fmt.Sprintf("%v", this.Message) + `,`,
+		`Fields:` + strings.Replace(fmt.Sprintf("%v", this.Fields), "Struct", "google_protobuf1.Struct", 1) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func valueToStringMonitor(v interface{}) string {
+	rv := reflect.ValueOf(v)
+	if rv.IsNil() {
+		return "nil"
+	}
+	pv := reflect.Indirect(rv).Interface()
+	return fmt.Sprintf("*%v", pv)
+}
+func (m *LogMessage) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowMonitor
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= (uint64(b) & 0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: LogMessage: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: LogMessage: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Time", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMonitor
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= (int(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMonitor
+			}
+			postIndex := iNdEx + msglen
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Time == nil {
+				m.Time = new(time.Time)
+			}
+			if err := github_com_gogo_protobuf_types.StdTimeUnmarshal(m.Time, dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Level", wireType)
+			}
+			m.Level = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMonitor
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Level |= (Level(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Message", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMonitor
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= (uint64(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthMonitor
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Message = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 4:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Fields", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMonitor
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= (int(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMonitor
+			}
+			postIndex := iNdEx + msglen
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Fields == nil {
+				m.Fields = &google_protobuf1.Struct{}
+			}
+			if err := m.Fields.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipMonitor(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthMonitor
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func skipMonitor(dAtA []byte) (n int, err error) {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return 0, ErrIntOverflowMonitor
+			}
+			if iNdEx >= l {
+				return 0, io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= (uint64(b) & 0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		wireType := int(wire & 0x7)
+		switch wireType {
+		case 0:
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return 0, ErrIntOverflowMonitor
+				}
+				if iNdEx >= l {
+					return 0, io.ErrUnexpectedEOF
+				}
+				iNdEx++
+				if dAtA[iNdEx-1] < 0x80 {
+					break
+				}
+			}
+			return iNdEx, nil
+		case 1:
+			iNdEx += 8
+			return iNdEx, nil
+		case 2:
+			var length int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return 0, ErrIntOverflowMonitor
+				}
+				if iNdEx >= l {
+					return 0, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				length |= (int(b) & 0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			iNdEx += length
+			if length < 0 {
+				return 0, ErrInvalidLengthMonitor
+			}
+			return iNdEx, nil
+		case 3:
+			for {
+				var innerWire uint64
+				var start int = iNdEx
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return 0, ErrIntOverflowMonitor
+					}
+					if iNdEx >= l {
+						return 0, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					innerWire |= (uint64(b) & 0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				innerWireType := int(innerWire & 0x7)
+				if innerWireType == 4 {
+					break
+				}
+				next, err := skipMonitor(dAtA[start:])
+				if err != nil {
+					return 0, err
+				}
+				iNdEx = start + next
+			}
+			return iNdEx, nil
+		case 4:
+			return iNdEx, nil
+		case 5:
+			iNdEx += 4
+			return iNdEx, nil
+		default:
+			return 0, fmt.Errorf("proto: illegal wireType %d", wireType)
+		}
+	}
+	panic("unreachable")
+}
+
+var (
+	ErrInvalidLengthMonitor = fmt.Errorf("proto: negative length found during unmarshaling")
+	ErrIntOverflowMonitor   = fmt.Errorf("proto: integer overflow")
+)
 
 func init() {
 	proto.RegisterFile("github.com/TheThingsNetwork/api/monitor/monitor.proto", fileDescriptorMonitor)
 }
 
 var fileDescriptorMonitor = []byte{
-	// 439 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x94, 0xcd, 0x6a, 0xdb, 0x40,
-	0x10, 0xc7, 0xbd, 0x85, 0xd6, 0xb0, 0xf8, 0x03, 0x54, 0xdc, 0x82, 0x5b, 0x44, 0x7b, 0x6a, 0x4f,
-	0x2b, 0xa8, 0x29, 0x18, 0x9f, 0x6a, 0x57, 0xfd, 0xa2, 0x75, 0x31, 0xb1, 0x73, 0xc9, 0x6d, 0x65,
-	0x6f, 0x24, 0x61, 0x59, 0x2b, 0x56, 0xab, 0x18, 0xdf, 0xf2, 0x14, 0x79, 0x88, 0x3c, 0x49, 0x8e,
-	0x39, 0xe6, 0x98, 0xe8, 0x14, 0xc8, 0x25, 0x8f, 0x10, 0xac, 0x9d, 0x15, 0x71, 0x0e, 0x59, 0x41,
-	0x72, 0x1a, 0xcd, 0x4a, 0xff, 0xbf, 0xf6, 0x37, 0x33, 0xbb, 0xf8, 0xab, 0x1f, 0xca, 0x20, 0xf3,
-	0xc8, 0x9c, 0xaf, 0x9c, 0x59, 0xc0, 0x66, 0x41, 0x18, 0xfb, 0xe9, 0x7f, 0x26, 0xd7, 0x5c, 0x2c,
-	0x1d, 0x9a, 0x84, 0xce, 0x8a, 0xc7, 0xa1, 0xe4, 0x42, 0x47, 0x92, 0x08, 0x2e, 0xb9, 0x55, 0x87,
-	0xb4, 0xfb, 0xce, 0xe7, 0xdc, 0x8f, 0x98, 0x53, 0x2c, 0x7b, 0xd9, 0xa1, 0xc3, 0x56, 0x89, 0xdc,
-	0xa8, 0xaf, 0xba, 0x46, 0x73, 0x9f, 0x4a, 0xb6, 0xa6, 0x1b, 0x1d, 0x41, 0xd6, 0x33, 0xc9, 0x04,
-	0xcf, 0x24, 0x13, 0x10, 0xaa, 0x8a, 0x3c, 0xc1, 0x97, 0x4c, 0x40, 0xa8, 0xba, 0xc1, 0x80, 0xc6,
-	0x8b, 0x88, 0x09, 0x1d, 0x41, 0x36, 0x34, 0xc9, 0x62, 0xf5, 0x9c, 0x32, 0x71, 0xc4, 0xc4, 0x6e,
-	0xa6, 0x2c, 0xbe, 0xdc, 0xbc, 0xc4, 0xf5, 0xb1, 0xaa, 0xa1, 0xd5, 0xc7, 0x8d, 0xbd, 0x02, 0x65,
-	0x2a, 0xa9, 0xcc, 0x52, 0xab, 0x45, 0x80, 0x4c, 0xe5, 0xdd, 0x37, 0x44, 0x15, 0x99, 0xe8, 0x22,
-	0x93, 0x1f, 0xdb, 0x22, 0x7f, 0x46, 0xd6, 0x00, 0x37, 0x7f, 0xa9, 0xd2, 0x81, 0xb4, 0x4d, 0x74,
-	0x29, 0x8d, 0xda, 0x6f, 0xa5, 0x76, 0x3f, 0x89, 0xc2, 0x78, 0x69, 0x75, 0xf4, 0x6f, 0x55, 0x3e,
-	0x66, 0x69, 0x4a, 0x7d, 0xf6, 0x88, 0x83, 0x8b, 0xdb, 0xe0, 0xe0, 0xf2, 0x75, 0x5c, 0x78, 0xbc,
-	0xd5, 0x1e, 0x7a, 0xc5, 0xec, 0xd2, 0xc7, 0x8d, 0x51, 0xd1, 0x93, 0x92, 0x1e, 0x5a, 0x64, 0x24,
-	0xf8, 0xab, 0x95, 0x00, 0xf0, 0x51, 0x2b, 0x5d, 0xb6, 0xc8, 0x92, 0x28, 0x9c, 0x53, 0xc9, 0x16,
-	0x55, 0x61, 0xbe, 0xe3, 0x96, 0x32, 0xbb, 0xc7, 0xa2, 0xed, 0x2a, 0xb3, 0x0c, 0x70, 0xf3, 0xb7,
-	0x9a, 0x94, 0xb2, 0x1f, 0x7a, 0x72, 0x8c, 0x34, 0xff, 0x4a, 0xed, 0x73, 0xe0, 0xb8, 0xb8, 0x0d,
-	0x6e, 0x4f, 0xe1, 0xf9, 0x89, 0x5f, 0xc3, 0x58, 0x4f, 0x8b, 0xe1, 0x05, 0xaa, 0x0e, 0xd9, 0x1d,
-	0x69, 0x13, 0xdb, 0xe8, 0x04, 0x5d, 0x5c, 0xd9, 0xb5, 0xe3, 0xdc, 0x46, 0x67, 0xb9, 0x8d, 0xce,
-	0x73, 0x1b, 0x5d, 0xe6, 0x36, 0xba, 0xce, 0xed, 0xda, 0x6d, 0x6e, 0x23, 0xfc, 0x81, 0x0b, 0x9f,
-	0xc8, 0x80, 0xc9, 0xe2, 0x20, 0x81, 0x37, 0xa1, 0x49, 0x48, 0xe0, 0x9a, 0x19, 0x35, 0xe0, 0xac,
-	0x4c, 0xb6, 0xce, 0x13, 0x74, 0xf0, 0xa9, 0xe2, 0xb5, 0x75, 0xfa, 0xe2, 0xfd, 0xc3, 0xd7, 0x64,
-	0x38, 0xf9, 0x43, 0xc0, 0xce, 0x7b, 0x55, 0x6c, 0xb5, 0x77, 0x17, 0x00, 0x00, 0xff, 0xff, 0xa4,
-	0xd4, 0xf7, 0xef, 0x07, 0x05, 0x00, 0x00,
+	// 639 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x55, 0xcf, 0x6e, 0xd3, 0x4e,
+	0x10, 0xee, 0xb6, 0x6e, 0xfb, 0xeb, 0xfe, 0xda, 0x34, 0xda, 0xaa, 0x34, 0x0a, 0x95, 0x1b, 0x10,
+	0x12, 0x11, 0x12, 0x6b, 0xa9, 0xa5, 0x52, 0x55, 0x71, 0x20, 0x21, 0x6d, 0xa9, 0x48, 0xff, 0xc8,
+	0x49, 0x85, 0xc4, 0xcd, 0x49, 0xb6, 0x8e, 0x15, 0xdb, 0x6b, 0xad, 0xd7, 0x8d, 0x7a, 0xe3, 0x11,
+	0x38, 0xf1, 0x00, 0x1c, 0xb9, 0xf2, 0x12, 0x1c, 0x39, 0x72, 0x03, 0x7c, 0xe2, 0xc8, 0x23, 0x20,
+	0xef, 0x9f, 0xb4, 0x4d, 0x05, 0x8e, 0x04, 0xa7, 0xdd, 0xd9, 0x99, 0xef, 0x9b, 0xf9, 0x3c, 0x33,
+	0x09, 0xdc, 0x76, 0x3d, 0xde, 0x4f, 0x3a, 0xb8, 0x4b, 0x03, 0xab, 0xdd, 0x27, 0xed, 0xbe, 0x17,
+	0xba, 0xf1, 0x31, 0xe1, 0x43, 0xca, 0x06, 0x96, 0x13, 0x79, 0x56, 0x40, 0x43, 0x8f, 0x53, 0xa6,
+	0x4f, 0x1c, 0x31, 0xca, 0x29, 0x9a, 0x57, 0x66, 0xf9, 0xae, 0x4b, 0xa9, 0xeb, 0x13, 0x4b, 0x3c,
+	0x77, 0x92, 0x73, 0x8b, 0x04, 0x11, 0xbf, 0x94, 0x51, 0xe5, 0xf5, 0x71, 0x67, 0xcc, 0x59, 0xd2,
+	0xe5, 0xca, 0xbb, 0x31, 0xee, 0xe5, 0x5e, 0x40, 0x62, 0xee, 0x04, 0x91, 0x0a, 0x78, 0x7c, 0xad,
+	0x36, 0x97, 0xba, 0xf4, 0x2a, 0x32, 0xb3, 0x84, 0x21, 0x6e, 0x2a, 0x3c, 0x57, 0x8a, 0xeb, 0x70,
+	0x32, 0x74, 0x2e, 0xf5, 0xa9, 0x60, 0x5b, 0x79, 0x30, 0x46, 0x13, 0x4e, 0x98, 0x3a, 0x26, 0x05,
+	0x75, 0x18, 0x1d, 0x10, 0xa6, 0x8e, 0x49, 0x0b, 0xec, 0x3b, 0x61, 0xcf, 0x27, 0x4c, 0x9f, 0x0a,
+	0x56, 0xcb, 0x83, 0x85, 0xf2, 0x1e, 0x13, 0x76, 0x41, 0xd8, 0x4d, 0x4b, 0x52, 0xdc, 0xff, 0x08,
+	0x20, 0x6c, 0x52, 0xf7, 0x88, 0xc4, 0xb1, 0xe3, 0x12, 0xf4, 0x04, 0x1a, 0xd9, 0xb7, 0x2e, 0x81,
+	0x0a, 0xa8, 0xfe, 0xbf, 0x59, 0xc6, 0xb2, 0x11, 0x58, 0x7f, 0x5e, 0xdc, 0xd6, 0x8d, 0xa8, 0x1b,
+	0x6f, 0xbf, 0x6e, 0x00, 0x5b, 0x44, 0xa3, 0x07, 0x70, 0xd6, 0x27, 0x17, 0xc4, 0x2f, 0x4d, 0x57,
+	0x40, 0xb5, 0xb0, 0x59, 0xc0, 0x7a, 0x24, 0x9a, 0xd9, 0xab, 0x2d, 0x9d, 0xa8, 0x04, 0xe7, 0x03,
+	0x99, 0xa6, 0x34, 0x53, 0x01, 0xd5, 0x05, 0x5b, 0x9b, 0xc8, 0x82, 0x73, 0xe7, 0x1e, 0xf1, 0x7b,
+	0x71, 0xc9, 0x10, 0x79, 0xd7, 0x6e, 0xe5, 0x6d, 0x89, 0xf1, 0xb0, 0x55, 0xd8, 0xa3, 0xa7, 0x70,
+	0x56, 0x50, 0xa3, 0x05, 0x38, 0xdb, 0xd8, 0xab, 0x9f, 0x1d, 0x14, 0xa7, 0xd0, 0x7f, 0xd0, 0x38,
+	0x3c, 0xde, 0x3f, 0x29, 0x82, 0xec, 0xf6, 0xaa, 0x66, 0x1f, 0x17, 0xa7, 0x33, 0xf7, 0x9e, 0x6d,
+	0x9f, 0xd8, 0xc5, 0x99, 0xec, 0xba, 0x5f, 0x6b, 0xd7, 0x9a, 0x45, 0x63, 0xf3, 0xfd, 0x1c, 0x9c,
+	0x3f, 0x92, 0x15, 0xa2, 0x1d, 0xb8, 0x68, 0x8b, 0xf6, 0xb5, 0xb8, 0xc3, 0x93, 0x18, 0x15, 0xb0,
+	0xea, 0xa6, 0xb4, 0xcb, 0x77, 0x6e, 0x95, 0xb2, 0x97, 0x8d, 0x71, 0x15, 0xa0, 0x5d, 0xb8, 0x74,
+	0x20, 0xc7, 0x45, 0x41, 0x97, 0xb1, 0x1e, 0x9f, 0x5c, 0xec, 0xb3, 0x11, 0xf6, 0x2c, 0xf2, 0xbd,
+	0x70, 0x80, 0x56, 0x75, 0x5a, 0x69, 0xab, 0x76, 0xfc, 0x81, 0xa1, 0x01, 0x97, 0x15, 0x43, 0x83,
+	0x0e, 0x43, 0xc1, 0xb1, 0xa6, 0x39, 0xf4, 0x4b, 0x3e, 0xcb, 0x0e, 0x5c, 0xac, 0x8b, 0x39, 0x1c,
+	0xa9, 0x57, 0x63, 0x99, 0xab, 0xe0, 0xa5, 0x46, 0x2a, 0x01, 0xf7, 0x34, 0xb2, 0x41, 0x7a, 0x49,
+	0xe4, 0x7b, 0x5d, 0x87, 0x93, 0xde, 0xa4, 0x62, 0x9e, 0xc3, 0x82, 0x24, 0xbb, 0xa6, 0x45, 0xd3,
+	0x4d, 0xac, 0x65, 0x17, 0x2e, 0xbd, 0x90, 0xdb, 0x31, 0xea, 0x87, 0xde, 0x96, 0x5c, 0x35, 0xcd,
+	0x11, 0xf6, 0x5f, 0xc8, 0x69, 0xc0, 0x65, 0xc5, 0xf6, 0x37, 0x7a, 0xf6, 0xe1, 0x8a, 0x5a, 0xe5,
+	0x96, 0x58, 0x58, 0xa5, 0x6a, 0x15, 0xdf, 0x5c, 0xe3, 0x5c, 0x6d, 0xdb, 0xd0, 0x68, 0x52, 0x37,
+	0x46, 0x2b, 0x57, 0x5b, 0x39, 0xda, 0xf7, 0xdf, 0xc3, 0xea, 0xef, 0xc0, 0x97, 0xef, 0xe6, 0xd4,
+	0x9b, 0xd4, 0x04, 0x9f, 0x52, 0x13, 0x7c, 0x4e, 0x4d, 0xf0, 0x2d, 0x35, 0xc1, 0x8f, 0xd4, 0x9c,
+	0xfa, 0x99, 0x9a, 0x00, 0x56, 0x28, 0x73, 0x31, 0xef, 0x13, 0x2e, 0x7e, 0x73, 0x54, 0x49, 0xd8,
+	0x89, 0x3c, 0x9d, 0xa5, 0xbe, 0xa8, 0x56, 0xec, 0x34, 0x63, 0x3e, 0x05, 0xaf, 0x1f, 0x4e, 0xf8,
+	0x7f, 0xf2, 0x61, 0x7a, 0x7d, 0xdc, 0x8d, 0x6b, 0xa7, 0x87, 0x58, 0xd1, 0x75, 0xe6, 0x44, 0xa9,
+	0x5b, 0xbf, 0x02, 0x00, 0x00, 0xff, 0xff, 0x2e, 0x2c, 0xa4, 0x2e, 0xa0, 0x06, 0x00, 0x00,
 }

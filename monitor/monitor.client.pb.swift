@@ -714,6 +714,68 @@ internal class Monitor_MonitorNetworkServerStatusCall {
   }
 }
 
+/// Logs (Client Streaming)
+internal class Monitor_MonitorLogsCall {
+  private var call : Call
+
+  /// Create a call.
+  fileprivate init(_ channel: Channel) {
+    self.call = channel.makeCall("/monitor.Monitor/Logs")
+  }
+
+  /// Call this to start a call. Nonblocking.
+  fileprivate func start(metadata:Metadata, completion:@escaping (CallResult)->())
+    throws -> Monitor_MonitorLogsCall {
+      try self.call.start(.clientStreaming, metadata:metadata, completion:completion)
+      return self
+  }
+
+  /// Call this to send each message in the request stream. Nonblocking.
+  internal func send(_ message:Monitor_LogMessage, errorHandler:@escaping (Error)->()) throws {
+    let messageData = try message.serializedData()
+    try call.sendMessage(data:messageData, errorHandler:errorHandler)
+  }
+
+  /// Call this to close the connection and wait for a response. Blocking.
+  internal func closeAndReceive() throws -> Google_Protobuf_Empty {
+    var returnError : Monitor_MonitorClientError?
+    var returnResponse : Google_Protobuf_Empty!
+    let sem = DispatchSemaphore(value: 0)
+    do {
+      try closeAndReceive() {response, error in
+        returnResponse = response
+        returnError = error
+        sem.signal()
+      }
+      _ = sem.wait(timeout: DispatchTime.distantFuture)
+    } catch (let error) {
+      throw error
+    }
+    if let returnError = returnError {
+      throw returnError
+    }
+    return returnResponse
+  }
+
+  /// Call this to close the connection and wait for a response. Nonblocking.
+  internal func closeAndReceive(completion:@escaping (Google_Protobuf_Empty?, Monitor_MonitorClientError?)->())
+    throws {
+      do {
+        try call.receiveMessage() {(responseData) in
+          if let responseData = responseData,
+            let response = try? Google_Protobuf_Empty(serializedData:responseData) {
+            completion(response, nil)
+          } else {
+            completion(nil, Monitor_MonitorClientError.invalidMessageReceived)
+          }
+        }
+        try call.close(completion:{})
+      } catch (let error) {
+        throw error
+      }
+  }
+}
+
 /// Call methods of this class to make API calls.
 internal class Monitor_MonitorService {
   private var channel: Channel
@@ -834,5 +896,13 @@ internal class Monitor_MonitorService {
     throws
     -> Monitor_MonitorNetworkServerStatusCall {
       return try Monitor_MonitorNetworkServerStatusCall(channel).start(metadata:metadata, completion:completion)
+  }
+  /// Asynchronous. Client-streaming.
+  /// Use methods on the returned object to stream messages and
+  /// to close the connection and wait for a final response.
+  internal func logs(completion: @escaping (CallResult)->())
+    throws
+    -> Monitor_MonitorLogsCall {
+      return try Monitor_MonitorLogsCall(channel).start(metadata:metadata, completion:completion)
   }
 }

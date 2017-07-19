@@ -4,13 +4,30 @@
 require 'google/protobuf'
 
 require 'google/protobuf/empty_pb'
+require 'google/protobuf/struct_pb'
+require 'google/protobuf/timestamp_pb'
 require 'gateway/gateway_pb'
 require 'router/router_pb'
 require 'broker/broker_pb'
 require 'handler/handler_pb'
 require 'networkserver/networkserver_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
+  add_message "monitor.LogMessage" do
+    optional :time, :message, 1, "google.protobuf.Timestamp"
+    optional :level, :enum, 2, "monitor.Level"
+    optional :message, :string, 3
+    optional :fields, :message, 4, "google.protobuf.Struct"
+  end
+  add_enum "monitor.Level" do
+    value :DEBUG, 0
+    value :INFO, 1
+    value :WARN, 2
+    value :ERROR, 3
+    value :FATAL, 4
+  end
 end
 
 module Monitor
+  LogMessage = Google::Protobuf::DescriptorPool.generated_pool.lookup("monitor.LogMessage").msgclass
+  Level = Google::Protobuf::DescriptorPool.generated_pool.lookup("monitor.Level").enummodule
 end

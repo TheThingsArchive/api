@@ -4,6 +4,10 @@
 syntax = "proto3";
 
 import "google/protobuf/empty.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
 
 import "github.com/TheThingsNetwork/api/gateway/gateway.proto";
 import "github.com/TheThingsNetwork/api/router/router.proto";
@@ -18,6 +22,38 @@ option go_package = "github.com/TheThingsNetwork/api/monitor";
 option java_package = "org.thethingsnetwork.api.monitor";
 option java_outer_classname = "MonitorProto";
 option java_multiple_files = true;
+
+enum Level {
+  DEBUG = 0;
+  INFO  = 1;
+  WARN  = 2;
+  ERROR = 3;
+  FATAL = 4;
+}
+
+message LogMessage {
+  // Timestamp of the log message. Will be filled by the server if empty.
+  google.protobuf.Timestamp  time     = 1 [(gogoproto.stdtime) = true];
+  // The log level
+  // DEBUG: Messages that help debug the execution of some logic; SHOULD NOT be used in production.
+  // INFO:  Messages that inform about an event (request, uplink, ...); a single event MUST NOT trigger more than one INFO message.
+  // WARN:  Messages that warn about unexpected events, but the program can cope with those just fine (bad user input, something not found).
+  // ERROR: Messages that indicate a problem in the program that may require user intervention, but the program can keep running.
+  // FATAL: Messages that indicate a problem that prevents the program from continuing. FATAL messages trigger an "exit 1" after forwarding.
+  Level                      level    = 2;
+  // The log message is a short description of what's happening.
+  // - Log messages are full sentences that start with a capital letter.
+  // - Log messages do not shorten words (use "Could not" instead of "Couldn't")
+  // - Log messages do generally not end with a period (for example: "Connected to database").
+  // - Log messages can end with three periods (...) if something is about to happen (for example: "Connecting to database...").
+  string                     message  = 3;
+  // Structured log fields allow analyses
+  // - Add fields that are informative
+  // - Add fields that someone might want to use to filter the logs (for example: IDs/EUIs, ...)
+  // - Add fields that someone might want to use to visualize the logs (for example: number of results per query, duration, ...)
+  // - Log field names use PascalCase
+  google.protobuf.Struct     fields   = 4;
+}
 
 service Monitor {
   rpc RouterStatus(stream router.Status) returns (google.protobuf.Empty);
@@ -35,4 +71,6 @@ service Monitor {
   rpc HandlerDownlink(stream broker.DownlinkMessage) returns (google.protobuf.Empty);
 
   rpc NetworkServerStatus(stream networkserver.Status) returns (google.protobuf.Empty);
+
+  rpc Logs(stream LogMessage) returns (google.protobuf.Empty);
 }
