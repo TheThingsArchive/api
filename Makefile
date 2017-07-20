@@ -148,3 +148,10 @@ protos.c: $(C_PROTO_TARGETS)
 
 %.pb-c.c: %.proto
 	protoc-c $(C_PROTOC_FLAGS) $(PWD)/$<
+
+# Mocks
+
+mocks:
+	mockgen -source=./protocol/lorawan/device.pb.go -package lorawan DeviceManagerClient > protocol/lorawan/device_mock.go
+	mockgen -source=./networkserver/networkserver.pb.go -package networkserver NetworkServerClient > networkserver/networkserver_mock.go
+	mockgen -source=./discovery/discoveryclient/client.go -package discoveryclient Client > discovery/discoveryclient/client_mock.go
