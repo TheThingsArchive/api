@@ -1,0 +1,75 @@
+// Copyright © 2017 The Things Network
+// Use of this source code is governed by the MIT license that can be found in the LICENSE file.
+
+package protocol
+
+import (
+	"github.com/TheThingsNetwork/api"
+	"github.com/TheThingsNetwork/ttn/utils/errors"
+)
+
+// Validate implements the api.Validator interface
+func (m *RxMetadata) Validate() error {
+	if m.Protocol == nil {
+		return errors.NewErrInvalidArgument("Protocol", "can not be empty")
+	}
+	if err := api.Validate(m.Protocol); err != nil {
+		return errors.NewErrInvalidArgument("Protocol", err.Error())
+	}
+	return nil
+}
+
+// Validate implements the api.Validator interface
+func (m *RxMetadata_LoRaWAN) Validate() error {
+	if err := m.LoRaWAN.Validate(); err != nil {
+		return errors.NewErrInvalidArgument("LoRaWAN", err.Error())
+	}
+	return nil
+}
+
+// Validate implements the api.Validator interface
+func (m *TxConfiguration) Validate() error {
+	if m.Protocol == nil {
+		return errors.New("RxMetadata.Protocol is nil")
+	}
+	return api.Validate(m.Protocol)
+}
+
+// Validate implements the api.Validator interface
+func (m *TxConfiguration_LoRaWAN) Validate() error {
+	return m.LoRaWAN.Validate()
+}
+
+// Validate implements the api.Validator interface
+func (m *ActivationMetadata) Validate() error {
+	if m.Protocol == nil {
+		return errors.NewErrInvalidArgument("Protocol", "can not be empty")
+	}
+	if err := api.Validate(m.Protocol); err != nil {
+		return errors.NewErrInvalidArgument("Protocol", err.Error())
+	}
+
+	return nil
+}
+
+// Validate implements the api.Validator interface
+func (m *ActivationMetadata_LoRaWAN) Validate() error {
+	return m.LoRaWAN.Validate()
+}
+
+// Validate implements the api.Validator interface
+func (m *Message) Validate() error {
+	if m.Protocol == nil {
+		return errors.NewErrInvalidArgument("Protocol", "can not be empty")
+	}
+	if err := api.Validate(m.Protocol); err != nil {
+		return errors.NewErrInvalidArgument("Protocol", err.Error())
+	}
+
+	return nil
+}
+
+// Validate implements the api.Validator interface
+func (m *Message_LoRaWAN) Validate() error {
+	return m.LoRaWAN.Validate()
+}
