@@ -10,8 +10,12 @@ func (m *DeduplicatedUplinkMessage) InitResponseTemplate() *DownlinkMessage {
 		m.ResponseTemplate = new(DownlinkMessage)
 	}
 	m.ResponseTemplate.Message = new(protocol.Message)
-	m.ResponseTemplate.AppEUI = m.AppEUI
-	m.ResponseTemplate.DevEUI = m.DevEUI
+	if m.AppEUI != nil {
+		m.ResponseTemplate.AppEUI = *m.AppEUI
+	}
+	if m.DevEUI != nil {
+		m.ResponseTemplate.DevEUI = *m.DevEUI
+	}
 	m.ResponseTemplate.AppID = m.AppID
 	m.ResponseTemplate.DevID = m.DevID
 	return m.ResponseTemplate

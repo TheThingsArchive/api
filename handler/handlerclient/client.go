@@ -150,14 +150,14 @@ func (h *ManagerClient) GetDevAddr(constraints ...string) (types.DevAddr, error)
 	if err != nil {
 		return types.DevAddr{}, errors.Wrap(errors.FromGRPCError(err), "Could not get DevAddr from Handler")
 	}
-	return *resp.DevAddr, nil
+	return resp.DevAddr, nil
 }
 
 // DryUplink transforms the uplink payload with the payload functions provided
 // in the app..
 func (h *ManagerClient) DryUplink(payload []byte, app *Application, port uint32) (*DryUplinkResult, error) {
 	res, err := h.applicationManagerClient.DryUplink(h.GetContext(), &DryUplinkMessage{
-		App:     app,
+		App:     *app,
 		Payload: payload,
 		Port:    port,
 	})
@@ -171,7 +171,7 @@ func (h *ManagerClient) DryUplink(payload []byte, app *Application, port uint32)
 // provided in app.
 func (h *ManagerClient) DryDownlinkWithPayload(payload []byte, app *Application, port uint32) (*DryDownlinkResult, error) {
 	res, err := h.applicationManagerClient.DryDownlink(h.GetContext(), &DryDownlinkMessage{
-		App:     app,
+		App:     *app,
 		Payload: payload,
 		Port:    port,
 	})
@@ -190,7 +190,7 @@ func (h *ManagerClient) DryDownlinkWithFields(fields map[string]interface{}, app
 	}
 
 	res, err := h.applicationManagerClient.DryDownlink(h.GetContext(), &DryDownlinkMessage{
-		App:    app,
+		App:    *app,
 		Fields: string(marshalled),
 		Port:   port,
 	})

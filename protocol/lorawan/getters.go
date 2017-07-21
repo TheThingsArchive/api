@@ -7,8 +7,8 @@ import "github.com/TheThingsNetwork/ttn/core/types"
 
 func (m *DeviceIdentifier) GetAppEUI() (eui types.AppEUI) {
 	if m != nil {
-		if m.AppEUI != nil {
-			return *m.AppEUI
+		if !m.AppEUI.IsEmpty() {
+			return m.AppEUI
 		}
 	}
 	return
@@ -16,8 +16,8 @@ func (m *DeviceIdentifier) GetAppEUI() (eui types.AppEUI) {
 
 func (m *DeviceIdentifier) GetDevEUI() (eui types.DevEUI) {
 	if m != nil {
-		if m.DevEUI != nil {
-			return *m.DevEUI
+		if !m.DevEUI.IsEmpty() {
+			return m.DevEUI
 		}
 	}
 	return
@@ -25,8 +25,8 @@ func (m *DeviceIdentifier) GetDevEUI() (eui types.DevEUI) {
 
 func (m *Device) GetAppEUI() (eui types.AppEUI) {
 	if m != nil {
-		if m.AppEUI != nil {
-			return *m.AppEUI
+		if !m.AppEUI.IsEmpty() {
+			return m.AppEUI
 		}
 	}
 	return
@@ -34,8 +34,8 @@ func (m *Device) GetAppEUI() (eui types.AppEUI) {
 
 func (m *Device) GetDevEUI() (eui types.DevEUI) {
 	if m != nil {
-		if m.DevEUI != nil {
-			return *m.DevEUI
+		if !m.DevEUI.IsEmpty() {
+			return m.DevEUI
 		}
 	}
 	return
@@ -79,8 +79,8 @@ func (m *Device) GetNwkSKey() (eui types.NwkSKey) {
 
 func (m *ActivationMetadata) GetAppEUI() (eui types.AppEUI) {
 	if m != nil {
-		if m.AppEUI != nil {
-			return *m.AppEUI
+		if !m.AppEUI.IsEmpty() {
+			return m.AppEUI
 		}
 	}
 	return
@@ -88,8 +88,8 @@ func (m *ActivationMetadata) GetAppEUI() (eui types.AppEUI) {
 
 func (m *ActivationMetadata) GetDevEUI() (eui types.DevEUI) {
 	if m != nil {
-		if m.DevEUI != nil {
-			return *m.DevEUI
+		if !m.DevEUI.IsEmpty() {
+			return m.DevEUI
 		}
 	}
 	return
