@@ -93,8 +93,8 @@ message StatusRequest {}
 
 // message Status is the response to the StatusRequest
 message Status {
-  api.SystemStats    system    = 1 [(gogoproto.nullable) = false];
-  api.ComponentStats component = 2 [(gogoproto.nullable) = false];
+  api.SystemStats    system    = 1;
+  api.ComponentStats component = 2;
 
   api.Rates gateway_status   = 11;
   api.Rates uplink           = 12;
