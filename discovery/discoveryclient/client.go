@@ -36,7 +36,7 @@ type Client interface {
 	RemoveGatewayID(gatewayID string, token string) error
 	GetAllBrokersForDevAddr(devAddr types.DevAddr) ([]*discovery.Announcement, error)
 	GetAllHandlersForAppID(appID string) ([]*discovery.Announcement, error)
-	GetAllRoutersForGatewayID(gatewayID string) ([]*Announcement, error)
+	GetAllRoutersForGatewayID(gatewayID string) ([]*discovery.Announcement, error)
 	Close() error
 }
 
@@ -184,10 +184,10 @@ func (c *DefaultClient) AddAppID(appID string, token string) error {
 
 // AddGatewayID adds a GatewayID to the current component
 func (c *DefaultClient) AddGatewayID(gatewayID string, token string) error {
-	_, err := c.client.AddMetadata(c.getContext(token), &MetadataRequest{
+	_, err := c.client.AddMetadata(c.getContext(token), &discovery.MetadataRequest{
 		ServiceName: c.self.ServiceName,
-		Id:          c.self.Id,
-		Metadata: &Metadata{Metadata: &Metadata_GatewayId{
+		ID:          c.self.ID,
+		Metadata: &discovery.Metadata{Metadata: &discovery.Metadata_GatewayId{
 			GatewayId: gatewayID,
 		}},
 	})
@@ -220,10 +220,10 @@ func (c *DefaultClient) RemoveAppID(appID string, token string) error {
 
 // RemoveGatewayID removes a GatewayID from the current component
 func (c *DefaultClient) RemoveGatewayID(gatewayID string, token string) error {
-	_, err := c.client.DeleteMetadata(c.getContext(token), &MetadataRequest{
+	_, err := c.client.DeleteMetadata(c.getContext(token), &discovery.MetadataRequest{
 		ServiceName: c.self.ServiceName,
-		Id:          c.self.Id,
-		Metadata: &Metadata{Metadata: &Metadata_GatewayId{
+		ID:          c.self.ID,
+		Metadata: &discovery.Metadata{Metadata: &discovery.Metadata_GatewayId{
 			GatewayId: gatewayID,
 		}},
 	})
@@ -267,7 +267,7 @@ next:
 }
 
 // GetAllRoutersForGatewayID returns all routers that can handle the given GatewayID
-func (c *DefaultClient) GetAllRoutersForGatewayID(gatewayID string) (announcements []*Announcement, err error) {
+func (c *DefaultClient) GetAllRoutersForGatewayID(gatewayID string) (announcements []*discovery.Announcement, err error) {
 	routers, err := c.GetAll("router")
 	if err != nil {
 		return nil, err

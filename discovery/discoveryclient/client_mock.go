@@ -140,9 +140,9 @@ func (_m *MockClient) GetAllHandlersForAppID(appID string) ([]*discovery.Announc
 	return ret0, ret1
 }
 
-func (_m *MockClient) GetAllRoutersForGatewayID(gatewayID string) ([]*Announcement, error) {
+func (_m *MockClient) GetAllRoutersForGatewayID(gatewayID string) ([]*discovery.Announcement, error) {
 	ret := _m.ctrl.Call(_m, "GetAllRoutersForGatewayID", gatewayID)
-	ret0, _ := ret[0].([]*Announcement)
+	ret0, _ := ret[0].([]*discovery.Announcement)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
