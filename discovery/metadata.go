@@ -17,6 +17,16 @@ func (a *Announcement) AppIDs() (appIDs []string) {
 	return
 }
 
+// GatewayIDs that are handled by this component
+func (a *Announcement) GatewayIDs() (gatewayIDs []string) {
+	for _, meta := range a.Metadata {
+		if gatewayID := meta.GetGatewayId(); gatewayID != "" {
+			gatewayIDs = append(gatewayIDs, gatewayID)
+		}
+	}
+	return
+}
+
 // DevAddrPrefixes that are handled by this component
 func (a *Announcement) DevAddrPrefixes() (prefixes []types.DevAddrPrefix) {
 	for _, meta := range a.Metadata {
