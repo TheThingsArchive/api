@@ -20,7 +20,7 @@ func (a *Announcement) AppIDs() (appIDs []string) {
 // GatewayIDs that are handled by this component
 func (a *Announcement) GatewayIDs() (gatewayIDs []string) {
 	for _, meta := range a.Metadata {
-		if gatewayID := meta.GetGatewayId(); gatewayID != "" {
+		if gatewayID := meta.GetGatewayID(); gatewayID != "" {
 			gatewayIDs = append(gatewayIDs, gatewayID)
 		}
 	}

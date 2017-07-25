@@ -187,8 +187,8 @@ func (c *DefaultClient) AddGatewayID(gatewayID string, token string) error {
 	_, err := c.client.AddMetadata(c.getContext(token), &discovery.MetadataRequest{
 		ServiceName: c.self.ServiceName,
 		ID:          c.self.ID,
-		Metadata: &discovery.Metadata{Metadata: &discovery.Metadata_GatewayId{
-			GatewayId: gatewayID,
+		Metadata: &discovery.Metadata{Metadata: &discovery.Metadata_GatewayID{
+			GatewayID: gatewayID,
 		}},
 	})
 	return err
@@ -223,8 +223,8 @@ func (c *DefaultClient) RemoveGatewayID(gatewayID string, token string) error {
 	_, err := c.client.DeleteMetadata(c.getContext(token), &discovery.MetadataRequest{
 		ServiceName: c.self.ServiceName,
 		ID:          c.self.ID,
-		Metadata: &discovery.Metadata{Metadata: &discovery.Metadata_GatewayId{
-			GatewayId: gatewayID,
+		Metadata: &discovery.Metadata{Metadata: &discovery.Metadata_GatewayID{
+			GatewayID: gatewayID,
 		}},
 	})
 	return err

@@ -26,7 +26,7 @@ message Metadata {
 
     // GatewayID that is registered to this Router
     // This metadata can only be added if the requesting client is authorized to manage this GatewayID.
-    string gateway_id = 10;
+    string gateway_id = 10 [(gogoproto.customname) = "GatewayID"];
 
     // Metadata for Broker component (20-29)
 
@@ -141,7 +141,7 @@ message GetByAppIDRequest {
 }
 
 message GetByGatewayIDRequest {
-  string gateway_id = 30; // compatible with Metadata message
+  string gateway_id = 30 [(gogoproto.customname) = "GatewayID"]; // compatible with Metadata message
 }
 
 message GetByAppEUIRequest {
