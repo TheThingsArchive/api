@@ -25,7 +25,7 @@ GO_GW_SED ?= -e 's/\.AppId/\.AppID/g' -e 's/\.DevId/\.DevID/g' -e 's/\.AppEui/\.
 .PHONY: protos.go
 
 protos.go: $(GO_PROTO_TARGETS)
-	sed -i '' $(GO_GW_SED) $(shell $(ALL_FILES) | grep "\.pb\.gw\.go$$")
+	sed -i'' $(GO_GW_SED) $(shell $(ALL_FILES) | grep "\.pb\.gw\.go$$")
 
 %.pb.go: %.proto
 	protoc $(GO_PROTOC_FLAGS) $(PWD)/$<
@@ -60,7 +60,7 @@ JS_SED ?= -e 's/github.com_/github_com_/g' \
 .PHONY: protos.js
 
 protos.js: $(JS_PROTO_TARGETS)
-	sed -i '' $(JS_SED) $(shell $(ALL_FILES) | grep "\_pb.js$$")
+	sed -i'' $(JS_SED) $(shell $(ALL_FILES) | grep "\_pb.js$$")
 
 %_pb.js: %.proto
 	protoc $(JS_PROTOC_FLAGS) $(PWD)/$<
@@ -120,7 +120,7 @@ RUBY_SED ?= -e "s|github.com/TheThingsNetwork/api/||g"
 .PHONY: protos.ruby
 
 protos.ruby: $(RUBY_PROTO_TARGETS)
-	sed -i '' $(RUBY_SED) $(shell $(ALL_FILES) | grep "\_pb.rb$$")
+	sed -i'' $(RUBY_SED) $(shell $(ALL_FILES) | grep "\_pb.rb$$")
 
 %_pb.rb: %.proto
 	protoc $(RUBY_PROTOC_FLAGS) $(PWD)/$<
