@@ -42,6 +42,12 @@ public  final class Metadata extends
             }
             break;
           }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+            metadataCase_ = 10;
+            metadata_ = s;
+            break;
+          }
           case 162: {
             metadataCase_ = 20;
             metadata_ = input.readBytes();
@@ -85,6 +91,7 @@ public  final class Metadata extends
   private java.lang.Object metadata_;
   public enum MetadataCase
       implements com.google.protobuf.Internal.EnumLite {
+    GATEWAY_ID(10),
     DEV_ADDR_PREFIX(20),
     APP_ID(30),
     APP_EUI(31),
@@ -103,6 +110,7 @@ public  final class Metadata extends
 
     public static MetadataCase forNumber(int value) {
       switch (value) {
+        case 10: return GATEWAY_ID;
         case 20: return DEV_ADDR_PREFIX;
         case 30: return APP_ID;
         case 31: return APP_EUI;
@@ -119,6 +127,59 @@ public  final class Metadata extends
   getMetadataCase() {
     return MetadataCase.forNumber(
         metadataCase_);
+  }
+
+  public static final int GATEWAY_ID_FIELD_NUMBER = 10;
+  /**
+   * <pre>
+   * GatewayID that is registered to this Router
+   * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
+   * </pre>
+   *
+   * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+   */
+  public java.lang.String getGatewayId() {
+    java.lang.Object ref = "";
+    if (metadataCase_ == 10) {
+      ref = metadata_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (metadataCase_ == 10) {
+        metadata_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * GatewayID that is registered to this Router
+   * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
+   * </pre>
+   *
+   * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+   */
+  public com.google.protobuf.ByteString
+      getGatewayIdBytes() {
+    java.lang.Object ref = "";
+    if (metadataCase_ == 10) {
+      ref = metadata_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (metadataCase_ == 10) {
+        metadata_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int DEV_ADDR_PREFIX_FIELD_NUMBER = 20;
@@ -219,6 +280,9 @@ public  final class Metadata extends
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (metadataCase_ == 10) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, metadata_);
+    }
     if (metadataCase_ == 20) {
       output.writeBytes(
           20, (com.google.protobuf.ByteString) metadata_);
@@ -237,6 +301,9 @@ public  final class Metadata extends
     if (size != -1) return size;
 
     size = 0;
+    if (metadataCase_ == 10) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, metadata_);
+    }
     if (metadataCase_ == 20) {
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(
@@ -270,6 +337,10 @@ public  final class Metadata extends
         other.getMetadataCase());
     if (!result) return false;
     switch (metadataCase_) {
+      case 10:
+        result = result && getGatewayId()
+            .equals(other.getGatewayId());
+        break;
       case 20:
         result = result && getDevAddrPrefix()
             .equals(other.getDevAddrPrefix());
@@ -296,6 +367,10 @@ public  final class Metadata extends
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     switch (metadataCase_) {
+      case 10:
+        hash = (37 * hash) + GATEWAY_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getGatewayId().hashCode();
+        break;
       case 20:
         hash = (37 * hash) + DEV_ADDR_PREFIX_FIELD_NUMBER;
         hash = (53 * hash) + getDevAddrPrefix().hashCode();
@@ -464,6 +539,9 @@ public  final class Metadata extends
 
     public org.thethingsnetwork.api.discovery.Metadata buildPartial() {
       org.thethingsnetwork.api.discovery.Metadata result = new org.thethingsnetwork.api.discovery.Metadata(this);
+      if (metadataCase_ == 10) {
+        result.metadata_ = metadata_;
+      }
       if (metadataCase_ == 20) {
         result.metadata_ = metadata_;
       }
@@ -516,6 +594,12 @@ public  final class Metadata extends
     public Builder mergeFrom(org.thethingsnetwork.api.discovery.Metadata other) {
       if (other == org.thethingsnetwork.api.discovery.Metadata.getDefaultInstance()) return this;
       switch (other.getMetadataCase()) {
+        case GATEWAY_ID: {
+          metadataCase_ = 10;
+          metadata_ = other.metadata_;
+          onChanged();
+          break;
+        }
         case DEV_ADDR_PREFIX: {
           setDevAddrPrefix(other.getDevAddrPrefix());
           break;
@@ -574,6 +658,111 @@ public  final class Metadata extends
       return this;
     }
 
+
+    /**
+     * <pre>
+     * GatewayID that is registered to this Router
+     * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
+     * </pre>
+     *
+     * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     */
+    public java.lang.String getGatewayId() {
+      java.lang.Object ref = "";
+      if (metadataCase_ == 10) {
+        ref = metadata_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (metadataCase_ == 10) {
+          metadata_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * GatewayID that is registered to this Router
+     * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
+     * </pre>
+     *
+     * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     */
+    public com.google.protobuf.ByteString
+        getGatewayIdBytes() {
+      java.lang.Object ref = "";
+      if (metadataCase_ == 10) {
+        ref = metadata_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (metadataCase_ == 10) {
+          metadata_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * GatewayID that is registered to this Router
+     * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
+     * </pre>
+     *
+     * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     */
+    public Builder setGatewayId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  metadataCase_ = 10;
+      metadata_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * GatewayID that is registered to this Router
+     * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
+     * </pre>
+     *
+     * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     */
+    public Builder clearGatewayId() {
+      if (metadataCase_ == 10) {
+        metadataCase_ = 0;
+        metadata_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * GatewayID that is registered to this Router
+     * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
+     * </pre>
+     *
+     * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     */
+    public Builder setGatewayIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      metadataCase_ = 10;
+      metadata_ = value;
+      onChanged();
+      return this;
+    }
 
     /**
      * <pre>

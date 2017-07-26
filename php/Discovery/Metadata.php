@@ -22,6 +22,33 @@ class Metadata extends \Google\Protobuf\Internal\Message
 
     /**
      * <pre>
+     * GatewayID that is registered to this Router
+     * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
+     * </pre>
+     *
+     * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     */
+    public function getGatewayId()
+    {
+        return $this->readOneof(10);
+    }
+
+    /**
+     * <pre>
+     * GatewayID that is registered to this Router
+     * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
+     * </pre>
+     *
+     * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     */
+    public function setGatewayId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(10, $var);
+    }
+
+    /**
+     * <pre>
      * DevAddr prefix that is routed by this Broker
      * 5 bytes; the first byte is the prefix length, the following 4 bytes are the address.
      * Only authorized Brokers can announce PREFIX metadata.

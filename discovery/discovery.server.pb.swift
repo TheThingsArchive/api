@@ -38,6 +38,7 @@ internal protocol Discovery_DiscoveryProvider {
   func addmetadata(request : Discovery_MetadataRequest, session : Discovery_DiscoveryAddMetadataSession) throws -> Google_Protobuf_Empty
   func deletemetadata(request : Discovery_MetadataRequest, session : Discovery_DiscoveryDeleteMetadataSession) throws -> Google_Protobuf_Empty
   func getbyappid(request : Discovery_GetByAppIDRequest, session : Discovery_DiscoveryGetByAppIDSession) throws -> Discovery_Announcement
+  func getbygatewayid(request : Discovery_GetByGatewayIDRequest, session : Discovery_DiscoveryGetByGatewayIDSession) throws -> Discovery_Announcement
   func getbyappeui(request : Discovery_GetByAppEUIRequest, session : Discovery_DiscoveryGetByAppEUISession) throws -> Discovery_Announcement
 }
 
@@ -206,6 +207,31 @@ internal class Discovery_DiscoveryGetByAppIDSession : Discovery_DiscoverySession
   }
 }
 
+// GetByGatewayID (Unary)
+internal class Discovery_DiscoveryGetByGatewayIDSession : Discovery_DiscoverySession {
+  private var provider : Discovery_DiscoveryProvider
+
+  /// Create a session.
+  fileprivate init(handler:gRPC.Handler, provider: Discovery_DiscoveryProvider) {
+    self.provider = provider
+    super.init(handler:handler)
+  }
+
+  /// Run the session. Internal.
+  fileprivate func run(queue:DispatchQueue) throws {
+    try handler.receiveMessage(initialMetadata:initialMetadata) {(requestData) in
+      if let requestData = requestData {
+        let requestMessage = try Discovery_GetByGatewayIDRequest(serializedData:requestData)
+        let replyMessage = try self.provider.getbygatewayid(request:requestMessage, session: self)
+        try self.handler.sendResponse(message:replyMessage.serializedData(),
+                                      statusCode:self.statusCode,
+                                      statusMessage:self.statusMessage,
+                                      trailingMetadata:self.trailingMetadata)
+      }
+    }
+  }
+}
+
 // GetByAppEUI (Unary)
 internal class Discovery_DiscoveryGetByAppEUISession : Discovery_DiscoverySession {
   private var provider : Discovery_DiscoveryProvider
@@ -289,6 +315,8 @@ internal class Discovery_DiscoveryServer {
           try Discovery_DiscoveryDeleteMetadataSession(handler:handler, provider:provider).run(queue:queue)
         case "/discovery.Discovery/GetByAppID":
           try Discovery_DiscoveryGetByAppIDSession(handler:handler, provider:provider).run(queue:queue)
+        case "/discovery.Discovery/GetByGatewayID":
+          try Discovery_DiscoveryGetByGatewayIDSession(handler:handler, provider:provider).run(queue:queue)
         case "/discovery.Discovery/GetByAppEUI":
           try Discovery_DiscoveryGetByAppEUISession(handler:handler, provider:provider).run(queue:queue)
         default:
