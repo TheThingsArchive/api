@@ -25,6 +25,8 @@ func (m *MonitorClient) BrokerClient(ctx context.Context, opts ...grpc.CallOptio
 		var sessionCtx context.Context
 		sessionCtx, c.cancel = context.WithCancel(ctx)
 		for name, cli := range m.clients {
+			cli := cli // shadow cli; we're using it in the setup funcs below
+
 			uplink := streambuffer.New(m.bufferSize, func() (grpc.ClientStream, error) {
 				return cli.BrokerUplink(sessionCtx, opts...)
 			})
