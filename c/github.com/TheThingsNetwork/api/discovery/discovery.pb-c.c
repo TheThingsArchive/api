@@ -308,6 +308,49 @@ void   discovery__get_by_app_idrequest__free_unpacked
   assert(message->base.descriptor == &discovery__get_by_app_idrequest__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
+void   discovery__get_by_gateway_idrequest__init
+                     (Discovery__GetByGatewayIDRequest         *message)
+{
+  static Discovery__GetByGatewayIDRequest init_value = DISCOVERY__GET_BY_GATEWAY_IDREQUEST__INIT;
+  *message = init_value;
+}
+size_t discovery__get_by_gateway_idrequest__get_packed_size
+                     (const Discovery__GetByGatewayIDRequest *message)
+{
+  assert(message->base.descriptor == &discovery__get_by_gateway_idrequest__descriptor);
+  return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
+}
+size_t discovery__get_by_gateway_idrequest__pack
+                     (const Discovery__GetByGatewayIDRequest *message,
+                      uint8_t       *out)
+{
+  assert(message->base.descriptor == &discovery__get_by_gateway_idrequest__descriptor);
+  return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
+}
+size_t discovery__get_by_gateway_idrequest__pack_to_buffer
+                     (const Discovery__GetByGatewayIDRequest *message,
+                      ProtobufCBuffer *buffer)
+{
+  assert(message->base.descriptor == &discovery__get_by_gateway_idrequest__descriptor);
+  return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
+}
+Discovery__GetByGatewayIDRequest *
+       discovery__get_by_gateway_idrequest__unpack
+                     (ProtobufCAllocator  *allocator,
+                      size_t               len,
+                      const uint8_t       *data)
+{
+  return (Discovery__GetByGatewayIDRequest *)
+     protobuf_c_message_unpack (&discovery__get_by_gateway_idrequest__descriptor,
+                                allocator, len, data);
+}
+void   discovery__get_by_gateway_idrequest__free_unpacked
+                     (Discovery__GetByGatewayIDRequest *message,
+                      ProtobufCAllocator *allocator)
+{
+  assert(message->base.descriptor == &discovery__get_by_gateway_idrequest__descriptor);
+  protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
+}
 void   discovery__get_by_app_euirequest__init
                      (Discovery__GetByAppEUIRequest         *message)
 {
@@ -351,8 +394,20 @@ void   discovery__get_by_app_euirequest__free_unpacked
   assert(message->base.descriptor == &discovery__get_by_app_euirequest__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-static const ProtobufCFieldDescriptor discovery__metadata__field_descriptors[3] =
+static const ProtobufCFieldDescriptor discovery__metadata__field_descriptors[4] =
 {
+  {
+    "gateway_id",
+    10,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_STRING,
+    offsetof(Discovery__Metadata, metadata_case),
+    offsetof(Discovery__Metadata, gateway_id),
+    NULL,
+    NULL,
+    0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
   {
     "dev_addr_prefix",
     20,
@@ -391,15 +446,17 @@ static const ProtobufCFieldDescriptor discovery__metadata__field_descriptors[3] 
   },
 };
 static const unsigned discovery__metadata__field_indices_by_name[] = {
-  2,   /* field[2] = app_eui */
-  1,   /* field[1] = app_id */
-  0,   /* field[0] = dev_addr_prefix */
+  3,   /* field[3] = app_eui */
+  2,   /* field[2] = app_id */
+  1,   /* field[1] = dev_addr_prefix */
+  0,   /* field[0] = gateway_id */
 };
-static const ProtobufCIntRange discovery__metadata__number_ranges[2 + 1] =
+static const ProtobufCIntRange discovery__metadata__number_ranges[3 + 1] =
 {
-  { 20, 0 },
-  { 30, 1 },
-  { 0, 3 }
+  { 10, 0 },
+  { 20, 1 },
+  { 30, 2 },
+  { 0, 4 }
 };
 const ProtobufCMessageDescriptor discovery__metadata__descriptor =
 {
@@ -409,10 +466,10 @@ const ProtobufCMessageDescriptor discovery__metadata__descriptor =
   "Discovery__Metadata",
   "discovery",
   sizeof(Discovery__Metadata),
-  3,
+  4,
   discovery__metadata__field_descriptors,
   discovery__metadata__field_indices_by_name,
-  2,  discovery__metadata__number_ranges,
+  3,  discovery__metadata__number_ranges,
   (ProtobufCMessageInit) discovery__metadata__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
@@ -842,6 +899,44 @@ const ProtobufCMessageDescriptor discovery__get_by_app_idrequest__descriptor =
   (ProtobufCMessageInit) discovery__get_by_app_idrequest__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
+static const ProtobufCFieldDescriptor discovery__get_by_gateway_idrequest__field_descriptors[1] =
+{
+  {
+    "gateway_id",
+    30,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_STRING,
+    0,   /* quantifier_offset */
+    offsetof(Discovery__GetByGatewayIDRequest, gateway_id),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+};
+static const unsigned discovery__get_by_gateway_idrequest__field_indices_by_name[] = {
+  0,   /* field[0] = gateway_id */
+};
+static const ProtobufCIntRange discovery__get_by_gateway_idrequest__number_ranges[1 + 1] =
+{
+  { 30, 0 },
+  { 0, 1 }
+};
+const ProtobufCMessageDescriptor discovery__get_by_gateway_idrequest__descriptor =
+{
+  PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
+  "discovery.GetByGatewayIDRequest",
+  "GetByGatewayIDRequest",
+  "Discovery__GetByGatewayIDRequest",
+  "discovery",
+  sizeof(Discovery__GetByGatewayIDRequest),
+  1,
+  discovery__get_by_gateway_idrequest__field_descriptors,
+  discovery__get_by_gateway_idrequest__field_indices_by_name,
+  1,  discovery__get_by_gateway_idrequest__number_ranges,
+  (ProtobufCMessageInit) discovery__get_by_gateway_idrequest__init,
+  NULL,NULL,NULL    /* reserved[123] */
+};
 static const ProtobufCFieldDescriptor discovery__get_by_app_euirequest__field_descriptors[1] =
 {
   {
@@ -880,7 +975,7 @@ const ProtobufCMessageDescriptor discovery__get_by_app_euirequest__descriptor =
   (ProtobufCMessageInit) discovery__get_by_app_euirequest__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCMethodDescriptor discovery__discovery__method_descriptors[7] =
+static const ProtobufCMethodDescriptor discovery__discovery__method_descriptors[8] =
 {
   { "Announce", &discovery__announcement__descriptor, &google__protobuf__empty__descriptor },
   { "GetAll", &discovery__get_service_request__descriptor, &discovery__announcements_response__descriptor },
@@ -888,6 +983,7 @@ static const ProtobufCMethodDescriptor discovery__discovery__method_descriptors[
   { "AddMetadata", &discovery__metadata_request__descriptor, &google__protobuf__empty__descriptor },
   { "DeleteMetadata", &discovery__metadata_request__descriptor, &google__protobuf__empty__descriptor },
   { "GetByAppID", &discovery__get_by_app_idrequest__descriptor, &discovery__announcement__descriptor },
+  { "GetByGatewayID", &discovery__get_by_gateway_idrequest__descriptor, &discovery__announcement__descriptor },
   { "GetByAppEUI", &discovery__get_by_app_euirequest__descriptor, &discovery__announcement__descriptor },
 };
 const unsigned discovery__discovery__method_indices_by_name[] = {
@@ -896,8 +992,9 @@ const unsigned discovery__discovery__method_indices_by_name[] = {
   4,        /* DeleteMetadata */
   2,        /* Get */
   1,        /* GetAll */
-  6,        /* GetByAppEUI */
-  5         /* GetByAppID */
+  7,        /* GetByAppEUI */
+  5,        /* GetByAppID */
+  6         /* GetByGatewayID */
 };
 const ProtobufCServiceDescriptor discovery__discovery__descriptor =
 {
@@ -906,7 +1003,7 @@ const ProtobufCServiceDescriptor discovery__discovery__descriptor =
   "Discovery",
   "Discovery__Discovery",
   "discovery",
-  7,
+  8,
   discovery__discovery__method_descriptors,
   discovery__discovery__method_indices_by_name
 };
@@ -958,13 +1055,21 @@ void discovery__discovery__get_by_app_id(ProtobufCService *service,
   assert(service->descriptor == &discovery__discovery__descriptor);
   service->invoke(service, 5, (const ProtobufCMessage *) input, (ProtobufCClosure) closure, closure_data);
 }
+void discovery__discovery__get_by_gateway_id(ProtobufCService *service,
+                                             const Discovery__GetByGatewayIDRequest *input,
+                                             Discovery__Announcement_Closure closure,
+                                             void *closure_data)
+{
+  assert(service->descriptor == &discovery__discovery__descriptor);
+  service->invoke(service, 6, (const ProtobufCMessage *) input, (ProtobufCClosure) closure, closure_data);
+}
 void discovery__discovery__get_by_app_eui(ProtobufCService *service,
                                           const Discovery__GetByAppEUIRequest *input,
                                           Discovery__Announcement_Closure closure,
                                           void *closure_data)
 {
   assert(service->descriptor == &discovery__discovery__descriptor);
-  service->invoke(service, 6, (const ProtobufCMessage *) input, (ProtobufCClosure) closure, closure_data);
+  service->invoke(service, 7, (const ProtobufCMessage *) input, (ProtobufCClosure) closure, closure_data);
 }
 void discovery__discovery__init (Discovery__Discovery_Service *service,
                                  Discovery__Discovery_ServiceDestroy destroy)

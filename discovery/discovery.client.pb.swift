@@ -332,6 +332,56 @@ internal class Discovery_DiscoveryGetByAppIDCall {
   }
 }
 
+/// GetByGatewayID (Unary)
+internal class Discovery_DiscoveryGetByGatewayIDCall {
+  private var call : Call
+
+  /// Create a call.
+  fileprivate init(_ channel: Channel) {
+    self.call = channel.makeCall("/discovery.Discovery/GetByGatewayID")
+  }
+
+  /// Run the call. Blocks until the reply is received.
+  fileprivate func run(request: Discovery_GetByGatewayIDRequest,
+                       metadata: Metadata) throws -> Discovery_Announcement {
+    let sem = DispatchSemaphore(value: 0)
+    var returnCallResult : CallResult!
+    var returnResponse : Discovery_Announcement?
+    _ = try start(request:request, metadata:metadata) {response, callResult in
+      returnResponse = response
+      returnCallResult = callResult
+      sem.signal()
+    }
+    _ = sem.wait(timeout: DispatchTime.distantFuture)
+    if let returnResponse = returnResponse {
+      return returnResponse
+    } else {
+      throw Discovery_DiscoveryClientError.error(c: returnCallResult)
+    }
+  }
+
+  /// Start the call. Nonblocking.
+  fileprivate func start(request: Discovery_GetByGatewayIDRequest,
+                         metadata: Metadata,
+                         completion: @escaping (Discovery_Announcement?, CallResult)->())
+    throws -> Discovery_DiscoveryGetByGatewayIDCall {
+
+      let requestData = try request.serializedData()
+      try call.start(.unary,
+                     metadata:metadata,
+                     message:requestData)
+      {(callResult) in
+        if let responseData = callResult.resultData,
+          let response = try? Discovery_Announcement(serializedData:responseData) {
+          completion(response, callResult)
+        } else {
+          completion(nil, callResult)
+        }
+      }
+      return self
+  }
+}
+
 /// GetByAppEUI (Unary)
 internal class Discovery_DiscoveryGetByAppEUICall {
   private var call : Call
@@ -502,6 +552,21 @@ internal class Discovery_DiscoveryService {
     throws
     -> Discovery_DiscoveryGetByAppIDCall {
       return try Discovery_DiscoveryGetByAppIDCall(channel).start(request:request,
+                                                 metadata:metadata,
+                                                 completion:completion)
+  }
+  /// Synchronous. Unary.
+  internal func getbygatewayid(_ request: Discovery_GetByGatewayIDRequest)
+    throws
+    -> Discovery_Announcement {
+      return try Discovery_DiscoveryGetByGatewayIDCall(channel).run(request:request, metadata:metadata)
+  }
+  /// Asynchronous. Unary.
+  internal func getbygatewayid(_ request: Discovery_GetByGatewayIDRequest,
+                  completion: @escaping (Discovery_Announcement?, CallResult)->())
+    throws
+    -> Discovery_DiscoveryGetByGatewayIDCall {
+      return try Discovery_DiscoveryGetByGatewayIDCall(channel).start(request:request,
                                                  metadata:metadata,
                                                  completion:completion)
   }

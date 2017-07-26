@@ -25,6 +25,7 @@ typedef struct _Discovery__GetRequest Discovery__GetRequest;
 typedef struct _Discovery__MetadataRequest Discovery__MetadataRequest;
 typedef struct _Discovery__AnnouncementsResponse Discovery__AnnouncementsResponse;
 typedef struct _Discovery__GetByAppIDRequest Discovery__GetByAppIDRequest;
+typedef struct _Discovery__GetByGatewayIDRequest Discovery__GetByGatewayIDRequest;
 typedef struct _Discovery__GetByAppEUIRequest Discovery__GetByAppEUIRequest;
 
 
@@ -35,6 +36,7 @@ typedef struct _Discovery__GetByAppEUIRequest Discovery__GetByAppEUIRequest;
 
 typedef enum {
   DISCOVERY__METADATA__METADATA__NOT_SET = 0,
+  DISCOVERY__METADATA__METADATA_GATEWAY_ID = 10,
   DISCOVERY__METADATA__METADATA_DEV_ADDR_PREFIX = 20,
   DISCOVERY__METADATA__METADATA_APP_ID = 30,
   DISCOVERY__METADATA__METADATA_APP_EUI = 31,
@@ -45,6 +47,11 @@ struct  _Discovery__Metadata
   ProtobufCMessage base;
   Discovery__Metadata__MetadataCase metadata_case;
   union {
+    /*
+     * GatewayID that is registered to this Router
+     * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
+     */
+    char *gateway_id;
     /*
      * DevAddr prefix that is routed by this Broker
      * 5 bytes; the first byte is the prefix length, the following 4 bytes are the address.
@@ -242,6 +249,19 @@ struct  _Discovery__GetByAppIDRequest
     , NULL }
 
 
+struct  _Discovery__GetByGatewayIDRequest
+{
+  ProtobufCMessage base;
+  /*
+   * compatible with Metadata message
+   */
+  char *gateway_id;
+};
+#define DISCOVERY__GET_BY_GATEWAY_IDREQUEST__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&discovery__get_by_gateway_idrequest__descriptor) \
+    , NULL }
+
+
 struct  _Discovery__GetByAppEUIRequest
 {
   ProtobufCMessage base;
@@ -389,6 +409,25 @@ Discovery__GetByAppIDRequest *
 void   discovery__get_by_app_idrequest__free_unpacked
                      (Discovery__GetByAppIDRequest *message,
                       ProtobufCAllocator *allocator);
+/* Discovery__GetByGatewayIDRequest methods */
+void   discovery__get_by_gateway_idrequest__init
+                     (Discovery__GetByGatewayIDRequest         *message);
+size_t discovery__get_by_gateway_idrequest__get_packed_size
+                     (const Discovery__GetByGatewayIDRequest   *message);
+size_t discovery__get_by_gateway_idrequest__pack
+                     (const Discovery__GetByGatewayIDRequest   *message,
+                      uint8_t             *out);
+size_t discovery__get_by_gateway_idrequest__pack_to_buffer
+                     (const Discovery__GetByGatewayIDRequest   *message,
+                      ProtobufCBuffer     *buffer);
+Discovery__GetByGatewayIDRequest *
+       discovery__get_by_gateway_idrequest__unpack
+                     (ProtobufCAllocator  *allocator,
+                      size_t               len,
+                      const uint8_t       *data);
+void   discovery__get_by_gateway_idrequest__free_unpacked
+                     (Discovery__GetByGatewayIDRequest *message,
+                      ProtobufCAllocator *allocator);
 /* Discovery__GetByAppEUIRequest methods */
 void   discovery__get_by_app_euirequest__init
                      (Discovery__GetByAppEUIRequest         *message);
@@ -431,6 +470,9 @@ typedef void (*Discovery__AnnouncementsResponse_Closure)
 typedef void (*Discovery__GetByAppIDRequest_Closure)
                  (const Discovery__GetByAppIDRequest *message,
                   void *closure_data);
+typedef void (*Discovery__GetByGatewayIDRequest_Closure)
+                 (const Discovery__GetByGatewayIDRequest *message,
+                  void *closure_data);
 typedef void (*Discovery__GetByAppEUIRequest_Closure)
                  (const Discovery__GetByAppEUIRequest *message,
                   void *closure_data);
@@ -465,6 +507,10 @@ struct _Discovery__Discovery_Service
                         const Discovery__GetByAppIDRequest *input,
                         Discovery__Announcement_Closure closure,
                         void *closure_data);
+  void (*get_by_gateway_id)(Discovery__Discovery_Service *service,
+                            const Discovery__GetByGatewayIDRequest *input,
+                            Discovery__Announcement_Closure closure,
+                            void *closure_data);
   void (*get_by_app_eui)(Discovery__Discovery_Service *service,
                          const Discovery__GetByAppEUIRequest *input,
                          Discovery__Announcement_Closure closure,
@@ -483,6 +529,7 @@ void discovery__discovery__init (Discovery__Discovery_Service *service,
       function_prefix__ ## add_metadata,\
       function_prefix__ ## delete_metadata,\
       function_prefix__ ## get_by_app_id,\
+      function_prefix__ ## get_by_gateway_id,\
       function_prefix__ ## get_by_app_eui  }
 void discovery__discovery__announce(ProtobufCService *service,
                                     const Discovery__Announcement *input,
@@ -508,6 +555,10 @@ void discovery__discovery__get_by_app_id(ProtobufCService *service,
                                          const Discovery__GetByAppIDRequest *input,
                                          Discovery__Announcement_Closure closure,
                                          void *closure_data);
+void discovery__discovery__get_by_gateway_id(ProtobufCService *service,
+                                             const Discovery__GetByGatewayIDRequest *input,
+                                             Discovery__Announcement_Closure closure,
+                                             void *closure_data);
 void discovery__discovery__get_by_app_eui(ProtobufCService *service,
                                           const Discovery__GetByAppEUIRequest *input,
                                           Discovery__Announcement_Closure closure,
@@ -534,6 +585,7 @@ extern const ProtobufCMessageDescriptor discovery__get_request__descriptor;
 extern const ProtobufCMessageDescriptor discovery__metadata_request__descriptor;
 extern const ProtobufCMessageDescriptor discovery__announcements_response__descriptor;
 extern const ProtobufCMessageDescriptor discovery__get_by_app_idrequest__descriptor;
+extern const ProtobufCMessageDescriptor discovery__get_by_gateway_idrequest__descriptor;
 extern const ProtobufCMessageDescriptor discovery__get_by_app_euirequest__descriptor;
 extern const ProtobufCServiceDescriptor discovery__discovery__descriptor;
 extern const ProtobufCServiceDescriptor discovery__discovery_manager__descriptor;

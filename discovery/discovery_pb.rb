@@ -8,6 +8,7 @@ require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "discovery.Metadata" do
     oneof :metadata do
+      optional :gateway_id, :string, 10
       optional :dev_addr_prefix, :bytes, 20
       optional :app_id, :string, 30
       optional :app_eui, :bytes, 31
@@ -46,6 +47,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "discovery.GetByAppIDRequest" do
     optional :app_id, :string, 30
   end
+  add_message "discovery.GetByGatewayIDRequest" do
+    optional :gateway_id, :string, 30
+  end
   add_message "discovery.GetByAppEUIRequest" do
     optional :app_eui, :bytes, 31
   end
@@ -59,5 +63,6 @@ module Discovery
   MetadataRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.MetadataRequest").msgclass
   AnnouncementsResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.AnnouncementsResponse").msgclass
   GetByAppIDRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.GetByAppIDRequest").msgclass
+  GetByGatewayIDRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.GetByGatewayIDRequest").msgclass
   GetByAppEUIRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.GetByAppEUIRequest").msgclass
 end

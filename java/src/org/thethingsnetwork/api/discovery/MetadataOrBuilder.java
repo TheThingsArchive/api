@@ -9,6 +9,26 @@ public interface MetadataOrBuilder extends
 
   /**
    * <pre>
+   * GatewayID that is registered to this Router
+   * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
+   * </pre>
+   *
+   * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+   */
+  java.lang.String getGatewayId();
+  /**
+   * <pre>
+   * GatewayID that is registered to this Router
+   * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
+   * </pre>
+   *
+   * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+   */
+  com.google.protobuf.ByteString
+      getGatewayIdBytes();
+
+  /**
+   * <pre>
    * DevAddr prefix that is routed by this Broker
    * 5 bytes; the first byte is the prefix length, the following 4 bytes are the address.
    * Only authorized Brokers can announce PREFIX metadata.

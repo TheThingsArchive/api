@@ -28,6 +28,16 @@ struct Discovery_Metadata: SwiftProtobuf.Message {
   /// General metadata (0-9)
   var metadata: Discovery_Metadata.OneOf_Metadata? = nil
 
+  /// GatewayID that is registered to this Router
+  /// This metadata can only be added if the requesting client is authorized to manage this GatewayID.
+  var gatewayID: String {
+    get {
+      if case .gatewayID(let v)? = metadata {return v}
+      return String()
+    }
+    set {metadata = .gatewayID(newValue)}
+  }
+
   /// DevAddr prefix that is routed by this Broker
   /// 5 bytes; the first byte is the prefix length, the following 4 bytes are the address.
   /// Only authorized Brokers can announce PREFIX metadata.
@@ -63,6 +73,9 @@ struct Discovery_Metadata: SwiftProtobuf.Message {
 
   /// General metadata (0-9)
   enum OneOf_Metadata: Equatable {
+    /// GatewayID that is registered to this Router
+    /// This metadata can only be added if the requesting client is authorized to manage this GatewayID.
+    case gatewayID(String)
     /// DevAddr prefix that is routed by this Broker
     /// 5 bytes; the first byte is the prefix length, the following 4 bytes are the address.
     /// Only authorized Brokers can announce PREFIX metadata.
@@ -76,6 +89,7 @@ struct Discovery_Metadata: SwiftProtobuf.Message {
 
     static func ==(lhs: Discovery_Metadata.OneOf_Metadata, rhs: Discovery_Metadata.OneOf_Metadata) -> Bool {
       switch (lhs, rhs) {
+      case (.gatewayID(let l), .gatewayID(let r)): return l == r
       case (.devAddrPrefix(let l), .devAddrPrefix(let r)): return l == r
       case (.appID(let l), .appID(let r)): return l == r
       case (.appEui(let l), .appEui(let r)): return l == r
@@ -93,6 +107,11 @@ struct Discovery_Metadata: SwiftProtobuf.Message {
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
+      case 10:
+        if self.metadata != nil {try decoder.handleConflictingOneOf()}
+        var v: String?
+        try decoder.decodeSingularStringField(value: &v)
+        if let v = v {self.metadata = .gatewayID(v)}
       case 20:
         if self.metadata != nil {try decoder.handleConflictingOneOf()}
         var v: Data?
@@ -119,6 +138,8 @@ struct Discovery_Metadata: SwiftProtobuf.Message {
   /// `Message` and `Message+*Additions` files.
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     switch self.metadata {
+    case .gatewayID(let v)?:
+      try visitor.visitSingularStringField(value: v, fieldNumber: 10)
     case .devAddrPrefix(let v)?:
       try visitor.visitSingularBytesField(value: v, fieldNumber: 20)
     case .appID(let v)?:
@@ -487,6 +508,41 @@ struct Discovery_GetByAppIDRequest: SwiftProtobuf.Message {
   }
 }
 
+struct Discovery_GetByGatewayIDRequest: SwiftProtobuf.Message {
+  static let protoMessageName: String = _protobuf_package + ".GetByGatewayIDRequest"
+
+  /// compatible with Metadata message
+  var gatewayID: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
+  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
+  /// initializers are defined in the SwiftProtobuf library. See the Message and
+  /// Message+*Additions` files.
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 30: try decoder.decodeSingularStringField(value: &self.gatewayID)
+      default: break
+      }
+    }
+  }
+
+  /// Used by the encoding methods of the SwiftProtobuf library, not generally
+  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
+  /// other serializer methods are defined in the SwiftProtobuf library. See the
+  /// `Message` and `Message+*Additions` files.
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.gatewayID.isEmpty {
+      try visitor.visitSingularStringField(value: self.gatewayID, fieldNumber: 30)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+}
+
 struct Discovery_GetByAppEUIRequest: SwiftProtobuf.Message {
   static let protoMessageName: String = _protobuf_package + ".GetByAppEUIRequest"
 
@@ -528,6 +584,7 @@ fileprivate let _protobuf_package = "discovery"
 
 extension Discovery_Metadata: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    10: .standard(proto: "gateway_id"),
     20: .standard(proto: "dev_addr_prefix"),
     30: .standard(proto: "app_id"),
     31: .standard(proto: "app_eui"),
@@ -666,6 +723,18 @@ extension Discovery_GetByAppIDRequest: SwiftProtobuf._MessageImplementationBase,
 
   func _protobuf_generated_isEqualTo(other: Discovery_GetByAppIDRequest) -> Bool {
     if self.appID != other.appID {return false}
+    if unknownFields != other.unknownFields {return false}
+    return true
+  }
+}
+
+extension Discovery_GetByGatewayIDRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    30: .standard(proto: "gateway_id"),
+  ]
+
+  func _protobuf_generated_isEqualTo(other: Discovery_GetByGatewayIDRequest) -> Bool {
+    if self.gatewayID != other.gatewayID {return false}
     if unknownFields != other.unknownFields {return false}
     return true
   }
