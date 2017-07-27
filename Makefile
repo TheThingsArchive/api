@@ -1,6 +1,6 @@
 .PHONY: all
 
-all: protoc protos
+all: protoc protos mocks
 
 .PHONY: protoc
 
@@ -45,6 +45,8 @@ DOCKER_ARGS = run --user `id -u` --rm -v$(GOPATH):$(GOPATH) -w`pwd`
 DOCKER_IMAGE ?= thethingsindustries/protoc
 PROTOC ?= $(DOCKER) $(DOCKER_ARGS) $(DOCKER_IMAGE) -I/usr/include
 PROTOC += -I$(GOPATH)/src -I$(GOPATH)/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis
+
+*pb.*: $(API_PKG) $(GOGO_PKG) $(GRPC_GATEWAY_PKG)
 
 # Go
 GO_PROTO_TARGETS ?= $(patsubst %.proto,%.pb.go,$(shell $(PROTO_FILES)))
@@ -186,7 +188,15 @@ protos.c: $(C_PROTO_TARGETS)
 
 # Mocks
 
-mocks:
-	mockgen -source=./protocol/lorawan/device.pb.go -package lorawan DeviceManagerClient > protocol/lorawan/device_mock.go
-	mockgen -source=./networkserver/networkserver.pb.go -package networkserver NetworkServerClient > networkserver/networkserver_mock.go
-	mockgen -source=./discovery/discoveryclient/client.go -package discoveryclient Client > discovery/discoveryclient/client_mock.go
+MOCKGEN ?= mockgen
+
+.PHONY: mockgen
+
+mockgen:
+	go get -v github.com/golang/mock/mockgen
+
+.PHONY: mocks
+
+mocks: $(MOCKGEN)
+	$(MOCKGEN) -source=./protocol/lorawan/device.pb.go -package lorawan DeviceManagerClient > protocol/lorawan/device_mock.go
+	$(MOCKGEN) -source=./discovery/discoveryclient/client.go -package discoveryclient Client > discovery/discoveryclient/client_mock.go
