@@ -200,3 +200,15 @@ mockgen:
 mocks: $(MOCKGEN)
 	$(MOCKGEN) -source=./protocol/lorawan/device.pb.go -package lorawan DeviceManagerClient > protocol/lorawan/device_mock.go
 	$(MOCKGEN) -source=./discovery/discoveryclient/client.go -package discoveryclient Client > discovery/discoveryclient/client_mock.go
+
+# Clean
+
+.PHONY: clean
+
+clean: clean-protos clean-mocks
+
+clean-protos:
+	find . -name '*pb.*' -delete -or -name '*.pb-c.*' -delete -or -wholename './php/*' -delete -or -wholename './java/src/*' -delete
+
+clean-mocks:
+	find . -name '*_mock.go' -delete
