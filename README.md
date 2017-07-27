@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/TheThingsNetwork/api.svg?branch=master)](https://travis-ci.org/TheThingsNetwork/api)
+
 # The Things Network API
 
 ## Languages
