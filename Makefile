@@ -1,6 +1,10 @@
 .PHONY: all
 
-all: protoc protos mocks
+all: deps protos mocks
+
+.PHONY: deps
+
+deps: protoc mockgen
 
 .PHONY: protoc
 
@@ -19,34 +23,21 @@ COMMA := ,
 ALL_FILES ?= (git ls-files . && git ls-files . --exclude-standard --others) | grep -v node_modules | sed 's:^:./:'
 PROTO_FILES ?= $(ALL_FILES) | grep "\.proto$$"
 
+GO := $(shell command -v go 2> /dev/null)
 # Assuming this Makefile is located at `$GOPATH/src/TheThingsNetwork/api/Makefile`
 GOPATH = $(shell dirname $(shell dirname $(shell dirname $(shell dirname $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))))))
-
-API_REPO=github.com/TheThingsNetwork/api
-API_PKG=$(GOPATH)/src/$(API_REPO)
-
-$(API_PKG):
-	git clone https://$(API_REPO) $@
 
 GOGO_REPO=github.com/gogo/protobuf
 GOGO_PKG=$(GOPATH)/src/$(GOGO_REPO)
 
-$(GOGO_PKG):
-	git clone https://$(GOGO_REPO) $@
-
 GRPC_GATEWAY_REPO=github.com/grpc-ecosystem/grpc-gateway
 GRPC_GATEWAY_PKG=$(GOPATH)/src/$(GRPC_GATEWAY_REPO)
-
-$(GRPC_GATEWAY_PKG):
-	git clone https://$(GRPC_GATEWAY_REPO) $@
 
 DOCKER ?= docker
 DOCKER_ARGS = run --user `id -u` --rm -v$(GOPATH):$(GOPATH) -w`pwd`
 DOCKER_IMAGE ?= thethingsindustries/protoc
 PROTOC ?= $(DOCKER) $(DOCKER_ARGS) $(DOCKER_IMAGE) -I/usr/include
-PROTOC += -I$(GOPATH)/src -I$(GOPATH)/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis
-
-*pb.*: $(API_PKG) $(GOGO_PKG) $(GRPC_GATEWAY_PKG)
+PROTOC += -I$(GOPATH)/src -I$(GRPC_GATEWAY_PKG)/third_party/googleapis
 
 # Go
 GO_PROTO_TARGETS ?= $(patsubst %.proto,%.pb.go,$(shell $(PROTO_FILES)))
@@ -62,7 +53,7 @@ GO_GW_SED ?= -e 's/\.AppId/\.AppID/g' -e 's/\.DevId/\.DevID/g' -e 's/\.AppEui/\.
 protos.go: $(GO_PROTO_TARGETS)
 	sed -i'' $(GO_GW_SED) $(shell $(ALL_FILES) | grep "\.pb\.gw\.go$$")
 
-%.pb.go: %.proto $(GOGO_TYPE_PKG_PATH) $(API_PKG_PATH)
+%.pb.go: %.proto
 	$(PROTOC) $(GO_PROTOC_FLAGS) $(PWD)/$<
 
 # Java
@@ -186,6 +177,18 @@ protos.c: $(C_PROTO_TARGETS)
 %.pb-c.c: %.proto
 	$(PROTOC) $(C_PROTOC_FLAGS) $(PWD)/$<
 
+# Dependencies
+
+$(GOPATH)/src/github.com/%:
+ifeq ($(shell command -v $(GO) 2> /dev/null),)
+	git clone https://github.com/$* $@
+else
+	$(GO) get -d github.com/$*/...
+endif
+
+PROTO_TARGETS = $(GO_PROTO_TARGETS) $(JS_PROTO_TARGETS) $(JAVA_PROTO_TARGETS) $(SWIFT_PROTO_TARGETS) $(PHP_PROTO_TARGETS) $(RUBY_PROTO_TARGETS) $(C_PROTO_TARGETS)
+$(PROTO_TARGETS): $(GOGO_PKG) $(GRPC_GATEWAY_PKG)
+
 # Mocks
 
 MOCKGEN ?= mockgen
@@ -193,11 +196,18 @@ MOCKGEN ?= mockgen
 .PHONY: mockgen
 
 mockgen:
-	go get -v github.com/golang/mock/mockgen
+ifeq ($(shell command -v $(MOCKGEN) 2> /dev/null),)
+ifeq ($(shell command -v $(GO) 2> /dev/null),)
+	$(error go is not installed)
+else
+	$(GO) get github.com/golang/mock/mockgen
+endif
+endif
+
 
 .PHONY: mocks
 
-mocks: $(MOCKGEN)
+mocks: mockgen
 	$(MOCKGEN) -source=./protocol/lorawan/device.pb.go -package lorawan DeviceManagerClient > protocol/lorawan/device_mock.go
 	$(MOCKGEN) -source=./discovery/discoveryclient/client.go -package discoveryclient Client > discovery/discoveryclient/client_mock.go
 
