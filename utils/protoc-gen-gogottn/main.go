@@ -47,14 +47,14 @@ func main() {
 	// fileBase := strings.Split(strings.TrimPrefix(file, dir), ".")[0]
 
 	for service, svc := range doc.Services {
-		svc.SetDocument(true)
+		svc.SetDocument(svc.File.IsMain())
 		doc := doc.FilterDocumented()
 		outputFile := filepath.Join(dir, service[strings.LastIndex(service, ".")+1:]+".md")
 		md, err := doc.Render()
 		if err != nil {
 			errStr := err.Error()
 			out.Error = &errStr
-		} else if md != "" {
+		} else if len(md) > 10 {
 			out.File = append(out.File, &plugin.CodeGeneratorResponse_File{
 				Name:    &outputFile,
 				Content: &md,

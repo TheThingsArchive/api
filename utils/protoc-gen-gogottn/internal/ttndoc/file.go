@@ -25,6 +25,10 @@ type File struct {
 	main       bool
 }
 
+func (f File) IsMain() bool {
+	return f.main
+}
+
 func (f File) SetDocument(document bool) {
 	f.document = &document
 }
