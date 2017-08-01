@@ -41,7 +41,7 @@ func (m Method) Document() bool {
 	if m.document != nil {
 		return *m.document
 	}
-	return false
+	return m.Service.Document()
 }
 
 func (m *Method) Enter() {

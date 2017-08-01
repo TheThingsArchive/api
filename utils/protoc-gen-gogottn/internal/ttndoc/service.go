@@ -26,11 +26,6 @@ func (s Service) Document() bool {
 	if s.document != nil {
 		return *s.document
 	}
-	for _, method := range s.Methods {
-		if method.Document() {
-			return true
-		}
-	}
 	return false
 }
 
