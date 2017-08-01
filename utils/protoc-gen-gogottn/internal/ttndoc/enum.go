@@ -25,6 +25,10 @@ func newEnum(proto Proto, msg *descriptor.EnumDescriptorProto) *Enum {
 	return e
 }
 
+func (e Enum) SetDocument(document bool) {
+	e.document = &document
+}
+
 func (e Enum) Document() bool {
 	if e.document != nil {
 		return *e.document

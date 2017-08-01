@@ -33,6 +33,10 @@ func newMethod(proto Proto, msg *descriptor.MethodDescriptorProto) *Method {
 	return m
 }
 
+func (m Method) SetDocument(document bool) {
+	m.document = &document
+}
+
 func (m Method) Document() bool {
 	if m.document != nil {
 		return *m.document

@@ -42,30 +42,25 @@ func main() {
 
 	out := command.Generate(req)
 
-	doc = doc.FilterDocumented()
-
 	file := req.FileToGenerate[0]
 	dir := file[:strings.LastIndex(file, "/")]
-	fileBase := strings.Split(strings.TrimPrefix(file, dir), ".")[0]
-	outputFile := filepath.Join(dir, fileBase+".md")
-	if len(req.FileToGenerate) > 1 {
-		outputFile = filepath.Join(dir, "APIDOC.md")
-	}
-	if len(doc.Services) == 1 {
-		for service := range doc.Services {
-			outputFile = filepath.Join(dir, service[strings.LastIndex(service, ".")+1:]+".md")
-		}
-	}
+	// fileBase := strings.Split(strings.TrimPrefix(file, dir), ".")[0]
 
-	md, err := doc.Render()
-	if err != nil {
-		errStr := err.Error()
-		out.Error = &errStr
-	} else if md != "" {
-		out.File = append(out.File, &plugin.CodeGeneratorResponse_File{
-			Name:    &outputFile,
-			Content: &md,
-		})
+	for service, svc := range doc.Services {
+		svc.SetDocument(true)
+		doc := doc.FilterDocumented()
+		outputFile := filepath.Join(dir, service[strings.LastIndex(service, ".")+1:]+".md")
+		md, err := doc.Render()
+		if err != nil {
+			errStr := err.Error()
+			out.Error = &errStr
+		} else if md != "" {
+			out.File = append(out.File, &plugin.CodeGeneratorResponse_File{
+				Name:    &outputFile,
+				Content: &md,
+			})
+		}
+		svc.ClearDocument()
 	}
 
 	command.Write(out)

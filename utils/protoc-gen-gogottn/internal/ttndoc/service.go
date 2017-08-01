@@ -14,6 +14,14 @@ type Service struct {
 	document   *bool
 }
 
+func (s *Service) SetDocument(document bool) {
+	s.document = &document
+}
+
+func (s *Service) ClearDocument() {
+	s.document = nil
+}
+
 func (s Service) Document() bool {
 	if s.document != nil {
 		return *s.document
@@ -43,8 +51,6 @@ func (s *Service) Enter() {
 		// 		s.document = ext.(*bool)
 		// 	}
 		// }
-		document := true
-		s.document = &document
 	}
 
 	// Methods (type 2)

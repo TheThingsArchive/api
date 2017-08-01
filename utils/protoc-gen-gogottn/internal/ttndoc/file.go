@@ -25,6 +25,10 @@ type File struct {
 	main       bool
 }
 
+func (f File) SetDocument(document bool) {
+	f.document = &document
+}
+
 func (f File) Document() bool {
 	if f.document != nil {
 		return *f.document

@@ -34,6 +34,10 @@ func newMessage(proto Proto, msg *descriptor.DescriptorProto) *Message {
 	return m
 }
 
+func (m Message) SetDocument(document bool) {
+	m.document = &document
+}
+
 func (m *Message) Document() bool {
 	if m.document != nil {
 		return *m.document
