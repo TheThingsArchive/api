@@ -60,7 +60,7 @@ Output:
 {{ end }}
 `
 
-var messageTemplate = `### {{ .Name | TrimPrefix | Code }}
+var messageTemplate = `### {{ .Name | Code }}
 
 {{ if .Comment }}{{ .Comment }}
 {{ end }}
@@ -72,7 +72,7 @@ var messageTemplate = `### {{ .Name | TrimPrefix | Code }}
 
 var fieldTemplate = `| {{ .Name | TrimPrefix | Code }} | {{ if .Repeated }}_repeated_ {{ end }}{{ .Type | Anchor }} | {{ .Comment | WithoutNewlines }} |`
 
-var enumTemplate = `### {{ .Name | TrimPrefix | Code }}
+var enumTemplate = `### {{ .Name | Code }}
 
 {{ if .Comment }}{{ .Comment }}
 {{ end }}
