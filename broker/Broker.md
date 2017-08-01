@@ -36,7 +36,7 @@ Handler subscribes to uplink stream.
 
 ## Messages
 
-### `DeduplicatedUplinkMessage`
+### `.broker.DeduplicatedUplinkMessage`
 
 sent to the Handler
 
@@ -54,7 +54,7 @@ sent to the Handler
 | `server_time` | `int64` |  |
 | `trace` | [`Trace`](#tracetrace) |  |
 
-### `DeviceActivationRequest`
+### `.broker.DeviceActivationRequest`
 
 received from the Router
 
@@ -70,7 +70,7 @@ received from the Router
 | `protocol_metadata` | [`RxMetadata`](#protocolrxmetadata) |  |
 | `trace` | [`Trace`](#tracetrace) |  |
 
-### `DeviceActivationResponse`
+### `.broker.DeviceActivationResponse`
 
 sent to the Router, used as Template
 
@@ -81,7 +81,7 @@ sent to the Router, used as Template
 | `payload` | `bytes` |  |
 | `trace` | [`Trace`](#tracetrace) |  |
 
-### `DownlinkMessage`
+### `.broker.DownlinkMessage`
 
 received from the Handler, sent to the Router, used as Template
 
@@ -96,7 +96,7 @@ received from the Handler, sent to the Router, used as Template
 | `payload` | `bytes` |  |
 | `trace` | [`Trace`](#tracetrace) |  |
 
-### `DownlinkOption`
+### `.broker.DownlinkOption`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -107,11 +107,11 @@ received from the Handler, sent to the Router, used as Template
 | `protocol_configuration` | [`TxConfiguration`](#protocoltxconfiguration) |  |
 | `score` | `uint32` | Score of this downlink option. Lower is better. |
 
-### `SubscribeRequest`
+### `.broker.SubscribeRequest`
 
 message SubscribeRequest is used by a Handler to subscribe to uplink messages
 
-### `UplinkMessage`
+### `.broker.UplinkMessage`
 
 received from the Router
 
@@ -128,7 +128,7 @@ received from the Router
 | `protocol_metadata` | [`RxMetadata`](#protocolrxmetadata) |  |
 | `trace` | [`Trace`](#tracetrace) |  |
 
-### `LocationMetadata`
+### `.gateway.LocationMetadata`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -139,7 +139,7 @@ received from the Router
 | `source` | [`LocationSource`](#gatewaylocationmetadatalocationsource) |  |
 | `time` | `int64` | Time (unix nanoseconds) |
 
-### `RxMetadata`
+### `.gateway.RxMetadata`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -156,7 +156,7 @@ received from the Router
 | `time` | `int64` | Time in Unix nanoseconds |
 | `timestamp` | `uint32` | Timestamp (uptime of LoRa module) in microseconds with rollover |
 
-### `Antenna`
+### `.gateway.RxMetadata.Antenna`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -169,7 +169,7 @@ received from the Router
 | `rssi_standard_deviation` | `float` | Standard deviation of the RSSI |
 | `snr` | `float` | Signal-to-noise-ratio in dB |
 
-### `TxConfiguration`
+### `.gateway.TxConfiguration`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -180,12 +180,12 @@ received from the Router
 | `rf_chain` | `uint32` |  |
 | `timestamp` | `uint32` | Timestamp (uptime of LoRa module) in microseconds with rollover |
 
-### `Empty`
+### `.google.protobuf.Empty`
 
 A generic empty message that you can re-use to avoid defining duplicated
 empty messages in your APIs.
 
-### `ActivationMetadata`
+### `.lorawan.ActivationMetadata`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -199,7 +199,7 @@ empty messages in your APIs.
 | `rx2_dr` | `uint32` |  |
 | `rx_delay` | `uint32` |  |
 
-### `Message`
+### `.lorawan.Message`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -209,7 +209,7 @@ empty messages in your APIs.
 | `mac_payload` | [`MACPayload`](#lorawanmacpayload) |  |
 | `mic` | `bytes` |  |
 
-### `Metadata`
+### `.lorawan.Metadata`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -220,7 +220,7 @@ empty messages in your APIs.
 | `frequency_plan` | [`FrequencyPlan`](#lorawanfrequencyplan) |  |
 | `modulation` | [`Modulation`](#lorawanmodulation) |  |
 
-### `TxConfiguration`
+### `.lorawan.TxConfiguration`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -230,31 +230,31 @@ empty messages in your APIs.
 | `f_cnt` | `uint32` | Store the full 32 bit FCnt (deprecated; do not use) |
 | `modulation` | [`Modulation`](#lorawanmodulation) |  |
 
-### `ActivationMetadata`
+### `.protocol.ActivationMetadata`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `lorawan` | [`ActivationMetadata`](#lorawanactivationmetadata) |  |
 
-### `Message`
+### `.protocol.Message`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `lorawan` | [`Message`](#lorawanmessage) |  |
 
-### `RxMetadata`
+### `.protocol.RxMetadata`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `lorawan` | [`Metadata`](#lorawanmetadata) |  |
 
-### `TxConfiguration`
+### `.protocol.TxConfiguration`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `lorawan` | [`TxConfiguration`](#lorawantxconfiguration) |  |
 
-### `Trace`
+### `.trace.Trace`
 
 Trace information
 
@@ -268,7 +268,7 @@ Trace information
 | `service_name` | `string` | The name of the component (router/broker/handler) |
 | `time` | `int64` | Time in Unix nanoseconds |
 
-### `MetadataEntry`
+### `.trace.Trace.MetadataEntry`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -277,7 +277,7 @@ Trace information
 
 ## Enums
 
-### `LocationSource`
+### `.gateway.LocationMetadata.LocationSource`
 
 | **Name** | **Description** |
 | -------- | --------------- |
@@ -287,7 +287,7 @@ Trace information
 | `REGISTRY` | The location is set in and updated from a registry |
 | `UNKNOWN` | The source of the location is not known or not set |
 
-### `FrequencyPlan`
+### `.lorawan.FrequencyPlan`
 
 | **Name** | **Description** |
 | -------- | --------------- |
@@ -303,7 +303,7 @@ Trace information
 | `KR_920_923` |  |
 | `US_902_928` |  |
 
-### `Modulation`
+### `.lorawan.Modulation`
 
 | **Name** | **Description** |
 | -------- | --------------- |

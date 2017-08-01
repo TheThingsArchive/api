@@ -23,7 +23,7 @@ when we can push updates from the Discovery service to the routing services.
 
 ## Messages
 
-### `ComponentStats`
+### `.api.ComponentStats`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -33,7 +33,7 @@ when we can push updates from the Discovery service to the routing services.
 | `memory` | [`MemoryStats`](#apicomponentstatsmemorystats) |  |
 | `uptime` | `uint64` |  |
 
-### `CPUStats`
+### `.api.ComponentStats.CPUStats`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -42,7 +42,7 @@ when we can push updates from the Discovery service to the routing services.
 | `system` | `float` |  |
 | `user` | `float` |  |
 
-### `MemoryStats`
+### `.api.ComponentStats.MemoryStats`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -51,7 +51,7 @@ when we can push updates from the Discovery service to the routing services.
 | `stack` | `uint64` |  |
 | `swap` | `uint64` |  |
 
-### `Percentiles`
+### `.api.Percentiles`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -65,7 +65,7 @@ when we can push updates from the Discovery service to the routing services.
 | `percentile95` | `float` |  |
 | `percentile99` | `float` |  |
 
-### `Rates`
+### `.api.Rates`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -73,7 +73,7 @@ when we can push updates from the Discovery service to the routing services.
 | `rate15` | `float` |  |
 | `rate5` | `float` |  |
 
-### `SystemStats`
+### `.api.SystemStats`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -81,7 +81,7 @@ when we can push updates from the Discovery service to the routing services.
 | `load` | [`Loadstats`](#apisystemstatsloadstats) |  |
 | `memory` | [`MemoryStats`](#apisystemstatsmemorystats) |  |
 
-### `CPUStats`
+### `.api.SystemStats.CPUStats`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -90,7 +90,7 @@ when we can push updates from the Discovery service to the routing services.
 | `system` | `float` |  |
 | `user` | `float` |  |
 
-### `Loadstats`
+### `.api.SystemStats.Loadstats`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -98,7 +98,7 @@ when we can push updates from the Discovery service to the routing services.
 | `load15` | `float` |  |
 | `load5` | `float` |  |
 
-### `MemoryStats`
+### `.api.SystemStats.MemoryStats`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -106,14 +106,14 @@ when we can push updates from the Discovery service to the routing services.
 | `total` | `uint64` |  |
 | `used` | `uint64` |  |
 
-### `ApplicationHandlerRegistration`
+### `.broker.ApplicationHandlerRegistration`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `app_id` | `string` |  |
 | `handler_id` | `string` |  |
 
-### `Status`
+### `.broker.Status`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -128,11 +128,11 @@ when we can push updates from the Discovery service to the routing services.
 | `uplink` | [`Rates`](#apirates) |  |
 | `uplink_unique` | [`Rates`](#apirates) |  |
 
-### `StatusRequest`
+### `.broker.StatusRequest`
 
 message StatusRequest is used to request the status of this Broker
 
-### `Empty`
+### `.google.protobuf.Empty`
 
 A generic empty message that you can re-use to avoid defining duplicated
 empty messages in your APIs.

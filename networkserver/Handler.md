@@ -18,7 +18,7 @@ The Handler service provides pure network functionality
 
 ## Messages
 
-### `ActivationChallengeRequest`
+### `.broker.ActivationChallengeRequest`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -29,14 +29,14 @@ The Handler service provides pure network functionality
 | `message` | [`Message`](#protocolmessage) |  |
 | `payload` | `bytes` |  |
 
-### `ActivationChallengeResponse`
+### `.broker.ActivationChallengeResponse`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `message` | [`Message`](#protocolmessage) |  |
 | `payload` | `bytes` |  |
 
-### `DeduplicatedDeviceActivationRequest`
+### `.broker.DeduplicatedDeviceActivationRequest`
 
 sent to the Handler
 
@@ -55,7 +55,7 @@ sent to the Handler
 | `server_time` | `int64` |  |
 | `trace` | [`Trace`](#tracetrace) |  |
 
-### `DeviceActivationResponse`
+### `.broker.DeviceActivationResponse`
 
 sent to the Router, used as Template
 
@@ -66,7 +66,7 @@ sent to the Router, used as Template
 | `payload` | `bytes` |  |
 | `trace` | [`Trace`](#tracetrace) |  |
 
-### `DownlinkOption`
+### `.broker.DownlinkOption`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -77,7 +77,7 @@ sent to the Router, used as Template
 | `protocol_configuration` | [`TxConfiguration`](#protocoltxconfiguration) |  |
 | `score` | `uint32` | Score of this downlink option. Lower is better. |
 
-### `LocationMetadata`
+### `.gateway.LocationMetadata`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -88,7 +88,7 @@ sent to the Router, used as Template
 | `source` | [`LocationSource`](#gatewaylocationmetadatalocationsource) |  |
 | `time` | `int64` | Time (unix nanoseconds) |
 
-### `RxMetadata`
+### `.gateway.RxMetadata`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -105,7 +105,7 @@ sent to the Router, used as Template
 | `time` | `int64` | Time in Unix nanoseconds |
 | `timestamp` | `uint32` | Timestamp (uptime of LoRa module) in microseconds with rollover |
 
-### `Antenna`
+### `.gateway.RxMetadata.Antenna`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -118,7 +118,7 @@ sent to the Router, used as Template
 | `rssi_standard_deviation` | `float` | Standard deviation of the RSSI |
 | `snr` | `float` | Signal-to-noise-ratio in dB |
 
-### `TxConfiguration`
+### `.gateway.TxConfiguration`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -129,7 +129,7 @@ sent to the Router, used as Template
 | `rf_chain` | `uint32` |  |
 | `timestamp` | `uint32` | Timestamp (uptime of LoRa module) in microseconds with rollover |
 
-### `DeviceActivationResponse`
+### `.handler.DeviceActivationResponse`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -139,7 +139,7 @@ sent to the Router, used as Template
 | `payload` | `bytes` |  |
 | `trace` | [`Trace`](#tracetrace) |  |
 
-### `ActivationMetadata`
+### `.lorawan.ActivationMetadata`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -153,7 +153,7 @@ sent to the Router, used as Template
 | `rx2_dr` | `uint32` |  |
 | `rx_delay` | `uint32` |  |
 
-### `Message`
+### `.lorawan.Message`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -163,7 +163,7 @@ sent to the Router, used as Template
 | `mac_payload` | [`MACPayload`](#lorawanmacpayload) |  |
 | `mic` | `bytes` |  |
 
-### `Metadata`
+### `.lorawan.Metadata`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -174,7 +174,7 @@ sent to the Router, used as Template
 | `frequency_plan` | [`FrequencyPlan`](#lorawanfrequencyplan) |  |
 | `modulation` | [`Modulation`](#lorawanmodulation) | The AppEUI is a unique, 8 byte identifier for the application a device belongs to. |
 
-### `TxConfiguration`
+### `.lorawan.TxConfiguration`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -184,31 +184,31 @@ sent to the Router, used as Template
 | `f_cnt` | `uint32` | Store the full 32 bit FCnt (deprecated; do not use) |
 | `modulation` | [`Modulation`](#lorawanmodulation) | The AppEUI is a unique, 8 byte identifier for the application a device belongs to. |
 
-### `ActivationMetadata`
+### `.protocol.ActivationMetadata`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `lorawan` | [`ActivationMetadata`](#lorawanactivationmetadata) |  |
 
-### `Message`
+### `.protocol.Message`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `lorawan` | [`Message`](#lorawanmessage) |  |
 
-### `RxMetadata`
+### `.protocol.RxMetadata`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `lorawan` | [`Metadata`](#lorawanmetadata) |  |
 
-### `TxConfiguration`
+### `.protocol.TxConfiguration`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `lorawan` | [`TxConfiguration`](#lorawantxconfiguration) |  |
 
-### `Trace`
+### `.trace.Trace`
 
 Trace information
 
@@ -222,7 +222,7 @@ Trace information
 | `service_name` | `string` | The name of the component (router/broker/handler) |
 | `time` | `int64` | Time in Unix nanoseconds |
 
-### `MetadataEntry`
+### `.trace.Trace.MetadataEntry`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -231,7 +231,7 @@ Trace information
 
 ## Enums
 
-### `LocationSource`
+### `.gateway.LocationMetadata.LocationSource`
 
 | **Name** | **Description** |
 | -------- | --------------- |
@@ -241,7 +241,7 @@ Trace information
 | `REGISTRY` | The location is set in and updated from a registry |
 | `UNKNOWN` | The source of the location is not known or not set |
 
-### `FrequencyPlan`
+### `.lorawan.FrequencyPlan`
 
 | **Name** | **Description** |
 | -------- | --------------- |
@@ -257,7 +257,7 @@ Trace information
 | `KR_920_923` |  |
 | `US_902_928` |  |
 
-### `Modulation`
+### `.lorawan.Modulation`
 
 | **Name** | **Description** |
 | -------- | --------------- |

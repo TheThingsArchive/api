@@ -21,12 +21,12 @@
 
 ## Messages
 
-### `Empty`
+### `.google.protobuf.Empty`
 
 A generic empty message that you can re-use to avoid defining duplicated
 empty messages in your APIs.
 
-### `Device`
+### `.lorawan.Device`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -45,7 +45,7 @@ empty messages in your APIs.
 | `nwk_s_key` | `bytes` | The NwkSKey is a 16 byte session key that is known by the device and the network. It is used for routing and MAC related functionality. This key is negotiated during the OTAA join procedure, or statically configured using ABP. |
 | `uses32_bit_f_cnt` | `bool` | The Uses32BitFCnt option indicates that the device keeps track of full 32 bit frame counters. As only the 16 lsb are actually transmitted, the 16 msb will have to be inferred. |
 
-### `DeviceIdentifier`
+### `.lorawan.DeviceIdentifier`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |

@@ -334,12 +334,12 @@ SimulateUplink simulates an uplink message
 
 ## Messages
 
-### `Empty`
+### `.google.protobuf.Empty`
 
 A generic empty message that you can re-use to avoid defining duplicated
 empty messages in your APIs.
 
-### `Application`
+### `.handler.Application`
 
 The Application settings
 
@@ -353,13 +353,13 @@ The Application settings
 | `register_on_join_access_key` | `string` | The "register on join" access key should only be set if devices need to be registered on join |
 | `validator` | `string` | The validator is a JavaScript function that checks the validity of the object returned by the decoder or converter. If validation fails, the message is dropped. This function is used when the payload format is set to custom. |
 
-### `ApplicationIdentifier`
+### `.handler.ApplicationIdentifier`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `app_id` | `string` |  |
 
-### `Device`
+### `.handler.Device`
 
 The Device settings
 
@@ -374,27 +374,27 @@ The Device settings
 | `longitude` | `float` |  |
 | `lorawan_device` | [`Device`](#lorawandevice) |  |
 
-### `AttributesEntry`
+### `.handler.Device.AttributesEntry`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `key` | `string` |  |
 | `value` | `string` |  |
 
-### `DeviceIdentifier`
+### `.handler.DeviceIdentifier`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `app_id` | `string` |  |
 | `dev_id` | `string` |  |
 
-### `DeviceList`
+### `.handler.DeviceList`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `devices` | _repeated_ [`Device`](#handlerdevice) |  |
 
-### `DryDownlinkMessage`
+### `.handler.DryDownlinkMessage`
 
 DryDownlinkMessage is a simulated message to test downlink processing
 
@@ -405,7 +405,7 @@ DryDownlinkMessage is a simulated message to test downlink processing
 | `payload` | `bytes` | The binary payload to use |
 | `port` | `uint32` | The port number that should be passed to the payload function |
 
-### `DryDownlinkResult`
+### `.handler.DryDownlinkResult`
 
 DryDownlinkResult is the result from a downlink simulation
 
@@ -414,7 +414,7 @@ DryDownlinkResult is the result from a downlink simulation
 | `logs` | _repeated_ [`LogEntry`](#handlerlogentry) | Logs that have been generated while processing |
 | `payload` | `bytes` | The payload that was encoded |
 
-### `DryUplinkMessage`
+### `.handler.DryUplinkMessage`
 
 DryUplinkMessage is a simulated message to test uplink processing
 
@@ -424,7 +424,7 @@ DryUplinkMessage is a simulated message to test uplink processing
 | `payload` | `bytes` | The binary payload to use |
 | `port` | `uint32` | The port number that should be passed to the payload function |
 
-### `DryUplinkResult`
+### `.handler.DryUplinkResult`
 
 DryUplinkResult is the result from an uplink simulation
 
@@ -435,14 +435,14 @@ DryUplinkResult is the result from an uplink simulation
 | `payload` | `bytes` | The binary payload |
 | `valid` | `bool` | Was validation of the message successful |
 
-### `LogEntry`
+### `.handler.LogEntry`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `fields` | _repeated_ `string` | A list of JSON-encoded fields that were logged |
 | `function` | `string` | The location where the log was created (what payload function) |
 
-### `SimulatedUplinkMessage`
+### `.handler.SimulatedUplinkMessage`
 
 SimulatedUplinkMessage is a simulated uplink message
 
@@ -453,7 +453,7 @@ SimulatedUplinkMessage is a simulated uplink message
 | `payload` | `bytes` | The binary payload to use |
 | `port` | `uint32` | The port number |
 
-### `Device`
+### `.lorawan.Device`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |

@@ -22,27 +22,27 @@ Get all prefixes that are in use or available
 
 ## Messages
 
-### `DevAddrRequest`
+### `.lorawan.DevAddrRequest`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `usage` | _repeated_ `string` | The usage constraints (see activation_constraints in device.proto) |
 
-### `DevAddrResponse`
+### `.lorawan.DevAddrResponse`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `dev_addr` | `bytes` |  |
 
-### `PrefixesRequest`
+### `.lorawan.PrefixesRequest`
 
-### `PrefixesResponse`
+### `.lorawan.PrefixesResponse`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `prefixes` | _repeated_ [`PrefixMapping`](#lorawanprefixesresponseprefixmapping) | The prefixes that are in use or available |
 
-### `PrefixMapping`
+### `.lorawan.PrefixesResponse.PrefixMapping`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |

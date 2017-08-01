@@ -23,7 +23,7 @@ Network operator requests Router status
 
 ## Messages
 
-### `ComponentStats`
+### `.api.ComponentStats`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -33,7 +33,7 @@ Network operator requests Router status
 | `memory` | [`MemoryStats`](#apicomponentstatsmemorystats) |  |
 | `uptime` | `uint64` |  |
 
-### `CPUStats`
+### `.api.ComponentStats.CPUStats`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -42,7 +42,7 @@ Network operator requests Router status
 | `system` | `float` |  |
 | `user` | `float` |  |
 
-### `MemoryStats`
+### `.api.ComponentStats.MemoryStats`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -51,7 +51,7 @@ Network operator requests Router status
 | `stack` | `uint64` |  |
 | `swap` | `uint64` |  |
 
-### `Rates`
+### `.api.Rates`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -59,7 +59,7 @@ Network operator requests Router status
 | `rate15` | `float` |  |
 | `rate5` | `float` |  |
 
-### `SystemStats`
+### `.api.SystemStats`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -67,7 +67,7 @@ Network operator requests Router status
 | `load` | [`Loadstats`](#apisystemstatsloadstats) |  |
 | `memory` | [`MemoryStats`](#apisystemstatsmemorystats) |  |
 
-### `CPUStats`
+### `.api.SystemStats.CPUStats`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -76,7 +76,7 @@ Network operator requests Router status
 | `system` | `float` |  |
 | `user` | `float` |  |
 
-### `Loadstats`
+### `.api.SystemStats.Loadstats`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -84,7 +84,7 @@ Network operator requests Router status
 | `load15` | `float` |  |
 | `load5` | `float` |  |
 
-### `MemoryStats`
+### `.api.SystemStats.MemoryStats`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -92,7 +92,7 @@ Network operator requests Router status
 | `total` | `uint64` |  |
 | `used` | `uint64` |  |
 
-### `LocationMetadata`
+### `.gateway.LocationMetadata`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -103,7 +103,7 @@ Network operator requests Router status
 | `source` | [`LocationSource`](#gatewaylocationmetadatalocationsource) |  |
 | `time` | `int64` | Time (unix nanoseconds) |
 
-### `Status`
+### `.gateway.Status`
 
 message Status represents a status update from a Gateway.
 
@@ -136,7 +136,7 @@ message Status represents a status update from a Gateway.
 | `tx_in` | `uint32` | Total number of received downlink packets since boot |
 | `tx_ok` | `uint32` | Total number of successfully sent downlink packets since boot |
 
-### `OSMetrics`
+### `.gateway.Status.OSMetrics`
 
 Additional metrics from the operating system
 
@@ -149,7 +149,7 @@ Additional metrics from the operating system
 | `memory_percentage` | `float` |  |
 | `temperature` | `float` |  |
 
-### `GatewayStatusRequest`
+### `.router.GatewayStatusRequest`
 
 message GatewayStatusRequest is used to request the status of a gateway from
 this Router
@@ -158,14 +158,14 @@ this Router
 | -------- | -------- | --------------- |
 | `gateway_id` | `string` |  |
 
-### `GatewayStatusResponse`
+### `.router.GatewayStatusResponse`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `last_seen` | `int64` |  |
 | `status` | [`Status`](#gatewaystatus) |  |
 
-### `Status`
+### `.router.Status`
 
 message Status is the response to the StatusRequest
 
@@ -180,13 +180,13 @@ message Status is the response to the StatusRequest
 | `system` | [`SystemStats`](#apisystemstats) |  |
 | `uplink` | [`Rates`](#apirates) |  |
 
-### `StatusRequest`
+### `.router.StatusRequest`
 
 message StatusRequest is used to request the status of this Router
 
 ## Enums
 
-### `LocationSource`
+### `.gateway.LocationMetadata.LocationSource`
 
 | **Name** | **Description** |
 | -------- | --------------- |

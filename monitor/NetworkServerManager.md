@@ -14,7 +14,7 @@ functionality
 
 ## Messages
 
-### `ComponentStats`
+### `.api.ComponentStats`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -24,7 +24,7 @@ functionality
 | `memory` | [`MemoryStats`](#apicomponentstatsmemorystats) |  |
 | `uptime` | `uint64` |  |
 
-### `CPUStats`
+### `.api.ComponentStats.CPUStats`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -33,7 +33,7 @@ functionality
 | `system` | `float` |  |
 | `user` | `float` |  |
 
-### `MemoryStats`
+### `.api.ComponentStats.MemoryStats`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -42,7 +42,7 @@ functionality
 | `stack` | `uint64` |  |
 | `swap` | `uint64` |  |
 
-### `Percentiles`
+### `.api.Percentiles`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -56,7 +56,7 @@ functionality
 | `percentile95` | `float` |  |
 | `percentile99` | `float` |  |
 
-### `Rates`
+### `.api.Rates`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -64,7 +64,7 @@ functionality
 | `rate15` | `float` |  |
 | `rate5` | `float` |  |
 
-### `SystemStats`
+### `.api.SystemStats`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -72,7 +72,7 @@ functionality
 | `load` | [`Loadstats`](#apisystemstatsloadstats) |  |
 | `memory` | [`MemoryStats`](#apisystemstatsmemorystats) |  |
 
-### `CPUStats`
+### `.api.SystemStats.CPUStats`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -81,7 +81,7 @@ functionality
 | `system` | `float` |  |
 | `user` | `float` |  |
 
-### `Loadstats`
+### `.api.SystemStats.Loadstats`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -89,7 +89,7 @@ functionality
 | `load15` | `float` |  |
 | `load5` | `float` |  |
 
-### `MemoryStats`
+### `.api.SystemStats.MemoryStats`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -97,7 +97,7 @@ functionality
 | `total` | `uint64` |  |
 | `used` | `uint64` |  |
 
-### `Status`
+### `.networkserver.Status`
 
 message Status is the response to the StatusRequest
 
@@ -110,7 +110,7 @@ message Status is the response to the StatusRequest
 | `system` | [`SystemStats`](#apisystemstats) |  |
 | `uplink` | [`Rates`](#apirates) |  |
 
-### `StatusRequest`
+### `.networkserver.StatusRequest`
 
 message StatusRequest is used to request the status of this NetworkServer
 

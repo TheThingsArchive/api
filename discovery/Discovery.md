@@ -137,7 +137,7 @@ Output:
 
 ## Messages
 
-### `Announcement`
+### `.discovery.Announcement`
 
 The Announcement of a service (also called component)
 
@@ -157,7 +157,7 @@ The Announcement of a service (also called component)
 | `service_version` | `string` | Service version in the form "[version]-[commit] ([build date])" |
 | `url` | `string` | URL with documentation or more information about this component |
 
-### `AnnouncementsResponse`
+### `.discovery.AnnouncementsResponse`
 
 A list of announcements
 
@@ -165,25 +165,25 @@ A list of announcements
 | -------- | -------- | --------------- |
 | `services` | _repeated_ [`Announcement`](#discoveryannouncement) |  |
 
-### `GetByAppEUIRequest`
+### `.discovery.GetByAppEUIRequest`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `app_eui` | `bytes` |  |
 
-### `GetByAppIDRequest`
+### `.discovery.GetByAppIDRequest`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `app_id` | `string` |  |
 
-### `GetByGatewayIDRequest`
+### `.discovery.GetByGatewayIDRequest`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `gateway_id` | `string` |  |
 
-### `GetRequest`
+### `.discovery.GetRequest`
 
 The identifier of the service that should be returned
 
@@ -192,13 +192,13 @@ The identifier of the service that should be returned
 | `id` | `string` | The ID of the service |
 | `service_name` | `string` | The name of the service (router/broker/handler) |
 
-### `GetServiceRequest`
+### `.discovery.GetServiceRequest`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `service_name` | `string` | The name of the service (router/broker/handler) |
 
-### `Metadata`
+### `.discovery.Metadata`
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
@@ -207,7 +207,7 @@ The identifier of the service that should be returned
 | `dev_addr_prefix` | `bytes` | DevAddr prefix that is routed by this Broker 5 bytes; the first byte is the prefix length, the following 4 bytes are the address. Only authorized Brokers can announce PREFIX metadata. |
 | `gateway_id` | `string` | GatewayID that is registered to this Router This metadata can only be added if the requesting client is authorized to manage this GatewayID. |
 
-### `MetadataRequest`
+### `.discovery.MetadataRequest`
 
 The metadata to add or remove from an announement
 
@@ -217,7 +217,7 @@ The metadata to add or remove from an announement
 | `metadata` | [`Metadata`](#discoverymetadata) | Metadata to add or remove |
 | `service_name` | `string` | The name of the service (router/broker/handler) that should be modified |
 
-### `Empty`
+### `.google.protobuf.Empty`
 
 A generic empty message that you can re-use to avoid defining duplicated
 empty messages in your APIs.
