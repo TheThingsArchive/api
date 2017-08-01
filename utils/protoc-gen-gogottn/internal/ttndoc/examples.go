@@ -1,0 +1,42 @@
+// Copyright © 2017 The Things Network
+// Use of this source code is governed by the MIT license that can be found in the LICENSE file.
+
+package ttndoc
+
+var exampleValues = map[string]interface{}{
+	".discovery.*.id":                         "ttn-handler-eu",
+	".discovery.*.service_name":               "handler",
+	".discovery.Announcement.api_address":     "http://eu.thethings.network:8084",
+	".discovery.Announcement.certificate":     "-----BEGIN CERTIFICATE-----\n...",
+	".discovery.Announcement.net_address":     "eu.thethings.network:1904",
+	".discovery.Announcement.public_key":      "-----BEGIN PUBLIC KEY-----\n...",
+	".discovery.Announcement.public":          true,
+	".discovery.Announcement.service_version": "2.0.0-abcdef...",
+	".discovery.Metadata.dev_addr_prefix":     "AAAAAAA=",
+	".discovery.Metadata.app_id":              "some-app-id",
+	".handler.*.app_id":                       "some-app-id",
+	".handler.*.dev_id":                       "some-dev-id",
+	".handler.*.fields":                       `{"light":100}`,
+	".handler.*.payload":                      "ZA==",
+	".handler.*.port":                         1,
+	".handler.Application.converter":          "function Converter(decoded, port) {...",
+	".handler.Application.decoder":            "function Decoder(bytes, port) {...",
+	".handler.Application.encoder":            "Encoder(object, port) {...",
+	".handler.Application.validator":          "Validator(converted, port) {...",
+	".handler.DryDownlinkMessage.payload":     "",
+	".handler.LogEntry.fields":                `["TTN",123]`,
+	".handler.LogEntry.function":              "decoder",
+	".handler.Device.description":             "Some description of the device",
+	".handler.Device.latitude":                52.375,
+	".handler.Device.longitude":               4.887,
+	".lorawan.Device.activation_constraints":  "local",
+	".lorawan.Device.app_eui":                 "0102030405060708",
+	".lorawan.Device.app_id":                  "some-app-id",
+	".lorawan.Device.app_key":                 "01020304050607080102030405060708",
+	".lorawan.Device.app_s_key":               "01020304050607080102030405060708",
+	".lorawan.Device.dev_addr":                "01020304",
+	".lorawan.Device.dev_eui":                 "0102030405060708",
+	".lorawan.Device.dev_id":                  "some-dev-id",
+	".lorawan.Device.nwk_s_key":               "01020304050607080102030405060708",
+	".lorawan.Device.uses32_bit_f_cnt":        true,
+}
