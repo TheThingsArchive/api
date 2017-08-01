@@ -332,3 +332,143 @@ SimulateUplink simulates an uplink message
 - Request: [`SimulatedUplinkMessage`](#handlersimulateduplinkmessage)
 - Response: [`Empty`](#googleprotobufempty)
 
+## Messages
+
+### `Empty`
+
+A generic empty message that you can re-use to avoid defining duplicated
+empty messages in your APIs.
+
+### `Application`
+
+The Application settings
+
+| **Name** | **Type** | **Description** |
+| -------- | -------- | --------------- |
+| `app_id` | `string` |  |
+| `converter` | `string` | The converter is a JavaScript function that can be used to convert values in the object returned from the decoder. This can for example be useful to convert a voltage to a temperature. This function is used when the payload format is set to custom. |
+| `decoder` | `string` | The decoder is a JavaScript function that decodes a byte array to an object. This function is used when the payload format is set to custom. |
+| `encoder` | `string` | The encoder is a JavaScript function that encodes an object to a byte array. This function is used when the payload format is set to custom. |
+| `payload_format` | `string` | The payload format indicates how payload is formatted. |
+| `register_on_join_access_key` | `string` | The "register on join" access key should only be set if devices need to be registered on join |
+| `validator` | `string` | The validator is a JavaScript function that checks the validity of the object returned by the decoder or converter. If validation fails, the message is dropped. This function is used when the payload format is set to custom. |
+
+### `ApplicationIdentifier`
+
+| **Name** | **Type** | **Description** |
+| -------- | -------- | --------------- |
+| `app_id` | `string` |  |
+
+### `Device`
+
+The Device settings
+
+| **Name** | **Type** | **Description** |
+| -------- | -------- | --------------- |
+| `altitude` | `int32` |  |
+| `app_id` | `string` |  |
+| `attributes` | _repeated_ [`AttributesEntry`](#handlerdeviceattributesentry) |  |
+| `description` | `string` |  |
+| `dev_id` | `string` |  |
+| `latitude` | `float` |  |
+| `longitude` | `float` |  |
+| `lorawan_device` | [`Device`](#lorawandevice) |  |
+
+### `AttributesEntry`
+
+| **Name** | **Type** | **Description** |
+| -------- | -------- | --------------- |
+| `key` | `string` |  |
+| `value` | `string` |  |
+
+### `DeviceIdentifier`
+
+| **Name** | **Type** | **Description** |
+| -------- | -------- | --------------- |
+| `app_id` | `string` |  |
+| `dev_id` | `string` |  |
+
+### `DeviceList`
+
+| **Name** | **Type** | **Description** |
+| -------- | -------- | --------------- |
+| `devices` | _repeated_ [`Device`](#handlerdevice) |  |
+
+### `DryDownlinkMessage`
+
+DryDownlinkMessage is a simulated message to test downlink processing
+
+| **Name** | **Type** | **Description** |
+| -------- | -------- | --------------- |
+| `app` | [`Application`](#handlerapplication) | The Application containing the payload functions that should be executed |
+| `fields` | `string` | JSON-encoded object with fields to encode |
+| `payload` | `bytes` | The binary payload to use |
+| `port` | `uint32` | The port number that should be passed to the payload function |
+
+### `DryDownlinkResult`
+
+DryDownlinkResult is the result from a downlink simulation
+
+| **Name** | **Type** | **Description** |
+| -------- | -------- | --------------- |
+| `logs` | _repeated_ [`LogEntry`](#handlerlogentry) | Logs that have been generated while processing |
+| `payload` | `bytes` | The payload that was encoded |
+
+### `DryUplinkMessage`
+
+DryUplinkMessage is a simulated message to test uplink processing
+
+| **Name** | **Type** | **Description** |
+| -------- | -------- | --------------- |
+| `app` | [`Application`](#handlerapplication) | The Application containing the payload functions that should be executed |
+| `payload` | `bytes` | The binary payload to use |
+| `port` | `uint32` | The port number that should be passed to the payload function |
+
+### `DryUplinkResult`
+
+DryUplinkResult is the result from an uplink simulation
+
+| **Name** | **Type** | **Description** |
+| -------- | -------- | --------------- |
+| `fields` | `string` | The decoded fields |
+| `logs` | _repeated_ [`LogEntry`](#handlerlogentry) | Logs that have been generated while processing |
+| `payload` | `bytes` | The binary payload |
+| `valid` | `bool` | Was validation of the message successful |
+
+### `LogEntry`
+
+| **Name** | **Type** | **Description** |
+| -------- | -------- | --------------- |
+| `fields` | _repeated_ `string` | A list of JSON-encoded fields that were logged |
+| `function` | `string` | The location where the log was created (what payload function) |
+
+### `SimulatedUplinkMessage`
+
+SimulatedUplinkMessage is a simulated uplink message
+
+| **Name** | **Type** | **Description** |
+| -------- | -------- | --------------- |
+| `app_id` | `string` |  |
+| `dev_id` | `string` |  |
+| `payload` | `bytes` | The binary payload to use |
+| `port` | `uint32` | The port number |
+
+### `Device`
+
+| **Name** | **Type** | **Description** |
+| -------- | -------- | --------------- |
+| `activation_constraints` | `string` | The ActivationContstraints are used to allocate a device address for a device (comma-separated). There are different prefixes for `otaa`, `abp`, `world`, `local`, `private`, `testing`. |
+| `app_eui` | `bytes` | The AppEUI is a unique, 8 byte identifier for the application a device belongs to. |
+| `app_id` | `string` | FSK bit rate in bit/s |
+| `app_key` | `bytes` | The AppKey is a 16 byte static key that is known by the device and the application. It is used for negotiating session keys (OTAA). |
+| `app_s_key` | `bytes` | The AppSKey is a 16 byte session key that is known by the device and the application. It is used for payload encryption. This key is negotiated during the OTAA join procedure, or statically configured using ABP. |
+| `dev_addr` | `bytes` | Store the full 32 bit FCnt (deprecated; do not use) |
+| `dev_eui` | `bytes` | LoRa data rate - SF{spreadingfactor}BW{bandwidth} |
+| `dev_id` | `string` | LoRa coding rate |
+| `disable_f_cnt_check` | `bool` | The DisableFCntCheck option disables the frame counter check. Disabling this makes the device vulnerable to replay attacks, but makes ABP slightly easier. |
+| `f_cnt_down` | `uint32` | FCntDown is the downlink frame counter for a device session. |
+| `f_cnt_up` | `uint32` | FCntUp is the uplink frame counter for a device session. |
+| `last_seen` | `int64` | When the device was last seen (Unix nanoseconds) |
+| `nwk_s_key` | `bytes` | The NwkSKey is a 16 byte session key that is known by the device and the network. It is used for routing and MAC related functionality. This key is negotiated during the OTAA join procedure, or statically configured using ABP. |
+| `uses32_bit_f_cnt` | `bool` | The Uses32BitFCnt option indicates that the device keeps track of full 32 bit frame counters. As only the 16 lsb are actually transmitted, the 16 msb will have to be inferred. |
+
