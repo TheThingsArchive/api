@@ -53,6 +53,17 @@ function deserialize_discovery_GetByAppIDRequest(buffer_arg) {
   return ttn_discovery_discovery_pb.GetByAppIDRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_discovery_GetByGatewayIDRequest(arg) {
+  if (!(arg instanceof ttn_discovery_discovery_pb.GetByGatewayIDRequest)) {
+    throw new Error('Expected argument of type discovery.GetByGatewayIDRequest');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_discovery_GetByGatewayIDRequest(buffer_arg) {
+  return ttn_discovery_discovery_pb.GetByGatewayIDRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_discovery_GetRequest(arg) {
   if (!(arg instanceof ttn_discovery_discovery_pb.GetRequest)) {
     throw new Error('Expected argument of type discovery.GetRequest');
@@ -170,6 +181,17 @@ var DiscoveryService = exports.DiscoveryService = {
     responseType: ttn_discovery_discovery_pb.Announcement,
     requestSerialize: serialize_discovery_GetByAppIDRequest,
     requestDeserialize: deserialize_discovery_GetByAppIDRequest,
+    responseSerialize: serialize_discovery_Announcement,
+    responseDeserialize: deserialize_discovery_Announcement,
+  },
+  getByGatewayID: {
+    path: '/discovery.Discovery/GetByGatewayID',
+    requestStream: false,
+    responseStream: false,
+    requestType: ttn_discovery_discovery_pb.GetByGatewayIDRequest,
+    responseType: ttn_discovery_discovery_pb.Announcement,
+    requestSerialize: serialize_discovery_GetByGatewayIDRequest,
+    requestDeserialize: deserialize_discovery_GetByGatewayIDRequest,
     responseSerialize: serialize_discovery_Announcement,
     responseDeserialize: deserialize_discovery_Announcement,
   },

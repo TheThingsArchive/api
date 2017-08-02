@@ -107,6 +107,19 @@ class DiscoveryClient extends \Grpc\BaseStub {
     }
 
     /**
+     * @param \Discovery\GetByGatewayIDRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function GetByGatewayID(\Discovery\GetByGatewayIDRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/discovery.Discovery/GetByGatewayID',
+        $argument,
+        ['\Discovery\Announcement', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * @param \Discovery\GetByAppEUIRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

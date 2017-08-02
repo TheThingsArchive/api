@@ -30,10 +30,13 @@ type Client interface {
 	Get(serviceName, id string) (*discovery.Announcement, error)
 	AddDevAddrPrefix(prefix types.DevAddrPrefix) error
 	AddAppID(appID string, token string) error
+	AddGatewayID(gatewayID string, token string) error
 	RemoveDevAddrPrefix(prefix types.DevAddrPrefix) error
 	RemoveAppID(appID string, token string) error
+	RemoveGatewayID(gatewayID string, token string) error
 	GetAllBrokersForDevAddr(devAddr types.DevAddr) ([]*discovery.Announcement, error)
 	GetAllHandlersForAppID(appID string) ([]*discovery.Announcement, error)
+	GetAllRoutersForGatewayID(gatewayID string) ([]*discovery.Announcement, error)
 	Close() error
 }
 
@@ -179,6 +182,18 @@ func (c *DefaultClient) AddAppID(appID string, token string) error {
 	return err
 }
 
+// AddGatewayID adds a GatewayID to the current component
+func (c *DefaultClient) AddGatewayID(gatewayID string, token string) error {
+	_, err := c.client.AddMetadata(c.getContext(token), &discovery.MetadataRequest{
+		ServiceName: c.self.ServiceName,
+		ID:          c.self.ID,
+		Metadata: &discovery.Metadata{Metadata: &discovery.Metadata_GatewayID{
+			GatewayID: gatewayID,
+		}},
+	})
+	return err
+}
+
 // RemoveDevAddrPrefix removes a DevAddrPrefix from the current component
 func (c *DefaultClient) RemoveDevAddrPrefix(prefix types.DevAddrPrefix) error {
 	_, err := c.client.DeleteMetadata(c.getContext(""), &discovery.MetadataRequest{
@@ -198,6 +213,18 @@ func (c *DefaultClient) RemoveAppID(appID string, token string) error {
 		ID:          c.self.ID,
 		Metadata: discovery.Metadata{Metadata: &discovery.Metadata_AppID{
 			AppID: appID,
+		}},
+	})
+	return err
+}
+
+// RemoveGatewayID removes a GatewayID from the current component
+func (c *DefaultClient) RemoveGatewayID(gatewayID string, token string) error {
+	_, err := c.client.DeleteMetadata(c.getContext(token), &discovery.MetadataRequest{
+		ServiceName: c.self.ServiceName,
+		ID:          c.self.ID,
+		Metadata: &discovery.Metadata{Metadata: &discovery.Metadata_GatewayID{
+			GatewayID: gatewayID,
 		}},
 	})
 	return err
@@ -232,6 +259,24 @@ next:
 		for _, handlerAppID := range handler.AppIDs() {
 			if handlerAppID == appID {
 				announcements = append(announcements, handler)
+				continue next
+			}
+		}
+	}
+	return
+}
+
+// GetAllRoutersForGatewayID returns all routers that can handle the given GatewayID
+func (c *DefaultClient) GetAllRoutersForGatewayID(gatewayID string) (announcements []*discovery.Announcement, err error) {
+	routers, err := c.GetAll("router")
+	if err != nil {
+		return nil, err
+	}
+next:
+	for _, router := range routers {
+		for _, routerGatewayID := range router.GatewayIDs() {
+			if routerGatewayID == gatewayID {
+				announcements = append(announcements, router)
 				continue next
 			}
 		}

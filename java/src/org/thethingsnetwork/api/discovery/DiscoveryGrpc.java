@@ -103,6 +103,18 @@ public final class DiscoveryGrpc {
               org.thethingsnetwork.api.discovery.Announcement.getDefaultInstance()))
           .build();
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.discovery.GetByGatewayIDRequest,
+      org.thethingsnetwork.api.discovery.Announcement> METHOD_GET_BY_GATEWAY_ID =
+      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.discovery.GetByGatewayIDRequest, org.thethingsnetwork.api.discovery.Announcement>newBuilder()
+          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(generateFullMethodName(
+              "discovery.Discovery", "GetByGatewayID"))
+          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              org.thethingsnetwork.api.discovery.GetByGatewayIDRequest.getDefaultInstance()))
+          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              org.thethingsnetwork.api.discovery.Announcement.getDefaultInstance()))
+          .build();
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.discovery.GetByAppEUIRequest,
       org.thethingsnetwork.api.discovery.Announcement> METHOD_GET_BY_APP_EUI =
       io.grpc.MethodDescriptor.<org.thethingsnetwork.api.discovery.GetByAppEUIRequest, org.thethingsnetwork.api.discovery.Announcement>newBuilder()
@@ -206,6 +218,13 @@ public final class DiscoveryGrpc {
 
     /**
      */
+    public void getByGatewayID(org.thethingsnetwork.api.discovery.GetByGatewayIDRequest request,
+        io.grpc.stub.StreamObserver<org.thethingsnetwork.api.discovery.Announcement> responseObserver) {
+      asyncUnimplementedUnaryCall(METHOD_GET_BY_GATEWAY_ID, responseObserver);
+    }
+
+    /**
+     */
     public void getByAppEUI(org.thethingsnetwork.api.discovery.GetByAppEUIRequest request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.discovery.Announcement> responseObserver) {
       asyncUnimplementedUnaryCall(METHOD_GET_BY_APP_EUI, responseObserver);
@@ -255,6 +274,13 @@ public final class DiscoveryGrpc {
                 org.thethingsnetwork.api.discovery.GetByAppIDRequest,
                 org.thethingsnetwork.api.discovery.Announcement>(
                   this, METHODID_GET_BY_APP_ID)))
+          .addMethod(
+            METHOD_GET_BY_GATEWAY_ID,
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.thethingsnetwork.api.discovery.GetByGatewayIDRequest,
+                org.thethingsnetwork.api.discovery.Announcement>(
+                  this, METHODID_GET_BY_GATEWAY_ID)))
           .addMethod(
             METHOD_GET_BY_APP_EUI,
             asyncUnaryCall(
@@ -354,6 +380,14 @@ public final class DiscoveryGrpc {
 
     /**
      */
+    public void getByGatewayID(org.thethingsnetwork.api.discovery.GetByGatewayIDRequest request,
+        io.grpc.stub.StreamObserver<org.thethingsnetwork.api.discovery.Announcement> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(METHOD_GET_BY_GATEWAY_ID, getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void getByAppEUI(org.thethingsnetwork.api.discovery.GetByAppEUIRequest request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.discovery.Announcement> responseObserver) {
       asyncUnaryCall(
@@ -439,6 +473,13 @@ public final class DiscoveryGrpc {
     public org.thethingsnetwork.api.discovery.Announcement getByAppID(org.thethingsnetwork.api.discovery.GetByAppIDRequest request) {
       return blockingUnaryCall(
           getChannel(), METHOD_GET_BY_APP_ID, getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.thethingsnetwork.api.discovery.Announcement getByGatewayID(org.thethingsnetwork.api.discovery.GetByGatewayIDRequest request) {
+      return blockingUnaryCall(
+          getChannel(), METHOD_GET_BY_GATEWAY_ID, getCallOptions(), request);
     }
 
     /**
@@ -537,6 +578,14 @@ public final class DiscoveryGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<org.thethingsnetwork.api.discovery.Announcement> getByGatewayID(
+        org.thethingsnetwork.api.discovery.GetByGatewayIDRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(METHOD_GET_BY_GATEWAY_ID, getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<org.thethingsnetwork.api.discovery.Announcement> getByAppEUI(
         org.thethingsnetwork.api.discovery.GetByAppEUIRequest request) {
       return futureUnaryCall(
@@ -550,7 +599,8 @@ public final class DiscoveryGrpc {
   private static final int METHODID_ADD_METADATA = 3;
   private static final int METHODID_DELETE_METADATA = 4;
   private static final int METHODID_GET_BY_APP_ID = 5;
-  private static final int METHODID_GET_BY_APP_EUI = 6;
+  private static final int METHODID_GET_BY_GATEWAY_ID = 6;
+  private static final int METHODID_GET_BY_APP_EUI = 7;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -591,6 +641,10 @@ public final class DiscoveryGrpc {
           break;
         case METHODID_GET_BY_APP_ID:
           serviceImpl.getByAppID((org.thethingsnetwork.api.discovery.GetByAppIDRequest) request,
+              (io.grpc.stub.StreamObserver<org.thethingsnetwork.api.discovery.Announcement>) responseObserver);
+          break;
+        case METHODID_GET_BY_GATEWAY_ID:
+          serviceImpl.getByGatewayID((org.thethingsnetwork.api.discovery.GetByGatewayIDRequest) request,
               (io.grpc.stub.StreamObserver<org.thethingsnetwork.api.discovery.Announcement>) responseObserver);
           break;
         case METHODID_GET_BY_APP_EUI:
@@ -636,6 +690,7 @@ public final class DiscoveryGrpc {
               .addMethod(METHOD_ADD_METADATA)
               .addMethod(METHOD_DELETE_METADATA)
               .addMethod(METHOD_GET_BY_APP_ID)
+              .addMethod(METHOD_GET_BY_GATEWAY_ID)
               .addMethod(METHOD_GET_BY_APP_EUI)
               .build();
         }

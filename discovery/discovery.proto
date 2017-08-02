@@ -24,7 +24,9 @@ message Metadata {
 
     // Metadata for Router component (10-19)
 
-    // <nothing yet>
+    // GatewayID that is registered to this Router
+    // This metadata can only be added if the requesting client is authorized to manage this GatewayID.
+    string gateway_id = 10 [(gogoproto.customname) = "GatewayID"];
 
     // Metadata for Broker component (20-29)
 
@@ -138,6 +140,10 @@ message GetByAppIDRequest {
   string app_id = 30 [(gogoproto.customname) = "AppID"]; // compatible with Metadata message
 }
 
+message GetByGatewayIDRequest {
+  string gateway_id = 30 [(gogoproto.customname) = "GatewayID"]; // compatible with Metadata message
+}
+
 message GetByAppEUIRequest {
   bytes app_eui = 31 [(gogoproto.customname) = "AppEUI", (gogoproto.nullable) = false, (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"]; // compatible with Metadata message
 }
@@ -170,6 +176,8 @@ service Discovery {
   rpc DeleteMetadata(MetadataRequest) returns (google.protobuf.Empty);
 
   rpc GetByAppID(GetByAppIDRequest) returns (Announcement);
+
+  rpc GetByGatewayID(GetByGatewayIDRequest) returns (Announcement);
 
   rpc GetByAppEUI(GetByAppEUIRequest) returns (Announcement);
 }

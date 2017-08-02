@@ -78,8 +78,18 @@ func (_m *MockClient) AddAppID(appID string, token string) error {
 	return ret0
 }
 
+func (_m *MockClient) AddGatewayID(gatewayID string, token string) error {
+	ret := _m.ctrl.Call(_m, "AddGatewayID", gatewayID, token)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
 func (_mr *_MockClientRecorder) AddAppID(arg0, arg1 interface{}) *gomock.Call {
 	return _mr.mock.ctrl.RecordCall(_mr.mock, "AddAppID", arg0, arg1)
+}
+
+func (_mr *_MockClientRecorder) AddGatewayID(arg0, arg1 interface{}) *gomock.Call {
+	return _mr.mock.ctrl.RecordCall(_mr.mock, "AddGatewayID", arg0, arg1)
 }
 
 func (_m *MockClient) RemoveDevAddrPrefix(prefix types.DevAddrPrefix) error {
@@ -98,8 +108,18 @@ func (_m *MockClient) RemoveAppID(appID string, token string) error {
 	return ret0
 }
 
+func (_m *MockClient) RemoveGatewayID(gatewayID string, token string) error {
+	ret := _m.ctrl.Call(_m, "RemoveGatewayID", gatewayID, token)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
 func (_mr *_MockClientRecorder) RemoveAppID(arg0, arg1 interface{}) *gomock.Call {
 	return _mr.mock.ctrl.RecordCall(_mr.mock, "RemoveAppID", arg0, arg1)
+}
+
+func (_mr *_MockClientRecorder) RemoveGatewayID(arg0, arg1 interface{}) *gomock.Call {
+	return _mr.mock.ctrl.RecordCall(_mr.mock, "RemoveGatewayID", arg0, arg1)
 }
 
 func (_m *MockClient) GetAllBrokersForDevAddr(devAddr types.DevAddr) ([]*discovery.Announcement, error) {
@@ -120,8 +140,19 @@ func (_m *MockClient) GetAllHandlersForAppID(appID string) ([]*discovery.Announc
 	return ret0, ret1
 }
 
+func (_m *MockClient) GetAllRoutersForGatewayID(gatewayID string) ([]*discovery.Announcement, error) {
+	ret := _m.ctrl.Call(_m, "GetAllRoutersForGatewayID", gatewayID)
+	ret0, _ := ret[0].([]*discovery.Announcement)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
 func (_mr *_MockClientRecorder) GetAllHandlersForAppID(arg0 interface{}) *gomock.Call {
 	return _mr.mock.ctrl.RecordCall(_mr.mock, "GetAllHandlersForAppID", arg0)
+}
+
+func (_mr *_MockClientRecorder) GetAllRoutersForGatewayID(arg0 interface{}) *gomock.Call {
+	return _mr.mock.ctrl.RecordCall(_mr.mock, "GetAllRoutersForGatewayID", arg0)
 }
 
 func (_m *MockClient) Close() error {

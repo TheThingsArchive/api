@@ -32,6 +32,7 @@ module Discovery
       # Delete metadata from an announcement
       rpc :DeleteMetadata, MetadataRequest, Google::Protobuf::Empty
       rpc :GetByAppID, GetByAppIDRequest, Announcement
+      rpc :GetByGatewayID, GetByGatewayIDRequest, Announcement
       rpc :GetByAppEUI, GetByAppEUIRequest, Announcement
     end
 

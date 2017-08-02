@@ -25,6 +25,8 @@ func (m *MonitorClient) NetworkServerClient(ctx context.Context, opts ...grpc.Ca
 		var sessionCtx context.Context
 		sessionCtx, c.cancel = context.WithCancel(ctx)
 		for name, cli := range m.clients {
+			cli := cli // shadow cli; we're using it in the setup func below
+
 			status := streambuffer.New(m.bufferSize, func() (grpc.ClientStream, error) {
 				return cli.NetworkServerStatus(sessionCtx, opts...)
 			})
