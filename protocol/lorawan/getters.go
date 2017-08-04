@@ -7,36 +7,28 @@ import "github.com/TheThingsNetwork/ttn/core/types"
 
 func (m *DeviceIdentifier) GetAppEUI() (eui types.AppEUI) {
 	if m != nil {
-		if m.AppEUI != nil {
-			return *m.AppEUI
-		}
+		return m.AppEUI
 	}
 	return
 }
 
 func (m *DeviceIdentifier) GetDevEUI() (eui types.DevEUI) {
 	if m != nil {
-		if m.DevEUI != nil {
-			return *m.DevEUI
-		}
+		return m.DevEUI
 	}
 	return
 }
 
 func (m *Device) GetAppEUI() (eui types.AppEUI) {
 	if m != nil {
-		if m.AppEUI != nil {
-			return *m.AppEUI
-		}
+		return m.AppEUI
 	}
 	return
 }
 
 func (m *Device) GetDevEUI() (eui types.DevEUI) {
 	if m != nil {
-		if m.DevEUI != nil {
-			return *m.DevEUI
-		}
+		return m.DevEUI
 	}
 	return
 }
@@ -79,18 +71,14 @@ func (m *Device) GetNwkSKey() (eui types.NwkSKey) {
 
 func (m *ActivationMetadata) GetAppEUI() (eui types.AppEUI) {
 	if m != nil {
-		if m.AppEUI != nil {
-			return *m.AppEUI
-		}
+		return m.AppEUI
 	}
 	return
 }
 
 func (m *ActivationMetadata) GetDevEUI() (eui types.DevEUI) {
 	if m != nil {
-		if m.DevEUI != nil {
-			return *m.DevEUI
-		}
+		return m.DevEUI
 	}
 	return
 }

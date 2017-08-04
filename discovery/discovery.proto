@@ -128,7 +128,7 @@ message MetadataRequest {
   string service_name = 2;
 
   // Metadata to add or remove
-  Metadata metadata = 12;
+  Metadata metadata = 12 [(gogoproto.nullable) = false];
 }
 
 // A list of announcements
@@ -145,7 +145,7 @@ message GetByGatewayIDRequest {
 }
 
 message GetByAppEUIRequest {
-  bytes app_eui = 31 [(gogoproto.customname) = "AppEUI", (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"]; // compatible with Metadata message
+  bytes app_eui = 31 [(gogoproto.customname) = "AppEUI", (gogoproto.nullable) = false, (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"]; // compatible with Metadata message
 }
 
 // The Discovery service is used to discover services within The Things Network.

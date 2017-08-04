@@ -25,8 +25,8 @@ option java_multiple_files = true;
 message DeviceActivationResponse {
   bytes                        payload              = 1;
   protocol.Message             message              = 2;
-  broker.DownlinkOption        downlink_option      = 11;
-  protocol.ActivationMetadata  activation_metadata  = 23;
+  broker.DownlinkOption        downlink_option      = 11 [(gogoproto.nullable) = false];
+  protocol.ActivationMetadata  activation_metadata  = 23 [(gogoproto.nullable) = false];
 
   trace.Trace                  trace                = 31;
 }
@@ -42,8 +42,8 @@ message StatusRequest {}
 
 // message Status is the response to the StatusRequest
 message Status {
-  api.SystemStats    system    = 1;
-  api.ComponentStats component = 2;
+  api.SystemStats    system    = 1 [(gogoproto.nullable) = false];
+  api.ComponentStats component = 2 [(gogoproto.nullable) = false];
 
   api.Rates uplink      = 11;
   api.Rates downlink    = 12;
@@ -118,7 +118,7 @@ message DryDownlinkMessage {
   // JSON-encoded object with fields to encode
   string fields   = 2;
   // The Application containing the payload functions that should be executed
-  Application app = 3;
+  Application app = 3 [(gogoproto.nullable) = false];
   // The port number that should be passed to the payload function
   uint32 port     = 4;
 }
@@ -128,7 +128,7 @@ message DryUplinkMessage {
   // The binary payload to use
   bytes  payload  = 1;
   // The Application containing the payload functions that should be executed
-  Application app = 2;
+  Application app = 2 [(gogoproto.nullable) = false];
   // The port number that should be passed to the payload function
   uint32 port     = 3;
 }

@@ -33,7 +33,7 @@ func randomDeduplicatedUplinkMessage() *DeduplicatedUplinkMessage {
 // Used for testing.
 func RandomLoRaWANDeduplicatedJoinRequest(modulation ...lorawan.Modulation) *DeduplicatedUplinkMessage {
 	msg := randomDeduplicatedUplinkMessage()
-	msg.ProtocolMetadata = protocol.RandomLoRaWANRxMetadata(modulation...)
+	msg.ProtocolMetadata = *protocol.RandomLoRaWANRxMetadata(modulation...)
 	msg.Payload = lorawan.RandomPayload(lorawan.MType_JOIN_REQUEST)
 	return msg
 }
@@ -42,7 +42,7 @@ func RandomLoRaWANDeduplicatedJoinRequest(modulation ...lorawan.Modulation) *Ded
 // Used for testing.
 func RandomLoRaWANConfirmedDeduplicatedUplink(modulation ...lorawan.Modulation) *DeduplicatedUplinkMessage {
 	msg := randomDeduplicatedUplinkMessage()
-	msg.ProtocolMetadata = protocol.RandomLoRaWANRxMetadata(modulation...)
+	msg.ProtocolMetadata = *protocol.RandomLoRaWANRxMetadata(modulation...)
 	msg.Payload = lorawan.RandomPayload(lorawan.MType_CONFIRMED_UP)
 	return msg
 }
@@ -51,7 +51,7 @@ func RandomLoRaWANConfirmedDeduplicatedUplink(modulation ...lorawan.Modulation) 
 // Used for testing.
 func RandomLoRaWANUnconfirmedDeduplicatedUplink(modulation ...lorawan.Modulation) *DeduplicatedUplinkMessage {
 	msg := randomDeduplicatedUplinkMessage()
-	msg.ProtocolMetadata = protocol.RandomLoRaWANRxMetadata(modulation...)
+	msg.ProtocolMetadata = *protocol.RandomLoRaWANRxMetadata(modulation...)
 	msg.Payload = lorawan.RandomPayload(lorawan.MType_UNCONFIRMED_UP)
 	return msg
 }
@@ -70,16 +70,14 @@ func RandomLoRaWANDeduplicatedUplinkMessage(modulation ...lorawan.Modulation) *D
 }
 
 func randomDownlinkMessage() *DownlinkMessage {
-	appEUI := random.AppEUI()
-	devEUI := random.DevEUI()
 	return &DownlinkMessage{
-		AppEUI: &appEUI,
-		DevEUI: &devEUI,
+		AppEUI: random.AppEUI(),
+		DevEUI: random.DevEUI(),
 		AppID:  random.AppID(),
 		DevID:  random.DevID(),
 		DownlinkOption: &DownlinkOption{
-			GatewayConfiguration:  gateway.RandomTxConfiguration(),
-			ProtocolConfiguration: protocol.RandomTxConfiguration(),
+			GatewayConfiguration:  *gateway.RandomTxConfiguration(),
+			ProtocolConfiguration: *protocol.RandomTxConfiguration(),
 			Score:      uint32(random.Intn(100)),
 			Deadline:   int64(time.Now().Nanosecond() + random.Intn(10000)),
 			GatewayID:  random.ID(),

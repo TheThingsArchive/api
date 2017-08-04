@@ -22,7 +22,7 @@ func msgFromPayload(payload []byte) (*pb_protocol.Message, error) {
 
 // UnmarshalPayload unmarshals the Payload into Message if Message is nil
 func (m *UplinkMessage) UnmarshalPayload() error {
-	if m.GetMessage() == nil && m.GetProtocolMetadata() != nil && m.ProtocolMetadata.GetLoRaWAN() != nil {
+	if m.GetMessage() == nil && m.ProtocolMetadata.GetLoRaWAN() != nil {
 		msg, err := msgFromPayload(m.Payload)
 		if err != nil {
 			return err
@@ -34,13 +34,14 @@ func (m *UplinkMessage) UnmarshalPayload() error {
 
 // UnmarshalPayload unmarshals the Payload into Message if Message is nil
 func (m *DownlinkMessage) UnmarshalPayload() error {
-	if m.GetMessage() == nil && m.GetDownlinkOption() != nil && m.DownlinkOption.GetProtocolConfiguration() != nil && m.DownlinkOption.ProtocolConfiguration.GetLoRaWAN() != nil {
+	if m.GetMessage() == nil && m.GetDownlinkOption() != nil && m.DownlinkOption.ProtocolConfiguration.GetLoRaWAN() != nil {
 		msg, err := msgFromPayload(m.Payload)
 		if err != nil {
 			return err
 		}
 		m.Message = msg
-		if lorawan := m.GetDownlinkOption().GetProtocolConfiguration().GetLoRaWAN(); lorawan != nil {
+		conf := m.GetDownlinkOption().GetProtocolConfiguration()
+		if lorawan := conf.GetLoRaWAN(); lorawan != nil {
 			if lorawan.FCnt != 0 {
 				if mac := m.Message.GetLoRaWAN().GetMACPayload(); mac != nil {
 					mac.FHDR.FCnt = lorawan.FCnt
@@ -53,7 +54,7 @@ func (m *DownlinkMessage) UnmarshalPayload() error {
 
 // UnmarshalPayload unmarshals the Payload into Message if Message is nil
 func (m *DeviceActivationResponse) UnmarshalPayload() error {
-	if m.GetMessage() == nil && m.GetDownlinkOption() != nil && m.DownlinkOption.GetProtocolConfiguration() != nil && m.DownlinkOption.ProtocolConfiguration.GetLoRaWAN() != nil {
+	if m.GetMessage() == nil && m.GetDownlinkOption() != nil && m.DownlinkOption.ProtocolConfiguration.GetLoRaWAN() != nil {
 		msg, err := msgFromPayload(m.Payload)
 		if err != nil {
 			return err
@@ -65,13 +66,14 @@ func (m *DeviceActivationResponse) UnmarshalPayload() error {
 
 // UnmarshalPayload unmarshals the Payload into Message if Message is nil
 func (m *DeduplicatedUplinkMessage) UnmarshalPayload() error {
-	if m.GetMessage() == nil && m.GetProtocolMetadata() != nil && m.ProtocolMetadata.GetLoRaWAN() != nil {
+	if m.GetMessage() == nil && m.ProtocolMetadata.GetLoRaWAN() != nil {
 		msg, err := msgFromPayload(m.Payload)
 		if err != nil {
 			return err
 		}
 		m.Message = msg
-		if lorawan := m.GetProtocolMetadata().GetLoRaWAN(); lorawan != nil {
+		md := m.GetProtocolMetadata()
+		if lorawan := md.GetLoRaWAN(); lorawan != nil {
 			if lorawan.FCnt != 0 {
 				if mac := m.Message.GetLoRaWAN().GetMACPayload(); mac != nil {
 					mac.FHDR.FCnt = lorawan.FCnt
@@ -84,7 +86,7 @@ func (m *DeduplicatedUplinkMessage) UnmarshalPayload() error {
 
 // UnmarshalPayload unmarshals the Payload into Message if Message is nil
 func (m *DeviceActivationRequest) UnmarshalPayload() error {
-	if m.GetMessage() == nil && m.GetProtocolMetadata() != nil && m.ProtocolMetadata.GetLoRaWAN() != nil {
+	if m.GetMessage() == nil && m.ProtocolMetadata.GetLoRaWAN() != nil {
 		msg, err := msgFromPayload(m.Payload)
 		if err != nil {
 			return err
@@ -96,7 +98,7 @@ func (m *DeviceActivationRequest) UnmarshalPayload() error {
 
 // UnmarshalPayload unmarshals the Payload into Message if Message is nil
 func (m *DeduplicatedDeviceActivationRequest) UnmarshalPayload() error {
-	if m.GetMessage() == nil && m.GetProtocolMetadata() != nil && m.ProtocolMetadata.GetLoRaWAN() != nil {
+	if m.GetMessage() == nil && m.ProtocolMetadata.GetLoRaWAN() != nil {
 		msg, err := msgFromPayload(m.Payload)
 		if err != nil {
 			return err

@@ -163,7 +163,7 @@ func (c *DefaultClient) AddDevAddrPrefix(prefix types.DevAddrPrefix) error {
 	_, err := c.client.AddMetadata(c.getContext(""), &discovery.MetadataRequest{
 		ServiceName: c.self.ServiceName,
 		ID:          c.self.ID,
-		Metadata: &discovery.Metadata{Metadata: &discovery.Metadata_DevAddrPrefix{
+		Metadata: discovery.Metadata{Metadata: &discovery.Metadata_DevAddrPrefix{
 			DevAddrPrefix: prefix.Bytes(),
 		}},
 	})
@@ -175,7 +175,7 @@ func (c *DefaultClient) AddAppID(appID string, token string) error {
 	_, err := c.client.AddMetadata(c.getContext(token), &discovery.MetadataRequest{
 		ServiceName: c.self.ServiceName,
 		ID:          c.self.ID,
-		Metadata: &discovery.Metadata{Metadata: &discovery.Metadata_AppID{
+		Metadata: discovery.Metadata{Metadata: &discovery.Metadata_AppID{
 			AppID: appID,
 		}},
 	})
@@ -199,7 +199,7 @@ func (c *DefaultClient) RemoveDevAddrPrefix(prefix types.DevAddrPrefix) error {
 	_, err := c.client.DeleteMetadata(c.getContext(""), &discovery.MetadataRequest{
 		ServiceName: c.self.ServiceName,
 		ID:          c.self.ID,
-		Metadata: &discovery.Metadata{Metadata: &discovery.Metadata_DevAddrPrefix{
+		Metadata: discovery.Metadata{Metadata: &discovery.Metadata_DevAddrPrefix{
 			DevAddrPrefix: prefix.Bytes(),
 		}},
 	})
@@ -211,7 +211,7 @@ func (c *DefaultClient) RemoveAppID(appID string, token string) error {
 	_, err := c.client.DeleteMetadata(c.getContext(token), &discovery.MetadataRequest{
 		ServiceName: c.self.ServiceName,
 		ID:          c.self.ID,
-		Metadata: &discovery.Metadata{Metadata: &discovery.Metadata_AppID{
+		Metadata: discovery.Metadata{Metadata: &discovery.Metadata_AppID{
 			AppID: appID,
 		}},
 	})
