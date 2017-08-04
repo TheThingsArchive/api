@@ -15,21 +15,94 @@ PROTOBUF_C__BEGIN_DECLS
 #endif
 
 #include "google/protobuf/empty.pb-c.h"
+#include "google/protobuf/struct.pb-c.h"
+#include "google/protobuf/timestamp.pb-c.h"
+#include "github.com/gogo/protobuf/gogoproto/gogo.pb-c.h"
 #include "github.com/TheThingsNetwork/api/gateway/gateway.pb-c.h"
 #include "github.com/TheThingsNetwork/api/router/router.pb-c.h"
 #include "github.com/TheThingsNetwork/api/broker/broker.pb-c.h"
 #include "github.com/TheThingsNetwork/api/handler/handler.pb-c.h"
 #include "github.com/TheThingsNetwork/api/networkserver/networkserver.pb-c.h"
 
+typedef struct _Monitor__LogMessage Monitor__LogMessage;
 
 
 /* --- enums --- */
 
+typedef enum _Monitor__Level {
+  MONITOR__LEVEL__DEBUG = 0,
+  MONITOR__LEVEL__INFO = 1,
+  MONITOR__LEVEL__WARN = 2,
+  MONITOR__LEVEL__ERROR = 3,
+  MONITOR__LEVEL__FATAL = 4
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(MONITOR__LEVEL)
+} Monitor__Level;
 
 /* --- messages --- */
 
+struct  _Monitor__LogMessage
+{
+  ProtobufCMessage base;
+  /*
+   * Timestamp of the log message. Will be filled by the server if empty.
+   */
+  Google__Protobuf__Timestamp *time;
+  /*
+   * The log level
+   * DEBUG: Messages that help debug the execution of some logic; SHOULD NOT be used in production.
+   * INFO:  Messages that inform about an event (request, uplink, ...); a single event MUST NOT trigger more than one INFO message.
+   * WARN:  Messages that warn about unexpected events, but the program can cope with those just fine (bad user input, something not found).
+   * ERROR: Messages that indicate a problem in the program that may require user intervention, but the program can keep running.
+   * FATAL: Messages that indicate a problem that prevents the program from continuing. FATAL messages trigger an "exit 1" after forwarding.
+   */
+  protobuf_c_boolean has_level;
+  Monitor__Level level;
+  /*
+   * The log message is a short description of what's happening.
+   * - Log messages are full sentences that start with a capital letter.
+   * - Log messages do not shorten words (use "Could not" instead of "Couldn't")
+   * - Log messages do generally not end with a period (for example: "Connected to database").
+   * - Log messages can end with three periods (...) if something is about to happen (for example: "Connecting to database...").
+   */
+  char *message;
+  /*
+   * Structured log fields allow analyses
+   * - Add fields that are informative
+   * - Add fields that someone might want to use to filter the logs (for example: IDs/EUIs, ...)
+   * - Add fields that someone might want to use to visualize the logs (for example: number of results per query, duration, ...)
+   * - Log field names use PascalCase
+   */
+  Google__Protobuf__Struct *fields;
+};
+#define MONITOR__LOG_MESSAGE__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&monitor__log_message__descriptor) \
+    , NULL, 0,0, NULL, NULL }
+
+
+/* Monitor__LogMessage methods */
+void   monitor__log_message__init
+                     (Monitor__LogMessage         *message);
+size_t monitor__log_message__get_packed_size
+                     (const Monitor__LogMessage   *message);
+size_t monitor__log_message__pack
+                     (const Monitor__LogMessage   *message,
+                      uint8_t             *out);
+size_t monitor__log_message__pack_to_buffer
+                     (const Monitor__LogMessage   *message,
+                      ProtobufCBuffer     *buffer);
+Monitor__LogMessage *
+       monitor__log_message__unpack
+                     (ProtobufCAllocator  *allocator,
+                      size_t               len,
+                      const uint8_t       *data);
+void   monitor__log_message__free_unpacked
+                     (Monitor__LogMessage *message,
+                      ProtobufCAllocator *allocator);
 /* --- per-message closures --- */
 
+typedef void (*Monitor__LogMessage_Closure)
+                 (const Monitor__LogMessage *message,
+                  void *closure_data);
 
 /* --- services --- */
 
@@ -81,6 +154,10 @@ struct _Monitor__Monitor_Service
                                 const Networkserver__Status *input,
                                 Google__Protobuf__Empty_Closure closure,
                                 void *closure_data);
+  void (*logs)(Monitor__Monitor_Service *service,
+               const Monitor__LogMessage *input,
+               Google__Protobuf__Empty_Closure closure,
+               void *closure_data);
 };
 typedef void (*Monitor__Monitor_ServiceDestroy)(Monitor__Monitor_Service *);
 void monitor__monitor__init (Monitor__Monitor_Service *service,
@@ -99,7 +176,8 @@ void monitor__monitor__init (Monitor__Monitor_Service *service,
       function_prefix__ ## handler_status,\
       function_prefix__ ## handler_uplink,\
       function_prefix__ ## handler_downlink,\
-      function_prefix__ ## network_server_status  }
+      function_prefix__ ## network_server_status,\
+      function_prefix__ ## logs  }
 void monitor__monitor__router_status(ProtobufCService *service,
                                      const Router__Status *input,
                                      Google__Protobuf__Empty_Closure closure,
@@ -144,9 +222,15 @@ void monitor__monitor__network_server_status(ProtobufCService *service,
                                              const Networkserver__Status *input,
                                              Google__Protobuf__Empty_Closure closure,
                                              void *closure_data);
+void monitor__monitor__logs(ProtobufCService *service,
+                            const Monitor__LogMessage *input,
+                            Google__Protobuf__Empty_Closure closure,
+                            void *closure_data);
 
 /* --- descriptors --- */
 
+extern const ProtobufCEnumDescriptor    monitor__level__descriptor;
+extern const ProtobufCMessageDescriptor monitor__log_message__descriptor;
 extern const ProtobufCServiceDescriptor monitor__monitor__descriptor;
 
 PROTOBUF_C__END_DECLS

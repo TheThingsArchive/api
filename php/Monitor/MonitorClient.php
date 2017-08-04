@@ -130,4 +130,14 @@ class MonitorClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function Logs($metadata = [], $options = []) {
+        return $this->_clientStreamRequest('/monitor.Monitor/Logs',
+        ['\Google\Protobuf\Empty','decode'],
+        $metadata, $options);
+    }
+
 }

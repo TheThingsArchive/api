@@ -43,6 +43,7 @@ internal protocol Monitor_MonitorProvider {
   func handleruplink(session : Monitor_MonitorHandlerUplinkSession) throws
   func handlerdownlink(session : Monitor_MonitorHandlerDownlinkSession) throws
   func networkserverstatus(session : Monitor_MonitorNetworkServerStatusSession) throws
+  func logs(session : Monitor_MonitorLogsSession) throws
 }
 
 /// Common properties available in each service session.
@@ -599,6 +600,55 @@ internal class Monitor_MonitorNetworkServerStatusSession : Monitor_MonitorSessio
   }
 }
 
+// Logs (Client Streaming)
+internal class Monitor_MonitorLogsSession : Monitor_MonitorSession {
+  private var provider : Monitor_MonitorProvider
+
+  /// Create a session.
+  fileprivate init(handler:gRPC.Handler, provider: Monitor_MonitorProvider) {
+    self.provider = provider
+    super.init(handler:handler)
+  }
+
+  /// Receive a message. Blocks until a message is received or the client closes the connection.
+  internal func receive() throws -> Monitor_LogMessage {
+    let sem = DispatchSemaphore(value: 0)
+    var requestMessage : Monitor_LogMessage?
+    try self.handler.receiveMessage() {(requestData) in
+      if let requestData = requestData {
+        requestMessage = try? Monitor_LogMessage(serializedData:requestData)
+      }
+      sem.signal()
+    }
+    _ = sem.wait(timeout: DispatchTime.distantFuture)
+    if requestMessage == nil {
+      throw Monitor_MonitorServerError.endOfStream
+    }
+    return requestMessage!
+  }
+
+  /// Send a response and close the connection.
+  internal func sendAndClose(_ response: Google_Protobuf_Empty) throws {
+    try self.handler.sendResponse(message:response.serializedData(),
+                                  statusCode:self.statusCode,
+                                  statusMessage:self.statusMessage,
+                                  trailingMetadata:self.trailingMetadata)
+  }
+
+  /// Run the session. Internal.
+  fileprivate func run(queue:DispatchQueue) throws {
+    try self.handler.sendMetadata(initialMetadata:initialMetadata) {
+      queue.async {
+        do {
+          try self.provider.logs(session:self)
+        } catch (let error) {
+          print("error \(error)")
+        }
+      }
+    }
+  }
+}
+
 
 /// Main server for generated service
 internal class Monitor_MonitorServer {
@@ -667,6 +717,8 @@ internal class Monitor_MonitorServer {
           try Monitor_MonitorHandlerDownlinkSession(handler:handler, provider:provider).run(queue:queue)
         case "/monitor.Monitor/NetworkServerStatus":
           try Monitor_MonitorNetworkServerStatusSession(handler:handler, provider:provider).run(queue:queue)
+        case "/monitor.Monitor/Logs":
+          try Monitor_MonitorLogsSession(handler:handler, provider:provider).run(queue:queue)
         default:
           break // handle unknown requests
         }

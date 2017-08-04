@@ -7,7 +7,161 @@
 #endif
 
 #include "github.com/TheThingsNetwork/api/monitor/monitor.pb-c.h"
-static const ProtobufCMethodDescriptor monitor__monitor__method_descriptors[11] =
+void   monitor__log_message__init
+                     (Monitor__LogMessage         *message)
+{
+  static Monitor__LogMessage init_value = MONITOR__LOG_MESSAGE__INIT;
+  *message = init_value;
+}
+size_t monitor__log_message__get_packed_size
+                     (const Monitor__LogMessage *message)
+{
+  assert(message->base.descriptor == &monitor__log_message__descriptor);
+  return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
+}
+size_t monitor__log_message__pack
+                     (const Monitor__LogMessage *message,
+                      uint8_t       *out)
+{
+  assert(message->base.descriptor == &monitor__log_message__descriptor);
+  return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
+}
+size_t monitor__log_message__pack_to_buffer
+                     (const Monitor__LogMessage *message,
+                      ProtobufCBuffer *buffer)
+{
+  assert(message->base.descriptor == &monitor__log_message__descriptor);
+  return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
+}
+Monitor__LogMessage *
+       monitor__log_message__unpack
+                     (ProtobufCAllocator  *allocator,
+                      size_t               len,
+                      const uint8_t       *data)
+{
+  return (Monitor__LogMessage *)
+     protobuf_c_message_unpack (&monitor__log_message__descriptor,
+                                allocator, len, data);
+}
+void   monitor__log_message__free_unpacked
+                     (Monitor__LogMessage *message,
+                      ProtobufCAllocator *allocator)
+{
+  assert(message->base.descriptor == &monitor__log_message__descriptor);
+  protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
+}
+static const ProtobufCFieldDescriptor monitor__log_message__field_descriptors[4] =
+{
+  {
+    "time",
+    1,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_MESSAGE,
+    0,   /* quantifier_offset */
+    offsetof(Monitor__LogMessage, time),
+    &google__protobuf__timestamp__descriptor,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "level",
+    2,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_ENUM,
+    offsetof(Monitor__LogMessage, has_level),
+    offsetof(Monitor__LogMessage, level),
+    &monitor__level__descriptor,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "message",
+    3,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_STRING,
+    0,   /* quantifier_offset */
+    offsetof(Monitor__LogMessage, message),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "fields",
+    4,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_MESSAGE,
+    0,   /* quantifier_offset */
+    offsetof(Monitor__LogMessage, fields),
+    &google__protobuf__struct__descriptor,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+};
+static const unsigned monitor__log_message__field_indices_by_name[] = {
+  3,   /* field[3] = fields */
+  1,   /* field[1] = level */
+  2,   /* field[2] = message */
+  0,   /* field[0] = time */
+};
+static const ProtobufCIntRange monitor__log_message__number_ranges[1 + 1] =
+{
+  { 1, 0 },
+  { 0, 4 }
+};
+const ProtobufCMessageDescriptor monitor__log_message__descriptor =
+{
+  PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
+  "monitor.LogMessage",
+  "LogMessage",
+  "Monitor__LogMessage",
+  "monitor",
+  sizeof(Monitor__LogMessage),
+  4,
+  monitor__log_message__field_descriptors,
+  monitor__log_message__field_indices_by_name,
+  1,  monitor__log_message__number_ranges,
+  (ProtobufCMessageInit) monitor__log_message__init,
+  NULL,NULL,NULL    /* reserved[123] */
+};
+static const ProtobufCEnumValue monitor__level__enum_values_by_number[5] =
+{
+  { "DEBUG", "MONITOR__LEVEL__DEBUG", 0 },
+  { "INFO", "MONITOR__LEVEL__INFO", 1 },
+  { "WARN", "MONITOR__LEVEL__WARN", 2 },
+  { "ERROR", "MONITOR__LEVEL__ERROR", 3 },
+  { "FATAL", "MONITOR__LEVEL__FATAL", 4 },
+};
+static const ProtobufCIntRange monitor__level__value_ranges[] = {
+{0, 0},{0, 5}
+};
+static const ProtobufCEnumValueIndex monitor__level__enum_values_by_name[5] =
+{
+  { "DEBUG", 0 },
+  { "ERROR", 3 },
+  { "FATAL", 4 },
+  { "INFO", 1 },
+  { "WARN", 2 },
+};
+const ProtobufCEnumDescriptor monitor__level__descriptor =
+{
+  PROTOBUF_C__ENUM_DESCRIPTOR_MAGIC,
+  "monitor.Level",
+  "Level",
+  "Monitor__Level",
+  "monitor",
+  5,
+  monitor__level__enum_values_by_number,
+  5,
+  monitor__level__enum_values_by_name,
+  1,
+  monitor__level__value_ranges,
+  NULL,NULL,NULL,NULL   /* reserved[1234] */
+};
+static const ProtobufCMethodDescriptor monitor__monitor__method_descriptors[12] =
 {
   { "RouterStatus", &router__status__descriptor, &google__protobuf__empty__descriptor },
   { "GatewayStatus", &gateway__status__descriptor, &google__protobuf__empty__descriptor },
@@ -20,6 +174,7 @@ static const ProtobufCMethodDescriptor monitor__monitor__method_descriptors[11] 
   { "HandlerUplink", &broker__deduplicated_uplink_message__descriptor, &google__protobuf__empty__descriptor },
   { "HandlerDownlink", &broker__downlink_message__descriptor, &google__protobuf__empty__descriptor },
   { "NetworkServerStatus", &networkserver__status__descriptor, &google__protobuf__empty__descriptor },
+  { "Logs", &monitor__log_message__descriptor, &google__protobuf__empty__descriptor },
 };
 const unsigned monitor__monitor__method_indices_by_name[] = {
   6,        /* BrokerDownlink */
@@ -31,6 +186,7 @@ const unsigned monitor__monitor__method_indices_by_name[] = {
   9,        /* HandlerDownlink */
   7,        /* HandlerStatus */
   8,        /* HandlerUplink */
+  11,        /* Logs */
   10,        /* NetworkServerStatus */
   0         /* RouterStatus */
 };
@@ -41,7 +197,7 @@ const ProtobufCServiceDescriptor monitor__monitor__descriptor =
   "Monitor",
   "Monitor__Monitor",
   "monitor",
-  11,
+  12,
   monitor__monitor__method_descriptors,
   monitor__monitor__method_indices_by_name
 };
@@ -132,6 +288,14 @@ void monitor__monitor__network_server_status(ProtobufCService *service,
 {
   assert(service->descriptor == &monitor__monitor__descriptor);
   service->invoke(service, 10, (const ProtobufCMessage *) input, (ProtobufCClosure) closure, closure_data);
+}
+void monitor__monitor__logs(ProtobufCService *service,
+                            const Monitor__LogMessage *input,
+                            Google__Protobuf__Empty_Closure closure,
+                            void *closure_data)
+{
+  assert(service->descriptor == &monitor__monitor__descriptor);
+  service->invoke(service, 11, (const ProtobufCMessage *) input, (ProtobufCClosure) closure, closure_data);
 }
 void monitor__monitor__init (Monitor__Monitor_Service *service,
                              Monitor__Monitor_ServiceDestroy destroy)
