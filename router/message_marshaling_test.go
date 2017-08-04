@@ -68,15 +68,15 @@ func TestMarshalUnmarshalPayload(t *testing.T) {
 	// Only Marshal
 	subjects = []payloadMarshalerUnmarshaler{
 		&UplinkMessage{
-			ProtocolMetadata: rxMeta,
+			ProtocolMetadata: *rxMeta,
 			Message:          macMsg,
 		},
 		&DownlinkMessage{
-			ProtocolConfiguration: txConf,
+			ProtocolConfiguration: *txConf,
 			Message:               macMsg,
 		},
 		&DeviceActivationRequest{
-			ProtocolMetadata: rxMeta,
+			ProtocolMetadata: *rxMeta,
 			Message:          joinReqMsg,
 		},
 	}
@@ -89,15 +89,15 @@ func TestMarshalUnmarshalPayload(t *testing.T) {
 	// Only Unmarshal
 	subjects = []payloadMarshalerUnmarshaler{
 		&UplinkMessage{
-			ProtocolMetadata: rxMeta,
+			ProtocolMetadata: *rxMeta,
 			Payload:          macBin,
 		},
 		&DownlinkMessage{
-			ProtocolConfiguration: txConf,
+			ProtocolConfiguration: *txConf,
 			Payload:               macBin,
 		},
 		&DeviceActivationRequest{
-			ProtocolMetadata: rxMeta,
+			ProtocolMetadata: *rxMeta,
 			Payload:          joinReqBin,
 		},
 	}

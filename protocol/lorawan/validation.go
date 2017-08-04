@@ -11,10 +11,10 @@ import (
 
 // Validate implements the api.Validator interface
 func (m *DeviceIdentifier) Validate() error {
-	if m.AppEUI == nil || m.AppEUI.IsEmpty() {
+	if  m.AppEUI.IsEmpty() {
 		return errors.NewErrInvalidArgument("AppEUI", "can not be empty")
 	}
-	if m.DevEUI == nil {
+	if m.DevEUI.IsEmpty() {
 		return errors.NewErrInvalidArgument("DevEUI", "can not be empty")
 	}
 	return nil
@@ -22,10 +22,10 @@ func (m *DeviceIdentifier) Validate() error {
 
 // Validate implements the api.Validator interface
 func (m *Device) Validate() error {
-	if m.AppEUI == nil || m.AppEUI.IsEmpty() {
+	if  m.AppEUI.IsEmpty() {
 		return errors.NewErrInvalidArgument("AppEUI", "can not be empty")
 	}
-	if m.DevEUI == nil {
+	if m.DevEUI.IsEmpty() {
 		return errors.NewErrInvalidArgument("DevEUI", "can not be empty")
 	}
 	if err := api.NotEmptyAndValidID(m.AppID, "AppID"); err != nil {
@@ -81,10 +81,10 @@ func (m *TxConfiguration) Validate() error {
 
 // Validate implements the api.Validator interface
 func (m *ActivationMetadata) Validate() error {
-	if m.AppEUI == nil || m.AppEUI.IsEmpty() {
+	if  m.AppEUI.IsEmpty() {
 		return errors.NewErrInvalidArgument("AppEUI", "can not be empty")
 	}
-	if m.DevEUI == nil || m.DevEUI.IsEmpty() {
+	if  m.DevEUI.IsEmpty() {
 		return errors.NewErrInvalidArgument("DevEUI", "can not be empty")
 	}
 	if m.DevAddr != nil && m.DevAddr.IsEmpty() {

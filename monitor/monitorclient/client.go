@@ -209,11 +209,13 @@ func (c *componentClient) Send(msg interface{}) {
 		if len(uplink) == 0 {
 			return
 		}
+		devEUI := msg.DevEUI
+		appEUI := msg.AppEUI
 		asUplink := &broker.DeduplicatedUplinkMessage{
 			Payload:          msg.Payload,
 			Message:          msg.Message,
-			DevEUI:           msg.DevEUI,
-			AppEUI:           msg.AppEUI,
+			DevEUI:           &devEUI,
+			AppEUI:           &appEUI,
 			AppID:            msg.AppID,
 			DevID:            msg.DevID,
 			ProtocolMetadata: msg.ProtocolMetadata,

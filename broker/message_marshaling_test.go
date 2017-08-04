@@ -87,27 +87,27 @@ func TestMarshalUnmarshalPayload(t *testing.T) {
 	// Only Marshal
 	subjects = []payloadMarshalerUnmarshaler{
 		&UplinkMessage{
-			ProtocolMetadata: rxMeta,
+			ProtocolMetadata: *rxMeta,
 			Message:          macMsg,
 		},
 		&DownlinkMessage{
-			DownlinkOption: &DownlinkOption{ProtocolConfiguration: txConf},
+			DownlinkOption: &DownlinkOption{ProtocolConfiguration: *txConf},
 			Message:        macMsg,
 		},
 		&DeviceActivationResponse{
-			DownlinkOption: &DownlinkOption{ProtocolConfiguration: txConf},
+			DownlinkOption: &DownlinkOption{ProtocolConfiguration: *txConf},
 			Message:        joinAccMsg,
 		},
 		&DeduplicatedUplinkMessage{
-			ProtocolMetadata: rxMeta,
+			ProtocolMetadata: *rxMeta,
 			Message:          macMsg,
 		},
 		&DeviceActivationRequest{
-			ProtocolMetadata: rxMeta,
+			ProtocolMetadata: *rxMeta,
 			Message:          joinReqMsg,
 		},
 		&DeduplicatedDeviceActivationRequest{
-			ProtocolMetadata: rxMeta,
+			ProtocolMetadata: *rxMeta,
 			Message:          joinReqMsg,
 		},
 		&ActivationChallengeRequest{
@@ -126,27 +126,27 @@ func TestMarshalUnmarshalPayload(t *testing.T) {
 	// Only Unmarshal
 	subjects = []payloadMarshalerUnmarshaler{
 		&UplinkMessage{
-			ProtocolMetadata: rxMeta,
+			ProtocolMetadata: *rxMeta,
 			Payload:          macBin,
 		},
 		&DownlinkMessage{
-			DownlinkOption: &DownlinkOption{ProtocolConfiguration: txConf},
+			DownlinkOption: &DownlinkOption{ProtocolConfiguration: *txConf},
 			Payload:        macBin,
 		},
 		&DeviceActivationResponse{
-			DownlinkOption: &DownlinkOption{ProtocolConfiguration: txConf},
+			DownlinkOption: &DownlinkOption{ProtocolConfiguration: *txConf},
 			Payload:        joinAccBin,
 		},
 		&DeduplicatedUplinkMessage{
-			ProtocolMetadata: rxMeta,
+			ProtocolMetadata: *rxMeta,
 			Payload:          macBin,
 		},
 		&DeviceActivationRequest{
-			ProtocolMetadata: rxMeta,
+			ProtocolMetadata: *rxMeta,
 			Payload:          joinReqBin,
 		},
 		&DeduplicatedDeviceActivationRequest{
-			ProtocolMetadata: rxMeta,
+			ProtocolMetadata: *rxMeta,
 			Payload:          joinReqBin,
 		},
 		&ActivationChallengeRequest{
