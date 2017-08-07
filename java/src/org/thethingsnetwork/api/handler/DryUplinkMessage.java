@@ -114,7 +114,7 @@ public  final class DryUplinkMessage extends
    * The Application containing the payload functions that should be executed
    * </pre>
    *
-   * <code>.handler.Application app = 2;</code>
+   * <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
    */
   public boolean hasApp() {
     return app_ != null;
@@ -124,7 +124,7 @@ public  final class DryUplinkMessage extends
    * The Application containing the payload functions that should be executed
    * </pre>
    *
-   * <code>.handler.Application app = 2;</code>
+   * <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.handler.Application getApp() {
     return app_ == null ? org.thethingsnetwork.api.handler.Application.getDefaultInstance() : app_;
@@ -134,7 +134,7 @@ public  final class DryUplinkMessage extends
    * The Application containing the payload functions that should be executed
    * </pre>
    *
-   * <code>.handler.Application app = 2;</code>
+   * <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.handler.ApplicationOrBuilder getAppOrBuilder() {
     return getApp();
@@ -533,7 +533,7 @@ public  final class DryUplinkMessage extends
      * The Application containing the payload functions that should be executed
      * </pre>
      *
-     * <code>.handler.Application app = 2;</code>
+     * <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
      */
     public boolean hasApp() {
       return appBuilder_ != null || app_ != null;
@@ -543,7 +543,7 @@ public  final class DryUplinkMessage extends
      * The Application containing the payload functions that should be executed
      * </pre>
      *
-     * <code>.handler.Application app = 2;</code>
+     * <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.handler.Application getApp() {
       if (appBuilder_ == null) {
@@ -557,7 +557,7 @@ public  final class DryUplinkMessage extends
      * The Application containing the payload functions that should be executed
      * </pre>
      *
-     * <code>.handler.Application app = 2;</code>
+     * <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setApp(org.thethingsnetwork.api.handler.Application value) {
       if (appBuilder_ == null) {
@@ -577,7 +577,7 @@ public  final class DryUplinkMessage extends
      * The Application containing the payload functions that should be executed
      * </pre>
      *
-     * <code>.handler.Application app = 2;</code>
+     * <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setApp(
         org.thethingsnetwork.api.handler.Application.Builder builderForValue) {
@@ -595,7 +595,7 @@ public  final class DryUplinkMessage extends
      * The Application containing the payload functions that should be executed
      * </pre>
      *
-     * <code>.handler.Application app = 2;</code>
+     * <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
      */
     public Builder mergeApp(org.thethingsnetwork.api.handler.Application value) {
       if (appBuilder_ == null) {
@@ -617,7 +617,7 @@ public  final class DryUplinkMessage extends
      * The Application containing the payload functions that should be executed
      * </pre>
      *
-     * <code>.handler.Application app = 2;</code>
+     * <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
      */
     public Builder clearApp() {
       if (appBuilder_ == null) {
@@ -635,7 +635,7 @@ public  final class DryUplinkMessage extends
      * The Application containing the payload functions that should be executed
      * </pre>
      *
-     * <code>.handler.Application app = 2;</code>
+     * <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.handler.Application.Builder getAppBuilder() {
       
@@ -647,7 +647,7 @@ public  final class DryUplinkMessage extends
      * The Application containing the payload functions that should be executed
      * </pre>
      *
-     * <code>.handler.Application app = 2;</code>
+     * <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.handler.ApplicationOrBuilder getAppOrBuilder() {
       if (appBuilder_ != null) {
@@ -662,7 +662,7 @@ public  final class DryUplinkMessage extends
      * The Application containing the payload functions that should be executed
      * </pre>
      *
-     * <code>.handler.Application app = 2;</code>
+     * <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.handler.Application, org.thethingsnetwork.api.handler.Application.Builder, org.thethingsnetwork.api.handler.ApplicationOrBuilder> 

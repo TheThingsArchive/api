@@ -86,36 +86,36 @@ public final class DiscoveryProto {
       " \003(\0132\023.discovery.Metadata\")\n\021GetServiceR" +
       "equest\022\024\n\014service_name\030\001 \001(\t\"6\n\nGetReque" +
       "st\022\022\n\002id\030\001 \001(\tB\006\342\336\037\002ID\022\024\n\014service_name\030\002" +
-      " \001(\t\"b\n\017MetadataRequest\022\022\n\002id\030\001 \001(\tB\006\342\336\037" +
-      "\002ID\022\024\n\014service_name\030\002 \001(\t\022%\n\010metadata\030\014 ",
-      "\001(\0132\023.discovery.Metadata\"B\n\025Announcement" +
-      "sResponse\022)\n\010services\030\001 \003(\0132\027.discovery." +
-      "Announcement\".\n\021GetByAppIDRequest\022\031\n\006app" +
-      "_id\030\036 \001(\tB\t\342\336\037\005AppID\":\n\025GetByGatewayIDRe" +
-      "quest\022!\n\ngateway_id\030\036 \001(\tB\r\342\336\037\tGatewayID" +
-      "\"f\n\022GetByAppEUIRequest\022P\n\007app_eui\030\037 \001(\014B" +
-      "?\342\336\037\006AppEUI\332\336\0371github.com/TheThingsNetwo" +
-      "rk/ttn/core/types.AppEUI2\376\004\n\tDiscovery\022;" +
-      "\n\010Announce\022\027.discovery.Announcement\032\026.go" +
-      "ogle.protobuf.Empty\022o\n\006GetAll\022\034.discover",
-      "y.GetServiceRequest\032 .discovery.Announce" +
-      "mentsResponse\"%\202\323\344\223\002\037\022\035/announcements/{s" +
-      "ervice_name}\022a\n\003Get\022\025.discovery.GetReque" +
-      "st\032\027.discovery.Announcement\"*\202\323\344\223\002$\022\"/an" +
-      "nouncements/{service_name}/{id}\022A\n\013AddMe" +
+      " \001(\t\"h\n\017MetadataRequest\022\022\n\002id\030\001 \001(\tB\006\342\336\037" +
+      "\002ID\022\024\n\014service_name\030\002 \001(\t\022+\n\010metadata\030\014 ",
+      "\001(\0132\023.discovery.MetadataB\004\310\336\037\000\"B\n\025Announ" +
+      "cementsResponse\022)\n\010services\030\001 \003(\0132\027.disc" +
+      "overy.Announcement\".\n\021GetByAppIDRequest\022" +
+      "\031\n\006app_id\030\036 \001(\tB\t\342\336\037\005AppID\":\n\025GetByGatew" +
+      "ayIDRequest\022!\n\ngateway_id\030\036 \001(\tB\r\342\336\037\tGat" +
+      "ewayID\"j\n\022GetByAppEUIRequest\022T\n\007app_eui\030" +
+      "\037 \001(\014BC\342\336\037\006AppEUI\310\336\037\000\332\336\0371github.com/TheT" +
+      "hingsNetwork/ttn/core/types.AppEUI2\376\004\n\tD" +
+      "iscovery\022;\n\010Announce\022\027.discovery.Announc" +
+      "ement\032\026.google.protobuf.Empty\022o\n\006GetAll\022",
+      "\034.discovery.GetServiceRequest\032 .discover" +
+      "y.AnnouncementsResponse\"%\202\323\344\223\002\037\022\035/announ" +
+      "cements/{service_name}\022a\n\003Get\022\025.discover" +
+      "y.GetRequest\032\027.discovery.Announcement\"*\202" +
+      "\323\344\223\002$\022\"/announcements/{service_name}/{id" +
+      "}\022A\n\013AddMetadata\022\032.discovery.MetadataReq" +
+      "uest\032\026.google.protobuf.Empty\022D\n\016DeleteMe" +
       "tadata\022\032.discovery.MetadataRequest\032\026.goo" +
-      "gle.protobuf.Empty\022D\n\016DeleteMetadata\022\032.d" +
-      "iscovery.MetadataRequest\032\026.google.protob" +
-      "uf.Empty\022C\n\nGetByAppID\022\034.discovery.GetBy" +
-      "AppIDRequest\032\027.discovery.Announcement\022K\n",
-      "\016GetByGatewayID\022 .discovery.GetByGateway" +
-      "IDRequest\032\027.discovery.Announcement\022E\n\013Ge" +
-      "tByAppEUI\022\035.discovery.GetByAppEUIRequest" +
-      "\032\027.discovery.Announcement2\022\n\020DiscoveryMa" +
-      "nagerB\202\001\n\"org.thethingsnetwork.api.disco" +
-      "veryB\016DiscoveryProtoP\001Z)github.com/TheTh" +
-      "ingsNetwork/api/discovery\252\002\036TheThingsNet" +
-      "work.API.Discoveryb\006proto3"
+      "gle.protobuf.Empty\022C\n\nGetByAppID\022\034.disco" +
+      "very.GetByAppIDRequest\032\027.discovery.Annou",
+      "ncement\022K\n\016GetByGatewayID\022 .discovery.Ge" +
+      "tByGatewayIDRequest\032\027.discovery.Announce" +
+      "ment\022E\n\013GetByAppEUI\022\035.discovery.GetByApp" +
+      "EUIRequest\032\027.discovery.Announcement2\022\n\020D" +
+      "iscoveryManagerB\202\001\n\"org.thethingsnetwork" +
+      ".api.discoveryB\016DiscoveryProtoP\001Z)github" +
+      ".com/TheThingsNetwork/api/discovery\252\002\036Th" +
+      "eThingsNetwork.API.Discoveryb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -190,6 +190,7 @@ public final class DiscoveryProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.protobuf.GoGoProtos.customname);
     registry.add(com.google.protobuf.GoGoProtos.customtype);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);

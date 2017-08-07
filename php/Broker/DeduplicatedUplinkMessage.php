@@ -42,7 +42,7 @@ class DeduplicatedUplinkMessage extends \Google\Protobuf\Internal\Message
      */
     private $dev_id = '';
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     private $protocol_metadata = null;
     /**
@@ -170,7 +170,7 @@ class DeduplicatedUplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public function getProtocolMetadata()
     {
@@ -178,7 +178,7 @@ class DeduplicatedUplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public function setProtocolMetadata(&$var)
     {

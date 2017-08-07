@@ -286,19 +286,19 @@ public  final class UplinkMessage extends
   public static final int PROTOCOL_METADATA_FIELD_NUMBER = 21;
   private org.thethingsnetwork.api.protocol.RxMetadata protocolMetadata_;
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
    */
   public boolean hasProtocolMetadata() {
     return protocolMetadata_ != null;
   }
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.protocol.RxMetadata getProtocolMetadata() {
     return protocolMetadata_ == null ? org.thethingsnetwork.api.protocol.RxMetadata.getDefaultInstance() : protocolMetadata_;
   }
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.protocol.RxMetadataOrBuilder getProtocolMetadataOrBuilder() {
     return getProtocolMetadata();
@@ -307,19 +307,19 @@ public  final class UplinkMessage extends
   public static final int GATEWAY_METADATA_FIELD_NUMBER = 22;
   private org.thethingsnetwork.api.gateway.RxMetadata gatewayMetadata_;
   /**
-   * <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+   * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
    */
   public boolean hasGatewayMetadata() {
     return gatewayMetadata_ != null;
   }
   /**
-   * <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+   * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.gateway.RxMetadata getGatewayMetadata() {
     return gatewayMetadata_ == null ? org.thethingsnetwork.api.gateway.RxMetadata.getDefaultInstance() : gatewayMetadata_;
   }
   /**
-   * <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+   * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.gateway.RxMetadataOrBuilder getGatewayMetadataOrBuilder() {
     return getGatewayMetadata();
@@ -1258,13 +1258,13 @@ public  final class UplinkMessage extends
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.RxMetadata, org.thethingsnetwork.api.protocol.RxMetadata.Builder, org.thethingsnetwork.api.protocol.RxMetadataOrBuilder> protocolMetadataBuilder_;
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public boolean hasProtocolMetadata() {
       return protocolMetadataBuilder_ != null || protocolMetadata_ != null;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.RxMetadata getProtocolMetadata() {
       if (protocolMetadataBuilder_ == null) {
@@ -1274,7 +1274,7 @@ public  final class UplinkMessage extends
       }
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setProtocolMetadata(org.thethingsnetwork.api.protocol.RxMetadata value) {
       if (protocolMetadataBuilder_ == null) {
@@ -1290,7 +1290,7 @@ public  final class UplinkMessage extends
       return this;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setProtocolMetadata(
         org.thethingsnetwork.api.protocol.RxMetadata.Builder builderForValue) {
@@ -1304,7 +1304,7 @@ public  final class UplinkMessage extends
       return this;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public Builder mergeProtocolMetadata(org.thethingsnetwork.api.protocol.RxMetadata value) {
       if (protocolMetadataBuilder_ == null) {
@@ -1322,7 +1322,7 @@ public  final class UplinkMessage extends
       return this;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public Builder clearProtocolMetadata() {
       if (protocolMetadataBuilder_ == null) {
@@ -1336,7 +1336,7 @@ public  final class UplinkMessage extends
       return this;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.RxMetadata.Builder getProtocolMetadataBuilder() {
       
@@ -1344,7 +1344,7 @@ public  final class UplinkMessage extends
       return getProtocolMetadataFieldBuilder().getBuilder();
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.RxMetadataOrBuilder getProtocolMetadataOrBuilder() {
       if (protocolMetadataBuilder_ != null) {
@@ -1355,7 +1355,7 @@ public  final class UplinkMessage extends
       }
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.RxMetadata, org.thethingsnetwork.api.protocol.RxMetadata.Builder, org.thethingsnetwork.api.protocol.RxMetadataOrBuilder> 
@@ -1375,13 +1375,13 @@ public  final class UplinkMessage extends
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.gateway.RxMetadata, org.thethingsnetwork.api.gateway.RxMetadata.Builder, org.thethingsnetwork.api.gateway.RxMetadataOrBuilder> gatewayMetadataBuilder_;
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+     * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
      */
     public boolean hasGatewayMetadata() {
       return gatewayMetadataBuilder_ != null || gatewayMetadata_ != null;
     }
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+     * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.gateway.RxMetadata getGatewayMetadata() {
       if (gatewayMetadataBuilder_ == null) {
@@ -1391,7 +1391,7 @@ public  final class UplinkMessage extends
       }
     }
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+     * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setGatewayMetadata(org.thethingsnetwork.api.gateway.RxMetadata value) {
       if (gatewayMetadataBuilder_ == null) {
@@ -1407,7 +1407,7 @@ public  final class UplinkMessage extends
       return this;
     }
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+     * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setGatewayMetadata(
         org.thethingsnetwork.api.gateway.RxMetadata.Builder builderForValue) {
@@ -1421,7 +1421,7 @@ public  final class UplinkMessage extends
       return this;
     }
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+     * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
      */
     public Builder mergeGatewayMetadata(org.thethingsnetwork.api.gateway.RxMetadata value) {
       if (gatewayMetadataBuilder_ == null) {
@@ -1439,7 +1439,7 @@ public  final class UplinkMessage extends
       return this;
     }
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+     * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
      */
     public Builder clearGatewayMetadata() {
       if (gatewayMetadataBuilder_ == null) {
@@ -1453,7 +1453,7 @@ public  final class UplinkMessage extends
       return this;
     }
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+     * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.gateway.RxMetadata.Builder getGatewayMetadataBuilder() {
       
@@ -1461,7 +1461,7 @@ public  final class UplinkMessage extends
       return getGatewayMetadataFieldBuilder().getBuilder();
     }
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+     * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.gateway.RxMetadataOrBuilder getGatewayMetadataOrBuilder() {
       if (gatewayMetadataBuilder_ != null) {
@@ -1472,7 +1472,7 @@ public  final class UplinkMessage extends
       }
     }
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+     * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.gateway.RxMetadata, org.thethingsnetwork.api.gateway.RxMetadata.Builder, org.thethingsnetwork.api.gateway.RxMetadataOrBuilder> 

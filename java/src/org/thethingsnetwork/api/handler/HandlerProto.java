@@ -108,89 +108,90 @@ public final class HandlerProto {
       "heThingsNetwork/api/protocol/protocol.pr" +
       "oto\032=github.com/TheThingsNetwork/api/pro" +
       "tocol/lorawan/device.proto\0321github.com/T",
-      "heThingsNetwork/api/trace/trace.proto\"\330\001" +
+      "heThingsNetwork/api/trace/trace.proto\"\344\001" +
       "\n\030DeviceActivationResponse\022\017\n\007payload\030\001 " +
       "\001(\014\022\"\n\007message\030\002 \001(\0132\021.protocol.Message\022" +
-      "/\n\017downlink_option\030\013 \001(\0132\026.broker.Downli" +
-      "nkOption\0229\n\023activation_metadata\030\027 \001(\0132\034." +
-      "protocol.ActivationMetadata\022\033\n\005trace\030\037 \001" +
-      "(\0132\014.trace.Trace\"\017\n\rStatusRequest\"\255\001\n\006St" +
-      "atus\022 \n\006system\030\001 \001(\0132\020.api.SystemStats\022&" +
-      "\n\tcomponent\030\002 \001(\0132\023.api.ComponentStats\022\032" +
-      "\n\006uplink\030\013 \001(\0132\n.api.Rates\022\034\n\010downlink\030\014",
-      " \001(\0132\n.api.Rates\022\037\n\013activations\030\r \001(\0132\n." +
-      "api.Rates\"2\n\025ApplicationIdentifier\022\031\n\006ap" +
-      "p_id\030\001 \001(\tB\t\342\336\037\005AppID\"\255\001\n\013Application\022\031\n" +
-      "\006app_id\030\001 \001(\tB\t\342\336\037\005AppID\022\026\n\016payload_form" +
-      "at\030\006 \001(\t\022\017\n\007decoder\030\002 \001(\t\022\021\n\tconverter\030\003" +
-      " \001(\t\022\021\n\tvalidator\030\004 \001(\t\022\017\n\007encoder\030\005 \001(\t" +
-      "\022#\n\033register_on_join_access_key\030\007 \001(\t\"H\n" +
-      "\020DeviceIdentifier\022\031\n\006app_id\030\001 \001(\tB\t\342\336\037\005A" +
-      "ppID\022\031\n\006dev_id\030\002 \001(\tB\t\342\336\037\005DevID\"\272\002\n\006Devi" +
-      "ce\022\031\n\006app_id\030\001 \001(\tB\t\342\336\037\005AppID\022\031\n\006dev_id\030",
-      "\002 \001(\tB\t\342\336\037\005DevID\022<\n\016lorawan_device\030\003 \001(\013" +
-      "2\017.lorawan.DeviceB\021\342\336\037\rLoRaWANDeviceH\000\022\020" +
-      "\n\010latitude\030\n \001(\002\022\021\n\tlongitude\030\013 \001(\002\022\020\n\010a" +
-      "ltitude\030\014 \001(\005\0223\n\nattributes\030\r \003(\0132\037.hand" +
-      "ler.Device.AttributesEntry\022\023\n\013descriptio" +
-      "n\030\024 \001(\t\0321\n\017AttributesEntry\022\013\n\003key\030\001 \001(\t\022" +
-      "\r\n\005value\030\002 \001(\t:\0028\001B\010\n\006device\".\n\nDeviceLi" +
-      "st\022 \n\007devices\030\001 \003(\0132\017.handler.Device\"f\n\022" +
-      "DryDownlinkMessage\022\017\n\007payload\030\001 \001(\014\022\016\n\006f" +
-      "ields\030\002 \001(\t\022!\n\003app\030\003 \001(\0132\024.handler.Appli",
-      "cation\022\014\n\004port\030\004 \001(\r\"T\n\020DryUplinkMessage" +
-      "\022\017\n\007payload\030\001 \001(\014\022!\n\003app\030\002 \001(\0132\024.handler" +
-      ".Application\022\014\n\004port\030\003 \001(\r\"m\n\026SimulatedU" +
-      "plinkMessage\022\031\n\006app_id\030\001 \001(\tB\t\342\336\037\005AppID\022" +
-      "\031\n\006dev_id\030\002 \001(\tB\t\342\336\037\005DevID\022\017\n\007payload\030\003 " +
-      "\001(\014\022\014\n\004port\030\004 \001(\r\",\n\010LogEntry\022\020\n\010functio" +
-      "n\030\001 \001(\t\022\016\n\006fields\030\002 \003(\t\"b\n\017DryUplinkResu" +
-      "lt\022\017\n\007payload\030\001 \001(\014\022\016\n\006fields\030\002 \001(\t\022\r\n\005v" +
-      "alid\030\003 \001(\010\022\037\n\004logs\030\004 \003(\0132\021.handler.LogEn" +
-      "try\"E\n\021DryDownlinkResult\022\017\n\007payload\030\001 \001(",
-      "\014\022\037\n\004logs\030\002 \003(\0132\021.handler.LogEntry2\305\001\n\007H" +
-      "andler\022^\n\023ActivationChallenge\022\".broker.A" +
-      "ctivationChallengeRequest\032#.broker.Activ" +
-      "ationChallengeResponse\022Z\n\010Activate\022+.bro" +
-      "ker.DeduplicatedDeviceActivationRequest\032" +
-      "!.handler.DeviceActivationResponse2\343\t\n\022A" +
-      "pplicationManager\022g\n\023RegisterApplication" +
-      "\022\036.handler.ApplicationIdentifier\032\026.googl" +
-      "e.protobuf.Empty\"\030\202\323\344\223\002\022\"\r/applications:" +
-      "\001*\022f\n\016GetApplication\022\036.handler.Applicati",
-      "onIdentifier\032\024.handler.Application\"\036\202\323\344\223" +
-      "\002\030\022\026/applications/{app_id}\022~\n\016SetApplica" +
-      "tion\022\024.handler.Application\032\026.google.prot" +
-      "obuf.Empty\">\202\323\344\223\0028\"\026/applications/{app_i" +
-      "d}:\001*Z\033\032\026/applications/{app_id}:\001*\022k\n\021De" +
-      "leteApplication\022\036.handler.ApplicationIde" +
-      "ntifier\032\026.google.protobuf.Empty\"\036\202\323\344\223\002\030*" +
-      "\026/applications/{app_id}\022h\n\tGetDevice\022\031.h" +
-      "andler.DeviceIdentifier\032\017.handler.Device" +
-      "\"/\202\323\344\223\002)\022\'/applications/{app_id}/devices",
-      "/{dev_id}\022\342\001\n\tSetDevice\022\017.handler.Device" +
-      "\032\026.google.protobuf.Empty\"\253\001\202\323\344\223\002\244\001\"\'/app" +
-      "lications/{app_id}/devices/{dev_id}:\001*Z," +
-      "\032\'/applications/{app_id}/devices/{dev_id" +
-      "}:\001*Z#\"\036/applications/{app_id}/devices:\001" +
-      "*Z#\032\036/applications/{app_id}/devices:\001*\022r" +
-      "\n\014DeleteDevice\022\031.handler.DeviceIdentifie" +
-      "r\032\026.google.protobuf.Empty\"/\202\323\344\223\002)*\'/appl" +
-      "ications/{app_id}/devices/{dev_id}\022w\n\030Ge" +
-      "tDevicesForApplication\022\036.handler.Applica",
-      "tionIdentifier\032\023.handler.DeviceList\"&\202\323\344" +
-      "\223\002 \022\036/applications/{app_id}/devices\022F\n\013D" +
-      "ryDownlink\022\033.handler.DryDownlinkMessage\032" +
-      "\032.handler.DryDownlinkResult\022@\n\tDryUplink" +
-      "\022\031.handler.DryUplinkMessage\032\030.handler.Dr" +
-      "yUplinkResult\022I\n\016SimulateUplink\022\037.handle" +
-      "r.SimulatedUplinkMessage\032\026.google.protob" +
-      "uf.Empty2F\n\016HandlerManager\0224\n\tGetStatus\022" +
-      "\026.handler.StatusRequest\032\017.handler.Status" +
-      "Bz\n org.thethingsnetwork.api.handlerB\014Ha",
-      "ndlerProtoP\001Z\'github.com/TheThingsNetwor" +
-      "k/api/handler\252\002\034TheThingsNetwork.API.Han" +
-      "dlerb\006proto3"
+      "5\n\017downlink_option\030\013 \001(\0132\026.broker.Downli" +
+      "nkOptionB\004\310\336\037\000\022?\n\023activation_metadata\030\027 " +
+      "\001(\0132\034.protocol.ActivationMetadataB\004\310\336\037\000\022" +
+      "\033\n\005trace\030\037 \001(\0132\014.trace.Trace\"\017\n\rStatusRe" +
+      "quest\"\271\001\n\006Status\022&\n\006system\030\001 \001(\0132\020.api.S" +
+      "ystemStatsB\004\310\336\037\000\022,\n\tcomponent\030\002 \001(\0132\023.ap" +
+      "i.ComponentStatsB\004\310\336\037\000\022\032\n\006uplink\030\013 \001(\0132\n",
+      ".api.Rates\022\034\n\010downlink\030\014 \001(\0132\n.api.Rates" +
+      "\022\037\n\013activations\030\r \001(\0132\n.api.Rates\"2\n\025App" +
+      "licationIdentifier\022\031\n\006app_id\030\001 \001(\tB\t\342\336\037\005" +
+      "AppID\"\255\001\n\013Application\022\031\n\006app_id\030\001 \001(\tB\t\342" +
+      "\336\037\005AppID\022\026\n\016payload_format\030\006 \001(\t\022\017\n\007deco" +
+      "der\030\002 \001(\t\022\021\n\tconverter\030\003 \001(\t\022\021\n\tvalidato" +
+      "r\030\004 \001(\t\022\017\n\007encoder\030\005 \001(\t\022#\n\033register_on_" +
+      "join_access_key\030\007 \001(\t\"H\n\020DeviceIdentifie" +
+      "r\022\031\n\006app_id\030\001 \001(\tB\t\342\336\037\005AppID\022\031\n\006dev_id\030\002" +
+      " \001(\tB\t\342\336\037\005DevID\"\272\002\n\006Device\022\031\n\006app_id\030\001 \001",
+      "(\tB\t\342\336\037\005AppID\022\031\n\006dev_id\030\002 \001(\tB\t\342\336\037\005DevID" +
+      "\022<\n\016lorawan_device\030\003 \001(\0132\017.lorawan.Devic" +
+      "eB\021\342\336\037\rLoRaWANDeviceH\000\022\020\n\010latitude\030\n \001(\002" +
+      "\022\021\n\tlongitude\030\013 \001(\002\022\020\n\010altitude\030\014 \001(\005\0223\n" +
+      "\nattributes\030\r \003(\0132\037.handler.Device.Attri" +
+      "butesEntry\022\023\n\013description\030\024 \001(\t\0321\n\017Attri" +
+      "butesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
+      "8\001B\010\n\006device\".\n\nDeviceList\022 \n\007devices\030\001 " +
+      "\003(\0132\017.handler.Device\"l\n\022DryDownlinkMessa" +
+      "ge\022\017\n\007payload\030\001 \001(\014\022\016\n\006fields\030\002 \001(\t\022\'\n\003a",
+      "pp\030\003 \001(\0132\024.handler.ApplicationB\004\310\336\037\000\022\014\n\004" +
+      "port\030\004 \001(\r\"Z\n\020DryUplinkMessage\022\017\n\007payloa" +
+      "d\030\001 \001(\014\022\'\n\003app\030\002 \001(\0132\024.handler.Applicati" +
+      "onB\004\310\336\037\000\022\014\n\004port\030\003 \001(\r\"m\n\026SimulatedUplin" +
+      "kMessage\022\031\n\006app_id\030\001 \001(\tB\t\342\336\037\005AppID\022\031\n\006d" +
+      "ev_id\030\002 \001(\tB\t\342\336\037\005DevID\022\017\n\007payload\030\003 \001(\014\022" +
+      "\014\n\004port\030\004 \001(\r\",\n\010LogEntry\022\020\n\010function\030\001 " +
+      "\001(\t\022\016\n\006fields\030\002 \003(\t\"b\n\017DryUplinkResult\022\017" +
+      "\n\007payload\030\001 \001(\014\022\016\n\006fields\030\002 \001(\t\022\r\n\005valid" +
+      "\030\003 \001(\010\022\037\n\004logs\030\004 \003(\0132\021.handler.LogEntry\"",
+      "E\n\021DryDownlinkResult\022\017\n\007payload\030\001 \001(\014\022\037\n" +
+      "\004logs\030\002 \003(\0132\021.handler.LogEntry2\305\001\n\007Handl" +
+      "er\022^\n\023ActivationChallenge\022\".broker.Activ" +
+      "ationChallengeRequest\032#.broker.Activatio" +
+      "nChallengeResponse\022Z\n\010Activate\022+.broker." +
+      "DeduplicatedDeviceActivationRequest\032!.ha" +
+      "ndler.DeviceActivationResponse2\343\t\n\022Appli" +
+      "cationManager\022g\n\023RegisterApplication\022\036.h" +
+      "andler.ApplicationIdentifier\032\026.google.pr" +
+      "otobuf.Empty\"\030\202\323\344\223\002\022\"\r/applications:\001*\022f",
+      "\n\016GetApplication\022\036.handler.ApplicationId" +
+      "entifier\032\024.handler.Application\"\036\202\323\344\223\002\030\022\026" +
+      "/applications/{app_id}\022~\n\016SetApplication" +
+      "\022\024.handler.Application\032\026.google.protobuf" +
+      ".Empty\">\202\323\344\223\0028\"\026/applications/{app_id}:\001" +
+      "*Z\033\032\026/applications/{app_id}:\001*\022k\n\021Delete" +
+      "Application\022\036.handler.ApplicationIdentif" +
+      "ier\032\026.google.protobuf.Empty\"\036\202\323\344\223\002\030*\026/ap" +
+      "plications/{app_id}\022h\n\tGetDevice\022\031.handl" +
+      "er.DeviceIdentifier\032\017.handler.Device\"/\202\323",
+      "\344\223\002)\022\'/applications/{app_id}/devices/{de" +
+      "v_id}\022\342\001\n\tSetDevice\022\017.handler.Device\032\026.g" +
+      "oogle.protobuf.Empty\"\253\001\202\323\344\223\002\244\001\"\'/applica" +
+      "tions/{app_id}/devices/{dev_id}:\001*Z,\032\'/a" +
+      "pplications/{app_id}/devices/{dev_id}:\001*" +
+      "Z#\"\036/applications/{app_id}/devices:\001*Z#\032" +
+      "\036/applications/{app_id}/devices:\001*\022r\n\014De" +
+      "leteDevice\022\031.handler.DeviceIdentifier\032\026." +
+      "google.protobuf.Empty\"/\202\323\344\223\002)*\'/applicat" +
+      "ions/{app_id}/devices/{dev_id}\022w\n\030GetDev",
+      "icesForApplication\022\036.handler.Application" +
+      "Identifier\032\023.handler.DeviceList\"&\202\323\344\223\002 \022" +
+      "\036/applications/{app_id}/devices\022F\n\013DryDo" +
+      "wnlink\022\033.handler.DryDownlinkMessage\032\032.ha" +
+      "ndler.DryDownlinkResult\022@\n\tDryUplink\022\031.h" +
+      "andler.DryUplinkMessage\032\030.handler.DryUpl" +
+      "inkResult\022I\n\016SimulateUplink\022\037.handler.Si" +
+      "mulatedUplinkMessage\032\026.google.protobuf.E" +
+      "mpty2F\n\016HandlerManager\0224\n\tGetStatus\022\026.ha" +
+      "ndler.StatusRequest\032\017.handler.StatusBz\n ",
+      "org.thethingsnetwork.api.handlerB\014Handle" +
+      "rProtoP\001Z\'github.com/TheThingsNetwork/ap" +
+      "i/handler\252\002\034TheThingsNetwork.API.Handler" +
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -305,6 +306,7 @@ public final class HandlerProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.protobuf.GoGoProtos.customname);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);

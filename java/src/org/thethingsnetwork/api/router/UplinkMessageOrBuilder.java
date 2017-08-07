@@ -26,28 +26,28 @@ public interface UplinkMessageOrBuilder extends
   org.thethingsnetwork.api.protocol.MessageOrBuilder getMessageOrBuilder();
 
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 11;</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
    */
   boolean hasProtocolMetadata();
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 11;</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
    */
   org.thethingsnetwork.api.protocol.RxMetadata getProtocolMetadata();
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 11;</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
    */
   org.thethingsnetwork.api.protocol.RxMetadataOrBuilder getProtocolMetadataOrBuilder();
 
   /**
-   * <code>.gateway.RxMetadata gateway_metadata = 12;</code>
+   * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
    */
   boolean hasGatewayMetadata();
   /**
-   * <code>.gateway.RxMetadata gateway_metadata = 12;</code>
+   * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
    */
   org.thethingsnetwork.api.gateway.RxMetadata getGatewayMetadata();
   /**
-   * <code>.gateway.RxMetadata gateway_metadata = 12;</code>
+   * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
    */
   org.thethingsnetwork.api.gateway.RxMetadataOrBuilder getGatewayMetadataOrBuilder();
 

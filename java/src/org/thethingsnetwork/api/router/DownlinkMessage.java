@@ -156,19 +156,19 @@ public  final class DownlinkMessage extends
   public static final int PROTOCOL_CONFIGURATION_FIELD_NUMBER = 11;
   private org.thethingsnetwork.api.protocol.TxConfiguration protocolConfiguration_;
   /**
-   * <code>.protocol.TxConfiguration protocol_configuration = 11;</code>
+   * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
    */
   public boolean hasProtocolConfiguration() {
     return protocolConfiguration_ != null;
   }
   /**
-   * <code>.protocol.TxConfiguration protocol_configuration = 11;</code>
+   * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.protocol.TxConfiguration getProtocolConfiguration() {
     return protocolConfiguration_ == null ? org.thethingsnetwork.api.protocol.TxConfiguration.getDefaultInstance() : protocolConfiguration_;
   }
   /**
-   * <code>.protocol.TxConfiguration protocol_configuration = 11;</code>
+   * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.protocol.TxConfigurationOrBuilder getProtocolConfigurationOrBuilder() {
     return getProtocolConfiguration();
@@ -177,19 +177,19 @@ public  final class DownlinkMessage extends
   public static final int GATEWAY_CONFIGURATION_FIELD_NUMBER = 12;
   private org.thethingsnetwork.api.gateway.TxConfiguration gatewayConfiguration_;
   /**
-   * <code>.gateway.TxConfiguration gateway_configuration = 12;</code>
+   * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
    */
   public boolean hasGatewayConfiguration() {
     return gatewayConfiguration_ != null;
   }
   /**
-   * <code>.gateway.TxConfiguration gateway_configuration = 12;</code>
+   * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.gateway.TxConfiguration getGatewayConfiguration() {
     return gatewayConfiguration_ == null ? org.thethingsnetwork.api.gateway.TxConfiguration.getDefaultInstance() : gatewayConfiguration_;
   }
   /**
-   * <code>.gateway.TxConfiguration gateway_configuration = 12;</code>
+   * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.gateway.TxConfigurationOrBuilder getGatewayConfigurationOrBuilder() {
     return getGatewayConfiguration();
@@ -766,13 +766,13 @@ public  final class DownlinkMessage extends
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.TxConfiguration, org.thethingsnetwork.api.protocol.TxConfiguration.Builder, org.thethingsnetwork.api.protocol.TxConfigurationOrBuilder> protocolConfigurationBuilder_;
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 11;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
      */
     public boolean hasProtocolConfiguration() {
       return protocolConfigurationBuilder_ != null || protocolConfiguration_ != null;
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 11;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.TxConfiguration getProtocolConfiguration() {
       if (protocolConfigurationBuilder_ == null) {
@@ -782,7 +782,7 @@ public  final class DownlinkMessage extends
       }
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 11;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setProtocolConfiguration(org.thethingsnetwork.api.protocol.TxConfiguration value) {
       if (protocolConfigurationBuilder_ == null) {
@@ -798,7 +798,7 @@ public  final class DownlinkMessage extends
       return this;
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 11;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setProtocolConfiguration(
         org.thethingsnetwork.api.protocol.TxConfiguration.Builder builderForValue) {
@@ -812,7 +812,7 @@ public  final class DownlinkMessage extends
       return this;
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 11;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
      */
     public Builder mergeProtocolConfiguration(org.thethingsnetwork.api.protocol.TxConfiguration value) {
       if (protocolConfigurationBuilder_ == null) {
@@ -830,7 +830,7 @@ public  final class DownlinkMessage extends
       return this;
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 11;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
      */
     public Builder clearProtocolConfiguration() {
       if (protocolConfigurationBuilder_ == null) {
@@ -844,7 +844,7 @@ public  final class DownlinkMessage extends
       return this;
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 11;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.TxConfiguration.Builder getProtocolConfigurationBuilder() {
       
@@ -852,7 +852,7 @@ public  final class DownlinkMessage extends
       return getProtocolConfigurationFieldBuilder().getBuilder();
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 11;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.TxConfigurationOrBuilder getProtocolConfigurationOrBuilder() {
       if (protocolConfigurationBuilder_ != null) {
@@ -863,7 +863,7 @@ public  final class DownlinkMessage extends
       }
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 11;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.TxConfiguration, org.thethingsnetwork.api.protocol.TxConfiguration.Builder, org.thethingsnetwork.api.protocol.TxConfigurationOrBuilder> 
@@ -883,13 +883,13 @@ public  final class DownlinkMessage extends
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.gateway.TxConfiguration, org.thethingsnetwork.api.gateway.TxConfiguration.Builder, org.thethingsnetwork.api.gateway.TxConfigurationOrBuilder> gatewayConfigurationBuilder_;
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 12;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
      */
     public boolean hasGatewayConfiguration() {
       return gatewayConfigurationBuilder_ != null || gatewayConfiguration_ != null;
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 12;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.gateway.TxConfiguration getGatewayConfiguration() {
       if (gatewayConfigurationBuilder_ == null) {
@@ -899,7 +899,7 @@ public  final class DownlinkMessage extends
       }
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 12;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setGatewayConfiguration(org.thethingsnetwork.api.gateway.TxConfiguration value) {
       if (gatewayConfigurationBuilder_ == null) {
@@ -915,7 +915,7 @@ public  final class DownlinkMessage extends
       return this;
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 12;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setGatewayConfiguration(
         org.thethingsnetwork.api.gateway.TxConfiguration.Builder builderForValue) {
@@ -929,7 +929,7 @@ public  final class DownlinkMessage extends
       return this;
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 12;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
      */
     public Builder mergeGatewayConfiguration(org.thethingsnetwork.api.gateway.TxConfiguration value) {
       if (gatewayConfigurationBuilder_ == null) {
@@ -947,7 +947,7 @@ public  final class DownlinkMessage extends
       return this;
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 12;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
      */
     public Builder clearGatewayConfiguration() {
       if (gatewayConfigurationBuilder_ == null) {
@@ -961,7 +961,7 @@ public  final class DownlinkMessage extends
       return this;
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 12;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.gateway.TxConfiguration.Builder getGatewayConfigurationBuilder() {
       
@@ -969,7 +969,7 @@ public  final class DownlinkMessage extends
       return getGatewayConfigurationFieldBuilder().getBuilder();
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 12;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.gateway.TxConfigurationOrBuilder getGatewayConfigurationOrBuilder() {
       if (gatewayConfigurationBuilder_ != null) {
@@ -980,7 +980,7 @@ public  final class DownlinkMessage extends
       }
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 12;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.gateway.TxConfiguration, org.thethingsnetwork.api.gateway.TxConfiguration.Builder, org.thethingsnetwork.api.gateway.TxConfigurationOrBuilder> 

@@ -48,7 +48,7 @@ public interface MetadataRequestOrBuilder extends
    * Metadata to add or remove
    * </pre>
    *
-   * <code>.discovery.Metadata metadata = 12;</code>
+   * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
    */
   boolean hasMetadata();
   /**
@@ -56,7 +56,7 @@ public interface MetadataRequestOrBuilder extends
    * Metadata to add or remove
    * </pre>
    *
-   * <code>.discovery.Metadata metadata = 12;</code>
+   * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
    */
   org.thethingsnetwork.api.discovery.Metadata getMetadata();
   /**
@@ -64,7 +64,7 @@ public interface MetadataRequestOrBuilder extends
    * Metadata to add or remove
    * </pre>
    *
-   * <code>.discovery.Metadata metadata = 12;</code>
+   * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
    */
   org.thethingsnetwork.api.discovery.MetadataOrBuilder getMetadataOrBuilder();
 }

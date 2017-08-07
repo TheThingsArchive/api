@@ -51,34 +51,34 @@ public final class MonitorProto {
       "k/api/protocol/lorawan/device.proto\0323git" +
       "hub.com/TheThingsNetwork/api/broker/brok" +
       "er.proto\0325github.com/TheThingsNetwork/ap" +
-      "i/handler/handler.proto\"i\n\016DevicesReques" +
-      "t\022H\n\010dev_addr\030\001 \001(\014B6\332\336\0372github.com/TheT",
-      "hingsNetwork/ttn/core/types.DevAddr\022\r\n\005f" +
-      "_cnt\030\002 \001(\r\"3\n\017DevicesResponse\022 \n\007results" +
-      "\030\001 \003(\0132\017.lorawan.Device\"\017\n\rStatusRequest" +
-      "\"\334\001\n\006Status\022 \n\006system\030\001 \001(\0132\020.api.System" +
-      "Stats\022&\n\tcomponent\030\002 \001(\0132\023.api.Component" +
-      "Stats\022\032\n\006uplink\030\013 \001(\0132\n.api.Rates\022\034\n\010dow" +
-      "nlink\030\014 \001(\0132\n.api.Rates\022\037\n\013activations\030\r" +
-      " \001(\0132\n.api.Rates\022-\n\023devices_per_address\030" +
-      "\025 \001(\0132\020.api.Percentiles2\253\003\n\rNetworkServe" +
-      "r\022K\n\nGetDevices\022\035.networkserver.DevicesR",
-      "equest\032\036.networkserver.DevicesResponse\022m" +
-      "\n\021PrepareActivation\022+.broker.Deduplicate" +
-      "dDeviceActivationRequest\032+.broker.Dedupl" +
-      "icatedDeviceActivationRequest\022P\n\010Activat" +
-      "e\022!.handler.DeviceActivationResponse\032!.h" +
-      "andler.DeviceActivationResponse\022N\n\006Uplin" +
-      "k\022!.broker.DeduplicatedUplinkMessage\032!.b" +
-      "roker.DeduplicatedUplinkMessage\022<\n\010Downl" +
-      "ink\022\027.broker.DownlinkMessage\032\027.broker.Do" +
-      "wnlinkMessage2X\n\024NetworkServerManager\022@\n",
-      "\tGetStatus\022\034.networkserver.StatusRequest" +
-      "\032\025.networkserver.StatusB\206\001\n&org.thething" +
-      "snetwork.api.networkserverB\014MonitorProto" +
-      "P\001Z-github.com/TheThingsNetwork/api/netw" +
-      "orkserver\252\002\034TheThingsNetwork.API.Monitor" +
-      "b\006proto3"
+      "i/handler/handler.proto\"m\n\016DevicesReques" +
+      "t\022L\n\010dev_addr\030\001 \001(\014B:\310\336\037\000\332\336\0372github.com/",
+      "TheThingsNetwork/ttn/core/types.DevAddr\022" +
+      "\r\n\005f_cnt\030\002 \001(\r\"3\n\017DevicesResponse\022 \n\007res" +
+      "ults\030\001 \003(\0132\017.lorawan.Device\"\017\n\rStatusReq" +
+      "uest\"\350\001\n\006Status\022&\n\006system\030\001 \001(\0132\020.api.Sy" +
+      "stemStatsB\004\310\336\037\000\022,\n\tcomponent\030\002 \001(\0132\023.api" +
+      ".ComponentStatsB\004\310\336\037\000\022\032\n\006uplink\030\013 \001(\0132\n." +
+      "api.Rates\022\034\n\010downlink\030\014 \001(\0132\n.api.Rates\022" +
+      "\037\n\013activations\030\r \001(\0132\n.api.Rates\022-\n\023devi" +
+      "ces_per_address\030\025 \001(\0132\020.api.Percentiles2" +
+      "\253\003\n\rNetworkServer\022K\n\nGetDevices\022\035.networ",
+      "kserver.DevicesRequest\032\036.networkserver.D" +
+      "evicesResponse\022m\n\021PrepareActivation\022+.br" +
+      "oker.DeduplicatedDeviceActivationRequest" +
+      "\032+.broker.DeduplicatedDeviceActivationRe" +
+      "quest\022P\n\010Activate\022!.handler.DeviceActiva" +
+      "tionResponse\032!.handler.DeviceActivationR" +
+      "esponse\022N\n\006Uplink\022!.broker.DeduplicatedU" +
+      "plinkMessage\032!.broker.DeduplicatedUplink" +
+      "Message\022<\n\010Downlink\022\027.broker.DownlinkMes" +
+      "sage\032\027.broker.DownlinkMessage2X\n\024Network",
+      "ServerManager\022@\n\tGetStatus\022\034.networkserv" +
+      "er.StatusRequest\032\025.networkserver.StatusB" +
+      "\206\001\n&org.thethingsnetwork.api.networkserv" +
+      "erB\014MonitorProtoP\001Z-github.com/TheThings" +
+      "Network/api/networkserver\252\002\034TheThingsNet" +
+      "work.API.Monitorb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -124,6 +124,7 @@ public final class MonitorProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.protobuf.GoGoProtos.customtype);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf.GoGoProtos.getDescriptor();

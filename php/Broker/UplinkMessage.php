@@ -42,11 +42,11 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
      */
     private $dev_id = '';
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     private $protocol_metadata = null;
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+     * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
      */
     private $gateway_metadata = null;
     /**
@@ -166,7 +166,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public function getProtocolMetadata()
     {
@@ -174,7 +174,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public function setProtocolMetadata(&$var)
     {
@@ -183,7 +183,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+     * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
      */
     public function getGatewayMetadata()
     {
@@ -191,7 +191,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+     * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
      */
     public function setGatewayMetadata(&$var)
     {

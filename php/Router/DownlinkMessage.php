@@ -22,11 +22,11 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
      */
     private $message = null;
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 11;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
      */
     private $protocol_configuration = null;
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 12;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
      */
     private $gateway_configuration = null;
     /**
@@ -74,7 +74,7 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 11;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
      */
     public function getProtocolConfiguration()
     {
@@ -82,7 +82,7 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 11;</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
      */
     public function setProtocolConfiguration(&$var)
     {
@@ -91,7 +91,7 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 12;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
      */
     public function getGatewayConfiguration()
     {
@@ -99,7 +99,7 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 12;</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
      */
     public function setGatewayConfiguration(&$var)
     {

@@ -18,7 +18,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
      * </pre>
      *
-     * <code>bytes app_eui = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     private $app_eui = '';
     /**
@@ -26,7 +26,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The DevEUI is a unique, 8 byte identifier for the device.
      * </pre>
      *
-     * <code>bytes dev_eui = 2 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     private $dev_eui = '';
     /**
@@ -139,7 +139,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
      * </pre>
      *
-     * <code>bytes app_eui = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     public function getAppEui()
     {
@@ -151,7 +151,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
      * </pre>
      *
-     * <code>bytes app_eui = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     public function setAppEui($var)
     {
@@ -164,7 +164,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The DevEUI is a unique, 8 byte identifier for the device.
      * </pre>
      *
-     * <code>bytes dev_eui = 2 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     public function getDevEui()
     {
@@ -176,7 +176,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The DevEUI is a unique, 8 byte identifier for the device.
      * </pre>
      *
-     * <code>bytes dev_eui = 2 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     public function setDevEui($var)
     {

@@ -156,19 +156,19 @@ public  final class DeviceActivationResponse extends
   public static final int DOWNLINK_OPTION_FIELD_NUMBER = 11;
   private org.thethingsnetwork.api.broker.DownlinkOption downlinkOption_;
   /**
-   * <code>.broker.DownlinkOption downlink_option = 11;</code>
+   * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
    */
   public boolean hasDownlinkOption() {
     return downlinkOption_ != null;
   }
   /**
-   * <code>.broker.DownlinkOption downlink_option = 11;</code>
+   * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.broker.DownlinkOption getDownlinkOption() {
     return downlinkOption_ == null ? org.thethingsnetwork.api.broker.DownlinkOption.getDefaultInstance() : downlinkOption_;
   }
   /**
-   * <code>.broker.DownlinkOption downlink_option = 11;</code>
+   * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.broker.DownlinkOptionOrBuilder getDownlinkOptionOrBuilder() {
     return getDownlinkOption();
@@ -177,19 +177,19 @@ public  final class DeviceActivationResponse extends
   public static final int ACTIVATION_METADATA_FIELD_NUMBER = 23;
   private org.thethingsnetwork.api.protocol.ActivationMetadata activationMetadata_;
   /**
-   * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+   * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
    */
   public boolean hasActivationMetadata() {
     return activationMetadata_ != null;
   }
   /**
-   * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+   * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.protocol.ActivationMetadata getActivationMetadata() {
     return activationMetadata_ == null ? org.thethingsnetwork.api.protocol.ActivationMetadata.getDefaultInstance() : activationMetadata_;
   }
   /**
-   * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+   * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.protocol.ActivationMetadataOrBuilder getActivationMetadataOrBuilder() {
     return getActivationMetadata();
@@ -766,13 +766,13 @@ public  final class DeviceActivationResponse extends
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.broker.DownlinkOption, org.thethingsnetwork.api.broker.DownlinkOption.Builder, org.thethingsnetwork.api.broker.DownlinkOptionOrBuilder> downlinkOptionBuilder_;
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11;</code>
+     * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
      */
     public boolean hasDownlinkOption() {
       return downlinkOptionBuilder_ != null || downlinkOption_ != null;
     }
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11;</code>
+     * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.broker.DownlinkOption getDownlinkOption() {
       if (downlinkOptionBuilder_ == null) {
@@ -782,7 +782,7 @@ public  final class DeviceActivationResponse extends
       }
     }
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11;</code>
+     * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setDownlinkOption(org.thethingsnetwork.api.broker.DownlinkOption value) {
       if (downlinkOptionBuilder_ == null) {
@@ -798,7 +798,7 @@ public  final class DeviceActivationResponse extends
       return this;
     }
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11;</code>
+     * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setDownlinkOption(
         org.thethingsnetwork.api.broker.DownlinkOption.Builder builderForValue) {
@@ -812,7 +812,7 @@ public  final class DeviceActivationResponse extends
       return this;
     }
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11;</code>
+     * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
      */
     public Builder mergeDownlinkOption(org.thethingsnetwork.api.broker.DownlinkOption value) {
       if (downlinkOptionBuilder_ == null) {
@@ -830,7 +830,7 @@ public  final class DeviceActivationResponse extends
       return this;
     }
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11;</code>
+     * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
      */
     public Builder clearDownlinkOption() {
       if (downlinkOptionBuilder_ == null) {
@@ -844,7 +844,7 @@ public  final class DeviceActivationResponse extends
       return this;
     }
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11;</code>
+     * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.broker.DownlinkOption.Builder getDownlinkOptionBuilder() {
       
@@ -852,7 +852,7 @@ public  final class DeviceActivationResponse extends
       return getDownlinkOptionFieldBuilder().getBuilder();
     }
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11;</code>
+     * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.broker.DownlinkOptionOrBuilder getDownlinkOptionOrBuilder() {
       if (downlinkOptionBuilder_ != null) {
@@ -863,7 +863,7 @@ public  final class DeviceActivationResponse extends
       }
     }
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11;</code>
+     * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.broker.DownlinkOption, org.thethingsnetwork.api.broker.DownlinkOption.Builder, org.thethingsnetwork.api.broker.DownlinkOptionOrBuilder> 
@@ -883,13 +883,13 @@ public  final class DeviceActivationResponse extends
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.ActivationMetadata, org.thethingsnetwork.api.protocol.ActivationMetadata.Builder, org.thethingsnetwork.api.protocol.ActivationMetadataOrBuilder> activationMetadataBuilder_;
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+     * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
      */
     public boolean hasActivationMetadata() {
       return activationMetadataBuilder_ != null || activationMetadata_ != null;
     }
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+     * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.ActivationMetadata getActivationMetadata() {
       if (activationMetadataBuilder_ == null) {
@@ -899,7 +899,7 @@ public  final class DeviceActivationResponse extends
       }
     }
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+     * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setActivationMetadata(org.thethingsnetwork.api.protocol.ActivationMetadata value) {
       if (activationMetadataBuilder_ == null) {
@@ -915,7 +915,7 @@ public  final class DeviceActivationResponse extends
       return this;
     }
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+     * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setActivationMetadata(
         org.thethingsnetwork.api.protocol.ActivationMetadata.Builder builderForValue) {
@@ -929,7 +929,7 @@ public  final class DeviceActivationResponse extends
       return this;
     }
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+     * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
      */
     public Builder mergeActivationMetadata(org.thethingsnetwork.api.protocol.ActivationMetadata value) {
       if (activationMetadataBuilder_ == null) {
@@ -947,7 +947,7 @@ public  final class DeviceActivationResponse extends
       return this;
     }
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+     * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
      */
     public Builder clearActivationMetadata() {
       if (activationMetadataBuilder_ == null) {
@@ -961,7 +961,7 @@ public  final class DeviceActivationResponse extends
       return this;
     }
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+     * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.ActivationMetadata.Builder getActivationMetadataBuilder() {
       
@@ -969,7 +969,7 @@ public  final class DeviceActivationResponse extends
       return getActivationMetadataFieldBuilder().getBuilder();
     }
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+     * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.ActivationMetadataOrBuilder getActivationMetadataOrBuilder() {
       if (activationMetadataBuilder_ != null) {
@@ -980,7 +980,7 @@ public  final class DeviceActivationResponse extends
       }
     }
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+     * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.ActivationMetadata, org.thethingsnetwork.api.protocol.ActivationMetadata.Builder, org.thethingsnetwork.api.protocol.ActivationMetadataOrBuilder> 

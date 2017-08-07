@@ -78,7 +78,7 @@ public  final class GetByAppEUIRequest extends
    * compatible with Metadata message
    * </pre>
    *
-   * <code>bytes app_eui = 31 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+   * <code>bytes app_eui = 31 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
    */
   public com.google.protobuf.ByteString getAppEui() {
     return appEui_;
@@ -370,7 +370,7 @@ public  final class GetByAppEUIRequest extends
      * compatible with Metadata message
      * </pre>
      *
-     * <code>bytes app_eui = 31 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 31 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     public com.google.protobuf.ByteString getAppEui() {
       return appEui_;
@@ -380,7 +380,7 @@ public  final class GetByAppEUIRequest extends
      * compatible with Metadata message
      * </pre>
      *
-     * <code>bytes app_eui = 31 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 31 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     public Builder setAppEui(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -396,7 +396,7 @@ public  final class GetByAppEUIRequest extends
      * compatible with Metadata message
      * </pre>
      *
-     * <code>bytes app_eui = 31 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 31 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     public Builder clearAppEui() {
       

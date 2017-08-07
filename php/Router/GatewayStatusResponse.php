@@ -18,7 +18,7 @@ class GatewayStatusResponse extends \Google\Protobuf\Internal\Message
      */
     private $last_seen = 0;
     /**
-     * <code>.gateway.Status status = 2;</code>
+     * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
      */
     private $status = null;
 
@@ -45,7 +45,7 @@ class GatewayStatusResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.gateway.Status status = 2;</code>
+     * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
      */
     public function getStatus()
     {
@@ -53,7 +53,7 @@ class GatewayStatusResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.gateway.Status status = 2;</code>
+     * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
      */
     public function setStatus(&$var)
     {

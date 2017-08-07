@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class DevAddrResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>bytes dev_addr = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
     private $dev_addr = '';
 
@@ -24,7 +24,7 @@ class DevAddrResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes dev_addr = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
     public function getDevAddr()
     {
@@ -32,7 +32,7 @@ class DevAddrResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes dev_addr = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
     public function setDevAddr($var)
     {

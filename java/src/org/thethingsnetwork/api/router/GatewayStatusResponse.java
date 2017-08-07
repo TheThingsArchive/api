@@ -96,19 +96,19 @@ public  final class GatewayStatusResponse extends
   public static final int STATUS_FIELD_NUMBER = 2;
   private org.thethingsnetwork.api.gateway.Status status_;
   /**
-   * <code>.gateway.Status status = 2;</code>
+   * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
    */
   public boolean hasStatus() {
     return status_ != null;
   }
   /**
-   * <code>.gateway.Status status = 2;</code>
+   * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.gateway.Status getStatus() {
     return status_ == null ? org.thethingsnetwork.api.gateway.Status.getDefaultInstance() : status_;
   }
   /**
-   * <code>.gateway.Status status = 2;</code>
+   * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.gateway.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
@@ -455,13 +455,13 @@ public  final class GatewayStatusResponse extends
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.gateway.Status, org.thethingsnetwork.api.gateway.Status.Builder, org.thethingsnetwork.api.gateway.StatusOrBuilder> statusBuilder_;
     /**
-     * <code>.gateway.Status status = 2;</code>
+     * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
     }
     /**
-     * <code>.gateway.Status status = 2;</code>
+     * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.gateway.Status getStatus() {
       if (statusBuilder_ == null) {
@@ -471,7 +471,7 @@ public  final class GatewayStatusResponse extends
       }
     }
     /**
-     * <code>.gateway.Status status = 2;</code>
+     * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setStatus(org.thethingsnetwork.api.gateway.Status value) {
       if (statusBuilder_ == null) {
@@ -487,7 +487,7 @@ public  final class GatewayStatusResponse extends
       return this;
     }
     /**
-     * <code>.gateway.Status status = 2;</code>
+     * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setStatus(
         org.thethingsnetwork.api.gateway.Status.Builder builderForValue) {
@@ -501,7 +501,7 @@ public  final class GatewayStatusResponse extends
       return this;
     }
     /**
-     * <code>.gateway.Status status = 2;</code>
+     * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
      */
     public Builder mergeStatus(org.thethingsnetwork.api.gateway.Status value) {
       if (statusBuilder_ == null) {
@@ -519,7 +519,7 @@ public  final class GatewayStatusResponse extends
       return this;
     }
     /**
-     * <code>.gateway.Status status = 2;</code>
+     * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
      */
     public Builder clearStatus() {
       if (statusBuilder_ == null) {
@@ -533,7 +533,7 @@ public  final class GatewayStatusResponse extends
       return this;
     }
     /**
-     * <code>.gateway.Status status = 2;</code>
+     * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.gateway.Status.Builder getStatusBuilder() {
       
@@ -541,7 +541,7 @@ public  final class GatewayStatusResponse extends
       return getStatusFieldBuilder().getBuilder();
     }
     /**
-     * <code>.gateway.Status status = 2;</code>
+     * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.gateway.StatusOrBuilder getStatusOrBuilder() {
       if (statusBuilder_ != null) {
@@ -552,7 +552,7 @@ public  final class GatewayStatusResponse extends
       }
     }
     /**
-     * <code>.gateway.Status status = 2;</code>
+     * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.gateway.Status, org.thethingsnetwork.api.gateway.Status.Builder, org.thethingsnetwork.api.gateway.StatusOrBuilder> 

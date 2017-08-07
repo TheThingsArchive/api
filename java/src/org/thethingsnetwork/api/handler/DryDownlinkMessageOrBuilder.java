@@ -39,7 +39,7 @@ public interface DryDownlinkMessageOrBuilder extends
    * The Application containing the payload functions that should be executed
    * </pre>
    *
-   * <code>.handler.Application app = 3;</code>
+   * <code>.handler.Application app = 3 [(.gogoproto.nullable) = false];</code>
    */
   boolean hasApp();
   /**
@@ -47,7 +47,7 @@ public interface DryDownlinkMessageOrBuilder extends
    * The Application containing the payload functions that should be executed
    * </pre>
    *
-   * <code>.handler.Application app = 3;</code>
+   * <code>.handler.Application app = 3 [(.gogoproto.nullable) = false];</code>
    */
   org.thethingsnetwork.api.handler.Application getApp();
   /**
@@ -55,7 +55,7 @@ public interface DryDownlinkMessageOrBuilder extends
    * The Application containing the payload functions that should be executed
    * </pre>
    *
-   * <code>.handler.Application app = 3;</code>
+   * <code>.handler.Application app = 3 [(.gogoproto.nullable) = false];</code>
    */
   org.thethingsnetwork.api.handler.ApplicationOrBuilder getAppOrBuilder();
 

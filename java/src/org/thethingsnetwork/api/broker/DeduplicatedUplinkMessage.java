@@ -292,19 +292,19 @@ public  final class DeduplicatedUplinkMessage extends
   public static final int PROTOCOL_METADATA_FIELD_NUMBER = 21;
   private org.thethingsnetwork.api.protocol.RxMetadata protocolMetadata_;
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
    */
   public boolean hasProtocolMetadata() {
     return protocolMetadata_ != null;
   }
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.protocol.RxMetadata getProtocolMetadata() {
     return protocolMetadata_ == null ? org.thethingsnetwork.api.protocol.RxMetadata.getDefaultInstance() : protocolMetadata_;
   }
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.protocol.RxMetadataOrBuilder getProtocolMetadataOrBuilder() {
     return getProtocolMetadata();
@@ -1291,13 +1291,13 @@ public  final class DeduplicatedUplinkMessage extends
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.RxMetadata, org.thethingsnetwork.api.protocol.RxMetadata.Builder, org.thethingsnetwork.api.protocol.RxMetadataOrBuilder> protocolMetadataBuilder_;
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public boolean hasProtocolMetadata() {
       return protocolMetadataBuilder_ != null || protocolMetadata_ != null;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.RxMetadata getProtocolMetadata() {
       if (protocolMetadataBuilder_ == null) {
@@ -1307,7 +1307,7 @@ public  final class DeduplicatedUplinkMessage extends
       }
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setProtocolMetadata(org.thethingsnetwork.api.protocol.RxMetadata value) {
       if (protocolMetadataBuilder_ == null) {
@@ -1323,7 +1323,7 @@ public  final class DeduplicatedUplinkMessage extends
       return this;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setProtocolMetadata(
         org.thethingsnetwork.api.protocol.RxMetadata.Builder builderForValue) {
@@ -1337,7 +1337,7 @@ public  final class DeduplicatedUplinkMessage extends
       return this;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public Builder mergeProtocolMetadata(org.thethingsnetwork.api.protocol.RxMetadata value) {
       if (protocolMetadataBuilder_ == null) {
@@ -1355,7 +1355,7 @@ public  final class DeduplicatedUplinkMessage extends
       return this;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public Builder clearProtocolMetadata() {
       if (protocolMetadataBuilder_ == null) {
@@ -1369,7 +1369,7 @@ public  final class DeduplicatedUplinkMessage extends
       return this;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.RxMetadata.Builder getProtocolMetadataBuilder() {
       
@@ -1377,7 +1377,7 @@ public  final class DeduplicatedUplinkMessage extends
       return getProtocolMetadataFieldBuilder().getBuilder();
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.RxMetadataOrBuilder getProtocolMetadataOrBuilder() {
       if (protocolMetadataBuilder_ != null) {
@@ -1388,7 +1388,7 @@ public  final class DeduplicatedUplinkMessage extends
       }
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.RxMetadata, org.thethingsnetwork.api.protocol.RxMetadata.Builder, org.thethingsnetwork.api.protocol.RxMetadataOrBuilder> 
