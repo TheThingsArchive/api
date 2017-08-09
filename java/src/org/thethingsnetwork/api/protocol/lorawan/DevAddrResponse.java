@@ -74,7 +74,7 @@ public  final class DevAddrResponse extends
   public static final int DEV_ADDR_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString devAddr_;
   /**
-   * <code>bytes dev_addr = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+   * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
    */
   public com.google.protobuf.ByteString getDevAddr() {
     return devAddr_;
@@ -362,13 +362,13 @@ public  final class DevAddrResponse extends
 
     private com.google.protobuf.ByteString devAddr_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes dev_addr = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
     public com.google.protobuf.ByteString getDevAddr() {
       return devAddr_;
     }
     /**
-     * <code>bytes dev_addr = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
     public Builder setDevAddr(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -380,7 +380,7 @@ public  final class DevAddrResponse extends
       return this;
     }
     /**
-     * <code>bytes dev_addr = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
     public Builder clearDevAddr() {
       

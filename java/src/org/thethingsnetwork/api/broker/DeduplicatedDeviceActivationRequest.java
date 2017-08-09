@@ -219,7 +219,7 @@ public  final class DeduplicatedDeviceActivationRequest extends
   public static final int DEV_EUI_FIELD_NUMBER = 11;
   private com.google.protobuf.ByteString devEui_;
   /**
-   * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+   * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
    */
   public com.google.protobuf.ByteString getDevEui() {
     return devEui_;
@@ -228,7 +228,7 @@ public  final class DeduplicatedDeviceActivationRequest extends
   public static final int APP_EUI_FIELD_NUMBER = 12;
   private com.google.protobuf.ByteString appEui_;
   /**
-   * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+   * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
    */
   public com.google.protobuf.ByteString getAppEui() {
     return appEui_;
@@ -305,19 +305,19 @@ public  final class DeduplicatedDeviceActivationRequest extends
   public static final int PROTOCOL_METADATA_FIELD_NUMBER = 21;
   private org.thethingsnetwork.api.protocol.RxMetadata protocolMetadata_;
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
    */
   public boolean hasProtocolMetadata() {
     return protocolMetadata_ != null;
   }
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.protocol.RxMetadata getProtocolMetadata() {
     return protocolMetadata_ == null ? org.thethingsnetwork.api.protocol.RxMetadata.getDefaultInstance() : protocolMetadata_;
   }
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.protocol.RxMetadataOrBuilder getProtocolMetadataOrBuilder() {
     return getProtocolMetadata();
@@ -1157,13 +1157,13 @@ public  final class DeduplicatedDeviceActivationRequest extends
 
     private com.google.protobuf.ByteString devEui_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     public com.google.protobuf.ByteString getDevEui() {
       return devEui_;
     }
     /**
-     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     public Builder setDevEui(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1175,7 +1175,7 @@ public  final class DeduplicatedDeviceActivationRequest extends
       return this;
     }
     /**
-     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     public Builder clearDevEui() {
       
@@ -1186,13 +1186,13 @@ public  final class DeduplicatedDeviceActivationRequest extends
 
     private com.google.protobuf.ByteString appEui_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     public com.google.protobuf.ByteString getAppEui() {
       return appEui_;
     }
     /**
-     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     public Builder setAppEui(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1204,7 +1204,7 @@ public  final class DeduplicatedDeviceActivationRequest extends
       return this;
     }
     /**
-     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     public Builder clearAppEui() {
       
@@ -1355,13 +1355,13 @@ public  final class DeduplicatedDeviceActivationRequest extends
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.RxMetadata, org.thethingsnetwork.api.protocol.RxMetadata.Builder, org.thethingsnetwork.api.protocol.RxMetadataOrBuilder> protocolMetadataBuilder_;
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public boolean hasProtocolMetadata() {
       return protocolMetadataBuilder_ != null || protocolMetadata_ != null;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.RxMetadata getProtocolMetadata() {
       if (protocolMetadataBuilder_ == null) {
@@ -1371,7 +1371,7 @@ public  final class DeduplicatedDeviceActivationRequest extends
       }
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setProtocolMetadata(org.thethingsnetwork.api.protocol.RxMetadata value) {
       if (protocolMetadataBuilder_ == null) {
@@ -1387,7 +1387,7 @@ public  final class DeduplicatedDeviceActivationRequest extends
       return this;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setProtocolMetadata(
         org.thethingsnetwork.api.protocol.RxMetadata.Builder builderForValue) {
@@ -1401,7 +1401,7 @@ public  final class DeduplicatedDeviceActivationRequest extends
       return this;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public Builder mergeProtocolMetadata(org.thethingsnetwork.api.protocol.RxMetadata value) {
       if (protocolMetadataBuilder_ == null) {
@@ -1419,7 +1419,7 @@ public  final class DeduplicatedDeviceActivationRequest extends
       return this;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public Builder clearProtocolMetadata() {
       if (protocolMetadataBuilder_ == null) {
@@ -1433,7 +1433,7 @@ public  final class DeduplicatedDeviceActivationRequest extends
       return this;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.RxMetadata.Builder getProtocolMetadataBuilder() {
       
@@ -1441,7 +1441,7 @@ public  final class DeduplicatedDeviceActivationRequest extends
       return getProtocolMetadataFieldBuilder().getBuilder();
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.RxMetadataOrBuilder getProtocolMetadataOrBuilder() {
       if (protocolMetadataBuilder_ != null) {
@@ -1452,7 +1452,7 @@ public  final class DeduplicatedDeviceActivationRequest extends
       }
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.RxMetadata, org.thethingsnetwork.api.protocol.RxMetadata.Builder, org.thethingsnetwork.api.protocol.RxMetadataOrBuilder> 

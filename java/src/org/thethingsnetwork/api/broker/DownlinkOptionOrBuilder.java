@@ -62,28 +62,28 @@ public interface DownlinkOptionOrBuilder extends
   long getDeadline();
 
   /**
-   * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
+   * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
    */
   boolean hasProtocolConfiguration();
   /**
-   * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
+   * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
    */
   org.thethingsnetwork.api.protocol.TxConfiguration getProtocolConfiguration();
   /**
-   * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
+   * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
    */
   org.thethingsnetwork.api.protocol.TxConfigurationOrBuilder getProtocolConfigurationOrBuilder();
 
   /**
-   * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
+   * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
    */
   boolean hasGatewayConfiguration();
   /**
-   * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
+   * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
    */
   org.thethingsnetwork.api.gateway.TxConfiguration getGatewayConfiguration();
   /**
-   * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
+   * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
    */
   org.thethingsnetwork.api.gateway.TxConfigurationOrBuilder getGatewayConfigurationOrBuilder();
 }

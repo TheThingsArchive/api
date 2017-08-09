@@ -84,7 +84,7 @@ public  final class DevicesRequest extends
    * Device address from the uplink message
    * </pre>
    *
-   * <code>bytes dev_addr = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+   * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
    */
   public com.google.protobuf.ByteString getDevAddr() {
     return devAddr_;
@@ -406,7 +406,7 @@ public  final class DevicesRequest extends
      * Device address from the uplink message
      * </pre>
      *
-     * <code>bytes dev_addr = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
     public com.google.protobuf.ByteString getDevAddr() {
       return devAddr_;
@@ -416,7 +416,7 @@ public  final class DevicesRequest extends
      * Device address from the uplink message
      * </pre>
      *
-     * <code>bytes dev_addr = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
     public Builder setDevAddr(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -432,7 +432,7 @@ public  final class DevicesRequest extends
      * Device address from the uplink message
      * </pre>
      *
-     * <code>bytes dev_addr = 1 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
     public Builder clearDevAddr() {
       

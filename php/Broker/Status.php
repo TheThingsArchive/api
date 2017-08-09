@@ -14,11 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class Status extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>.api.SystemStats system = 1;</code>
+     * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
      */
     private $system = null;
     /**
-     * <code>.api.ComponentStats component = 2;</code>
+     * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
      */
     private $component = null;
     /**
@@ -64,7 +64,7 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.SystemStats system = 1;</code>
+     * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
      */
     public function getSystem()
     {
@@ -72,7 +72,7 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.SystemStats system = 1;</code>
+     * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
      */
     public function setSystem(&$var)
     {
@@ -81,7 +81,7 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.ComponentStats component = 2;</code>
+     * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
      */
     public function getComponent()
     {
@@ -89,7 +89,7 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.ComponentStats component = 2;</code>
+     * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
      */
     public function setComponent(&$var)
     {

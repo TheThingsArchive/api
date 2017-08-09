@@ -13,15 +13,15 @@ public interface GatewayStatusResponseOrBuilder extends
   long getLastSeen();
 
   /**
-   * <code>.gateway.Status status = 2;</code>
+   * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
    */
   boolean hasStatus();
   /**
-   * <code>.gateway.Status status = 2;</code>
+   * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
    */
   org.thethingsnetwork.api.gateway.Status getStatus();
   /**
-   * <code>.gateway.Status status = 2;</code>
+   * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
    */
   org.thethingsnetwork.api.gateway.StatusOrBuilder getStatusOrBuilder();
 }

@@ -22,11 +22,11 @@ class DeviceActivationResponse extends \Google\Protobuf\Internal\Message
      */
     private $message = null;
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11;</code>
+     * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
      */
     private $downlink_option = null;
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+     * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
      */
     private $activation_metadata = null;
     /**
@@ -74,7 +74,7 @@ class DeviceActivationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11;</code>
+     * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
      */
     public function getDownlinkOption()
     {
@@ -82,7 +82,7 @@ class DeviceActivationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11;</code>
+     * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
      */
     public function setDownlinkOption(&$var)
     {
@@ -91,7 +91,7 @@ class DeviceActivationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+     * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
      */
     public function getActivationMetadata()
     {
@@ -99,7 +99,7 @@ class DeviceActivationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+     * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
      */
     public function setActivationMetadata(&$var)
     {

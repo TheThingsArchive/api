@@ -1,0 +1,12 @@
+language: go
+
+sudo: required
+services:
+  - docker
+
+install:
+  - make clean
+
+script:
+  - make
+  - git diff --exit-code

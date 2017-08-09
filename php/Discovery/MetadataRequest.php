@@ -38,7 +38,7 @@ class MetadataRequest extends \Google\Protobuf\Internal\Message
      * Metadata to add or remove
      * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12;</code>
+     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     private $metadata = null;
 
@@ -102,7 +102,7 @@ class MetadataRequest extends \Google\Protobuf\Internal\Message
      * Metadata to add or remove
      * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12;</code>
+     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public function getMetadata()
     {
@@ -114,7 +114,7 @@ class MetadataRequest extends \Google\Protobuf\Internal\Message
      * Metadata to add or remove
      * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12;</code>
+     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public function setMetadata(&$var)
     {

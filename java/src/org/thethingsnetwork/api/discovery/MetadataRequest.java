@@ -187,7 +187,7 @@ public  final class MetadataRequest extends
    * Metadata to add or remove
    * </pre>
    *
-   * <code>.discovery.Metadata metadata = 12;</code>
+   * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
    */
   public boolean hasMetadata() {
     return metadata_ != null;
@@ -197,7 +197,7 @@ public  final class MetadataRequest extends
    * Metadata to add or remove
    * </pre>
    *
-   * <code>.discovery.Metadata metadata = 12;</code>
+   * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.discovery.Metadata getMetadata() {
     return metadata_ == null ? org.thethingsnetwork.api.discovery.Metadata.getDefaultInstance() : metadata_;
@@ -207,7 +207,7 @@ public  final class MetadataRequest extends
    * Metadata to add or remove
    * </pre>
    *
-   * <code>.discovery.Metadata metadata = 12;</code>
+   * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.discovery.MetadataOrBuilder getMetadataOrBuilder() {
     return getMetadata();
@@ -730,7 +730,7 @@ public  final class MetadataRequest extends
      * Metadata to add or remove
      * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12;</code>
+     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public boolean hasMetadata() {
       return metadataBuilder_ != null || metadata_ != null;
@@ -740,7 +740,7 @@ public  final class MetadataRequest extends
      * Metadata to add or remove
      * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12;</code>
+     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.discovery.Metadata getMetadata() {
       if (metadataBuilder_ == null) {
@@ -754,7 +754,7 @@ public  final class MetadataRequest extends
      * Metadata to add or remove
      * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12;</code>
+     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setMetadata(org.thethingsnetwork.api.discovery.Metadata value) {
       if (metadataBuilder_ == null) {
@@ -774,7 +774,7 @@ public  final class MetadataRequest extends
      * Metadata to add or remove
      * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12;</code>
+     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setMetadata(
         org.thethingsnetwork.api.discovery.Metadata.Builder builderForValue) {
@@ -792,7 +792,7 @@ public  final class MetadataRequest extends
      * Metadata to add or remove
      * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12;</code>
+     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public Builder mergeMetadata(org.thethingsnetwork.api.discovery.Metadata value) {
       if (metadataBuilder_ == null) {
@@ -814,7 +814,7 @@ public  final class MetadataRequest extends
      * Metadata to add or remove
      * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12;</code>
+     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public Builder clearMetadata() {
       if (metadataBuilder_ == null) {
@@ -832,7 +832,7 @@ public  final class MetadataRequest extends
      * Metadata to add or remove
      * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12;</code>
+     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.discovery.Metadata.Builder getMetadataBuilder() {
       
@@ -844,7 +844,7 @@ public  final class MetadataRequest extends
      * Metadata to add or remove
      * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12;</code>
+     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.discovery.MetadataOrBuilder getMetadataOrBuilder() {
       if (metadataBuilder_ != null) {
@@ -859,7 +859,7 @@ public  final class MetadataRequest extends
      * Metadata to add or remove
      * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12;</code>
+     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.discovery.Metadata, org.thethingsnetwork.api.discovery.Metadata.Builder, org.thethingsnetwork.api.discovery.MetadataOrBuilder> 

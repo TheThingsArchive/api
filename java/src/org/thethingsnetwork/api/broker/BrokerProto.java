@@ -96,113 +96,115 @@ public final class BrokerProto {
       "gsNetwork/api/protocol/protocol.proto\0325g" +
       "ithub.com/TheThingsNetwork/api/gateway/g" +
       "ateway.proto\0321github.com/TheThingsNetwor" +
-      "k/api/trace/trace.proto\"\334\001\n\016DownlinkOpti" +
+      "k/api/trace/trace.proto\"\350\001\n\016DownlinkOpti" +
       "on\022\022\n\nidentifier\030\001 \001(\t\022!\n\ngateway_id\030\002 \001",
       "(\tB\r\342\336\037\tGatewayID\022\r\n\005score\030\003 \001(\r\022\020\n\010dead" +
-      "line\030\004 \001(\003\0229\n\026protocol_configuration\030\005 \001" +
-      "(\0132\031.protocol.TxConfiguration\0227\n\025gateway" +
-      "_configuration\030\006 \001(\0132\030.gateway.TxConfigu" +
-      "ration\"\315\003\n\rUplinkMessage\022\017\n\007payload\030\001 \001(" +
-      "\014\022\"\n\007message\030\002 \001(\0132\021.protocol.Message\022P\n" +
-      "\007dev_eui\030\013 \001(\014B?\342\336\037\006DevEUI\332\336\0371github.com" +
-      "/TheThingsNetwork/ttn/core/types.DevEUI\022" +
-      "P\n\007app_eui\030\014 \001(\014B?\342\336\037\006AppEUI\332\336\0371github.c" +
-      "om/TheThingsNetwork/ttn/core/types.AppEU",
-      "I\022\031\n\006app_id\030\r \001(\tB\t\342\336\037\005AppID\022\031\n\006dev_id\030\016" +
-      " \001(\tB\t\342\336\037\005DevID\022/\n\021protocol_metadata\030\025 \001" +
-      "(\0132\024.protocol.RxMetadata\022-\n\020gateway_meta" +
-      "data\030\026 \001(\0132\023.gateway.RxMetadata\0220\n\020downl" +
-      "ink_options\030\037 \003(\0132\026.broker.DownlinkOptio" +
-      "n\022\033\n\005trace\030) \001(\0132\014.trace.Trace\"\356\002\n\017Downl" +
-      "inkMessage\022\017\n\007payload\030\001 \001(\014\022\"\n\007message\030\002" +
-      " \001(\0132\021.protocol.Message\022P\n\007dev_eui\030\013 \001(\014" +
-      "B?\342\336\037\006DevEUI\332\336\0371github.com/TheThingsNetw" +
-      "ork/ttn/core/types.DevEUI\022P\n\007app_eui\030\014 \001",
-      "(\014B?\342\336\037\006AppEUI\332\336\0371github.com/TheThingsNe" +
-      "twork/ttn/core/types.AppEUI\022\031\n\006app_id\030\r " +
-      "\001(\tB\t\342\336\037\005AppID\022\031\n\006dev_id\030\016 \001(\tB\t\342\336\037\005DevI" +
-      "D\022/\n\017downlink_option\030\025 \001(\0132\026.broker.Down" +
-      "linkOption\022\033\n\005trace\030\037 \001(\0132\014.trace.Trace\"" +
-      "\235\001\n\030DeviceActivationResponse\022\017\n\007payload\030" +
-      "\001 \001(\014\022\"\n\007message\030\002 \001(\0132\021.protocol.Messag" +
-      "e\022/\n\017downlink_option\030\013 \001(\0132\026.broker.Down" +
-      "linkOption\022\033\n\005trace\030\025 \001(\0132\014.trace.Trace\"" +
-      "\360\003\n\031DeduplicatedUplinkMessage\022\017\n\007payload",
-      "\030\001 \001(\014\022\"\n\007message\030\002 \001(\0132\021.protocol.Messa" +
-      "ge\022P\n\007dev_eui\030\013 \001(\014B?\342\336\037\006DevEUI\332\336\0371githu" +
-      "b.com/TheThingsNetwork/ttn/core/types.De" +
-      "vEUI\022P\n\007app_eui\030\014 \001(\014B?\342\336\037\006AppEUI\332\336\0371git" +
-      "hub.com/TheThingsNetwork/ttn/core/types." +
-      "AppEUI\022\031\n\006app_id\030\r \001(\tB\t\342\336\037\005AppID\022\031\n\006dev" +
-      "_id\030\016 \001(\tB\t\342\336\037\005DevID\022/\n\021protocol_metadat" +
-      "a\030\025 \001(\0132\024.protocol.RxMetadata\022-\n\020gateway" +
-      "_metadata\030\026 \003(\0132\023.gateway.RxMetadata\022\023\n\013" +
-      "server_time\030\027 \001(\003\0222\n\021response_template\030\037",
-      " \001(\0132\027.broker.DownlinkMessage\022\033\n\005trace\030)" +
-      " \001(\0132\014.trace.Trace\"\334\003\n\027DeviceActivationR" +
-      "equest\022\017\n\007payload\030\001 \001(\014\022\"\n\007message\030\002 \001(\013" +
-      "2\021.protocol.Message\022P\n\007dev_eui\030\013 \001(\014B?\342\336" +
-      "\037\006DevEUI\332\336\0371github.com/TheThingsNetwork/" +
-      "ttn/core/types.DevEUI\022P\n\007app_eui\030\014 \001(\014B?" +
-      "\342\336\037\006AppEUI\332\336\0371github.com/TheThingsNetwor" +
-      "k/ttn/core/types.AppEUI\022/\n\021protocol_meta" +
-      "data\030\025 \001(\0132\024.protocol.RxMetadata\022-\n\020gate" +
-      "way_metadata\030\026 \001(\0132\023.gateway.RxMetadata\022",
-      "9\n\023activation_metadata\030\027 \001(\0132\034.protocol." +
-      "ActivationMetadata\0220\n\020downlink_options\030\037" +
-      " \003(\0132\026.broker.DownlinkOption\022\033\n\005trace\030) " +
-      "\001(\0132\014.trace.Trace\"\276\004\n#DeduplicatedDevice" +
-      "ActivationRequest\022\017\n\007payload\030\001 \001(\014\022\"\n\007me" +
-      "ssage\030\002 \001(\0132\021.protocol.Message\022P\n\007dev_eu" +
-      "i\030\013 \001(\014B?\342\336\037\006DevEUI\332\336\0371github.com/TheThi" +
-      "ngsNetwork/ttn/core/types.DevEUI\022P\n\007app_" +
-      "eui\030\014 \001(\014B?\342\336\037\006AppEUI\332\336\0371github.com/TheT" +
-      "hingsNetwork/ttn/core/types.AppEUI\022\031\n\006ap",
-      "p_id\030\r \001(\tB\t\342\336\037\005AppID\022\031\n\006dev_id\030\016 \001(\tB\t\342" +
-      "\336\037\005DevID\022/\n\021protocol_metadata\030\025 \001(\0132\024.pr" +
-      "otocol.RxMetadata\022-\n\020gateway_metadata\030\026 " +
-      "\003(\0132\023.gateway.RxMetadata\0229\n\023activation_m" +
-      "etadata\030\027 \001(\0132\034.protocol.ActivationMetad" +
-      "ata\022\023\n\013server_time\030\030 \001(\003\022;\n\021response_tem" +
-      "plate\030\037 \001(\0132 .broker.DeviceActivationRes" +
-      "ponse\022\033\n\005trace\030) \001(\0132\014.trace.Trace\"\253\002\n\032A" +
-      "ctivationChallengeRequest\022\017\n\007payload\030\001 \001" +
-      "(\014\022\"\n\007message\030\002 \001(\0132\021.protocol.Message\022P",
-      "\n\007dev_eui\030\013 \001(\014B?\342\336\037\006DevEUI\332\336\0371github.co" +
-      "m/TheThingsNetwork/ttn/core/types.DevEUI" +
-      "\022P\n\007app_eui\030\014 \001(\014B?\342\336\037\006AppEUI\332\336\0371github." +
+      "line\030\004 \001(\003\022?\n\026protocol_configuration\030\005 \001" +
+      "(\0132\031.protocol.TxConfigurationB\004\310\336\037\000\022=\n\025g" +
+      "ateway_configuration\030\006 \001(\0132\030.gateway.TxC" +
+      "onfigurationB\004\310\336\037\000\"\331\003\n\rUplinkMessage\022\017\n\007" +
+      "payload\030\001 \001(\014\022\"\n\007message\030\002 \001(\0132\021.protoco" +
+      "l.Message\022P\n\007dev_eui\030\013 \001(\014B?\342\336\037\006DevEUI\332\336" +
+      "\0371github.com/TheThingsNetwork/ttn/core/t" +
+      "ypes.DevEUI\022P\n\007app_eui\030\014 \001(\014B?\342\336\037\006AppEUI" +
+      "\332\336\0371github.com/TheThingsNetwork/ttn/core",
+      "/types.AppEUI\022\031\n\006app_id\030\r \001(\tB\t\342\336\037\005AppID" +
+      "\022\031\n\006dev_id\030\016 \001(\tB\t\342\336\037\005DevID\0225\n\021protocol_" +
+      "metadata\030\025 \001(\0132\024.protocol.RxMetadataB\004\310\336" +
+      "\037\000\0223\n\020gateway_metadata\030\026 \001(\0132\023.gateway.R" +
+      "xMetadataB\004\310\336\037\000\0220\n\020downlink_options\030\037 \003(" +
+      "\0132\026.broker.DownlinkOption\022\033\n\005trace\030) \001(\013" +
+      "2\014.trace.Trace\"\366\002\n\017DownlinkMessage\022\017\n\007pa" +
+      "yload\030\001 \001(\014\022\"\n\007message\030\002 \001(\0132\021.protocol." +
+      "Message\022T\n\007dev_eui\030\013 \001(\014BC\310\336\037\000\342\336\037\006DevEUI" +
+      "\332\336\0371github.com/TheThingsNetwork/ttn/core",
+      "/types.DevEUI\022T\n\007app_eui\030\014 \001(\014BC\310\336\037\000\342\336\037\006" +
+      "AppEUI\332\336\0371github.com/TheThingsNetwork/tt" +
+      "n/core/types.AppEUI\022\031\n\006app_id\030\r \001(\tB\t\342\336\037" +
+      "\005AppID\022\031\n\006dev_id\030\016 \001(\tB\t\342\336\037\005DevID\022/\n\017dow" +
+      "nlink_option\030\025 \001(\0132\026.broker.DownlinkOpti" +
+      "on\022\033\n\005trace\030\037 \001(\0132\014.trace.Trace\"\235\001\n\030Devi" +
+      "ceActivationResponse\022\017\n\007payload\030\001 \001(\014\022\"\n" +
+      "\007message\030\002 \001(\0132\021.protocol.Message\022/\n\017dow" +
+      "nlink_option\030\013 \001(\0132\026.broker.DownlinkOpti" +
+      "on\022\033\n\005trace\030\025 \001(\0132\014.trace.Trace\"\366\003\n\031Dedu",
+      "plicatedUplinkMessage\022\017\n\007payload\030\001 \001(\014\022\"" +
+      "\n\007message\030\002 \001(\0132\021.protocol.Message\022P\n\007de" +
+      "v_eui\030\013 \001(\014B?\342\336\037\006DevEUI\332\336\0371github.com/Th" +
+      "eThingsNetwork/ttn/core/types.DevEUI\022P\n\007" +
+      "app_eui\030\014 \001(\014B?\342\336\037\006AppEUI\332\336\0371github.com/" +
+      "TheThingsNetwork/ttn/core/types.AppEUI\022\031" +
+      "\n\006app_id\030\r \001(\tB\t\342\336\037\005AppID\022\031\n\006dev_id\030\016 \001(" +
+      "\tB\t\342\336\037\005DevID\0225\n\021protocol_metadata\030\025 \001(\0132" +
+      "\024.protocol.RxMetadataB\004\310\336\037\000\022-\n\020gateway_m" +
+      "etadata\030\026 \003(\0132\023.gateway.RxMetadata\022\023\n\013se",
+      "rver_time\030\027 \001(\003\0222\n\021response_template\030\037 \001" +
+      "(\0132\027.broker.DownlinkMessage\022\033\n\005trace\030) \001" +
+      "(\0132\014.trace.Trace\"\360\003\n\027DeviceActivationReq" +
+      "uest\022\017\n\007payload\030\001 \001(\014\022\"\n\007message\030\002 \001(\0132\021" +
+      ".protocol.Message\022T\n\007dev_eui\030\013 \001(\014BC\310\336\037\000" +
+      "\342\336\037\006DevEUI\332\336\0371github.com/TheThingsNetwor" +
+      "k/ttn/core/types.DevEUI\022T\n\007app_eui\030\014 \001(\014" +
+      "BC\310\336\037\000\342\336\037\006AppEUI\332\336\0371github.com/TheThings" +
+      "Network/ttn/core/types.AppEUI\0225\n\021protoco" +
+      "l_metadata\030\025 \001(\0132\024.protocol.RxMetadataB\004",
+      "\310\336\037\000\0223\n\020gateway_metadata\030\026 \001(\0132\023.gateway" +
+      ".RxMetadataB\004\310\336\037\000\0229\n\023activation_metadata" +
+      "\030\027 \001(\0132\034.protocol.ActivationMetadata\0220\n\020" +
+      "downlink_options\030\037 \003(\0132\026.broker.Downlink" +
+      "Option\022\033\n\005trace\030) \001(\0132\014.trace.Trace\"\314\004\n#" +
+      "DeduplicatedDeviceActivationRequest\022\017\n\007p" +
+      "ayload\030\001 \001(\014\022\"\n\007message\030\002 \001(\0132\021.protocol" +
+      ".Message\022T\n\007dev_eui\030\013 \001(\014BC\310\336\037\000\342\336\037\006DevEU" +
+      "I\332\336\0371github.com/TheThingsNetwork/ttn/cor" +
+      "e/types.DevEUI\022T\n\007app_eui\030\014 \001(\014BC\310\336\037\000\342\336\037",
+      "\006AppEUI\332\336\0371github.com/TheThingsNetwork/t" +
+      "tn/core/types.AppEUI\022\031\n\006app_id\030\r \001(\tB\t\342\336" +
+      "\037\005AppID\022\031\n\006dev_id\030\016 \001(\tB\t\342\336\037\005DevID\0225\n\021pr" +
+      "otocol_metadata\030\025 \001(\0132\024.protocol.RxMetad" +
+      "ataB\004\310\336\037\000\022-\n\020gateway_metadata\030\026 \003(\0132\023.ga" +
+      "teway.RxMetadata\0229\n\023activation_metadata\030" +
+      "\027 \001(\0132\034.protocol.ActivationMetadata\022\023\n\013s" +
+      "erver_time\030\030 \001(\003\022;\n\021response_template\030\037 " +
+      "\001(\0132 .broker.DeviceActivationResponse\022\033\n" +
+      "\005trace\030) \001(\0132\014.trace.Trace\"\263\002\n\032Activatio",
+      "nChallengeRequest\022\017\n\007payload\030\001 \001(\014\022\"\n\007me" +
+      "ssage\030\002 \001(\0132\021.protocol.Message\022T\n\007dev_eu" +
+      "i\030\013 \001(\014BC\310\336\037\000\342\336\037\006DevEUI\332\336\0371github.com/Th" +
+      "eThingsNetwork/ttn/core/types.DevEUI\022T\n\007" +
+      "app_eui\030\014 \001(\014BC\310\336\037\000\342\336\037\006AppEUI\332\336\0371github." +
       "com/TheThingsNetwork/ttn/core/types.AppE" +
       "UI\022\031\n\006app_id\030\r \001(\tB\t\342\336\037\005AppID\022\031\n\006dev_id\030" +
       "\016 \001(\tB\t\342\336\037\005DevID\"R\n\033ActivationChallengeR" +
       "esponse\022\017\n\007payload\030\001 \001(\014\022\"\n\007message\030\002 \001(" +
-      "\0132\021.protocol.Message\"\022\n\020SubscribeRequest" +
-      "\"\017\n\rStatusRequest\"\330\002\n\006Status\022 \n\006system\030\001" +
-      " \001(\0132\020.api.SystemStats\022&\n\tcomponent\030\002 \001(",
-      "\0132\023.api.ComponentStats\022\032\n\006uplink\030\013 \001(\0132\n" +
-      ".api.Rates\022!\n\ruplink_unique\030\014 \001(\0132\n.api." +
-      "Rates\022\034\n\010downlink\030\r \001(\0132\n.api.Rates\022\037\n\013a" +
-      "ctivations\030\016 \001(\0132\n.api.Rates\022&\n\022activati" +
-      "ons_unique\030\017 \001(\0132\n.api.Rates\022\'\n\rdeduplic" +
-      "ation\030\020 \001(\0132\020.api.Percentiles\022\031\n\021connect" +
-      "ed_routers\030\025 \001(\r\022\032\n\022connected_handlers\030\026" +
-      " \001(\r\"^\n\036ApplicationHandlerRegistration\022\031" +
-      "\n\006app_id\030\001 \001(\tB\t\342\336\037\005AppID\022!\n\nhandler_id\030" +
-      "\002 \001(\tB\r\342\336\037\tHandlerID2\242\002\n\006Broker\022?\n\tAssoc",
-      "iate\022\025.broker.UplinkMessage\032\027.broker.Dow" +
-      "nlinkMessage(\0010\001\022J\n\tSubscribe\022\030.broker.S" +
-      "ubscribeRequest\032!.broker.DeduplicatedUpl" +
-      "inkMessage0\001\022<\n\007Publish\022\027.broker.Downlin" +
-      "kMessage\032\026.google.protobuf.Empty(\001\022M\n\010Ac" +
-      "tivate\022\037.broker.DeviceActivationRequest\032" +
-      " .broker.DeviceActivationResponse2\241\001\n\rBr" +
-      "okerManager\022\\\n\032RegisterApplicationHandle" +
-      "r\022&.broker.ApplicationHandlerRegistratio" +
-      "n\032\026.google.protobuf.Empty\0222\n\tGetStatus\022\025",
-      ".broker.StatusRequest\032\016.broker.StatusBv\n" +
-      "\037org.thethingsnetwork.api.brokerB\013Broker" +
-      "ProtoP\001Z&github.com/TheThingsNetwork/api" +
-      "/broker\252\002\033TheThingsNetwork.API.Brokerb\006p" +
-      "roto3"
+      "\0132\021.protocol.Message\"\022\n\020SubscribeRequest",
+      "\"\017\n\rStatusRequest\"\344\002\n\006Status\022&\n\006system\030\001" +
+      " \001(\0132\020.api.SystemStatsB\004\310\336\037\000\022,\n\tcomponen" +
+      "t\030\002 \001(\0132\023.api.ComponentStatsB\004\310\336\037\000\022\032\n\006up" +
+      "link\030\013 \001(\0132\n.api.Rates\022!\n\ruplink_unique\030" +
+      "\014 \001(\0132\n.api.Rates\022\034\n\010downlink\030\r \001(\0132\n.ap" +
+      "i.Rates\022\037\n\013activations\030\016 \001(\0132\n.api.Rates" +
+      "\022&\n\022activations_unique\030\017 \001(\0132\n.api.Rates" +
+      "\022\'\n\rdeduplication\030\020 \001(\0132\020.api.Percentile" +
+      "s\022\031\n\021connected_routers\030\025 \001(\r\022\032\n\022connecte" +
+      "d_handlers\030\026 \001(\r\"^\n\036ApplicationHandlerRe",
+      "gistration\022\031\n\006app_id\030\001 \001(\tB\t\342\336\037\005AppID\022!\n" +
+      "\nhandler_id\030\002 \001(\tB\r\342\336\037\tHandlerID2\242\002\n\006Bro" +
+      "ker\022?\n\tAssociate\022\025.broker.UplinkMessage\032" +
+      "\027.broker.DownlinkMessage(\0010\001\022J\n\tSubscrib" +
+      "e\022\030.broker.SubscribeRequest\032!.broker.Ded" +
+      "uplicatedUplinkMessage0\001\022<\n\007Publish\022\027.br" +
+      "oker.DownlinkMessage\032\026.google.protobuf.E" +
+      "mpty(\001\022M\n\010Activate\022\037.broker.DeviceActiva" +
+      "tionRequest\032 .broker.DeviceActivationRes" +
+      "ponse2\241\001\n\rBrokerManager\022\\\n\032RegisterAppli",
+      "cationHandler\022&.broker.ApplicationHandle" +
+      "rRegistration\032\026.google.protobuf.Empty\0222\n" +
+      "\tGetStatus\022\025.broker.StatusRequest\032\016.brok" +
+      "er.StatusBv\n\037org.thethingsnetwork.api.br" +
+      "okerB\013BrokerProtoP\001Z&github.com/TheThing" +
+      "sNetwork/api/broker\252\002\033TheThingsNetwork.A" +
+      "PI.Brokerb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -304,6 +306,7 @@ public final class BrokerProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.protobuf.GoGoProtos.customname);
     registry.add(com.google.protobuf.GoGoProtos.customtype);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf.EmptyProto.getDescriptor();
