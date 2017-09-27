@@ -36,7 +36,7 @@ GRPC_GATEWAY_PKG=$(GOPATH)/src/$(GRPC_GATEWAY_REPO)
 
 DOCKER ?= docker
 DOCKER_ARGS = run --user `id -u` --rm -v$(GOPATH):$(GOPATH) -w`pwd`
-DOCKER_IMAGE ?= thethingsindustries/protoc
+DOCKER_IMAGE ?= thethingsindustries/protoc:2
 PROTOC ?= $(DOCKER) $(DOCKER_ARGS) $(DOCKER_IMAGE) -I/usr/include
 PROTOC += -I$(GOPATH)/src -I$(GRPC_GATEWAY_PKG)/third_party/googleapis
 
