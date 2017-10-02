@@ -101,6 +101,10 @@ struct  _Lorawan__Device
    * There are different prefixes for `otaa`, `abp`, `world`, `local`, `private`, `testing`.
    */
   char *activation_constraints;
+  size_t n_used_dev_nonces;
+  ProtobufCBinaryData *used_dev_nonces;
+  size_t n_used_app_nonces;
+  ProtobufCBinaryData *used_app_nonces;
   /*
    * When the device was last seen (Unix nanoseconds)
    */
@@ -108,7 +112,7 @@ struct  _Lorawan__Device
 };
 #define LORAWAN__DEVICE__INIT \
  { PROTOBUF_C_MESSAGE_INIT (&lorawan__device__descriptor) \
-    , {0,NULL}, {0,NULL}, (char *)protobuf_c_empty_string, (char *)protobuf_c_empty_string, {0,NULL}, {0,NULL}, {0,NULL}, {0,NULL}, 0, 0, 0, 0, (char *)protobuf_c_empty_string, 0 }
+    , {0,NULL}, {0,NULL}, (char *)protobuf_c_empty_string, (char *)protobuf_c_empty_string, {0,NULL}, {0,NULL}, {0,NULL}, {0,NULL}, 0, 0, 0, 0, (char *)protobuf_c_empty_string, 0,NULL, 0,NULL, 0 }
 
 
 /* Lorawan__DeviceIdentifier methods */

@@ -54,6 +54,9 @@ message Device {
   // There are different prefixes for `otaa`, `abp`, `world`, `local`, `private`, `testing`.
   string activation_constraints = 13;
 
+  repeated bytes used_dev_nonces = 14 [(gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];;
+  repeated bytes used_app_nonces = 15 [(gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];;
+
   // When the device was last seen (Unix nanoseconds)
   int64  last_seen = 21;
 }

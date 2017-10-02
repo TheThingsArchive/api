@@ -109,6 +109,10 @@ struct Lorawan_Device: SwiftProtobuf.Message {
   /// There are different prefixes for `otaa`, `abp`, `world`, `local`, `private`, `testing`.
   var activationConstraints: String = String()
 
+  var usedDevNonces: [Data] = []
+
+  var usedAppNonces: [Data] = []
+
   /// When the device was last seen (Unix nanoseconds)
   var lastSeen: Int64 = 0
 
@@ -136,6 +140,8 @@ struct Lorawan_Device: SwiftProtobuf.Message {
       case 11: try decoder.decodeSingularBoolField(value: &self.disableFCntCheck)
       case 12: try decoder.decodeSingularBoolField(value: &self.uses32BitFCnt)
       case 13: try decoder.decodeSingularStringField(value: &self.activationConstraints)
+      case 14: try decoder.decodeRepeatedBytesField(value: &self.usedDevNonces)
+      case 15: try decoder.decodeRepeatedBytesField(value: &self.usedAppNonces)
       case 21: try decoder.decodeSingularInt64Field(value: &self.lastSeen)
       default: break
       }
@@ -186,6 +192,12 @@ struct Lorawan_Device: SwiftProtobuf.Message {
     if !self.activationConstraints.isEmpty {
       try visitor.visitSingularStringField(value: self.activationConstraints, fieldNumber: 13)
     }
+    if !self.usedDevNonces.isEmpty {
+      try visitor.visitRepeatedBytesField(value: self.usedDevNonces, fieldNumber: 14)
+    }
+    if !self.usedAppNonces.isEmpty {
+      try visitor.visitRepeatedBytesField(value: self.usedAppNonces, fieldNumber: 15)
+    }
     if self.lastSeen != 0 {
       try visitor.visitSingularInt64Field(value: self.lastSeen, fieldNumber: 21)
     }
@@ -226,6 +238,8 @@ extension Lorawan_Device: SwiftProtobuf._MessageImplementationBase, SwiftProtobu
     11: .standard(proto: "disable_f_cnt_check"),
     12: .standard(proto: "uses32_bit_f_cnt"),
     13: .standard(proto: "activation_constraints"),
+    14: .standard(proto: "used_dev_nonces"),
+    15: .standard(proto: "used_app_nonces"),
     21: .standard(proto: "last_seen"),
   ]
 
@@ -243,6 +257,8 @@ extension Lorawan_Device: SwiftProtobuf._MessageImplementationBase, SwiftProtobu
     if self.disableFCntCheck != other.disableFCntCheck {return false}
     if self.uses32BitFCnt != other.uses32BitFCnt {return false}
     if self.activationConstraints != other.activationConstraints {return false}
+    if self.usedDevNonces != other.usedDevNonces {return false}
+    if self.usedAppNonces != other.usedAppNonces {return false}
     if self.lastSeen != other.lastSeen {return false}
     if unknownFields != other.unknownFields {return false}
     return true

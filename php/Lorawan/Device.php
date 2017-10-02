@@ -95,6 +95,14 @@ class Device extends \Google\Protobuf\Internal\Message
      */
     private $activation_constraints = '';
     /**
+     * Generated from protobuf field <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     */
+    private $used_dev_nonces;
+    /**
+     * Generated from protobuf field <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     */
+    private $used_app_nonces;
+    /**
      * When the device was last seen (Unix nanoseconds)
      *
      * Generated from protobuf field <code>int64 last_seen = 21;</code>
@@ -446,6 +454,50 @@ class Device extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->activation_constraints = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getUsedDevNonces()
+    {
+        return $this->used_dev_nonces;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setUsedDevNonces($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
+        $this->used_dev_nonces = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getUsedAppNonces()
+    {
+        return $this->used_app_nonces;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setUsedAppNonces($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
+        $this->used_app_nonces = $arr;
 
         return $this;
     }

@@ -243,12 +243,19 @@ proto.lorawan.DeviceIdentifier.prototype.setDevEui = function(value) {
  * @constructor
  */
 proto.lorawan.Device = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.lorawan.Device.repeatedFields_, null);
 };
 goog.inherits(proto.lorawan.Device, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.lorawan.Device.displayName = 'proto.lorawan.Device';
 }
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.lorawan.Device.repeatedFields_ = [14,15];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -291,6 +298,8 @@ proto.lorawan.Device.toObject = function(includeInstance, msg) {
     disableFCntCheck: jspb.Message.getFieldWithDefault(msg, 11, false),
     uses32BitFCnt: jspb.Message.getFieldWithDefault(msg, 12, false),
     activationConstraints: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    usedDevNoncesList: msg.getUsedDevNoncesList_asB64(),
+    usedAppNoncesList: msg.getUsedAppNoncesList_asB64(),
     lastSeen: jspb.Message.getFieldWithDefault(msg, 21, 0)
   };
 
@@ -379,6 +388,14 @@ proto.lorawan.Device.deserializeBinaryFromReader = function(msg, reader) {
     case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.setActivationConstraints(value);
+      break;
+    case 14:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.addUsedDevNonces(value);
+      break;
+    case 15:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.addUsedAppNonces(value);
       break;
     case 21:
       var value = /** @type {number} */ (reader.readInt64());
@@ -501,6 +518,20 @@ proto.lorawan.Device.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       13,
+      f
+    );
+  }
+  f = message.getUsedDevNoncesList_asU8();
+  if (f.length > 0) {
+    writer.writeRepeatedBytes(
+      14,
+      f
+    );
+  }
+  f = message.getUsedAppNoncesList_asU8();
+  if (f.length > 0) {
+    writer.writeRepeatedBytes(
+      15,
       f
     );
   }
@@ -854,6 +885,112 @@ proto.lorawan.Device.prototype.getActivationConstraints = function() {
 /** @param {string} value */
 proto.lorawan.Device.prototype.setActivationConstraints = function(value) {
   jspb.Message.setField(this, 13, value);
+};
+
+
+/**
+ * repeated bytes used_dev_nonces = 14;
+ * @return {!(Array<!Uint8Array>|Array<string>)}
+ */
+proto.lorawan.Device.prototype.getUsedDevNoncesList = function() {
+  return /** @type {!(Array<!Uint8Array>|Array<string>)} */ (jspb.Message.getRepeatedField(this, 14));
+};
+
+
+/**
+ * repeated bytes used_dev_nonces = 14;
+ * This is a type-conversion wrapper around `getUsedDevNoncesList()`
+ * @return {!Array.<string>}
+ */
+proto.lorawan.Device.prototype.getUsedDevNoncesList_asB64 = function() {
+  return /** @type {!Array.<string>} */ (jspb.Message.bytesListAsB64(
+      this.getUsedDevNoncesList()));
+};
+
+
+/**
+ * repeated bytes used_dev_nonces = 14;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getUsedDevNoncesList()`
+ * @return {!Array.<!Uint8Array>}
+ */
+proto.lorawan.Device.prototype.getUsedDevNoncesList_asU8 = function() {
+  return /** @type {!Array.<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
+      this.getUsedDevNoncesList()));
+};
+
+
+/** @param {!(Array<!Uint8Array>|Array<string>)} value */
+proto.lorawan.Device.prototype.setUsedDevNoncesList = function(value) {
+  jspb.Message.setField(this, 14, value || []);
+};
+
+
+/**
+ * @param {!(string|Uint8Array)} value
+ * @param {number=} opt_index
+ */
+proto.lorawan.Device.prototype.addUsedDevNonces = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 14, value, opt_index);
+};
+
+
+proto.lorawan.Device.prototype.clearUsedDevNoncesList = function() {
+  this.setUsedDevNoncesList([]);
+};
+
+
+/**
+ * repeated bytes used_app_nonces = 15;
+ * @return {!(Array<!Uint8Array>|Array<string>)}
+ */
+proto.lorawan.Device.prototype.getUsedAppNoncesList = function() {
+  return /** @type {!(Array<!Uint8Array>|Array<string>)} */ (jspb.Message.getRepeatedField(this, 15));
+};
+
+
+/**
+ * repeated bytes used_app_nonces = 15;
+ * This is a type-conversion wrapper around `getUsedAppNoncesList()`
+ * @return {!Array.<string>}
+ */
+proto.lorawan.Device.prototype.getUsedAppNoncesList_asB64 = function() {
+  return /** @type {!Array.<string>} */ (jspb.Message.bytesListAsB64(
+      this.getUsedAppNoncesList()));
+};
+
+
+/**
+ * repeated bytes used_app_nonces = 15;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getUsedAppNoncesList()`
+ * @return {!Array.<!Uint8Array>}
+ */
+proto.lorawan.Device.prototype.getUsedAppNoncesList_asU8 = function() {
+  return /** @type {!Array.<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
+      this.getUsedAppNoncesList()));
+};
+
+
+/** @param {!(Array<!Uint8Array>|Array<string>)} value */
+proto.lorawan.Device.prototype.setUsedAppNoncesList = function(value) {
+  jspb.Message.setField(this, 15, value || []);
+};
+
+
+/**
+ * @param {!(string|Uint8Array)} value
+ * @param {number=} opt_index
+ */
+proto.lorawan.Device.prototype.addUsedAppNonces = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 15, value, opt_index);
+};
+
+
+proto.lorawan.Device.prototype.clearUsedAppNoncesList = function() {
+  this.setUsedAppNoncesList([]);
 };
 
 

@@ -148,7 +148,7 @@ const ProtobufCMessageDescriptor lorawan__device_identifier__descriptor =
   (ProtobufCMessageInit) lorawan__device_identifier__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor lorawan__device__field_descriptors[14] =
+static const ProtobufCFieldDescriptor lorawan__device__field_descriptors[16] =
 {
   {
     "app_eui",
@@ -307,6 +307,30 @@ static const ProtobufCFieldDescriptor lorawan__device__field_descriptors[14] =
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
+    "used_dev_nonces",
+    14,
+    PROTOBUF_C_LABEL_REPEATED,
+    PROTOBUF_C_TYPE_BYTES,
+    offsetof(Lorawan__Device, n_used_dev_nonces),
+    offsetof(Lorawan__Device, used_dev_nonces),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "used_app_nonces",
+    15,
+    PROTOBUF_C_LABEL_REPEATED,
+    PROTOBUF_C_TYPE_BYTES,
+    offsetof(Lorawan__Device, n_used_app_nonces),
+    offsetof(Lorawan__Device, used_app_nonces),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
     "last_seen",
     21,
     PROTOBUF_C_LABEL_NONE,
@@ -331,15 +355,17 @@ static const unsigned lorawan__device__field_indices_by_name[] = {
   10,   /* field[10] = disable_f_cnt_check */
   9,   /* field[9] = f_cnt_down */
   8,   /* field[8] = f_cnt_up */
-  13,   /* field[13] = last_seen */
+  15,   /* field[15] = last_seen */
   5,   /* field[5] = nwk_s_key */
+  14,   /* field[14] = used_app_nonces */
+  13,   /* field[13] = used_dev_nonces */
   11,   /* field[11] = uses32_bit_f_cnt */
 };
 static const ProtobufCIntRange lorawan__device__number_ranges[2 + 1] =
 {
   { 1, 0 },
-  { 21, 13 },
-  { 0, 14 }
+  { 21, 15 },
+  { 0, 16 }
 };
 const ProtobufCMessageDescriptor lorawan__device__descriptor =
 {
@@ -349,7 +375,7 @@ const ProtobufCMessageDescriptor lorawan__device__descriptor =
   "Lorawan__Device",
   "lorawan",
   sizeof(Lorawan__Device),
-  14,
+  16,
   lorawan__device__field_descriptors,
   lorawan__device__field_indices_by_name,
   2,  lorawan__device__number_ranges,

@@ -156,6 +156,32 @@ public interface DeviceOrBuilder extends
       getActivationConstraintsBytes();
 
   /**
+   * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+   */
+  java.util.List<com.google.protobuf.ByteString> getUsedDevNoncesList();
+  /**
+   * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+   */
+  int getUsedDevNoncesCount();
+  /**
+   * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+   */
+  com.google.protobuf.ByteString getUsedDevNonces(int index);
+
+  /**
+   * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+   */
+  java.util.List<com.google.protobuf.ByteString> getUsedAppNoncesList();
+  /**
+   * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+   */
+  int getUsedAppNoncesCount();
+  /**
+   * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+   */
+  com.google.protobuf.ByteString getUsedAppNonces(int index);
+
+  /**
    * <pre>
    * When the device was last seen (Unix nanoseconds)
    * </pre>
