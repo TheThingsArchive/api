@@ -10,6 +10,10 @@ public interface ActivationMetadataOrBuilder extends
   /**
    * <code>.lorawan.ActivationMetadata lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
    */
+  boolean hasLorawan();
+  /**
+   * <code>.lorawan.ActivationMetadata lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+   */
   org.thethingsnetwork.api.protocol.lorawan.ActivationMetadata getLorawan();
   /**
    * <code>.lorawan.ActivationMetadata lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>

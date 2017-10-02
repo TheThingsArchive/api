@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -57,6 +59,7 @@ proto.lorawan.PrefixesRequest.prototype.toObject = function(opt_includeInstance)
  *     http://goto/soy-param-migration
  * @param {!proto.lorawan.PrefixesRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.PrefixesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -122,6 +125,7 @@ proto.lorawan.PrefixesRequest.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.lorawan.PrefixesRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.PrefixesRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -178,6 +182,7 @@ proto.lorawan.PrefixesResponse.prototype.toObject = function(opt_includeInstance
  *     http://goto/soy-param-migration
  * @param {!proto.lorawan.PrefixesResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.PrefixesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -249,6 +254,7 @@ proto.lorawan.PrefixesResponse.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.lorawan.PrefixesResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.PrefixesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -313,11 +319,12 @@ proto.lorawan.PrefixesResponse.PrefixMapping.prototype.toObject = function(opt_i
  *     http://goto/soy-param-migration
  * @param {!proto.lorawan.PrefixesResponse.PrefixMapping} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.PrefixesResponse.PrefixMapping.toObject = function(includeInstance, msg) {
   var f, obj = {
     prefix: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    usageList: jspb.Message.getField(msg, 2)
+    usageList: jspb.Message.getRepeatedField(msg, 2)
   };
 
   if (includeInstance) {
@@ -387,6 +394,7 @@ proto.lorawan.PrefixesResponse.PrefixMapping.prototype.serializeBinary = functio
  * format), writing to the given BinaryWriter.
  * @param {!proto.lorawan.PrefixesResponse.PrefixMapping} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.PrefixesResponse.PrefixMapping.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -424,12 +432,10 @@ proto.lorawan.PrefixesResponse.PrefixMapping.prototype.setPrefix = function(valu
 
 /**
  * repeated string usage = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!Array.<string>}
  */
 proto.lorawan.PrefixesResponse.PrefixMapping.prototype.getUsageList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 2));
+  return /** @type {!Array.<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
@@ -455,8 +461,6 @@ proto.lorawan.PrefixesResponse.PrefixMapping.prototype.clearUsageList = function
 
 /**
  * repeated PrefixMapping prefixes = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!Array.<!proto.lorawan.PrefixesResponse.PrefixMapping>}
  */
 proto.lorawan.PrefixesResponse.prototype.getPrefixesList = function() {
@@ -536,10 +540,11 @@ proto.lorawan.DevAddrRequest.prototype.toObject = function(opt_includeInstance) 
  *     http://goto/soy-param-migration
  * @param {!proto.lorawan.DevAddrRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.DevAddrRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    usageList: jspb.Message.getField(msg, 1)
+    usageList: jspb.Message.getRepeatedField(msg, 1)
   };
 
   if (includeInstance) {
@@ -605,6 +610,7 @@ proto.lorawan.DevAddrRequest.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.lorawan.DevAddrRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.DevAddrRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -620,12 +626,10 @@ proto.lorawan.DevAddrRequest.serializeBinaryToWriter = function(message, writer)
 
 /**
  * repeated string usage = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!Array.<string>}
  */
 proto.lorawan.DevAddrRequest.prototype.getUsageList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 1));
+  return /** @type {!Array.<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
@@ -692,6 +696,7 @@ proto.lorawan.DevAddrResponse.prototype.toObject = function(opt_includeInstance)
  *     http://goto/soy-param-migration
  * @param {!proto.lorawan.DevAddrResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.DevAddrResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -761,6 +766,7 @@ proto.lorawan.DevAddrResponse.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.lorawan.DevAddrResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.DevAddrResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;

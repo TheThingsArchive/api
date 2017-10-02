@@ -9,40 +9,38 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * The Device settings
- * </pre>
  *
- * Protobuf type <code>handler.Device</code>
+ * Generated from protobuf message <code>handler.Device</code>
  */
 class Device extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     private $app_id = '';
     /**
-     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+     * Generated from protobuf field <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      */
     private $dev_id = '';
     /**
-     * <code>float latitude = 10;</code>
+     * Generated from protobuf field <code>float latitude = 10;</code>
      */
     private $latitude = 0.0;
     /**
-     * <code>float longitude = 11;</code>
+     * Generated from protobuf field <code>float longitude = 11;</code>
      */
     private $longitude = 0.0;
     /**
-     * <code>int32 altitude = 12;</code>
+     * Generated from protobuf field <code>int32 altitude = 12;</code>
      */
     private $altitude = 0;
     /**
-     * <code>map&lt;string, string&gt; attributes = 13;</code>
+     * Generated from protobuf field <code>map<string, string> attributes = 13;</code>
      */
     private $attributes;
     /**
-     * <code>string description = 20;</code>
+     * Generated from protobuf field <code>string description = 20;</code>
      */
     private $description = '';
     protected $device;
@@ -53,7 +51,8 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * @return string
      */
     public function getAppId()
     {
@@ -61,16 +60,21 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setAppId($var)
     {
         GPBUtil::checkString($var, True);
         $this->app_id = $var;
+
+        return $this;
     }
 
     /**
-     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+     * Generated from protobuf field <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+     * @return string
      */
     public function getDevId()
     {
@@ -78,16 +82,21 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+     * Generated from protobuf field <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setDevId($var)
     {
         GPBUtil::checkString($var, True);
         $this->dev_id = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
+     * Generated from protobuf field <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
+     * @return \Lorawan\Device
      */
     public function getLorawanDevice()
     {
@@ -95,16 +104,21 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
+     * Generated from protobuf field <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
+     * @param \Lorawan\Device $var
+     * @return $this
      */
-    public function setLorawanDevice(&$var)
+    public function setLorawanDevice($var)
     {
         GPBUtil::checkMessage($var, \Lorawan\Device::class);
         $this->writeOneof(3, $var);
+
+        return $this;
     }
 
     /**
-     * <code>float latitude = 10;</code>
+     * Generated from protobuf field <code>float latitude = 10;</code>
+     * @return float
      */
     public function getLatitude()
     {
@@ -112,16 +126,21 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float latitude = 10;</code>
+     * Generated from protobuf field <code>float latitude = 10;</code>
+     * @param float $var
+     * @return $this
      */
     public function setLatitude($var)
     {
         GPBUtil::checkFloat($var);
         $this->latitude = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float longitude = 11;</code>
+     * Generated from protobuf field <code>float longitude = 11;</code>
+     * @return float
      */
     public function getLongitude()
     {
@@ -129,16 +148,21 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float longitude = 11;</code>
+     * Generated from protobuf field <code>float longitude = 11;</code>
+     * @param float $var
+     * @return $this
      */
     public function setLongitude($var)
     {
         GPBUtil::checkFloat($var);
         $this->longitude = $var;
+
+        return $this;
     }
 
     /**
-     * <code>int32 altitude = 12;</code>
+     * Generated from protobuf field <code>int32 altitude = 12;</code>
+     * @return int
      */
     public function getAltitude()
     {
@@ -146,16 +170,21 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 altitude = 12;</code>
+     * Generated from protobuf field <code>int32 altitude = 12;</code>
+     * @param int $var
+     * @return $this
      */
     public function setAltitude($var)
     {
         GPBUtil::checkInt32($var);
         $this->altitude = $var;
+
+        return $this;
     }
 
     /**
-     * <code>map&lt;string, string&gt; attributes = 13;</code>
+     * Generated from protobuf field <code>map<string, string> attributes = 13;</code>
+     * @return \Google\Protobuf\Internal\MapField
      */
     public function getAttributes()
     {
@@ -163,16 +192,21 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>map&lt;string, string&gt; attributes = 13;</code>
+     * Generated from protobuf field <code>map<string, string> attributes = 13;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
      */
-    public function setAttributes(&$var)
+    public function setAttributes($var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->attributes = $arr;
+
+        return $this;
     }
 
     /**
-     * <code>string description = 20;</code>
+     * Generated from protobuf field <code>string description = 20;</code>
+     * @return string
      */
     public function getDescription()
     {
@@ -180,14 +214,21 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string description = 20;</code>
+     * Generated from protobuf field <code>string description = 20;</code>
+     * @param string $var
+     * @return $this
      */
     public function setDescription($var)
     {
         GPBUtil::checkString($var, True);
         $this->description = $var;
+
+        return $this;
     }
 
+    /**
+     * @return string
+     */
     public function getDevice()
     {
         return $this->whichOneof("device");

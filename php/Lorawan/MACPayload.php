@@ -9,20 +9,20 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>lorawan.MACPayload</code>
+ * Generated from protobuf message <code>lorawan.MACPayload</code>
  */
 class MACPayload extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * Generated from protobuf field <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     private $f_hdr = null;
     /**
-     * <code>int32 f_port = 2;</code>
+     * Generated from protobuf field <code>int32 f_port = 2;</code>
      */
     private $f_port = 0;
     /**
-     * <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
+     * Generated from protobuf field <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
      */
     private $frm_payload = '';
 
@@ -32,7 +32,8 @@ class MACPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * Generated from protobuf field <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * @return \Lorawan\FHDR
      */
     public function getFHdr()
     {
@@ -40,16 +41,21 @@ class MACPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * Generated from protobuf field <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * @param \Lorawan\FHDR $var
+     * @return $this
      */
-    public function setFHdr(&$var)
+    public function setFHdr($var)
     {
         GPBUtil::checkMessage($var, \Lorawan\FHDR::class);
         $this->f_hdr = $var;
+
+        return $this;
     }
 
     /**
-     * <code>int32 f_port = 2;</code>
+     * Generated from protobuf field <code>int32 f_port = 2;</code>
+     * @return int
      */
     public function getFPort()
     {
@@ -57,16 +63,21 @@ class MACPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 f_port = 2;</code>
+     * Generated from protobuf field <code>int32 f_port = 2;</code>
+     * @param int $var
+     * @return $this
      */
     public function setFPort($var)
     {
         GPBUtil::checkInt32($var);
         $this->f_port = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
+     * Generated from protobuf field <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
+     * @return string
      */
     public function getFrmPayload()
     {
@@ -74,12 +85,16 @@ class MACPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
+     * Generated from protobuf field <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setFrmPayload($var)
     {
         GPBUtil::checkString($var, False);
         $this->frm_payload = $var;
+
+        return $this;
     }
 
 }

@@ -9,16 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>lorawan.PrefixesResponse</code>
+ * Generated from protobuf message <code>lorawan.PrefixesResponse</code>
  */
 class PrefixesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * The prefixes that are in use or available
-     * </pre>
      *
-     * <code>repeated .lorawan.PrefixesResponse.PrefixMapping prefixes = 1;</code>
+     * Generated from protobuf field <code>repeated .lorawan.PrefixesResponse.PrefixMapping prefixes = 1;</code>
      */
     private $prefixes;
 
@@ -28,11 +26,10 @@ class PrefixesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The prefixes that are in use or available
-     * </pre>
      *
-     * <code>repeated .lorawan.PrefixesResponse.PrefixMapping prefixes = 1;</code>
+     * Generated from protobuf field <code>repeated .lorawan.PrefixesResponse.PrefixMapping prefixes = 1;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPrefixes()
     {
@@ -40,16 +37,18 @@ class PrefixesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The prefixes that are in use or available
-     * </pre>
      *
-     * <code>repeated .lorawan.PrefixesResponse.PrefixMapping prefixes = 1;</code>
+     * Generated from protobuf field <code>repeated .lorawan.PrefixesResponse.PrefixMapping prefixes = 1;</code>
+     * @param \Lorawan\PrefixesResponse_PrefixMapping[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setPrefixes(&$var)
+    public function setPrefixes($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Lorawan\PrefixesResponse_PrefixMapping::class);
         $this->prefixes = $arr;
+
+        return $this;
     }
 
 }

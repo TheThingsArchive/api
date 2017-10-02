@@ -9,123 +9,95 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>lorawan.Device</code>
+ * Generated from protobuf message <code>lorawan.Device</code>
  */
 class Device extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
-     * </pre>
      *
-     * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     private $app_eui = '';
     /**
-     * <pre>
      * The DevEUI is a unique, 8 byte identifier for the device.
-     * </pre>
      *
-     * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * Generated from protobuf field <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     private $dev_eui = '';
     /**
-     * <pre>
      * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
-     * </pre>
      *
-     * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
      */
     private $app_id = '';
     /**
-     * <pre>
      * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
-     * </pre>
      *
-     * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
+     * Generated from protobuf field <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
      */
     private $dev_id = '';
     /**
-     * <pre>
      * The DevAddr is a dynamic, 4 byte session address for the device.
-     * </pre>
      *
-     * <code>bytes dev_addr = 5 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * Generated from protobuf field <code>bytes dev_addr = 5 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
     private $dev_addr = '';
     /**
-     * <pre>
      * The NwkSKey is a 16 byte session key that is known by the device and the network. It is used for routing and MAC related functionality.
      * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
-     * </pre>
      *
-     * <code>bytes nwk_s_key = 6 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+     * Generated from protobuf field <code>bytes nwk_s_key = 6 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
      */
     private $nwk_s_key = '';
     /**
-     * <pre>
      * The AppSKey is a 16 byte session key that is known by the device and the application. It is used for payload encryption.
      * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
-     * </pre>
      *
-     * <code>bytes app_s_key = 7 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppSKey"];</code>
+     * Generated from protobuf field <code>bytes app_s_key = 7 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppSKey"];</code>
      */
     private $app_s_key = '';
     /**
-     * <pre>
      * The AppKey is a 16 byte static key that is known by the device and the application. It is used for negotiating session keys (OTAA).
-     * </pre>
      *
-     * <code>bytes app_key = 8 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppKey"];</code>
+     * Generated from protobuf field <code>bytes app_key = 8 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppKey"];</code>
      */
     private $app_key = '';
     /**
-     * <pre>
      * FCntUp is the uplink frame counter for a device session.
-     * </pre>
      *
-     * <code>uint32 f_cnt_up = 9;</code>
+     * Generated from protobuf field <code>uint32 f_cnt_up = 9;</code>
      */
     private $f_cnt_up = 0;
     /**
-     * <pre>
      * FCntDown is the downlink frame counter for a device session.
-     * </pre>
      *
-     * <code>uint32 f_cnt_down = 10;</code>
+     * Generated from protobuf field <code>uint32 f_cnt_down = 10;</code>
      */
     private $f_cnt_down = 0;
     /**
-     * <pre>
      * The DisableFCntCheck option disables the frame counter check. Disabling this makes the device vulnerable to replay attacks, but makes ABP slightly easier.
-     * </pre>
      *
-     * <code>bool disable_f_cnt_check = 11;</code>
+     * Generated from protobuf field <code>bool disable_f_cnt_check = 11;</code>
      */
     private $disable_f_cnt_check = false;
     /**
-     * <pre>
      * The Uses32BitFCnt option indicates that the device keeps track of full 32 bit frame counters. As only the 16 lsb are actually transmitted, the 16 msb will have to be inferred.
-     * </pre>
      *
-     * <code>bool uses32_bit_f_cnt = 12;</code>
+     * Generated from protobuf field <code>bool uses32_bit_f_cnt = 12;</code>
      */
     private $uses32_bit_f_cnt = false;
     /**
-     * <pre>
      * The ActivationContstraints are used to allocate a device address for a device (comma-separated).
      * There are different prefixes for `otaa`, `abp`, `world`, `local`, `private`, `testing`.
-     * </pre>
      *
-     * <code>string activation_constraints = 13;</code>
+     * Generated from protobuf field <code>string activation_constraints = 13;</code>
      */
     private $activation_constraints = '';
     /**
-     * <pre>
      * When the device was last seen (Unix nanoseconds)
-     * </pre>
      *
-     * <code>int64 last_seen = 21;</code>
+     * Generated from protobuf field <code>int64 last_seen = 21;</code>
      */
     private $last_seen = 0;
 
@@ -135,11 +107,10 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
-     * </pre>
      *
-     * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @return string
      */
     public function getAppEui()
     {
@@ -147,24 +118,25 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
-     * </pre>
      *
-     * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setAppEui($var)
     {
         GPBUtil::checkString($var, False);
         $this->app_eui = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The DevEUI is a unique, 8 byte identifier for the device.
-     * </pre>
      *
-     * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * Generated from protobuf field <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @return string
      */
     public function getDevEui()
     {
@@ -172,24 +144,25 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The DevEUI is a unique, 8 byte identifier for the device.
-     * </pre>
      *
-     * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * Generated from protobuf field <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setDevEui($var)
     {
         GPBUtil::checkString($var, False);
         $this->dev_eui = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
-     * </pre>
      *
-     * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
+     * @return string
      */
     public function getAppId()
     {
@@ -197,24 +170,25 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
-     * </pre>
      *
-     * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setAppId($var)
     {
         GPBUtil::checkString($var, True);
         $this->app_id = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
-     * </pre>
      *
-     * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
+     * Generated from protobuf field <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
+     * @return string
      */
     public function getDevId()
     {
@@ -222,24 +196,25 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
-     * </pre>
      *
-     * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
+     * Generated from protobuf field <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setDevId($var)
     {
         GPBUtil::checkString($var, True);
         $this->dev_id = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The DevAddr is a dynamic, 4 byte session address for the device.
-     * </pre>
      *
-     * <code>bytes dev_addr = 5 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * Generated from protobuf field <code>bytes dev_addr = 5 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * @return string
      */
     public function getDevAddr()
     {
@@ -247,25 +222,26 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The DevAddr is a dynamic, 4 byte session address for the device.
-     * </pre>
      *
-     * <code>bytes dev_addr = 5 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * Generated from protobuf field <code>bytes dev_addr = 5 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setDevAddr($var)
     {
         GPBUtil::checkString($var, False);
         $this->dev_addr = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The NwkSKey is a 16 byte session key that is known by the device and the network. It is used for routing and MAC related functionality.
      * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
-     * </pre>
      *
-     * <code>bytes nwk_s_key = 6 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+     * Generated from protobuf field <code>bytes nwk_s_key = 6 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+     * @return string
      */
     public function getNwkSKey()
     {
@@ -273,26 +249,27 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The NwkSKey is a 16 byte session key that is known by the device and the network. It is used for routing and MAC related functionality.
      * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
-     * </pre>
      *
-     * <code>bytes nwk_s_key = 6 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+     * Generated from protobuf field <code>bytes nwk_s_key = 6 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setNwkSKey($var)
     {
         GPBUtil::checkString($var, False);
         $this->nwk_s_key = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The AppSKey is a 16 byte session key that is known by the device and the application. It is used for payload encryption.
      * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
-     * </pre>
      *
-     * <code>bytes app_s_key = 7 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppSKey"];</code>
+     * Generated from protobuf field <code>bytes app_s_key = 7 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppSKey"];</code>
+     * @return string
      */
     public function getAppSKey()
     {
@@ -300,25 +277,26 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The AppSKey is a 16 byte session key that is known by the device and the application. It is used for payload encryption.
      * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
-     * </pre>
      *
-     * <code>bytes app_s_key = 7 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppSKey"];</code>
+     * Generated from protobuf field <code>bytes app_s_key = 7 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppSKey"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setAppSKey($var)
     {
         GPBUtil::checkString($var, False);
         $this->app_s_key = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The AppKey is a 16 byte static key that is known by the device and the application. It is used for negotiating session keys (OTAA).
-     * </pre>
      *
-     * <code>bytes app_key = 8 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppKey"];</code>
+     * Generated from protobuf field <code>bytes app_key = 8 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppKey"];</code>
+     * @return string
      */
     public function getAppKey()
     {
@@ -326,24 +304,25 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The AppKey is a 16 byte static key that is known by the device and the application. It is used for negotiating session keys (OTAA).
-     * </pre>
      *
-     * <code>bytes app_key = 8 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppKey"];</code>
+     * Generated from protobuf field <code>bytes app_key = 8 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppKey"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setAppKey($var)
     {
         GPBUtil::checkString($var, False);
         $this->app_key = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * FCntUp is the uplink frame counter for a device session.
-     * </pre>
      *
-     * <code>uint32 f_cnt_up = 9;</code>
+     * Generated from protobuf field <code>uint32 f_cnt_up = 9;</code>
+     * @return int
      */
     public function getFCntUp()
     {
@@ -351,24 +330,25 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * FCntUp is the uplink frame counter for a device session.
-     * </pre>
      *
-     * <code>uint32 f_cnt_up = 9;</code>
+     * Generated from protobuf field <code>uint32 f_cnt_up = 9;</code>
+     * @param int $var
+     * @return $this
      */
     public function setFCntUp($var)
     {
         GPBUtil::checkUint32($var);
         $this->f_cnt_up = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * FCntDown is the downlink frame counter for a device session.
-     * </pre>
      *
-     * <code>uint32 f_cnt_down = 10;</code>
+     * Generated from protobuf field <code>uint32 f_cnt_down = 10;</code>
+     * @return int
      */
     public function getFCntDown()
     {
@@ -376,24 +356,25 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * FCntDown is the downlink frame counter for a device session.
-     * </pre>
      *
-     * <code>uint32 f_cnt_down = 10;</code>
+     * Generated from protobuf field <code>uint32 f_cnt_down = 10;</code>
+     * @param int $var
+     * @return $this
      */
     public function setFCntDown($var)
     {
         GPBUtil::checkUint32($var);
         $this->f_cnt_down = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The DisableFCntCheck option disables the frame counter check. Disabling this makes the device vulnerable to replay attacks, but makes ABP slightly easier.
-     * </pre>
      *
-     * <code>bool disable_f_cnt_check = 11;</code>
+     * Generated from protobuf field <code>bool disable_f_cnt_check = 11;</code>
+     * @return bool
      */
     public function getDisableFCntCheck()
     {
@@ -401,24 +382,25 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The DisableFCntCheck option disables the frame counter check. Disabling this makes the device vulnerable to replay attacks, but makes ABP slightly easier.
-     * </pre>
      *
-     * <code>bool disable_f_cnt_check = 11;</code>
+     * Generated from protobuf field <code>bool disable_f_cnt_check = 11;</code>
+     * @param bool $var
+     * @return $this
      */
     public function setDisableFCntCheck($var)
     {
         GPBUtil::checkBool($var);
         $this->disable_f_cnt_check = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The Uses32BitFCnt option indicates that the device keeps track of full 32 bit frame counters. As only the 16 lsb are actually transmitted, the 16 msb will have to be inferred.
-     * </pre>
      *
-     * <code>bool uses32_bit_f_cnt = 12;</code>
+     * Generated from protobuf field <code>bool uses32_bit_f_cnt = 12;</code>
+     * @return bool
      */
     public function getUses32BitFCnt()
     {
@@ -426,25 +408,26 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The Uses32BitFCnt option indicates that the device keeps track of full 32 bit frame counters. As only the 16 lsb are actually transmitted, the 16 msb will have to be inferred.
-     * </pre>
      *
-     * <code>bool uses32_bit_f_cnt = 12;</code>
+     * Generated from protobuf field <code>bool uses32_bit_f_cnt = 12;</code>
+     * @param bool $var
+     * @return $this
      */
     public function setUses32BitFCnt($var)
     {
         GPBUtil::checkBool($var);
         $this->uses32_bit_f_cnt = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The ActivationContstraints are used to allocate a device address for a device (comma-separated).
      * There are different prefixes for `otaa`, `abp`, `world`, `local`, `private`, `testing`.
-     * </pre>
      *
-     * <code>string activation_constraints = 13;</code>
+     * Generated from protobuf field <code>string activation_constraints = 13;</code>
+     * @return string
      */
     public function getActivationConstraints()
     {
@@ -452,25 +435,26 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The ActivationContstraints are used to allocate a device address for a device (comma-separated).
      * There are different prefixes for `otaa`, `abp`, `world`, `local`, `private`, `testing`.
-     * </pre>
      *
-     * <code>string activation_constraints = 13;</code>
+     * Generated from protobuf field <code>string activation_constraints = 13;</code>
+     * @param string $var
+     * @return $this
      */
     public function setActivationConstraints($var)
     {
         GPBUtil::checkString($var, True);
         $this->activation_constraints = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * When the device was last seen (Unix nanoseconds)
-     * </pre>
      *
-     * <code>int64 last_seen = 21;</code>
+     * Generated from protobuf field <code>int64 last_seen = 21;</code>
+     * @return int|string
      */
     public function getLastSeen()
     {
@@ -478,16 +462,18 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * When the device was last seen (Unix nanoseconds)
-     * </pre>
      *
-     * <code>int64 last_seen = 21;</code>
+     * Generated from protobuf field <code>int64 last_seen = 21;</code>
+     * @param int|string $var
+     * @return $this
      */
     public function setLastSeen($var)
     {
         GPBUtil::checkInt64($var);
         $this->last_seen = $var;
+
+        return $this;
     }
 
 }

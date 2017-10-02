@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>handler.DeviceList</code>
+ * Generated from protobuf message <code>handler.DeviceList</code>
  */
 class DeviceList extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>repeated .handler.Device devices = 1;</code>
+     * Generated from protobuf field <code>repeated .handler.Device devices = 1;</code>
      */
     private $devices;
 
@@ -24,7 +24,8 @@ class DeviceList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>repeated .handler.Device devices = 1;</code>
+     * Generated from protobuf field <code>repeated .handler.Device devices = 1;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getDevices()
     {
@@ -32,12 +33,16 @@ class DeviceList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>repeated .handler.Device devices = 1;</code>
+     * Generated from protobuf field <code>repeated .handler.Device devices = 1;</code>
+     * @param \Handler\Device[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setDevices(&$var)
+    public function setDevices($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Handler\Device::class);
         $this->devices = $arr;
+
+        return $this;
     }
 
 }

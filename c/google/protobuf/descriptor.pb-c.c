@@ -10,7 +10,7 @@
 void   google__protobuf__file_descriptor_set__init
                      (Google__Protobuf__FileDescriptorSet         *message)
 {
-  static Google__Protobuf__FileDescriptorSet init_value = GOOGLE__PROTOBUF__FILE_DESCRIPTOR_SET__INIT;
+  static const Google__Protobuf__FileDescriptorSet init_value = GOOGLE__PROTOBUF__FILE_DESCRIPTOR_SET__INIT;
   *message = init_value;
 }
 size_t google__protobuf__file_descriptor_set__get_packed_size
@@ -47,13 +47,15 @@ void   google__protobuf__file_descriptor_set__free_unpacked
                      (Google__Protobuf__FileDescriptorSet *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__file_descriptor_set__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__file_descriptor_proto__init
                      (Google__Protobuf__FileDescriptorProto         *message)
 {
-  static Google__Protobuf__FileDescriptorProto init_value = GOOGLE__PROTOBUF__FILE_DESCRIPTOR_PROTO__INIT;
+  static const Google__Protobuf__FileDescriptorProto init_value = GOOGLE__PROTOBUF__FILE_DESCRIPTOR_PROTO__INIT;
   *message = init_value;
 }
 size_t google__protobuf__file_descriptor_proto__get_packed_size
@@ -90,25 +92,27 @@ void   google__protobuf__file_descriptor_proto__free_unpacked
                      (Google__Protobuf__FileDescriptorProto *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__file_descriptor_proto__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__descriptor_proto__extension_range__init
                      (Google__Protobuf__DescriptorProto__ExtensionRange         *message)
 {
-  static Google__Protobuf__DescriptorProto__ExtensionRange init_value = GOOGLE__PROTOBUF__DESCRIPTOR_PROTO__EXTENSION_RANGE__INIT;
+  static const Google__Protobuf__DescriptorProto__ExtensionRange init_value = GOOGLE__PROTOBUF__DESCRIPTOR_PROTO__EXTENSION_RANGE__INIT;
   *message = init_value;
 }
 void   google__protobuf__descriptor_proto__reserved_range__init
                      (Google__Protobuf__DescriptorProto__ReservedRange         *message)
 {
-  static Google__Protobuf__DescriptorProto__ReservedRange init_value = GOOGLE__PROTOBUF__DESCRIPTOR_PROTO__RESERVED_RANGE__INIT;
+  static const Google__Protobuf__DescriptorProto__ReservedRange init_value = GOOGLE__PROTOBUF__DESCRIPTOR_PROTO__RESERVED_RANGE__INIT;
   *message = init_value;
 }
 void   google__protobuf__descriptor_proto__init
                      (Google__Protobuf__DescriptorProto         *message)
 {
-  static Google__Protobuf__DescriptorProto init_value = GOOGLE__PROTOBUF__DESCRIPTOR_PROTO__INIT;
+  static const Google__Protobuf__DescriptorProto init_value = GOOGLE__PROTOBUF__DESCRIPTOR_PROTO__INIT;
   *message = init_value;
 }
 size_t google__protobuf__descriptor_proto__get_packed_size
@@ -145,13 +149,60 @@ void   google__protobuf__descriptor_proto__free_unpacked
                      (Google__Protobuf__DescriptorProto *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__descriptor_proto__descriptor);
+  protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
+}
+void   google__protobuf__extension_range_options__init
+                     (Google__Protobuf__ExtensionRangeOptions         *message)
+{
+  static const Google__Protobuf__ExtensionRangeOptions init_value = GOOGLE__PROTOBUF__EXTENSION_RANGE_OPTIONS__INIT;
+  *message = init_value;
+}
+size_t google__protobuf__extension_range_options__get_packed_size
+                     (const Google__Protobuf__ExtensionRangeOptions *message)
+{
+  assert(message->base.descriptor == &google__protobuf__extension_range_options__descriptor);
+  return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
+}
+size_t google__protobuf__extension_range_options__pack
+                     (const Google__Protobuf__ExtensionRangeOptions *message,
+                      uint8_t       *out)
+{
+  assert(message->base.descriptor == &google__protobuf__extension_range_options__descriptor);
+  return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
+}
+size_t google__protobuf__extension_range_options__pack_to_buffer
+                     (const Google__Protobuf__ExtensionRangeOptions *message,
+                      ProtobufCBuffer *buffer)
+{
+  assert(message->base.descriptor == &google__protobuf__extension_range_options__descriptor);
+  return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
+}
+Google__Protobuf__ExtensionRangeOptions *
+       google__protobuf__extension_range_options__unpack
+                     (ProtobufCAllocator  *allocator,
+                      size_t               len,
+                      const uint8_t       *data)
+{
+  return (Google__Protobuf__ExtensionRangeOptions *)
+     protobuf_c_message_unpack (&google__protobuf__extension_range_options__descriptor,
+                                allocator, len, data);
+}
+void   google__protobuf__extension_range_options__free_unpacked
+                     (Google__Protobuf__ExtensionRangeOptions *message,
+                      ProtobufCAllocator *allocator)
+{
+  if(!message)
+    return;
+  assert(message->base.descriptor == &google__protobuf__extension_range_options__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__field_descriptor_proto__init
                      (Google__Protobuf__FieldDescriptorProto         *message)
 {
-  static Google__Protobuf__FieldDescriptorProto init_value = GOOGLE__PROTOBUF__FIELD_DESCRIPTOR_PROTO__INIT;
+  static const Google__Protobuf__FieldDescriptorProto init_value = GOOGLE__PROTOBUF__FIELD_DESCRIPTOR_PROTO__INIT;
   *message = init_value;
 }
 size_t google__protobuf__field_descriptor_proto__get_packed_size
@@ -188,13 +239,15 @@ void   google__protobuf__field_descriptor_proto__free_unpacked
                      (Google__Protobuf__FieldDescriptorProto *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__field_descriptor_proto__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__oneof_descriptor_proto__init
                      (Google__Protobuf__OneofDescriptorProto         *message)
 {
-  static Google__Protobuf__OneofDescriptorProto init_value = GOOGLE__PROTOBUF__ONEOF_DESCRIPTOR_PROTO__INIT;
+  static const Google__Protobuf__OneofDescriptorProto init_value = GOOGLE__PROTOBUF__ONEOF_DESCRIPTOR_PROTO__INIT;
   *message = init_value;
 }
 size_t google__protobuf__oneof_descriptor_proto__get_packed_size
@@ -231,13 +284,15 @@ void   google__protobuf__oneof_descriptor_proto__free_unpacked
                      (Google__Protobuf__OneofDescriptorProto *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__oneof_descriptor_proto__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__enum_descriptor_proto__init
                      (Google__Protobuf__EnumDescriptorProto         *message)
 {
-  static Google__Protobuf__EnumDescriptorProto init_value = GOOGLE__PROTOBUF__ENUM_DESCRIPTOR_PROTO__INIT;
+  static const Google__Protobuf__EnumDescriptorProto init_value = GOOGLE__PROTOBUF__ENUM_DESCRIPTOR_PROTO__INIT;
   *message = init_value;
 }
 size_t google__protobuf__enum_descriptor_proto__get_packed_size
@@ -274,13 +329,15 @@ void   google__protobuf__enum_descriptor_proto__free_unpacked
                      (Google__Protobuf__EnumDescriptorProto *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__enum_descriptor_proto__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__enum_value_descriptor_proto__init
                      (Google__Protobuf__EnumValueDescriptorProto         *message)
 {
-  static Google__Protobuf__EnumValueDescriptorProto init_value = GOOGLE__PROTOBUF__ENUM_VALUE_DESCRIPTOR_PROTO__INIT;
+  static const Google__Protobuf__EnumValueDescriptorProto init_value = GOOGLE__PROTOBUF__ENUM_VALUE_DESCRIPTOR_PROTO__INIT;
   *message = init_value;
 }
 size_t google__protobuf__enum_value_descriptor_proto__get_packed_size
@@ -317,13 +374,15 @@ void   google__protobuf__enum_value_descriptor_proto__free_unpacked
                      (Google__Protobuf__EnumValueDescriptorProto *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__enum_value_descriptor_proto__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__service_descriptor_proto__init
                      (Google__Protobuf__ServiceDescriptorProto         *message)
 {
-  static Google__Protobuf__ServiceDescriptorProto init_value = GOOGLE__PROTOBUF__SERVICE_DESCRIPTOR_PROTO__INIT;
+  static const Google__Protobuf__ServiceDescriptorProto init_value = GOOGLE__PROTOBUF__SERVICE_DESCRIPTOR_PROTO__INIT;
   *message = init_value;
 }
 size_t google__protobuf__service_descriptor_proto__get_packed_size
@@ -360,13 +419,15 @@ void   google__protobuf__service_descriptor_proto__free_unpacked
                      (Google__Protobuf__ServiceDescriptorProto *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__service_descriptor_proto__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__method_descriptor_proto__init
                      (Google__Protobuf__MethodDescriptorProto         *message)
 {
-  static Google__Protobuf__MethodDescriptorProto init_value = GOOGLE__PROTOBUF__METHOD_DESCRIPTOR_PROTO__INIT;
+  static const Google__Protobuf__MethodDescriptorProto init_value = GOOGLE__PROTOBUF__METHOD_DESCRIPTOR_PROTO__INIT;
   *message = init_value;
 }
 size_t google__protobuf__method_descriptor_proto__get_packed_size
@@ -403,13 +464,15 @@ void   google__protobuf__method_descriptor_proto__free_unpacked
                      (Google__Protobuf__MethodDescriptorProto *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__method_descriptor_proto__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__file_options__init
                      (Google__Protobuf__FileOptions         *message)
 {
-  static Google__Protobuf__FileOptions init_value = GOOGLE__PROTOBUF__FILE_OPTIONS__INIT;
+  static const Google__Protobuf__FileOptions init_value = GOOGLE__PROTOBUF__FILE_OPTIONS__INIT;
   *message = init_value;
 }
 size_t google__protobuf__file_options__get_packed_size
@@ -446,13 +509,15 @@ void   google__protobuf__file_options__free_unpacked
                      (Google__Protobuf__FileOptions *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__file_options__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__message_options__init
                      (Google__Protobuf__MessageOptions         *message)
 {
-  static Google__Protobuf__MessageOptions init_value = GOOGLE__PROTOBUF__MESSAGE_OPTIONS__INIT;
+  static const Google__Protobuf__MessageOptions init_value = GOOGLE__PROTOBUF__MESSAGE_OPTIONS__INIT;
   *message = init_value;
 }
 size_t google__protobuf__message_options__get_packed_size
@@ -489,13 +554,15 @@ void   google__protobuf__message_options__free_unpacked
                      (Google__Protobuf__MessageOptions *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__message_options__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__field_options__init
                      (Google__Protobuf__FieldOptions         *message)
 {
-  static Google__Protobuf__FieldOptions init_value = GOOGLE__PROTOBUF__FIELD_OPTIONS__INIT;
+  static const Google__Protobuf__FieldOptions init_value = GOOGLE__PROTOBUF__FIELD_OPTIONS__INIT;
   *message = init_value;
 }
 size_t google__protobuf__field_options__get_packed_size
@@ -532,13 +599,15 @@ void   google__protobuf__field_options__free_unpacked
                      (Google__Protobuf__FieldOptions *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__field_options__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__oneof_options__init
                      (Google__Protobuf__OneofOptions         *message)
 {
-  static Google__Protobuf__OneofOptions init_value = GOOGLE__PROTOBUF__ONEOF_OPTIONS__INIT;
+  static const Google__Protobuf__OneofOptions init_value = GOOGLE__PROTOBUF__ONEOF_OPTIONS__INIT;
   *message = init_value;
 }
 size_t google__protobuf__oneof_options__get_packed_size
@@ -575,13 +644,15 @@ void   google__protobuf__oneof_options__free_unpacked
                      (Google__Protobuf__OneofOptions *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__oneof_options__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__enum_options__init
                      (Google__Protobuf__EnumOptions         *message)
 {
-  static Google__Protobuf__EnumOptions init_value = GOOGLE__PROTOBUF__ENUM_OPTIONS__INIT;
+  static const Google__Protobuf__EnumOptions init_value = GOOGLE__PROTOBUF__ENUM_OPTIONS__INIT;
   *message = init_value;
 }
 size_t google__protobuf__enum_options__get_packed_size
@@ -618,13 +689,15 @@ void   google__protobuf__enum_options__free_unpacked
                      (Google__Protobuf__EnumOptions *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__enum_options__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__enum_value_options__init
                      (Google__Protobuf__EnumValueOptions         *message)
 {
-  static Google__Protobuf__EnumValueOptions init_value = GOOGLE__PROTOBUF__ENUM_VALUE_OPTIONS__INIT;
+  static const Google__Protobuf__EnumValueOptions init_value = GOOGLE__PROTOBUF__ENUM_VALUE_OPTIONS__INIT;
   *message = init_value;
 }
 size_t google__protobuf__enum_value_options__get_packed_size
@@ -661,13 +734,15 @@ void   google__protobuf__enum_value_options__free_unpacked
                      (Google__Protobuf__EnumValueOptions *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__enum_value_options__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__service_options__init
                      (Google__Protobuf__ServiceOptions         *message)
 {
-  static Google__Protobuf__ServiceOptions init_value = GOOGLE__PROTOBUF__SERVICE_OPTIONS__INIT;
+  static const Google__Protobuf__ServiceOptions init_value = GOOGLE__PROTOBUF__SERVICE_OPTIONS__INIT;
   *message = init_value;
 }
 size_t google__protobuf__service_options__get_packed_size
@@ -704,13 +779,15 @@ void   google__protobuf__service_options__free_unpacked
                      (Google__Protobuf__ServiceOptions *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__service_options__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__method_options__init
                      (Google__Protobuf__MethodOptions         *message)
 {
-  static Google__Protobuf__MethodOptions init_value = GOOGLE__PROTOBUF__METHOD_OPTIONS__INIT;
+  static const Google__Protobuf__MethodOptions init_value = GOOGLE__PROTOBUF__METHOD_OPTIONS__INIT;
   *message = init_value;
 }
 size_t google__protobuf__method_options__get_packed_size
@@ -747,19 +824,21 @@ void   google__protobuf__method_options__free_unpacked
                      (Google__Protobuf__MethodOptions *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__method_options__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__uninterpreted_option__name_part__init
                      (Google__Protobuf__UninterpretedOption__NamePart         *message)
 {
-  static Google__Protobuf__UninterpretedOption__NamePart init_value = GOOGLE__PROTOBUF__UNINTERPRETED_OPTION__NAME_PART__INIT;
+  static const Google__Protobuf__UninterpretedOption__NamePart init_value = GOOGLE__PROTOBUF__UNINTERPRETED_OPTION__NAME_PART__INIT;
   *message = init_value;
 }
 void   google__protobuf__uninterpreted_option__init
                      (Google__Protobuf__UninterpretedOption         *message)
 {
-  static Google__Protobuf__UninterpretedOption init_value = GOOGLE__PROTOBUF__UNINTERPRETED_OPTION__INIT;
+  static const Google__Protobuf__UninterpretedOption init_value = GOOGLE__PROTOBUF__UNINTERPRETED_OPTION__INIT;
   *message = init_value;
 }
 size_t google__protobuf__uninterpreted_option__get_packed_size
@@ -796,19 +875,21 @@ void   google__protobuf__uninterpreted_option__free_unpacked
                      (Google__Protobuf__UninterpretedOption *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__uninterpreted_option__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__source_code_info__location__init
                      (Google__Protobuf__SourceCodeInfo__Location         *message)
 {
-  static Google__Protobuf__SourceCodeInfo__Location init_value = GOOGLE__PROTOBUF__SOURCE_CODE_INFO__LOCATION__INIT;
+  static const Google__Protobuf__SourceCodeInfo__Location init_value = GOOGLE__PROTOBUF__SOURCE_CODE_INFO__LOCATION__INIT;
   *message = init_value;
 }
 void   google__protobuf__source_code_info__init
                      (Google__Protobuf__SourceCodeInfo         *message)
 {
-  static Google__Protobuf__SourceCodeInfo init_value = GOOGLE__PROTOBUF__SOURCE_CODE_INFO__INIT;
+  static const Google__Protobuf__SourceCodeInfo init_value = GOOGLE__PROTOBUF__SOURCE_CODE_INFO__INIT;
   *message = init_value;
 }
 size_t google__protobuf__source_code_info__get_packed_size
@@ -845,19 +926,21 @@ void   google__protobuf__source_code_info__free_unpacked
                      (Google__Protobuf__SourceCodeInfo *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__source_code_info__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__generated_code_info__annotation__init
                      (Google__Protobuf__GeneratedCodeInfo__Annotation         *message)
 {
-  static Google__Protobuf__GeneratedCodeInfo__Annotation init_value = GOOGLE__PROTOBUF__GENERATED_CODE_INFO__ANNOTATION__INIT;
+  static const Google__Protobuf__GeneratedCodeInfo__Annotation init_value = GOOGLE__PROTOBUF__GENERATED_CODE_INFO__ANNOTATION__INIT;
   *message = init_value;
 }
 void   google__protobuf__generated_code_info__init
                      (Google__Protobuf__GeneratedCodeInfo         *message)
 {
-  static Google__Protobuf__GeneratedCodeInfo init_value = GOOGLE__PROTOBUF__GENERATED_CODE_INFO__INIT;
+  static const Google__Protobuf__GeneratedCodeInfo init_value = GOOGLE__PROTOBUF__GENERATED_CODE_INFO__INIT;
   *message = init_value;
 }
 size_t google__protobuf__generated_code_info__get_packed_size
@@ -894,6 +977,8 @@ void   google__protobuf__generated_code_info__free_unpacked
                      (Google__Protobuf__GeneratedCodeInfo *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__generated_code_info__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
@@ -1116,7 +1201,7 @@ const ProtobufCMessageDescriptor google__protobuf__file_descriptor_proto__descri
   (ProtobufCMessageInit) google__protobuf__file_descriptor_proto__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor google__protobuf__descriptor_proto__extension_range__field_descriptors[2] =
+static const ProtobufCFieldDescriptor google__protobuf__descriptor_proto__extension_range__field_descriptors[3] =
 {
   {
     "start",
@@ -1142,15 +1227,28 @@ static const ProtobufCFieldDescriptor google__protobuf__descriptor_proto__extens
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
+  {
+    "options",
+    3,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_MESSAGE,
+    0,   /* quantifier_offset */
+    offsetof(Google__Protobuf__DescriptorProto__ExtensionRange, options),
+    &google__protobuf__extension_range_options__descriptor,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
 };
 static const unsigned google__protobuf__descriptor_proto__extension_range__field_indices_by_name[] = {
   1,   /* field[1] = end */
+  2,   /* field[2] = options */
   0,   /* field[0] = start */
 };
 static const ProtobufCIntRange google__protobuf__descriptor_proto__extension_range__number_ranges[1 + 1] =
 {
   { 1, 0 },
-  { 0, 2 }
+  { 0, 3 }
 };
 const ProtobufCMessageDescriptor google__protobuf__descriptor_proto__extension_range__descriptor =
 {
@@ -1160,7 +1258,7 @@ const ProtobufCMessageDescriptor google__protobuf__descriptor_proto__extension_r
   "Google__Protobuf__DescriptorProto__ExtensionRange",
   "google.protobuf",
   sizeof(Google__Protobuf__DescriptorProto__ExtensionRange),
-  2,
+  3,
   google__protobuf__descriptor_proto__extension_range__field_descriptors,
   google__protobuf__descriptor_proto__extension_range__field_indices_by_name,
   1,  google__protobuf__descriptor_proto__extension_range__number_ranges,
@@ -1371,6 +1469,44 @@ const ProtobufCMessageDescriptor google__protobuf__descriptor_proto__descriptor 
   google__protobuf__descriptor_proto__field_indices_by_name,
   1,  google__protobuf__descriptor_proto__number_ranges,
   (ProtobufCMessageInit) google__protobuf__descriptor_proto__init,
+  NULL,NULL,NULL    /* reserved[123] */
+};
+static const ProtobufCFieldDescriptor google__protobuf__extension_range_options__field_descriptors[1] =
+{
+  {
+    "uninterpreted_option",
+    999,
+    PROTOBUF_C_LABEL_REPEATED,
+    PROTOBUF_C_TYPE_MESSAGE,
+    offsetof(Google__Protobuf__ExtensionRangeOptions, n_uninterpreted_option),
+    offsetof(Google__Protobuf__ExtensionRangeOptions, uninterpreted_option),
+    &google__protobuf__uninterpreted_option__descriptor,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+};
+static const unsigned google__protobuf__extension_range_options__field_indices_by_name[] = {
+  0,   /* field[0] = uninterpreted_option */
+};
+static const ProtobufCIntRange google__protobuf__extension_range_options__number_ranges[1 + 1] =
+{
+  { 999, 0 },
+  { 0, 1 }
+};
+const ProtobufCMessageDescriptor google__protobuf__extension_range_options__descriptor =
+{
+  PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
+  "google.protobuf.ExtensionRangeOptions",
+  "ExtensionRangeOptions",
+  "Google__Protobuf__ExtensionRangeOptions",
+  "google.protobuf",
+  sizeof(Google__Protobuf__ExtensionRangeOptions),
+  1,
+  google__protobuf__extension_range_options__field_descriptors,
+  google__protobuf__extension_range_options__field_indices_by_name,
+  1,  google__protobuf__extension_range_options__number_ranges,
+  (ProtobufCMessageInit) google__protobuf__extension_range_options__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
 static const ProtobufCEnumValue google__protobuf__field_descriptor_proto__type__enum_values_by_number[18] =
@@ -2002,9 +2138,10 @@ static const Google__Protobuf__FileOptions__OptimizeMode google__protobuf__file_
 static const protobuf_c_boolean google__protobuf__file_options__cc_generic_services__default_value = 0;
 static const protobuf_c_boolean google__protobuf__file_options__java_generic_services__default_value = 0;
 static const protobuf_c_boolean google__protobuf__file_options__py_generic_services__default_value = 0;
+static const protobuf_c_boolean google__protobuf__file_options__php_generic_services__default_value = 0;
 static const protobuf_c_boolean google__protobuf__file_options__deprecated__default_value = 0;
 static const protobuf_c_boolean google__protobuf__file_options__cc_enable_arenas__default_value = 0;
-static const ProtobufCFieldDescriptor google__protobuf__file_options__field_descriptors[17] =
+static const ProtobufCFieldDescriptor google__protobuf__file_options__field_descriptors[19] =
 {
   {
     "java_package",
@@ -2099,6 +2236,18 @@ static const ProtobufCFieldDescriptor google__protobuf__file_options__field_desc
     offsetof(Google__Protobuf__FileOptions, py_generic_services),
     NULL,
     &google__protobuf__file_options__py_generic_services__default_value,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "php_generic_services",
+    19,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_BOOL,
+    offsetof(Google__Protobuf__FileOptions, has_php_generic_services),
+    offsetof(Google__Protobuf__FileOptions, php_generic_services),
+    NULL,
+    &google__protobuf__file_options__php_generic_services__default_value,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -2199,6 +2348,18 @@ static const ProtobufCFieldDescriptor google__protobuf__file_options__field_desc
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
+    "php_namespace",
+    41,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_STRING,
+    0,   /* quantifier_offset */
+    offsetof(Google__Protobuf__FileOptions, php_namespace),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
     "uninterpreted_option",
     999,
     PROTOBUF_C_LABEL_REPEATED,
@@ -2212,37 +2373,38 @@ static const ProtobufCFieldDescriptor google__protobuf__file_options__field_desc
   },
 };
 static const unsigned google__protobuf__file_options__field_indices_by_name[] = {
-  11,   /* field[11] = cc_enable_arenas */
+  12,   /* field[12] = cc_enable_arenas */
   5,   /* field[5] = cc_generic_services */
-  13,   /* field[13] = csharp_namespace */
-  9,   /* field[9] = deprecated */
+  14,   /* field[14] = csharp_namespace */
+  10,   /* field[10] = deprecated */
   4,   /* field[4] = go_package */
-  8,   /* field[8] = java_generate_equals_and_hash */
+  9,   /* field[9] = java_generate_equals_and_hash */
   6,   /* field[6] = java_generic_services */
   3,   /* field[3] = java_multiple_files */
   1,   /* field[1] = java_outer_classname */
   0,   /* field[0] = java_package */
-  10,   /* field[10] = java_string_check_utf8 */
-  12,   /* field[12] = objc_class_prefix */
+  11,   /* field[11] = java_string_check_utf8 */
+  13,   /* field[13] = objc_class_prefix */
   2,   /* field[2] = optimize_for */
-  15,   /* field[15] = php_class_prefix */
+  16,   /* field[16] = php_class_prefix */
+  8,   /* field[8] = php_generic_services */
+  17,   /* field[17] = php_namespace */
   7,   /* field[7] = py_generic_services */
-  14,   /* field[14] = swift_prefix */
-  16,   /* field[16] = uninterpreted_option */
+  15,   /* field[15] = swift_prefix */
+  18,   /* field[18] = uninterpreted_option */
 };
-static const ProtobufCIntRange google__protobuf__file_options__number_ranges[10 + 1] =
+static const ProtobufCIntRange google__protobuf__file_options__number_ranges[9 + 1] =
 {
   { 1, 0 },
   { 8, 1 },
   { 16, 5 },
-  { 20, 8 },
-  { 23, 9 },
-  { 27, 10 },
-  { 31, 11 },
-  { 36, 12 },
-  { 39, 14 },
-  { 999, 16 },
-  { 0, 17 }
+  { 23, 10 },
+  { 27, 11 },
+  { 31, 12 },
+  { 36, 13 },
+  { 39, 15 },
+  { 999, 18 },
+  { 0, 19 }
 };
 const ProtobufCMessageDescriptor google__protobuf__file_options__descriptor =
 {
@@ -2252,10 +2414,10 @@ const ProtobufCMessageDescriptor google__protobuf__file_options__descriptor =
   "Google__Protobuf__FileOptions",
   "google.protobuf",
   sizeof(Google__Protobuf__FileOptions),
-  17,
+  19,
   google__protobuf__file_options__field_descriptors,
   google__protobuf__file_options__field_indices_by_name,
-  10,  google__protobuf__file_options__number_ranges,
+  9,  google__protobuf__file_options__number_ranges,
   (ProtobufCMessageInit) google__protobuf__file_options__init,
   NULL,NULL,NULL    /* reserved[123] */
 };

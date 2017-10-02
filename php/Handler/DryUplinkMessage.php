@@ -9,36 +9,28 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * DryUplinkMessage is a simulated message to test uplink processing
- * </pre>
  *
- * Protobuf type <code>handler.DryUplinkMessage</code>
+ * Generated from protobuf message <code>handler.DryUplinkMessage</code>
  */
 class DryUplinkMessage extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * The binary payload to use
-     * </pre>
      *
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
      */
     private $payload = '';
     /**
-     * <pre>
      * The Application containing the payload functions that should be executed
-     * </pre>
      *
-     * <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
      */
     private $app = null;
     /**
-     * <pre>
      * The port number that should be passed to the payload function
-     * </pre>
      *
-     * <code>uint32 port = 3;</code>
+     * Generated from protobuf field <code>uint32 port = 3;</code>
      */
     private $port = 0;
 
@@ -48,11 +40,10 @@ class DryUplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The binary payload to use
-     * </pre>
      *
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
+     * @return string
      */
     public function getPayload()
     {
@@ -60,24 +51,25 @@ class DryUplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The binary payload to use
-     * </pre>
      *
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPayload($var)
     {
         GPBUtil::checkString($var, False);
         $this->payload = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The Application containing the payload functions that should be executed
-     * </pre>
      *
-     * <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
+     * @return \Handler\Application
      */
     public function getApp()
     {
@@ -85,24 +77,25 @@ class DryUplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The Application containing the payload functions that should be executed
-     * </pre>
      *
-     * <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
+     * @param \Handler\Application $var
+     * @return $this
      */
-    public function setApp(&$var)
+    public function setApp($var)
     {
         GPBUtil::checkMessage($var, \Handler\Application::class);
         $this->app = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The port number that should be passed to the payload function
-     * </pre>
      *
-     * <code>uint32 port = 3;</code>
+     * Generated from protobuf field <code>uint32 port = 3;</code>
+     * @return int
      */
     public function getPort()
     {
@@ -110,16 +103,18 @@ class DryUplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The port number that should be passed to the payload function
-     * </pre>
      *
-     * <code>uint32 port = 3;</code>
+     * Generated from protobuf field <code>uint32 port = 3;</code>
+     * @param int $var
+     * @return $this
      */
     public function setPort($var)
     {
         GPBUtil::checkUint32($var);
         $this->port = $var;
+
+        return $this;
     }
 
 }

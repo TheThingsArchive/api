@@ -9,16 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>discovery.GetServiceRequest</code>
+ * Generated from protobuf message <code>discovery.GetServiceRequest</code>
  */
 class GetServiceRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * The name of the service (router/broker/handler)
-     * </pre>
      *
-     * <code>string service_name = 1;</code>
+     * Generated from protobuf field <code>string service_name = 1;</code>
      */
     private $service_name = '';
 
@@ -28,11 +26,10 @@ class GetServiceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The name of the service (router/broker/handler)
-     * </pre>
      *
-     * <code>string service_name = 1;</code>
+     * Generated from protobuf field <code>string service_name = 1;</code>
+     * @return string
      */
     public function getServiceName()
     {
@@ -40,16 +37,18 @@ class GetServiceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The name of the service (router/broker/handler)
-     * </pre>
      *
-     * <code>string service_name = 1;</code>
+     * Generated from protobuf field <code>string service_name = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setServiceName($var)
     {
         GPBUtil::checkString($var, True);
         $this->service_name = $var;
+
+        return $this;
     }
 
 }

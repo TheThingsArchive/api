@@ -9,16 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>lorawan.DevAddrRequest</code>
+ * Generated from protobuf message <code>lorawan.DevAddrRequest</code>
  */
 class DevAddrRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * The usage constraints (see activation_constraints in device.proto)
-     * </pre>
      *
-     * <code>repeated string usage = 1;</code>
+     * Generated from protobuf field <code>repeated string usage = 1;</code>
      */
     private $usage;
 
@@ -28,11 +26,10 @@ class DevAddrRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The usage constraints (see activation_constraints in device.proto)
-     * </pre>
      *
-     * <code>repeated string usage = 1;</code>
+     * Generated from protobuf field <code>repeated string usage = 1;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getUsage()
     {
@@ -40,16 +37,18 @@ class DevAddrRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The usage constraints (see activation_constraints in device.proto)
-     * </pre>
      *
-     * <code>repeated string usage = 1;</code>
+     * Generated from protobuf field <code>repeated string usage = 1;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setUsage(&$var)
+    public function setUsage($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->usage = $arr;
+
+        return $this;
     }
 
 }

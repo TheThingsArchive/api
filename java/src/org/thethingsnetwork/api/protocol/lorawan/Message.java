@@ -10,6 +10,7 @@ public  final class Message extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:lorawan.Message)
     MessageOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use Message.newBuilder() to construct.
   private Message(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -21,7 +22,7 @@ public  final class Message extends
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private Message(
       com.google.protobuf.CodedInputStream input,
@@ -29,6 +30,8 @@ public  final class Message extends
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     int mutable_bitField0_ = 0;
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -38,7 +41,8 @@ public  final class Message extends
             done = true;
             break;
           default: {
-            if (!input.skipField(tag)) {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
             break;
@@ -111,6 +115,7 @@ public  final class Message extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -200,6 +205,12 @@ public  final class Message extends
   /**
    * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
    */
+  public boolean hasMacPayload() {
+    return payloadCase_ == 3;
+  }
+  /**
+   * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
+   */
   public org.thethingsnetwork.api.protocol.lorawan.MACPayload getMacPayload() {
     if (payloadCase_ == 3) {
        return (org.thethingsnetwork.api.protocol.lorawan.MACPayload) payload_;
@@ -220,6 +231,12 @@ public  final class Message extends
   /**
    * <code>.lorawan.JoinRequestPayload join_request_payload = 4;</code>
    */
+  public boolean hasJoinRequestPayload() {
+    return payloadCase_ == 4;
+  }
+  /**
+   * <code>.lorawan.JoinRequestPayload join_request_payload = 4;</code>
+   */
   public org.thethingsnetwork.api.protocol.lorawan.JoinRequestPayload getJoinRequestPayload() {
     if (payloadCase_ == 4) {
        return (org.thethingsnetwork.api.protocol.lorawan.JoinRequestPayload) payload_;
@@ -237,6 +254,12 @@ public  final class Message extends
   }
 
   public static final int JOIN_ACCEPT_PAYLOAD_FIELD_NUMBER = 5;
+  /**
+   * <code>.lorawan.JoinAcceptPayload join_accept_payload = 5;</code>
+   */
+  public boolean hasJoinAcceptPayload() {
+    return payloadCase_ == 5;
+  }
   /**
    * <code>.lorawan.JoinAcceptPayload join_accept_payload = 5;</code>
    */
@@ -283,6 +306,7 @@ public  final class Message extends
     if (payloadCase_ == 5) {
       output.writeMessage(5, (org.thethingsnetwork.api.protocol.lorawan.JoinAcceptPayload) payload_);
     }
+    unknownFields.writeTo(output);
   }
 
   public int getSerializedSize() {
@@ -310,11 +334,11 @@ public  final class Message extends
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, (org.thethingsnetwork.api.protocol.lorawan.JoinAcceptPayload) payload_);
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -352,6 +376,7 @@ public  final class Message extends
       case 0:
       default:
     }
+    result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
 
@@ -582,7 +607,7 @@ public  final class Message extends
     }
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
     public Builder clearField(
@@ -595,12 +620,12 @@ public  final class Message extends
     }
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -637,6 +662,7 @@ public  final class Message extends
           break;
         }
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -829,6 +855,12 @@ public  final class Message extends
     /**
      * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      */
+    public boolean hasMacPayload() {
+      return payloadCase_ == 3;
+    }
+    /**
+     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
+     */
     public org.thethingsnetwork.api.protocol.lorawan.MACPayload getMacPayload() {
       if (macPayloadBuilder_ == null) {
         if (payloadCase_ == 3) {
@@ -956,6 +988,12 @@ public  final class Message extends
 
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.JoinRequestPayload, org.thethingsnetwork.api.protocol.lorawan.JoinRequestPayload.Builder, org.thethingsnetwork.api.protocol.lorawan.JoinRequestPayloadOrBuilder> joinRequestPayloadBuilder_;
+    /**
+     * <code>.lorawan.JoinRequestPayload join_request_payload = 4;</code>
+     */
+    public boolean hasJoinRequestPayload() {
+      return payloadCase_ == 4;
+    }
     /**
      * <code>.lorawan.JoinRequestPayload join_request_payload = 4;</code>
      */
@@ -1089,6 +1127,12 @@ public  final class Message extends
     /**
      * <code>.lorawan.JoinAcceptPayload join_accept_payload = 5;</code>
      */
+    public boolean hasJoinAcceptPayload() {
+      return payloadCase_ == 5;
+    }
+    /**
+     * <code>.lorawan.JoinAcceptPayload join_accept_payload = 5;</code>
+     */
     public org.thethingsnetwork.api.protocol.lorawan.JoinAcceptPayload getJoinAcceptPayload() {
       if (joinAcceptPayloadBuilder_ == null) {
         if (payloadCase_ == 5) {
@@ -1215,12 +1259,12 @@ public  final class Message extends
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFieldsProto3(unknownFields);
     }
 
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 

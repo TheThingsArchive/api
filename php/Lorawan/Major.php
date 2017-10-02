@@ -5,12 +5,12 @@
 namespace Lorawan;
 
 /**
- * Protobuf enum <code>lorawan.Major</code>
+ * Protobuf enum <code>Lorawan\Major</code>
  */
 class Major
 {
     /**
-     * <code>LORAWAN_R1 = 0;</code>
+     * Generated from protobuf enum <code>LORAWAN_R1 = 0;</code>
      */
     const LORAWAN_R1 = 0;
 }

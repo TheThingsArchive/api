@@ -9,24 +9,24 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>lorawan.FCtrl</code>
+ * Generated from protobuf message <code>lorawan.FCtrl</code>
  */
 class FCtrl extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
+     * Generated from protobuf field <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
      */
     private $adr = false;
     /**
-     * <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
+     * Generated from protobuf field <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
      */
     private $adr_ack_req = false;
     /**
-     * <code>bool ack = 3;</code>
+     * Generated from protobuf field <code>bool ack = 3;</code>
      */
     private $ack = false;
     /**
-     * <code>bool f_pending = 4;</code>
+     * Generated from protobuf field <code>bool f_pending = 4;</code>
      */
     private $f_pending = false;
 
@@ -36,7 +36,8 @@ class FCtrl extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
+     * Generated from protobuf field <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
+     * @return bool
      */
     public function getAdr()
     {
@@ -44,16 +45,21 @@ class FCtrl extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
+     * Generated from protobuf field <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
+     * @param bool $var
+     * @return $this
      */
     public function setAdr($var)
     {
         GPBUtil::checkBool($var);
         $this->adr = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
+     * Generated from protobuf field <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
+     * @return bool
      */
     public function getAdrAckReq()
     {
@@ -61,16 +67,21 @@ class FCtrl extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
+     * Generated from protobuf field <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
+     * @param bool $var
+     * @return $this
      */
     public function setAdrAckReq($var)
     {
         GPBUtil::checkBool($var);
         $this->adr_ack_req = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bool ack = 3;</code>
+     * Generated from protobuf field <code>bool ack = 3;</code>
+     * @return bool
      */
     public function getAck()
     {
@@ -78,16 +89,21 @@ class FCtrl extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bool ack = 3;</code>
+     * Generated from protobuf field <code>bool ack = 3;</code>
+     * @param bool $var
+     * @return $this
      */
     public function setAck($var)
     {
         GPBUtil::checkBool($var);
         $this->ack = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bool f_pending = 4;</code>
+     * Generated from protobuf field <code>bool f_pending = 4;</code>
+     * @return bool
      */
     public function getFPending()
     {
@@ -95,12 +111,16 @@ class FCtrl extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bool f_pending = 4;</code>
+     * Generated from protobuf field <code>bool f_pending = 4;</code>
+     * @param bool $var
+     * @return $this
      */
     public function setFPending($var)
     {
         GPBUtil::checkBool($var);
         $this->f_pending = $var;
+
+        return $this;
     }
 
 }

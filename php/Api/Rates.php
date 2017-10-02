@@ -9,20 +9,20 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>api.Rates</code>
+ * Generated from protobuf message <code>api.Rates</code>
  */
 class Rates extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>float rate1 = 1;</code>
+     * Generated from protobuf field <code>float rate1 = 1;</code>
      */
     private $rate1 = 0.0;
     /**
-     * <code>float rate5 = 2;</code>
+     * Generated from protobuf field <code>float rate5 = 2;</code>
      */
     private $rate5 = 0.0;
     /**
-     * <code>float rate15 = 3;</code>
+     * Generated from protobuf field <code>float rate15 = 3;</code>
      */
     private $rate15 = 0.0;
 
@@ -32,7 +32,8 @@ class Rates extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float rate1 = 1;</code>
+     * Generated from protobuf field <code>float rate1 = 1;</code>
+     * @return float
      */
     public function getRate1()
     {
@@ -40,16 +41,21 @@ class Rates extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float rate1 = 1;</code>
+     * Generated from protobuf field <code>float rate1 = 1;</code>
+     * @param float $var
+     * @return $this
      */
     public function setRate1($var)
     {
         GPBUtil::checkFloat($var);
         $this->rate1 = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float rate5 = 2;</code>
+     * Generated from protobuf field <code>float rate5 = 2;</code>
+     * @return float
      */
     public function getRate5()
     {
@@ -57,16 +63,21 @@ class Rates extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float rate5 = 2;</code>
+     * Generated from protobuf field <code>float rate5 = 2;</code>
+     * @param float $var
+     * @return $this
      */
     public function setRate5($var)
     {
         GPBUtil::checkFloat($var);
         $this->rate5 = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float rate15 = 3;</code>
+     * Generated from protobuf field <code>float rate15 = 3;</code>
+     * @return float
      */
     public function getRate15()
     {
@@ -74,12 +85,16 @@ class Rates extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float rate15 = 3;</code>
+     * Generated from protobuf field <code>float rate15 = 3;</code>
+     * @param float $var
+     * @return $this
      */
     public function setRate15($var)
     {
         GPBUtil::checkFloat($var);
         $this->rate15 = $var;
+
+        return $this;
     }
 
 }

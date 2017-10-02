@@ -9,44 +9,42 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * received from the Handler, sent to the Router, used as Template
- * </pre>
  *
- * Protobuf type <code>broker.DownlinkMessage</code>
+ * Generated from protobuf message <code>broker.DownlinkMessage</code>
  */
 class DownlinkMessage extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
      */
     private $payload = '';
     /**
-     * <code>.protocol.Message message = 2;</code>
+     * Generated from protobuf field <code>.protocol.Message message = 2;</code>
      */
     private $message = null;
     /**
-     * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * Generated from protobuf field <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     private $dev_eui = '';
     /**
-     * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     private $app_eui = '';
     /**
-     * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
      */
     private $app_id = '';
     /**
-     * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+     * Generated from protobuf field <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
      */
     private $dev_id = '';
     /**
-     * <code>.broker.DownlinkOption downlink_option = 21;</code>
+     * Generated from protobuf field <code>.broker.DownlinkOption downlink_option = 21;</code>
      */
     private $downlink_option = null;
     /**
-     * <code>.trace.Trace trace = 31;</code>
+     * Generated from protobuf field <code>.trace.Trace trace = 31;</code>
      */
     private $trace = null;
 
@@ -56,7 +54,8 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
+     * @return string
      */
     public function getPayload()
     {
@@ -64,16 +63,21 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPayload($var)
     {
         GPBUtil::checkString($var, False);
         $this->payload = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.protocol.Message message = 2;</code>
+     * Generated from protobuf field <code>.protocol.Message message = 2;</code>
+     * @return \Protocol\Message
      */
     public function getMessage()
     {
@@ -81,16 +85,21 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.protocol.Message message = 2;</code>
+     * Generated from protobuf field <code>.protocol.Message message = 2;</code>
+     * @param \Protocol\Message $var
+     * @return $this
      */
-    public function setMessage(&$var)
+    public function setMessage($var)
     {
         GPBUtil::checkMessage($var, \Protocol\Message::class);
         $this->message = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * Generated from protobuf field <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @return string
      */
     public function getDevEui()
     {
@@ -98,16 +107,21 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * Generated from protobuf field <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setDevEui($var)
     {
         GPBUtil::checkString($var, False);
         $this->dev_eui = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @return string
      */
     public function getAppEui()
     {
@@ -115,16 +129,21 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setAppEui($var)
     {
         GPBUtil::checkString($var, False);
         $this->app_eui = $var;
+
+        return $this;
     }
 
     /**
-     * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+     * @return string
      */
     public function getAppId()
     {
@@ -132,16 +151,21 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setAppId($var)
     {
         GPBUtil::checkString($var, True);
         $this->app_id = $var;
+
+        return $this;
     }
 
     /**
-     * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+     * Generated from protobuf field <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+     * @return string
      */
     public function getDevId()
     {
@@ -149,16 +173,21 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+     * Generated from protobuf field <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setDevId($var)
     {
         GPBUtil::checkString($var, True);
         $this->dev_id = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.broker.DownlinkOption downlink_option = 21;</code>
+     * Generated from protobuf field <code>.broker.DownlinkOption downlink_option = 21;</code>
+     * @return \Broker\DownlinkOption
      */
     public function getDownlinkOption()
     {
@@ -166,16 +195,21 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.broker.DownlinkOption downlink_option = 21;</code>
+     * Generated from protobuf field <code>.broker.DownlinkOption downlink_option = 21;</code>
+     * @param \Broker\DownlinkOption $var
+     * @return $this
      */
-    public function setDownlinkOption(&$var)
+    public function setDownlinkOption($var)
     {
         GPBUtil::checkMessage($var, \Broker\DownlinkOption::class);
         $this->downlink_option = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.trace.Trace trace = 31;</code>
+     * Generated from protobuf field <code>.trace.Trace trace = 31;</code>
+     * @return \Trace\Trace
      */
     public function getTrace()
     {
@@ -183,12 +217,16 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.trace.Trace trace = 31;</code>
+     * Generated from protobuf field <code>.trace.Trace trace = 31;</code>
+     * @param \Trace\Trace $var
+     * @return $this
      */
-    public function setTrace(&$var)
+    public function setTrace($var)
     {
         GPBUtil::checkMessage($var, \Trace\Trace::class);
         $this->trace = $var;
+
+        return $this;
     }
 
 }

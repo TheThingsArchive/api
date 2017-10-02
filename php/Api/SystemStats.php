@@ -9,20 +9,20 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>api.SystemStats</code>
+ * Generated from protobuf message <code>api.SystemStats</code>
  */
 class SystemStats extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>.api.SystemStats.Loadstats load = 1;</code>
+     * Generated from protobuf field <code>.api.SystemStats.Loadstats load = 1;</code>
      */
     private $load = null;
     /**
-     * <code>.api.SystemStats.CPUStats cpu = 2;</code>
+     * Generated from protobuf field <code>.api.SystemStats.CPUStats cpu = 2;</code>
      */
     private $cpu = null;
     /**
-     * <code>.api.SystemStats.MemoryStats memory = 3;</code>
+     * Generated from protobuf field <code>.api.SystemStats.MemoryStats memory = 3;</code>
      */
     private $memory = null;
 
@@ -32,7 +32,8 @@ class SystemStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.SystemStats.Loadstats load = 1;</code>
+     * Generated from protobuf field <code>.api.SystemStats.Loadstats load = 1;</code>
+     * @return \Api\SystemStats_Loadstats
      */
     public function getLoad()
     {
@@ -40,16 +41,21 @@ class SystemStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.SystemStats.Loadstats load = 1;</code>
+     * Generated from protobuf field <code>.api.SystemStats.Loadstats load = 1;</code>
+     * @param \Api\SystemStats_Loadstats $var
+     * @return $this
      */
-    public function setLoad(&$var)
+    public function setLoad($var)
     {
         GPBUtil::checkMessage($var, \Api\SystemStats_Loadstats::class);
         $this->load = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.api.SystemStats.CPUStats cpu = 2;</code>
+     * Generated from protobuf field <code>.api.SystemStats.CPUStats cpu = 2;</code>
+     * @return \Api\SystemStats_CPUStats
      */
     public function getCpu()
     {
@@ -57,16 +63,21 @@ class SystemStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.SystemStats.CPUStats cpu = 2;</code>
+     * Generated from protobuf field <code>.api.SystemStats.CPUStats cpu = 2;</code>
+     * @param \Api\SystemStats_CPUStats $var
+     * @return $this
      */
-    public function setCpu(&$var)
+    public function setCpu($var)
     {
         GPBUtil::checkMessage($var, \Api\SystemStats_CPUStats::class);
         $this->cpu = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.api.SystemStats.MemoryStats memory = 3;</code>
+     * Generated from protobuf field <code>.api.SystemStats.MemoryStats memory = 3;</code>
+     * @return \Api\SystemStats_MemoryStats
      */
     public function getMemory()
     {
@@ -74,12 +85,16 @@ class SystemStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.SystemStats.MemoryStats memory = 3;</code>
+     * Generated from protobuf field <code>.api.SystemStats.MemoryStats memory = 3;</code>
+     * @param \Api\SystemStats_MemoryStats $var
+     * @return $this
      */
-    public function setMemory(&$var)
+    public function setMemory($var)
     {
         GPBUtil::checkMessage($var, \Api\SystemStats_MemoryStats::class);
         $this->memory = $var;
+
+        return $this;
     }
 
 }

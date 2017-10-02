@@ -9,84 +9,70 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>gateway.RxMetadata</code>
+ * Generated from protobuf message <code>gateway.RxMetadata</code>
  */
 class RxMetadata extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     private $gateway_id = '';
     /**
-     * <pre>
      * Indicates whether the gateway is trusted. Components that are able to verify gateway trust MUST do so and set this value accordingly
-     * </pre>
      *
-     * <code>bool gateway_trusted = 2;</code>
+     * Generated from protobuf field <code>bool gateway_trusted = 2;</code>
      */
     private $gateway_trusted = false;
     /**
-     * <pre>
      * Timestamp (uptime of LoRa module) in microseconds with rollover
-     * </pre>
      *
-     * <code>uint32 timestamp = 11;</code>
+     * Generated from protobuf field <code>uint32 timestamp = 11;</code>
      */
     private $timestamp = 0;
     /**
-     * <pre>
      * Time in Unix nanoseconds
-     * </pre>
      *
-     * <code>int64 time = 12;</code>
+     * Generated from protobuf field <code>int64 time = 12;</code>
      */
     private $time = 0;
     /**
-     * <pre>
      * Encrypted time from the Gateway FPGA
-     * </pre>
      *
-     * <code>bytes encrypted_time = 13;</code>
+     * Generated from protobuf field <code>bytes encrypted_time = 13;</code>
      */
     private $encrypted_time = '';
     /**
-     * <code>uint32 rf_chain = 21;</code>
+     * Generated from protobuf field <code>uint32 rf_chain = 21;</code>
      */
     private $rf_chain = 0;
     /**
-     * <code>uint32 channel = 22;</code>
+     * Generated from protobuf field <code>uint32 channel = 22;</code>
      */
     private $channel = 0;
     /**
-     * <code>repeated .gateway.RxMetadata.Antenna antennas = 30;</code>
+     * Generated from protobuf field <code>repeated .gateway.RxMetadata.Antenna antennas = 30;</code>
      */
     private $antennas;
     /**
-     * <pre>
      * Frequency in Hz
-     * </pre>
      *
-     * <code>uint64 frequency = 31;</code>
+     * Generated from protobuf field <code>uint64 frequency = 31;</code>
      */
     private $frequency = 0;
     /**
-     * <pre>
      * Received signal strength in dBm
-     * </pre>
      *
-     * <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
+     * Generated from protobuf field <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
      */
     private $rssi = 0.0;
     /**
-     * <pre>
      * Signal-to-noise-ratio in dB
-     * </pre>
      *
-     * <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
+     * Generated from protobuf field <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
      */
     private $snr = 0.0;
     /**
-     * <code>.gateway.LocationMetadata location = 41;</code>
+     * Generated from protobuf field <code>.gateway.LocationMetadata location = 41;</code>
      */
     private $location = null;
 
@@ -96,7 +82,8 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @return string
      */
     public function getGatewayId()
     {
@@ -104,20 +91,23 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setGatewayId($var)
     {
         GPBUtil::checkString($var, True);
         $this->gateway_id = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Indicates whether the gateway is trusted. Components that are able to verify gateway trust MUST do so and set this value accordingly
-     * </pre>
      *
-     * <code>bool gateway_trusted = 2;</code>
+     * Generated from protobuf field <code>bool gateway_trusted = 2;</code>
+     * @return bool
      */
     public function getGatewayTrusted()
     {
@@ -125,24 +115,25 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Indicates whether the gateway is trusted. Components that are able to verify gateway trust MUST do so and set this value accordingly
-     * </pre>
      *
-     * <code>bool gateway_trusted = 2;</code>
+     * Generated from protobuf field <code>bool gateway_trusted = 2;</code>
+     * @param bool $var
+     * @return $this
      */
     public function setGatewayTrusted($var)
     {
         GPBUtil::checkBool($var);
         $this->gateway_trusted = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Timestamp (uptime of LoRa module) in microseconds with rollover
-     * </pre>
      *
-     * <code>uint32 timestamp = 11;</code>
+     * Generated from protobuf field <code>uint32 timestamp = 11;</code>
+     * @return int
      */
     public function getTimestamp()
     {
@@ -150,24 +141,25 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Timestamp (uptime of LoRa module) in microseconds with rollover
-     * </pre>
      *
-     * <code>uint32 timestamp = 11;</code>
+     * Generated from protobuf field <code>uint32 timestamp = 11;</code>
+     * @param int $var
+     * @return $this
      */
     public function setTimestamp($var)
     {
         GPBUtil::checkUint32($var);
         $this->timestamp = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Time in Unix nanoseconds
-     * </pre>
      *
-     * <code>int64 time = 12;</code>
+     * Generated from protobuf field <code>int64 time = 12;</code>
+     * @return int|string
      */
     public function getTime()
     {
@@ -175,24 +167,25 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Time in Unix nanoseconds
-     * </pre>
      *
-     * <code>int64 time = 12;</code>
+     * Generated from protobuf field <code>int64 time = 12;</code>
+     * @param int|string $var
+     * @return $this
      */
     public function setTime($var)
     {
         GPBUtil::checkInt64($var);
         $this->time = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Encrypted time from the Gateway FPGA
-     * </pre>
      *
-     * <code>bytes encrypted_time = 13;</code>
+     * Generated from protobuf field <code>bytes encrypted_time = 13;</code>
+     * @return string
      */
     public function getEncryptedTime()
     {
@@ -200,20 +193,23 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Encrypted time from the Gateway FPGA
-     * </pre>
      *
-     * <code>bytes encrypted_time = 13;</code>
+     * Generated from protobuf field <code>bytes encrypted_time = 13;</code>
+     * @param string $var
+     * @return $this
      */
     public function setEncryptedTime($var)
     {
         GPBUtil::checkString($var, False);
         $this->encrypted_time = $var;
+
+        return $this;
     }
 
     /**
-     * <code>uint32 rf_chain = 21;</code>
+     * Generated from protobuf field <code>uint32 rf_chain = 21;</code>
+     * @return int
      */
     public function getRfChain()
     {
@@ -221,16 +217,21 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 rf_chain = 21;</code>
+     * Generated from protobuf field <code>uint32 rf_chain = 21;</code>
+     * @param int $var
+     * @return $this
      */
     public function setRfChain($var)
     {
         GPBUtil::checkUint32($var);
         $this->rf_chain = $var;
+
+        return $this;
     }
 
     /**
-     * <code>uint32 channel = 22;</code>
+     * Generated from protobuf field <code>uint32 channel = 22;</code>
+     * @return int
      */
     public function getChannel()
     {
@@ -238,16 +239,21 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 channel = 22;</code>
+     * Generated from protobuf field <code>uint32 channel = 22;</code>
+     * @param int $var
+     * @return $this
      */
     public function setChannel($var)
     {
         GPBUtil::checkUint32($var);
         $this->channel = $var;
+
+        return $this;
     }
 
     /**
-     * <code>repeated .gateway.RxMetadata.Antenna antennas = 30;</code>
+     * Generated from protobuf field <code>repeated .gateway.RxMetadata.Antenna antennas = 30;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getAntennas()
     {
@@ -255,20 +261,23 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>repeated .gateway.RxMetadata.Antenna antennas = 30;</code>
+     * Generated from protobuf field <code>repeated .gateway.RxMetadata.Antenna antennas = 30;</code>
+     * @param \Gateway\RxMetadata_Antenna[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setAntennas(&$var)
+    public function setAntennas($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Gateway\RxMetadata_Antenna::class);
         $this->antennas = $arr;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Frequency in Hz
-     * </pre>
      *
-     * <code>uint64 frequency = 31;</code>
+     * Generated from protobuf field <code>uint64 frequency = 31;</code>
+     * @return int|string
      */
     public function getFrequency()
     {
@@ -276,24 +285,25 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Frequency in Hz
-     * </pre>
      *
-     * <code>uint64 frequency = 31;</code>
+     * Generated from protobuf field <code>uint64 frequency = 31;</code>
+     * @param int|string $var
+     * @return $this
      */
     public function setFrequency($var)
     {
         GPBUtil::checkUint64($var);
         $this->frequency = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Received signal strength in dBm
-     * </pre>
      *
-     * <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
+     * Generated from protobuf field <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
+     * @return float
      */
     public function getRssi()
     {
@@ -301,24 +311,25 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Received signal strength in dBm
-     * </pre>
      *
-     * <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
+     * Generated from protobuf field <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
+     * @param float $var
+     * @return $this
      */
     public function setRssi($var)
     {
         GPBUtil::checkFloat($var);
         $this->rssi = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Signal-to-noise-ratio in dB
-     * </pre>
      *
-     * <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
+     * Generated from protobuf field <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
+     * @return float
      */
     public function getSnr()
     {
@@ -326,20 +337,23 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Signal-to-noise-ratio in dB
-     * </pre>
      *
-     * <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
+     * Generated from protobuf field <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
+     * @param float $var
+     * @return $this
      */
     public function setSnr($var)
     {
         GPBUtil::checkFloat($var);
         $this->snr = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.gateway.LocationMetadata location = 41;</code>
+     * Generated from protobuf field <code>.gateway.LocationMetadata location = 41;</code>
+     * @return \Gateway\LocationMetadata
      */
     public function getLocation()
     {
@@ -347,12 +361,16 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.gateway.LocationMetadata location = 41;</code>
+     * Generated from protobuf field <code>.gateway.LocationMetadata location = 41;</code>
+     * @param \Gateway\LocationMetadata $var
+     * @return $this
      */
-    public function setLocation(&$var)
+    public function setLocation($var)
     {
         GPBUtil::checkMessage($var, \Gateway\LocationMetadata::class);
         $this->location = $var;
+
+        return $this;
     }
 
 }

@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -55,6 +57,7 @@ proto.lorawan.DeviceIdentifier.prototype.toObject = function(opt_includeInstance
  *     http://goto/soy-param-migration
  * @param {!proto.lorawan.DeviceIdentifier} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.DeviceIdentifier.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -129,6 +132,7 @@ proto.lorawan.DeviceIdentifier.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.lorawan.DeviceIdentifier} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.DeviceIdentifier.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -270,6 +274,7 @@ proto.lorawan.Device.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.lorawan.Device} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.Device.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -404,6 +409,7 @@ proto.lorawan.Device.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.lorawan.Device} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.Device.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;

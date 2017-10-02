@@ -10,7 +10,7 @@
 void   discovery__metadata__init
                      (Discovery__Metadata         *message)
 {
-  static Discovery__Metadata init_value = DISCOVERY__METADATA__INIT;
+  static const Discovery__Metadata init_value = DISCOVERY__METADATA__INIT;
   *message = init_value;
 }
 size_t discovery__metadata__get_packed_size
@@ -47,13 +47,15 @@ void   discovery__metadata__free_unpacked
                      (Discovery__Metadata *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &discovery__metadata__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   discovery__announcement__init
                      (Discovery__Announcement         *message)
 {
-  static Discovery__Announcement init_value = DISCOVERY__ANNOUNCEMENT__INIT;
+  static const Discovery__Announcement init_value = DISCOVERY__ANNOUNCEMENT__INIT;
   *message = init_value;
 }
 size_t discovery__announcement__get_packed_size
@@ -90,13 +92,15 @@ void   discovery__announcement__free_unpacked
                      (Discovery__Announcement *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &discovery__announcement__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   discovery__get_service_request__init
                      (Discovery__GetServiceRequest         *message)
 {
-  static Discovery__GetServiceRequest init_value = DISCOVERY__GET_SERVICE_REQUEST__INIT;
+  static const Discovery__GetServiceRequest init_value = DISCOVERY__GET_SERVICE_REQUEST__INIT;
   *message = init_value;
 }
 size_t discovery__get_service_request__get_packed_size
@@ -133,13 +137,15 @@ void   discovery__get_service_request__free_unpacked
                      (Discovery__GetServiceRequest *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &discovery__get_service_request__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   discovery__get_request__init
                      (Discovery__GetRequest         *message)
 {
-  static Discovery__GetRequest init_value = DISCOVERY__GET_REQUEST__INIT;
+  static const Discovery__GetRequest init_value = DISCOVERY__GET_REQUEST__INIT;
   *message = init_value;
 }
 size_t discovery__get_request__get_packed_size
@@ -176,13 +182,15 @@ void   discovery__get_request__free_unpacked
                      (Discovery__GetRequest *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &discovery__get_request__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   discovery__metadata_request__init
                      (Discovery__MetadataRequest         *message)
 {
-  static Discovery__MetadataRequest init_value = DISCOVERY__METADATA_REQUEST__INIT;
+  static const Discovery__MetadataRequest init_value = DISCOVERY__METADATA_REQUEST__INIT;
   *message = init_value;
 }
 size_t discovery__metadata_request__get_packed_size
@@ -219,13 +227,15 @@ void   discovery__metadata_request__free_unpacked
                      (Discovery__MetadataRequest *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &discovery__metadata_request__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   discovery__announcements_response__init
                      (Discovery__AnnouncementsResponse         *message)
 {
-  static Discovery__AnnouncementsResponse init_value = DISCOVERY__ANNOUNCEMENTS_RESPONSE__INIT;
+  static const Discovery__AnnouncementsResponse init_value = DISCOVERY__ANNOUNCEMENTS_RESPONSE__INIT;
   *message = init_value;
 }
 size_t discovery__announcements_response__get_packed_size
@@ -262,13 +272,15 @@ void   discovery__announcements_response__free_unpacked
                      (Discovery__AnnouncementsResponse *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &discovery__announcements_response__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   discovery__get_by_app_idrequest__init
                      (Discovery__GetByAppIDRequest         *message)
 {
-  static Discovery__GetByAppIDRequest init_value = DISCOVERY__GET_BY_APP_IDREQUEST__INIT;
+  static const Discovery__GetByAppIDRequest init_value = DISCOVERY__GET_BY_APP_IDREQUEST__INIT;
   *message = init_value;
 }
 size_t discovery__get_by_app_idrequest__get_packed_size
@@ -305,13 +317,15 @@ void   discovery__get_by_app_idrequest__free_unpacked
                      (Discovery__GetByAppIDRequest *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &discovery__get_by_app_idrequest__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   discovery__get_by_gateway_idrequest__init
                      (Discovery__GetByGatewayIDRequest         *message)
 {
-  static Discovery__GetByGatewayIDRequest init_value = DISCOVERY__GET_BY_GATEWAY_IDREQUEST__INIT;
+  static const Discovery__GetByGatewayIDRequest init_value = DISCOVERY__GET_BY_GATEWAY_IDREQUEST__INIT;
   *message = init_value;
 }
 size_t discovery__get_by_gateway_idrequest__get_packed_size
@@ -348,13 +362,15 @@ void   discovery__get_by_gateway_idrequest__free_unpacked
                      (Discovery__GetByGatewayIDRequest *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &discovery__get_by_gateway_idrequest__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   discovery__get_by_app_euirequest__init
                      (Discovery__GetByAppEUIRequest         *message)
 {
-  static Discovery__GetByAppEUIRequest init_value = DISCOVERY__GET_BY_APP_EUIREQUEST__INIT;
+  static const Discovery__GetByAppEUIRequest init_value = DISCOVERY__GET_BY_APP_EUIREQUEST__INIT;
   *message = init_value;
 }
 size_t discovery__get_by_app_euirequest__get_packed_size
@@ -391,6 +407,8 @@ void   discovery__get_by_app_euirequest__free_unpacked
                      (Discovery__GetByAppEUIRequest *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &discovery__get_by_app_euirequest__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
@@ -399,19 +417,19 @@ static const ProtobufCFieldDescriptor discovery__metadata__field_descriptors[4] 
   {
     "gateway_id",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     offsetof(Discovery__Metadata, metadata_case),
     offsetof(Discovery__Metadata, gateway_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "dev_addr_prefix",
     20,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
     offsetof(Discovery__Metadata, metadata_case),
     offsetof(Discovery__Metadata, dev_addr_prefix),
@@ -423,19 +441,19 @@ static const ProtobufCFieldDescriptor discovery__metadata__field_descriptors[4] 
   {
     "app_id",
     30,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     offsetof(Discovery__Metadata, metadata_case),
     offsetof(Discovery__Metadata, app_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "app_eui",
     31,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
     offsetof(Discovery__Metadata, metadata_case),
     offsetof(Discovery__Metadata, app_eui),
@@ -478,69 +496,69 @@ static const ProtobufCFieldDescriptor discovery__announcement__field_descriptors
   {
     "id",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Discovery__Announcement, id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "service_name",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Discovery__Announcement, service_name),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "service_version",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Discovery__Announcement, service_version),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "description",
     4,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Discovery__Announcement, description),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "url",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Discovery__Announcement, url),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "public",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(Discovery__Announcement, has_public_),
+    0,   /* quantifier_offset */
     offsetof(Discovery__Announcement, public_),
     NULL,
     NULL,
@@ -550,72 +568,72 @@ static const ProtobufCFieldDescriptor discovery__announcement__field_descriptors
   {
     "net_address",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Discovery__Announcement, net_address),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "public_key",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Discovery__Announcement, public_key),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "certificate",
     13,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Discovery__Announcement, certificate),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "api_address",
     14,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Discovery__Announcement, api_address),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "mqtt_address",
     15,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Discovery__Announcement, mqtt_address),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "amqp_address",
     16,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Discovery__Announcement, amqp_address),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -674,12 +692,12 @@ static const ProtobufCFieldDescriptor discovery__get_service_request__field_desc
   {
     "service_name",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Discovery__GetServiceRequest, service_name),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -712,24 +730,24 @@ static const ProtobufCFieldDescriptor discovery__get_request__field_descriptors[
   {
     "id",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Discovery__GetRequest, id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "service_name",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Discovery__GetRequest, service_name),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -763,31 +781,31 @@ static const ProtobufCFieldDescriptor discovery__metadata_request__field_descrip
   {
     "id",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Discovery__MetadataRequest, id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "service_name",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Discovery__MetadataRequest, service_name),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "metadata",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Discovery__MetadataRequest, metadata),
@@ -866,12 +884,12 @@ static const ProtobufCFieldDescriptor discovery__get_by_app_idrequest__field_des
   {
     "app_id",
     30,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Discovery__GetByAppIDRequest, app_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -904,12 +922,12 @@ static const ProtobufCFieldDescriptor discovery__get_by_gateway_idrequest__field
   {
     "gateway_id",
     30,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Discovery__GetByGatewayIDRequest, gateway_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -942,9 +960,9 @@ static const ProtobufCFieldDescriptor discovery__get_by_app_euirequest__field_de
   {
     "app_eui",
     31,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Discovery__GetByAppEUIRequest, has_app_eui),
+    0,   /* quantifier_offset */
     offsetof(Discovery__GetByAppEUIRequest, app_eui),
     NULL,
     NULL,

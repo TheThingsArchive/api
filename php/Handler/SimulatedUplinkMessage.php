@@ -9,36 +9,30 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * SimulatedUplinkMessage is a simulated uplink message
- * </pre>
  *
- * Protobuf type <code>handler.SimulatedUplinkMessage</code>
+ * Generated from protobuf message <code>handler.SimulatedUplinkMessage</code>
  */
 class SimulatedUplinkMessage extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     private $app_id = '';
     /**
-     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+     * Generated from protobuf field <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      */
     private $dev_id = '';
     /**
-     * <pre>
      * The binary payload to use
-     * </pre>
      *
-     * <code>bytes payload = 3;</code>
+     * Generated from protobuf field <code>bytes payload = 3;</code>
      */
     private $payload = '';
     /**
-     * <pre>
      * The port number
-     * </pre>
      *
-     * <code>uint32 port = 4;</code>
+     * Generated from protobuf field <code>uint32 port = 4;</code>
      */
     private $port = 0;
 
@@ -48,7 +42,8 @@ class SimulatedUplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * @return string
      */
     public function getAppId()
     {
@@ -56,16 +51,21 @@ class SimulatedUplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setAppId($var)
     {
         GPBUtil::checkString($var, True);
         $this->app_id = $var;
+
+        return $this;
     }
 
     /**
-     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+     * Generated from protobuf field <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+     * @return string
      */
     public function getDevId()
     {
@@ -73,20 +73,23 @@ class SimulatedUplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+     * Generated from protobuf field <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setDevId($var)
     {
         GPBUtil::checkString($var, True);
         $this->dev_id = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The binary payload to use
-     * </pre>
      *
-     * <code>bytes payload = 3;</code>
+     * Generated from protobuf field <code>bytes payload = 3;</code>
+     * @return string
      */
     public function getPayload()
     {
@@ -94,24 +97,25 @@ class SimulatedUplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The binary payload to use
-     * </pre>
      *
-     * <code>bytes payload = 3;</code>
+     * Generated from protobuf field <code>bytes payload = 3;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPayload($var)
     {
         GPBUtil::checkString($var, False);
         $this->payload = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The port number
-     * </pre>
      *
-     * <code>uint32 port = 4;</code>
+     * Generated from protobuf field <code>uint32 port = 4;</code>
+     * @return int
      */
     public function getPort()
     {
@@ -119,16 +123,18 @@ class SimulatedUplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The port number
-     * </pre>
      *
-     * <code>uint32 port = 4;</code>
+     * Generated from protobuf field <code>uint32 port = 4;</code>
+     * @param int $var
+     * @return $this
      */
     public function setPort($var)
     {
         GPBUtil::checkUint32($var);
         $this->port = $var;
+
+        return $this;
     }
 
 }

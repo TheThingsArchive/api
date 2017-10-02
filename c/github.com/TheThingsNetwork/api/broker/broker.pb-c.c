@@ -10,7 +10,7 @@
 void   broker__downlink_option__init
                      (Broker__DownlinkOption         *message)
 {
-  static Broker__DownlinkOption init_value = BROKER__DOWNLINK_OPTION__INIT;
+  static const Broker__DownlinkOption init_value = BROKER__DOWNLINK_OPTION__INIT;
   *message = init_value;
 }
 size_t broker__downlink_option__get_packed_size
@@ -47,13 +47,15 @@ void   broker__downlink_option__free_unpacked
                      (Broker__DownlinkOption *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &broker__downlink_option__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   broker__uplink_message__init
                      (Broker__UplinkMessage         *message)
 {
-  static Broker__UplinkMessage init_value = BROKER__UPLINK_MESSAGE__INIT;
+  static const Broker__UplinkMessage init_value = BROKER__UPLINK_MESSAGE__INIT;
   *message = init_value;
 }
 size_t broker__uplink_message__get_packed_size
@@ -90,13 +92,15 @@ void   broker__uplink_message__free_unpacked
                      (Broker__UplinkMessage *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &broker__uplink_message__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   broker__downlink_message__init
                      (Broker__DownlinkMessage         *message)
 {
-  static Broker__DownlinkMessage init_value = BROKER__DOWNLINK_MESSAGE__INIT;
+  static const Broker__DownlinkMessage init_value = BROKER__DOWNLINK_MESSAGE__INIT;
   *message = init_value;
 }
 size_t broker__downlink_message__get_packed_size
@@ -133,13 +137,15 @@ void   broker__downlink_message__free_unpacked
                      (Broker__DownlinkMessage *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &broker__downlink_message__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   broker__device_activation_response__init
                      (Broker__DeviceActivationResponse         *message)
 {
-  static Broker__DeviceActivationResponse init_value = BROKER__DEVICE_ACTIVATION_RESPONSE__INIT;
+  static const Broker__DeviceActivationResponse init_value = BROKER__DEVICE_ACTIVATION_RESPONSE__INIT;
   *message = init_value;
 }
 size_t broker__device_activation_response__get_packed_size
@@ -176,13 +182,15 @@ void   broker__device_activation_response__free_unpacked
                      (Broker__DeviceActivationResponse *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &broker__device_activation_response__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   broker__deduplicated_uplink_message__init
                      (Broker__DeduplicatedUplinkMessage         *message)
 {
-  static Broker__DeduplicatedUplinkMessage init_value = BROKER__DEDUPLICATED_UPLINK_MESSAGE__INIT;
+  static const Broker__DeduplicatedUplinkMessage init_value = BROKER__DEDUPLICATED_UPLINK_MESSAGE__INIT;
   *message = init_value;
 }
 size_t broker__deduplicated_uplink_message__get_packed_size
@@ -219,13 +227,15 @@ void   broker__deduplicated_uplink_message__free_unpacked
                      (Broker__DeduplicatedUplinkMessage *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &broker__deduplicated_uplink_message__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   broker__device_activation_request__init
                      (Broker__DeviceActivationRequest         *message)
 {
-  static Broker__DeviceActivationRequest init_value = BROKER__DEVICE_ACTIVATION_REQUEST__INIT;
+  static const Broker__DeviceActivationRequest init_value = BROKER__DEVICE_ACTIVATION_REQUEST__INIT;
   *message = init_value;
 }
 size_t broker__device_activation_request__get_packed_size
@@ -262,13 +272,15 @@ void   broker__device_activation_request__free_unpacked
                      (Broker__DeviceActivationRequest *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &broker__device_activation_request__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   broker__deduplicated_device_activation_request__init
                      (Broker__DeduplicatedDeviceActivationRequest         *message)
 {
-  static Broker__DeduplicatedDeviceActivationRequest init_value = BROKER__DEDUPLICATED_DEVICE_ACTIVATION_REQUEST__INIT;
+  static const Broker__DeduplicatedDeviceActivationRequest init_value = BROKER__DEDUPLICATED_DEVICE_ACTIVATION_REQUEST__INIT;
   *message = init_value;
 }
 size_t broker__deduplicated_device_activation_request__get_packed_size
@@ -305,13 +317,15 @@ void   broker__deduplicated_device_activation_request__free_unpacked
                      (Broker__DeduplicatedDeviceActivationRequest *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &broker__deduplicated_device_activation_request__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   broker__activation_challenge_request__init
                      (Broker__ActivationChallengeRequest         *message)
 {
-  static Broker__ActivationChallengeRequest init_value = BROKER__ACTIVATION_CHALLENGE_REQUEST__INIT;
+  static const Broker__ActivationChallengeRequest init_value = BROKER__ACTIVATION_CHALLENGE_REQUEST__INIT;
   *message = init_value;
 }
 size_t broker__activation_challenge_request__get_packed_size
@@ -348,13 +362,15 @@ void   broker__activation_challenge_request__free_unpacked
                      (Broker__ActivationChallengeRequest *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &broker__activation_challenge_request__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   broker__activation_challenge_response__init
                      (Broker__ActivationChallengeResponse         *message)
 {
-  static Broker__ActivationChallengeResponse init_value = BROKER__ACTIVATION_CHALLENGE_RESPONSE__INIT;
+  static const Broker__ActivationChallengeResponse init_value = BROKER__ACTIVATION_CHALLENGE_RESPONSE__INIT;
   *message = init_value;
 }
 size_t broker__activation_challenge_response__get_packed_size
@@ -391,13 +407,15 @@ void   broker__activation_challenge_response__free_unpacked
                      (Broker__ActivationChallengeResponse *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &broker__activation_challenge_response__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   broker__subscribe_request__init
                      (Broker__SubscribeRequest         *message)
 {
-  static Broker__SubscribeRequest init_value = BROKER__SUBSCRIBE_REQUEST__INIT;
+  static const Broker__SubscribeRequest init_value = BROKER__SUBSCRIBE_REQUEST__INIT;
   *message = init_value;
 }
 size_t broker__subscribe_request__get_packed_size
@@ -434,13 +452,15 @@ void   broker__subscribe_request__free_unpacked
                      (Broker__SubscribeRequest *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &broker__subscribe_request__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   broker__status_request__init
                      (Broker__StatusRequest         *message)
 {
-  static Broker__StatusRequest init_value = BROKER__STATUS_REQUEST__INIT;
+  static const Broker__StatusRequest init_value = BROKER__STATUS_REQUEST__INIT;
   *message = init_value;
 }
 size_t broker__status_request__get_packed_size
@@ -477,13 +497,15 @@ void   broker__status_request__free_unpacked
                      (Broker__StatusRequest *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &broker__status_request__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   broker__status__init
                      (Broker__Status         *message)
 {
-  static Broker__Status init_value = BROKER__STATUS__INIT;
+  static const Broker__Status init_value = BROKER__STATUS__INIT;
   *message = init_value;
 }
 size_t broker__status__get_packed_size
@@ -520,13 +542,15 @@ void   broker__status__free_unpacked
                      (Broker__Status *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &broker__status__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   broker__application_handler_registration__init
                      (Broker__ApplicationHandlerRegistration         *message)
 {
-  static Broker__ApplicationHandlerRegistration init_value = BROKER__APPLICATION_HANDLER_REGISTRATION__INIT;
+  static const Broker__ApplicationHandlerRegistration init_value = BROKER__APPLICATION_HANDLER_REGISTRATION__INIT;
   *message = init_value;
 }
 size_t broker__application_handler_registration__get_packed_size
@@ -563,6 +587,8 @@ void   broker__application_handler_registration__free_unpacked
                      (Broker__ApplicationHandlerRegistration *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &broker__application_handler_registration__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
@@ -571,33 +597,33 @@ static const ProtobufCFieldDescriptor broker__downlink_option__field_descriptors
   {
     "identifier",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Broker__DownlinkOption, identifier),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "gateway_id",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Broker__DownlinkOption, gateway_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "score",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Broker__DownlinkOption, has_score),
+    0,   /* quantifier_offset */
     offsetof(Broker__DownlinkOption, score),
     NULL,
     NULL,
@@ -607,9 +633,9 @@ static const ProtobufCFieldDescriptor broker__downlink_option__field_descriptors
   {
     "deadline",
     4,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_INT64,
-    offsetof(Broker__DownlinkOption, has_deadline),
+    0,   /* quantifier_offset */
     offsetof(Broker__DownlinkOption, deadline),
     NULL,
     NULL,
@@ -619,7 +645,7 @@ static const ProtobufCFieldDescriptor broker__downlink_option__field_descriptors
   {
     "protocol_configuration",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DownlinkOption, protocol_configuration),
@@ -631,7 +657,7 @@ static const ProtobufCFieldDescriptor broker__downlink_option__field_descriptors
   {
     "gateway_configuration",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DownlinkOption, gateway_configuration),
@@ -674,9 +700,9 @@ static const ProtobufCFieldDescriptor broker__uplink_message__field_descriptors[
   {
     "payload",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Broker__UplinkMessage, has_payload),
+    0,   /* quantifier_offset */
     offsetof(Broker__UplinkMessage, payload),
     NULL,
     NULL,
@@ -686,7 +712,7 @@ static const ProtobufCFieldDescriptor broker__uplink_message__field_descriptors[
   {
     "message",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__UplinkMessage, message),
@@ -698,9 +724,9 @@ static const ProtobufCFieldDescriptor broker__uplink_message__field_descriptors[
   {
     "dev_eui",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Broker__UplinkMessage, has_dev_eui),
+    0,   /* quantifier_offset */
     offsetof(Broker__UplinkMessage, dev_eui),
     NULL,
     NULL,
@@ -710,9 +736,9 @@ static const ProtobufCFieldDescriptor broker__uplink_message__field_descriptors[
   {
     "app_eui",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Broker__UplinkMessage, has_app_eui),
+    0,   /* quantifier_offset */
     offsetof(Broker__UplinkMessage, app_eui),
     NULL,
     NULL,
@@ -722,31 +748,31 @@ static const ProtobufCFieldDescriptor broker__uplink_message__field_descriptors[
   {
     "app_id",
     13,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Broker__UplinkMessage, app_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "dev_id",
     14,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Broker__UplinkMessage, dev_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "protocol_metadata",
     21,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__UplinkMessage, protocol_metadata),
@@ -758,7 +784,7 @@ static const ProtobufCFieldDescriptor broker__uplink_message__field_descriptors[
   {
     "gateway_metadata",
     22,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__UplinkMessage, gateway_metadata),
@@ -782,7 +808,7 @@ static const ProtobufCFieldDescriptor broker__uplink_message__field_descriptors[
   {
     "trace",
     41,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__UplinkMessage, trace),
@@ -833,9 +859,9 @@ static const ProtobufCFieldDescriptor broker__downlink_message__field_descriptor
   {
     "payload",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Broker__DownlinkMessage, has_payload),
+    0,   /* quantifier_offset */
     offsetof(Broker__DownlinkMessage, payload),
     NULL,
     NULL,
@@ -845,7 +871,7 @@ static const ProtobufCFieldDescriptor broker__downlink_message__field_descriptor
   {
     "message",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DownlinkMessage, message),
@@ -857,9 +883,9 @@ static const ProtobufCFieldDescriptor broker__downlink_message__field_descriptor
   {
     "dev_eui",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Broker__DownlinkMessage, has_dev_eui),
+    0,   /* quantifier_offset */
     offsetof(Broker__DownlinkMessage, dev_eui),
     NULL,
     NULL,
@@ -869,9 +895,9 @@ static const ProtobufCFieldDescriptor broker__downlink_message__field_descriptor
   {
     "app_eui",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Broker__DownlinkMessage, has_app_eui),
+    0,   /* quantifier_offset */
     offsetof(Broker__DownlinkMessage, app_eui),
     NULL,
     NULL,
@@ -881,31 +907,31 @@ static const ProtobufCFieldDescriptor broker__downlink_message__field_descriptor
   {
     "app_id",
     13,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Broker__DownlinkMessage, app_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "dev_id",
     14,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Broker__DownlinkMessage, dev_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "downlink_option",
     21,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DownlinkMessage, downlink_option),
@@ -917,7 +943,7 @@ static const ProtobufCFieldDescriptor broker__downlink_message__field_descriptor
   {
     "trace",
     31,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DownlinkMessage, trace),
@@ -965,9 +991,9 @@ static const ProtobufCFieldDescriptor broker__device_activation_response__field_
   {
     "payload",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Broker__DeviceActivationResponse, has_payload),
+    0,   /* quantifier_offset */
     offsetof(Broker__DeviceActivationResponse, payload),
     NULL,
     NULL,
@@ -977,7 +1003,7 @@ static const ProtobufCFieldDescriptor broker__device_activation_response__field_
   {
     "message",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DeviceActivationResponse, message),
@@ -989,7 +1015,7 @@ static const ProtobufCFieldDescriptor broker__device_activation_response__field_
   {
     "downlink_option",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DeviceActivationResponse, downlink_option),
@@ -1001,7 +1027,7 @@ static const ProtobufCFieldDescriptor broker__device_activation_response__field_
   {
     "trace",
     21,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DeviceActivationResponse, trace),
@@ -1044,9 +1070,9 @@ static const ProtobufCFieldDescriptor broker__deduplicated_uplink_message__field
   {
     "payload",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Broker__DeduplicatedUplinkMessage, has_payload),
+    0,   /* quantifier_offset */
     offsetof(Broker__DeduplicatedUplinkMessage, payload),
     NULL,
     NULL,
@@ -1056,7 +1082,7 @@ static const ProtobufCFieldDescriptor broker__deduplicated_uplink_message__field
   {
     "message",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DeduplicatedUplinkMessage, message),
@@ -1068,9 +1094,9 @@ static const ProtobufCFieldDescriptor broker__deduplicated_uplink_message__field
   {
     "dev_eui",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Broker__DeduplicatedUplinkMessage, has_dev_eui),
+    0,   /* quantifier_offset */
     offsetof(Broker__DeduplicatedUplinkMessage, dev_eui),
     NULL,
     NULL,
@@ -1080,9 +1106,9 @@ static const ProtobufCFieldDescriptor broker__deduplicated_uplink_message__field
   {
     "app_eui",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Broker__DeduplicatedUplinkMessage, has_app_eui),
+    0,   /* quantifier_offset */
     offsetof(Broker__DeduplicatedUplinkMessage, app_eui),
     NULL,
     NULL,
@@ -1092,31 +1118,31 @@ static const ProtobufCFieldDescriptor broker__deduplicated_uplink_message__field
   {
     "app_id",
     13,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Broker__DeduplicatedUplinkMessage, app_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "dev_id",
     14,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Broker__DeduplicatedUplinkMessage, dev_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "protocol_metadata",
     21,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DeduplicatedUplinkMessage, protocol_metadata),
@@ -1140,9 +1166,9 @@ static const ProtobufCFieldDescriptor broker__deduplicated_uplink_message__field
   {
     "server_time",
     23,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_INT64,
-    offsetof(Broker__DeduplicatedUplinkMessage, has_server_time),
+    0,   /* quantifier_offset */
     offsetof(Broker__DeduplicatedUplinkMessage, server_time),
     NULL,
     NULL,
@@ -1152,7 +1178,7 @@ static const ProtobufCFieldDescriptor broker__deduplicated_uplink_message__field
   {
     "response_template",
     31,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DeduplicatedUplinkMessage, response_template),
@@ -1164,7 +1190,7 @@ static const ProtobufCFieldDescriptor broker__deduplicated_uplink_message__field
   {
     "trace",
     41,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DeduplicatedUplinkMessage, trace),
@@ -1216,9 +1242,9 @@ static const ProtobufCFieldDescriptor broker__device_activation_request__field_d
   {
     "payload",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Broker__DeviceActivationRequest, has_payload),
+    0,   /* quantifier_offset */
     offsetof(Broker__DeviceActivationRequest, payload),
     NULL,
     NULL,
@@ -1228,7 +1254,7 @@ static const ProtobufCFieldDescriptor broker__device_activation_request__field_d
   {
     "message",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DeviceActivationRequest, message),
@@ -1240,9 +1266,9 @@ static const ProtobufCFieldDescriptor broker__device_activation_request__field_d
   {
     "dev_eui",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Broker__DeviceActivationRequest, has_dev_eui),
+    0,   /* quantifier_offset */
     offsetof(Broker__DeviceActivationRequest, dev_eui),
     NULL,
     NULL,
@@ -1252,9 +1278,9 @@ static const ProtobufCFieldDescriptor broker__device_activation_request__field_d
   {
     "app_eui",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Broker__DeviceActivationRequest, has_app_eui),
+    0,   /* quantifier_offset */
     offsetof(Broker__DeviceActivationRequest, app_eui),
     NULL,
     NULL,
@@ -1264,7 +1290,7 @@ static const ProtobufCFieldDescriptor broker__device_activation_request__field_d
   {
     "protocol_metadata",
     21,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DeviceActivationRequest, protocol_metadata),
@@ -1276,7 +1302,7 @@ static const ProtobufCFieldDescriptor broker__device_activation_request__field_d
   {
     "gateway_metadata",
     22,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DeviceActivationRequest, gateway_metadata),
@@ -1288,7 +1314,7 @@ static const ProtobufCFieldDescriptor broker__device_activation_request__field_d
   {
     "activation_metadata",
     23,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DeviceActivationRequest, activation_metadata),
@@ -1312,7 +1338,7 @@ static const ProtobufCFieldDescriptor broker__device_activation_request__field_d
   {
     "trace",
     41,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DeviceActivationRequest, trace),
@@ -1362,9 +1388,9 @@ static const ProtobufCFieldDescriptor broker__deduplicated_device_activation_req
   {
     "payload",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Broker__DeduplicatedDeviceActivationRequest, has_payload),
+    0,   /* quantifier_offset */
     offsetof(Broker__DeduplicatedDeviceActivationRequest, payload),
     NULL,
     NULL,
@@ -1374,7 +1400,7 @@ static const ProtobufCFieldDescriptor broker__deduplicated_device_activation_req
   {
     "message",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DeduplicatedDeviceActivationRequest, message),
@@ -1386,9 +1412,9 @@ static const ProtobufCFieldDescriptor broker__deduplicated_device_activation_req
   {
     "dev_eui",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Broker__DeduplicatedDeviceActivationRequest, has_dev_eui),
+    0,   /* quantifier_offset */
     offsetof(Broker__DeduplicatedDeviceActivationRequest, dev_eui),
     NULL,
     NULL,
@@ -1398,9 +1424,9 @@ static const ProtobufCFieldDescriptor broker__deduplicated_device_activation_req
   {
     "app_eui",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Broker__DeduplicatedDeviceActivationRequest, has_app_eui),
+    0,   /* quantifier_offset */
     offsetof(Broker__DeduplicatedDeviceActivationRequest, app_eui),
     NULL,
     NULL,
@@ -1410,31 +1436,31 @@ static const ProtobufCFieldDescriptor broker__deduplicated_device_activation_req
   {
     "app_id",
     13,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Broker__DeduplicatedDeviceActivationRequest, app_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "dev_id",
     14,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Broker__DeduplicatedDeviceActivationRequest, dev_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "protocol_metadata",
     21,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DeduplicatedDeviceActivationRequest, protocol_metadata),
@@ -1458,7 +1484,7 @@ static const ProtobufCFieldDescriptor broker__deduplicated_device_activation_req
   {
     "activation_metadata",
     23,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DeduplicatedDeviceActivationRequest, activation_metadata),
@@ -1470,9 +1496,9 @@ static const ProtobufCFieldDescriptor broker__deduplicated_device_activation_req
   {
     "server_time",
     24,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_INT64,
-    offsetof(Broker__DeduplicatedDeviceActivationRequest, has_server_time),
+    0,   /* quantifier_offset */
     offsetof(Broker__DeduplicatedDeviceActivationRequest, server_time),
     NULL,
     NULL,
@@ -1482,7 +1508,7 @@ static const ProtobufCFieldDescriptor broker__deduplicated_device_activation_req
   {
     "response_template",
     31,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DeduplicatedDeviceActivationRequest, response_template),
@@ -1494,7 +1520,7 @@ static const ProtobufCFieldDescriptor broker__deduplicated_device_activation_req
   {
     "trace",
     41,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__DeduplicatedDeviceActivationRequest, trace),
@@ -1547,9 +1573,9 @@ static const ProtobufCFieldDescriptor broker__activation_challenge_request__fiel
   {
     "payload",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Broker__ActivationChallengeRequest, has_payload),
+    0,   /* quantifier_offset */
     offsetof(Broker__ActivationChallengeRequest, payload),
     NULL,
     NULL,
@@ -1559,7 +1585,7 @@ static const ProtobufCFieldDescriptor broker__activation_challenge_request__fiel
   {
     "message",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__ActivationChallengeRequest, message),
@@ -1571,9 +1597,9 @@ static const ProtobufCFieldDescriptor broker__activation_challenge_request__fiel
   {
     "dev_eui",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Broker__ActivationChallengeRequest, has_dev_eui),
+    0,   /* quantifier_offset */
     offsetof(Broker__ActivationChallengeRequest, dev_eui),
     NULL,
     NULL,
@@ -1583,9 +1609,9 @@ static const ProtobufCFieldDescriptor broker__activation_challenge_request__fiel
   {
     "app_eui",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Broker__ActivationChallengeRequest, has_app_eui),
+    0,   /* quantifier_offset */
     offsetof(Broker__ActivationChallengeRequest, app_eui),
     NULL,
     NULL,
@@ -1595,24 +1621,24 @@ static const ProtobufCFieldDescriptor broker__activation_challenge_request__fiel
   {
     "app_id",
     13,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Broker__ActivationChallengeRequest, app_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "dev_id",
     14,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Broker__ActivationChallengeRequest, dev_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -1651,9 +1677,9 @@ static const ProtobufCFieldDescriptor broker__activation_challenge_response__fie
   {
     "payload",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Broker__ActivationChallengeResponse, has_payload),
+    0,   /* quantifier_offset */
     offsetof(Broker__ActivationChallengeResponse, payload),
     NULL,
     NULL,
@@ -1663,7 +1689,7 @@ static const ProtobufCFieldDescriptor broker__activation_challenge_response__fie
   {
     "message",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__ActivationChallengeResponse, message),
@@ -1738,7 +1764,7 @@ static const ProtobufCFieldDescriptor broker__status__field_descriptors[10] =
   {
     "system",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__Status, system),
@@ -1750,7 +1776,7 @@ static const ProtobufCFieldDescriptor broker__status__field_descriptors[10] =
   {
     "component",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__Status, component),
@@ -1762,7 +1788,7 @@ static const ProtobufCFieldDescriptor broker__status__field_descriptors[10] =
   {
     "uplink",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__Status, uplink),
@@ -1774,7 +1800,7 @@ static const ProtobufCFieldDescriptor broker__status__field_descriptors[10] =
   {
     "uplink_unique",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__Status, uplink_unique),
@@ -1786,7 +1812,7 @@ static const ProtobufCFieldDescriptor broker__status__field_descriptors[10] =
   {
     "downlink",
     13,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__Status, downlink),
@@ -1798,7 +1824,7 @@ static const ProtobufCFieldDescriptor broker__status__field_descriptors[10] =
   {
     "activations",
     14,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__Status, activations),
@@ -1810,7 +1836,7 @@ static const ProtobufCFieldDescriptor broker__status__field_descriptors[10] =
   {
     "activations_unique",
     15,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__Status, activations_unique),
@@ -1822,7 +1848,7 @@ static const ProtobufCFieldDescriptor broker__status__field_descriptors[10] =
   {
     "deduplication",
     16,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Broker__Status, deduplication),
@@ -1834,9 +1860,9 @@ static const ProtobufCFieldDescriptor broker__status__field_descriptors[10] =
   {
     "connected_routers",
     21,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Broker__Status, has_connected_routers),
+    0,   /* quantifier_offset */
     offsetof(Broker__Status, connected_routers),
     NULL,
     NULL,
@@ -1846,9 +1872,9 @@ static const ProtobufCFieldDescriptor broker__status__field_descriptors[10] =
   {
     "connected_handlers",
     22,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Broker__Status, has_connected_handlers),
+    0,   /* quantifier_offset */
     offsetof(Broker__Status, connected_handlers),
     NULL,
     NULL,
@@ -1895,24 +1921,24 @@ static const ProtobufCFieldDescriptor broker__application_handler_registration__
   {
     "app_id",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Broker__ApplicationHandlerRegistration, app_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "handler_id",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Broker__ApplicationHandlerRegistration, handler_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },

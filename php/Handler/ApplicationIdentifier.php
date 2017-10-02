@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>handler.ApplicationIdentifier</code>
+ * Generated from protobuf message <code>handler.ApplicationIdentifier</code>
  */
 class ApplicationIdentifier extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     private $app_id = '';
 
@@ -24,7 +24,8 @@ class ApplicationIdentifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * @return string
      */
     public function getAppId()
     {
@@ -32,12 +33,16 @@ class ApplicationIdentifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setAppId($var)
     {
         GPBUtil::checkString($var, True);
         $this->app_id = $var;
+
+        return $this;
     }
 
 }

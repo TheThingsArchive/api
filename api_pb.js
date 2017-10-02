@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -61,6 +63,7 @@ proto.api.Percentiles.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.api.Percentiles} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.api.Percentiles.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -170,6 +173,7 @@ proto.api.Percentiles.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.api.Percentiles} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.api.Percentiles.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -417,6 +421,7 @@ proto.api.Rates.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.api.Rates} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.api.Rates.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -496,6 +501,7 @@ proto.api.Rates.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.api.Rates} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.api.Rates.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -611,6 +617,7 @@ proto.api.SystemStats.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.api.SystemStats} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.api.SystemStats.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -693,6 +700,7 @@ proto.api.SystemStats.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.api.SystemStats} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.api.SystemStats.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -766,6 +774,7 @@ proto.api.SystemStats.Loadstats.prototype.toObject = function(opt_includeInstanc
  *     http://goto/soy-param-migration
  * @param {!proto.api.SystemStats.Loadstats} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.api.SystemStats.Loadstats.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -845,6 +854,7 @@ proto.api.SystemStats.Loadstats.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.api.SystemStats.Loadstats} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.api.SystemStats.Loadstats.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -960,6 +970,7 @@ proto.api.SystemStats.CPUStats.prototype.toObject = function(opt_includeInstance
  *     http://goto/soy-param-migration
  * @param {!proto.api.SystemStats.CPUStats} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.api.SystemStats.CPUStats.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1044,6 +1055,7 @@ proto.api.SystemStats.CPUStats.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.api.SystemStats.CPUStats} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.api.SystemStats.CPUStats.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1181,6 +1193,7 @@ proto.api.SystemStats.MemoryStats.prototype.toObject = function(opt_includeInsta
  *     http://goto/soy-param-migration
  * @param {!proto.api.SystemStats.MemoryStats} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.api.SystemStats.MemoryStats.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1260,6 +1273,7 @@ proto.api.SystemStats.MemoryStats.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.api.SystemStats.MemoryStats} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.api.SystemStats.MemoryStats.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1465,6 +1479,7 @@ proto.api.ComponentStats.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.api.ComponentStats} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.api.ComponentStats.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1556,6 +1571,7 @@ proto.api.ComponentStats.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.api.ComponentStats} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.api.ComponentStats.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1642,6 +1658,7 @@ proto.api.ComponentStats.CPUStats.prototype.toObject = function(opt_includeInsta
  *     http://goto/soy-param-migration
  * @param {!proto.api.ComponentStats.CPUStats} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.api.ComponentStats.CPUStats.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1726,6 +1743,7 @@ proto.api.ComponentStats.CPUStats.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.api.ComponentStats.CPUStats} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.api.ComponentStats.CPUStats.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1863,6 +1881,7 @@ proto.api.ComponentStats.MemoryStats.prototype.toObject = function(opt_includeIn
  *     http://goto/soy-param-migration
  * @param {!proto.api.ComponentStats.MemoryStats} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.api.ComponentStats.MemoryStats.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1947,6 +1966,7 @@ proto.api.ComponentStats.MemoryStats.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.api.ComponentStats.MemoryStats} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.api.ComponentStats.MemoryStats.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;

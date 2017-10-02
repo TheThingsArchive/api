@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>discovery.Metadata</code>
+ * Generated from protobuf message <code>discovery.Metadata</code>
  */
 class Metadata extends \Google\Protobuf\Internal\Message
 {
@@ -21,12 +21,11 @@ class Metadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * GatewayID that is registered to this Router
      * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
-     * </pre>
      *
-     * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @return string
      */
     public function getGatewayId()
     {
@@ -34,27 +33,28 @@ class Metadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * GatewayID that is registered to this Router
      * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
-     * </pre>
      *
-     * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setGatewayId($var)
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(10, $var);
+
+        return $this;
     }
 
     /**
-     * <pre>
      * DevAddr prefix that is routed by this Broker
      * 5 bytes; the first byte is the prefix length, the following 4 bytes are the address.
      * Only authorized Brokers can announce PREFIX metadata.
-     * </pre>
      *
-     * <code>bytes dev_addr_prefix = 20;</code>
+     * Generated from protobuf field <code>bytes dev_addr_prefix = 20;</code>
+     * @return string
      */
     public function getDevAddrPrefix()
     {
@@ -62,27 +62,28 @@ class Metadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * DevAddr prefix that is routed by this Broker
      * 5 bytes; the first byte is the prefix length, the following 4 bytes are the address.
      * Only authorized Brokers can announce PREFIX metadata.
-     * </pre>
      *
-     * <code>bytes dev_addr_prefix = 20;</code>
+     * Generated from protobuf field <code>bytes dev_addr_prefix = 20;</code>
+     * @param string $var
+     * @return $this
      */
     public function setDevAddrPrefix($var)
     {
         GPBUtil::checkString($var, False);
         $this->writeOneof(20, $var);
+
+        return $this;
     }
 
     /**
-     * <pre>
      * AppID that is registered to this Handler
      * This metadata can only be added if the requesting client is authorized to manage this AppID.
-     * </pre>
      *
-     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * @return string
      */
     public function getAppId()
     {
@@ -90,26 +91,27 @@ class Metadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * AppID that is registered to this Handler
      * This metadata can only be added if the requesting client is authorized to manage this AppID.
-     * </pre>
      *
-     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setAppId($var)
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(30, $var);
+
+        return $this;
     }
 
     /**
-     * <pre>
      * AppEUI that is registered to this Join Handler
      * Only authorized Join Handlers can announce APP_EUI metadata (and we don't have any of those yet).
-     * </pre>
      *
-     * <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
+     * @return string
      */
     public function getAppEui()
     {
@@ -117,19 +119,24 @@ class Metadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * AppEUI that is registered to this Join Handler
      * Only authorized Join Handlers can announce APP_EUI metadata (and we don't have any of those yet).
-     * </pre>
      *
-     * <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setAppEui($var)
     {
         GPBUtil::checkString($var, False);
         $this->writeOneof(31, $var);
+
+        return $this;
     }
 
+    /**
+     * @return string
+     */
     public function getMetadata()
     {
         return $this->whichOneof("metadata");

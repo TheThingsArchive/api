@@ -10,7 +10,7 @@
 void   gateway__location_metadata__init
                      (Gateway__LocationMetadata         *message)
 {
-  static Gateway__LocationMetadata init_value = GATEWAY__LOCATION_METADATA__INIT;
+  static const Gateway__LocationMetadata init_value = GATEWAY__LOCATION_METADATA__INIT;
   *message = init_value;
 }
 size_t gateway__location_metadata__get_packed_size
@@ -47,19 +47,21 @@ void   gateway__location_metadata__free_unpacked
                      (Gateway__LocationMetadata *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &gateway__location_metadata__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   gateway__rx_metadata__antenna__init
                      (Gateway__RxMetadata__Antenna         *message)
 {
-  static Gateway__RxMetadata__Antenna init_value = GATEWAY__RX_METADATA__ANTENNA__INIT;
+  static const Gateway__RxMetadata__Antenna init_value = GATEWAY__RX_METADATA__ANTENNA__INIT;
   *message = init_value;
 }
 void   gateway__rx_metadata__init
                      (Gateway__RxMetadata         *message)
 {
-  static Gateway__RxMetadata init_value = GATEWAY__RX_METADATA__INIT;
+  static const Gateway__RxMetadata init_value = GATEWAY__RX_METADATA__INIT;
   *message = init_value;
 }
 size_t gateway__rx_metadata__get_packed_size
@@ -96,13 +98,15 @@ void   gateway__rx_metadata__free_unpacked
                      (Gateway__RxMetadata *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &gateway__rx_metadata__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   gateway__tx_configuration__init
                      (Gateway__TxConfiguration         *message)
 {
-  static Gateway__TxConfiguration init_value = GATEWAY__TX_CONFIGURATION__INIT;
+  static const Gateway__TxConfiguration init_value = GATEWAY__TX_CONFIGURATION__INIT;
   *message = init_value;
 }
 size_t gateway__tx_configuration__get_packed_size
@@ -139,19 +143,21 @@ void   gateway__tx_configuration__free_unpacked
                      (Gateway__TxConfiguration *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &gateway__tx_configuration__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   gateway__status__osmetrics__init
                      (Gateway__Status__OSMetrics         *message)
 {
-  static Gateway__Status__OSMetrics init_value = GATEWAY__STATUS__OSMETRICS__INIT;
+  static const Gateway__Status__OSMetrics init_value = GATEWAY__STATUS__OSMETRICS__INIT;
   *message = init_value;
 }
 void   gateway__status__init
                      (Gateway__Status         *message)
 {
-  static Gateway__Status init_value = GATEWAY__STATUS__INIT;
+  static const Gateway__Status init_value = GATEWAY__STATUS__INIT;
   *message = init_value;
 }
 size_t gateway__status__get_packed_size
@@ -188,6 +194,8 @@ void   gateway__status__free_unpacked
                      (Gateway__Status *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &gateway__status__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
@@ -230,9 +238,9 @@ static const ProtobufCFieldDescriptor gateway__location_metadata__field_descript
   {
     "time",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_INT64,
-    offsetof(Gateway__LocationMetadata, has_time),
+    0,   /* quantifier_offset */
     offsetof(Gateway__LocationMetadata, time),
     NULL,
     NULL,
@@ -242,9 +250,9 @@ static const ProtobufCFieldDescriptor gateway__location_metadata__field_descript
   {
     "latitude",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Gateway__LocationMetadata, has_latitude),
+    0,   /* quantifier_offset */
     offsetof(Gateway__LocationMetadata, latitude),
     NULL,
     NULL,
@@ -254,9 +262,9 @@ static const ProtobufCFieldDescriptor gateway__location_metadata__field_descript
   {
     "longitude",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Gateway__LocationMetadata, has_longitude),
+    0,   /* quantifier_offset */
     offsetof(Gateway__LocationMetadata, longitude),
     NULL,
     NULL,
@@ -266,9 +274,9 @@ static const ProtobufCFieldDescriptor gateway__location_metadata__field_descript
   {
     "altitude",
     4,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_INT32,
-    offsetof(Gateway__LocationMetadata, has_altitude),
+    0,   /* quantifier_offset */
     offsetof(Gateway__LocationMetadata, altitude),
     NULL,
     NULL,
@@ -278,9 +286,9 @@ static const ProtobufCFieldDescriptor gateway__location_metadata__field_descript
   {
     "accuracy",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_INT32,
-    offsetof(Gateway__LocationMetadata, has_accuracy),
+    0,   /* quantifier_offset */
     offsetof(Gateway__LocationMetadata, accuracy),
     NULL,
     NULL,
@@ -290,9 +298,9 @@ static const ProtobufCFieldDescriptor gateway__location_metadata__field_descript
   {
     "source",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
-    offsetof(Gateway__LocationMetadata, has_source),
+    0,   /* quantifier_offset */
     offsetof(Gateway__LocationMetadata, source),
     &gateway__location_metadata__location_source__descriptor,
     NULL,
@@ -333,9 +341,9 @@ static const ProtobufCFieldDescriptor gateway__rx_metadata__antenna__field_descr
   {
     "antenna",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Gateway__RxMetadata__Antenna, has_antenna),
+    0,   /* quantifier_offset */
     offsetof(Gateway__RxMetadata__Antenna, antenna),
     NULL,
     NULL,
@@ -345,9 +353,9 @@ static const ProtobufCFieldDescriptor gateway__rx_metadata__antenna__field_descr
   {
     "channel",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Gateway__RxMetadata__Antenna, has_channel),
+    0,   /* quantifier_offset */
     offsetof(Gateway__RxMetadata__Antenna, channel),
     NULL,
     NULL,
@@ -357,9 +365,9 @@ static const ProtobufCFieldDescriptor gateway__rx_metadata__antenna__field_descr
   {
     "rssi",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Gateway__RxMetadata__Antenna, has_rssi),
+    0,   /* quantifier_offset */
     offsetof(Gateway__RxMetadata__Antenna, rssi),
     NULL,
     NULL,
@@ -369,9 +377,9 @@ static const ProtobufCFieldDescriptor gateway__rx_metadata__antenna__field_descr
   {
     "snr",
     4,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Gateway__RxMetadata__Antenna, has_snr),
+    0,   /* quantifier_offset */
     offsetof(Gateway__RxMetadata__Antenna, snr),
     NULL,
     NULL,
@@ -381,9 +389,9 @@ static const ProtobufCFieldDescriptor gateway__rx_metadata__antenna__field_descr
   {
     "channel_rssi",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Gateway__RxMetadata__Antenna, has_channel_rssi),
+    0,   /* quantifier_offset */
     offsetof(Gateway__RxMetadata__Antenna, channel_rssi),
     NULL,
     NULL,
@@ -393,9 +401,9 @@ static const ProtobufCFieldDescriptor gateway__rx_metadata__antenna__field_descr
   {
     "rssi_standard_deviation",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Gateway__RxMetadata__Antenna, has_rssi_standard_deviation),
+    0,   /* quantifier_offset */
     offsetof(Gateway__RxMetadata__Antenna, rssi_standard_deviation),
     NULL,
     NULL,
@@ -405,9 +413,9 @@ static const ProtobufCFieldDescriptor gateway__rx_metadata__antenna__field_descr
   {
     "frequency_offset",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_INT64,
-    offsetof(Gateway__RxMetadata__Antenna, has_frequency_offset),
+    0,   /* quantifier_offset */
     offsetof(Gateway__RxMetadata__Antenna, frequency_offset),
     NULL,
     NULL,
@@ -417,9 +425,9 @@ static const ProtobufCFieldDescriptor gateway__rx_metadata__antenna__field_descr
   {
     "encrypted_time",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Gateway__RxMetadata__Antenna, has_encrypted_time),
+    0,   /* quantifier_offset */
     offsetof(Gateway__RxMetadata__Antenna, encrypted_time),
     NULL,
     NULL,
@@ -463,21 +471,21 @@ static const ProtobufCFieldDescriptor gateway__rx_metadata__field_descriptors[12
   {
     "gateway_id",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Gateway__RxMetadata, gateway_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "gateway_trusted",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(Gateway__RxMetadata, has_gateway_trusted),
+    0,   /* quantifier_offset */
     offsetof(Gateway__RxMetadata, gateway_trusted),
     NULL,
     NULL,
@@ -487,9 +495,9 @@ static const ProtobufCFieldDescriptor gateway__rx_metadata__field_descriptors[12
   {
     "timestamp",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Gateway__RxMetadata, has_timestamp),
+    0,   /* quantifier_offset */
     offsetof(Gateway__RxMetadata, timestamp),
     NULL,
     NULL,
@@ -499,9 +507,9 @@ static const ProtobufCFieldDescriptor gateway__rx_metadata__field_descriptors[12
   {
     "time",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_INT64,
-    offsetof(Gateway__RxMetadata, has_time),
+    0,   /* quantifier_offset */
     offsetof(Gateway__RxMetadata, time),
     NULL,
     NULL,
@@ -511,9 +519,9 @@ static const ProtobufCFieldDescriptor gateway__rx_metadata__field_descriptors[12
   {
     "encrypted_time",
     13,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Gateway__RxMetadata, has_encrypted_time),
+    0,   /* quantifier_offset */
     offsetof(Gateway__RxMetadata, encrypted_time),
     NULL,
     NULL,
@@ -523,9 +531,9 @@ static const ProtobufCFieldDescriptor gateway__rx_metadata__field_descriptors[12
   {
     "rf_chain",
     21,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Gateway__RxMetadata, has_rf_chain),
+    0,   /* quantifier_offset */
     offsetof(Gateway__RxMetadata, rf_chain),
     NULL,
     NULL,
@@ -535,9 +543,9 @@ static const ProtobufCFieldDescriptor gateway__rx_metadata__field_descriptors[12
   {
     "channel",
     22,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Gateway__RxMetadata, has_channel),
+    0,   /* quantifier_offset */
     offsetof(Gateway__RxMetadata, channel),
     NULL,
     NULL,
@@ -559,9 +567,9 @@ static const ProtobufCFieldDescriptor gateway__rx_metadata__field_descriptors[12
   {
     "frequency",
     31,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT64,
-    offsetof(Gateway__RxMetadata, has_frequency),
+    0,   /* quantifier_offset */
     offsetof(Gateway__RxMetadata, frequency),
     NULL,
     NULL,
@@ -571,9 +579,9 @@ static const ProtobufCFieldDescriptor gateway__rx_metadata__field_descriptors[12
   {
     "rssi",
     32,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Gateway__RxMetadata, has_rssi),
+    0,   /* quantifier_offset */
     offsetof(Gateway__RxMetadata, rssi),
     NULL,
     NULL,
@@ -583,9 +591,9 @@ static const ProtobufCFieldDescriptor gateway__rx_metadata__field_descriptors[12
   {
     "snr",
     33,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Gateway__RxMetadata, has_snr),
+    0,   /* quantifier_offset */
     offsetof(Gateway__RxMetadata, snr),
     NULL,
     NULL,
@@ -595,7 +603,7 @@ static const ProtobufCFieldDescriptor gateway__rx_metadata__field_descriptors[12
   {
     "location",
     41,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Gateway__RxMetadata, location),
@@ -648,9 +656,9 @@ static const ProtobufCFieldDescriptor gateway__tx_configuration__field_descripto
   {
     "timestamp",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Gateway__TxConfiguration, has_timestamp),
+    0,   /* quantifier_offset */
     offsetof(Gateway__TxConfiguration, timestamp),
     NULL,
     NULL,
@@ -660,9 +668,9 @@ static const ProtobufCFieldDescriptor gateway__tx_configuration__field_descripto
   {
     "rf_chain",
     21,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Gateway__TxConfiguration, has_rf_chain),
+    0,   /* quantifier_offset */
     offsetof(Gateway__TxConfiguration, rf_chain),
     NULL,
     NULL,
@@ -672,9 +680,9 @@ static const ProtobufCFieldDescriptor gateway__tx_configuration__field_descripto
   {
     "frequency",
     22,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT64,
-    offsetof(Gateway__TxConfiguration, has_frequency),
+    0,   /* quantifier_offset */
     offsetof(Gateway__TxConfiguration, frequency),
     NULL,
     NULL,
@@ -684,9 +692,9 @@ static const ProtobufCFieldDescriptor gateway__tx_configuration__field_descripto
   {
     "power",
     23,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_INT32,
-    offsetof(Gateway__TxConfiguration, has_power),
+    0,   /* quantifier_offset */
     offsetof(Gateway__TxConfiguration, power),
     NULL,
     NULL,
@@ -696,9 +704,9 @@ static const ProtobufCFieldDescriptor gateway__tx_configuration__field_descripto
   {
     "polarization_inversion",
     31,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(Gateway__TxConfiguration, has_polarization_inversion),
+    0,   /* quantifier_offset */
     offsetof(Gateway__TxConfiguration, polarization_inversion),
     NULL,
     NULL,
@@ -708,9 +716,9 @@ static const ProtobufCFieldDescriptor gateway__tx_configuration__field_descripto
   {
     "frequency_deviation",
     32,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Gateway__TxConfiguration, has_frequency_deviation),
+    0,   /* quantifier_offset */
     offsetof(Gateway__TxConfiguration, frequency_deviation),
     NULL,
     NULL,
@@ -753,9 +761,9 @@ static const ProtobufCFieldDescriptor gateway__status__osmetrics__field_descript
   {
     "load_1",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Gateway__Status__OSMetrics, has_load_1),
+    0,   /* quantifier_offset */
     offsetof(Gateway__Status__OSMetrics, load_1),
     NULL,
     NULL,
@@ -765,9 +773,9 @@ static const ProtobufCFieldDescriptor gateway__status__osmetrics__field_descript
   {
     "load_5",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Gateway__Status__OSMetrics, has_load_5),
+    0,   /* quantifier_offset */
     offsetof(Gateway__Status__OSMetrics, load_5),
     NULL,
     NULL,
@@ -777,9 +785,9 @@ static const ProtobufCFieldDescriptor gateway__status__osmetrics__field_descript
   {
     "load_15",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Gateway__Status__OSMetrics, has_load_15),
+    0,   /* quantifier_offset */
     offsetof(Gateway__Status__OSMetrics, load_15),
     NULL,
     NULL,
@@ -789,9 +797,9 @@ static const ProtobufCFieldDescriptor gateway__status__osmetrics__field_descript
   {
     "cpu_percentage",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Gateway__Status__OSMetrics, has_cpu_percentage),
+    0,   /* quantifier_offset */
     offsetof(Gateway__Status__OSMetrics, cpu_percentage),
     NULL,
     NULL,
@@ -801,9 +809,9 @@ static const ProtobufCFieldDescriptor gateway__status__osmetrics__field_descript
   {
     "memory_percentage",
     21,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Gateway__Status__OSMetrics, has_memory_percentage),
+    0,   /* quantifier_offset */
     offsetof(Gateway__Status__OSMetrics, memory_percentage),
     NULL,
     NULL,
@@ -813,9 +821,9 @@ static const ProtobufCFieldDescriptor gateway__status__osmetrics__field_descript
   {
     "temperature",
     31,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Gateway__Status__OSMetrics, has_temperature),
+    0,   /* quantifier_offset */
     offsetof(Gateway__Status__OSMetrics, temperature),
     NULL,
     NULL,
@@ -859,9 +867,9 @@ static const ProtobufCFieldDescriptor gateway__status__field_descriptors[26] =
   {
     "timestamp",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Gateway__Status, has_timestamp),
+    0,   /* quantifier_offset */
     offsetof(Gateway__Status, timestamp),
     NULL,
     NULL,
@@ -871,9 +879,9 @@ static const ProtobufCFieldDescriptor gateway__status__field_descriptors[26] =
   {
     "time",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_INT64,
-    offsetof(Gateway__Status, has_time),
+    0,   /* quantifier_offset */
     offsetof(Gateway__Status, time),
     NULL,
     NULL,
@@ -883,9 +891,9 @@ static const ProtobufCFieldDescriptor gateway__status__field_descriptors[26] =
   {
     "gateway_trusted",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(Gateway__Status, has_gateway_trusted),
+    0,   /* quantifier_offset */
     offsetof(Gateway__Status, gateway_trusted),
     NULL,
     NULL,
@@ -895,9 +903,9 @@ static const ProtobufCFieldDescriptor gateway__status__field_descriptors[26] =
   {
     "boot_time",
     4,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_INT64,
-    offsetof(Gateway__Status, has_boot_time),
+    0,   /* quantifier_offset */
     offsetof(Gateway__Status, boot_time),
     NULL,
     NULL,
@@ -912,88 +920,88 @@ static const ProtobufCFieldDescriptor gateway__status__field_descriptors[26] =
     offsetof(Gateway__Status, n_ip),
     offsetof(Gateway__Status, ip),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "platform",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Gateway__Status, platform),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "contact_email",
     13,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Gateway__Status, contact_email),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "description",
     14,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Gateway__Status, description),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "frequency_plan",
     15,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Gateway__Status, frequency_plan),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "bridge",
     16,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Gateway__Status, bridge),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "router",
     17,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Gateway__Status, router),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "fpga",
     18,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Gateway__Status, has_fpga),
+    0,   /* quantifier_offset */
     offsetof(Gateway__Status, fpga),
     NULL,
     NULL,
@@ -1003,9 +1011,9 @@ static const ProtobufCFieldDescriptor gateway__status__field_descriptors[26] =
   {
     "dsp",
     19,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Gateway__Status, has_dsp),
+    0,   /* quantifier_offset */
     offsetof(Gateway__Status, dsp),
     NULL,
     NULL,
@@ -1015,19 +1023,19 @@ static const ProtobufCFieldDescriptor gateway__status__field_descriptors[26] =
   {
     "hal",
     20,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Gateway__Status, hal),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "location",
     21,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Gateway__Status, location),
@@ -1039,9 +1047,9 @@ static const ProtobufCFieldDescriptor gateway__status__field_descriptors[26] =
   {
     "rtt",
     31,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Gateway__Status, has_rtt),
+    0,   /* quantifier_offset */
     offsetof(Gateway__Status, rtt),
     NULL,
     NULL,
@@ -1051,9 +1059,9 @@ static const ProtobufCFieldDescriptor gateway__status__field_descriptors[26] =
   {
     "rx_in",
     41,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Gateway__Status, has_rx_in),
+    0,   /* quantifier_offset */
     offsetof(Gateway__Status, rx_in),
     NULL,
     NULL,
@@ -1063,9 +1071,9 @@ static const ProtobufCFieldDescriptor gateway__status__field_descriptors[26] =
   {
     "rx_ok",
     42,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Gateway__Status, has_rx_ok),
+    0,   /* quantifier_offset */
     offsetof(Gateway__Status, rx_ok),
     NULL,
     NULL,
@@ -1075,9 +1083,9 @@ static const ProtobufCFieldDescriptor gateway__status__field_descriptors[26] =
   {
     "tx_in",
     43,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Gateway__Status, has_tx_in),
+    0,   /* quantifier_offset */
     offsetof(Gateway__Status, tx_in),
     NULL,
     NULL,
@@ -1087,9 +1095,9 @@ static const ProtobufCFieldDescriptor gateway__status__field_descriptors[26] =
   {
     "tx_ok",
     44,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Gateway__Status, has_tx_ok),
+    0,   /* quantifier_offset */
     offsetof(Gateway__Status, tx_ok),
     NULL,
     NULL,
@@ -1099,9 +1107,9 @@ static const ProtobufCFieldDescriptor gateway__status__field_descriptors[26] =
   {
     "lm_ok",
     45,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Gateway__Status, has_lm_ok),
+    0,   /* quantifier_offset */
     offsetof(Gateway__Status, lm_ok),
     NULL,
     NULL,
@@ -1111,9 +1119,9 @@ static const ProtobufCFieldDescriptor gateway__status__field_descriptors[26] =
   {
     "lm_st",
     46,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Gateway__Status, has_lm_st),
+    0,   /* quantifier_offset */
     offsetof(Gateway__Status, lm_st),
     NULL,
     NULL,
@@ -1123,9 +1131,9 @@ static const ProtobufCFieldDescriptor gateway__status__field_descriptors[26] =
   {
     "lm_nw",
     47,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Gateway__Status, has_lm_nw),
+    0,   /* quantifier_offset */
     offsetof(Gateway__Status, lm_nw),
     NULL,
     NULL,
@@ -1135,9 +1143,9 @@ static const ProtobufCFieldDescriptor gateway__status__field_descriptors[26] =
   {
     "l_pps",
     48,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Gateway__Status, has_l_pps),
+    0,   /* quantifier_offset */
     offsetof(Gateway__Status, l_pps),
     NULL,
     NULL,
@@ -1147,7 +1155,7 @@ static const ProtobufCFieldDescriptor gateway__status__field_descriptors[26] =
   {
     "os",
     51,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Gateway__Status, os),
@@ -1164,7 +1172,7 @@ static const ProtobufCFieldDescriptor gateway__status__field_descriptors[26] =
     offsetof(Gateway__Status, n_messages),
     offsetof(Gateway__Status, messages),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },

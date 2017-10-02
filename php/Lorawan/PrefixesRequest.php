@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>lorawan.PrefixesRequest</code>
+ * Generated from protobuf message <code>lorawan.PrefixesRequest</code>
  */
 class PrefixesRequest extends \Google\Protobuf\Internal\Message
 {

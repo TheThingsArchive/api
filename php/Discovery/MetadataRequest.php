@@ -9,36 +9,28 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * The metadata to add or remove from an announement
- * </pre>
  *
- * Protobuf type <code>discovery.MetadataRequest</code>
+ * Generated from protobuf message <code>discovery.MetadataRequest</code>
  */
 class MetadataRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * The ID of the service that should be modified
-     * </pre>
      *
-     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     private $id = '';
     /**
-     * <pre>
      * The name of the service (router/broker/handler) that should be modified
-     * </pre>
      *
-     * <code>string service_name = 2;</code>
+     * Generated from protobuf field <code>string service_name = 2;</code>
      */
     private $service_name = '';
     /**
-     * <pre>
      * Metadata to add or remove
-     * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     private $metadata = null;
 
@@ -48,11 +40,10 @@ class MetadataRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The ID of the service that should be modified
-     * </pre>
      *
-     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * @return string
      */
     public function getId()
     {
@@ -60,24 +51,25 @@ class MetadataRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The ID of the service that should be modified
-     * </pre>
      *
-     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setId($var)
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The name of the service (router/broker/handler) that should be modified
-     * </pre>
      *
-     * <code>string service_name = 2;</code>
+     * Generated from protobuf field <code>string service_name = 2;</code>
+     * @return string
      */
     public function getServiceName()
     {
@@ -85,24 +77,25 @@ class MetadataRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The name of the service (router/broker/handler) that should be modified
-     * </pre>
      *
-     * <code>string service_name = 2;</code>
+     * Generated from protobuf field <code>string service_name = 2;</code>
+     * @param string $var
+     * @return $this
      */
     public function setServiceName($var)
     {
         GPBUtil::checkString($var, True);
         $this->service_name = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Metadata to add or remove
-     * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
+     * @return \Discovery\Metadata
      */
     public function getMetadata()
     {
@@ -110,16 +103,18 @@ class MetadataRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Metadata to add or remove
-     * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
+     * @param \Discovery\Metadata $var
+     * @return $this
      */
-    public function setMetadata(&$var)
+    public function setMetadata($var)
     {
         GPBUtil::checkMessage($var, \Discovery\Metadata::class);
         $this->metadata = $var;
+
+        return $this;
     }
 
 }

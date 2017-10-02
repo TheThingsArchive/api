@@ -10,7 +10,7 @@
 void   lorawan__device_identifier__init
                      (Lorawan__DeviceIdentifier         *message)
 {
-  static Lorawan__DeviceIdentifier init_value = LORAWAN__DEVICE_IDENTIFIER__INIT;
+  static const Lorawan__DeviceIdentifier init_value = LORAWAN__DEVICE_IDENTIFIER__INIT;
   *message = init_value;
 }
 size_t lorawan__device_identifier__get_packed_size
@@ -47,13 +47,15 @@ void   lorawan__device_identifier__free_unpacked
                      (Lorawan__DeviceIdentifier *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &lorawan__device_identifier__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   lorawan__device__init
                      (Lorawan__Device         *message)
 {
-  static Lorawan__Device init_value = LORAWAN__DEVICE__INIT;
+  static const Lorawan__Device init_value = LORAWAN__DEVICE__INIT;
   *message = init_value;
 }
 size_t lorawan__device__get_packed_size
@@ -90,6 +92,8 @@ void   lorawan__device__free_unpacked
                      (Lorawan__Device *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &lorawan__device__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
@@ -98,9 +102,9 @@ static const ProtobufCFieldDescriptor lorawan__device_identifier__field_descript
   {
     "app_eui",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Lorawan__DeviceIdentifier, has_app_eui),
+    0,   /* quantifier_offset */
     offsetof(Lorawan__DeviceIdentifier, app_eui),
     NULL,
     NULL,
@@ -110,9 +114,9 @@ static const ProtobufCFieldDescriptor lorawan__device_identifier__field_descript
   {
     "dev_eui",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Lorawan__DeviceIdentifier, has_dev_eui),
+    0,   /* quantifier_offset */
     offsetof(Lorawan__DeviceIdentifier, dev_eui),
     NULL,
     NULL,
@@ -149,9 +153,9 @@ static const ProtobufCFieldDescriptor lorawan__device__field_descriptors[14] =
   {
     "app_eui",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Lorawan__Device, has_app_eui),
+    0,   /* quantifier_offset */
     offsetof(Lorawan__Device, app_eui),
     NULL,
     NULL,
@@ -161,9 +165,9 @@ static const ProtobufCFieldDescriptor lorawan__device__field_descriptors[14] =
   {
     "dev_eui",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Lorawan__Device, has_dev_eui),
+    0,   /* quantifier_offset */
     offsetof(Lorawan__Device, dev_eui),
     NULL,
     NULL,
@@ -173,33 +177,33 @@ static const ProtobufCFieldDescriptor lorawan__device__field_descriptors[14] =
   {
     "app_id",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Lorawan__Device, app_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "dev_id",
     4,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Lorawan__Device, dev_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "dev_addr",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Lorawan__Device, has_dev_addr),
+    0,   /* quantifier_offset */
     offsetof(Lorawan__Device, dev_addr),
     NULL,
     NULL,
@@ -209,9 +213,9 @@ static const ProtobufCFieldDescriptor lorawan__device__field_descriptors[14] =
   {
     "nwk_s_key",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Lorawan__Device, has_nwk_s_key),
+    0,   /* quantifier_offset */
     offsetof(Lorawan__Device, nwk_s_key),
     NULL,
     NULL,
@@ -221,9 +225,9 @@ static const ProtobufCFieldDescriptor lorawan__device__field_descriptors[14] =
   {
     "app_s_key",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Lorawan__Device, has_app_s_key),
+    0,   /* quantifier_offset */
     offsetof(Lorawan__Device, app_s_key),
     NULL,
     NULL,
@@ -233,9 +237,9 @@ static const ProtobufCFieldDescriptor lorawan__device__field_descriptors[14] =
   {
     "app_key",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Lorawan__Device, has_app_key),
+    0,   /* quantifier_offset */
     offsetof(Lorawan__Device, app_key),
     NULL,
     NULL,
@@ -245,9 +249,9 @@ static const ProtobufCFieldDescriptor lorawan__device__field_descriptors[14] =
   {
     "f_cnt_up",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Lorawan__Device, has_f_cnt_up),
+    0,   /* quantifier_offset */
     offsetof(Lorawan__Device, f_cnt_up),
     NULL,
     NULL,
@@ -257,9 +261,9 @@ static const ProtobufCFieldDescriptor lorawan__device__field_descriptors[14] =
   {
     "f_cnt_down",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Lorawan__Device, has_f_cnt_down),
+    0,   /* quantifier_offset */
     offsetof(Lorawan__Device, f_cnt_down),
     NULL,
     NULL,
@@ -269,9 +273,9 @@ static const ProtobufCFieldDescriptor lorawan__device__field_descriptors[14] =
   {
     "disable_f_cnt_check",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(Lorawan__Device, has_disable_f_cnt_check),
+    0,   /* quantifier_offset */
     offsetof(Lorawan__Device, disable_f_cnt_check),
     NULL,
     NULL,
@@ -281,9 +285,9 @@ static const ProtobufCFieldDescriptor lorawan__device__field_descriptors[14] =
   {
     "uses32_bit_f_cnt",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(Lorawan__Device, has_uses32_bit_f_cnt),
+    0,   /* quantifier_offset */
     offsetof(Lorawan__Device, uses32_bit_f_cnt),
     NULL,
     NULL,
@@ -293,21 +297,21 @@ static const ProtobufCFieldDescriptor lorawan__device__field_descriptors[14] =
   {
     "activation_constraints",
     13,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Lorawan__Device, activation_constraints),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "last_seen",
     21,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_INT64,
-    offsetof(Lorawan__Device, has_last_seen),
+    0,   /* quantifier_offset */
     offsetof(Lorawan__Device, last_seen),
     NULL,
     NULL,

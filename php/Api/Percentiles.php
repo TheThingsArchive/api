@@ -9,44 +9,44 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>api.Percentiles</code>
+ * Generated from protobuf message <code>api.Percentiles</code>
  */
 class Percentiles extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>float percentile1 = 1;</code>
+     * Generated from protobuf field <code>float percentile1 = 1;</code>
      */
     private $percentile1 = 0.0;
     /**
-     * <code>float percentile5 = 2;</code>
+     * Generated from protobuf field <code>float percentile5 = 2;</code>
      */
     private $percentile5 = 0.0;
     /**
-     * <code>float percentile10 = 3;</code>
+     * Generated from protobuf field <code>float percentile10 = 3;</code>
      */
     private $percentile10 = 0.0;
     /**
-     * <code>float percentile25 = 4;</code>
+     * Generated from protobuf field <code>float percentile25 = 4;</code>
      */
     private $percentile25 = 0.0;
     /**
-     * <code>float percentile50 = 5;</code>
+     * Generated from protobuf field <code>float percentile50 = 5;</code>
      */
     private $percentile50 = 0.0;
     /**
-     * <code>float percentile75 = 6;</code>
+     * Generated from protobuf field <code>float percentile75 = 6;</code>
      */
     private $percentile75 = 0.0;
     /**
-     * <code>float percentile90 = 7;</code>
+     * Generated from protobuf field <code>float percentile90 = 7;</code>
      */
     private $percentile90 = 0.0;
     /**
-     * <code>float percentile95 = 8;</code>
+     * Generated from protobuf field <code>float percentile95 = 8;</code>
      */
     private $percentile95 = 0.0;
     /**
-     * <code>float percentile99 = 9;</code>
+     * Generated from protobuf field <code>float percentile99 = 9;</code>
      */
     private $percentile99 = 0.0;
 
@@ -56,7 +56,8 @@ class Percentiles extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float percentile1 = 1;</code>
+     * Generated from protobuf field <code>float percentile1 = 1;</code>
+     * @return float
      */
     public function getPercentile1()
     {
@@ -64,16 +65,21 @@ class Percentiles extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float percentile1 = 1;</code>
+     * Generated from protobuf field <code>float percentile1 = 1;</code>
+     * @param float $var
+     * @return $this
      */
     public function setPercentile1($var)
     {
         GPBUtil::checkFloat($var);
         $this->percentile1 = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float percentile5 = 2;</code>
+     * Generated from protobuf field <code>float percentile5 = 2;</code>
+     * @return float
      */
     public function getPercentile5()
     {
@@ -81,16 +87,21 @@ class Percentiles extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float percentile5 = 2;</code>
+     * Generated from protobuf field <code>float percentile5 = 2;</code>
+     * @param float $var
+     * @return $this
      */
     public function setPercentile5($var)
     {
         GPBUtil::checkFloat($var);
         $this->percentile5 = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float percentile10 = 3;</code>
+     * Generated from protobuf field <code>float percentile10 = 3;</code>
+     * @return float
      */
     public function getPercentile10()
     {
@@ -98,16 +109,21 @@ class Percentiles extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float percentile10 = 3;</code>
+     * Generated from protobuf field <code>float percentile10 = 3;</code>
+     * @param float $var
+     * @return $this
      */
     public function setPercentile10($var)
     {
         GPBUtil::checkFloat($var);
         $this->percentile10 = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float percentile25 = 4;</code>
+     * Generated from protobuf field <code>float percentile25 = 4;</code>
+     * @return float
      */
     public function getPercentile25()
     {
@@ -115,16 +131,21 @@ class Percentiles extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float percentile25 = 4;</code>
+     * Generated from protobuf field <code>float percentile25 = 4;</code>
+     * @param float $var
+     * @return $this
      */
     public function setPercentile25($var)
     {
         GPBUtil::checkFloat($var);
         $this->percentile25 = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float percentile50 = 5;</code>
+     * Generated from protobuf field <code>float percentile50 = 5;</code>
+     * @return float
      */
     public function getPercentile50()
     {
@@ -132,16 +153,21 @@ class Percentiles extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float percentile50 = 5;</code>
+     * Generated from protobuf field <code>float percentile50 = 5;</code>
+     * @param float $var
+     * @return $this
      */
     public function setPercentile50($var)
     {
         GPBUtil::checkFloat($var);
         $this->percentile50 = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float percentile75 = 6;</code>
+     * Generated from protobuf field <code>float percentile75 = 6;</code>
+     * @return float
      */
     public function getPercentile75()
     {
@@ -149,16 +175,21 @@ class Percentiles extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float percentile75 = 6;</code>
+     * Generated from protobuf field <code>float percentile75 = 6;</code>
+     * @param float $var
+     * @return $this
      */
     public function setPercentile75($var)
     {
         GPBUtil::checkFloat($var);
         $this->percentile75 = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float percentile90 = 7;</code>
+     * Generated from protobuf field <code>float percentile90 = 7;</code>
+     * @return float
      */
     public function getPercentile90()
     {
@@ -166,16 +197,21 @@ class Percentiles extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float percentile90 = 7;</code>
+     * Generated from protobuf field <code>float percentile90 = 7;</code>
+     * @param float $var
+     * @return $this
      */
     public function setPercentile90($var)
     {
         GPBUtil::checkFloat($var);
         $this->percentile90 = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float percentile95 = 8;</code>
+     * Generated from protobuf field <code>float percentile95 = 8;</code>
+     * @return float
      */
     public function getPercentile95()
     {
@@ -183,16 +219,21 @@ class Percentiles extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float percentile95 = 8;</code>
+     * Generated from protobuf field <code>float percentile95 = 8;</code>
+     * @param float $var
+     * @return $this
      */
     public function setPercentile95($var)
     {
         GPBUtil::checkFloat($var);
         $this->percentile95 = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float percentile99 = 9;</code>
+     * Generated from protobuf field <code>float percentile99 = 9;</code>
+     * @return float
      */
     public function getPercentile99()
     {
@@ -200,12 +241,16 @@ class Percentiles extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float percentile99 = 9;</code>
+     * Generated from protobuf field <code>float percentile99 = 9;</code>
+     * @param float $var
+     * @return $this
      */
     public function setPercentile99($var)
     {
         GPBUtil::checkFloat($var);
         $this->percentile99 = $var;
+
+        return $this;
     }
 
 }

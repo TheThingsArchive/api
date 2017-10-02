@@ -9,16 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>discovery.GetByGatewayIDRequest</code>
+ * Generated from protobuf message <code>discovery.GetByGatewayIDRequest</code>
  */
 class GetByGatewayIDRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * compatible with Metadata message
-     * </pre>
      *
-     * <code>string gateway_id = 30 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 30 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     private $gateway_id = '';
 
@@ -28,11 +26,10 @@ class GetByGatewayIDRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * compatible with Metadata message
-     * </pre>
      *
-     * <code>string gateway_id = 30 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 30 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @return string
      */
     public function getGatewayId()
     {
@@ -40,16 +37,18 @@ class GetByGatewayIDRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * compatible with Metadata message
-     * </pre>
      *
-     * <code>string gateway_id = 30 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 30 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setGatewayId($var)
     {
         GPBUtil::checkString($var, True);
         $this->gateway_id = $var;
+
+        return $this;
     }
 
 }

@@ -9,16 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * A list of announcements
- * </pre>
  *
- * Protobuf type <code>discovery.AnnouncementsResponse</code>
+ * Generated from protobuf message <code>discovery.AnnouncementsResponse</code>
  */
 class AnnouncementsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>repeated .discovery.Announcement services = 1;</code>
+     * Generated from protobuf field <code>repeated .discovery.Announcement services = 1;</code>
      */
     private $services;
 
@@ -28,7 +26,8 @@ class AnnouncementsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>repeated .discovery.Announcement services = 1;</code>
+     * Generated from protobuf field <code>repeated .discovery.Announcement services = 1;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getServices()
     {
@@ -36,12 +35,16 @@ class AnnouncementsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>repeated .discovery.Announcement services = 1;</code>
+     * Generated from protobuf field <code>repeated .discovery.Announcement services = 1;</code>
+     * @param \Discovery\Announcement[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setServices(&$var)
+    public function setServices($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Discovery\Announcement::class);
         $this->services = $arr;
+
+        return $this;
     }
 
 }

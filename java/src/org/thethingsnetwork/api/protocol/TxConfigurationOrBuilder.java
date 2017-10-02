@@ -10,6 +10,10 @@ public interface TxConfigurationOrBuilder extends
   /**
    * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
    */
+  boolean hasLorawan();
+  /**
+   * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+   */
   org.thethingsnetwork.api.protocol.lorawan.TxConfiguration getLorawan();
   /**
    * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>

@@ -10,6 +10,7 @@ public  final class RxMetadata extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:gateway.RxMetadata)
     RxMetadataOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use RxMetadata.newBuilder() to construct.
   private RxMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -31,7 +32,7 @@ public  final class RxMetadata extends
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private RxMetadata(
       com.google.protobuf.CodedInputStream input,
@@ -39,6 +40,8 @@ public  final class RxMetadata extends
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     int mutable_bitField0_ = 0;
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -48,7 +51,8 @@ public  final class RxMetadata extends
             done = true;
             break;
           default: {
-            if (!input.skipField(tag)) {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
             break;
@@ -137,6 +141,7 @@ public  final class RxMetadata extends
       if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
         antennas_ = java.util.Collections.unmodifiableList(antennas_);
       }
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -227,6 +232,7 @@ public  final class RxMetadata extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gateway.RxMetadata.Antenna)
       AntennaOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Antenna.newBuilder() to construct.
     private Antenna(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -245,7 +251,7 @@ public  final class RxMetadata extends
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Antenna(
         com.google.protobuf.CodedInputStream input,
@@ -253,6 +259,8 @@ public  final class RxMetadata extends
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -262,7 +270,8 @@ public  final class RxMetadata extends
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -315,6 +324,7 @@ public  final class RxMetadata extends
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -462,6 +472,7 @@ public  final class RxMetadata extends
       if (!encryptedTime_.isEmpty()) {
         output.writeBytes(10, encryptedTime_);
       }
+      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -501,11 +512,11 @@ public  final class RxMetadata extends
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(10, encryptedTime_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -541,6 +552,7 @@ public  final class RxMetadata extends
               other.getSnr()));
       result = result && getEncryptedTime()
           .equals(other.getEncryptedTime());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -756,7 +768,7 @@ public  final class RxMetadata extends
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -769,12 +781,12 @@ public  final class RxMetadata extends
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -812,6 +824,7 @@ public  final class RxMetadata extends
         if (other.getEncryptedTime() != com.google.protobuf.ByteString.EMPTY) {
           setEncryptedTime(other.getEncryptedTime());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1122,12 +1135,12 @@ public  final class RxMetadata extends
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1417,6 +1430,7 @@ public  final class RxMetadata extends
     if (location_ != null) {
       output.writeMessage(41, getLocation());
     }
+    unknownFields.writeTo(output);
   }
 
   public int getSerializedSize() {
@@ -1471,11 +1485,11 @@ public  final class RxMetadata extends
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(41, getLocation());
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -1518,6 +1532,7 @@ public  final class RxMetadata extends
       result = result && getLocation()
           .equals(other.getLocation());
     }
+    result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
 
@@ -1781,7 +1796,7 @@ public  final class RxMetadata extends
     }
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
     public Builder clearField(
@@ -1794,12 +1809,12 @@ public  final class RxMetadata extends
     }
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1873,6 +1888,7 @@ public  final class RxMetadata extends
       if (other.hasLocation()) {
         mergeLocation(other.getLocation());
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -2648,12 +2664,12 @@ public  final class RxMetadata extends
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFieldsProto3(unknownFields);
     }
 
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 

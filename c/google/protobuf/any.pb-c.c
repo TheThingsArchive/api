@@ -10,7 +10,7 @@
 void   google__protobuf__any__init
                      (Google__Protobuf__Any         *message)
 {
-  static Google__Protobuf__Any init_value = GOOGLE__PROTOBUF__ANY__INIT;
+  static const Google__Protobuf__Any init_value = GOOGLE__PROTOBUF__ANY__INIT;
   *message = init_value;
 }
 size_t google__protobuf__any__get_packed_size
@@ -47,6 +47,8 @@ void   google__protobuf__any__free_unpacked
                      (Google__Protobuf__Any *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__any__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
@@ -55,21 +57,21 @@ static const ProtobufCFieldDescriptor google__protobuf__any__field_descriptors[2
   {
     "type_url",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Google__Protobuf__Any, type_url),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "value",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Google__Protobuf__Any, has_value),
+    0,   /* quantifier_offset */
     offsetof(Google__Protobuf__Any, value),
     NULL,
     NULL,

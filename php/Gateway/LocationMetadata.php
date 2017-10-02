@@ -9,52 +9,42 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>gateway.LocationMetadata</code>
+ * Generated from protobuf message <code>gateway.LocationMetadata</code>
  */
 class LocationMetadata extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * Time (unix nanoseconds)
-     * </pre>
      *
-     * <code>int64 time = 1;</code>
+     * Generated from protobuf field <code>int64 time = 1;</code>
      */
     private $time = 0;
     /**
-     * <pre>
      * the north–south position (degrees; -90 to +90), where 0 is the equator, north pole is positive, south pole is negative
-     * </pre>
      *
-     * <code>float latitude = 2;</code>
+     * Generated from protobuf field <code>float latitude = 2;</code>
      */
     private $latitude = 0.0;
     /**
-     * <pre>
      * the east-west position (degrees; -180 to +180), where 0 is the Prime Meridian (Greenwich), east is positive , west is negative
-     * </pre>
      *
-     * <code>float longitude = 3;</code>
+     * Generated from protobuf field <code>float longitude = 3;</code>
      */
     private $longitude = 0.0;
     /**
-     * <pre>
      * the altitude (meters), where 0 is the mean sea level
-     * </pre>
      *
-     * <code>int32 altitude = 4;</code>
+     * Generated from protobuf field <code>int32 altitude = 4;</code>
      */
     private $altitude = 0;
     /**
-     * <pre>
      * the accuracy of the location (meters)
-     * </pre>
      *
-     * <code>int32 accuracy = 5;</code>
+     * Generated from protobuf field <code>int32 accuracy = 5;</code>
      */
     private $accuracy = 0;
     /**
-     * <code>.gateway.LocationMetadata.LocationSource source = 6;</code>
+     * Generated from protobuf field <code>.gateway.LocationMetadata.LocationSource source = 6;</code>
      */
     private $source = 0;
 
@@ -64,11 +54,10 @@ class LocationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Time (unix nanoseconds)
-     * </pre>
      *
-     * <code>int64 time = 1;</code>
+     * Generated from protobuf field <code>int64 time = 1;</code>
+     * @return int|string
      */
     public function getTime()
     {
@@ -76,24 +65,25 @@ class LocationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Time (unix nanoseconds)
-     * </pre>
      *
-     * <code>int64 time = 1;</code>
+     * Generated from protobuf field <code>int64 time = 1;</code>
+     * @param int|string $var
+     * @return $this
      */
     public function setTime($var)
     {
         GPBUtil::checkInt64($var);
         $this->time = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * the north–south position (degrees; -90 to +90), where 0 is the equator, north pole is positive, south pole is negative
-     * </pre>
      *
-     * <code>float latitude = 2;</code>
+     * Generated from protobuf field <code>float latitude = 2;</code>
+     * @return float
      */
     public function getLatitude()
     {
@@ -101,24 +91,25 @@ class LocationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * the north–south position (degrees; -90 to +90), where 0 is the equator, north pole is positive, south pole is negative
-     * </pre>
      *
-     * <code>float latitude = 2;</code>
+     * Generated from protobuf field <code>float latitude = 2;</code>
+     * @param float $var
+     * @return $this
      */
     public function setLatitude($var)
     {
         GPBUtil::checkFloat($var);
         $this->latitude = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * the east-west position (degrees; -180 to +180), where 0 is the Prime Meridian (Greenwich), east is positive , west is negative
-     * </pre>
      *
-     * <code>float longitude = 3;</code>
+     * Generated from protobuf field <code>float longitude = 3;</code>
+     * @return float
      */
     public function getLongitude()
     {
@@ -126,24 +117,25 @@ class LocationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * the east-west position (degrees; -180 to +180), where 0 is the Prime Meridian (Greenwich), east is positive , west is negative
-     * </pre>
      *
-     * <code>float longitude = 3;</code>
+     * Generated from protobuf field <code>float longitude = 3;</code>
+     * @param float $var
+     * @return $this
      */
     public function setLongitude($var)
     {
         GPBUtil::checkFloat($var);
         $this->longitude = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * the altitude (meters), where 0 is the mean sea level
-     * </pre>
      *
-     * <code>int32 altitude = 4;</code>
+     * Generated from protobuf field <code>int32 altitude = 4;</code>
+     * @return int
      */
     public function getAltitude()
     {
@@ -151,24 +143,25 @@ class LocationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * the altitude (meters), where 0 is the mean sea level
-     * </pre>
      *
-     * <code>int32 altitude = 4;</code>
+     * Generated from protobuf field <code>int32 altitude = 4;</code>
+     * @param int $var
+     * @return $this
      */
     public function setAltitude($var)
     {
         GPBUtil::checkInt32($var);
         $this->altitude = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * the accuracy of the location (meters)
-     * </pre>
      *
-     * <code>int32 accuracy = 5;</code>
+     * Generated from protobuf field <code>int32 accuracy = 5;</code>
+     * @return int
      */
     public function getAccuracy()
     {
@@ -176,20 +169,23 @@ class LocationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * the accuracy of the location (meters)
-     * </pre>
      *
-     * <code>int32 accuracy = 5;</code>
+     * Generated from protobuf field <code>int32 accuracy = 5;</code>
+     * @param int $var
+     * @return $this
      */
     public function setAccuracy($var)
     {
         GPBUtil::checkInt32($var);
         $this->accuracy = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.gateway.LocationMetadata.LocationSource source = 6;</code>
+     * Generated from protobuf field <code>.gateway.LocationMetadata.LocationSource source = 6;</code>
+     * @return int
      */
     public function getSource()
     {
@@ -197,12 +193,16 @@ class LocationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.gateway.LocationMetadata.LocationSource source = 6;</code>
+     * Generated from protobuf field <code>.gateway.LocationMetadata.LocationSource source = 6;</code>
+     * @param int $var
+     * @return $this
      */
     public function setSource($var)
     {
         GPBUtil::checkEnum($var, \Gateway\LocationMetadata_LocationSource::class);
         $this->source = $var;
+
+        return $this;
     }
 
 }

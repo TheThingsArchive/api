@@ -10,13 +10,13 @@
 void   google__protobuf__struct__fields_entry__init
                      (Google__Protobuf__Struct__FieldsEntry         *message)
 {
-  static Google__Protobuf__Struct__FieldsEntry init_value = GOOGLE__PROTOBUF__STRUCT__FIELDS_ENTRY__INIT;
+  static const Google__Protobuf__Struct__FieldsEntry init_value = GOOGLE__PROTOBUF__STRUCT__FIELDS_ENTRY__INIT;
   *message = init_value;
 }
 void   google__protobuf__struct__init
                      (Google__Protobuf__Struct         *message)
 {
-  static Google__Protobuf__Struct init_value = GOOGLE__PROTOBUF__STRUCT__INIT;
+  static const Google__Protobuf__Struct init_value = GOOGLE__PROTOBUF__STRUCT__INIT;
   *message = init_value;
 }
 size_t google__protobuf__struct__get_packed_size
@@ -53,13 +53,15 @@ void   google__protobuf__struct__free_unpacked
                      (Google__Protobuf__Struct *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__struct__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__value__init
                      (Google__Protobuf__Value         *message)
 {
-  static Google__Protobuf__Value init_value = GOOGLE__PROTOBUF__VALUE__INIT;
+  static const Google__Protobuf__Value init_value = GOOGLE__PROTOBUF__VALUE__INIT;
   *message = init_value;
 }
 size_t google__protobuf__value__get_packed_size
@@ -96,13 +98,15 @@ void   google__protobuf__value__free_unpacked
                      (Google__Protobuf__Value *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__value__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__list_value__init
                      (Google__Protobuf__ListValue         *message)
 {
-  static Google__Protobuf__ListValue init_value = GOOGLE__PROTOBUF__LIST_VALUE__INIT;
+  static const Google__Protobuf__ListValue init_value = GOOGLE__PROTOBUF__LIST_VALUE__INIT;
   *message = init_value;
 }
 size_t google__protobuf__list_value__get_packed_size
@@ -139,6 +143,8 @@ void   google__protobuf__list_value__free_unpacked
                      (Google__Protobuf__ListValue *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__list_value__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
@@ -147,19 +153,19 @@ static const ProtobufCFieldDescriptor google__protobuf__struct__fields_entry__fi
   {
     "key",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Google__Protobuf__Struct__FieldsEntry, key),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "value",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Google__Protobuf__Struct__FieldsEntry, value),
@@ -236,7 +242,7 @@ static const ProtobufCFieldDescriptor google__protobuf__value__field_descriptors
   {
     "null_value",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
     offsetof(Google__Protobuf__Value, kind_case),
     offsetof(Google__Protobuf__Value, null_value),
@@ -248,7 +254,7 @@ static const ProtobufCFieldDescriptor google__protobuf__value__field_descriptors
   {
     "number_value",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_DOUBLE,
     offsetof(Google__Protobuf__Value, kind_case),
     offsetof(Google__Protobuf__Value, number_value),
@@ -260,19 +266,19 @@ static const ProtobufCFieldDescriptor google__protobuf__value__field_descriptors
   {
     "string_value",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     offsetof(Google__Protobuf__Value, kind_case),
     offsetof(Google__Protobuf__Value, string_value),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "bool_value",
     4,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BOOL,
     offsetof(Google__Protobuf__Value, kind_case),
     offsetof(Google__Protobuf__Value, bool_value),
@@ -284,7 +290,7 @@ static const ProtobufCFieldDescriptor google__protobuf__value__field_descriptors
   {
     "struct_value",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     offsetof(Google__Protobuf__Value, kind_case),
     offsetof(Google__Protobuf__Value, struct_value),
@@ -296,7 +302,7 @@ static const ProtobufCFieldDescriptor google__protobuf__value__field_descriptors
   {
     "list_value",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     offsetof(Google__Protobuf__Value, kind_case),
     offsetof(Google__Protobuf__Value, list_value),

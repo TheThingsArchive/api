@@ -9,52 +9,50 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>broker.Status</code>
+ * Generated from protobuf message <code>broker.Status</code>
  */
 class Status extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
      */
     private $system = null;
     /**
-     * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
      */
     private $component = null;
     /**
-     * <code>.api.Rates uplink = 11;</code>
+     * Generated from protobuf field <code>.api.Rates uplink = 11;</code>
      */
     private $uplink = null;
     /**
-     * <code>.api.Rates uplink_unique = 12;</code>
+     * Generated from protobuf field <code>.api.Rates uplink_unique = 12;</code>
      */
     private $uplink_unique = null;
     /**
-     * <code>.api.Rates downlink = 13;</code>
+     * Generated from protobuf field <code>.api.Rates downlink = 13;</code>
      */
     private $downlink = null;
     /**
-     * <code>.api.Rates activations = 14;</code>
+     * Generated from protobuf field <code>.api.Rates activations = 14;</code>
      */
     private $activations = null;
     /**
-     * <code>.api.Rates activations_unique = 15;</code>
+     * Generated from protobuf field <code>.api.Rates activations_unique = 15;</code>
      */
     private $activations_unique = null;
     /**
-     * <code>.api.Percentiles deduplication = 16;</code>
+     * Generated from protobuf field <code>.api.Percentiles deduplication = 16;</code>
      */
     private $deduplication = null;
     /**
-     * <pre>
      * Connections
-     * </pre>
      *
-     * <code>uint32 connected_routers = 21;</code>
+     * Generated from protobuf field <code>uint32 connected_routers = 21;</code>
      */
     private $connected_routers = 0;
     /**
-     * <code>uint32 connected_handlers = 22;</code>
+     * Generated from protobuf field <code>uint32 connected_handlers = 22;</code>
      */
     private $connected_handlers = 0;
 
@@ -64,7 +62,8 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
+     * @return \Api\SystemStats
      */
     public function getSystem()
     {
@@ -72,16 +71,21 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
+     * @param \Api\SystemStats $var
+     * @return $this
      */
-    public function setSystem(&$var)
+    public function setSystem($var)
     {
         GPBUtil::checkMessage($var, \Api\SystemStats::class);
         $this->system = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
+     * @return \Api\ComponentStats
      */
     public function getComponent()
     {
@@ -89,16 +93,21 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
+     * @param \Api\ComponentStats $var
+     * @return $this
      */
-    public function setComponent(&$var)
+    public function setComponent($var)
     {
         GPBUtil::checkMessage($var, \Api\ComponentStats::class);
         $this->component = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.api.Rates uplink = 11;</code>
+     * Generated from protobuf field <code>.api.Rates uplink = 11;</code>
+     * @return \Api\Rates
      */
     public function getUplink()
     {
@@ -106,16 +115,21 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.Rates uplink = 11;</code>
+     * Generated from protobuf field <code>.api.Rates uplink = 11;</code>
+     * @param \Api\Rates $var
+     * @return $this
      */
-    public function setUplink(&$var)
+    public function setUplink($var)
     {
         GPBUtil::checkMessage($var, \Api\Rates::class);
         $this->uplink = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.api.Rates uplink_unique = 12;</code>
+     * Generated from protobuf field <code>.api.Rates uplink_unique = 12;</code>
+     * @return \Api\Rates
      */
     public function getUplinkUnique()
     {
@@ -123,16 +137,21 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.Rates uplink_unique = 12;</code>
+     * Generated from protobuf field <code>.api.Rates uplink_unique = 12;</code>
+     * @param \Api\Rates $var
+     * @return $this
      */
-    public function setUplinkUnique(&$var)
+    public function setUplinkUnique($var)
     {
         GPBUtil::checkMessage($var, \Api\Rates::class);
         $this->uplink_unique = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.api.Rates downlink = 13;</code>
+     * Generated from protobuf field <code>.api.Rates downlink = 13;</code>
+     * @return \Api\Rates
      */
     public function getDownlink()
     {
@@ -140,16 +159,21 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.Rates downlink = 13;</code>
+     * Generated from protobuf field <code>.api.Rates downlink = 13;</code>
+     * @param \Api\Rates $var
+     * @return $this
      */
-    public function setDownlink(&$var)
+    public function setDownlink($var)
     {
         GPBUtil::checkMessage($var, \Api\Rates::class);
         $this->downlink = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.api.Rates activations = 14;</code>
+     * Generated from protobuf field <code>.api.Rates activations = 14;</code>
+     * @return \Api\Rates
      */
     public function getActivations()
     {
@@ -157,16 +181,21 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.Rates activations = 14;</code>
+     * Generated from protobuf field <code>.api.Rates activations = 14;</code>
+     * @param \Api\Rates $var
+     * @return $this
      */
-    public function setActivations(&$var)
+    public function setActivations($var)
     {
         GPBUtil::checkMessage($var, \Api\Rates::class);
         $this->activations = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.api.Rates activations_unique = 15;</code>
+     * Generated from protobuf field <code>.api.Rates activations_unique = 15;</code>
+     * @return \Api\Rates
      */
     public function getActivationsUnique()
     {
@@ -174,16 +203,21 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.Rates activations_unique = 15;</code>
+     * Generated from protobuf field <code>.api.Rates activations_unique = 15;</code>
+     * @param \Api\Rates $var
+     * @return $this
      */
-    public function setActivationsUnique(&$var)
+    public function setActivationsUnique($var)
     {
         GPBUtil::checkMessage($var, \Api\Rates::class);
         $this->activations_unique = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.api.Percentiles deduplication = 16;</code>
+     * Generated from protobuf field <code>.api.Percentiles deduplication = 16;</code>
+     * @return \Api\Percentiles
      */
     public function getDeduplication()
     {
@@ -191,20 +225,23 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.Percentiles deduplication = 16;</code>
+     * Generated from protobuf field <code>.api.Percentiles deduplication = 16;</code>
+     * @param \Api\Percentiles $var
+     * @return $this
      */
-    public function setDeduplication(&$var)
+    public function setDeduplication($var)
     {
         GPBUtil::checkMessage($var, \Api\Percentiles::class);
         $this->deduplication = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Connections
-     * </pre>
      *
-     * <code>uint32 connected_routers = 21;</code>
+     * Generated from protobuf field <code>uint32 connected_routers = 21;</code>
+     * @return int
      */
     public function getConnectedRouters()
     {
@@ -212,20 +249,23 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Connections
-     * </pre>
      *
-     * <code>uint32 connected_routers = 21;</code>
+     * Generated from protobuf field <code>uint32 connected_routers = 21;</code>
+     * @param int $var
+     * @return $this
      */
     public function setConnectedRouters($var)
     {
         GPBUtil::checkUint32($var);
         $this->connected_routers = $var;
+
+        return $this;
     }
 
     /**
-     * <code>uint32 connected_handlers = 22;</code>
+     * Generated from protobuf field <code>uint32 connected_handlers = 22;</code>
+     * @return int
      */
     public function getConnectedHandlers()
     {
@@ -233,12 +273,16 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 connected_handlers = 22;</code>
+     * Generated from protobuf field <code>uint32 connected_handlers = 22;</code>
+     * @param int $var
+     * @return $this
      */
     public function setConnectedHandlers($var)
     {
         GPBUtil::checkUint32($var);
         $this->connected_handlers = $var;
+
+        return $this;
     }
 
 }

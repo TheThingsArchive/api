@@ -10,7 +10,7 @@
 void   google__protobuf__field_mask__init
                      (Google__Protobuf__FieldMask         *message)
 {
-  static Google__Protobuf__FieldMask init_value = GOOGLE__PROTOBUF__FIELD_MASK__INIT;
+  static const Google__Protobuf__FieldMask init_value = GOOGLE__PROTOBUF__FIELD_MASK__INIT;
   *message = init_value;
 }
 size_t google__protobuf__field_mask__get_packed_size
@@ -47,6 +47,8 @@ void   google__protobuf__field_mask__free_unpacked
                      (Google__Protobuf__FieldMask *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__field_mask__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
@@ -60,7 +62,7 @@ static const ProtobufCFieldDescriptor google__protobuf__field_mask__field_descri
     offsetof(Google__Protobuf__FieldMask, n_paths),
     offsetof(Google__Protobuf__FieldMask, paths),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },

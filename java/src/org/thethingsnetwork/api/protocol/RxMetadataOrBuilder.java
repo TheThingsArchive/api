@@ -10,6 +10,10 @@ public interface RxMetadataOrBuilder extends
   /**
    * <code>.lorawan.Metadata lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
    */
+  boolean hasLorawan();
+  /**
+   * <code>.lorawan.Metadata lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+   */
   org.thethingsnetwork.api.protocol.lorawan.Metadata getLorawan();
   /**
    * <code>.lorawan.Metadata lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>

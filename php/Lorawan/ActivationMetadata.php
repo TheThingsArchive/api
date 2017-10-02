@@ -9,44 +9,44 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>lorawan.ActivationMetadata</code>
+ * Generated from protobuf message <code>lorawan.ActivationMetadata</code>
  */
 class ActivationMetadata extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     private $app_eui = '';
     /**
-     * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * Generated from protobuf field <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     private $dev_eui = '';
     /**
-     * <code>bytes dev_addr = 3 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * Generated from protobuf field <code>bytes dev_addr = 3 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
     private $dev_addr = '';
     /**
-     * <code>bytes nwk_s_key = 4 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+     * Generated from protobuf field <code>bytes nwk_s_key = 4 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
      */
     private $nwk_s_key = '';
     /**
-     * <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
+     * Generated from protobuf field <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      */
     private $rx1_dr_offset = 0;
     /**
-     * <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
+     * Generated from protobuf field <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
      */
     private $rx2_dr = 0;
     /**
-     * <code>uint32 rx_delay = 13;</code>
+     * Generated from protobuf field <code>uint32 rx_delay = 13;</code>
      */
     private $rx_delay = 0;
     /**
-     * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
+     * Generated from protobuf field <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
      */
     private $cf_list = null;
     /**
-     * <code>.lorawan.FrequencyPlan frequency_plan = 15;</code>
+     * Generated from protobuf field <code>.lorawan.FrequencyPlan frequency_plan = 15;</code>
      */
     private $frequency_plan = 0;
 
@@ -56,7 +56,8 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @return string
      */
     public function getAppEui()
     {
@@ -64,16 +65,21 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setAppEui($var)
     {
         GPBUtil::checkString($var, False);
         $this->app_eui = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * Generated from protobuf field <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @return string
      */
     public function getDevEui()
     {
@@ -81,16 +87,21 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * Generated from protobuf field <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setDevEui($var)
     {
         GPBUtil::checkString($var, False);
         $this->dev_eui = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes dev_addr = 3 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * Generated from protobuf field <code>bytes dev_addr = 3 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * @return string
      */
     public function getDevAddr()
     {
@@ -98,16 +109,21 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes dev_addr = 3 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * Generated from protobuf field <code>bytes dev_addr = 3 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setDevAddr($var)
     {
         GPBUtil::checkString($var, False);
         $this->dev_addr = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes nwk_s_key = 4 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+     * Generated from protobuf field <code>bytes nwk_s_key = 4 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+     * @return string
      */
     public function getNwkSKey()
     {
@@ -115,16 +131,21 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes nwk_s_key = 4 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+     * Generated from protobuf field <code>bytes nwk_s_key = 4 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setNwkSKey($var)
     {
         GPBUtil::checkString($var, False);
         $this->nwk_s_key = $var;
+
+        return $this;
     }
 
     /**
-     * <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
+     * Generated from protobuf field <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
+     * @return int
      */
     public function getRx1DrOffset()
     {
@@ -132,16 +153,21 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
+     * Generated from protobuf field <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
+     * @param int $var
+     * @return $this
      */
     public function setRx1DrOffset($var)
     {
         GPBUtil::checkUint32($var);
         $this->rx1_dr_offset = $var;
+
+        return $this;
     }
 
     /**
-     * <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
+     * Generated from protobuf field <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
+     * @return int
      */
     public function getRx2Dr()
     {
@@ -149,16 +175,21 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
+     * Generated from protobuf field <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
+     * @param int $var
+     * @return $this
      */
     public function setRx2Dr($var)
     {
         GPBUtil::checkUint32($var);
         $this->rx2_dr = $var;
+
+        return $this;
     }
 
     /**
-     * <code>uint32 rx_delay = 13;</code>
+     * Generated from protobuf field <code>uint32 rx_delay = 13;</code>
+     * @return int
      */
     public function getRxDelay()
     {
@@ -166,16 +197,21 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 rx_delay = 13;</code>
+     * Generated from protobuf field <code>uint32 rx_delay = 13;</code>
+     * @param int $var
+     * @return $this
      */
     public function setRxDelay($var)
     {
         GPBUtil::checkUint32($var);
         $this->rx_delay = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
+     * Generated from protobuf field <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
+     * @return \Lorawan\CFList
      */
     public function getCfList()
     {
@@ -183,16 +219,21 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
+     * Generated from protobuf field <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
+     * @param \Lorawan\CFList $var
+     * @return $this
      */
-    public function setCfList(&$var)
+    public function setCfList($var)
     {
         GPBUtil::checkMessage($var, \Lorawan\CFList::class);
         $this->cf_list = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.lorawan.FrequencyPlan frequency_plan = 15;</code>
+     * Generated from protobuf field <code>.lorawan.FrequencyPlan frequency_plan = 15;</code>
+     * @return int
      */
     public function getFrequencyPlan()
     {
@@ -200,12 +241,16 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.FrequencyPlan frequency_plan = 15;</code>
+     * Generated from protobuf field <code>.lorawan.FrequencyPlan frequency_plan = 15;</code>
+     * @param int $var
+     * @return $this
      */
     public function setFrequencyPlan($var)
     {
         GPBUtil::checkEnum($var, \Lorawan\FrequencyPlan::class);
         $this->frequency_plan = $var;
+
+        return $this;
     }
 
 }

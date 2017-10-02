@@ -5,16 +5,16 @@
 namespace Lorawan;
 
 /**
- * Protobuf enum <code>lorawan.Modulation</code>
+ * Protobuf enum <code>Lorawan\Modulation</code>
  */
 class Modulation
 {
     /**
-     * <code>LORA = 0;</code>
+     * Generated from protobuf enum <code>LORA = 0;</code>
      */
     const LORA = 0;
     /**
-     * <code>FSK = 1;</code>
+     * Generated from protobuf enum <code>FSK = 1;</code>
      */
     const FSK = 1;
 }

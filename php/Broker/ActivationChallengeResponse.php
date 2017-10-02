@@ -9,16 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>broker.ActivationChallengeResponse</code>
+ * Generated from protobuf message <code>broker.ActivationChallengeResponse</code>
  */
 class ActivationChallengeResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
      */
     private $payload = '';
     /**
-     * <code>.protocol.Message message = 2;</code>
+     * Generated from protobuf field <code>.protocol.Message message = 2;</code>
      */
     private $message = null;
 
@@ -28,7 +28,8 @@ class ActivationChallengeResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
+     * @return string
      */
     public function getPayload()
     {
@@ -36,16 +37,21 @@ class ActivationChallengeResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPayload($var)
     {
         GPBUtil::checkString($var, False);
         $this->payload = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.protocol.Message message = 2;</code>
+     * Generated from protobuf field <code>.protocol.Message message = 2;</code>
+     * @return \Protocol\Message
      */
     public function getMessage()
     {
@@ -53,12 +59,16 @@ class ActivationChallengeResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.protocol.Message message = 2;</code>
+     * Generated from protobuf field <code>.protocol.Message message = 2;</code>
+     * @param \Protocol\Message $var
+     * @return $this
      */
-    public function setMessage(&$var)
+    public function setMessage($var)
     {
         GPBUtil::checkMessage($var, \Protocol\Message::class);
         $this->message = $var;
+
+        return $this;
     }
 
 }

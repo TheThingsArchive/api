@@ -9,48 +9,46 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * received from the Router
- * </pre>
  *
- * Protobuf type <code>broker.DeviceActivationRequest</code>
+ * Generated from protobuf message <code>broker.DeviceActivationRequest</code>
  */
 class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
      */
     private $payload = '';
     /**
-     * <code>.protocol.Message message = 2;</code>
+     * Generated from protobuf field <code>.protocol.Message message = 2;</code>
      */
     private $message = null;
     /**
-     * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * Generated from protobuf field <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     private $dev_eui = '';
     /**
-     * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     private $app_eui = '';
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     private $protocol_metadata = null;
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
      */
     private $gateway_metadata = null;
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+     * Generated from protobuf field <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
      */
     private $activation_metadata = null;
     /**
-     * <code>repeated .broker.DownlinkOption downlink_options = 31;</code>
+     * Generated from protobuf field <code>repeated .broker.DownlinkOption downlink_options = 31;</code>
      */
     private $downlink_options;
     /**
-     * <code>.trace.Trace trace = 41;</code>
+     * Generated from protobuf field <code>.trace.Trace trace = 41;</code>
      */
     private $trace = null;
 
@@ -60,7 +58,8 @@ class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
+     * @return string
      */
     public function getPayload()
     {
@@ -68,16 +67,21 @@ class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPayload($var)
     {
         GPBUtil::checkString($var, False);
         $this->payload = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.protocol.Message message = 2;</code>
+     * Generated from protobuf field <code>.protocol.Message message = 2;</code>
+     * @return \Protocol\Message
      */
     public function getMessage()
     {
@@ -85,16 +89,21 @@ class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.protocol.Message message = 2;</code>
+     * Generated from protobuf field <code>.protocol.Message message = 2;</code>
+     * @param \Protocol\Message $var
+     * @return $this
      */
-    public function setMessage(&$var)
+    public function setMessage($var)
     {
         GPBUtil::checkMessage($var, \Protocol\Message::class);
         $this->message = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * Generated from protobuf field <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @return string
      */
     public function getDevEui()
     {
@@ -102,16 +111,21 @@ class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * Generated from protobuf field <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setDevEui($var)
     {
         GPBUtil::checkString($var, False);
         $this->dev_eui = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @return string
      */
     public function getAppEui()
     {
@@ -119,16 +133,21 @@ class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setAppEui($var)
     {
         GPBUtil::checkString($var, False);
         $this->app_eui = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
+     * @return \Protocol\RxMetadata
      */
     public function getProtocolMetadata()
     {
@@ -136,16 +155,21 @@ class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
+     * @param \Protocol\RxMetadata $var
+     * @return $this
      */
-    public function setProtocolMetadata(&$var)
+    public function setProtocolMetadata($var)
     {
         GPBUtil::checkMessage($var, \Protocol\RxMetadata::class);
         $this->protocol_metadata = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
+     * @return \Gateway\RxMetadata
      */
     public function getGatewayMetadata()
     {
@@ -153,16 +177,21 @@ class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
+     * @param \Gateway\RxMetadata $var
+     * @return $this
      */
-    public function setGatewayMetadata(&$var)
+    public function setGatewayMetadata($var)
     {
         GPBUtil::checkMessage($var, \Gateway\RxMetadata::class);
         $this->gateway_metadata = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+     * Generated from protobuf field <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+     * @return \Protocol\ActivationMetadata
      */
     public function getActivationMetadata()
     {
@@ -170,16 +199,21 @@ class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+     * Generated from protobuf field <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+     * @param \Protocol\ActivationMetadata $var
+     * @return $this
      */
-    public function setActivationMetadata(&$var)
+    public function setActivationMetadata($var)
     {
         GPBUtil::checkMessage($var, \Protocol\ActivationMetadata::class);
         $this->activation_metadata = $var;
+
+        return $this;
     }
 
     /**
-     * <code>repeated .broker.DownlinkOption downlink_options = 31;</code>
+     * Generated from protobuf field <code>repeated .broker.DownlinkOption downlink_options = 31;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getDownlinkOptions()
     {
@@ -187,16 +221,21 @@ class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>repeated .broker.DownlinkOption downlink_options = 31;</code>
+     * Generated from protobuf field <code>repeated .broker.DownlinkOption downlink_options = 31;</code>
+     * @param \Broker\DownlinkOption[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setDownlinkOptions(&$var)
+    public function setDownlinkOptions($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Broker\DownlinkOption::class);
         $this->downlink_options = $arr;
+
+        return $this;
     }
 
     /**
-     * <code>.trace.Trace trace = 41;</code>
+     * Generated from protobuf field <code>.trace.Trace trace = 41;</code>
+     * @return \Trace\Trace
      */
     public function getTrace()
     {
@@ -204,12 +243,16 @@ class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.trace.Trace trace = 41;</code>
+     * Generated from protobuf field <code>.trace.Trace trace = 41;</code>
+     * @param \Trace\Trace $var
+     * @return $this
      */
-    public function setTrace(&$var)
+    public function setTrace($var)
     {
         GPBUtil::checkMessage($var, \Trace\Trace::class);
         $this->trace = $var;
+
+        return $this;
     }
 
 }

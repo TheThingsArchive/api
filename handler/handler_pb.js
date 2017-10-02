@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -72,6 +74,7 @@ proto.handler.DeviceActivationResponse.prototype.toObject = function(opt_include
  *     http://goto/soy-param-migration
  * @param {!proto.handler.DeviceActivationResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.DeviceActivationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -165,6 +168,7 @@ proto.handler.DeviceActivationResponse.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.handler.DeviceActivationResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.DeviceActivationResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -412,6 +416,7 @@ proto.handler.StatusRequest.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.handler.StatusRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.StatusRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -477,6 +482,7 @@ proto.handler.StatusRequest.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.handler.StatusRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.StatusRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -526,6 +532,7 @@ proto.handler.Status.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.handler.Status} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.Status.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -620,6 +627,7 @@ proto.handler.Status.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.handler.Status} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.Status.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -859,6 +867,7 @@ proto.handler.ApplicationIdentifier.prototype.toObject = function(opt_includeIns
  *     http://goto/soy-param-migration
  * @param {!proto.handler.ApplicationIdentifier} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.ApplicationIdentifier.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -928,6 +937,7 @@ proto.handler.ApplicationIdentifier.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.handler.ApplicationIdentifier} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.ApplicationIdentifier.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -999,6 +1009,7 @@ proto.handler.Application.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.handler.Application} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.Application.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1098,6 +1109,7 @@ proto.handler.Application.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.handler.Application} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.Application.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1301,6 +1313,7 @@ proto.handler.DeviceIdentifier.prototype.toObject = function(opt_includeInstance
  *     http://goto/soy-param-migration
  * @param {!proto.handler.DeviceIdentifier} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.DeviceIdentifier.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1375,6 +1388,7 @@ proto.handler.DeviceIdentifier.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.handler.DeviceIdentifier} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.DeviceIdentifier.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1493,6 +1507,7 @@ proto.handler.Device.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.handler.Device} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.Device.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1600,6 +1615,7 @@ proto.handler.Device.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.handler.Device} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.Device.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1848,6 +1864,7 @@ proto.handler.DeviceList.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.handler.DeviceList} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.DeviceList.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1919,6 +1936,7 @@ proto.handler.DeviceList.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.handler.DeviceList} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.DeviceList.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1935,8 +1953,6 @@ proto.handler.DeviceList.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * repeated Device devices = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!Array.<!proto.handler.Device>}
  */
 proto.handler.DeviceList.prototype.getDevicesList = function() {
@@ -2009,6 +2025,7 @@ proto.handler.DryDownlinkMessage.prototype.toObject = function(opt_includeInstan
  *     http://goto/soy-param-migration
  * @param {!proto.handler.DryDownlinkMessage} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.DryDownlinkMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2094,6 +2111,7 @@ proto.handler.DryDownlinkMessage.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.handler.DryDownlinkMessage} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.DryDownlinkMessage.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -2271,6 +2289,7 @@ proto.handler.DryUplinkMessage.prototype.toObject = function(opt_includeInstance
  *     http://goto/soy-param-migration
  * @param {!proto.handler.DryUplinkMessage} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.DryUplinkMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2351,6 +2370,7 @@ proto.handler.DryUplinkMessage.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.handler.DryUplinkMessage} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.DryUplinkMessage.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -2506,6 +2526,7 @@ proto.handler.SimulatedUplinkMessage.prototype.toObject = function(opt_includeIn
  *     http://goto/soy-param-migration
  * @param {!proto.handler.SimulatedUplinkMessage} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.SimulatedUplinkMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2590,6 +2611,7 @@ proto.handler.SimulatedUplinkMessage.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.handler.SimulatedUplinkMessage} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.SimulatedUplinkMessage.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -2758,11 +2780,12 @@ proto.handler.LogEntry.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.handler.LogEntry} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.LogEntry.toObject = function(includeInstance, msg) {
   var f, obj = {
     pb_function: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    fieldsList: jspb.Message.getField(msg, 2)
+    fieldsList: jspb.Message.getRepeatedField(msg, 2)
   };
 
   if (includeInstance) {
@@ -2832,6 +2855,7 @@ proto.handler.LogEntry.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.handler.LogEntry} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.LogEntry.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -2869,12 +2893,10 @@ proto.handler.LogEntry.prototype.setFunction = function(value) {
 
 /**
  * repeated string fields = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!Array.<string>}
  */
 proto.handler.LogEntry.prototype.getFieldsList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 2));
+  return /** @type {!Array.<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
@@ -2948,6 +2970,7 @@ proto.handler.DryUplinkResult.prototype.toObject = function(opt_includeInstance)
  *     http://goto/soy-param-migration
  * @param {!proto.handler.DryUplinkResult} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.DryUplinkResult.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -3034,6 +3057,7 @@ proto.handler.DryUplinkResult.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.handler.DryUplinkResult} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.DryUplinkResult.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -3142,8 +3166,6 @@ proto.handler.DryUplinkResult.prototype.setValid = function(value) {
 
 /**
  * repeated LogEntry logs = 4;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!Array.<!proto.handler.LogEntry>}
  */
 proto.handler.DryUplinkResult.prototype.getLogsList = function() {
@@ -3223,6 +3245,7 @@ proto.handler.DryDownlinkResult.prototype.toObject = function(opt_includeInstanc
  *     http://goto/soy-param-migration
  * @param {!proto.handler.DryDownlinkResult} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.DryDownlinkResult.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -3299,6 +3322,7 @@ proto.handler.DryDownlinkResult.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.handler.DryDownlinkResult} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.handler.DryDownlinkResult.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -3361,8 +3385,6 @@ proto.handler.DryDownlinkResult.prototype.setPayload = function(value) {
 
 /**
  * repeated LogEntry logs = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!Array.<!proto.handler.LogEntry>}
  */
 proto.handler.DryDownlinkResult.prototype.getLogsList = function() {

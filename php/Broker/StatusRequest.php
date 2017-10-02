@@ -9,11 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * message StatusRequest is used to request the status of this Broker
- * </pre>
  *
- * Protobuf type <code>broker.StatusRequest</code>
+ * Generated from protobuf message <code>broker.StatusRequest</code>
  */
 class StatusRequest extends \Google\Protobuf\Internal\Message
 {

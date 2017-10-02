@@ -9,36 +9,34 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * Additional metrics from the operating system
- * </pre>
  *
- * Protobuf type <code>gateway.Status.OSMetrics</code>
+ * Generated from protobuf message <code>gateway.Status.OSMetrics</code>
  */
 class Status_OSMetrics extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>float load_1 = 1;</code>
+     * Generated from protobuf field <code>float load_1 = 1;</code>
      */
     private $load_1 = 0.0;
     /**
-     * <code>float load_5 = 2;</code>
+     * Generated from protobuf field <code>float load_5 = 2;</code>
      */
     private $load_5 = 0.0;
     /**
-     * <code>float load_15 = 3;</code>
+     * Generated from protobuf field <code>float load_15 = 3;</code>
      */
     private $load_15 = 0.0;
     /**
-     * <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
+     * Generated from protobuf field <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
      */
     private $cpu_percentage = 0.0;
     /**
-     * <code>float memory_percentage = 21;</code>
+     * Generated from protobuf field <code>float memory_percentage = 21;</code>
      */
     private $memory_percentage = 0.0;
     /**
-     * <code>float temperature = 31;</code>
+     * Generated from protobuf field <code>float temperature = 31;</code>
      */
     private $temperature = 0.0;
 
@@ -48,7 +46,8 @@ class Status_OSMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float load_1 = 1;</code>
+     * Generated from protobuf field <code>float load_1 = 1;</code>
+     * @return float
      */
     public function getLoad1()
     {
@@ -56,16 +55,21 @@ class Status_OSMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float load_1 = 1;</code>
+     * Generated from protobuf field <code>float load_1 = 1;</code>
+     * @param float $var
+     * @return $this
      */
     public function setLoad1($var)
     {
         GPBUtil::checkFloat($var);
         $this->load_1 = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float load_5 = 2;</code>
+     * Generated from protobuf field <code>float load_5 = 2;</code>
+     * @return float
      */
     public function getLoad5()
     {
@@ -73,16 +77,21 @@ class Status_OSMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float load_5 = 2;</code>
+     * Generated from protobuf field <code>float load_5 = 2;</code>
+     * @param float $var
+     * @return $this
      */
     public function setLoad5($var)
     {
         GPBUtil::checkFloat($var);
         $this->load_5 = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float load_15 = 3;</code>
+     * Generated from protobuf field <code>float load_15 = 3;</code>
+     * @return float
      */
     public function getLoad15()
     {
@@ -90,16 +99,21 @@ class Status_OSMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float load_15 = 3;</code>
+     * Generated from protobuf field <code>float load_15 = 3;</code>
+     * @param float $var
+     * @return $this
      */
     public function setLoad15($var)
     {
         GPBUtil::checkFloat($var);
         $this->load_15 = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
+     * Generated from protobuf field <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
+     * @return float
      */
     public function getCpuPercentage()
     {
@@ -107,16 +121,21 @@ class Status_OSMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
+     * Generated from protobuf field <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
+     * @param float $var
+     * @return $this
      */
     public function setCpuPercentage($var)
     {
         GPBUtil::checkFloat($var);
         $this->cpu_percentage = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float memory_percentage = 21;</code>
+     * Generated from protobuf field <code>float memory_percentage = 21;</code>
+     * @return float
      */
     public function getMemoryPercentage()
     {
@@ -124,16 +143,21 @@ class Status_OSMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float memory_percentage = 21;</code>
+     * Generated from protobuf field <code>float memory_percentage = 21;</code>
+     * @param float $var
+     * @return $this
      */
     public function setMemoryPercentage($var)
     {
         GPBUtil::checkFloat($var);
         $this->memory_percentage = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float temperature = 31;</code>
+     * Generated from protobuf field <code>float temperature = 31;</code>
+     * @return float
      */
     public function getTemperature()
     {
@@ -141,12 +165,16 @@ class Status_OSMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float temperature = 31;</code>
+     * Generated from protobuf field <code>float temperature = 31;</code>
+     * @param float $var
+     * @return $this
      */
     public function setTemperature($var)
     {
         GPBUtil::checkFloat($var);
         $this->temperature = $var;
+
+        return $this;
     }
 
 }

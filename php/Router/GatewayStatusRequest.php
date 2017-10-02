@@ -9,17 +9,15 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * message GatewayStatusRequest is used to request the status of a gateway from
  * this Router
- * </pre>
  *
- * Protobuf type <code>router.GatewayStatusRequest</code>
+ * Generated from protobuf message <code>router.GatewayStatusRequest</code>
  */
 class GatewayStatusRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     private $gateway_id = '';
 
@@ -29,7 +27,8 @@ class GatewayStatusRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @return string
      */
     public function getGatewayId()
     {
@@ -37,12 +36,16 @@ class GatewayStatusRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setGatewayId($var)
     {
         GPBUtil::checkString($var, True);
         $this->gateway_id = $var;
+
+        return $this;
     }
 
 }

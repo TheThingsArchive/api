@@ -9,16 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>lorawan.DLSettings</code>
+ * Generated from protobuf message <code>lorawan.DLSettings</code>
  */
 class DLSettings extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
+     * Generated from protobuf field <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      */
     private $rx1_dr_offset = 0;
     /**
-     * <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
+     * Generated from protobuf field <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
      */
     private $rx2_dr = 0;
 
@@ -28,7 +28,8 @@ class DLSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
+     * Generated from protobuf field <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
+     * @return int
      */
     public function getRx1DrOffset()
     {
@@ -36,16 +37,21 @@ class DLSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
+     * Generated from protobuf field <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
+     * @param int $var
+     * @return $this
      */
     public function setRx1DrOffset($var)
     {
         GPBUtil::checkUint32($var);
         $this->rx1_dr_offset = $var;
+
+        return $this;
     }
 
     /**
-     * <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
+     * Generated from protobuf field <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
+     * @return int
      */
     public function getRx2Dr()
     {
@@ -53,12 +59,16 @@ class DLSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
+     * Generated from protobuf field <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
+     * @param int $var
+     * @return $this
      */
     public function setRx2Dr($var)
     {
         GPBUtil::checkUint32($var);
         $this->rx2_dr = $var;
+
+        return $this;
     }
 
 }

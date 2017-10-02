@@ -9,28 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * The identifier of the service that should be returned
- * </pre>
  *
- * Protobuf type <code>discovery.GetRequest</code>
+ * Generated from protobuf message <code>discovery.GetRequest</code>
  */
 class GetRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * The ID of the service
-     * </pre>
      *
-     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     private $id = '';
     /**
-     * <pre>
      * The name of the service (router/broker/handler)
-     * </pre>
      *
-     * <code>string service_name = 2;</code>
+     * Generated from protobuf field <code>string service_name = 2;</code>
      */
     private $service_name = '';
 
@@ -40,11 +34,10 @@ class GetRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The ID of the service
-     * </pre>
      *
-     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * @return string
      */
     public function getId()
     {
@@ -52,24 +45,25 @@ class GetRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The ID of the service
-     * </pre>
      *
-     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setId($var)
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The name of the service (router/broker/handler)
-     * </pre>
      *
-     * <code>string service_name = 2;</code>
+     * Generated from protobuf field <code>string service_name = 2;</code>
+     * @return string
      */
     public function getServiceName()
     {
@@ -77,16 +71,18 @@ class GetRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The name of the service (router/broker/handler)
-     * </pre>
      *
-     * <code>string service_name = 2;</code>
+     * Generated from protobuf field <code>string service_name = 2;</code>
+     * @param string $var
+     * @return $this
      */
     public function setServiceName($var)
     {
         GPBUtil::checkString($var, True);
         $this->service_name = $var;
+
+        return $this;
     }
 
 }

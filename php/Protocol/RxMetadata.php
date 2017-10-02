@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>protocol.RxMetadata</code>
+ * Generated from protobuf message <code>protocol.RxMetadata</code>
  */
 class RxMetadata extends \Google\Protobuf\Internal\Message
 {
@@ -21,7 +21,8 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.Metadata lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+     * Generated from protobuf field <code>.lorawan.Metadata lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+     * @return \Lorawan\Metadata
      */
     public function getLorawan()
     {
@@ -29,14 +30,21 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.Metadata lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+     * Generated from protobuf field <code>.lorawan.Metadata lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+     * @param \Lorawan\Metadata $var
+     * @return $this
      */
-    public function setLorawan(&$var)
+    public function setLorawan($var)
     {
         GPBUtil::checkMessage($var, \Lorawan\Metadata::class);
         $this->writeOneof(1, $var);
+
+        return $this;
     }
 
+    /**
+     * @return string
+     */
     public function getProtocol()
     {
         return $this->whichOneof("protocol");

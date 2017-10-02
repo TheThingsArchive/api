@@ -9,24 +9,20 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>lorawan.PrefixesResponse.PrefixMapping</code>
+ * Generated from protobuf message <code>lorawan.PrefixesResponse.PrefixMapping</code>
  */
 class PrefixesResponse_PrefixMapping extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * The prefix that can be used
-     * </pre>
      *
-     * <code>string prefix = 1;</code>
+     * Generated from protobuf field <code>string prefix = 1;</code>
      */
     private $prefix = '';
     /**
-     * <pre>
      * Usage constraints of this prefix (see activation_constraints in device.proto)
-     * </pre>
      *
-     * <code>repeated string usage = 2;</code>
+     * Generated from protobuf field <code>repeated string usage = 2;</code>
      */
     private $usage;
 
@@ -36,11 +32,10 @@ class PrefixesResponse_PrefixMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The prefix that can be used
-     * </pre>
      *
-     * <code>string prefix = 1;</code>
+     * Generated from protobuf field <code>string prefix = 1;</code>
+     * @return string
      */
     public function getPrefix()
     {
@@ -48,24 +43,25 @@ class PrefixesResponse_PrefixMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The prefix that can be used
-     * </pre>
      *
-     * <code>string prefix = 1;</code>
+     * Generated from protobuf field <code>string prefix = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPrefix($var)
     {
         GPBUtil::checkString($var, True);
         $this->prefix = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Usage constraints of this prefix (see activation_constraints in device.proto)
-     * </pre>
      *
-     * <code>repeated string usage = 2;</code>
+     * Generated from protobuf field <code>repeated string usage = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getUsage()
     {
@@ -73,16 +69,18 @@ class PrefixesResponse_PrefixMapping extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Usage constraints of this prefix (see activation_constraints in device.proto)
-     * </pre>
      *
-     * <code>repeated string usage = 2;</code>
+     * Generated from protobuf field <code>repeated string usage = 2;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setUsage(&$var)
+    public function setUsage($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->usage = $arr;
+
+        return $this;
     }
 
 }

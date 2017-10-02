@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -90,6 +92,7 @@ proto.discovery.Metadata.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.discovery.Metadata} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.discovery.Metadata.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -174,6 +177,7 @@ proto.discovery.Metadata.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.discovery.Metadata} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.discovery.Metadata.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -422,6 +426,7 @@ proto.discovery.Announcement.prototype.toObject = function(opt_includeInstance) 
  *     http://goto/soy-param-migration
  * @param {!proto.discovery.Announcement} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.discovery.Announcement.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -553,6 +558,7 @@ proto.discovery.Announcement.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.discovery.Announcement} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.discovery.Announcement.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -835,8 +841,6 @@ proto.discovery.Announcement.prototype.setAmqpAddress = function(value) {
 
 /**
  * repeated Metadata metadata = 22;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!Array.<!proto.discovery.Metadata>}
  */
 proto.discovery.Announcement.prototype.getMetadataList = function() {
@@ -909,6 +913,7 @@ proto.discovery.GetServiceRequest.prototype.toObject = function(opt_includeInsta
  *     http://goto/soy-param-migration
  * @param {!proto.discovery.GetServiceRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.discovery.GetServiceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -978,6 +983,7 @@ proto.discovery.GetServiceRequest.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.discovery.GetServiceRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.discovery.GetServiceRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1049,6 +1055,7 @@ proto.discovery.GetRequest.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.discovery.GetRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.discovery.GetRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1123,6 +1130,7 @@ proto.discovery.GetRequest.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.discovery.GetRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.discovery.GetRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1216,6 +1224,7 @@ proto.discovery.MetadataRequest.prototype.toObject = function(opt_includeInstanc
  *     http://goto/soy-param-migration
  * @param {!proto.discovery.MetadataRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.discovery.MetadataRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1296,6 +1305,7 @@ proto.discovery.MetadataRequest.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.discovery.MetadataRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.discovery.MetadataRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1434,6 +1444,7 @@ proto.discovery.AnnouncementsResponse.prototype.toObject = function(opt_includeI
  *     http://goto/soy-param-migration
  * @param {!proto.discovery.AnnouncementsResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.discovery.AnnouncementsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1505,6 +1516,7 @@ proto.discovery.AnnouncementsResponse.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.discovery.AnnouncementsResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.discovery.AnnouncementsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1521,8 +1533,6 @@ proto.discovery.AnnouncementsResponse.serializeBinaryToWriter = function(message
 
 /**
  * repeated Announcement services = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!Array.<!proto.discovery.Announcement>}
  */
 proto.discovery.AnnouncementsResponse.prototype.getServicesList = function() {
@@ -1595,6 +1605,7 @@ proto.discovery.GetByAppIDRequest.prototype.toObject = function(opt_includeInsta
  *     http://goto/soy-param-migration
  * @param {!proto.discovery.GetByAppIDRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.discovery.GetByAppIDRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1664,6 +1675,7 @@ proto.discovery.GetByAppIDRequest.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.discovery.GetByAppIDRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.discovery.GetByAppIDRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1735,6 +1747,7 @@ proto.discovery.GetByGatewayIDRequest.prototype.toObject = function(opt_includeI
  *     http://goto/soy-param-migration
  * @param {!proto.discovery.GetByGatewayIDRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.discovery.GetByGatewayIDRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1804,6 +1817,7 @@ proto.discovery.GetByGatewayIDRequest.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.discovery.GetByGatewayIDRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.discovery.GetByGatewayIDRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1875,6 +1889,7 @@ proto.discovery.GetByAppEUIRequest.prototype.toObject = function(opt_includeInst
  *     http://goto/soy-param-migration
  * @param {!proto.discovery.GetByAppEUIRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.discovery.GetByAppEUIRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1944,6 +1959,7 @@ proto.discovery.GetByAppEUIRequest.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.discovery.GetByAppEUIRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.discovery.GetByAppEUIRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;

@@ -9,28 +9,26 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * sent to the Router, used as Template
- * </pre>
  *
- * Protobuf type <code>broker.DeviceActivationResponse</code>
+ * Generated from protobuf message <code>broker.DeviceActivationResponse</code>
  */
 class DeviceActivationResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
      */
     private $payload = '';
     /**
-     * <code>.protocol.Message message = 2;</code>
+     * Generated from protobuf field <code>.protocol.Message message = 2;</code>
      */
     private $message = null;
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11;</code>
+     * Generated from protobuf field <code>.broker.DownlinkOption downlink_option = 11;</code>
      */
     private $downlink_option = null;
     /**
-     * <code>.trace.Trace trace = 21;</code>
+     * Generated from protobuf field <code>.trace.Trace trace = 21;</code>
      */
     private $trace = null;
 
@@ -40,7 +38,8 @@ class DeviceActivationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
+     * @return string
      */
     public function getPayload()
     {
@@ -48,16 +47,21 @@ class DeviceActivationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPayload($var)
     {
         GPBUtil::checkString($var, False);
         $this->payload = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.protocol.Message message = 2;</code>
+     * Generated from protobuf field <code>.protocol.Message message = 2;</code>
+     * @return \Protocol\Message
      */
     public function getMessage()
     {
@@ -65,16 +69,21 @@ class DeviceActivationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.protocol.Message message = 2;</code>
+     * Generated from protobuf field <code>.protocol.Message message = 2;</code>
+     * @param \Protocol\Message $var
+     * @return $this
      */
-    public function setMessage(&$var)
+    public function setMessage($var)
     {
         GPBUtil::checkMessage($var, \Protocol\Message::class);
         $this->message = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11;</code>
+     * Generated from protobuf field <code>.broker.DownlinkOption downlink_option = 11;</code>
+     * @return \Broker\DownlinkOption
      */
     public function getDownlinkOption()
     {
@@ -82,16 +91,21 @@ class DeviceActivationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11;</code>
+     * Generated from protobuf field <code>.broker.DownlinkOption downlink_option = 11;</code>
+     * @param \Broker\DownlinkOption $var
+     * @return $this
      */
-    public function setDownlinkOption(&$var)
+    public function setDownlinkOption($var)
     {
         GPBUtil::checkMessage($var, \Broker\DownlinkOption::class);
         $this->downlink_option = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.trace.Trace trace = 21;</code>
+     * Generated from protobuf field <code>.trace.Trace trace = 21;</code>
+     * @return \Trace\Trace
      */
     public function getTrace()
     {
@@ -99,12 +113,16 @@ class DeviceActivationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.trace.Trace trace = 21;</code>
+     * Generated from protobuf field <code>.trace.Trace trace = 21;</code>
+     * @param \Trace\Trace $var
+     * @return $this
      */
-    public function setTrace(&$var)
+    public function setTrace($var)
     {
         GPBUtil::checkMessage($var, \Trace\Trace::class);
         $this->trace = $var;
+
+        return $this;
     }
 
 }

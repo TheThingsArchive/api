@@ -10,7 +10,7 @@
 void   google__protobuf__double_value__init
                      (Google__Protobuf__DoubleValue         *message)
 {
-  static Google__Protobuf__DoubleValue init_value = GOOGLE__PROTOBUF__DOUBLE_VALUE__INIT;
+  static const Google__Protobuf__DoubleValue init_value = GOOGLE__PROTOBUF__DOUBLE_VALUE__INIT;
   *message = init_value;
 }
 size_t google__protobuf__double_value__get_packed_size
@@ -47,13 +47,15 @@ void   google__protobuf__double_value__free_unpacked
                      (Google__Protobuf__DoubleValue *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__double_value__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__float_value__init
                      (Google__Protobuf__FloatValue         *message)
 {
-  static Google__Protobuf__FloatValue init_value = GOOGLE__PROTOBUF__FLOAT_VALUE__INIT;
+  static const Google__Protobuf__FloatValue init_value = GOOGLE__PROTOBUF__FLOAT_VALUE__INIT;
   *message = init_value;
 }
 size_t google__protobuf__float_value__get_packed_size
@@ -90,13 +92,15 @@ void   google__protobuf__float_value__free_unpacked
                      (Google__Protobuf__FloatValue *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__float_value__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__int64_value__init
                      (Google__Protobuf__Int64Value         *message)
 {
-  static Google__Protobuf__Int64Value init_value = GOOGLE__PROTOBUF__INT64_VALUE__INIT;
+  static const Google__Protobuf__Int64Value init_value = GOOGLE__PROTOBUF__INT64_VALUE__INIT;
   *message = init_value;
 }
 size_t google__protobuf__int64_value__get_packed_size
@@ -133,13 +137,15 @@ void   google__protobuf__int64_value__free_unpacked
                      (Google__Protobuf__Int64Value *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__int64_value__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__uint64_value__init
                      (Google__Protobuf__UInt64Value         *message)
 {
-  static Google__Protobuf__UInt64Value init_value = GOOGLE__PROTOBUF__UINT64_VALUE__INIT;
+  static const Google__Protobuf__UInt64Value init_value = GOOGLE__PROTOBUF__UINT64_VALUE__INIT;
   *message = init_value;
 }
 size_t google__protobuf__uint64_value__get_packed_size
@@ -176,13 +182,15 @@ void   google__protobuf__uint64_value__free_unpacked
                      (Google__Protobuf__UInt64Value *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__uint64_value__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__int32_value__init
                      (Google__Protobuf__Int32Value         *message)
 {
-  static Google__Protobuf__Int32Value init_value = GOOGLE__PROTOBUF__INT32_VALUE__INIT;
+  static const Google__Protobuf__Int32Value init_value = GOOGLE__PROTOBUF__INT32_VALUE__INIT;
   *message = init_value;
 }
 size_t google__protobuf__int32_value__get_packed_size
@@ -219,13 +227,15 @@ void   google__protobuf__int32_value__free_unpacked
                      (Google__Protobuf__Int32Value *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__int32_value__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__uint32_value__init
                      (Google__Protobuf__UInt32Value         *message)
 {
-  static Google__Protobuf__UInt32Value init_value = GOOGLE__PROTOBUF__UINT32_VALUE__INIT;
+  static const Google__Protobuf__UInt32Value init_value = GOOGLE__PROTOBUF__UINT32_VALUE__INIT;
   *message = init_value;
 }
 size_t google__protobuf__uint32_value__get_packed_size
@@ -262,13 +272,15 @@ void   google__protobuf__uint32_value__free_unpacked
                      (Google__Protobuf__UInt32Value *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__uint32_value__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__bool_value__init
                      (Google__Protobuf__BoolValue         *message)
 {
-  static Google__Protobuf__BoolValue init_value = GOOGLE__PROTOBUF__BOOL_VALUE__INIT;
+  static const Google__Protobuf__BoolValue init_value = GOOGLE__PROTOBUF__BOOL_VALUE__INIT;
   *message = init_value;
 }
 size_t google__protobuf__bool_value__get_packed_size
@@ -305,13 +317,15 @@ void   google__protobuf__bool_value__free_unpacked
                      (Google__Protobuf__BoolValue *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__bool_value__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__string_value__init
                      (Google__Protobuf__StringValue         *message)
 {
-  static Google__Protobuf__StringValue init_value = GOOGLE__PROTOBUF__STRING_VALUE__INIT;
+  static const Google__Protobuf__StringValue init_value = GOOGLE__PROTOBUF__STRING_VALUE__INIT;
   *message = init_value;
 }
 size_t google__protobuf__string_value__get_packed_size
@@ -348,13 +362,15 @@ void   google__protobuf__string_value__free_unpacked
                      (Google__Protobuf__StringValue *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__string_value__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   google__protobuf__bytes_value__init
                      (Google__Protobuf__BytesValue         *message)
 {
-  static Google__Protobuf__BytesValue init_value = GOOGLE__PROTOBUF__BYTES_VALUE__INIT;
+  static const Google__Protobuf__BytesValue init_value = GOOGLE__PROTOBUF__BYTES_VALUE__INIT;
   *message = init_value;
 }
 size_t google__protobuf__bytes_value__get_packed_size
@@ -391,6 +407,8 @@ void   google__protobuf__bytes_value__free_unpacked
                      (Google__Protobuf__BytesValue *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__bytes_value__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
@@ -399,9 +417,9 @@ static const ProtobufCFieldDescriptor google__protobuf__double_value__field_desc
   {
     "value",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_DOUBLE,
-    offsetof(Google__Protobuf__DoubleValue, has_value),
+    0,   /* quantifier_offset */
     offsetof(Google__Protobuf__DoubleValue, value),
     NULL,
     NULL,
@@ -437,9 +455,9 @@ static const ProtobufCFieldDescriptor google__protobuf__float_value__field_descr
   {
     "value",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Google__Protobuf__FloatValue, has_value),
+    0,   /* quantifier_offset */
     offsetof(Google__Protobuf__FloatValue, value),
     NULL,
     NULL,
@@ -475,9 +493,9 @@ static const ProtobufCFieldDescriptor google__protobuf__int64_value__field_descr
   {
     "value",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_INT64,
-    offsetof(Google__Protobuf__Int64Value, has_value),
+    0,   /* quantifier_offset */
     offsetof(Google__Protobuf__Int64Value, value),
     NULL,
     NULL,
@@ -513,9 +531,9 @@ static const ProtobufCFieldDescriptor google__protobuf__uint64_value__field_desc
   {
     "value",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT64,
-    offsetof(Google__Protobuf__UInt64Value, has_value),
+    0,   /* quantifier_offset */
     offsetof(Google__Protobuf__UInt64Value, value),
     NULL,
     NULL,
@@ -551,9 +569,9 @@ static const ProtobufCFieldDescriptor google__protobuf__int32_value__field_descr
   {
     "value",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_INT32,
-    offsetof(Google__Protobuf__Int32Value, has_value),
+    0,   /* quantifier_offset */
     offsetof(Google__Protobuf__Int32Value, value),
     NULL,
     NULL,
@@ -589,9 +607,9 @@ static const ProtobufCFieldDescriptor google__protobuf__uint32_value__field_desc
   {
     "value",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Google__Protobuf__UInt32Value, has_value),
+    0,   /* quantifier_offset */
     offsetof(Google__Protobuf__UInt32Value, value),
     NULL,
     NULL,
@@ -627,9 +645,9 @@ static const ProtobufCFieldDescriptor google__protobuf__bool_value__field_descri
   {
     "value",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(Google__Protobuf__BoolValue, has_value),
+    0,   /* quantifier_offset */
     offsetof(Google__Protobuf__BoolValue, value),
     NULL,
     NULL,
@@ -665,12 +683,12 @@ static const ProtobufCFieldDescriptor google__protobuf__string_value__field_desc
   {
     "value",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Google__Protobuf__StringValue, value),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -703,9 +721,9 @@ static const ProtobufCFieldDescriptor google__protobuf__bytes_value__field_descr
   {
     "value",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Google__Protobuf__BytesValue, has_value),
+    0,   /* quantifier_offset */
     offsetof(Google__Protobuf__BytesValue, value),
     NULL,
     NULL,

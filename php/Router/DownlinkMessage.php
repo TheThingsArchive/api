@@ -9,28 +9,28 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>router.DownlinkMessage</code>
+ * Generated from protobuf message <code>router.DownlinkMessage</code>
  */
 class DownlinkMessage extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
      */
     private $payload = '';
     /**
-     * <code>.protocol.Message message = 2;</code>
+     * Generated from protobuf field <code>.protocol.Message message = 2;</code>
      */
     private $message = null;
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
      */
     private $protocol_configuration = null;
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
      */
     private $gateway_configuration = null;
     /**
-     * <code>.trace.Trace trace = 21;</code>
+     * Generated from protobuf field <code>.trace.Trace trace = 21;</code>
      */
     private $trace = null;
 
@@ -40,7 +40,8 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
+     * @return string
      */
     public function getPayload()
     {
@@ -48,16 +49,21 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPayload($var)
     {
         GPBUtil::checkString($var, False);
         $this->payload = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.protocol.Message message = 2;</code>
+     * Generated from protobuf field <code>.protocol.Message message = 2;</code>
+     * @return \Protocol\Message
      */
     public function getMessage()
     {
@@ -65,16 +71,21 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.protocol.Message message = 2;</code>
+     * Generated from protobuf field <code>.protocol.Message message = 2;</code>
+     * @param \Protocol\Message $var
+     * @return $this
      */
-    public function setMessage(&$var)
+    public function setMessage($var)
     {
         GPBUtil::checkMessage($var, \Protocol\Message::class);
         $this->message = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
+     * @return \Protocol\TxConfiguration
      */
     public function getProtocolConfiguration()
     {
@@ -82,16 +93,21 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
+     * @param \Protocol\TxConfiguration $var
+     * @return $this
      */
-    public function setProtocolConfiguration(&$var)
+    public function setProtocolConfiguration($var)
     {
         GPBUtil::checkMessage($var, \Protocol\TxConfiguration::class);
         $this->protocol_configuration = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
+     * @return \Gateway\TxConfiguration
      */
     public function getGatewayConfiguration()
     {
@@ -99,16 +115,21 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
+     * @param \Gateway\TxConfiguration $var
+     * @return $this
      */
-    public function setGatewayConfiguration(&$var)
+    public function setGatewayConfiguration($var)
     {
         GPBUtil::checkMessage($var, \Gateway\TxConfiguration::class);
         $this->gateway_configuration = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.trace.Trace trace = 21;</code>
+     * Generated from protobuf field <code>.trace.Trace trace = 21;</code>
+     * @return \Trace\Trace
      */
     public function getTrace()
     {
@@ -116,12 +137,16 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.trace.Trace trace = 21;</code>
+     * Generated from protobuf field <code>.trace.Trace trace = 21;</code>
+     * @param \Trace\Trace $var
+     * @return $this
      */
-    public function setTrace(&$var)
+    public function setTrace($var)
     {
         GPBUtil::checkMessage($var, \Trace\Trace::class);
         $this->trace = $var;
+
+        return $this;
     }
 
 }

@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -59,6 +61,7 @@ proto.gateway.LocationMetadata.prototype.toObject = function(opt_includeInstance
  *     http://goto/soy-param-migration
  * @param {!proto.gateway.LocationMetadata} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.gateway.LocationMetadata.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -153,6 +156,7 @@ proto.gateway.LocationMetadata.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.gateway.LocationMetadata} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.gateway.LocationMetadata.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -352,6 +356,7 @@ proto.gateway.RxMetadata.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.gateway.RxMetadata} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.gateway.RxMetadata.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -479,6 +484,7 @@ proto.gateway.RxMetadata.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.gateway.RxMetadata} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.gateway.RxMetadata.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -614,6 +620,7 @@ proto.gateway.RxMetadata.Antenna.prototype.toObject = function(opt_includeInstan
  *     http://goto/soy-param-migration
  * @param {!proto.gateway.RxMetadata.Antenna} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.gateway.RxMetadata.Antenna.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -718,6 +725,7 @@ proto.gateway.RxMetadata.Antenna.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.gateway.RxMetadata.Antenna} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.gateway.RxMetadata.Antenna.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1057,8 +1065,6 @@ proto.gateway.RxMetadata.prototype.setChannel = function(value) {
 
 /**
  * repeated Antenna antennas = 30;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!Array.<!proto.gateway.RxMetadata.Antenna>}
  */
 proto.gateway.RxMetadata.prototype.getAntennasList = function() {
@@ -1206,6 +1212,7 @@ proto.gateway.TxConfiguration.prototype.toObject = function(opt_includeInstance)
  *     http://goto/soy-param-migration
  * @param {!proto.gateway.TxConfiguration} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.gateway.TxConfiguration.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1300,6 +1307,7 @@ proto.gateway.TxConfiguration.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.gateway.TxConfiguration} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.gateway.TxConfiguration.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1490,6 +1498,7 @@ proto.gateway.Status.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.gateway.Status} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.gateway.Status.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1497,7 +1506,7 @@ proto.gateway.Status.toObject = function(includeInstance, msg) {
     time: jspb.Message.getFieldWithDefault(msg, 2, 0),
     gatewayTrusted: jspb.Message.getFieldWithDefault(msg, 3, false),
     bootTime: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    ipList: jspb.Message.getField(msg, 11),
+    ipList: jspb.Message.getRepeatedField(msg, 11),
     platform: jspb.Message.getFieldWithDefault(msg, 12, ""),
     contactEmail: jspb.Message.getFieldWithDefault(msg, 13, ""),
     description: jspb.Message.getFieldWithDefault(msg, 14, ""),
@@ -1518,7 +1527,7 @@ proto.gateway.Status.toObject = function(includeInstance, msg) {
     lmNw: jspb.Message.getFieldWithDefault(msg, 47, 0),
     lPps: jspb.Message.getFieldWithDefault(msg, 48, 0),
     os: (f = msg.getOs()) && proto.gateway.Status.OSMetrics.toObject(includeInstance, f),
-    messagesList: jspb.Message.getField(msg, 52)
+    messagesList: jspb.Message.getRepeatedField(msg, 52)
   };
 
   if (includeInstance) {
@@ -1686,6 +1695,7 @@ proto.gateway.Status.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.gateway.Status} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.gateway.Status.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1919,6 +1929,7 @@ proto.gateway.Status.OSMetrics.prototype.toObject = function(opt_includeInstance
  *     http://goto/soy-param-migration
  * @param {!proto.gateway.Status.OSMetrics} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.gateway.Status.OSMetrics.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2013,6 +2024,7 @@ proto.gateway.Status.OSMetrics.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.gateway.Status.OSMetrics} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.gateway.Status.OSMetrics.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -2215,12 +2227,10 @@ proto.gateway.Status.prototype.setBootTime = function(value) {
 
 /**
  * repeated string ip = 11;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!Array.<string>}
  */
 proto.gateway.Status.prototype.getIpList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 11));
+  return /** @type {!Array.<string>} */ (jspb.Message.getRepeatedField(this, 11));
 };
 
 
@@ -2576,12 +2586,10 @@ proto.gateway.Status.prototype.hasOs = function() {
 
 /**
  * repeated string messages = 52;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!Array.<string>}
  */
 proto.gateway.Status.prototype.getMessagesList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 52));
+  return /** @type {!Array.<string>} */ (jspb.Message.getRepeatedField(this, 52));
 };
 
 

@@ -9,36 +9,36 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>lorawan.JoinAcceptPayload</code>
+ * Generated from protobuf message <code>lorawan.JoinAcceptPayload</code>
  */
 class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>bytes encrypted = 1;</code>
+     * Generated from protobuf field <code>bytes encrypted = 1;</code>
      */
     private $encrypted = '';
     /**
-     * <code>bytes app_nonce = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * Generated from protobuf field <code>bytes app_nonce = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
      */
     private $app_nonce = '';
     /**
-     * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
+     * Generated from protobuf field <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
      */
     private $net_id = '';
     /**
-     * <code>bytes dev_addr = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * Generated from protobuf field <code>bytes dev_addr = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
     private $dev_addr = '';
     /**
-     * <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * Generated from protobuf field <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     private $dl_settings = null;
     /**
-     * <code>uint32 rx_delay = 6;</code>
+     * Generated from protobuf field <code>uint32 rx_delay = 6;</code>
      */
     private $rx_delay = 0;
     /**
-     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+     * Generated from protobuf field <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
      */
     private $cf_list = null;
 
@@ -48,7 +48,8 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes encrypted = 1;</code>
+     * Generated from protobuf field <code>bytes encrypted = 1;</code>
+     * @return string
      */
     public function getEncrypted()
     {
@@ -56,16 +57,21 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes encrypted = 1;</code>
+     * Generated from protobuf field <code>bytes encrypted = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setEncrypted($var)
     {
         GPBUtil::checkString($var, False);
         $this->encrypted = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes app_nonce = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * Generated from protobuf field <code>bytes app_nonce = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * @return string
      */
     public function getAppNonce()
     {
@@ -73,16 +79,21 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes app_nonce = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * Generated from protobuf field <code>bytes app_nonce = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setAppNonce($var)
     {
         GPBUtil::checkString($var, False);
         $this->app_nonce = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
+     * Generated from protobuf field <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
+     * @return string
      */
     public function getNetId()
     {
@@ -90,16 +101,21 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
+     * Generated from protobuf field <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setNetId($var)
     {
         GPBUtil::checkString($var, False);
         $this->net_id = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes dev_addr = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * Generated from protobuf field <code>bytes dev_addr = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * @return string
      */
     public function getDevAddr()
     {
@@ -107,16 +123,21 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes dev_addr = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * Generated from protobuf field <code>bytes dev_addr = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setDevAddr($var)
     {
         GPBUtil::checkString($var, False);
         $this->dev_addr = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * Generated from protobuf field <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * @return \Lorawan\DLSettings
      */
     public function getDlSettings()
     {
@@ -124,16 +145,21 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * Generated from protobuf field <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * @param \Lorawan\DLSettings $var
+     * @return $this
      */
-    public function setDlSettings(&$var)
+    public function setDlSettings($var)
     {
         GPBUtil::checkMessage($var, \Lorawan\DLSettings::class);
         $this->dl_settings = $var;
+
+        return $this;
     }
 
     /**
-     * <code>uint32 rx_delay = 6;</code>
+     * Generated from protobuf field <code>uint32 rx_delay = 6;</code>
+     * @return int
      */
     public function getRxDelay()
     {
@@ -141,16 +167,21 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 rx_delay = 6;</code>
+     * Generated from protobuf field <code>uint32 rx_delay = 6;</code>
+     * @param int $var
+     * @return $this
      */
     public function setRxDelay($var)
     {
         GPBUtil::checkUint32($var);
         $this->rx_delay = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+     * Generated from protobuf field <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+     * @return \Lorawan\CFList
      */
     public function getCfList()
     {
@@ -158,12 +189,16 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+     * Generated from protobuf field <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+     * @param \Lorawan\CFList $var
+     * @return $this
      */
-    public function setCfList(&$var)
+    public function setCfList($var)
     {
         GPBUtil::checkMessage($var, \Lorawan\CFList::class);
         $this->cf_list = $var;
+
+        return $this;
     }
 
 }

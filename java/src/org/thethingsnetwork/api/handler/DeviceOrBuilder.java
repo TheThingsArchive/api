@@ -30,6 +30,10 @@ public interface DeviceOrBuilder extends
   /**
    * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
    */
+  boolean hasLorawanDevice();
+  /**
+   * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
+   */
   org.thethingsnetwork.api.protocol.lorawan.Device getLorawanDevice();
   /**
    * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>

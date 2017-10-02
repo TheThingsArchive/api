@@ -9,7 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * NOTE: In LoRaWAN, device activations are accepted with DownlinkMessages, so
  * this message is just an Ack.
  * bytes                     payload                 = 1;
@@ -17,9 +16,8 @@ use Google\Protobuf\Internal\GPBUtil;
  * protocol.TxConfiguration  protocol_configuration  = 11;
  * gateway.TxConfiguration   gateway_configuration   = 12;
  * trace.Trace               trace                   = 21;
- * </pre>
  *
- * Protobuf type <code>router.DeviceActivationResponse</code>
+ * Generated from protobuf message <code>router.DeviceActivationResponse</code>
  */
 class DeviceActivationResponse extends \Google\Protobuf\Internal\Message
 {

@@ -9,20 +9,20 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>api.SystemStats.Loadstats</code>
+ * Generated from protobuf message <code>api.SystemStats.Loadstats</code>
  */
 class SystemStats_Loadstats extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>float load1 = 1;</code>
+     * Generated from protobuf field <code>float load1 = 1;</code>
      */
     private $load1 = 0.0;
     /**
-     * <code>float load5 = 2;</code>
+     * Generated from protobuf field <code>float load5 = 2;</code>
      */
     private $load5 = 0.0;
     /**
-     * <code>float load15 = 3;</code>
+     * Generated from protobuf field <code>float load15 = 3;</code>
      */
     private $load15 = 0.0;
 
@@ -32,7 +32,8 @@ class SystemStats_Loadstats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float load1 = 1;</code>
+     * Generated from protobuf field <code>float load1 = 1;</code>
+     * @return float
      */
     public function getLoad1()
     {
@@ -40,16 +41,21 @@ class SystemStats_Loadstats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float load1 = 1;</code>
+     * Generated from protobuf field <code>float load1 = 1;</code>
+     * @param float $var
+     * @return $this
      */
     public function setLoad1($var)
     {
         GPBUtil::checkFloat($var);
         $this->load1 = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float load5 = 2;</code>
+     * Generated from protobuf field <code>float load5 = 2;</code>
+     * @return float
      */
     public function getLoad5()
     {
@@ -57,16 +63,21 @@ class SystemStats_Loadstats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float load5 = 2;</code>
+     * Generated from protobuf field <code>float load5 = 2;</code>
+     * @param float $var
+     * @return $this
      */
     public function setLoad5($var)
     {
         GPBUtil::checkFloat($var);
         $this->load5 = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float load15 = 3;</code>
+     * Generated from protobuf field <code>float load15 = 3;</code>
+     * @return float
      */
     public function getLoad15()
     {
@@ -74,12 +85,16 @@ class SystemStats_Loadstats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float load15 = 3;</code>
+     * Generated from protobuf field <code>float load15 = 3;</code>
+     * @param float $var
+     * @return $this
      */
     public function setLoad15($var)
     {
         GPBUtil::checkFloat($var);
         $this->load15 = $var;
+
+        return $this;
     }
 
 }

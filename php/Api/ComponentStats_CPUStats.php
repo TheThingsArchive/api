@@ -9,24 +9,24 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>api.ComponentStats.CPUStats</code>
+ * Generated from protobuf message <code>api.ComponentStats.CPUStats</code>
  */
 class ComponentStats_CPUStats extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>float user = 1;</code>
+     * Generated from protobuf field <code>float user = 1;</code>
      */
     private $user = 0.0;
     /**
-     * <code>float system = 2;</code>
+     * Generated from protobuf field <code>float system = 2;</code>
      */
     private $system = 0.0;
     /**
-     * <code>float idle = 3;</code>
+     * Generated from protobuf field <code>float idle = 3;</code>
      */
     private $idle = 0.0;
     /**
-     * <code>float percentage = 4;</code>
+     * Generated from protobuf field <code>float percentage = 4;</code>
      */
     private $percentage = 0.0;
 
@@ -36,7 +36,8 @@ class ComponentStats_CPUStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float user = 1;</code>
+     * Generated from protobuf field <code>float user = 1;</code>
+     * @return float
      */
     public function getUser()
     {
@@ -44,16 +45,21 @@ class ComponentStats_CPUStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float user = 1;</code>
+     * Generated from protobuf field <code>float user = 1;</code>
+     * @param float $var
+     * @return $this
      */
     public function setUser($var)
     {
         GPBUtil::checkFloat($var);
         $this->user = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float system = 2;</code>
+     * Generated from protobuf field <code>float system = 2;</code>
+     * @return float
      */
     public function getSystem()
     {
@@ -61,16 +67,21 @@ class ComponentStats_CPUStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float system = 2;</code>
+     * Generated from protobuf field <code>float system = 2;</code>
+     * @param float $var
+     * @return $this
      */
     public function setSystem($var)
     {
         GPBUtil::checkFloat($var);
         $this->system = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float idle = 3;</code>
+     * Generated from protobuf field <code>float idle = 3;</code>
+     * @return float
      */
     public function getIdle()
     {
@@ -78,16 +89,21 @@ class ComponentStats_CPUStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float idle = 3;</code>
+     * Generated from protobuf field <code>float idle = 3;</code>
+     * @param float $var
+     * @return $this
      */
     public function setIdle($var)
     {
         GPBUtil::checkFloat($var);
         $this->idle = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float percentage = 4;</code>
+     * Generated from protobuf field <code>float percentage = 4;</code>
+     * @return float
      */
     public function getPercentage()
     {
@@ -95,12 +111,16 @@ class ComponentStats_CPUStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float percentage = 4;</code>
+     * Generated from protobuf field <code>float percentage = 4;</code>
+     * @param float $var
+     * @return $this
      */
     public function setPercentage($var)
     {
         GPBUtil::checkFloat($var);
         $this->percentage = $var;
+
+        return $this;
     }
 
 }

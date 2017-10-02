@@ -9,48 +9,40 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>broker.DownlinkOption</code>
+ * Generated from protobuf message <code>broker.DownlinkOption</code>
  */
 class DownlinkOption extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * String that identifies this downlink option in the Router
-     * </pre>
      *
-     * <code>string identifier = 1;</code>
+     * Generated from protobuf field <code>string identifier = 1;</code>
      */
     private $identifier = '';
     /**
-     * <pre>
      * ID of the gateway where this downlink should be sent
-     * </pre>
      *
-     * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     private $gateway_id = '';
     /**
-     * <pre>
      * Score of this downlink option. Lower is better.
-     * </pre>
      *
-     * <code>uint32 score = 3;</code>
+     * Generated from protobuf field <code>uint32 score = 3;</code>
      */
     private $score = 0;
     /**
-     * <pre>
      * deadline time at server represented as Unix nanoseconds
-     * </pre>
      *
-     * <code>int64 deadline = 4;</code>
+     * Generated from protobuf field <code>int64 deadline = 4;</code>
      */
     private $deadline = 0;
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
      */
     private $protocol_configuration = null;
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
      */
     private $gateway_configuration = null;
 
@@ -60,11 +52,10 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * String that identifies this downlink option in the Router
-     * </pre>
      *
-     * <code>string identifier = 1;</code>
+     * Generated from protobuf field <code>string identifier = 1;</code>
+     * @return string
      */
     public function getIdentifier()
     {
@@ -72,24 +63,25 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * String that identifies this downlink option in the Router
-     * </pre>
      *
-     * <code>string identifier = 1;</code>
+     * Generated from protobuf field <code>string identifier = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setIdentifier($var)
     {
         GPBUtil::checkString($var, True);
         $this->identifier = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * ID of the gateway where this downlink should be sent
-     * </pre>
      *
-     * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @return string
      */
     public function getGatewayId()
     {
@@ -97,24 +89,25 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * ID of the gateway where this downlink should be sent
-     * </pre>
      *
-     * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setGatewayId($var)
     {
         GPBUtil::checkString($var, True);
         $this->gateway_id = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Score of this downlink option. Lower is better.
-     * </pre>
      *
-     * <code>uint32 score = 3;</code>
+     * Generated from protobuf field <code>uint32 score = 3;</code>
+     * @return int
      */
     public function getScore()
     {
@@ -122,24 +115,25 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Score of this downlink option. Lower is better.
-     * </pre>
      *
-     * <code>uint32 score = 3;</code>
+     * Generated from protobuf field <code>uint32 score = 3;</code>
+     * @param int $var
+     * @return $this
      */
     public function setScore($var)
     {
         GPBUtil::checkUint32($var);
         $this->score = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * deadline time at server represented as Unix nanoseconds
-     * </pre>
      *
-     * <code>int64 deadline = 4;</code>
+     * Generated from protobuf field <code>int64 deadline = 4;</code>
+     * @return int|string
      */
     public function getDeadline()
     {
@@ -147,20 +141,23 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * deadline time at server represented as Unix nanoseconds
-     * </pre>
      *
-     * <code>int64 deadline = 4;</code>
+     * Generated from protobuf field <code>int64 deadline = 4;</code>
+     * @param int|string $var
+     * @return $this
      */
     public function setDeadline($var)
     {
         GPBUtil::checkInt64($var);
         $this->deadline = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+     * @return \Protocol\TxConfiguration
      */
     public function getProtocolConfiguration()
     {
@@ -168,16 +165,21 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+     * @param \Protocol\TxConfiguration $var
+     * @return $this
      */
-    public function setProtocolConfiguration(&$var)
+    public function setProtocolConfiguration($var)
     {
         GPBUtil::checkMessage($var, \Protocol\TxConfiguration::class);
         $this->protocol_configuration = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+     * @return \Gateway\TxConfiguration
      */
     public function getGatewayConfiguration()
     {
@@ -185,12 +187,16 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+     * @param \Gateway\TxConfiguration $var
+     * @return $this
      */
-    public function setGatewayConfiguration(&$var)
+    public function setGatewayConfiguration($var)
     {
         GPBUtil::checkMessage($var, \Gateway\TxConfiguration::class);
         $this->gateway_configuration = $var;
+
+        return $this;
     }
 
 }

@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -66,6 +68,7 @@ proto.router.SubscribeRequest.prototype.toObject = function(opt_includeInstance)
  *     http://goto/soy-param-migration
  * @param {!proto.router.SubscribeRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.router.SubscribeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -131,6 +134,7 @@ proto.router.SubscribeRequest.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.router.SubscribeRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.router.SubscribeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -180,6 +184,7 @@ proto.router.UplinkMessage.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.router.UplinkMessage} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.router.UplinkMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -273,6 +278,7 @@ proto.router.UplinkMessage.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.router.UplinkMessage} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.router.UplinkMessage.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -520,6 +526,7 @@ proto.router.DownlinkMessage.prototype.toObject = function(opt_includeInstance) 
  *     http://goto/soy-param-migration
  * @param {!proto.router.DownlinkMessage} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.router.DownlinkMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -613,6 +620,7 @@ proto.router.DownlinkMessage.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.router.DownlinkMessage} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.router.DownlinkMessage.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -860,6 +868,7 @@ proto.router.DeviceActivationRequest.prototype.toObject = function(opt_includeIn
  *     http://goto/soy-param-migration
  * @param {!proto.router.DeviceActivationRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.router.DeviceActivationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -969,6 +978,7 @@ proto.router.DeviceActivationRequest.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.router.DeviceActivationRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.router.DeviceActivationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1346,6 +1356,7 @@ proto.router.DeviceActivationResponse.prototype.toObject = function(opt_includeI
  *     http://goto/soy-param-migration
  * @param {!proto.router.DeviceActivationResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.router.DeviceActivationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1411,6 +1422,7 @@ proto.router.DeviceActivationResponse.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.router.DeviceActivationResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.router.DeviceActivationResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1460,6 +1472,7 @@ proto.router.GatewayStatusRequest.prototype.toObject = function(opt_includeInsta
  *     http://goto/soy-param-migration
  * @param {!proto.router.GatewayStatusRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.router.GatewayStatusRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1529,6 +1542,7 @@ proto.router.GatewayStatusRequest.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.router.GatewayStatusRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.router.GatewayStatusRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1600,6 +1614,7 @@ proto.router.GatewayStatusResponse.prototype.toObject = function(opt_includeInst
  *     http://goto/soy-param-migration
  * @param {!proto.router.GatewayStatusResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.router.GatewayStatusResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1675,6 +1690,7 @@ proto.router.GatewayStatusResponse.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.router.GatewayStatusResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.router.GatewayStatusResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1784,6 +1800,7 @@ proto.router.StatusRequest.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.router.StatusRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.router.StatusRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1849,6 +1866,7 @@ proto.router.StatusRequest.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.router.StatusRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.router.StatusRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1898,6 +1916,7 @@ proto.router.Status.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.router.Status} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.router.Status.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2008,6 +2027,7 @@ proto.router.Status.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.router.Status} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.router.Status.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;

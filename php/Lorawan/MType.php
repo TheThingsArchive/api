@@ -5,32 +5,32 @@
 namespace Lorawan;
 
 /**
- * Protobuf enum <code>lorawan.MType</code>
+ * Protobuf enum <code>Lorawan\MType</code>
  */
 class MType
 {
     /**
-     * <code>JOIN_REQUEST = 0;</code>
+     * Generated from protobuf enum <code>JOIN_REQUEST = 0;</code>
      */
     const JOIN_REQUEST = 0;
     /**
-     * <code>JOIN_ACCEPT = 1;</code>
+     * Generated from protobuf enum <code>JOIN_ACCEPT = 1;</code>
      */
     const JOIN_ACCEPT = 1;
     /**
-     * <code>UNCONFIRMED_UP = 2;</code>
+     * Generated from protobuf enum <code>UNCONFIRMED_UP = 2;</code>
      */
     const UNCONFIRMED_UP = 2;
     /**
-     * <code>UNCONFIRMED_DOWN = 3;</code>
+     * Generated from protobuf enum <code>UNCONFIRMED_DOWN = 3;</code>
      */
     const UNCONFIRMED_DOWN = 3;
     /**
-     * <code>CONFIRMED_UP = 4;</code>
+     * Generated from protobuf enum <code>CONFIRMED_UP = 4;</code>
      */
     const CONFIRMED_UP = 4;
     /**
-     * <code>CONFIRMED_DOWN = 5;</code>
+     * Generated from protobuf enum <code>CONFIRMED_DOWN = 5;</code>
      */
     const CONFIRMED_DOWN = 5;
 }

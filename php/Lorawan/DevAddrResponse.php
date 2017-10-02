@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>lorawan.DevAddrResponse</code>
+ * Generated from protobuf message <code>lorawan.DevAddrResponse</code>
  */
 class DevAddrResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * Generated from protobuf field <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
     private $dev_addr = '';
 
@@ -24,7 +24,8 @@ class DevAddrResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * Generated from protobuf field <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * @return string
      */
     public function getDevAddr()
     {
@@ -32,12 +33,16 @@ class DevAddrResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * Generated from protobuf field <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setDevAddr($var)
     {
         GPBUtil::checkString($var, False);
         $this->dev_addr = $var;
+
+        return $this;
     }
 
 }

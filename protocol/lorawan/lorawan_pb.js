@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -69,6 +71,7 @@ proto.lorawan.Metadata.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.lorawan.Metadata} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.Metadata.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -163,6 +166,7 @@ proto.lorawan.Metadata.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.lorawan.Metadata} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.Metadata.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -344,6 +348,7 @@ proto.lorawan.TxConfiguration.prototype.toObject = function(opt_includeInstance)
  *     http://goto/soy-param-migration
  * @param {!proto.lorawan.TxConfiguration} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.TxConfiguration.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -433,6 +438,7 @@ proto.lorawan.TxConfiguration.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.lorawan.TxConfiguration} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.TxConfiguration.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -592,6 +598,7 @@ proto.lorawan.ActivationMetadata.prototype.toObject = function(opt_includeInstan
  *     http://goto/soy-param-migration
  * @param {!proto.lorawan.ActivationMetadata} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.ActivationMetadata.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -702,6 +709,7 @@ proto.lorawan.ActivationMetadata.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.lorawan.ActivationMetadata} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.ActivationMetadata.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1088,6 +1096,7 @@ proto.lorawan.Message.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.lorawan.Message} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.Message.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1181,6 +1190,7 @@ proto.lorawan.Message.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.lorawan.Message} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.Message.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1428,6 +1438,7 @@ proto.lorawan.MHDR.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.lorawan.MHDR} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.MHDR.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1502,6 +1513,7 @@ proto.lorawan.MHDR.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.lorawan.MHDR} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.MHDR.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1595,6 +1607,7 @@ proto.lorawan.MACPayload.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.lorawan.MACPayload} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.MACPayload.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1675,6 +1688,7 @@ proto.lorawan.MACPayload.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.lorawan.MACPayload} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.MACPayload.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1837,6 +1851,7 @@ proto.lorawan.FHDR.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.lorawan.FHDR} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.FHDR.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1924,6 +1939,7 @@ proto.lorawan.FHDR.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.lorawan.FHDR} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.FHDR.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -2046,8 +2062,6 @@ proto.lorawan.FHDR.prototype.setFCnt = function(value) {
 
 /**
  * repeated MACCommand f_opts = 4;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!Array.<!proto.lorawan.MACCommand>}
  */
 proto.lorawan.FHDR.prototype.getFOptsList = function() {
@@ -2120,6 +2134,7 @@ proto.lorawan.FCtrl.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.lorawan.FCtrl} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.FCtrl.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2204,6 +2219,7 @@ proto.lorawan.FCtrl.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.lorawan.FCtrl} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.FCtrl.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -2349,6 +2365,7 @@ proto.lorawan.MACCommand.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.lorawan.MACCommand} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.MACCommand.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2423,6 +2440,7 @@ proto.lorawan.MACCommand.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.lorawan.MACCommand} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.MACCommand.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -2540,6 +2558,7 @@ proto.lorawan.JoinRequestPayload.prototype.toObject = function(opt_includeInstan
  *     http://goto/soy-param-migration
  * @param {!proto.lorawan.JoinRequestPayload} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.JoinRequestPayload.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2619,6 +2638,7 @@ proto.lorawan.JoinRequestPayload.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.lorawan.JoinRequestPayload} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.JoinRequestPayload.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -2806,6 +2826,7 @@ proto.lorawan.JoinAcceptPayload.prototype.toObject = function(opt_includeInstanc
  *     http://goto/soy-param-migration
  * @param {!proto.lorawan.JoinAcceptPayload} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.JoinAcceptPayload.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2907,6 +2928,7 @@ proto.lorawan.JoinAcceptPayload.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.lorawan.JoinAcceptPayload} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.JoinAcceptPayload.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -3238,6 +3260,7 @@ proto.lorawan.DLSettings.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.lorawan.DLSettings} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.DLSettings.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -3312,6 +3335,7 @@ proto.lorawan.DLSettings.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.lorawan.DLSettings} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.DLSettings.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -3412,10 +3436,11 @@ proto.lorawan.CFList.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.lorawan.CFList} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.CFList.toObject = function(includeInstance, msg) {
   var f, obj = {
-    freqList: jspb.Message.getField(msg, 1)
+    freqList: jspb.Message.getRepeatedField(msg, 1)
   };
 
   if (includeInstance) {
@@ -3481,6 +3506,7 @@ proto.lorawan.CFList.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.lorawan.CFList} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.lorawan.CFList.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -3496,12 +3522,10 @@ proto.lorawan.CFList.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * repeated uint32 freq = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!Array.<number>}
  */
 proto.lorawan.CFList.prototype.getFreqList = function() {
-  return /** @type {!Array.<number>} */ (jspb.Message.getField(this, 1));
+  return /** @type {!Array.<number>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 

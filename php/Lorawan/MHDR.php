@@ -9,16 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>lorawan.MHDR</code>
+ * Generated from protobuf message <code>lorawan.MHDR</code>
  */
 class MHDR extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>.lorawan.MType m_type = 1;</code>
+     * Generated from protobuf field <code>.lorawan.MType m_type = 1;</code>
      */
     private $m_type = 0;
     /**
-     * <code>.lorawan.Major major = 2;</code>
+     * Generated from protobuf field <code>.lorawan.Major major = 2;</code>
      */
     private $major = 0;
 
@@ -28,7 +28,8 @@ class MHDR extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.MType m_type = 1;</code>
+     * Generated from protobuf field <code>.lorawan.MType m_type = 1;</code>
+     * @return int
      */
     public function getMType()
     {
@@ -36,16 +37,21 @@ class MHDR extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.MType m_type = 1;</code>
+     * Generated from protobuf field <code>.lorawan.MType m_type = 1;</code>
+     * @param int $var
+     * @return $this
      */
     public function setMType($var)
     {
         GPBUtil::checkEnum($var, \Lorawan\MType::class);
         $this->m_type = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.lorawan.Major major = 2;</code>
+     * Generated from protobuf field <code>.lorawan.Major major = 2;</code>
+     * @return int
      */
     public function getMajor()
     {
@@ -53,12 +59,16 @@ class MHDR extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.Major major = 2;</code>
+     * Generated from protobuf field <code>.lorawan.Major major = 2;</code>
+     * @param int $var
+     * @return $this
      */
     public function setMajor($var)
     {
         GPBUtil::checkEnum($var, \Lorawan\Major::class);
         $this->major = $var;
+
+        return $this;
     }
 
 }

@@ -9,11 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * message SubscribeRequest is used by a Handler to subscribe to uplink messages
- * </pre>
  *
- * Protobuf type <code>broker.SubscribeRequest</code>
+ * Generated from protobuf message <code>broker.SubscribeRequest</code>
  */
 class SubscribeRequest extends \Google\Protobuf\Internal\Message
 {

@@ -10,7 +10,7 @@
 void   google__protobuf__empty__init
                      (Google__Protobuf__Empty         *message)
 {
-  static Google__Protobuf__Empty init_value = GOOGLE__PROTOBUF__EMPTY__INIT;
+  static const Google__Protobuf__Empty init_value = GOOGLE__PROTOBUF__EMPTY__INIT;
   *message = init_value;
 }
 size_t google__protobuf__empty__get_packed_size
@@ -47,6 +47,8 @@ void   google__protobuf__empty__free_unpacked
                      (Google__Protobuf__Empty *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__empty__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }

@@ -9,24 +9,20 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>handler.LogEntry</code>
+ * Generated from protobuf message <code>handler.LogEntry</code>
  */
 class LogEntry extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * The location where the log was created (what payload function)
-     * </pre>
      *
-     * <code>string function = 1;</code>
+     * Generated from protobuf field <code>string function = 1;</code>
      */
     private $function = '';
     /**
-     * <pre>
      * A list of JSON-encoded fields that were logged
-     * </pre>
      *
-     * <code>repeated string fields = 2;</code>
+     * Generated from protobuf field <code>repeated string fields = 2;</code>
      */
     private $fields;
 
@@ -36,11 +32,10 @@ class LogEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The location where the log was created (what payload function)
-     * </pre>
      *
-     * <code>string function = 1;</code>
+     * Generated from protobuf field <code>string function = 1;</code>
+     * @return string
      */
     public function getFunction()
     {
@@ -48,24 +43,25 @@ class LogEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The location where the log was created (what payload function)
-     * </pre>
      *
-     * <code>string function = 1;</code>
+     * Generated from protobuf field <code>string function = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setFunction($var)
     {
         GPBUtil::checkString($var, True);
         $this->function = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * A list of JSON-encoded fields that were logged
-     * </pre>
      *
-     * <code>repeated string fields = 2;</code>
+     * Generated from protobuf field <code>repeated string fields = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getFields()
     {
@@ -73,16 +69,18 @@ class LogEntry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * A list of JSON-encoded fields that were logged
-     * </pre>
      *
-     * <code>repeated string fields = 2;</code>
+     * Generated from protobuf field <code>repeated string fields = 2;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setFields(&$var)
+    public function setFields($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->fields = $arr;
+
+        return $this;
     }
 
 }

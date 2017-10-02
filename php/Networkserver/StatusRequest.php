@@ -9,11 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * message StatusRequest is used to request the status of this NetworkServer
- * </pre>
  *
- * Protobuf type <code>networkserver.StatusRequest</code>
+ * Generated from protobuf message <code>networkserver.StatusRequest</code>
  */
 class StatusRequest extends \Google\Protobuf\Internal\Message
 {

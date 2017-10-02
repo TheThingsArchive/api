@@ -9,28 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * DryDownlinkResult is the result from a downlink simulation
- * </pre>
  *
- * Protobuf type <code>handler.DryDownlinkResult</code>
+ * Generated from protobuf message <code>handler.DryDownlinkResult</code>
  */
 class DryDownlinkResult extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * The payload that was encoded
-     * </pre>
      *
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
      */
     private $payload = '';
     /**
-     * <pre>
      * Logs that have been generated while processing
-     * </pre>
      *
-     * <code>repeated .handler.LogEntry logs = 2;</code>
+     * Generated from protobuf field <code>repeated .handler.LogEntry logs = 2;</code>
      */
     private $logs;
 
@@ -40,11 +34,10 @@ class DryDownlinkResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The payload that was encoded
-     * </pre>
      *
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
+     * @return string
      */
     public function getPayload()
     {
@@ -52,24 +45,25 @@ class DryDownlinkResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The payload that was encoded
-     * </pre>
      *
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPayload($var)
     {
         GPBUtil::checkString($var, False);
         $this->payload = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Logs that have been generated while processing
-     * </pre>
      *
-     * <code>repeated .handler.LogEntry logs = 2;</code>
+     * Generated from protobuf field <code>repeated .handler.LogEntry logs = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getLogs()
     {
@@ -77,16 +71,18 @@ class DryDownlinkResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Logs that have been generated while processing
-     * </pre>
      *
-     * <code>repeated .handler.LogEntry logs = 2;</code>
+     * Generated from protobuf field <code>repeated .handler.LogEntry logs = 2;</code>
+     * @param \Handler\LogEntry[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setLogs(&$var)
+    public function setLogs($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Handler\LogEntry::class);
         $this->logs = $arr;
+
+        return $this;
     }
 
 }

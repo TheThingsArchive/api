@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>router.SubscribeRequest</code>
+ * Generated from protobuf message <code>router.SubscribeRequest</code>
  */
 class SubscribeRequest extends \Google\Protobuf\Internal\Message
 {

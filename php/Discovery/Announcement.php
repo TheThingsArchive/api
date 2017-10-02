@@ -9,98 +9,75 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * The Announcement of a service (also called component)
- * </pre>
  *
- * Protobuf type <code>discovery.Announcement</code>
+ * Generated from protobuf message <code>discovery.Announcement</code>
  */
 class Announcement extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * The ID of the component
-     * </pre>
      *
-     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     private $id = '';
     /**
-     * <pre>
      * The name of the component (router/broker/handler)
-     * </pre>
      *
-     * <code>string service_name = 2;</code>
+     * Generated from protobuf field <code>string service_name = 2;</code>
      */
     private $service_name = '';
     /**
-     * <pre>
      * Service version in the form "[version]-[commit] ([build date])"
-     * </pre>
      *
-     * <code>string service_version = 3;</code>
+     * Generated from protobuf field <code>string service_version = 3;</code>
      */
     private $service_version = '';
     /**
-     * <pre>
      * Description of the component
-     * </pre>
      *
-     * <code>string description = 4;</code>
+     * Generated from protobuf field <code>string description = 4;</code>
      */
     private $description = '';
     /**
-     * <pre>
      * URL with documentation or more information about this component
-     * </pre>
      *
-     * <code>string url = 5;</code>
+     * Generated from protobuf field <code>string url = 5;</code>
      */
     private $url = '';
     /**
-     * <pre>
      * Indicates whether this service is part of The Things Network (the public community network)
-     * </pre>
      *
-     * <code>bool public = 6;</code>
+     * Generated from protobuf field <code>bool public = 6;</code>
      */
     private $public = false;
     /**
-     * <pre>
      * Comma-separated network addresses in the form "domain1:port,domain2:port,domain3:port" (currently we only use the first)
-     * </pre>
      *
-     * <code>string net_address = 11;</code>
+     * Generated from protobuf field <code>string net_address = 11;</code>
      */
     private $net_address = '';
     /**
-     * <pre>
      * ECDSA public key of this component
-     * </pre>
      *
-     * <code>string public_key = 12;</code>
+     * Generated from protobuf field <code>string public_key = 12;</code>
      */
     private $public_key = '';
     /**
-     * <pre>
      * TLS Certificate for gRPC on net_address (if TLS is enabled)
-     * </pre>
      *
-     * <code>string certificate = 13;</code>
+     * Generated from protobuf field <code>string certificate = 13;</code>
      */
     private $certificate = '';
     /**
-     * <pre>
      * Contains the address where the HTTP API is exposed (if there is one).
      * Format of api_address: `http(s)://domain(:port)`
      * default http port is 80, default https port is 443.
-     * </pre>
      *
-     * <code>string api_address = 14;</code>
+     * Generated from protobuf field <code>string api_address = 14;</code>
      */
     private $api_address = '';
     /**
-     * <pre>
      * Contains the address where the MQTT API is exposed (if there is one)
      * Format of mqtt_address: `(mqtt(s)://)host(:port)`
      * default mqtt port is 1883, default mqtts port is 8883.
@@ -110,13 +87,11 @@ class Announcement extends \Google\Protobuf\Internal\Message
      * if `host` then `mqtt://host:1883` and `mqtts://host:8883`
      * if `mqtt://host` then `mqtt://host:1883`
      * if `mqtts://host` then `mqtt://host:1883` and `mqtts://host:8883`
-     * </pre>
      *
-     * <code>string mqtt_address = 15;</code>
+     * Generated from protobuf field <code>string mqtt_address = 15;</code>
      */
     private $mqtt_address = '';
     /**
-     * <pre>
      * Contains the address where the AMQP API is exposed (if there is one)
      * Format of amqp_address: `(amqp(s)://)host(:port)`
      * default amqp port is 5672, default amqps port is 5671.
@@ -126,17 +101,14 @@ class Announcement extends \Google\Protobuf\Internal\Message
      * if `host` then `amqp://host:5672` and `amqps://host:5671`
      * if `amqp://host` then `amqp://host:5672`
      * if `amqps://host` then `amqp://host:5672` and `amqps://host:5671`
-     * </pre>
      *
-     * <code>string amqp_address = 16;</code>
+     * Generated from protobuf field <code>string amqp_address = 16;</code>
      */
     private $amqp_address = '';
     /**
-     * <pre>
      * Metadata for this component
-     * </pre>
      *
-     * <code>repeated .discovery.Metadata metadata = 22;</code>
+     * Generated from protobuf field <code>repeated .discovery.Metadata metadata = 22;</code>
      */
     private $metadata;
 
@@ -146,11 +118,10 @@ class Announcement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The ID of the component
-     * </pre>
      *
-     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * @return string
      */
     public function getId()
     {
@@ -158,24 +129,25 @@ class Announcement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The ID of the component
-     * </pre>
      *
-     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setId($var)
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The name of the component (router/broker/handler)
-     * </pre>
      *
-     * <code>string service_name = 2;</code>
+     * Generated from protobuf field <code>string service_name = 2;</code>
+     * @return string
      */
     public function getServiceName()
     {
@@ -183,24 +155,25 @@ class Announcement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The name of the component (router/broker/handler)
-     * </pre>
      *
-     * <code>string service_name = 2;</code>
+     * Generated from protobuf field <code>string service_name = 2;</code>
+     * @param string $var
+     * @return $this
      */
     public function setServiceName($var)
     {
         GPBUtil::checkString($var, True);
         $this->service_name = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Service version in the form "[version]-[commit] ([build date])"
-     * </pre>
      *
-     * <code>string service_version = 3;</code>
+     * Generated from protobuf field <code>string service_version = 3;</code>
+     * @return string
      */
     public function getServiceVersion()
     {
@@ -208,24 +181,25 @@ class Announcement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Service version in the form "[version]-[commit] ([build date])"
-     * </pre>
      *
-     * <code>string service_version = 3;</code>
+     * Generated from protobuf field <code>string service_version = 3;</code>
+     * @param string $var
+     * @return $this
      */
     public function setServiceVersion($var)
     {
         GPBUtil::checkString($var, True);
         $this->service_version = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Description of the component
-     * </pre>
      *
-     * <code>string description = 4;</code>
+     * Generated from protobuf field <code>string description = 4;</code>
+     * @return string
      */
     public function getDescription()
     {
@@ -233,24 +207,25 @@ class Announcement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Description of the component
-     * </pre>
      *
-     * <code>string description = 4;</code>
+     * Generated from protobuf field <code>string description = 4;</code>
+     * @param string $var
+     * @return $this
      */
     public function setDescription($var)
     {
         GPBUtil::checkString($var, True);
         $this->description = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * URL with documentation or more information about this component
-     * </pre>
      *
-     * <code>string url = 5;</code>
+     * Generated from protobuf field <code>string url = 5;</code>
+     * @return string
      */
     public function getUrl()
     {
@@ -258,24 +233,25 @@ class Announcement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * URL with documentation or more information about this component
-     * </pre>
      *
-     * <code>string url = 5;</code>
+     * Generated from protobuf field <code>string url = 5;</code>
+     * @param string $var
+     * @return $this
      */
     public function setUrl($var)
     {
         GPBUtil::checkString($var, True);
         $this->url = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Indicates whether this service is part of The Things Network (the public community network)
-     * </pre>
      *
-     * <code>bool public = 6;</code>
+     * Generated from protobuf field <code>bool public = 6;</code>
+     * @return bool
      */
     public function getPublic()
     {
@@ -283,24 +259,25 @@ class Announcement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Indicates whether this service is part of The Things Network (the public community network)
-     * </pre>
      *
-     * <code>bool public = 6;</code>
+     * Generated from protobuf field <code>bool public = 6;</code>
+     * @param bool $var
+     * @return $this
      */
     public function setPublic($var)
     {
         GPBUtil::checkBool($var);
         $this->public = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Comma-separated network addresses in the form "domain1:port,domain2:port,domain3:port" (currently we only use the first)
-     * </pre>
      *
-     * <code>string net_address = 11;</code>
+     * Generated from protobuf field <code>string net_address = 11;</code>
+     * @return string
      */
     public function getNetAddress()
     {
@@ -308,24 +285,25 @@ class Announcement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Comma-separated network addresses in the form "domain1:port,domain2:port,domain3:port" (currently we only use the first)
-     * </pre>
      *
-     * <code>string net_address = 11;</code>
+     * Generated from protobuf field <code>string net_address = 11;</code>
+     * @param string $var
+     * @return $this
      */
     public function setNetAddress($var)
     {
         GPBUtil::checkString($var, True);
         $this->net_address = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * ECDSA public key of this component
-     * </pre>
      *
-     * <code>string public_key = 12;</code>
+     * Generated from protobuf field <code>string public_key = 12;</code>
+     * @return string
      */
     public function getPublicKey()
     {
@@ -333,24 +311,25 @@ class Announcement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * ECDSA public key of this component
-     * </pre>
      *
-     * <code>string public_key = 12;</code>
+     * Generated from protobuf field <code>string public_key = 12;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPublicKey($var)
     {
         GPBUtil::checkString($var, True);
         $this->public_key = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * TLS Certificate for gRPC on net_address (if TLS is enabled)
-     * </pre>
      *
-     * <code>string certificate = 13;</code>
+     * Generated from protobuf field <code>string certificate = 13;</code>
+     * @return string
      */
     public function getCertificate()
     {
@@ -358,26 +337,27 @@ class Announcement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * TLS Certificate for gRPC on net_address (if TLS is enabled)
-     * </pre>
      *
-     * <code>string certificate = 13;</code>
+     * Generated from protobuf field <code>string certificate = 13;</code>
+     * @param string $var
+     * @return $this
      */
     public function setCertificate($var)
     {
         GPBUtil::checkString($var, True);
         $this->certificate = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Contains the address where the HTTP API is exposed (if there is one).
      * Format of api_address: `http(s)://domain(:port)`
      * default http port is 80, default https port is 443.
-     * </pre>
      *
-     * <code>string api_address = 14;</code>
+     * Generated from protobuf field <code>string api_address = 14;</code>
+     * @return string
      */
     public function getApiAddress()
     {
@@ -385,22 +365,23 @@ class Announcement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Contains the address where the HTTP API is exposed (if there is one).
      * Format of api_address: `http(s)://domain(:port)`
      * default http port is 80, default https port is 443.
-     * </pre>
      *
-     * <code>string api_address = 14;</code>
+     * Generated from protobuf field <code>string api_address = 14;</code>
+     * @param string $var
+     * @return $this
      */
     public function setApiAddress($var)
     {
         GPBUtil::checkString($var, True);
         $this->api_address = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Contains the address where the MQTT API is exposed (if there is one)
      * Format of mqtt_address: `(mqtt(s)://)host(:port)`
      * default mqtt port is 1883, default mqtts port is 8883.
@@ -410,9 +391,9 @@ class Announcement extends \Google\Protobuf\Internal\Message
      * if `host` then `mqtt://host:1883` and `mqtts://host:8883`
      * if `mqtt://host` then `mqtt://host:1883`
      * if `mqtts://host` then `mqtt://host:1883` and `mqtts://host:8883`
-     * </pre>
      *
-     * <code>string mqtt_address = 15;</code>
+     * Generated from protobuf field <code>string mqtt_address = 15;</code>
+     * @return string
      */
     public function getMqttAddress()
     {
@@ -420,7 +401,6 @@ class Announcement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Contains the address where the MQTT API is exposed (if there is one)
      * Format of mqtt_address: `(mqtt(s)://)host(:port)`
      * default mqtt port is 1883, default mqtts port is 8883.
@@ -430,18 +410,20 @@ class Announcement extends \Google\Protobuf\Internal\Message
      * if `host` then `mqtt://host:1883` and `mqtts://host:8883`
      * if `mqtt://host` then `mqtt://host:1883`
      * if `mqtts://host` then `mqtt://host:1883` and `mqtts://host:8883`
-     * </pre>
      *
-     * <code>string mqtt_address = 15;</code>
+     * Generated from protobuf field <code>string mqtt_address = 15;</code>
+     * @param string $var
+     * @return $this
      */
     public function setMqttAddress($var)
     {
         GPBUtil::checkString($var, True);
         $this->mqtt_address = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Contains the address where the AMQP API is exposed (if there is one)
      * Format of amqp_address: `(amqp(s)://)host(:port)`
      * default amqp port is 5672, default amqps port is 5671.
@@ -451,9 +433,9 @@ class Announcement extends \Google\Protobuf\Internal\Message
      * if `host` then `amqp://host:5672` and `amqps://host:5671`
      * if `amqp://host` then `amqp://host:5672`
      * if `amqps://host` then `amqp://host:5672` and `amqps://host:5671`
-     * </pre>
      *
-     * <code>string amqp_address = 16;</code>
+     * Generated from protobuf field <code>string amqp_address = 16;</code>
+     * @return string
      */
     public function getAmqpAddress()
     {
@@ -461,7 +443,6 @@ class Announcement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Contains the address where the AMQP API is exposed (if there is one)
      * Format of amqp_address: `(amqp(s)://)host(:port)`
      * default amqp port is 5672, default amqps port is 5671.
@@ -471,22 +452,24 @@ class Announcement extends \Google\Protobuf\Internal\Message
      * if `host` then `amqp://host:5672` and `amqps://host:5671`
      * if `amqp://host` then `amqp://host:5672`
      * if `amqps://host` then `amqp://host:5672` and `amqps://host:5671`
-     * </pre>
      *
-     * <code>string amqp_address = 16;</code>
+     * Generated from protobuf field <code>string amqp_address = 16;</code>
+     * @param string $var
+     * @return $this
      */
     public function setAmqpAddress($var)
     {
         GPBUtil::checkString($var, True);
         $this->amqp_address = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Metadata for this component
-     * </pre>
      *
-     * <code>repeated .discovery.Metadata metadata = 22;</code>
+     * Generated from protobuf field <code>repeated .discovery.Metadata metadata = 22;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getMetadata()
     {
@@ -494,16 +477,18 @@ class Announcement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Metadata for this component
-     * </pre>
      *
-     * <code>repeated .discovery.Metadata metadata = 22;</code>
+     * Generated from protobuf field <code>repeated .discovery.Metadata metadata = 22;</code>
+     * @param \Discovery\Metadata[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setMetadata(&$var)
+    public function setMetadata($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Discovery\Metadata::class);
         $this->metadata = $arr;
+
+        return $this;
     }
 
 }

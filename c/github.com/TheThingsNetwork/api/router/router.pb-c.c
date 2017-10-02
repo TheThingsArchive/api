@@ -10,7 +10,7 @@
 void   router__subscribe_request__init
                      (Router__SubscribeRequest         *message)
 {
-  static Router__SubscribeRequest init_value = ROUTER__SUBSCRIBE_REQUEST__INIT;
+  static const Router__SubscribeRequest init_value = ROUTER__SUBSCRIBE_REQUEST__INIT;
   *message = init_value;
 }
 size_t router__subscribe_request__get_packed_size
@@ -47,13 +47,15 @@ void   router__subscribe_request__free_unpacked
                      (Router__SubscribeRequest *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &router__subscribe_request__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   router__uplink_message__init
                      (Router__UplinkMessage         *message)
 {
-  static Router__UplinkMessage init_value = ROUTER__UPLINK_MESSAGE__INIT;
+  static const Router__UplinkMessage init_value = ROUTER__UPLINK_MESSAGE__INIT;
   *message = init_value;
 }
 size_t router__uplink_message__get_packed_size
@@ -90,13 +92,15 @@ void   router__uplink_message__free_unpacked
                      (Router__UplinkMessage *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &router__uplink_message__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   router__downlink_message__init
                      (Router__DownlinkMessage         *message)
 {
-  static Router__DownlinkMessage init_value = ROUTER__DOWNLINK_MESSAGE__INIT;
+  static const Router__DownlinkMessage init_value = ROUTER__DOWNLINK_MESSAGE__INIT;
   *message = init_value;
 }
 size_t router__downlink_message__get_packed_size
@@ -133,13 +137,15 @@ void   router__downlink_message__free_unpacked
                      (Router__DownlinkMessage *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &router__downlink_message__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   router__device_activation_request__init
                      (Router__DeviceActivationRequest         *message)
 {
-  static Router__DeviceActivationRequest init_value = ROUTER__DEVICE_ACTIVATION_REQUEST__INIT;
+  static const Router__DeviceActivationRequest init_value = ROUTER__DEVICE_ACTIVATION_REQUEST__INIT;
   *message = init_value;
 }
 size_t router__device_activation_request__get_packed_size
@@ -176,13 +182,15 @@ void   router__device_activation_request__free_unpacked
                      (Router__DeviceActivationRequest *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &router__device_activation_request__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   router__device_activation_response__init
                      (Router__DeviceActivationResponse         *message)
 {
-  static Router__DeviceActivationResponse init_value = ROUTER__DEVICE_ACTIVATION_RESPONSE__INIT;
+  static const Router__DeviceActivationResponse init_value = ROUTER__DEVICE_ACTIVATION_RESPONSE__INIT;
   *message = init_value;
 }
 size_t router__device_activation_response__get_packed_size
@@ -219,13 +227,15 @@ void   router__device_activation_response__free_unpacked
                      (Router__DeviceActivationResponse *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &router__device_activation_response__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   router__gateway_status_request__init
                      (Router__GatewayStatusRequest         *message)
 {
-  static Router__GatewayStatusRequest init_value = ROUTER__GATEWAY_STATUS_REQUEST__INIT;
+  static const Router__GatewayStatusRequest init_value = ROUTER__GATEWAY_STATUS_REQUEST__INIT;
   *message = init_value;
 }
 size_t router__gateway_status_request__get_packed_size
@@ -262,13 +272,15 @@ void   router__gateway_status_request__free_unpacked
                      (Router__GatewayStatusRequest *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &router__gateway_status_request__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   router__gateway_status_response__init
                      (Router__GatewayStatusResponse         *message)
 {
-  static Router__GatewayStatusResponse init_value = ROUTER__GATEWAY_STATUS_RESPONSE__INIT;
+  static const Router__GatewayStatusResponse init_value = ROUTER__GATEWAY_STATUS_RESPONSE__INIT;
   *message = init_value;
 }
 size_t router__gateway_status_response__get_packed_size
@@ -305,13 +317,15 @@ void   router__gateway_status_response__free_unpacked
                      (Router__GatewayStatusResponse *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &router__gateway_status_response__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   router__status_request__init
                      (Router__StatusRequest         *message)
 {
-  static Router__StatusRequest init_value = ROUTER__STATUS_REQUEST__INIT;
+  static const Router__StatusRequest init_value = ROUTER__STATUS_REQUEST__INIT;
   *message = init_value;
 }
 size_t router__status_request__get_packed_size
@@ -348,13 +362,15 @@ void   router__status_request__free_unpacked
                      (Router__StatusRequest *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &router__status_request__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   router__status__init
                      (Router__Status         *message)
 {
-  static Router__Status init_value = ROUTER__STATUS__INIT;
+  static const Router__Status init_value = ROUTER__STATUS__INIT;
   *message = init_value;
 }
 size_t router__status__get_packed_size
@@ -391,6 +407,8 @@ void   router__status__free_unpacked
                      (Router__Status *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &router__status__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
@@ -417,9 +435,9 @@ static const ProtobufCFieldDescriptor router__uplink_message__field_descriptors[
   {
     "payload",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Router__UplinkMessage, has_payload),
+    0,   /* quantifier_offset */
     offsetof(Router__UplinkMessage, payload),
     NULL,
     NULL,
@@ -429,7 +447,7 @@ static const ProtobufCFieldDescriptor router__uplink_message__field_descriptors[
   {
     "message",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Router__UplinkMessage, message),
@@ -441,7 +459,7 @@ static const ProtobufCFieldDescriptor router__uplink_message__field_descriptors[
   {
     "protocol_metadata",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Router__UplinkMessage, protocol_metadata),
@@ -453,7 +471,7 @@ static const ProtobufCFieldDescriptor router__uplink_message__field_descriptors[
   {
     "gateway_metadata",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Router__UplinkMessage, gateway_metadata),
@@ -465,7 +483,7 @@ static const ProtobufCFieldDescriptor router__uplink_message__field_descriptors[
   {
     "trace",
     21,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Router__UplinkMessage, trace),
@@ -509,9 +527,9 @@ static const ProtobufCFieldDescriptor router__downlink_message__field_descriptor
   {
     "payload",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Router__DownlinkMessage, has_payload),
+    0,   /* quantifier_offset */
     offsetof(Router__DownlinkMessage, payload),
     NULL,
     NULL,
@@ -521,7 +539,7 @@ static const ProtobufCFieldDescriptor router__downlink_message__field_descriptor
   {
     "message",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Router__DownlinkMessage, message),
@@ -533,7 +551,7 @@ static const ProtobufCFieldDescriptor router__downlink_message__field_descriptor
   {
     "protocol_configuration",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Router__DownlinkMessage, protocol_configuration),
@@ -545,7 +563,7 @@ static const ProtobufCFieldDescriptor router__downlink_message__field_descriptor
   {
     "gateway_configuration",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Router__DownlinkMessage, gateway_configuration),
@@ -557,7 +575,7 @@ static const ProtobufCFieldDescriptor router__downlink_message__field_descriptor
   {
     "trace",
     21,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Router__DownlinkMessage, trace),
@@ -601,9 +619,9 @@ static const ProtobufCFieldDescriptor router__device_activation_request__field_d
   {
     "payload",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Router__DeviceActivationRequest, has_payload),
+    0,   /* quantifier_offset */
     offsetof(Router__DeviceActivationRequest, payload),
     NULL,
     NULL,
@@ -613,7 +631,7 @@ static const ProtobufCFieldDescriptor router__device_activation_request__field_d
   {
     "message",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Router__DeviceActivationRequest, message),
@@ -625,9 +643,9 @@ static const ProtobufCFieldDescriptor router__device_activation_request__field_d
   {
     "dev_eui",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Router__DeviceActivationRequest, has_dev_eui),
+    0,   /* quantifier_offset */
     offsetof(Router__DeviceActivationRequest, dev_eui),
     NULL,
     NULL,
@@ -637,9 +655,9 @@ static const ProtobufCFieldDescriptor router__device_activation_request__field_d
   {
     "app_eui",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Router__DeviceActivationRequest, has_app_eui),
+    0,   /* quantifier_offset */
     offsetof(Router__DeviceActivationRequest, app_eui),
     NULL,
     NULL,
@@ -649,7 +667,7 @@ static const ProtobufCFieldDescriptor router__device_activation_request__field_d
   {
     "protocol_metadata",
     21,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Router__DeviceActivationRequest, protocol_metadata),
@@ -661,7 +679,7 @@ static const ProtobufCFieldDescriptor router__device_activation_request__field_d
   {
     "gateway_metadata",
     22,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Router__DeviceActivationRequest, gateway_metadata),
@@ -673,7 +691,7 @@ static const ProtobufCFieldDescriptor router__device_activation_request__field_d
   {
     "activation_metadata",
     23,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Router__DeviceActivationRequest, activation_metadata),
@@ -685,7 +703,7 @@ static const ProtobufCFieldDescriptor router__device_activation_request__field_d
   {
     "trace",
     31,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Router__DeviceActivationRequest, trace),
@@ -751,12 +769,12 @@ static const ProtobufCFieldDescriptor router__gateway_status_request__field_desc
   {
     "gateway_id",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Router__GatewayStatusRequest, gateway_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -789,9 +807,9 @@ static const ProtobufCFieldDescriptor router__gateway_status_response__field_des
   {
     "last_seen",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_INT64,
-    offsetof(Router__GatewayStatusResponse, has_last_seen),
+    0,   /* quantifier_offset */
     offsetof(Router__GatewayStatusResponse, last_seen),
     NULL,
     NULL,
@@ -801,7 +819,7 @@ static const ProtobufCFieldDescriptor router__gateway_status_response__field_des
   {
     "status",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Router__GatewayStatusResponse, status),
@@ -858,7 +876,7 @@ static const ProtobufCFieldDescriptor router__status__field_descriptors[8] =
   {
     "system",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Router__Status, system),
@@ -870,7 +888,7 @@ static const ProtobufCFieldDescriptor router__status__field_descriptors[8] =
   {
     "component",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Router__Status, component),
@@ -882,7 +900,7 @@ static const ProtobufCFieldDescriptor router__status__field_descriptors[8] =
   {
     "gateway_status",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Router__Status, gateway_status),
@@ -894,7 +912,7 @@ static const ProtobufCFieldDescriptor router__status__field_descriptors[8] =
   {
     "uplink",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Router__Status, uplink),
@@ -906,7 +924,7 @@ static const ProtobufCFieldDescriptor router__status__field_descriptors[8] =
   {
     "downlink",
     13,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Router__Status, downlink),
@@ -918,7 +936,7 @@ static const ProtobufCFieldDescriptor router__status__field_descriptors[8] =
   {
     "activations",
     14,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Router__Status, activations),
@@ -930,9 +948,9 @@ static const ProtobufCFieldDescriptor router__status__field_descriptors[8] =
   {
     "connected_gateways",
     21,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Router__Status, has_connected_gateways),
+    0,   /* quantifier_offset */
     offsetof(Router__Status, connected_gateways),
     NULL,
     NULL,
@@ -942,9 +960,9 @@ static const ProtobufCFieldDescriptor router__status__field_descriptors[8] =
   {
     "connected_brokers",
     22,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Router__Status, has_connected_brokers),
+    0,   /* quantifier_offset */
     offsetof(Router__Status, connected_brokers),
     NULL,
     NULL,

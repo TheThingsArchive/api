@@ -9,24 +9,24 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>api.ComponentStats.MemoryStats</code>
+ * Generated from protobuf message <code>api.ComponentStats.MemoryStats</code>
  */
 class ComponentStats_MemoryStats extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>uint64 memory = 1;</code>
+     * Generated from protobuf field <code>uint64 memory = 1;</code>
      */
     private $memory = 0;
     /**
-     * <code>uint64 swap = 2;</code>
+     * Generated from protobuf field <code>uint64 swap = 2;</code>
      */
     private $swap = 0;
     /**
-     * <code>uint64 heap = 10;</code>
+     * Generated from protobuf field <code>uint64 heap = 10;</code>
      */
     private $heap = 0;
     /**
-     * <code>uint64 stack = 11;</code>
+     * Generated from protobuf field <code>uint64 stack = 11;</code>
      */
     private $stack = 0;
 
@@ -36,7 +36,8 @@ class ComponentStats_MemoryStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint64 memory = 1;</code>
+     * Generated from protobuf field <code>uint64 memory = 1;</code>
+     * @return int|string
      */
     public function getMemory()
     {
@@ -44,16 +45,21 @@ class ComponentStats_MemoryStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint64 memory = 1;</code>
+     * Generated from protobuf field <code>uint64 memory = 1;</code>
+     * @param int|string $var
+     * @return $this
      */
     public function setMemory($var)
     {
         GPBUtil::checkUint64($var);
         $this->memory = $var;
+
+        return $this;
     }
 
     /**
-     * <code>uint64 swap = 2;</code>
+     * Generated from protobuf field <code>uint64 swap = 2;</code>
+     * @return int|string
      */
     public function getSwap()
     {
@@ -61,16 +67,21 @@ class ComponentStats_MemoryStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint64 swap = 2;</code>
+     * Generated from protobuf field <code>uint64 swap = 2;</code>
+     * @param int|string $var
+     * @return $this
      */
     public function setSwap($var)
     {
         GPBUtil::checkUint64($var);
         $this->swap = $var;
+
+        return $this;
     }
 
     /**
-     * <code>uint64 heap = 10;</code>
+     * Generated from protobuf field <code>uint64 heap = 10;</code>
+     * @return int|string
      */
     public function getHeap()
     {
@@ -78,16 +89,21 @@ class ComponentStats_MemoryStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint64 heap = 10;</code>
+     * Generated from protobuf field <code>uint64 heap = 10;</code>
+     * @param int|string $var
+     * @return $this
      */
     public function setHeap($var)
     {
         GPBUtil::checkUint64($var);
         $this->heap = $var;
+
+        return $this;
     }
 
     /**
-     * <code>uint64 stack = 11;</code>
+     * Generated from protobuf field <code>uint64 stack = 11;</code>
+     * @return int|string
      */
     public function getStack()
     {
@@ -95,12 +111,16 @@ class ComponentStats_MemoryStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint64 stack = 11;</code>
+     * Generated from protobuf field <code>uint64 stack = 11;</code>
+     * @param int|string $var
+     * @return $this
      */
     public function setStack($var)
     {
         GPBUtil::checkUint64($var);
         $this->stack = $var;
+
+        return $this;
     }
 
 }

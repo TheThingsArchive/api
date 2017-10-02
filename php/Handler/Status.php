@@ -9,32 +9,30 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * message Status is the response to the StatusRequest
- * </pre>
  *
- * Protobuf type <code>handler.Status</code>
+ * Generated from protobuf message <code>handler.Status</code>
  */
 class Status extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
      */
     private $system = null;
     /**
-     * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
      */
     private $component = null;
     /**
-     * <code>.api.Rates uplink = 11;</code>
+     * Generated from protobuf field <code>.api.Rates uplink = 11;</code>
      */
     private $uplink = null;
     /**
-     * <code>.api.Rates downlink = 12;</code>
+     * Generated from protobuf field <code>.api.Rates downlink = 12;</code>
      */
     private $downlink = null;
     /**
-     * <code>.api.Rates activations = 13;</code>
+     * Generated from protobuf field <code>.api.Rates activations = 13;</code>
      */
     private $activations = null;
 
@@ -44,7 +42,8 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
+     * @return \Api\SystemStats
      */
     public function getSystem()
     {
@@ -52,16 +51,21 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
+     * @param \Api\SystemStats $var
+     * @return $this
      */
-    public function setSystem(&$var)
+    public function setSystem($var)
     {
         GPBUtil::checkMessage($var, \Api\SystemStats::class);
         $this->system = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
+     * @return \Api\ComponentStats
      */
     public function getComponent()
     {
@@ -69,16 +73,21 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
+     * @param \Api\ComponentStats $var
+     * @return $this
      */
-    public function setComponent(&$var)
+    public function setComponent($var)
     {
         GPBUtil::checkMessage($var, \Api\ComponentStats::class);
         $this->component = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.api.Rates uplink = 11;</code>
+     * Generated from protobuf field <code>.api.Rates uplink = 11;</code>
+     * @return \Api\Rates
      */
     public function getUplink()
     {
@@ -86,16 +95,21 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.Rates uplink = 11;</code>
+     * Generated from protobuf field <code>.api.Rates uplink = 11;</code>
+     * @param \Api\Rates $var
+     * @return $this
      */
-    public function setUplink(&$var)
+    public function setUplink($var)
     {
         GPBUtil::checkMessage($var, \Api\Rates::class);
         $this->uplink = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.api.Rates downlink = 12;</code>
+     * Generated from protobuf field <code>.api.Rates downlink = 12;</code>
+     * @return \Api\Rates
      */
     public function getDownlink()
     {
@@ -103,16 +117,21 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.Rates downlink = 12;</code>
+     * Generated from protobuf field <code>.api.Rates downlink = 12;</code>
+     * @param \Api\Rates $var
+     * @return $this
      */
-    public function setDownlink(&$var)
+    public function setDownlink($var)
     {
         GPBUtil::checkMessage($var, \Api\Rates::class);
         $this->downlink = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.api.Rates activations = 13;</code>
+     * Generated from protobuf field <code>.api.Rates activations = 13;</code>
+     * @return \Api\Rates
      */
     public function getActivations()
     {
@@ -120,12 +139,16 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.Rates activations = 13;</code>
+     * Generated from protobuf field <code>.api.Rates activations = 13;</code>
+     * @param \Api\Rates $var
+     * @return $this
      */
-    public function setActivations(&$var)
+    public function setActivations($var)
     {
         GPBUtil::checkMessage($var, \Api\Rates::class);
         $this->activations = $var;
+
+        return $this;
     }
 
 }

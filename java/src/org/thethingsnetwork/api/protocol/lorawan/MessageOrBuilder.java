@@ -28,6 +28,10 @@ public interface MessageOrBuilder extends
   /**
    * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
    */
+  boolean hasMacPayload();
+  /**
+   * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
+   */
   org.thethingsnetwork.api.protocol.lorawan.MACPayload getMacPayload();
   /**
    * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
@@ -37,12 +41,20 @@ public interface MessageOrBuilder extends
   /**
    * <code>.lorawan.JoinRequestPayload join_request_payload = 4;</code>
    */
+  boolean hasJoinRequestPayload();
+  /**
+   * <code>.lorawan.JoinRequestPayload join_request_payload = 4;</code>
+   */
   org.thethingsnetwork.api.protocol.lorawan.JoinRequestPayload getJoinRequestPayload();
   /**
    * <code>.lorawan.JoinRequestPayload join_request_payload = 4;</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.JoinRequestPayloadOrBuilder getJoinRequestPayloadOrBuilder();
 
+  /**
+   * <code>.lorawan.JoinAcceptPayload join_accept_payload = 5;</code>
+   */
+  boolean hasJoinAcceptPayload();
   /**
    * <code>.lorawan.JoinAcceptPayload join_accept_payload = 5;</code>
    */

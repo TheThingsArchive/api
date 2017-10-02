@@ -9,16 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>lorawan.Message</code>
+ * Generated from protobuf message <code>lorawan.Message</code>
  */
 class Message extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * Generated from protobuf field <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     private $m_hdr = null;
     /**
-     * <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
+     * Generated from protobuf field <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
      */
     private $mic = '';
     protected $Payload;
@@ -29,7 +29,8 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * Generated from protobuf field <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * @return \Lorawan\MHDR
      */
     public function getMHdr()
     {
@@ -37,16 +38,21 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * Generated from protobuf field <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * @param \Lorawan\MHDR $var
+     * @return $this
      */
-    public function setMHdr(&$var)
+    public function setMHdr($var)
     {
         GPBUtil::checkMessage($var, \Lorawan\MHDR::class);
         $this->m_hdr = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
+     * Generated from protobuf field <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
+     * @return string
      */
     public function getMic()
     {
@@ -54,16 +60,21 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
+     * Generated from protobuf field <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setMic($var)
     {
         GPBUtil::checkString($var, False);
         $this->mic = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
+     * Generated from protobuf field <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
+     * @return \Lorawan\MACPayload
      */
     public function getMacPayload()
     {
@@ -71,16 +82,21 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
+     * Generated from protobuf field <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
+     * @param \Lorawan\MACPayload $var
+     * @return $this
      */
-    public function setMacPayload(&$var)
+    public function setMacPayload($var)
     {
         GPBUtil::checkMessage($var, \Lorawan\MACPayload::class);
         $this->writeOneof(3, $var);
+
+        return $this;
     }
 
     /**
-     * <code>.lorawan.JoinRequestPayload join_request_payload = 4;</code>
+     * Generated from protobuf field <code>.lorawan.JoinRequestPayload join_request_payload = 4;</code>
+     * @return \Lorawan\JoinRequestPayload
      */
     public function getJoinRequestPayload()
     {
@@ -88,16 +104,21 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.JoinRequestPayload join_request_payload = 4;</code>
+     * Generated from protobuf field <code>.lorawan.JoinRequestPayload join_request_payload = 4;</code>
+     * @param \Lorawan\JoinRequestPayload $var
+     * @return $this
      */
-    public function setJoinRequestPayload(&$var)
+    public function setJoinRequestPayload($var)
     {
         GPBUtil::checkMessage($var, \Lorawan\JoinRequestPayload::class);
         $this->writeOneof(4, $var);
+
+        return $this;
     }
 
     /**
-     * <code>.lorawan.JoinAcceptPayload join_accept_payload = 5;</code>
+     * Generated from protobuf field <code>.lorawan.JoinAcceptPayload join_accept_payload = 5;</code>
+     * @return \Lorawan\JoinAcceptPayload
      */
     public function getJoinAcceptPayload()
     {
@@ -105,14 +126,21 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.JoinAcceptPayload join_accept_payload = 5;</code>
+     * Generated from protobuf field <code>.lorawan.JoinAcceptPayload join_accept_payload = 5;</code>
+     * @param \Lorawan\JoinAcceptPayload $var
+     * @return $this
      */
-    public function setJoinAcceptPayload(&$var)
+    public function setJoinAcceptPayload($var)
     {
         GPBUtil::checkMessage($var, \Lorawan\JoinAcceptPayload::class);
         $this->writeOneof(5, $var);
+
+        return $this;
     }
 
+    /**
+     * @return string
+     */
     public function getPayload()
     {
         return $this->whichOneof("Payload");

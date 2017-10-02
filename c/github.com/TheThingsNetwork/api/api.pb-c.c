@@ -10,7 +10,7 @@
 void   api__percentiles__init
                      (Api__Percentiles         *message)
 {
-  static Api__Percentiles init_value = API__PERCENTILES__INIT;
+  static const Api__Percentiles init_value = API__PERCENTILES__INIT;
   *message = init_value;
 }
 size_t api__percentiles__get_packed_size
@@ -47,13 +47,15 @@ void   api__percentiles__free_unpacked
                      (Api__Percentiles *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &api__percentiles__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   api__rates__init
                      (Api__Rates         *message)
 {
-  static Api__Rates init_value = API__RATES__INIT;
+  static const Api__Rates init_value = API__RATES__INIT;
   *message = init_value;
 }
 size_t api__rates__get_packed_size
@@ -90,31 +92,33 @@ void   api__rates__free_unpacked
                      (Api__Rates *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &api__rates__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   api__system_stats__loadstats__init
                      (Api__SystemStats__Loadstats         *message)
 {
-  static Api__SystemStats__Loadstats init_value = API__SYSTEM_STATS__LOADSTATS__INIT;
+  static const Api__SystemStats__Loadstats init_value = API__SYSTEM_STATS__LOADSTATS__INIT;
   *message = init_value;
 }
 void   api__system_stats__cpustats__init
                      (Api__SystemStats__CPUStats         *message)
 {
-  static Api__SystemStats__CPUStats init_value = API__SYSTEM_STATS__CPUSTATS__INIT;
+  static const Api__SystemStats__CPUStats init_value = API__SYSTEM_STATS__CPUSTATS__INIT;
   *message = init_value;
 }
 void   api__system_stats__memory_stats__init
                      (Api__SystemStats__MemoryStats         *message)
 {
-  static Api__SystemStats__MemoryStats init_value = API__SYSTEM_STATS__MEMORY_STATS__INIT;
+  static const Api__SystemStats__MemoryStats init_value = API__SYSTEM_STATS__MEMORY_STATS__INIT;
   *message = init_value;
 }
 void   api__system_stats__init
                      (Api__SystemStats         *message)
 {
-  static Api__SystemStats init_value = API__SYSTEM_STATS__INIT;
+  static const Api__SystemStats init_value = API__SYSTEM_STATS__INIT;
   *message = init_value;
 }
 size_t api__system_stats__get_packed_size
@@ -151,25 +155,27 @@ void   api__system_stats__free_unpacked
                      (Api__SystemStats *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &api__system_stats__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   api__component_stats__cpustats__init
                      (Api__ComponentStats__CPUStats         *message)
 {
-  static Api__ComponentStats__CPUStats init_value = API__COMPONENT_STATS__CPUSTATS__INIT;
+  static const Api__ComponentStats__CPUStats init_value = API__COMPONENT_STATS__CPUSTATS__INIT;
   *message = init_value;
 }
 void   api__component_stats__memory_stats__init
                      (Api__ComponentStats__MemoryStats         *message)
 {
-  static Api__ComponentStats__MemoryStats init_value = API__COMPONENT_STATS__MEMORY_STATS__INIT;
+  static const Api__ComponentStats__MemoryStats init_value = API__COMPONENT_STATS__MEMORY_STATS__INIT;
   *message = init_value;
 }
 void   api__component_stats__init
                      (Api__ComponentStats         *message)
 {
-  static Api__ComponentStats init_value = API__COMPONENT_STATS__INIT;
+  static const Api__ComponentStats init_value = API__COMPONENT_STATS__INIT;
   *message = init_value;
 }
 size_t api__component_stats__get_packed_size
@@ -206,6 +212,8 @@ void   api__component_stats__free_unpacked
                      (Api__ComponentStats *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &api__component_stats__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
@@ -214,9 +222,9 @@ static const ProtobufCFieldDescriptor api__percentiles__field_descriptors[9] =
   {
     "percentile1",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__Percentiles, has_percentile1),
+    0,   /* quantifier_offset */
     offsetof(Api__Percentiles, percentile1),
     NULL,
     NULL,
@@ -226,9 +234,9 @@ static const ProtobufCFieldDescriptor api__percentiles__field_descriptors[9] =
   {
     "percentile5",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__Percentiles, has_percentile5),
+    0,   /* quantifier_offset */
     offsetof(Api__Percentiles, percentile5),
     NULL,
     NULL,
@@ -238,9 +246,9 @@ static const ProtobufCFieldDescriptor api__percentiles__field_descriptors[9] =
   {
     "percentile10",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__Percentiles, has_percentile10),
+    0,   /* quantifier_offset */
     offsetof(Api__Percentiles, percentile10),
     NULL,
     NULL,
@@ -250,9 +258,9 @@ static const ProtobufCFieldDescriptor api__percentiles__field_descriptors[9] =
   {
     "percentile25",
     4,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__Percentiles, has_percentile25),
+    0,   /* quantifier_offset */
     offsetof(Api__Percentiles, percentile25),
     NULL,
     NULL,
@@ -262,9 +270,9 @@ static const ProtobufCFieldDescriptor api__percentiles__field_descriptors[9] =
   {
     "percentile50",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__Percentiles, has_percentile50),
+    0,   /* quantifier_offset */
     offsetof(Api__Percentiles, percentile50),
     NULL,
     NULL,
@@ -274,9 +282,9 @@ static const ProtobufCFieldDescriptor api__percentiles__field_descriptors[9] =
   {
     "percentile75",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__Percentiles, has_percentile75),
+    0,   /* quantifier_offset */
     offsetof(Api__Percentiles, percentile75),
     NULL,
     NULL,
@@ -286,9 +294,9 @@ static const ProtobufCFieldDescriptor api__percentiles__field_descriptors[9] =
   {
     "percentile90",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__Percentiles, has_percentile90),
+    0,   /* quantifier_offset */
     offsetof(Api__Percentiles, percentile90),
     NULL,
     NULL,
@@ -298,9 +306,9 @@ static const ProtobufCFieldDescriptor api__percentiles__field_descriptors[9] =
   {
     "percentile95",
     8,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__Percentiles, has_percentile95),
+    0,   /* quantifier_offset */
     offsetof(Api__Percentiles, percentile95),
     NULL,
     NULL,
@@ -310,9 +318,9 @@ static const ProtobufCFieldDescriptor api__percentiles__field_descriptors[9] =
   {
     "percentile99",
     9,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__Percentiles, has_percentile99),
+    0,   /* quantifier_offset */
     offsetof(Api__Percentiles, percentile99),
     NULL,
     NULL,
@@ -356,9 +364,9 @@ static const ProtobufCFieldDescriptor api__rates__field_descriptors[3] =
   {
     "rate1",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__Rates, has_rate1),
+    0,   /* quantifier_offset */
     offsetof(Api__Rates, rate1),
     NULL,
     NULL,
@@ -368,9 +376,9 @@ static const ProtobufCFieldDescriptor api__rates__field_descriptors[3] =
   {
     "rate5",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__Rates, has_rate5),
+    0,   /* quantifier_offset */
     offsetof(Api__Rates, rate5),
     NULL,
     NULL,
@@ -380,9 +388,9 @@ static const ProtobufCFieldDescriptor api__rates__field_descriptors[3] =
   {
     "rate15",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__Rates, has_rate15),
+    0,   /* quantifier_offset */
     offsetof(Api__Rates, rate15),
     NULL,
     NULL,
@@ -420,9 +428,9 @@ static const ProtobufCFieldDescriptor api__system_stats__loadstats__field_descri
   {
     "load1",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__SystemStats__Loadstats, has_load1),
+    0,   /* quantifier_offset */
     offsetof(Api__SystemStats__Loadstats, load1),
     NULL,
     NULL,
@@ -432,9 +440,9 @@ static const ProtobufCFieldDescriptor api__system_stats__loadstats__field_descri
   {
     "load5",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__SystemStats__Loadstats, has_load5),
+    0,   /* quantifier_offset */
     offsetof(Api__SystemStats__Loadstats, load5),
     NULL,
     NULL,
@@ -444,9 +452,9 @@ static const ProtobufCFieldDescriptor api__system_stats__loadstats__field_descri
   {
     "load15",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__SystemStats__Loadstats, has_load15),
+    0,   /* quantifier_offset */
     offsetof(Api__SystemStats__Loadstats, load15),
     NULL,
     NULL,
@@ -484,9 +492,9 @@ static const ProtobufCFieldDescriptor api__system_stats__cpustats__field_descrip
   {
     "user",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__SystemStats__CPUStats, has_user),
+    0,   /* quantifier_offset */
     offsetof(Api__SystemStats__CPUStats, user),
     NULL,
     NULL,
@@ -496,9 +504,9 @@ static const ProtobufCFieldDescriptor api__system_stats__cpustats__field_descrip
   {
     "system",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__SystemStats__CPUStats, has_system),
+    0,   /* quantifier_offset */
     offsetof(Api__SystemStats__CPUStats, system),
     NULL,
     NULL,
@@ -508,9 +516,9 @@ static const ProtobufCFieldDescriptor api__system_stats__cpustats__field_descrip
   {
     "idle",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__SystemStats__CPUStats, has_idle),
+    0,   /* quantifier_offset */
     offsetof(Api__SystemStats__CPUStats, idle),
     NULL,
     NULL,
@@ -520,9 +528,9 @@ static const ProtobufCFieldDescriptor api__system_stats__cpustats__field_descrip
   {
     "percentage",
     4,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__SystemStats__CPUStats, has_percentage),
+    0,   /* quantifier_offset */
     offsetof(Api__SystemStats__CPUStats, percentage),
     NULL,
     NULL,
@@ -561,9 +569,9 @@ static const ProtobufCFieldDescriptor api__system_stats__memory_stats__field_des
   {
     "total",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT64,
-    offsetof(Api__SystemStats__MemoryStats, has_total),
+    0,   /* quantifier_offset */
     offsetof(Api__SystemStats__MemoryStats, total),
     NULL,
     NULL,
@@ -573,9 +581,9 @@ static const ProtobufCFieldDescriptor api__system_stats__memory_stats__field_des
   {
     "available",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT64,
-    offsetof(Api__SystemStats__MemoryStats, has_available),
+    0,   /* quantifier_offset */
     offsetof(Api__SystemStats__MemoryStats, available),
     NULL,
     NULL,
@@ -585,9 +593,9 @@ static const ProtobufCFieldDescriptor api__system_stats__memory_stats__field_des
   {
     "used",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT64,
-    offsetof(Api__SystemStats__MemoryStats, has_used),
+    0,   /* quantifier_offset */
     offsetof(Api__SystemStats__MemoryStats, used),
     NULL,
     NULL,
@@ -625,7 +633,7 @@ static const ProtobufCFieldDescriptor api__system_stats__field_descriptors[3] =
   {
     "load",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Api__SystemStats, load),
@@ -637,7 +645,7 @@ static const ProtobufCFieldDescriptor api__system_stats__field_descriptors[3] =
   {
     "cpu",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Api__SystemStats, cpu),
@@ -649,7 +657,7 @@ static const ProtobufCFieldDescriptor api__system_stats__field_descriptors[3] =
   {
     "memory",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Api__SystemStats, memory),
@@ -689,9 +697,9 @@ static const ProtobufCFieldDescriptor api__component_stats__cpustats__field_desc
   {
     "user",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__ComponentStats__CPUStats, has_user),
+    0,   /* quantifier_offset */
     offsetof(Api__ComponentStats__CPUStats, user),
     NULL,
     NULL,
@@ -701,9 +709,9 @@ static const ProtobufCFieldDescriptor api__component_stats__cpustats__field_desc
   {
     "system",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__ComponentStats__CPUStats, has_system),
+    0,   /* quantifier_offset */
     offsetof(Api__ComponentStats__CPUStats, system),
     NULL,
     NULL,
@@ -713,9 +721,9 @@ static const ProtobufCFieldDescriptor api__component_stats__cpustats__field_desc
   {
     "idle",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__ComponentStats__CPUStats, has_idle),
+    0,   /* quantifier_offset */
     offsetof(Api__ComponentStats__CPUStats, idle),
     NULL,
     NULL,
@@ -725,9 +733,9 @@ static const ProtobufCFieldDescriptor api__component_stats__cpustats__field_desc
   {
     "percentage",
     4,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__ComponentStats__CPUStats, has_percentage),
+    0,   /* quantifier_offset */
     offsetof(Api__ComponentStats__CPUStats, percentage),
     NULL,
     NULL,
@@ -766,9 +774,9 @@ static const ProtobufCFieldDescriptor api__component_stats__memory_stats__field_
   {
     "memory",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT64,
-    offsetof(Api__ComponentStats__MemoryStats, has_memory),
+    0,   /* quantifier_offset */
     offsetof(Api__ComponentStats__MemoryStats, memory),
     NULL,
     NULL,
@@ -778,9 +786,9 @@ static const ProtobufCFieldDescriptor api__component_stats__memory_stats__field_
   {
     "swap",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT64,
-    offsetof(Api__ComponentStats__MemoryStats, has_swap),
+    0,   /* quantifier_offset */
     offsetof(Api__ComponentStats__MemoryStats, swap),
     NULL,
     NULL,
@@ -790,9 +798,9 @@ static const ProtobufCFieldDescriptor api__component_stats__memory_stats__field_
   {
     "heap",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT64,
-    offsetof(Api__ComponentStats__MemoryStats, has_heap),
+    0,   /* quantifier_offset */
     offsetof(Api__ComponentStats__MemoryStats, heap),
     NULL,
     NULL,
@@ -802,9 +810,9 @@ static const ProtobufCFieldDescriptor api__component_stats__memory_stats__field_
   {
     "stack",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT64,
-    offsetof(Api__ComponentStats__MemoryStats, has_stack),
+    0,   /* quantifier_offset */
     offsetof(Api__ComponentStats__MemoryStats, stack),
     NULL,
     NULL,
@@ -844,9 +852,9 @@ static const ProtobufCFieldDescriptor api__component_stats__field_descriptors[5]
   {
     "uptime",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT64,
-    offsetof(Api__ComponentStats, has_uptime),
+    0,   /* quantifier_offset */
     offsetof(Api__ComponentStats, uptime),
     NULL,
     NULL,
@@ -856,7 +864,7 @@ static const ProtobufCFieldDescriptor api__component_stats__field_descriptors[5]
   {
     "cpu",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Api__ComponentStats, cpu),
@@ -868,7 +876,7 @@ static const ProtobufCFieldDescriptor api__component_stats__field_descriptors[5]
   {
     "memory",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Api__ComponentStats, memory),
@@ -880,9 +888,9 @@ static const ProtobufCFieldDescriptor api__component_stats__field_descriptors[5]
   {
     "goroutines",
     4,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT64,
-    offsetof(Api__ComponentStats, has_goroutines),
+    0,   /* quantifier_offset */
     offsetof(Api__ComponentStats, goroutines),
     NULL,
     NULL,
@@ -892,9 +900,9 @@ static const ProtobufCFieldDescriptor api__component_stats__field_descriptors[5]
   {
     "gc_cpu_fraction",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Api__ComponentStats, has_gc_cpu_fraction),
+    0,   /* quantifier_offset */
     offsetof(Api__ComponentStats, gc_cpu_fraction),
     NULL,
     NULL,

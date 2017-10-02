@@ -9,44 +9,34 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * DryUplinkResult is the result from an uplink simulation
- * </pre>
  *
- * Protobuf type <code>handler.DryUplinkResult</code>
+ * Generated from protobuf message <code>handler.DryUplinkResult</code>
  */
 class DryUplinkResult extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * The binary payload
-     * </pre>
      *
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
      */
     private $payload = '';
     /**
-     * <pre>
      * The decoded fields
-     * </pre>
      *
-     * <code>string fields = 2;</code>
+     * Generated from protobuf field <code>string fields = 2;</code>
      */
     private $fields = '';
     /**
-     * <pre>
      * Was validation of the message successful
-     * </pre>
      *
-     * <code>bool valid = 3;</code>
+     * Generated from protobuf field <code>bool valid = 3;</code>
      */
     private $valid = false;
     /**
-     * <pre>
      * Logs that have been generated while processing
-     * </pre>
      *
-     * <code>repeated .handler.LogEntry logs = 4;</code>
+     * Generated from protobuf field <code>repeated .handler.LogEntry logs = 4;</code>
      */
     private $logs;
 
@@ -56,11 +46,10 @@ class DryUplinkResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The binary payload
-     * </pre>
      *
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
+     * @return string
      */
     public function getPayload()
     {
@@ -68,24 +57,25 @@ class DryUplinkResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The binary payload
-     * </pre>
      *
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPayload($var)
     {
         GPBUtil::checkString($var, False);
         $this->payload = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The decoded fields
-     * </pre>
      *
-     * <code>string fields = 2;</code>
+     * Generated from protobuf field <code>string fields = 2;</code>
+     * @return string
      */
     public function getFields()
     {
@@ -93,24 +83,25 @@ class DryUplinkResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The decoded fields
-     * </pre>
      *
-     * <code>string fields = 2;</code>
+     * Generated from protobuf field <code>string fields = 2;</code>
+     * @param string $var
+     * @return $this
      */
     public function setFields($var)
     {
         GPBUtil::checkString($var, True);
         $this->fields = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Was validation of the message successful
-     * </pre>
      *
-     * <code>bool valid = 3;</code>
+     * Generated from protobuf field <code>bool valid = 3;</code>
+     * @return bool
      */
     public function getValid()
     {
@@ -118,24 +109,25 @@ class DryUplinkResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Was validation of the message successful
-     * </pre>
      *
-     * <code>bool valid = 3;</code>
+     * Generated from protobuf field <code>bool valid = 3;</code>
+     * @param bool $var
+     * @return $this
      */
     public function setValid($var)
     {
         GPBUtil::checkBool($var);
         $this->valid = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Logs that have been generated while processing
-     * </pre>
      *
-     * <code>repeated .handler.LogEntry logs = 4;</code>
+     * Generated from protobuf field <code>repeated .handler.LogEntry logs = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getLogs()
     {
@@ -143,16 +135,18 @@ class DryUplinkResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Logs that have been generated while processing
-     * </pre>
      *
-     * <code>repeated .handler.LogEntry logs = 4;</code>
+     * Generated from protobuf field <code>repeated .handler.LogEntry logs = 4;</code>
+     * @param \Handler\LogEntry[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setLogs(&$var)
+    public function setLogs($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Handler\LogEntry::class);
         $this->logs = $arr;
+
+        return $this;
     }
 
 }

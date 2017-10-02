@@ -9,64 +9,52 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>gateway.RxMetadata.Antenna</code>
+ * Generated from protobuf message <code>gateway.RxMetadata.Antenna</code>
  */
 class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>uint32 antenna = 1;</code>
+     * Generated from protobuf field <code>uint32 antenna = 1;</code>
      */
     private $antenna = 0;
     /**
-     * <code>uint32 channel = 2;</code>
+     * Generated from protobuf field <code>uint32 channel = 2;</code>
      */
     private $channel = 0;
     /**
-     * <pre>
      * Received signal power in dBm
-     * </pre>
      *
-     * <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
+     * Generated from protobuf field <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
      */
     private $rssi = 0.0;
     /**
-     * <pre>
      * Received channel power in dBm
-     * </pre>
      *
-     * <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
+     * Generated from protobuf field <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
      */
     private $channel_rssi = 0.0;
     /**
-     * <pre>
      * Standard deviation of the RSSI
-     * </pre>
      *
-     * <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
+     * Generated from protobuf field <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
      */
     private $rssi_standard_deviation = 0.0;
     /**
-     * <pre>
      * Frequency offset (Hz)
-     * </pre>
      *
-     * <code>int64 frequency_offset = 7;</code>
+     * Generated from protobuf field <code>int64 frequency_offset = 7;</code>
      */
     private $frequency_offset = 0;
     /**
-     * <pre>
      * Signal-to-noise-ratio in dB
-     * </pre>
      *
-     * <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
+     * Generated from protobuf field <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
      */
     private $snr = 0.0;
     /**
-     * <pre>
      * Encrypted time from the Gateway FPGA
-     * </pre>
      *
-     * <code>bytes encrypted_time = 10;</code>
+     * Generated from protobuf field <code>bytes encrypted_time = 10;</code>
      */
     private $encrypted_time = '';
 
@@ -76,7 +64,8 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 antenna = 1;</code>
+     * Generated from protobuf field <code>uint32 antenna = 1;</code>
+     * @return int
      */
     public function getAntenna()
     {
@@ -84,16 +73,21 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 antenna = 1;</code>
+     * Generated from protobuf field <code>uint32 antenna = 1;</code>
+     * @param int $var
+     * @return $this
      */
     public function setAntenna($var)
     {
         GPBUtil::checkUint32($var);
         $this->antenna = $var;
+
+        return $this;
     }
 
     /**
-     * <code>uint32 channel = 2;</code>
+     * Generated from protobuf field <code>uint32 channel = 2;</code>
+     * @return int
      */
     public function getChannel()
     {
@@ -101,20 +95,23 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 channel = 2;</code>
+     * Generated from protobuf field <code>uint32 channel = 2;</code>
+     * @param int $var
+     * @return $this
      */
     public function setChannel($var)
     {
         GPBUtil::checkUint32($var);
         $this->channel = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Received signal power in dBm
-     * </pre>
      *
-     * <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
+     * Generated from protobuf field <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
+     * @return float
      */
     public function getRssi()
     {
@@ -122,24 +119,25 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Received signal power in dBm
-     * </pre>
      *
-     * <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
+     * Generated from protobuf field <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
+     * @param float $var
+     * @return $this
      */
     public function setRssi($var)
     {
         GPBUtil::checkFloat($var);
         $this->rssi = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Received channel power in dBm
-     * </pre>
      *
-     * <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
+     * Generated from protobuf field <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
+     * @return float
      */
     public function getChannelRssi()
     {
@@ -147,24 +145,25 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Received channel power in dBm
-     * </pre>
      *
-     * <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
+     * Generated from protobuf field <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
+     * @param float $var
+     * @return $this
      */
     public function setChannelRssi($var)
     {
         GPBUtil::checkFloat($var);
         $this->channel_rssi = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Standard deviation of the RSSI
-     * </pre>
      *
-     * <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
+     * Generated from protobuf field <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
+     * @return float
      */
     public function getRssiStandardDeviation()
     {
@@ -172,24 +171,25 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Standard deviation of the RSSI
-     * </pre>
      *
-     * <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
+     * Generated from protobuf field <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
+     * @param float $var
+     * @return $this
      */
     public function setRssiStandardDeviation($var)
     {
         GPBUtil::checkFloat($var);
         $this->rssi_standard_deviation = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Frequency offset (Hz)
-     * </pre>
      *
-     * <code>int64 frequency_offset = 7;</code>
+     * Generated from protobuf field <code>int64 frequency_offset = 7;</code>
+     * @return int|string
      */
     public function getFrequencyOffset()
     {
@@ -197,24 +197,25 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Frequency offset (Hz)
-     * </pre>
      *
-     * <code>int64 frequency_offset = 7;</code>
+     * Generated from protobuf field <code>int64 frequency_offset = 7;</code>
+     * @param int|string $var
+     * @return $this
      */
     public function setFrequencyOffset($var)
     {
         GPBUtil::checkInt64($var);
         $this->frequency_offset = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Signal-to-noise-ratio in dB
-     * </pre>
      *
-     * <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
+     * Generated from protobuf field <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
+     * @return float
      */
     public function getSnr()
     {
@@ -222,24 +223,25 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Signal-to-noise-ratio in dB
-     * </pre>
      *
-     * <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
+     * Generated from protobuf field <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
+     * @param float $var
+     * @return $this
      */
     public function setSnr($var)
     {
         GPBUtil::checkFloat($var);
         $this->snr = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Encrypted time from the Gateway FPGA
-     * </pre>
      *
-     * <code>bytes encrypted_time = 10;</code>
+     * Generated from protobuf field <code>bytes encrypted_time = 10;</code>
+     * @return string
      */
     public function getEncryptedTime()
     {
@@ -247,16 +249,18 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Encrypted time from the Gateway FPGA
-     * </pre>
      *
-     * <code>bytes encrypted_time = 10;</code>
+     * Generated from protobuf field <code>bytes encrypted_time = 10;</code>
+     * @param string $var
+     * @return $this
      */
     public function setEncryptedTime($var)
     {
         GPBUtil::checkString($var, False);
         $this->encrypted_time = $var;
+
+        return $this;
     }
 
 }

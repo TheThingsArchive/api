@@ -9,196 +9,154 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * message Status represents a status update from a Gateway.
- * </pre>
  *
- * Protobuf type <code>gateway.Status</code>
+ * Generated from protobuf message <code>gateway.Status</code>
  */
 class Status extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * Timestamp (uptime of gateway) in microseconds with rollover
-     * </pre>
      *
-     * <code>uint32 timestamp = 1;</code>
+     * Generated from protobuf field <code>uint32 timestamp = 1;</code>
      */
     private $timestamp = 0;
     /**
-     * <pre>
      * Time in Unix nanoseconds
-     * </pre>
      *
-     * <code>int64 time = 2;</code>
+     * Generated from protobuf field <code>int64 time = 2;</code>
      */
     private $time = 0;
     /**
-     * <pre>
      * Indicates whether the gateway is trusted. Components that are able to verify gateway trust MUST do so and set this value accordingly
-     * </pre>
      *
-     * <code>bool gateway_trusted = 3;</code>
+     * Generated from protobuf field <code>bool gateway_trusted = 3;</code>
      */
     private $gateway_trusted = false;
     /**
-     * <pre>
      * Boot time in Unix nanoseconds
-     * </pre>
      *
-     * <code>int64 boot_time = 4;</code>
+     * Generated from protobuf field <code>int64 boot_time = 4;</code>
      */
     private $boot_time = 0;
     /**
-     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * Generated from protobuf field <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
      */
     private $ip;
     /**
-     * <code>string platform = 12;</code>
+     * Generated from protobuf field <code>string platform = 12;</code>
      */
     private $platform = '';
     /**
-     * <code>string contact_email = 13;</code>
+     * Generated from protobuf field <code>string contact_email = 13;</code>
      */
     private $contact_email = '';
     /**
-     * <code>string description = 14;</code>
+     * Generated from protobuf field <code>string description = 14;</code>
      */
     private $description = '';
     /**
-     * <pre>
      * The gateway's frequency plan: one of EU_863_870, US_902_928, CN_779_787, EU_433, AU_915_928, CN_470_510, AS_923, AS_920_923, AS_923_925, KR_920_923
-     * </pre>
      *
-     * <code>string frequency_plan = 15;</code>
+     * Generated from protobuf field <code>string frequency_plan = 15;</code>
      */
     private $frequency_plan = '';
     /**
-     * <pre>
      * The value of Bridge is set by the Bridge
-     * </pre>
      *
-     * <code>string bridge = 16;</code>
+     * Generated from protobuf field <code>string bridge = 16;</code>
      */
     private $bridge = '';
     /**
-     * <pre>
      * The value of Router is set by the Router
-     * </pre>
      *
-     * <code>string router = 17;</code>
+     * Generated from protobuf field <code>string router = 17;</code>
      */
     private $router = '';
     /**
-     * <pre>
      * Version of Gateway FPGA
-     * </pre>
      *
-     * <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
+     * Generated from protobuf field <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
      */
     private $fpga = 0;
     /**
-     * <pre>
      * Version of Gateway DSP software
-     * </pre>
      *
-     * <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
+     * Generated from protobuf field <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
      */
     private $dsp = 0;
     /**
-     * <pre>
      * Version of gateway driver (in X.X.X format)
-     * </pre>
      *
-     * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
+     * Generated from protobuf field <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
      */
     private $hal = '';
     /**
-     * <code>.gateway.LocationMetadata location = 21;</code>
+     * Generated from protobuf field <code>.gateway.LocationMetadata location = 21;</code>
      */
     private $location = null;
     /**
-     * <pre>
      * Round-trip time to the server in milliseconds
-     * </pre>
      *
-     * <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
+     * Generated from protobuf field <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
      */
     private $rtt = 0;
     /**
-     * <pre>
      * Total number of received uplink packets since boot
-     * </pre>
      *
-     * <code>uint32 rx_in = 41;</code>
+     * Generated from protobuf field <code>uint32 rx_in = 41;</code>
      */
     private $rx_in = 0;
     /**
-     * <pre>
      * Total number of successful (correct) uplink packets since boot
-     * </pre>
      *
-     * <code>uint32 rx_ok = 42;</code>
+     * Generated from protobuf field <code>uint32 rx_ok = 42;</code>
      */
     private $rx_ok = 0;
     /**
-     * <pre>
      * Total number of received downlink packets since boot
-     * </pre>
      *
-     * <code>uint32 tx_in = 43;</code>
+     * Generated from protobuf field <code>uint32 tx_in = 43;</code>
      */
     private $tx_in = 0;
     /**
-     * <pre>
      * Total number of successfully sent downlink packets since boot
-     * </pre>
      *
-     * <code>uint32 tx_ok = 44;</code>
+     * Generated from protobuf field <code>uint32 tx_ok = 44;</code>
      */
     private $tx_ok = 0;
     /**
-     * <pre>
      * Total number of packets received from link testing mote, with CRC OK
-     * </pre>
      *
-     * <code>uint32 lm_ok = 45;</code>
+     * Generated from protobuf field <code>uint32 lm_ok = 45;</code>
      */
     private $lm_ok = 0;
     /**
-     * <pre>
      * Sequence number of the first packet received from the link testing mote
-     * </pre>
      *
-     * <code>uint32 lm_st = 46;</code>
+     * Generated from protobuf field <code>uint32 lm_st = 46;</code>
      */
     private $lm_st = 0;
     /**
-     * <pre>
      * Sequence number of the last packet received from the link testing mote
-     * </pre>
      *
-     * <code>uint32 lm_nw = 47;</code>
+     * Generated from protobuf field <code>uint32 lm_nw = 47;</code>
      */
     private $lm_nw = 0;
     /**
-     * <pre>
      * Number of lost PPS pulses
-     * </pre>
      *
-     * <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
+     * Generated from protobuf field <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
      */
     private $l_pps = 0;
     /**
-     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+     * Generated from protobuf field <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
      */
     private $os = null;
     /**
-     * <pre>
      * debug or warning messages from the gateway
-     * </pre>
      *
-     * <code>repeated string messages = 52;</code>
+     * Generated from protobuf field <code>repeated string messages = 52;</code>
      */
     private $messages;
 
@@ -208,11 +166,10 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Timestamp (uptime of gateway) in microseconds with rollover
-     * </pre>
      *
-     * <code>uint32 timestamp = 1;</code>
+     * Generated from protobuf field <code>uint32 timestamp = 1;</code>
+     * @return int
      */
     public function getTimestamp()
     {
@@ -220,24 +177,25 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Timestamp (uptime of gateway) in microseconds with rollover
-     * </pre>
      *
-     * <code>uint32 timestamp = 1;</code>
+     * Generated from protobuf field <code>uint32 timestamp = 1;</code>
+     * @param int $var
+     * @return $this
      */
     public function setTimestamp($var)
     {
         GPBUtil::checkUint32($var);
         $this->timestamp = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Time in Unix nanoseconds
-     * </pre>
      *
-     * <code>int64 time = 2;</code>
+     * Generated from protobuf field <code>int64 time = 2;</code>
+     * @return int|string
      */
     public function getTime()
     {
@@ -245,24 +203,25 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Time in Unix nanoseconds
-     * </pre>
      *
-     * <code>int64 time = 2;</code>
+     * Generated from protobuf field <code>int64 time = 2;</code>
+     * @param int|string $var
+     * @return $this
      */
     public function setTime($var)
     {
         GPBUtil::checkInt64($var);
         $this->time = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Indicates whether the gateway is trusted. Components that are able to verify gateway trust MUST do so and set this value accordingly
-     * </pre>
      *
-     * <code>bool gateway_trusted = 3;</code>
+     * Generated from protobuf field <code>bool gateway_trusted = 3;</code>
+     * @return bool
      */
     public function getGatewayTrusted()
     {
@@ -270,24 +229,25 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Indicates whether the gateway is trusted. Components that are able to verify gateway trust MUST do so and set this value accordingly
-     * </pre>
      *
-     * <code>bool gateway_trusted = 3;</code>
+     * Generated from protobuf field <code>bool gateway_trusted = 3;</code>
+     * @param bool $var
+     * @return $this
      */
     public function setGatewayTrusted($var)
     {
         GPBUtil::checkBool($var);
         $this->gateway_trusted = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Boot time in Unix nanoseconds
-     * </pre>
      *
-     * <code>int64 boot_time = 4;</code>
+     * Generated from protobuf field <code>int64 boot_time = 4;</code>
+     * @return int|string
      */
     public function getBootTime()
     {
@@ -295,20 +255,23 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Boot time in Unix nanoseconds
-     * </pre>
      *
-     * <code>int64 boot_time = 4;</code>
+     * Generated from protobuf field <code>int64 boot_time = 4;</code>
+     * @param int|string $var
+     * @return $this
      */
     public function setBootTime($var)
     {
         GPBUtil::checkInt64($var);
         $this->boot_time = $var;
+
+        return $this;
     }
 
     /**
-     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * Generated from protobuf field <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getIp()
     {
@@ -316,16 +279,21 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * Generated from protobuf field <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setIp(&$var)
+    public function setIp($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->ip = $arr;
+
+        return $this;
     }
 
     /**
-     * <code>string platform = 12;</code>
+     * Generated from protobuf field <code>string platform = 12;</code>
+     * @return string
      */
     public function getPlatform()
     {
@@ -333,16 +301,21 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string platform = 12;</code>
+     * Generated from protobuf field <code>string platform = 12;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPlatform($var)
     {
         GPBUtil::checkString($var, True);
         $this->platform = $var;
+
+        return $this;
     }
 
     /**
-     * <code>string contact_email = 13;</code>
+     * Generated from protobuf field <code>string contact_email = 13;</code>
+     * @return string
      */
     public function getContactEmail()
     {
@@ -350,16 +323,21 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string contact_email = 13;</code>
+     * Generated from protobuf field <code>string contact_email = 13;</code>
+     * @param string $var
+     * @return $this
      */
     public function setContactEmail($var)
     {
         GPBUtil::checkString($var, True);
         $this->contact_email = $var;
+
+        return $this;
     }
 
     /**
-     * <code>string description = 14;</code>
+     * Generated from protobuf field <code>string description = 14;</code>
+     * @return string
      */
     public function getDescription()
     {
@@ -367,20 +345,23 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string description = 14;</code>
+     * Generated from protobuf field <code>string description = 14;</code>
+     * @param string $var
+     * @return $this
      */
     public function setDescription($var)
     {
         GPBUtil::checkString($var, True);
         $this->description = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The gateway's frequency plan: one of EU_863_870, US_902_928, CN_779_787, EU_433, AU_915_928, CN_470_510, AS_923, AS_920_923, AS_923_925, KR_920_923
-     * </pre>
      *
-     * <code>string frequency_plan = 15;</code>
+     * Generated from protobuf field <code>string frequency_plan = 15;</code>
+     * @return string
      */
     public function getFrequencyPlan()
     {
@@ -388,24 +369,25 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The gateway's frequency plan: one of EU_863_870, US_902_928, CN_779_787, EU_433, AU_915_928, CN_470_510, AS_923, AS_920_923, AS_923_925, KR_920_923
-     * </pre>
      *
-     * <code>string frequency_plan = 15;</code>
+     * Generated from protobuf field <code>string frequency_plan = 15;</code>
+     * @param string $var
+     * @return $this
      */
     public function setFrequencyPlan($var)
     {
         GPBUtil::checkString($var, True);
         $this->frequency_plan = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The value of Bridge is set by the Bridge
-     * </pre>
      *
-     * <code>string bridge = 16;</code>
+     * Generated from protobuf field <code>string bridge = 16;</code>
+     * @return string
      */
     public function getBridge()
     {
@@ -413,24 +395,25 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The value of Bridge is set by the Bridge
-     * </pre>
      *
-     * <code>string bridge = 16;</code>
+     * Generated from protobuf field <code>string bridge = 16;</code>
+     * @param string $var
+     * @return $this
      */
     public function setBridge($var)
     {
         GPBUtil::checkString($var, True);
         $this->bridge = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The value of Router is set by the Router
-     * </pre>
      *
-     * <code>string router = 17;</code>
+     * Generated from protobuf field <code>string router = 17;</code>
+     * @return string
      */
     public function getRouter()
     {
@@ -438,24 +421,25 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The value of Router is set by the Router
-     * </pre>
      *
-     * <code>string router = 17;</code>
+     * Generated from protobuf field <code>string router = 17;</code>
+     * @param string $var
+     * @return $this
      */
     public function setRouter($var)
     {
         GPBUtil::checkString($var, True);
         $this->router = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Version of Gateway FPGA
-     * </pre>
      *
-     * <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
+     * Generated from protobuf field <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
+     * @return int
      */
     public function getFpga()
     {
@@ -463,24 +447,25 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Version of Gateway FPGA
-     * </pre>
      *
-     * <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
+     * Generated from protobuf field <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
+     * @param int $var
+     * @return $this
      */
     public function setFpga($var)
     {
         GPBUtil::checkUint32($var);
         $this->fpga = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Version of Gateway DSP software
-     * </pre>
      *
-     * <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
+     * Generated from protobuf field <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
+     * @return int
      */
     public function getDsp()
     {
@@ -488,24 +473,25 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Version of Gateway DSP software
-     * </pre>
      *
-     * <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
+     * Generated from protobuf field <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
+     * @param int $var
+     * @return $this
      */
     public function setDsp($var)
     {
         GPBUtil::checkUint32($var);
         $this->dsp = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Version of gateway driver (in X.X.X format)
-     * </pre>
      *
-     * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
+     * Generated from protobuf field <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
+     * @return string
      */
     public function getHal()
     {
@@ -513,20 +499,23 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Version of gateway driver (in X.X.X format)
-     * </pre>
      *
-     * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
+     * Generated from protobuf field <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setHal($var)
     {
         GPBUtil::checkString($var, True);
         $this->hal = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.gateway.LocationMetadata location = 21;</code>
+     * Generated from protobuf field <code>.gateway.LocationMetadata location = 21;</code>
+     * @return \Gateway\LocationMetadata
      */
     public function getLocation()
     {
@@ -534,20 +523,23 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.gateway.LocationMetadata location = 21;</code>
+     * Generated from protobuf field <code>.gateway.LocationMetadata location = 21;</code>
+     * @param \Gateway\LocationMetadata $var
+     * @return $this
      */
-    public function setLocation(&$var)
+    public function setLocation($var)
     {
         GPBUtil::checkMessage($var, \Gateway\LocationMetadata::class);
         $this->location = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Round-trip time to the server in milliseconds
-     * </pre>
      *
-     * <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
+     * Generated from protobuf field <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
+     * @return int
      */
     public function getRtt()
     {
@@ -555,24 +547,25 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Round-trip time to the server in milliseconds
-     * </pre>
      *
-     * <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
+     * Generated from protobuf field <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
+     * @param int $var
+     * @return $this
      */
     public function setRtt($var)
     {
         GPBUtil::checkUint32($var);
         $this->rtt = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Total number of received uplink packets since boot
-     * </pre>
      *
-     * <code>uint32 rx_in = 41;</code>
+     * Generated from protobuf field <code>uint32 rx_in = 41;</code>
+     * @return int
      */
     public function getRxIn()
     {
@@ -580,24 +573,25 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Total number of received uplink packets since boot
-     * </pre>
      *
-     * <code>uint32 rx_in = 41;</code>
+     * Generated from protobuf field <code>uint32 rx_in = 41;</code>
+     * @param int $var
+     * @return $this
      */
     public function setRxIn($var)
     {
         GPBUtil::checkUint32($var);
         $this->rx_in = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Total number of successful (correct) uplink packets since boot
-     * </pre>
      *
-     * <code>uint32 rx_ok = 42;</code>
+     * Generated from protobuf field <code>uint32 rx_ok = 42;</code>
+     * @return int
      */
     public function getRxOk()
     {
@@ -605,24 +599,25 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Total number of successful (correct) uplink packets since boot
-     * </pre>
      *
-     * <code>uint32 rx_ok = 42;</code>
+     * Generated from protobuf field <code>uint32 rx_ok = 42;</code>
+     * @param int $var
+     * @return $this
      */
     public function setRxOk($var)
     {
         GPBUtil::checkUint32($var);
         $this->rx_ok = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Total number of received downlink packets since boot
-     * </pre>
      *
-     * <code>uint32 tx_in = 43;</code>
+     * Generated from protobuf field <code>uint32 tx_in = 43;</code>
+     * @return int
      */
     public function getTxIn()
     {
@@ -630,24 +625,25 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Total number of received downlink packets since boot
-     * </pre>
      *
-     * <code>uint32 tx_in = 43;</code>
+     * Generated from protobuf field <code>uint32 tx_in = 43;</code>
+     * @param int $var
+     * @return $this
      */
     public function setTxIn($var)
     {
         GPBUtil::checkUint32($var);
         $this->tx_in = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Total number of successfully sent downlink packets since boot
-     * </pre>
      *
-     * <code>uint32 tx_ok = 44;</code>
+     * Generated from protobuf field <code>uint32 tx_ok = 44;</code>
+     * @return int
      */
     public function getTxOk()
     {
@@ -655,24 +651,25 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Total number of successfully sent downlink packets since boot
-     * </pre>
      *
-     * <code>uint32 tx_ok = 44;</code>
+     * Generated from protobuf field <code>uint32 tx_ok = 44;</code>
+     * @param int $var
+     * @return $this
      */
     public function setTxOk($var)
     {
         GPBUtil::checkUint32($var);
         $this->tx_ok = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Total number of packets received from link testing mote, with CRC OK
-     * </pre>
      *
-     * <code>uint32 lm_ok = 45;</code>
+     * Generated from protobuf field <code>uint32 lm_ok = 45;</code>
+     * @return int
      */
     public function getLmOk()
     {
@@ -680,24 +677,25 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Total number of packets received from link testing mote, with CRC OK
-     * </pre>
      *
-     * <code>uint32 lm_ok = 45;</code>
+     * Generated from protobuf field <code>uint32 lm_ok = 45;</code>
+     * @param int $var
+     * @return $this
      */
     public function setLmOk($var)
     {
         GPBUtil::checkUint32($var);
         $this->lm_ok = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Sequence number of the first packet received from the link testing mote
-     * </pre>
      *
-     * <code>uint32 lm_st = 46;</code>
+     * Generated from protobuf field <code>uint32 lm_st = 46;</code>
+     * @return int
      */
     public function getLmSt()
     {
@@ -705,24 +703,25 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Sequence number of the first packet received from the link testing mote
-     * </pre>
      *
-     * <code>uint32 lm_st = 46;</code>
+     * Generated from protobuf field <code>uint32 lm_st = 46;</code>
+     * @param int $var
+     * @return $this
      */
     public function setLmSt($var)
     {
         GPBUtil::checkUint32($var);
         $this->lm_st = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Sequence number of the last packet received from the link testing mote
-     * </pre>
      *
-     * <code>uint32 lm_nw = 47;</code>
+     * Generated from protobuf field <code>uint32 lm_nw = 47;</code>
+     * @return int
      */
     public function getLmNw()
     {
@@ -730,24 +729,25 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Sequence number of the last packet received from the link testing mote
-     * </pre>
      *
-     * <code>uint32 lm_nw = 47;</code>
+     * Generated from protobuf field <code>uint32 lm_nw = 47;</code>
+     * @param int $var
+     * @return $this
      */
     public function setLmNw($var)
     {
         GPBUtil::checkUint32($var);
         $this->lm_nw = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Number of lost PPS pulses
-     * </pre>
      *
-     * <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
+     * Generated from protobuf field <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
+     * @return int
      */
     public function getLPps()
     {
@@ -755,20 +755,23 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Number of lost PPS pulses
-     * </pre>
      *
-     * <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
+     * Generated from protobuf field <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
+     * @param int $var
+     * @return $this
      */
     public function setLPps($var)
     {
         GPBUtil::checkUint32($var);
         $this->l_pps = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+     * Generated from protobuf field <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+     * @return \Gateway\Status_OSMetrics
      */
     public function getOs()
     {
@@ -776,20 +779,23 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+     * Generated from protobuf field <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+     * @param \Gateway\Status_OSMetrics $var
+     * @return $this
      */
-    public function setOs(&$var)
+    public function setOs($var)
     {
         GPBUtil::checkMessage($var, \Gateway\Status_OSMetrics::class);
         $this->os = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * debug or warning messages from the gateway
-     * </pre>
      *
-     * <code>repeated string messages = 52;</code>
+     * Generated from protobuf field <code>repeated string messages = 52;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getMessages()
     {
@@ -797,16 +803,18 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * debug or warning messages from the gateway
-     * </pre>
      *
-     * <code>repeated string messages = 52;</code>
+     * Generated from protobuf field <code>repeated string messages = 52;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setMessages(&$var)
+    public function setMessages($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->messages = $arr;
+
+        return $this;
     }
 
 }

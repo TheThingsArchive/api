@@ -9,24 +9,20 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>networkserver.DevicesRequest</code>
+ * Generated from protobuf message <code>networkserver.DevicesRequest</code>
  */
 class DevicesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * Device address from the uplink message
-     * </pre>
      *
-     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * Generated from protobuf field <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
     private $dev_addr = '';
     /**
-     * <pre>
      * Frame counter from the uplink message
-     * </pre>
      *
-     * <code>uint32 f_cnt = 2;</code>
+     * Generated from protobuf field <code>uint32 f_cnt = 2;</code>
      */
     private $f_cnt = 0;
 
@@ -36,11 +32,10 @@ class DevicesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Device address from the uplink message
-     * </pre>
      *
-     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * Generated from protobuf field <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * @return string
      */
     public function getDevAddr()
     {
@@ -48,24 +43,25 @@ class DevicesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Device address from the uplink message
-     * </pre>
      *
-     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * Generated from protobuf field <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setDevAddr($var)
     {
         GPBUtil::checkString($var, False);
         $this->dev_addr = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Frame counter from the uplink message
-     * </pre>
      *
-     * <code>uint32 f_cnt = 2;</code>
+     * Generated from protobuf field <code>uint32 f_cnt = 2;</code>
+     * @return int
      */
     public function getFCnt()
     {
@@ -73,16 +69,18 @@ class DevicesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Frame counter from the uplink message
-     * </pre>
      *
-     * <code>uint32 f_cnt = 2;</code>
+     * Generated from protobuf field <code>uint32 f_cnt = 2;</code>
+     * @param int $var
+     * @return $this
      */
     public function setFCnt($var)
     {
         GPBUtil::checkUint32($var);
         $this->f_cnt = $var;
+
+        return $this;
     }
 
 }

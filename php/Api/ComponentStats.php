@@ -9,28 +9,28 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>api.ComponentStats</code>
+ * Generated from protobuf message <code>api.ComponentStats</code>
  */
 class ComponentStats extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>uint64 uptime = 1;</code>
+     * Generated from protobuf field <code>uint64 uptime = 1;</code>
      */
     private $uptime = 0;
     /**
-     * <code>.api.ComponentStats.CPUStats cpu = 2;</code>
+     * Generated from protobuf field <code>.api.ComponentStats.CPUStats cpu = 2;</code>
      */
     private $cpu = null;
     /**
-     * <code>.api.ComponentStats.MemoryStats memory = 3;</code>
+     * Generated from protobuf field <code>.api.ComponentStats.MemoryStats memory = 3;</code>
      */
     private $memory = null;
     /**
-     * <code>uint64 goroutines = 4;</code>
+     * Generated from protobuf field <code>uint64 goroutines = 4;</code>
      */
     private $goroutines = 0;
     /**
-     * <code>float gc_cpu_fraction = 5;</code>
+     * Generated from protobuf field <code>float gc_cpu_fraction = 5;</code>
      */
     private $gc_cpu_fraction = 0.0;
 
@@ -40,7 +40,8 @@ class ComponentStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint64 uptime = 1;</code>
+     * Generated from protobuf field <code>uint64 uptime = 1;</code>
+     * @return int|string
      */
     public function getUptime()
     {
@@ -48,16 +49,21 @@ class ComponentStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint64 uptime = 1;</code>
+     * Generated from protobuf field <code>uint64 uptime = 1;</code>
+     * @param int|string $var
+     * @return $this
      */
     public function setUptime($var)
     {
         GPBUtil::checkUint64($var);
         $this->uptime = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.api.ComponentStats.CPUStats cpu = 2;</code>
+     * Generated from protobuf field <code>.api.ComponentStats.CPUStats cpu = 2;</code>
+     * @return \Api\ComponentStats_CPUStats
      */
     public function getCpu()
     {
@@ -65,16 +71,21 @@ class ComponentStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.ComponentStats.CPUStats cpu = 2;</code>
+     * Generated from protobuf field <code>.api.ComponentStats.CPUStats cpu = 2;</code>
+     * @param \Api\ComponentStats_CPUStats $var
+     * @return $this
      */
-    public function setCpu(&$var)
+    public function setCpu($var)
     {
         GPBUtil::checkMessage($var, \Api\ComponentStats_CPUStats::class);
         $this->cpu = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.api.ComponentStats.MemoryStats memory = 3;</code>
+     * Generated from protobuf field <code>.api.ComponentStats.MemoryStats memory = 3;</code>
+     * @return \Api\ComponentStats_MemoryStats
      */
     public function getMemory()
     {
@@ -82,16 +93,21 @@ class ComponentStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.api.ComponentStats.MemoryStats memory = 3;</code>
+     * Generated from protobuf field <code>.api.ComponentStats.MemoryStats memory = 3;</code>
+     * @param \Api\ComponentStats_MemoryStats $var
+     * @return $this
      */
-    public function setMemory(&$var)
+    public function setMemory($var)
     {
         GPBUtil::checkMessage($var, \Api\ComponentStats_MemoryStats::class);
         $this->memory = $var;
+
+        return $this;
     }
 
     /**
-     * <code>uint64 goroutines = 4;</code>
+     * Generated from protobuf field <code>uint64 goroutines = 4;</code>
+     * @return int|string
      */
     public function getGoroutines()
     {
@@ -99,16 +115,21 @@ class ComponentStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint64 goroutines = 4;</code>
+     * Generated from protobuf field <code>uint64 goroutines = 4;</code>
+     * @param int|string $var
+     * @return $this
      */
     public function setGoroutines($var)
     {
         GPBUtil::checkUint64($var);
         $this->goroutines = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float gc_cpu_fraction = 5;</code>
+     * Generated from protobuf field <code>float gc_cpu_fraction = 5;</code>
+     * @return float
      */
     public function getGcCpuFraction()
     {
@@ -116,12 +137,16 @@ class ComponentStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float gc_cpu_fraction = 5;</code>
+     * Generated from protobuf field <code>float gc_cpu_fraction = 5;</code>
+     * @param float $var
+     * @return $this
      */
     public function setGcCpuFraction($var)
     {
         GPBUtil::checkFloat($var);
         $this->gc_cpu_fraction = $var;
+
+        return $this;
     }
 
 }

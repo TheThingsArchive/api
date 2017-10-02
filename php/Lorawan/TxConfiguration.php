@@ -9,44 +9,36 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>lorawan.TxConfiguration</code>
+ * Generated from protobuf message <code>lorawan.TxConfiguration</code>
  */
 class TxConfiguration extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>.lorawan.Modulation modulation = 11;</code>
+     * Generated from protobuf field <code>.lorawan.Modulation modulation = 11;</code>
      */
     private $modulation = 0;
     /**
-     * <pre>
      * LoRa data rate - SF{spreadingfactor}BW{bandwidth}
-     * </pre>
      *
-     * <code>string data_rate = 12;</code>
+     * Generated from protobuf field <code>string data_rate = 12;</code>
      */
     private $data_rate = '';
     /**
-     * <pre>
      * FSK bit rate in bit/s
-     * </pre>
      *
-     * <code>uint32 bit_rate = 13;</code>
+     * Generated from protobuf field <code>uint32 bit_rate = 13;</code>
      */
     private $bit_rate = 0;
     /**
-     * <pre>
      * LoRa coding rate
-     * </pre>
      *
-     * <code>string coding_rate = 14;</code>
+     * Generated from protobuf field <code>string coding_rate = 14;</code>
      */
     private $coding_rate = '';
     /**
-     * <pre>
      * Store the full 32 bit FCnt (deprecated; do not use)
-     * </pre>
      *
-     * <code>uint32 f_cnt = 15;</code>
+     * Generated from protobuf field <code>uint32 f_cnt = 15;</code>
      */
     private $f_cnt = 0;
 
@@ -56,7 +48,8 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.Modulation modulation = 11;</code>
+     * Generated from protobuf field <code>.lorawan.Modulation modulation = 11;</code>
+     * @return int
      */
     public function getModulation()
     {
@@ -64,20 +57,23 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.Modulation modulation = 11;</code>
+     * Generated from protobuf field <code>.lorawan.Modulation modulation = 11;</code>
+     * @param int $var
+     * @return $this
      */
     public function setModulation($var)
     {
         GPBUtil::checkEnum($var, \Lorawan\Modulation::class);
         $this->modulation = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * LoRa data rate - SF{spreadingfactor}BW{bandwidth}
-     * </pre>
      *
-     * <code>string data_rate = 12;</code>
+     * Generated from protobuf field <code>string data_rate = 12;</code>
+     * @return string
      */
     public function getDataRate()
     {
@@ -85,24 +81,25 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * LoRa data rate - SF{spreadingfactor}BW{bandwidth}
-     * </pre>
      *
-     * <code>string data_rate = 12;</code>
+     * Generated from protobuf field <code>string data_rate = 12;</code>
+     * @param string $var
+     * @return $this
      */
     public function setDataRate($var)
     {
         GPBUtil::checkString($var, True);
         $this->data_rate = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * FSK bit rate in bit/s
-     * </pre>
      *
-     * <code>uint32 bit_rate = 13;</code>
+     * Generated from protobuf field <code>uint32 bit_rate = 13;</code>
+     * @return int
      */
     public function getBitRate()
     {
@@ -110,24 +107,25 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * FSK bit rate in bit/s
-     * </pre>
      *
-     * <code>uint32 bit_rate = 13;</code>
+     * Generated from protobuf field <code>uint32 bit_rate = 13;</code>
+     * @param int $var
+     * @return $this
      */
     public function setBitRate($var)
     {
         GPBUtil::checkUint32($var);
         $this->bit_rate = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * LoRa coding rate
-     * </pre>
      *
-     * <code>string coding_rate = 14;</code>
+     * Generated from protobuf field <code>string coding_rate = 14;</code>
+     * @return string
      */
     public function getCodingRate()
     {
@@ -135,24 +133,25 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * LoRa coding rate
-     * </pre>
      *
-     * <code>string coding_rate = 14;</code>
+     * Generated from protobuf field <code>string coding_rate = 14;</code>
+     * @param string $var
+     * @return $this
      */
     public function setCodingRate($var)
     {
         GPBUtil::checkString($var, True);
         $this->coding_rate = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Store the full 32 bit FCnt (deprecated; do not use)
-     * </pre>
      *
-     * <code>uint32 f_cnt = 15;</code>
+     * Generated from protobuf field <code>uint32 f_cnt = 15;</code>
+     * @return int
      */
     public function getFCnt()
     {
@@ -160,16 +159,18 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Store the full 32 bit FCnt (deprecated; do not use)
-     * </pre>
      *
-     * <code>uint32 f_cnt = 15;</code>
+     * Generated from protobuf field <code>uint32 f_cnt = 15;</code>
+     * @param int $var
+     * @return $this
      */
     public function setFCnt($var)
     {
         GPBUtil::checkUint32($var);
         $this->f_cnt = $var;
+
+        return $this;
     }
 
 }

@@ -9,52 +9,42 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>gateway.TxConfiguration</code>
+ * Generated from protobuf message <code>gateway.TxConfiguration</code>
  */
 class TxConfiguration extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * Timestamp (uptime of LoRa module) in microseconds with rollover
-     * </pre>
      *
-     * <code>uint32 timestamp = 11;</code>
+     * Generated from protobuf field <code>uint32 timestamp = 11;</code>
      */
     private $timestamp = 0;
     /**
-     * <code>uint32 rf_chain = 21;</code>
+     * Generated from protobuf field <code>uint32 rf_chain = 21;</code>
      */
     private $rf_chain = 0;
     /**
-     * <pre>
      * Frequency in Hz
-     * </pre>
      *
-     * <code>uint64 frequency = 22;</code>
+     * Generated from protobuf field <code>uint64 frequency = 22;</code>
      */
     private $frequency = 0;
     /**
-     * <pre>
      * Transmit power in dBm
-     * </pre>
      *
-     * <code>int32 power = 23;</code>
+     * Generated from protobuf field <code>int32 power = 23;</code>
      */
     private $power = 0;
     /**
-     * <pre>
      * LoRa polarization inversion (basically always true for messages from gateway to node)
-     * </pre>
      *
-     * <code>bool polarization_inversion = 31;</code>
+     * Generated from protobuf field <code>bool polarization_inversion = 31;</code>
      */
     private $polarization_inversion = false;
     /**
-     * <pre>
      * FSK frequency deviation in Hz
-     * </pre>
      *
-     * <code>uint32 frequency_deviation = 32;</code>
+     * Generated from protobuf field <code>uint32 frequency_deviation = 32;</code>
      */
     private $frequency_deviation = 0;
 
@@ -64,11 +54,10 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Timestamp (uptime of LoRa module) in microseconds with rollover
-     * </pre>
      *
-     * <code>uint32 timestamp = 11;</code>
+     * Generated from protobuf field <code>uint32 timestamp = 11;</code>
+     * @return int
      */
     public function getTimestamp()
     {
@@ -76,20 +65,23 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Timestamp (uptime of LoRa module) in microseconds with rollover
-     * </pre>
      *
-     * <code>uint32 timestamp = 11;</code>
+     * Generated from protobuf field <code>uint32 timestamp = 11;</code>
+     * @param int $var
+     * @return $this
      */
     public function setTimestamp($var)
     {
         GPBUtil::checkUint32($var);
         $this->timestamp = $var;
+
+        return $this;
     }
 
     /**
-     * <code>uint32 rf_chain = 21;</code>
+     * Generated from protobuf field <code>uint32 rf_chain = 21;</code>
+     * @return int
      */
     public function getRfChain()
     {
@@ -97,20 +89,23 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 rf_chain = 21;</code>
+     * Generated from protobuf field <code>uint32 rf_chain = 21;</code>
+     * @param int $var
+     * @return $this
      */
     public function setRfChain($var)
     {
         GPBUtil::checkUint32($var);
         $this->rf_chain = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Frequency in Hz
-     * </pre>
      *
-     * <code>uint64 frequency = 22;</code>
+     * Generated from protobuf field <code>uint64 frequency = 22;</code>
+     * @return int|string
      */
     public function getFrequency()
     {
@@ -118,24 +113,25 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Frequency in Hz
-     * </pre>
      *
-     * <code>uint64 frequency = 22;</code>
+     * Generated from protobuf field <code>uint64 frequency = 22;</code>
+     * @param int|string $var
+     * @return $this
      */
     public function setFrequency($var)
     {
         GPBUtil::checkUint64($var);
         $this->frequency = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Transmit power in dBm
-     * </pre>
      *
-     * <code>int32 power = 23;</code>
+     * Generated from protobuf field <code>int32 power = 23;</code>
+     * @return int
      */
     public function getPower()
     {
@@ -143,24 +139,25 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Transmit power in dBm
-     * </pre>
      *
-     * <code>int32 power = 23;</code>
+     * Generated from protobuf field <code>int32 power = 23;</code>
+     * @param int $var
+     * @return $this
      */
     public function setPower($var)
     {
         GPBUtil::checkInt32($var);
         $this->power = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * LoRa polarization inversion (basically always true for messages from gateway to node)
-     * </pre>
      *
-     * <code>bool polarization_inversion = 31;</code>
+     * Generated from protobuf field <code>bool polarization_inversion = 31;</code>
+     * @return bool
      */
     public function getPolarizationInversion()
     {
@@ -168,24 +165,25 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * LoRa polarization inversion (basically always true for messages from gateway to node)
-     * </pre>
      *
-     * <code>bool polarization_inversion = 31;</code>
+     * Generated from protobuf field <code>bool polarization_inversion = 31;</code>
+     * @param bool $var
+     * @return $this
      */
     public function setPolarizationInversion($var)
     {
         GPBUtil::checkBool($var);
         $this->polarization_inversion = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * FSK frequency deviation in Hz
-     * </pre>
      *
-     * <code>uint32 frequency_deviation = 32;</code>
+     * Generated from protobuf field <code>uint32 frequency_deviation = 32;</code>
+     * @return int
      */
     public function getFrequencyDeviation()
     {
@@ -193,16 +191,18 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * FSK frequency deviation in Hz
-     * </pre>
      *
-     * <code>uint32 frequency_deviation = 32;</code>
+     * Generated from protobuf field <code>uint32 frequency_deviation = 32;</code>
+     * @param int $var
+     * @return $this
      */
     public function setFrequencyDeviation($var)
     {
         GPBUtil::checkUint32($var);
         $this->frequency_deviation = $var;
+
+        return $this;
     }
 
 }

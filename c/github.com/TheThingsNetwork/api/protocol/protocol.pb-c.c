@@ -10,7 +10,7 @@
 void   protocol__message__init
                      (Protocol__Message         *message)
 {
-  static Protocol__Message init_value = PROTOCOL__MESSAGE__INIT;
+  static const Protocol__Message init_value = PROTOCOL__MESSAGE__INIT;
   *message = init_value;
 }
 size_t protocol__message__get_packed_size
@@ -47,13 +47,15 @@ void   protocol__message__free_unpacked
                      (Protocol__Message *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &protocol__message__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   protocol__rx_metadata__init
                      (Protocol__RxMetadata         *message)
 {
-  static Protocol__RxMetadata init_value = PROTOCOL__RX_METADATA__INIT;
+  static const Protocol__RxMetadata init_value = PROTOCOL__RX_METADATA__INIT;
   *message = init_value;
 }
 size_t protocol__rx_metadata__get_packed_size
@@ -90,13 +92,15 @@ void   protocol__rx_metadata__free_unpacked
                      (Protocol__RxMetadata *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &protocol__rx_metadata__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   protocol__tx_configuration__init
                      (Protocol__TxConfiguration         *message)
 {
-  static Protocol__TxConfiguration init_value = PROTOCOL__TX_CONFIGURATION__INIT;
+  static const Protocol__TxConfiguration init_value = PROTOCOL__TX_CONFIGURATION__INIT;
   *message = init_value;
 }
 size_t protocol__tx_configuration__get_packed_size
@@ -133,13 +137,15 @@ void   protocol__tx_configuration__free_unpacked
                      (Protocol__TxConfiguration *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &protocol__tx_configuration__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   protocol__activation_metadata__init
                      (Protocol__ActivationMetadata         *message)
 {
-  static Protocol__ActivationMetadata init_value = PROTOCOL__ACTIVATION_METADATA__INIT;
+  static const Protocol__ActivationMetadata init_value = PROTOCOL__ACTIVATION_METADATA__INIT;
   *message = init_value;
 }
 size_t protocol__activation_metadata__get_packed_size
@@ -176,6 +182,8 @@ void   protocol__activation_metadata__free_unpacked
                      (Protocol__ActivationMetadata *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &protocol__activation_metadata__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
@@ -184,7 +192,7 @@ static const ProtobufCFieldDescriptor protocol__message__field_descriptors[1] =
   {
     "lorawan",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     offsetof(Protocol__Message, protocol_case),
     offsetof(Protocol__Message, lorawan),
@@ -222,7 +230,7 @@ static const ProtobufCFieldDescriptor protocol__rx_metadata__field_descriptors[1
   {
     "lorawan",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     offsetof(Protocol__RxMetadata, protocol_case),
     offsetof(Protocol__RxMetadata, lorawan),
@@ -260,7 +268,7 @@ static const ProtobufCFieldDescriptor protocol__tx_configuration__field_descript
   {
     "lorawan",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     offsetof(Protocol__TxConfiguration, protocol_case),
     offsetof(Protocol__TxConfiguration, lorawan),
@@ -298,7 +306,7 @@ static const ProtobufCFieldDescriptor protocol__activation_metadata__field_descr
   {
     "lorawan",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     offsetof(Protocol__ActivationMetadata, protocol_case),
     offsetof(Protocol__ActivationMetadata, lorawan),

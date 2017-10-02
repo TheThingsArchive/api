@@ -10,13 +10,13 @@
 void   trace__trace__metadata_entry__init
                      (Trace__Trace__MetadataEntry         *message)
 {
-  static Trace__Trace__MetadataEntry init_value = TRACE__TRACE__METADATA_ENTRY__INIT;
+  static const Trace__Trace__MetadataEntry init_value = TRACE__TRACE__METADATA_ENTRY__INIT;
   *message = init_value;
 }
 void   trace__trace__init
                      (Trace__Trace         *message)
 {
-  static Trace__Trace init_value = TRACE__TRACE__INIT;
+  static const Trace__Trace init_value = TRACE__TRACE__INIT;
   *message = init_value;
 }
 size_t trace__trace__get_packed_size
@@ -53,6 +53,8 @@ void   trace__trace__free_unpacked
                      (Trace__Trace *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &trace__trace__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
@@ -61,24 +63,24 @@ static const ProtobufCFieldDescriptor trace__trace__metadata_entry__field_descri
   {
     "key",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Trace__Trace__MetadataEntry, key),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "value",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Trace__Trace__MetadataEntry, value),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -112,21 +114,21 @@ static const ProtobufCFieldDescriptor trace__trace__field_descriptors[7] =
   {
     "id",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Trace__Trace, id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "time",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_INT64,
-    offsetof(Trace__Trace, has_time),
+    0,   /* quantifier_offset */
     offsetof(Trace__Trace, time),
     NULL,
     NULL,
@@ -136,36 +138,36 @@ static const ProtobufCFieldDescriptor trace__trace__field_descriptors[7] =
   {
     "service_id",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Trace__Trace, service_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "service_name",
     4,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Trace__Trace, service_name),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "event",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Trace__Trace, event),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },

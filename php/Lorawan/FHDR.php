@@ -9,24 +9,24 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>lorawan.FHDR</code>
+ * Generated from protobuf message <code>lorawan.FHDR</code>
  */
 class FHDR extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * Generated from protobuf field <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
     private $dev_addr = '';
     /**
-     * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * Generated from protobuf field <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     private $f_ctrl = null;
     /**
-     * <code>uint32 f_cnt = 3;</code>
+     * Generated from protobuf field <code>uint32 f_cnt = 3;</code>
      */
     private $f_cnt = 0;
     /**
-     * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      */
     private $f_opts;
 
@@ -36,7 +36,8 @@ class FHDR extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * Generated from protobuf field <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * @return string
      */
     public function getDevAddr()
     {
@@ -44,16 +45,21 @@ class FHDR extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * Generated from protobuf field <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setDevAddr($var)
     {
         GPBUtil::checkString($var, False);
         $this->dev_addr = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * Generated from protobuf field <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * @return \Lorawan\FCtrl
      */
     public function getFCtrl()
     {
@@ -61,16 +67,21 @@ class FHDR extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * Generated from protobuf field <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * @param \Lorawan\FCtrl $var
+     * @return $this
      */
-    public function setFCtrl(&$var)
+    public function setFCtrl($var)
     {
         GPBUtil::checkMessage($var, \Lorawan\FCtrl::class);
         $this->f_ctrl = $var;
+
+        return $this;
     }
 
     /**
-     * <code>uint32 f_cnt = 3;</code>
+     * Generated from protobuf field <code>uint32 f_cnt = 3;</code>
+     * @return int
      */
     public function getFCnt()
     {
@@ -78,16 +89,21 @@ class FHDR extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 f_cnt = 3;</code>
+     * Generated from protobuf field <code>uint32 f_cnt = 3;</code>
+     * @param int $var
+     * @return $this
      */
     public function setFCnt($var)
     {
         GPBUtil::checkUint32($var);
         $this->f_cnt = $var;
+
+        return $this;
     }
 
     /**
-     * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getFOpts()
     {
@@ -95,12 +111,16 @@ class FHDR extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
+     * @param \Lorawan\MACCommand[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setFOpts(&$var)
+    public function setFOpts($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Lorawan\MACCommand::class);
         $this->f_opts = $arr;
+
+        return $this;
     }
 
 }

@@ -9,28 +9,28 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>router.UplinkMessage</code>
+ * Generated from protobuf message <code>router.UplinkMessage</code>
  */
 class UplinkMessage extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
      */
     private $payload = '';
     /**
-     * <code>.protocol.Message message = 2;</code>
+     * Generated from protobuf field <code>.protocol.Message message = 2;</code>
      */
     private $message = null;
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
      */
     private $protocol_metadata = null;
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     private $gateway_metadata = null;
     /**
-     * <code>.trace.Trace trace = 21;</code>
+     * Generated from protobuf field <code>.trace.Trace trace = 21;</code>
      */
     private $trace = null;
 
@@ -40,7 +40,8 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
+     * @return string
      */
     public function getPayload()
     {
@@ -48,16 +49,21 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes payload = 1;</code>
+     * Generated from protobuf field <code>bytes payload = 1;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPayload($var)
     {
         GPBUtil::checkString($var, False);
         $this->payload = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.protocol.Message message = 2;</code>
+     * Generated from protobuf field <code>.protocol.Message message = 2;</code>
+     * @return \Protocol\Message
      */
     public function getMessage()
     {
@@ -65,16 +71,21 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.protocol.Message message = 2;</code>
+     * Generated from protobuf field <code>.protocol.Message message = 2;</code>
+     * @param \Protocol\Message $var
+     * @return $this
      */
-    public function setMessage(&$var)
+    public function setMessage($var)
     {
         GPBUtil::checkMessage($var, \Protocol\Message::class);
         $this->message = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
+     * @return \Protocol\RxMetadata
      */
     public function getProtocolMetadata()
     {
@@ -82,16 +93,21 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
+     * @param \Protocol\RxMetadata $var
+     * @return $this
      */
-    public function setProtocolMetadata(&$var)
+    public function setProtocolMetadata($var)
     {
         GPBUtil::checkMessage($var, \Protocol\RxMetadata::class);
         $this->protocol_metadata = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
+     * @return \Gateway\RxMetadata
      */
     public function getGatewayMetadata()
     {
@@ -99,16 +115,21 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
+     * @param \Gateway\RxMetadata $var
+     * @return $this
      */
-    public function setGatewayMetadata(&$var)
+    public function setGatewayMetadata($var)
     {
         GPBUtil::checkMessage($var, \Gateway\RxMetadata::class);
         $this->gateway_metadata = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.trace.Trace trace = 21;</code>
+     * Generated from protobuf field <code>.trace.Trace trace = 21;</code>
+     * @return \Trace\Trace
      */
     public function getTrace()
     {
@@ -116,12 +137,16 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.trace.Trace trace = 21;</code>
+     * Generated from protobuf field <code>.trace.Trace trace = 21;</code>
+     * @param \Trace\Trace $var
+     * @return $this
      */
-    public function setTrace(&$var)
+    public function setTrace($var)
     {
         GPBUtil::checkMessage($var, \Trace\Trace::class);
         $this->trace = $var;
+
+        return $this;
     }
 
 }

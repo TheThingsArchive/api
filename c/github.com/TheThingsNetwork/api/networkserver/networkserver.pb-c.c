@@ -10,7 +10,7 @@
 void   networkserver__devices_request__init
                      (Networkserver__DevicesRequest         *message)
 {
-  static Networkserver__DevicesRequest init_value = NETWORKSERVER__DEVICES_REQUEST__INIT;
+  static const Networkserver__DevicesRequest init_value = NETWORKSERVER__DEVICES_REQUEST__INIT;
   *message = init_value;
 }
 size_t networkserver__devices_request__get_packed_size
@@ -47,13 +47,15 @@ void   networkserver__devices_request__free_unpacked
                      (Networkserver__DevicesRequest *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &networkserver__devices_request__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   networkserver__devices_response__init
                      (Networkserver__DevicesResponse         *message)
 {
-  static Networkserver__DevicesResponse init_value = NETWORKSERVER__DEVICES_RESPONSE__INIT;
+  static const Networkserver__DevicesResponse init_value = NETWORKSERVER__DEVICES_RESPONSE__INIT;
   *message = init_value;
 }
 size_t networkserver__devices_response__get_packed_size
@@ -90,13 +92,15 @@ void   networkserver__devices_response__free_unpacked
                      (Networkserver__DevicesResponse *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &networkserver__devices_response__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   networkserver__status_request__init
                      (Networkserver__StatusRequest         *message)
 {
-  static Networkserver__StatusRequest init_value = NETWORKSERVER__STATUS_REQUEST__INIT;
+  static const Networkserver__StatusRequest init_value = NETWORKSERVER__STATUS_REQUEST__INIT;
   *message = init_value;
 }
 size_t networkserver__status_request__get_packed_size
@@ -133,13 +137,15 @@ void   networkserver__status_request__free_unpacked
                      (Networkserver__StatusRequest *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &networkserver__status_request__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   networkserver__status__init
                      (Networkserver__Status         *message)
 {
-  static Networkserver__Status init_value = NETWORKSERVER__STATUS__INIT;
+  static const Networkserver__Status init_value = NETWORKSERVER__STATUS__INIT;
   *message = init_value;
 }
 size_t networkserver__status__get_packed_size
@@ -176,6 +182,8 @@ void   networkserver__status__free_unpacked
                      (Networkserver__Status *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &networkserver__status__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
@@ -184,9 +192,9 @@ static const ProtobufCFieldDescriptor networkserver__devices_request__field_desc
   {
     "dev_addr",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Networkserver__DevicesRequest, has_dev_addr),
+    0,   /* quantifier_offset */
     offsetof(Networkserver__DevicesRequest, dev_addr),
     NULL,
     NULL,
@@ -196,9 +204,9 @@ static const ProtobufCFieldDescriptor networkserver__devices_request__field_desc
   {
     "f_cnt",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Networkserver__DevicesRequest, has_f_cnt),
+    0,   /* quantifier_offset */
     offsetof(Networkserver__DevicesRequest, f_cnt),
     NULL,
     NULL,
@@ -291,7 +299,7 @@ static const ProtobufCFieldDescriptor networkserver__status__field_descriptors[6
   {
     "system",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Networkserver__Status, system),
@@ -303,7 +311,7 @@ static const ProtobufCFieldDescriptor networkserver__status__field_descriptors[6
   {
     "component",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Networkserver__Status, component),
@@ -315,7 +323,7 @@ static const ProtobufCFieldDescriptor networkserver__status__field_descriptors[6
   {
     "uplink",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Networkserver__Status, uplink),
@@ -327,7 +335,7 @@ static const ProtobufCFieldDescriptor networkserver__status__field_descriptors[6
   {
     "downlink",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Networkserver__Status, downlink),
@@ -339,7 +347,7 @@ static const ProtobufCFieldDescriptor networkserver__status__field_descriptors[6
   {
     "activations",
     13,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Networkserver__Status, activations),
@@ -351,7 +359,7 @@ static const ProtobufCFieldDescriptor networkserver__status__field_descriptors[6
   {
     "devices_per_address",
     21,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Networkserver__Status, devices_per_address),

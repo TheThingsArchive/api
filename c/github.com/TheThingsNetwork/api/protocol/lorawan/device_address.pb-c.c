@@ -10,7 +10,7 @@
 void   lorawan__prefixes_request__init
                      (Lorawan__PrefixesRequest         *message)
 {
-  static Lorawan__PrefixesRequest init_value = LORAWAN__PREFIXES_REQUEST__INIT;
+  static const Lorawan__PrefixesRequest init_value = LORAWAN__PREFIXES_REQUEST__INIT;
   *message = init_value;
 }
 size_t lorawan__prefixes_request__get_packed_size
@@ -47,19 +47,21 @@ void   lorawan__prefixes_request__free_unpacked
                      (Lorawan__PrefixesRequest *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &lorawan__prefixes_request__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   lorawan__prefixes_response__prefix_mapping__init
                      (Lorawan__PrefixesResponse__PrefixMapping         *message)
 {
-  static Lorawan__PrefixesResponse__PrefixMapping init_value = LORAWAN__PREFIXES_RESPONSE__PREFIX_MAPPING__INIT;
+  static const Lorawan__PrefixesResponse__PrefixMapping init_value = LORAWAN__PREFIXES_RESPONSE__PREFIX_MAPPING__INIT;
   *message = init_value;
 }
 void   lorawan__prefixes_response__init
                      (Lorawan__PrefixesResponse         *message)
 {
-  static Lorawan__PrefixesResponse init_value = LORAWAN__PREFIXES_RESPONSE__INIT;
+  static const Lorawan__PrefixesResponse init_value = LORAWAN__PREFIXES_RESPONSE__INIT;
   *message = init_value;
 }
 size_t lorawan__prefixes_response__get_packed_size
@@ -96,13 +98,15 @@ void   lorawan__prefixes_response__free_unpacked
                      (Lorawan__PrefixesResponse *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &lorawan__prefixes_response__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   lorawan__dev_addr_request__init
                      (Lorawan__DevAddrRequest         *message)
 {
-  static Lorawan__DevAddrRequest init_value = LORAWAN__DEV_ADDR_REQUEST__INIT;
+  static const Lorawan__DevAddrRequest init_value = LORAWAN__DEV_ADDR_REQUEST__INIT;
   *message = init_value;
 }
 size_t lorawan__dev_addr_request__get_packed_size
@@ -139,13 +143,15 @@ void   lorawan__dev_addr_request__free_unpacked
                      (Lorawan__DevAddrRequest *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &lorawan__dev_addr_request__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   lorawan__dev_addr_response__init
                      (Lorawan__DevAddrResponse         *message)
 {
-  static Lorawan__DevAddrResponse init_value = LORAWAN__DEV_ADDR_RESPONSE__INIT;
+  static const Lorawan__DevAddrResponse init_value = LORAWAN__DEV_ADDR_RESPONSE__INIT;
   *message = init_value;
 }
 size_t lorawan__dev_addr_response__get_packed_size
@@ -182,6 +188,8 @@ void   lorawan__dev_addr_response__free_unpacked
                      (Lorawan__DevAddrResponse *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &lorawan__dev_addr_response__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
@@ -208,12 +216,12 @@ static const ProtobufCFieldDescriptor lorawan__prefixes_response__prefix_mapping
   {
     "prefix",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Lorawan__PrefixesResponse__PrefixMapping, prefix),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -225,7 +233,7 @@ static const ProtobufCFieldDescriptor lorawan__prefixes_response__prefix_mapping
     offsetof(Lorawan__PrefixesResponse__PrefixMapping, n_usage),
     offsetof(Lorawan__PrefixesResponse__PrefixMapping, usage),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -302,7 +310,7 @@ static const ProtobufCFieldDescriptor lorawan__dev_addr_request__field_descripto
     offsetof(Lorawan__DevAddrRequest, n_usage),
     offsetof(Lorawan__DevAddrRequest, usage),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -335,9 +343,9 @@ static const ProtobufCFieldDescriptor lorawan__dev_addr_response__field_descript
   {
     "dev_addr",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Lorawan__DevAddrResponse, has_dev_addr),
+    0,   /* quantifier_offset */
     offsetof(Lorawan__DevAddrResponse, dev_addr),
     NULL,
     NULL,

@@ -9,16 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>lorawan.MACCommand</code>
+ * Generated from protobuf message <code>lorawan.MACCommand</code>
  */
 class MACCommand extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>uint32 cid = 1 [(.gogoproto.customname) = "CID"];</code>
+     * Generated from protobuf field <code>uint32 cid = 1 [(.gogoproto.customname) = "CID"];</code>
      */
     private $cid = 0;
     /**
-     * <code>bytes payload = 2;</code>
+     * Generated from protobuf field <code>bytes payload = 2;</code>
      */
     private $payload = '';
 
@@ -28,7 +28,8 @@ class MACCommand extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 cid = 1 [(.gogoproto.customname) = "CID"];</code>
+     * Generated from protobuf field <code>uint32 cid = 1 [(.gogoproto.customname) = "CID"];</code>
+     * @return int
      */
     public function getCid()
     {
@@ -36,16 +37,21 @@ class MACCommand extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>uint32 cid = 1 [(.gogoproto.customname) = "CID"];</code>
+     * Generated from protobuf field <code>uint32 cid = 1 [(.gogoproto.customname) = "CID"];</code>
+     * @param int $var
+     * @return $this
      */
     public function setCid($var)
     {
         GPBUtil::checkUint32($var);
         $this->cid = $var;
+
+        return $this;
     }
 
     /**
-     * <code>bytes payload = 2;</code>
+     * Generated from protobuf field <code>bytes payload = 2;</code>
+     * @return string
      */
     public function getPayload()
     {
@@ -53,12 +59,16 @@ class MACCommand extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>bytes payload = 2;</code>
+     * Generated from protobuf field <code>bytes payload = 2;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPayload($var)
     {
         GPBUtil::checkString($var, False);
         $this->payload = $var;
+
+        return $this;
     }
 
 }

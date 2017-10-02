@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -82,6 +84,7 @@ proto.protocol.Message.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.protocol.Message} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.protocol.Message.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -152,6 +155,7 @@ proto.protocol.Message.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.protocol.Message} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.protocol.Message.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -264,6 +268,7 @@ proto.protocol.RxMetadata.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.protocol.RxMetadata} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.protocol.RxMetadata.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -334,6 +339,7 @@ proto.protocol.RxMetadata.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.protocol.RxMetadata} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.protocol.RxMetadata.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -446,6 +452,7 @@ proto.protocol.TxConfiguration.prototype.toObject = function(opt_includeInstance
  *     http://goto/soy-param-migration
  * @param {!proto.protocol.TxConfiguration} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.protocol.TxConfiguration.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -516,6 +523,7 @@ proto.protocol.TxConfiguration.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.protocol.TxConfiguration} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.protocol.TxConfiguration.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -628,6 +636,7 @@ proto.protocol.ActivationMetadata.prototype.toObject = function(opt_includeInsta
  *     http://goto/soy-param-migration
  * @param {!proto.protocol.ActivationMetadata} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.protocol.ActivationMetadata.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -698,6 +707,7 @@ proto.protocol.ActivationMetadata.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.protocol.ActivationMetadata} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.protocol.ActivationMetadata.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;

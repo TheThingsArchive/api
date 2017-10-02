@@ -10,6 +10,7 @@ public  final class Rates extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:api.Rates)
     RatesOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use Rates.newBuilder() to construct.
   private Rates(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -23,7 +24,7 @@ public  final class Rates extends
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private Rates(
       com.google.protobuf.CodedInputStream input,
@@ -31,6 +32,8 @@ public  final class Rates extends
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     int mutable_bitField0_ = 0;
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -40,7 +43,8 @@ public  final class Rates extends
             done = true;
             break;
           default: {
-            if (!input.skipField(tag)) {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
             break;
@@ -68,6 +72,7 @@ public  final class Rates extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -131,6 +136,7 @@ public  final class Rates extends
     if (rate15_ != 0F) {
       output.writeFloat(3, rate15_);
     }
+    unknownFields.writeTo(output);
   }
 
   public int getSerializedSize() {
@@ -150,11 +156,11 @@ public  final class Rates extends
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(3, rate15_);
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -178,6 +184,7 @@ public  final class Rates extends
         java.lang.Float.floatToIntBits(getRate15())
         == java.lang.Float.floatToIntBits(
             other.getRate15()));
+    result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
 
@@ -366,7 +373,7 @@ public  final class Rates extends
     }
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
     public Builder clearField(
@@ -379,12 +386,12 @@ public  final class Rates extends
     }
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -407,6 +414,7 @@ public  final class Rates extends
       if (other.getRate15() != 0F) {
         setRate15(other.getRate15());
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -512,12 +520,12 @@ public  final class Rates extends
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFieldsProto3(unknownFields);
     }
 
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 

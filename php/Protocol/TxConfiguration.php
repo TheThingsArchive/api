@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>protocol.TxConfiguration</code>
+ * Generated from protobuf message <code>protocol.TxConfiguration</code>
  */
 class TxConfiguration extends \Google\Protobuf\Internal\Message
 {
@@ -21,7 +21,8 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+     * Generated from protobuf field <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+     * @return \Lorawan\TxConfiguration
      */
     public function getLorawan()
     {
@@ -29,14 +30,21 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+     * Generated from protobuf field <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+     * @param \Lorawan\TxConfiguration $var
+     * @return $this
      */
-    public function setLorawan(&$var)
+    public function setLorawan($var)
     {
         GPBUtil::checkMessage($var, \Lorawan\TxConfiguration::class);
         $this->writeOneof(1, $var);
+
+        return $this;
     }
 
+    /**
+     * @return string
+     */
     public function getProtocol()
     {
         return $this->whichOneof("protocol");

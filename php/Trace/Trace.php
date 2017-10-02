@@ -9,68 +9,52 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * Trace information
- * </pre>
  *
- * Protobuf type <code>trace.Trace</code>
+ * Generated from protobuf message <code>trace.Trace</code>
  */
 class Trace extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * Generated ID
-     * </pre>
      *
-     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     private $id = '';
     /**
-     * <pre>
      * Time in Unix nanoseconds
-     * </pre>
      *
-     * <code>int64 time = 2;</code>
+     * Generated from protobuf field <code>int64 time = 2;</code>
      */
     private $time = 0;
     /**
-     * <pre>
      * The ID of the component
-     * </pre>
      *
-     * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
+     * Generated from protobuf field <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
      */
     private $service_id = '';
     /**
-     * <pre>
      * The name of the component (router/broker/handler)
-     * </pre>
      *
-     * <code>string service_name = 4;</code>
+     * Generated from protobuf field <code>string service_name = 4;</code>
      */
     private $service_name = '';
     /**
-     * <pre>
      * Short event name
-     * </pre>
      *
-     * <code>string event = 5;</code>
+     * Generated from protobuf field <code>string event = 5;</code>
      */
     private $event = '';
     /**
-     * <pre>
      * metadata for the event
-     * </pre>
      *
-     * <code>map&lt;string, string&gt; metadata = 6;</code>
+     * Generated from protobuf field <code>map<string, string> metadata = 6;</code>
      */
     private $metadata;
     /**
-     * <pre>
      * Parents of the event
-     * </pre>
      *
-     * <code>repeated .trace.Trace parents = 11;</code>
+     * Generated from protobuf field <code>repeated .trace.Trace parents = 11;</code>
      */
     private $parents;
 
@@ -80,11 +64,10 @@ class Trace extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Generated ID
-     * </pre>
      *
-     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * @return string
      */
     public function getId()
     {
@@ -92,24 +75,25 @@ class Trace extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Generated ID
-     * </pre>
      *
-     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setId($var)
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Time in Unix nanoseconds
-     * </pre>
      *
-     * <code>int64 time = 2;</code>
+     * Generated from protobuf field <code>int64 time = 2;</code>
+     * @return int|string
      */
     public function getTime()
     {
@@ -117,24 +101,25 @@ class Trace extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Time in Unix nanoseconds
-     * </pre>
      *
-     * <code>int64 time = 2;</code>
+     * Generated from protobuf field <code>int64 time = 2;</code>
+     * @param int|string $var
+     * @return $this
      */
     public function setTime($var)
     {
         GPBUtil::checkInt64($var);
         $this->time = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The ID of the component
-     * </pre>
      *
-     * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
+     * Generated from protobuf field <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
+     * @return string
      */
     public function getServiceId()
     {
@@ -142,24 +127,25 @@ class Trace extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The ID of the component
-     * </pre>
      *
-     * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
+     * Generated from protobuf field <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setServiceId($var)
     {
         GPBUtil::checkString($var, True);
         $this->service_id = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The name of the component (router/broker/handler)
-     * </pre>
      *
-     * <code>string service_name = 4;</code>
+     * Generated from protobuf field <code>string service_name = 4;</code>
+     * @return string
      */
     public function getServiceName()
     {
@@ -167,24 +153,25 @@ class Trace extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The name of the component (router/broker/handler)
-     * </pre>
      *
-     * <code>string service_name = 4;</code>
+     * Generated from protobuf field <code>string service_name = 4;</code>
+     * @param string $var
+     * @return $this
      */
     public function setServiceName($var)
     {
         GPBUtil::checkString($var, True);
         $this->service_name = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Short event name
-     * </pre>
      *
-     * <code>string event = 5;</code>
+     * Generated from protobuf field <code>string event = 5;</code>
+     * @return string
      */
     public function getEvent()
     {
@@ -192,24 +179,25 @@ class Trace extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Short event name
-     * </pre>
      *
-     * <code>string event = 5;</code>
+     * Generated from protobuf field <code>string event = 5;</code>
+     * @param string $var
+     * @return $this
      */
     public function setEvent($var)
     {
         GPBUtil::checkString($var, True);
         $this->event = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * metadata for the event
-     * </pre>
      *
-     * <code>map&lt;string, string&gt; metadata = 6;</code>
+     * Generated from protobuf field <code>map<string, string> metadata = 6;</code>
+     * @return \Google\Protobuf\Internal\MapField
      */
     public function getMetadata()
     {
@@ -217,24 +205,25 @@ class Trace extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * metadata for the event
-     * </pre>
      *
-     * <code>map&lt;string, string&gt; metadata = 6;</code>
+     * Generated from protobuf field <code>map<string, string> metadata = 6;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
      */
-    public function setMetadata(&$var)
+    public function setMetadata($var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->metadata = $arr;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * Parents of the event
-     * </pre>
      *
-     * <code>repeated .trace.Trace parents = 11;</code>
+     * Generated from protobuf field <code>repeated .trace.Trace parents = 11;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getParents()
     {
@@ -242,16 +231,18 @@ class Trace extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * Parents of the event
-     * </pre>
      *
-     * <code>repeated .trace.Trace parents = 11;</code>
+     * Generated from protobuf field <code>repeated .trace.Trace parents = 11;</code>
+     * @param \Trace\Trace[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setParents(&$var)
+    public function setParents($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Trace\Trace::class);
         $this->parents = $arr;
+
+        return $this;
     }
 
 }

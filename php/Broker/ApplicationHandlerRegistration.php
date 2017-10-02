@@ -9,16 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>broker.ApplicationHandlerRegistration</code>
+ * Generated from protobuf message <code>broker.ApplicationHandlerRegistration</code>
  */
 class ApplicationHandlerRegistration extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     private $app_id = '';
     /**
-     * <code>string handler_id = 2 [(.gogoproto.customname) = "HandlerID"];</code>
+     * Generated from protobuf field <code>string handler_id = 2 [(.gogoproto.customname) = "HandlerID"];</code>
      */
     private $handler_id = '';
 
@@ -28,7 +28,8 @@ class ApplicationHandlerRegistration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * @return string
      */
     public function getAppId()
     {
@@ -36,16 +37,21 @@ class ApplicationHandlerRegistration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setAppId($var)
     {
         GPBUtil::checkString($var, True);
         $this->app_id = $var;
+
+        return $this;
     }
 
     /**
-     * <code>string handler_id = 2 [(.gogoproto.customname) = "HandlerID"];</code>
+     * Generated from protobuf field <code>string handler_id = 2 [(.gogoproto.customname) = "HandlerID"];</code>
+     * @return string
      */
     public function getHandlerId()
     {
@@ -53,12 +59,16 @@ class ApplicationHandlerRegistration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string handler_id = 2 [(.gogoproto.customname) = "HandlerID"];</code>
+     * Generated from protobuf field <code>string handler_id = 2 [(.gogoproto.customname) = "HandlerID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setHandlerId($var)
     {
         GPBUtil::checkString($var, True);
         $this->handler_id = $var;
+
+        return $this;
     }
 
 }

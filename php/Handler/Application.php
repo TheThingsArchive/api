@@ -9,70 +9,56 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * <pre>
  * The Application settings
- * </pre>
  *
- * Protobuf type <code>handler.Application</code>
+ * Generated from protobuf message <code>handler.Application</code>
  */
 class Application extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     private $app_id = '';
     /**
-     * <pre>
      * The payload format indicates how payload is formatted.
-     * </pre>
      *
-     * <code>string payload_format = 6;</code>
+     * Generated from protobuf field <code>string payload_format = 6;</code>
      */
     private $payload_format = '';
     /**
-     * <pre>
      * The decoder is a JavaScript function that decodes a byte array to an object.
      * This function is used when the payload format is set to custom.
-     * </pre>
      *
-     * <code>string decoder = 2;</code>
+     * Generated from protobuf field <code>string decoder = 2;</code>
      */
     private $decoder = '';
     /**
-     * <pre>
      * The converter is a JavaScript function that can be used to convert values
      * in the object returned from the decoder. This can for example be useful to
      * convert a voltage to a temperature. This function is used when the payload format is set to custom.
-     * </pre>
      *
-     * <code>string converter = 3;</code>
+     * Generated from protobuf field <code>string converter = 3;</code>
      */
     private $converter = '';
     /**
-     * <pre>
      * The validator is a JavaScript function that checks the validity of the
      * object returned by the decoder or converter. If validation fails, the
      * message is dropped. This function is used when the payload format is set to custom.
-     * </pre>
      *
-     * <code>string validator = 4;</code>
+     * Generated from protobuf field <code>string validator = 4;</code>
      */
     private $validator = '';
     /**
-     * <pre>
      * The encoder is a JavaScript function that encodes an object to a byte array.
      * This function is used when the payload format is set to custom.
-     * </pre>
      *
-     * <code>string encoder = 5;</code>
+     * Generated from protobuf field <code>string encoder = 5;</code>
      */
     private $encoder = '';
     /**
-     * <pre>
      * The "register on join" access key should only be set if devices need to be registered on join
-     * </pre>
      *
-     * <code>string register_on_join_access_key = 7;</code>
+     * Generated from protobuf field <code>string register_on_join_access_key = 7;</code>
      */
     private $register_on_join_access_key = '';
 
@@ -82,7 +68,8 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * @return string
      */
     public function getAppId()
     {
@@ -90,20 +77,23 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setAppId($var)
     {
         GPBUtil::checkString($var, True);
         $this->app_id = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The payload format indicates how payload is formatted.
-     * </pre>
      *
-     * <code>string payload_format = 6;</code>
+     * Generated from protobuf field <code>string payload_format = 6;</code>
+     * @return string
      */
     public function getPayloadFormat()
     {
@@ -111,25 +101,26 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The payload format indicates how payload is formatted.
-     * </pre>
      *
-     * <code>string payload_format = 6;</code>
+     * Generated from protobuf field <code>string payload_format = 6;</code>
+     * @param string $var
+     * @return $this
      */
     public function setPayloadFormat($var)
     {
         GPBUtil::checkString($var, True);
         $this->payload_format = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The decoder is a JavaScript function that decodes a byte array to an object.
      * This function is used when the payload format is set to custom.
-     * </pre>
      *
-     * <code>string decoder = 2;</code>
+     * Generated from protobuf field <code>string decoder = 2;</code>
+     * @return string
      */
     public function getDecoder()
     {
@@ -137,27 +128,28 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The decoder is a JavaScript function that decodes a byte array to an object.
      * This function is used when the payload format is set to custom.
-     * </pre>
      *
-     * <code>string decoder = 2;</code>
+     * Generated from protobuf field <code>string decoder = 2;</code>
+     * @param string $var
+     * @return $this
      */
     public function setDecoder($var)
     {
         GPBUtil::checkString($var, True);
         $this->decoder = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The converter is a JavaScript function that can be used to convert values
      * in the object returned from the decoder. This can for example be useful to
      * convert a voltage to a temperature. This function is used when the payload format is set to custom.
-     * </pre>
      *
-     * <code>string converter = 3;</code>
+     * Generated from protobuf field <code>string converter = 3;</code>
+     * @return string
      */
     public function getConverter()
     {
@@ -165,28 +157,29 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The converter is a JavaScript function that can be used to convert values
      * in the object returned from the decoder. This can for example be useful to
      * convert a voltage to a temperature. This function is used when the payload format is set to custom.
-     * </pre>
      *
-     * <code>string converter = 3;</code>
+     * Generated from protobuf field <code>string converter = 3;</code>
+     * @param string $var
+     * @return $this
      */
     public function setConverter($var)
     {
         GPBUtil::checkString($var, True);
         $this->converter = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The validator is a JavaScript function that checks the validity of the
      * object returned by the decoder or converter. If validation fails, the
      * message is dropped. This function is used when the payload format is set to custom.
-     * </pre>
      *
-     * <code>string validator = 4;</code>
+     * Generated from protobuf field <code>string validator = 4;</code>
+     * @return string
      */
     public function getValidator()
     {
@@ -194,27 +187,28 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The validator is a JavaScript function that checks the validity of the
      * object returned by the decoder or converter. If validation fails, the
      * message is dropped. This function is used when the payload format is set to custom.
-     * </pre>
      *
-     * <code>string validator = 4;</code>
+     * Generated from protobuf field <code>string validator = 4;</code>
+     * @param string $var
+     * @return $this
      */
     public function setValidator($var)
     {
         GPBUtil::checkString($var, True);
         $this->validator = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The encoder is a JavaScript function that encodes an object to a byte array.
      * This function is used when the payload format is set to custom.
-     * </pre>
      *
-     * <code>string encoder = 5;</code>
+     * Generated from protobuf field <code>string encoder = 5;</code>
+     * @return string
      */
     public function getEncoder()
     {
@@ -222,25 +216,26 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The encoder is a JavaScript function that encodes an object to a byte array.
      * This function is used when the payload format is set to custom.
-     * </pre>
      *
-     * <code>string encoder = 5;</code>
+     * Generated from protobuf field <code>string encoder = 5;</code>
+     * @param string $var
+     * @return $this
      */
     public function setEncoder($var)
     {
         GPBUtil::checkString($var, True);
         $this->encoder = $var;
+
+        return $this;
     }
 
     /**
-     * <pre>
      * The "register on join" access key should only be set if devices need to be registered on join
-     * </pre>
      *
-     * <code>string register_on_join_access_key = 7;</code>
+     * Generated from protobuf field <code>string register_on_join_access_key = 7;</code>
+     * @return string
      */
     public function getRegisterOnJoinAccessKey()
     {
@@ -248,16 +243,18 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * The "register on join" access key should only be set if devices need to be registered on join
-     * </pre>
      *
-     * <code>string register_on_join_access_key = 7;</code>
+     * Generated from protobuf field <code>string register_on_join_access_key = 7;</code>
+     * @param string $var
+     * @return $this
      */
     public function setRegisterOnJoinAccessKey($var)
     {
         GPBUtil::checkString($var, True);
         $this->register_on_join_access_key = $var;
+
+        return $this;
     }
 
 }

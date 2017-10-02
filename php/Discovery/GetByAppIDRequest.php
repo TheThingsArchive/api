@@ -9,16 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>discovery.GetByAppIDRequest</code>
+ * Generated from protobuf message <code>discovery.GetByAppIDRequest</code>
  */
 class GetByAppIDRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <pre>
      * compatible with Metadata message
-     * </pre>
      *
-     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
      */
     private $app_id = '';
 
@@ -28,11 +26,10 @@ class GetByAppIDRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * compatible with Metadata message
-     * </pre>
      *
-     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * @return string
      */
     public function getAppId()
     {
@@ -40,16 +37,18 @@ class GetByAppIDRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <pre>
      * compatible with Metadata message
-     * </pre>
      *
-     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * @param string $var
+     * @return $this
      */
     public function setAppId($var)
     {
         GPBUtil::checkString($var, True);
         $this->app_id = $var;
+
+        return $this;
     }
 
 }

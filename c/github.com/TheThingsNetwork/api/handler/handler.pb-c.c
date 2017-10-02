@@ -10,7 +10,7 @@
 void   handler__device_activation_response__init
                      (Handler__DeviceActivationResponse         *message)
 {
-  static Handler__DeviceActivationResponse init_value = HANDLER__DEVICE_ACTIVATION_RESPONSE__INIT;
+  static const Handler__DeviceActivationResponse init_value = HANDLER__DEVICE_ACTIVATION_RESPONSE__INIT;
   *message = init_value;
 }
 size_t handler__device_activation_response__get_packed_size
@@ -47,13 +47,15 @@ void   handler__device_activation_response__free_unpacked
                      (Handler__DeviceActivationResponse *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &handler__device_activation_response__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   handler__status_request__init
                      (Handler__StatusRequest         *message)
 {
-  static Handler__StatusRequest init_value = HANDLER__STATUS_REQUEST__INIT;
+  static const Handler__StatusRequest init_value = HANDLER__STATUS_REQUEST__INIT;
   *message = init_value;
 }
 size_t handler__status_request__get_packed_size
@@ -90,13 +92,15 @@ void   handler__status_request__free_unpacked
                      (Handler__StatusRequest *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &handler__status_request__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   handler__status__init
                      (Handler__Status         *message)
 {
-  static Handler__Status init_value = HANDLER__STATUS__INIT;
+  static const Handler__Status init_value = HANDLER__STATUS__INIT;
   *message = init_value;
 }
 size_t handler__status__get_packed_size
@@ -133,13 +137,15 @@ void   handler__status__free_unpacked
                      (Handler__Status *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &handler__status__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   handler__application_identifier__init
                      (Handler__ApplicationIdentifier         *message)
 {
-  static Handler__ApplicationIdentifier init_value = HANDLER__APPLICATION_IDENTIFIER__INIT;
+  static const Handler__ApplicationIdentifier init_value = HANDLER__APPLICATION_IDENTIFIER__INIT;
   *message = init_value;
 }
 size_t handler__application_identifier__get_packed_size
@@ -176,13 +182,15 @@ void   handler__application_identifier__free_unpacked
                      (Handler__ApplicationIdentifier *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &handler__application_identifier__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   handler__application__init
                      (Handler__Application         *message)
 {
-  static Handler__Application init_value = HANDLER__APPLICATION__INIT;
+  static const Handler__Application init_value = HANDLER__APPLICATION__INIT;
   *message = init_value;
 }
 size_t handler__application__get_packed_size
@@ -219,13 +227,15 @@ void   handler__application__free_unpacked
                      (Handler__Application *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &handler__application__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   handler__device_identifier__init
                      (Handler__DeviceIdentifier         *message)
 {
-  static Handler__DeviceIdentifier init_value = HANDLER__DEVICE_IDENTIFIER__INIT;
+  static const Handler__DeviceIdentifier init_value = HANDLER__DEVICE_IDENTIFIER__INIT;
   *message = init_value;
 }
 size_t handler__device_identifier__get_packed_size
@@ -262,19 +272,21 @@ void   handler__device_identifier__free_unpacked
                      (Handler__DeviceIdentifier *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &handler__device_identifier__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   handler__device__attributes_entry__init
                      (Handler__Device__AttributesEntry         *message)
 {
-  static Handler__Device__AttributesEntry init_value = HANDLER__DEVICE__ATTRIBUTES_ENTRY__INIT;
+  static const Handler__Device__AttributesEntry init_value = HANDLER__DEVICE__ATTRIBUTES_ENTRY__INIT;
   *message = init_value;
 }
 void   handler__device__init
                      (Handler__Device         *message)
 {
-  static Handler__Device init_value = HANDLER__DEVICE__INIT;
+  static const Handler__Device init_value = HANDLER__DEVICE__INIT;
   *message = init_value;
 }
 size_t handler__device__get_packed_size
@@ -311,13 +323,15 @@ void   handler__device__free_unpacked
                      (Handler__Device *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &handler__device__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   handler__device_list__init
                      (Handler__DeviceList         *message)
 {
-  static Handler__DeviceList init_value = HANDLER__DEVICE_LIST__INIT;
+  static const Handler__DeviceList init_value = HANDLER__DEVICE_LIST__INIT;
   *message = init_value;
 }
 size_t handler__device_list__get_packed_size
@@ -354,13 +368,15 @@ void   handler__device_list__free_unpacked
                      (Handler__DeviceList *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &handler__device_list__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   handler__dry_downlink_message__init
                      (Handler__DryDownlinkMessage         *message)
 {
-  static Handler__DryDownlinkMessage init_value = HANDLER__DRY_DOWNLINK_MESSAGE__INIT;
+  static const Handler__DryDownlinkMessage init_value = HANDLER__DRY_DOWNLINK_MESSAGE__INIT;
   *message = init_value;
 }
 size_t handler__dry_downlink_message__get_packed_size
@@ -397,13 +413,15 @@ void   handler__dry_downlink_message__free_unpacked
                      (Handler__DryDownlinkMessage *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &handler__dry_downlink_message__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   handler__dry_uplink_message__init
                      (Handler__DryUplinkMessage         *message)
 {
-  static Handler__DryUplinkMessage init_value = HANDLER__DRY_UPLINK_MESSAGE__INIT;
+  static const Handler__DryUplinkMessage init_value = HANDLER__DRY_UPLINK_MESSAGE__INIT;
   *message = init_value;
 }
 size_t handler__dry_uplink_message__get_packed_size
@@ -440,13 +458,15 @@ void   handler__dry_uplink_message__free_unpacked
                      (Handler__DryUplinkMessage *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &handler__dry_uplink_message__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   handler__simulated_uplink_message__init
                      (Handler__SimulatedUplinkMessage         *message)
 {
-  static Handler__SimulatedUplinkMessage init_value = HANDLER__SIMULATED_UPLINK_MESSAGE__INIT;
+  static const Handler__SimulatedUplinkMessage init_value = HANDLER__SIMULATED_UPLINK_MESSAGE__INIT;
   *message = init_value;
 }
 size_t handler__simulated_uplink_message__get_packed_size
@@ -483,13 +503,15 @@ void   handler__simulated_uplink_message__free_unpacked
                      (Handler__SimulatedUplinkMessage *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &handler__simulated_uplink_message__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   handler__log_entry__init
                      (Handler__LogEntry         *message)
 {
-  static Handler__LogEntry init_value = HANDLER__LOG_ENTRY__INIT;
+  static const Handler__LogEntry init_value = HANDLER__LOG_ENTRY__INIT;
   *message = init_value;
 }
 size_t handler__log_entry__get_packed_size
@@ -526,13 +548,15 @@ void   handler__log_entry__free_unpacked
                      (Handler__LogEntry *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &handler__log_entry__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   handler__dry_uplink_result__init
                      (Handler__DryUplinkResult         *message)
 {
-  static Handler__DryUplinkResult init_value = HANDLER__DRY_UPLINK_RESULT__INIT;
+  static const Handler__DryUplinkResult init_value = HANDLER__DRY_UPLINK_RESULT__INIT;
   *message = init_value;
 }
 size_t handler__dry_uplink_result__get_packed_size
@@ -569,13 +593,15 @@ void   handler__dry_uplink_result__free_unpacked
                      (Handler__DryUplinkResult *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &handler__dry_uplink_result__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
 void   handler__dry_downlink_result__init
                      (Handler__DryDownlinkResult         *message)
 {
-  static Handler__DryDownlinkResult init_value = HANDLER__DRY_DOWNLINK_RESULT__INIT;
+  static const Handler__DryDownlinkResult init_value = HANDLER__DRY_DOWNLINK_RESULT__INIT;
   *message = init_value;
 }
 size_t handler__dry_downlink_result__get_packed_size
@@ -612,6 +638,8 @@ void   handler__dry_downlink_result__free_unpacked
                      (Handler__DryDownlinkResult *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &handler__dry_downlink_result__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
@@ -620,9 +648,9 @@ static const ProtobufCFieldDescriptor handler__device_activation_response__field
   {
     "payload",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Handler__DeviceActivationResponse, has_payload),
+    0,   /* quantifier_offset */
     offsetof(Handler__DeviceActivationResponse, payload),
     NULL,
     NULL,
@@ -632,7 +660,7 @@ static const ProtobufCFieldDescriptor handler__device_activation_response__field
   {
     "message",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Handler__DeviceActivationResponse, message),
@@ -644,7 +672,7 @@ static const ProtobufCFieldDescriptor handler__device_activation_response__field
   {
     "downlink_option",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Handler__DeviceActivationResponse, downlink_option),
@@ -656,7 +684,7 @@ static const ProtobufCFieldDescriptor handler__device_activation_response__field
   {
     "activation_metadata",
     23,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Handler__DeviceActivationResponse, activation_metadata),
@@ -668,7 +696,7 @@ static const ProtobufCFieldDescriptor handler__device_activation_response__field
   {
     "trace",
     31,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Handler__DeviceActivationResponse, trace),
@@ -731,7 +759,7 @@ static const ProtobufCFieldDescriptor handler__status__field_descriptors[5] =
   {
     "system",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Handler__Status, system),
@@ -743,7 +771,7 @@ static const ProtobufCFieldDescriptor handler__status__field_descriptors[5] =
   {
     "component",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Handler__Status, component),
@@ -755,7 +783,7 @@ static const ProtobufCFieldDescriptor handler__status__field_descriptors[5] =
   {
     "uplink",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Handler__Status, uplink),
@@ -767,7 +795,7 @@ static const ProtobufCFieldDescriptor handler__status__field_descriptors[5] =
   {
     "downlink",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Handler__Status, downlink),
@@ -779,7 +807,7 @@ static const ProtobufCFieldDescriptor handler__status__field_descriptors[5] =
   {
     "activations",
     13,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Handler__Status, activations),
@@ -822,12 +850,12 @@ static const ProtobufCFieldDescriptor handler__application_identifier__field_des
   {
     "app_id",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Handler__ApplicationIdentifier, app_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -860,84 +888,84 @@ static const ProtobufCFieldDescriptor handler__application__field_descriptors[7]
   {
     "app_id",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Handler__Application, app_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "decoder",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Handler__Application, decoder),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "converter",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Handler__Application, converter),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "validator",
     4,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Handler__Application, validator),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "encoder",
     5,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Handler__Application, encoder),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "payload_format",
     6,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Handler__Application, payload_format),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "register_on_join_access_key",
     7,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Handler__Application, register_on_join_access_key),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -976,24 +1004,24 @@ static const ProtobufCFieldDescriptor handler__device_identifier__field_descript
   {
     "app_id",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Handler__DeviceIdentifier, app_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "dev_id",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Handler__DeviceIdentifier, dev_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -1027,24 +1055,24 @@ static const ProtobufCFieldDescriptor handler__device__attributes_entry__field_d
   {
     "key",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Handler__Device__AttributesEntry, key),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "value",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Handler__Device__AttributesEntry, value),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -1078,31 +1106,31 @@ static const ProtobufCFieldDescriptor handler__device__field_descriptors[8] =
   {
     "app_id",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Handler__Device, app_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "dev_id",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Handler__Device, dev_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "lorawan_device",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     offsetof(Handler__Device, device_case),
     offsetof(Handler__Device, lorawan_device),
@@ -1114,9 +1142,9 @@ static const ProtobufCFieldDescriptor handler__device__field_descriptors[8] =
   {
     "latitude",
     10,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Handler__Device, has_latitude),
+    0,   /* quantifier_offset */
     offsetof(Handler__Device, latitude),
     NULL,
     NULL,
@@ -1126,9 +1154,9 @@ static const ProtobufCFieldDescriptor handler__device__field_descriptors[8] =
   {
     "longitude",
     11,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_FLOAT,
-    offsetof(Handler__Device, has_longitude),
+    0,   /* quantifier_offset */
     offsetof(Handler__Device, longitude),
     NULL,
     NULL,
@@ -1138,9 +1166,9 @@ static const ProtobufCFieldDescriptor handler__device__field_descriptors[8] =
   {
     "altitude",
     12,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_INT32,
-    offsetof(Handler__Device, has_altitude),
+    0,   /* quantifier_offset */
     offsetof(Handler__Device, altitude),
     NULL,
     NULL,
@@ -1162,12 +1190,12 @@ static const ProtobufCFieldDescriptor handler__device__field_descriptors[8] =
   {
     "description",
     20,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Handler__Device, description),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -1247,9 +1275,9 @@ static const ProtobufCFieldDescriptor handler__dry_downlink_message__field_descr
   {
     "payload",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Handler__DryDownlinkMessage, has_payload),
+    0,   /* quantifier_offset */
     offsetof(Handler__DryDownlinkMessage, payload),
     NULL,
     NULL,
@@ -1259,19 +1287,19 @@ static const ProtobufCFieldDescriptor handler__dry_downlink_message__field_descr
   {
     "fields",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Handler__DryDownlinkMessage, fields),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "app",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Handler__DryDownlinkMessage, app),
@@ -1283,9 +1311,9 @@ static const ProtobufCFieldDescriptor handler__dry_downlink_message__field_descr
   {
     "port",
     4,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Handler__DryDownlinkMessage, has_port),
+    0,   /* quantifier_offset */
     offsetof(Handler__DryDownlinkMessage, port),
     NULL,
     NULL,
@@ -1324,9 +1352,9 @@ static const ProtobufCFieldDescriptor handler__dry_uplink_message__field_descrip
   {
     "payload",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Handler__DryUplinkMessage, has_payload),
+    0,   /* quantifier_offset */
     offsetof(Handler__DryUplinkMessage, payload),
     NULL,
     NULL,
@@ -1336,7 +1364,7 @@ static const ProtobufCFieldDescriptor handler__dry_uplink_message__field_descrip
   {
     "app",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
     offsetof(Handler__DryUplinkMessage, app),
@@ -1348,9 +1376,9 @@ static const ProtobufCFieldDescriptor handler__dry_uplink_message__field_descrip
   {
     "port",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Handler__DryUplinkMessage, has_port),
+    0,   /* quantifier_offset */
     offsetof(Handler__DryUplinkMessage, port),
     NULL,
     NULL,
@@ -1388,33 +1416,33 @@ static const ProtobufCFieldDescriptor handler__simulated_uplink_message__field_d
   {
     "app_id",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Handler__SimulatedUplinkMessage, app_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "dev_id",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Handler__SimulatedUplinkMessage, dev_id),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "payload",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Handler__SimulatedUplinkMessage, has_payload),
+    0,   /* quantifier_offset */
     offsetof(Handler__SimulatedUplinkMessage, payload),
     NULL,
     NULL,
@@ -1424,9 +1452,9 @@ static const ProtobufCFieldDescriptor handler__simulated_uplink_message__field_d
   {
     "port",
     4,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Handler__SimulatedUplinkMessage, has_port),
+    0,   /* quantifier_offset */
     offsetof(Handler__SimulatedUplinkMessage, port),
     NULL,
     NULL,
@@ -1465,12 +1493,12 @@ static const ProtobufCFieldDescriptor handler__log_entry__field_descriptors[2] =
   {
     "function",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Handler__LogEntry, function),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -1482,7 +1510,7 @@ static const ProtobufCFieldDescriptor handler__log_entry__field_descriptors[2] =
     offsetof(Handler__LogEntry, n_fields),
     offsetof(Handler__LogEntry, fields),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -1516,9 +1544,9 @@ static const ProtobufCFieldDescriptor handler__dry_uplink_result__field_descript
   {
     "payload",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Handler__DryUplinkResult, has_payload),
+    0,   /* quantifier_offset */
     offsetof(Handler__DryUplinkResult, payload),
     NULL,
     NULL,
@@ -1528,21 +1556,21 @@ static const ProtobufCFieldDescriptor handler__dry_uplink_result__field_descript
   {
     "fields",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
     offsetof(Handler__DryUplinkResult, fields),
     NULL,
-    NULL,
+    &protobuf_c_empty_string,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
     "valid",
     3,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BOOL,
-    offsetof(Handler__DryUplinkResult, has_valid),
+    0,   /* quantifier_offset */
     offsetof(Handler__DryUplinkResult, valid),
     NULL,
     NULL,
@@ -1593,9 +1621,9 @@ static const ProtobufCFieldDescriptor handler__dry_downlink_result__field_descri
   {
     "payload",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BYTES,
-    offsetof(Handler__DryDownlinkResult, has_payload),
+    0,   /* quantifier_offset */
     offsetof(Handler__DryDownlinkResult, payload),
     NULL,
     NULL,

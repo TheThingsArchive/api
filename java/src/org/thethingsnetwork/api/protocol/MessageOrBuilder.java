@@ -10,6 +10,10 @@ public interface MessageOrBuilder extends
   /**
    * <code>.lorawan.Message lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
    */
+  boolean hasLorawan();
+  /**
+   * <code>.lorawan.Message lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+   */
   org.thethingsnetwork.api.protocol.lorawan.Message getLorawan();
   /**
    * <code>.lorawan.Message lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>

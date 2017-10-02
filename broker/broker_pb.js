@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -70,6 +72,7 @@ proto.broker.DownlinkOption.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.broker.DownlinkOption} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.DownlinkOption.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -166,6 +169,7 @@ proto.broker.DownlinkOption.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.broker.DownlinkOption} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.DownlinkOption.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -386,6 +390,7 @@ proto.broker.UplinkMessage.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.broker.UplinkMessage} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.UplinkMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -506,6 +511,7 @@ proto.broker.UplinkMessage.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.broker.UplinkMessage} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.UplinkMessage.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -826,8 +832,6 @@ proto.broker.UplinkMessage.prototype.hasGatewayMetadata = function() {
 
 /**
  * repeated DownlinkOption downlink_options = 31;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!Array.<!proto.broker.DownlinkOption>}
  */
 proto.broker.UplinkMessage.prototype.getDownlinkOptionsList = function() {
@@ -930,6 +934,7 @@ proto.broker.DownlinkMessage.prototype.toObject = function(opt_includeInstance) 
  *     http://goto/soy-param-migration
  * @param {!proto.broker.DownlinkMessage} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.DownlinkMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1037,6 +1042,7 @@ proto.broker.DownlinkMessage.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.broker.DownlinkMessage} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.DownlinkMessage.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1382,6 +1388,7 @@ proto.broker.DeviceActivationResponse.prototype.toObject = function(opt_includeI
  *     http://goto/soy-param-migration
  * @param {!proto.broker.DeviceActivationResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.DeviceActivationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1469,6 +1476,7 @@ proto.broker.DeviceActivationResponse.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.broker.DeviceActivationResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.DeviceActivationResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -1685,6 +1693,7 @@ proto.broker.DeduplicatedUplinkMessage.prototype.toObject = function(opt_include
  *     http://goto/soy-param-migration
  * @param {!proto.broker.DeduplicatedUplinkMessage} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.DeduplicatedUplinkMessage.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1810,6 +1819,7 @@ proto.broker.DeduplicatedUplinkMessage.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.broker.DeduplicatedUplinkMessage} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.DeduplicatedUplinkMessage.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -2107,8 +2117,6 @@ proto.broker.DeduplicatedUplinkMessage.prototype.hasProtocolMetadata = function(
 
 /**
  * repeated gateway.RxMetadata gateway_metadata = 22;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!Array.<!proto.gateway.RxMetadata>}
  */
 proto.broker.DeduplicatedUplinkMessage.prototype.getGatewayMetadataList = function() {
@@ -2263,6 +2271,7 @@ proto.broker.DeviceActivationRequest.prototype.toObject = function(opt_includeIn
  *     http://goto/soy-param-migration
  * @param {!proto.broker.DeviceActivationRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.DeviceActivationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2379,6 +2388,7 @@ proto.broker.DeviceActivationRequest.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.broker.DeviceActivationRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.DeviceActivationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -2693,8 +2703,6 @@ proto.broker.DeviceActivationRequest.prototype.hasActivationMetadata = function(
 
 /**
  * repeated DownlinkOption downlink_options = 31;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!Array.<!proto.broker.DownlinkOption>}
  */
 proto.broker.DeviceActivationRequest.prototype.getDownlinkOptionsList = function() {
@@ -2804,6 +2812,7 @@ proto.broker.DeduplicatedDeviceActivationRequest.prototype.toObject = function(o
  *     http://goto/soy-param-migration
  * @param {!proto.broker.DeduplicatedDeviceActivationRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.DeduplicatedDeviceActivationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2935,6 +2944,7 @@ proto.broker.DeduplicatedDeviceActivationRequest.prototype.serializeBinary = fun
  * format), writing to the given BinaryWriter.
  * @param {!proto.broker.DeduplicatedDeviceActivationRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.DeduplicatedDeviceActivationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -3240,8 +3250,6 @@ proto.broker.DeduplicatedDeviceActivationRequest.prototype.hasProtocolMetadata =
 
 /**
  * repeated gateway.RxMetadata gateway_metadata = 22;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!Array.<!proto.gateway.RxMetadata>}
  */
 proto.broker.DeduplicatedDeviceActivationRequest.prototype.getGatewayMetadataList = function() {
@@ -3419,6 +3427,7 @@ proto.broker.ActivationChallengeRequest.prototype.toObject = function(opt_includ
  *     http://goto/soy-param-migration
  * @param {!proto.broker.ActivationChallengeRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.ActivationChallengeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -3514,6 +3523,7 @@ proto.broker.ActivationChallengeRequest.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.broker.ActivationChallengeRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.ActivationChallengeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -3783,6 +3793,7 @@ proto.broker.ActivationChallengeResponse.prototype.toObject = function(opt_inclu
  *     http://goto/soy-param-migration
  * @param {!proto.broker.ActivationChallengeResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.ActivationChallengeResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -3858,6 +3869,7 @@ proto.broker.ActivationChallengeResponse.prototype.serializeBinary = function() 
  * format), writing to the given BinaryWriter.
  * @param {!proto.broker.ActivationChallengeResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.ActivationChallengeResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -3991,6 +4003,7 @@ proto.broker.SubscribeRequest.prototype.toObject = function(opt_includeInstance)
  *     http://goto/soy-param-migration
  * @param {!proto.broker.SubscribeRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.SubscribeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -4056,6 +4069,7 @@ proto.broker.SubscribeRequest.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.broker.SubscribeRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.SubscribeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -4105,6 +4119,7 @@ proto.broker.StatusRequest.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.broker.StatusRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.StatusRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -4170,6 +4185,7 @@ proto.broker.StatusRequest.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.broker.StatusRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.StatusRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -4219,6 +4235,7 @@ proto.broker.Status.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.broker.Status} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.Status.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -4341,6 +4358,7 @@ proto.broker.Status.prototype.serializeBinary = function() {
  * format), writing to the given BinaryWriter.
  * @param {!proto.broker.Status} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.Status.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
@@ -4738,6 +4756,7 @@ proto.broker.ApplicationHandlerRegistration.prototype.toObject = function(opt_in
  *     http://goto/soy-param-migration
  * @param {!proto.broker.ApplicationHandlerRegistration} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.ApplicationHandlerRegistration.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -4812,6 +4831,7 @@ proto.broker.ApplicationHandlerRegistration.prototype.serializeBinary = function
  * format), writing to the given BinaryWriter.
  * @param {!proto.broker.ApplicationHandlerRegistration} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.broker.ApplicationHandlerRegistration.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;

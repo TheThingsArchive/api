@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>networkserver.DevicesResponse</code>
+ * Generated from protobuf message <code>networkserver.DevicesResponse</code>
  */
 class DevicesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>repeated .lorawan.Device results = 1;</code>
+     * Generated from protobuf field <code>repeated .lorawan.Device results = 1;</code>
      */
     private $results;
 
@@ -24,7 +24,8 @@ class DevicesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>repeated .lorawan.Device results = 1;</code>
+     * Generated from protobuf field <code>repeated .lorawan.Device results = 1;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getResults()
     {
@@ -32,12 +33,16 @@ class DevicesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>repeated .lorawan.Device results = 1;</code>
+     * Generated from protobuf field <code>repeated .lorawan.Device results = 1;</code>
+     * @param \Lorawan\Device[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
      */
-    public function setResults(&$var)
+    public function setResults($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Lorawan\Device::class);
         $this->results = $arr;
+
+        return $this;
     }
 
 }

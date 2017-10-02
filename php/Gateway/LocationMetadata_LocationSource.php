@@ -5,48 +5,38 @@
 namespace Gateway;
 
 /**
- * Protobuf enum <code>gateway.LocationMetadata.LocationSource</code>
+ * Protobuf enum <code>Gateway\LocationMetadata\LocationSource</code>
  */
 class LocationMetadata_LocationSource
 {
     /**
-     * <pre>
      * The source of the location is not known or not set
-     * </pre>
      *
-     * <code>UNKNOWN = 0;</code>
+     * Generated from protobuf enum <code>UNKNOWN = 0;</code>
      */
     const UNKNOWN = 0;
     /**
-     * <pre>
      * The location is determined by GPS
-     * </pre>
      *
-     * <code>GPS = 1;</code>
+     * Generated from protobuf enum <code>GPS = 1;</code>
      */
     const GPS = 1;
     /**
-     * <pre>
      * The location is fixed by configuration
-     * </pre>
      *
-     * <code>CONFIG = 2;</code>
+     * Generated from protobuf enum <code>CONFIG = 2;</code>
      */
     const CONFIG = 2;
     /**
-     * <pre>
      * The location is set in and updated from a registry
-     * </pre>
      *
-     * <code>REGISTRY = 3;</code>
+     * Generated from protobuf enum <code>REGISTRY = 3;</code>
      */
     const REGISTRY = 3;
     /**
-     * <pre>
      * The location is estimated with IP Geolocation
-     * </pre>
      *
-     * <code>IP_GEOLOCATION = 4;</code>
+     * Generated from protobuf enum <code>IP_GEOLOCATION = 4;</code>
      */
     const IP_GEOLOCATION = 4;
 }

@@ -10,7 +10,7 @@
 void   google__protobuf__timestamp__init
                      (Google__Protobuf__Timestamp         *message)
 {
-  static Google__Protobuf__Timestamp init_value = GOOGLE__PROTOBUF__TIMESTAMP__INIT;
+  static const Google__Protobuf__Timestamp init_value = GOOGLE__PROTOBUF__TIMESTAMP__INIT;
   *message = init_value;
 }
 size_t google__protobuf__timestamp__get_packed_size
@@ -47,6 +47,8 @@ void   google__protobuf__timestamp__free_unpacked
                      (Google__Protobuf__Timestamp *message,
                       ProtobufCAllocator *allocator)
 {
+  if(!message)
+    return;
   assert(message->base.descriptor == &google__protobuf__timestamp__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
@@ -55,9 +57,9 @@ static const ProtobufCFieldDescriptor google__protobuf__timestamp__field_descrip
   {
     "seconds",
     1,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_INT64,
-    offsetof(Google__Protobuf__Timestamp, has_seconds),
+    0,   /* quantifier_offset */
     offsetof(Google__Protobuf__Timestamp, seconds),
     NULL,
     NULL,
@@ -67,9 +69,9 @@ static const ProtobufCFieldDescriptor google__protobuf__timestamp__field_descrip
   {
     "nanos",
     2,
-    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_INT32,
-    offsetof(Google__Protobuf__Timestamp, has_nanos),
+    0,   /* quantifier_offset */
     offsetof(Google__Protobuf__Timestamp, nanos),
     NULL,
     NULL,

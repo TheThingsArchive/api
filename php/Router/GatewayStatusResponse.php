@@ -9,16 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>router.GatewayStatusResponse</code>
+ * Generated from protobuf message <code>router.GatewayStatusResponse</code>
  */
 class GatewayStatusResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>int64 last_seen = 1;</code>
+     * Generated from protobuf field <code>int64 last_seen = 1;</code>
      */
     private $last_seen = 0;
     /**
-     * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
      */
     private $status = null;
 
@@ -28,7 +28,8 @@ class GatewayStatusResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int64 last_seen = 1;</code>
+     * Generated from protobuf field <code>int64 last_seen = 1;</code>
+     * @return int|string
      */
     public function getLastSeen()
     {
@@ -36,16 +37,21 @@ class GatewayStatusResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int64 last_seen = 1;</code>
+     * Generated from protobuf field <code>int64 last_seen = 1;</code>
+     * @param int|string $var
+     * @return $this
      */
     public function setLastSeen($var)
     {
         GPBUtil::checkInt64($var);
         $this->last_seen = $var;
+
+        return $this;
     }
 
     /**
-     * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
+     * @return \Gateway\Status
      */
     public function getStatus()
     {
@@ -53,12 +59,16 @@ class GatewayStatusResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
+     * @param \Gateway\Status $var
+     * @return $this
      */
-    public function setStatus(&$var)
+    public function setStatus($var)
     {
         GPBUtil::checkMessage($var, \Gateway\Status::class);
         $this->status = $var;
+
+        return $this;
     }
 
 }
