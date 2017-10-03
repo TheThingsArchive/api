@@ -220,7 +220,7 @@ mocks: mockgen
 clean: clean-protos clean-mocks
 
 clean-protos:
-	find . -name '*pb.*' -delete -or -name '*.pb-c.*' -delete -or -wholename './php/*' -delete -or -wholename './java/src/*' -delete
+	find . -name '*pb.*' -delete -or -name '*pb_test.go' -delete -or -name '*.pb-c.*' -delete -or -wholename './php/*' -delete -or -wholename './java/src/*' -delete
 
 clean-mocks:
 	find . -name '*_mock.go' -delete
