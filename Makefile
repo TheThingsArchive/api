@@ -1,20 +1,3 @@
-.PHONY: all
-
-all: deps protos mocks
-
-.PHONY: deps
-
-deps: protoc mockgen
-
-.PHONY: protoc
-
-protoc:
-	docker pull thethingsindustries/protoc
-
-.PHONY: protos
-
-protos: protos.go protos.js protos.java protos.swift protos.php protos.ruby protos.c
-
 # Hacks for Make
 EMPTY :=
 SPACE := $(EMPTY) $(EMPTY)
@@ -48,6 +31,23 @@ GO_PROTOC_FLAGS ?= \
 	--gogottn_out=plugins=grpc,$(GO_PROTO_TYPE_CONVERSIONS):$(GOPATH)/src \
 	--grpc-gateway_out=:$(GOPATH)/src
 GO_GW_SED ?= -e 's/\.AppId/\.AppID/g' -e 's/\.DevId/\.DevID/g' -e 's/\.AppEui/\.AppEUI/g' -e 's/\.DevEui/\.DevEUI/g' -e 's/\.Id/\.ID/g'
+
+.PHONY: all
+
+all: deps protos mocks
+
+.PHONY: deps
+
+deps: protoc mockgen
+
+.PHONY: protoc
+
+protoc:
+	docker pull $(DOCKER_IMAGE)
+
+.PHONY: protos
+
+protos: protos.go protos.js protos.java protos.swift protos.php protos.ruby protos.c
 
 .PHONY: protos.go
 
