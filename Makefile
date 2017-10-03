@@ -1,20 +1,3 @@
-.PHONY: all
-
-all: deps protos mocks
-
-.PHONY: deps
-
-deps: protoc mockgen
-
-.PHONY: protoc
-
-protoc:
-	docker pull thethingsindustries/protoc
-
-.PHONY: protos
-
-protos: protos.go protos.js protos.java protos.swift protos.php protos.ruby protos.c
-
 # Hacks for Make
 EMPTY :=
 SPACE := $(EMPTY) $(EMPTY)
@@ -36,7 +19,7 @@ GRPC_GATEWAY_PKG=$(GOPATH)/src/$(GRPC_GATEWAY_REPO)
 
 DOCKER ?= docker
 DOCKER_ARGS = run --user `id -u` --rm -v$(GOPATH):$(GOPATH) -w`pwd`
-DOCKER_IMAGE ?= thethingsindustries/protoc
+DOCKER_IMAGE ?= thethingsindustries/protoc:2
 PROTOC ?= $(DOCKER) $(DOCKER_ARGS) $(DOCKER_IMAGE) -I/usr/include
 PROTOC += -I$(GOPATH)/src -I$(GRPC_GATEWAY_PKG)/third_party/googleapis
 
@@ -48,6 +31,23 @@ GO_PROTOC_FLAGS ?= \
 	--gogottn_out=plugins=grpc,$(GO_PROTO_TYPE_CONVERSIONS):$(GOPATH)/src \
 	--grpc-gateway_out=:$(GOPATH)/src
 GO_GW_SED ?= -e 's/\.AppId/\.AppID/g' -e 's/\.DevId/\.DevID/g' -e 's/\.AppEui/\.AppEUI/g' -e 's/\.DevEui/\.DevEUI/g' -e 's/\.Id/\.ID/g'
+
+.PHONY: all
+
+all: deps protos mocks
+
+.PHONY: deps
+
+deps: protoc mockgen
+
+.PHONY: protoc
+
+protoc:
+	docker pull $(DOCKER_IMAGE)
+
+.PHONY: protos
+
+protos: protos.go protos.js protos.java protos.swift protos.php protos.ruby protos.c
 
 .PHONY: protos.go
 
@@ -102,20 +102,20 @@ SWIFT_PROTOC_FLAGS ?= \
 .PHONY: protos.swift
 
 protos.swift: $(SWIFT_PROTO_TARGETS)
-	mv broker.client.pb.swift broker
-	mv broker.server.pb.swift broker
-	mv discovery.client.pb.swift discovery
-	mv discovery.server.pb.swift discovery
-	mv handler.client.pb.swift handler
-	mv handler.server.pb.swift handler
-	mv lorawan.client.pb.swift protocol/lorawan
-	mv lorawan.server.pb.swift protocol/lorawan
-	mv monitor.client.pb.swift monitor
-	mv monitor.server.pb.swift monitor
-	mv networkserver.client.pb.swift networkserver
-	mv networkserver.server.pb.swift networkserver
-	mv router.client.pb.swift router
-	mv router.server.pb.swift router
+	-mv broker.client.pb.swift broker
+	-mv broker.server.pb.swift broker
+	-mv discovery.client.pb.swift discovery
+	-mv discovery.server.pb.swift discovery
+	-mv handler.client.pb.swift handler
+	-mv handler.server.pb.swift handler
+	-mv lorawan.client.pb.swift protocol/lorawan
+	-mv lorawan.server.pb.swift protocol/lorawan
+	-mv monitor.client.pb.swift monitor
+	-mv monitor.server.pb.swift monitor
+	-mv networkserver.client.pb.swift networkserver
+	-mv networkserver.server.pb.swift networkserver
+	-mv router.client.pb.swift router
+	-mv router.server.pb.swift router
 
 %.pb.swift: %.proto
 	$(PROTOC) $(SWIFT_PROTOC_FLAGS) $(PWD)/$<
@@ -220,7 +220,7 @@ mocks: mockgen
 clean: clean-protos clean-mocks
 
 clean-protos:
-	find . -name '*pb.*' -delete -or -name '*.pb-c.*' -delete -or -wholename './php/*' -delete -or -wholename './java/src/*' -delete
+	find . -name '*pb.*' -delete -or -name '*pb_test.go' -delete -or -name '*.pb-c.*' -delete -or -wholename './php/*' -delete -or -wholename './java/src/*' -delete
 
 clean-mocks:
 	find . -name '*_mock.go' -delete
