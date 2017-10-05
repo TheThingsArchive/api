@@ -631,7 +631,8 @@ proto.gateway.RxMetadata.Antenna.toObject = function(includeInstance, msg) {
     rssiStandardDeviation: +jspb.Message.getFieldWithDefault(msg, 6, 0.0),
     frequencyOffset: jspb.Message.getFieldWithDefault(msg, 7, 0),
     snr: +jspb.Message.getFieldWithDefault(msg, 4, 0.0),
-    encryptedTime: msg.getEncryptedTime_asB64()
+    encryptedTime: msg.getEncryptedTime_asB64(),
+    fineTime: jspb.Message.getFieldWithDefault(msg, 11, 0)
   };
 
   if (includeInstance) {
@@ -699,6 +700,10 @@ proto.gateway.RxMetadata.Antenna.deserializeBinaryFromReader = function(msg, rea
     case 10:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setEncryptedTime(value);
+      break;
+    case 11:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setFineTime(value);
       break;
     default:
       reader.skipField();
@@ -782,6 +787,13 @@ proto.gateway.RxMetadata.Antenna.serializeBinaryToWriter = function(message, wri
   if (f.length > 0) {
     writer.writeBytes(
       10,
+      f
+    );
+  }
+  f = message.getFineTime();
+  if (f !== 0) {
+    writer.writeInt64(
+      11,
       f
     );
   }
@@ -929,6 +941,21 @@ proto.gateway.RxMetadata.Antenna.prototype.getEncryptedTime_asU8 = function() {
 /** @param {!(string|Uint8Array)} value */
 proto.gateway.RxMetadata.Antenna.prototype.setEncryptedTime = function(value) {
   jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * optional int64 fine_time = 11;
+ * @return {number}
+ */
+proto.gateway.RxMetadata.Antenna.prototype.getFineTime = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+};
+
+
+/** @param {number} value */
+proto.gateway.RxMetadata.Antenna.prototype.setFineTime = function(value) {
+  jspb.Message.setField(this, 11, value);
 };
 
 

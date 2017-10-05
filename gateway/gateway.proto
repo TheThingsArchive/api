@@ -91,8 +91,11 @@ message RxMetadata {
     // Signal-to-noise-ratio in dB
     float  snr     = 4 [(gogoproto.customname) = "SNR"];
 
-    // Encrypted time from the Gateway FPGA
+    // Encrypted fine timestamp from the Gateway FPGA
     bytes encrypted_time = 10;
+
+    // Fine timestamp from the Gateway FPGA (decrypted)
+    int64 fine_time = 11;
   }
 
   LocationMetadata location = 41;

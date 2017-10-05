@@ -218,12 +218,21 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Encrypted time from the Gateway FPGA
+     * Encrypted fine timestamp from the Gateway FPGA
      * </pre>
      *
      * <code>bytes encrypted_time = 10;</code>
      */
     com.google.protobuf.ByteString getEncryptedTime();
+
+    /**
+     * <pre>
+     * Fine timestamp from the Gateway FPGA (decrypted)
+     * </pre>
+     *
+     * <code>int64 fine_time = 11;</code>
+     */
+    long getFineTime();
   }
   /**
    * Protobuf type {@code gateway.RxMetadata.Antenna}
@@ -246,6 +255,7 @@ private static final long serialVersionUID = 0L;
       frequencyOffset_ = 0L;
       snr_ = 0F;
       encryptedTime_ = com.google.protobuf.ByteString.EMPTY;
+      fineTime_ = 0L;
     }
 
     @java.lang.Override
@@ -314,6 +324,11 @@ private static final long serialVersionUID = 0L;
             case 82: {
 
               encryptedTime_ = input.readBytes();
+              break;
+            }
+            case 88: {
+
+              fineTime_ = input.readInt64();
               break;
             }
           }
@@ -427,13 +442,26 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString encryptedTime_;
     /**
      * <pre>
-     * Encrypted time from the Gateway FPGA
+     * Encrypted fine timestamp from the Gateway FPGA
      * </pre>
      *
      * <code>bytes encrypted_time = 10;</code>
      */
     public com.google.protobuf.ByteString getEncryptedTime() {
       return encryptedTime_;
+    }
+
+    public static final int FINE_TIME_FIELD_NUMBER = 11;
+    private long fineTime_;
+    /**
+     * <pre>
+     * Fine timestamp from the Gateway FPGA (decrypted)
+     * </pre>
+     *
+     * <code>int64 fine_time = 11;</code>
+     */
+    public long getFineTime() {
+      return fineTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -471,6 +499,9 @@ private static final long serialVersionUID = 0L;
       }
       if (!encryptedTime_.isEmpty()) {
         output.writeBytes(10, encryptedTime_);
+      }
+      if (fineTime_ != 0L) {
+        output.writeInt64(11, fineTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -512,6 +543,10 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(10, encryptedTime_);
       }
+      if (fineTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(11, fineTime_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -552,6 +587,8 @@ private static final long serialVersionUID = 0L;
               other.getSnr()));
       result = result && getEncryptedTime()
           .equals(other.getEncryptedTime());
+      result = result && (getFineTime()
+          == other.getFineTime());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -584,6 +621,9 @@ private static final long serialVersionUID = 0L;
           getSnr());
       hash = (37 * hash) + ENCRYPTED_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptedTime().hashCode();
+      hash = (37 * hash) + FINE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFineTime());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -729,6 +769,8 @@ private static final long serialVersionUID = 0L;
 
         encryptedTime_ = com.google.protobuf.ByteString.EMPTY;
 
+        fineTime_ = 0L;
+
         return this;
       }
 
@@ -759,6 +801,7 @@ private static final long serialVersionUID = 0L;
         result.frequencyOffset_ = frequencyOffset_;
         result.snr_ = snr_;
         result.encryptedTime_ = encryptedTime_;
+        result.fineTime_ = fineTime_;
         onBuilt();
         return result;
       }
@@ -823,6 +866,9 @@ private static final long serialVersionUID = 0L;
         }
         if (other.getEncryptedTime() != com.google.protobuf.ByteString.EMPTY) {
           setEncryptedTime(other.getEncryptedTime());
+        }
+        if (other.getFineTime() != 0L) {
+          setFineTime(other.getFineTime());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1096,7 +1142,7 @@ private static final long serialVersionUID = 0L;
       private com.google.protobuf.ByteString encryptedTime_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
-       * Encrypted time from the Gateway FPGA
+       * Encrypted fine timestamp from the Gateway FPGA
        * </pre>
        *
        * <code>bytes encrypted_time = 10;</code>
@@ -1106,7 +1152,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Encrypted time from the Gateway FPGA
+       * Encrypted fine timestamp from the Gateway FPGA
        * </pre>
        *
        * <code>bytes encrypted_time = 10;</code>
@@ -1122,7 +1168,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Encrypted time from the Gateway FPGA
+       * Encrypted fine timestamp from the Gateway FPGA
        * </pre>
        *
        * <code>bytes encrypted_time = 10;</code>
@@ -1130,6 +1176,44 @@ private static final long serialVersionUID = 0L;
       public Builder clearEncryptedTime() {
         
         encryptedTime_ = getDefaultInstance().getEncryptedTime();
+        onChanged();
+        return this;
+      }
+
+      private long fineTime_ ;
+      /**
+       * <pre>
+       * Fine timestamp from the Gateway FPGA (decrypted)
+       * </pre>
+       *
+       * <code>int64 fine_time = 11;</code>
+       */
+      public long getFineTime() {
+        return fineTime_;
+      }
+      /**
+       * <pre>
+       * Fine timestamp from the Gateway FPGA (decrypted)
+       * </pre>
+       *
+       * <code>int64 fine_time = 11;</code>
+       */
+      public Builder setFineTime(long value) {
+        
+        fineTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Fine timestamp from the Gateway FPGA (decrypted)
+       * </pre>
+       *
+       * <code>int64 fine_time = 11;</code>
+       */
+      public Builder clearFineTime() {
+        
+        fineTime_ = 0L;
         onChanged();
         return this;
       }
