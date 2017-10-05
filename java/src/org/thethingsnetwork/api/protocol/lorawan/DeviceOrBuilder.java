@@ -157,6 +157,56 @@ public interface DeviceOrBuilder extends
 
   /**
    * <pre>
+   * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+   * </pre>
+   *
+   * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+   */
+  java.util.List<com.google.protobuf.ByteString> getUsedDevNoncesList();
+  /**
+   * <pre>
+   * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+   * </pre>
+   *
+   * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+   */
+  int getUsedDevNoncesCount();
+  /**
+   * <pre>
+   * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+   * </pre>
+   *
+   * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+   */
+  com.google.protobuf.ByteString getUsedDevNonces(int index);
+
+  /**
+   * <pre>
+   * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+   * </pre>
+   *
+   * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+   */
+  java.util.List<com.google.protobuf.ByteString> getUsedAppNoncesList();
+  /**
+   * <pre>
+   * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+   * </pre>
+   *
+   * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+   */
+  int getUsedAppNoncesCount();
+  /**
+   * <pre>
+   * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+   * </pre>
+   *
+   * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+   */
+  com.google.protobuf.ByteString getUsedAppNonces(int index);
+
+  /**
+   * <pre>
    * When the device was last seen (Unix nanoseconds)
    * </pre>
    *

@@ -102,13 +102,23 @@ struct  _Lorawan__Device
    */
   char *activation_constraints;
   /*
+   * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+   */
+  size_t n_used_dev_nonces;
+  ProtobufCBinaryData *used_dev_nonces;
+  /*
+   * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+   */
+  size_t n_used_app_nonces;
+  ProtobufCBinaryData *used_app_nonces;
+  /*
    * When the device was last seen (Unix nanoseconds)
    */
   int64_t last_seen;
 };
 #define LORAWAN__DEVICE__INIT \
  { PROTOBUF_C_MESSAGE_INIT (&lorawan__device__descriptor) \
-    , {0,NULL}, {0,NULL}, (char *)protobuf_c_empty_string, (char *)protobuf_c_empty_string, {0,NULL}, {0,NULL}, {0,NULL}, {0,NULL}, 0, 0, 0, 0, (char *)protobuf_c_empty_string, 0 }
+    , {0,NULL}, {0,NULL}, (char *)protobuf_c_empty_string, (char *)protobuf_c_empty_string, {0,NULL}, {0,NULL}, {0,NULL}, {0,NULL}, 0, 0, 0, 0, (char *)protobuf_c_empty_string, 0,NULL, 0,NULL, 0 }
 
 
 /* Lorawan__DeviceIdentifier methods */

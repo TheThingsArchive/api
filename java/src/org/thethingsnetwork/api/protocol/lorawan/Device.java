@@ -29,6 +29,8 @@ private static final long serialVersionUID = 0L;
     disableFCntCheck_ = false;
     uses32BitFCnt_ = false;
     activationConstraints_ = "";
+    usedDevNonces_ = java.util.Collections.emptyList();
+    usedAppNonces_ = java.util.Collections.emptyList();
     lastSeen_ = 0L;
   }
 
@@ -128,6 +130,22 @@ private static final long serialVersionUID = 0L;
             activationConstraints_ = s;
             break;
           }
+          case 114: {
+            if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+              usedDevNonces_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
+              mutable_bitField0_ |= 0x00002000;
+            }
+            usedDevNonces_.add(input.readBytes());
+            break;
+          }
+          case 122: {
+            if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+              usedAppNonces_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
+              mutable_bitField0_ |= 0x00004000;
+            }
+            usedAppNonces_.add(input.readBytes());
+            break;
+          }
           case 168: {
 
             lastSeen_ = input.readInt64();
@@ -141,6 +159,12 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+        usedDevNonces_ = java.util.Collections.unmodifiableList(usedDevNonces_);
+      }
+      if (((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+        usedAppNonces_ = java.util.Collections.unmodifiableList(usedAppNonces_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -157,6 +181,7 @@ private static final long serialVersionUID = 0L;
             org.thethingsnetwork.api.protocol.lorawan.Device.class, org.thethingsnetwork.api.protocol.lorawan.Device.Builder.class);
   }
 
+  private int bitField0_;
   public static final int APP_EUI_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString appEui_;
   /**
@@ -417,6 +442,74 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int USED_DEV_NONCES_FIELD_NUMBER = 14;
+  private java.util.List<com.google.protobuf.ByteString> usedDevNonces_;
+  /**
+   * <pre>
+   * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+   * </pre>
+   *
+   * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+   */
+  public java.util.List<com.google.protobuf.ByteString>
+      getUsedDevNoncesList() {
+    return usedDevNonces_;
+  }
+  /**
+   * <pre>
+   * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+   * </pre>
+   *
+   * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+   */
+  public int getUsedDevNoncesCount() {
+    return usedDevNonces_.size();
+  }
+  /**
+   * <pre>
+   * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+   * </pre>
+   *
+   * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+   */
+  public com.google.protobuf.ByteString getUsedDevNonces(int index) {
+    return usedDevNonces_.get(index);
+  }
+
+  public static final int USED_APP_NONCES_FIELD_NUMBER = 15;
+  private java.util.List<com.google.protobuf.ByteString> usedAppNonces_;
+  /**
+   * <pre>
+   * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+   * </pre>
+   *
+   * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+   */
+  public java.util.List<com.google.protobuf.ByteString>
+      getUsedAppNoncesList() {
+    return usedAppNonces_;
+  }
+  /**
+   * <pre>
+   * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+   * </pre>
+   *
+   * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+   */
+  public int getUsedAppNoncesCount() {
+    return usedAppNonces_.size();
+  }
+  /**
+   * <pre>
+   * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+   * </pre>
+   *
+   * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+   */
+  public com.google.protobuf.ByteString getUsedAppNonces(int index) {
+    return usedAppNonces_.get(index);
+  }
+
   public static final int LAST_SEEN_FIELD_NUMBER = 21;
   private long lastSeen_;
   /**
@@ -481,6 +574,12 @@ private static final long serialVersionUID = 0L;
     if (!getActivationConstraintsBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, activationConstraints_);
     }
+    for (int i = 0; i < usedDevNonces_.size(); i++) {
+      output.writeBytes(14, usedDevNonces_.get(i));
+    }
+    for (int i = 0; i < usedAppNonces_.size(); i++) {
+      output.writeBytes(15, usedAppNonces_.get(i));
+    }
     if (lastSeen_ != 0L) {
       output.writeInt64(21, lastSeen_);
     }
@@ -541,6 +640,24 @@ private static final long serialVersionUID = 0L;
     if (!getActivationConstraintsBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, activationConstraints_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < usedDevNonces_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeBytesSizeNoTag(usedDevNonces_.get(i));
+      }
+      size += dataSize;
+      size += 1 * getUsedDevNoncesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < usedAppNonces_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeBytesSizeNoTag(usedAppNonces_.get(i));
+      }
+      size += dataSize;
+      size += 1 * getUsedAppNoncesList().size();
+    }
     if (lastSeen_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(21, lastSeen_);
@@ -587,6 +704,10 @@ private static final long serialVersionUID = 0L;
         == other.getUses32BitFCnt());
     result = result && getActivationConstraints()
         .equals(other.getActivationConstraints());
+    result = result && getUsedDevNoncesList()
+        .equals(other.getUsedDevNoncesList());
+    result = result && getUsedAppNoncesList()
+        .equals(other.getUsedAppNoncesList());
     result = result && (getLastSeen()
         == other.getLastSeen());
     result = result && unknownFields.equals(other.unknownFields);
@@ -628,6 +749,14 @@ private static final long serialVersionUID = 0L;
         getUses32BitFCnt());
     hash = (37 * hash) + ACTIVATION_CONSTRAINTS_FIELD_NUMBER;
     hash = (53 * hash) + getActivationConstraints().hashCode();
+    if (getUsedDevNoncesCount() > 0) {
+      hash = (37 * hash) + USED_DEV_NONCES_FIELD_NUMBER;
+      hash = (53 * hash) + getUsedDevNoncesList().hashCode();
+    }
+    if (getUsedAppNoncesCount() > 0) {
+      hash = (37 * hash) + USED_APP_NONCES_FIELD_NUMBER;
+      hash = (53 * hash) + getUsedAppNoncesList().hashCode();
+    }
     hash = (37 * hash) + LAST_SEEN_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getLastSeen());
@@ -786,6 +915,10 @@ private static final long serialVersionUID = 0L;
 
       activationConstraints_ = "";
 
+      usedDevNonces_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      usedAppNonces_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00004000);
       lastSeen_ = 0L;
 
       return this;
@@ -810,6 +943,8 @@ private static final long serialVersionUID = 0L;
 
     public org.thethingsnetwork.api.protocol.lorawan.Device buildPartial() {
       org.thethingsnetwork.api.protocol.lorawan.Device result = new org.thethingsnetwork.api.protocol.lorawan.Device(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.appEui_ = appEui_;
       result.devEui_ = devEui_;
       result.appId_ = appId_;
@@ -823,7 +958,18 @@ private static final long serialVersionUID = 0L;
       result.disableFCntCheck_ = disableFCntCheck_;
       result.uses32BitFCnt_ = uses32BitFCnt_;
       result.activationConstraints_ = activationConstraints_;
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+        usedDevNonces_ = java.util.Collections.unmodifiableList(usedDevNonces_);
+        bitField0_ = (bitField0_ & ~0x00002000);
+      }
+      result.usedDevNonces_ = usedDevNonces_;
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        usedAppNonces_ = java.util.Collections.unmodifiableList(usedAppNonces_);
+        bitField0_ = (bitField0_ & ~0x00004000);
+      }
+      result.usedAppNonces_ = usedAppNonces_;
       result.lastSeen_ = lastSeen_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -907,6 +1053,26 @@ private static final long serialVersionUID = 0L;
         activationConstraints_ = other.activationConstraints_;
         onChanged();
       }
+      if (!other.usedDevNonces_.isEmpty()) {
+        if (usedDevNonces_.isEmpty()) {
+          usedDevNonces_ = other.usedDevNonces_;
+          bitField0_ = (bitField0_ & ~0x00002000);
+        } else {
+          ensureUsedDevNoncesIsMutable();
+          usedDevNonces_.addAll(other.usedDevNonces_);
+        }
+        onChanged();
+      }
+      if (!other.usedAppNonces_.isEmpty()) {
+        if (usedAppNonces_.isEmpty()) {
+          usedAppNonces_ = other.usedAppNonces_;
+          bitField0_ = (bitField0_ & ~0x00004000);
+        } else {
+          ensureUsedAppNoncesIsMutable();
+          usedAppNonces_.addAll(other.usedAppNonces_);
+        }
+        onChanged();
+      }
       if (other.getLastSeen() != 0L) {
         setLastSeen(other.getLastSeen());
       }
@@ -936,6 +1102,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private com.google.protobuf.ByteString appEui_ = com.google.protobuf.ByteString.EMPTY;
     /**
@@ -1609,6 +1776,206 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       activationConstraints_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.protobuf.ByteString> usedDevNonces_ = java.util.Collections.emptyList();
+    private void ensureUsedDevNoncesIsMutable() {
+      if (!((bitField0_ & 0x00002000) == 0x00002000)) {
+        usedDevNonces_ = new java.util.ArrayList<com.google.protobuf.ByteString>(usedDevNonces_);
+        bitField0_ |= 0x00002000;
+       }
+    }
+    /**
+     * <pre>
+     * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+     * </pre>
+     *
+     * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     */
+    public java.util.List<com.google.protobuf.ByteString>
+        getUsedDevNoncesList() {
+      return java.util.Collections.unmodifiableList(usedDevNonces_);
+    }
+    /**
+     * <pre>
+     * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+     * </pre>
+     *
+     * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     */
+    public int getUsedDevNoncesCount() {
+      return usedDevNonces_.size();
+    }
+    /**
+     * <pre>
+     * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+     * </pre>
+     *
+     * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     */
+    public com.google.protobuf.ByteString getUsedDevNonces(int index) {
+      return usedDevNonces_.get(index);
+    }
+    /**
+     * <pre>
+     * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+     * </pre>
+     *
+     * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     */
+    public Builder setUsedDevNonces(
+        int index, com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureUsedDevNoncesIsMutable();
+      usedDevNonces_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+     * </pre>
+     *
+     * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     */
+    public Builder addUsedDevNonces(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureUsedDevNoncesIsMutable();
+      usedDevNonces_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+     * </pre>
+     *
+     * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     */
+    public Builder addAllUsedDevNonces(
+        java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+      ensureUsedDevNoncesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, usedDevNonces_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+     * </pre>
+     *
+     * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     */
+    public Builder clearUsedDevNonces() {
+      usedDevNonces_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.protobuf.ByteString> usedAppNonces_ = java.util.Collections.emptyList();
+    private void ensureUsedAppNoncesIsMutable() {
+      if (!((bitField0_ & 0x00004000) == 0x00004000)) {
+        usedAppNonces_ = new java.util.ArrayList<com.google.protobuf.ByteString>(usedAppNonces_);
+        bitField0_ |= 0x00004000;
+       }
+    }
+    /**
+     * <pre>
+     * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+     * </pre>
+     *
+     * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     */
+    public java.util.List<com.google.protobuf.ByteString>
+        getUsedAppNoncesList() {
+      return java.util.Collections.unmodifiableList(usedAppNonces_);
+    }
+    /**
+     * <pre>
+     * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+     * </pre>
+     *
+     * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     */
+    public int getUsedAppNoncesCount() {
+      return usedAppNonces_.size();
+    }
+    /**
+     * <pre>
+     * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+     * </pre>
+     *
+     * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     */
+    public com.google.protobuf.ByteString getUsedAppNonces(int index) {
+      return usedAppNonces_.get(index);
+    }
+    /**
+     * <pre>
+     * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+     * </pre>
+     *
+     * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     */
+    public Builder setUsedAppNonces(
+        int index, com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureUsedAppNoncesIsMutable();
+      usedAppNonces_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+     * </pre>
+     *
+     * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     */
+    public Builder addUsedAppNonces(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureUsedAppNoncesIsMutable();
+      usedAppNonces_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+     * </pre>
+     *
+     * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     */
+    public Builder addAllUsedAppNonces(
+        java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+      ensureUsedAppNoncesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, usedAppNonces_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+     * </pre>
+     *
+     * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     */
+    public Builder clearUsedAppNonces() {
+      usedAppNonces_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
