@@ -336,7 +336,7 @@ const ProtobufCMessageDescriptor gateway__location_metadata__descriptor =
   (ProtobufCMessageInit) gateway__location_metadata__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor gateway__rx_metadata__antenna__field_descriptors[8] =
+static const ProtobufCFieldDescriptor gateway__rx_metadata__antenna__field_descriptors[9] =
 {
   {
     "antenna",
@@ -434,12 +434,25 @@ static const ProtobufCFieldDescriptor gateway__rx_metadata__antenna__field_descr
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
+  {
+    "fine_time",
+    11,
+    PROTOBUF_C_LABEL_NONE,
+    PROTOBUF_C_TYPE_INT64,
+    0,   /* quantifier_offset */
+    offsetof(Gateway__RxMetadata__Antenna, fine_time),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
 };
 static const unsigned gateway__rx_metadata__antenna__field_indices_by_name[] = {
   0,   /* field[0] = antenna */
   1,   /* field[1] = channel */
   4,   /* field[4] = channel_rssi */
   7,   /* field[7] = encrypted_time */
+  8,   /* field[8] = fine_time */
   6,   /* field[6] = frequency_offset */
   2,   /* field[2] = rssi */
   5,   /* field[5] = rssi_standard_deviation */
@@ -449,7 +462,7 @@ static const ProtobufCIntRange gateway__rx_metadata__antenna__number_ranges[2 + 
 {
   { 1, 0 },
   { 10, 7 },
-  { 0, 8 }
+  { 0, 9 }
 };
 const ProtobufCMessageDescriptor gateway__rx_metadata__antenna__descriptor =
 {
@@ -459,7 +472,7 @@ const ProtobufCMessageDescriptor gateway__rx_metadata__antenna__descriptor =
   "Gateway__RxMetadata__Antenna",
   "gateway",
   sizeof(Gateway__RxMetadata__Antenna),
-  8,
+  9,
   gateway__rx_metadata__antenna__field_descriptors,
   gateway__rx_metadata__antenna__field_indices_by_name,
   2,  gateway__rx_metadata__antenna__number_ranges,

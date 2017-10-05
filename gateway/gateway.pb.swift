@@ -236,8 +236,11 @@ struct Gateway_RxMetadata: SwiftProtobuf.Message {
     /// Signal-to-noise-ratio in dB
     var snr: Float = 0
 
-    /// Encrypted time from the Gateway FPGA
+    /// Encrypted fine timestamp from the Gateway FPGA
     var encryptedTime: Data = SwiftProtobuf.Internal.emptyData
+
+    /// Fine timestamp from the Gateway FPGA (decrypted)
+    var fineTime: Int64 = 0
 
     var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -258,6 +261,7 @@ struct Gateway_RxMetadata: SwiftProtobuf.Message {
         case 6: try decoder.decodeSingularFloatField(value: &self.rssiStandardDeviation)
         case 7: try decoder.decodeSingularInt64Field(value: &self.frequencyOffset)
         case 10: try decoder.decodeSingularBytesField(value: &self.encryptedTime)
+        case 11: try decoder.decodeSingularInt64Field(value: &self.fineTime)
         default: break
         }
       }
@@ -291,6 +295,9 @@ struct Gateway_RxMetadata: SwiftProtobuf.Message {
       }
       if !self.encryptedTime.isEmpty {
         try visitor.visitSingularBytesField(value: self.encryptedTime, fieldNumber: 10)
+      }
+      if self.fineTime != 0 {
+        try visitor.visitSingularInt64Field(value: self.fineTime, fieldNumber: 11)
       }
       try unknownFields.traverse(visitor: &visitor)
     }
@@ -933,6 +940,7 @@ extension Gateway_RxMetadata.Antenna: SwiftProtobuf._MessageImplementationBase, 
     7: .standard(proto: "frequency_offset"),
     4: .same(proto: "snr"),
     10: .standard(proto: "encrypted_time"),
+    11: .standard(proto: "fine_time"),
   ]
 
   func _protobuf_generated_isEqualTo(other: Gateway_RxMetadata.Antenna) -> Bool {
@@ -944,6 +952,7 @@ extension Gateway_RxMetadata.Antenna: SwiftProtobuf._MessageImplementationBase, 
     if self.frequencyOffset != other.frequencyOffset {return false}
     if self.snr != other.snr {return false}
     if self.encryptedTime != other.encryptedTime {return false}
+    if self.fineTime != other.fineTime {return false}
     if unknownFields != other.unknownFields {return false}
     return true
   }

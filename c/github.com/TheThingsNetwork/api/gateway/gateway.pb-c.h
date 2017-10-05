@@ -111,13 +111,17 @@ struct  _Gateway__RxMetadata__Antenna
    */
   float snr;
   /*
-   * Encrypted time from the Gateway FPGA
+   * Encrypted fine timestamp from the Gateway FPGA
    */
   ProtobufCBinaryData encrypted_time;
+  /*
+   * Fine timestamp from the Gateway FPGA (decrypted)
+   */
+  int64_t fine_time;
 };
 #define GATEWAY__RX_METADATA__ANTENNA__INIT \
  { PROTOBUF_C_MESSAGE_INIT (&gateway__rx_metadata__antenna__descriptor) \
-    , 0, 0, 0, 0, 0, 0, 0, {0,NULL} }
+    , 0, 0, 0, 0, 0, 0, 0, {0,NULL}, 0 }
 
 
 struct  _Gateway__RxMetadata

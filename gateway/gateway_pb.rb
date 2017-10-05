@@ -42,6 +42,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :frequency_offset, :int64, 7
     optional :snr, :float, 4
     optional :encrypted_time, :bytes, 10
+    optional :fine_time, :int64, 11
   end
   add_message "gateway.TxConfiguration" do
     optional :timestamp, :uint32, 11

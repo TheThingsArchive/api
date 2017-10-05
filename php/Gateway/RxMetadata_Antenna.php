@@ -52,11 +52,17 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
      */
     private $snr = 0.0;
     /**
-     * Encrypted time from the Gateway FPGA
+     * Encrypted fine timestamp from the Gateway FPGA
      *
      * Generated from protobuf field <code>bytes encrypted_time = 10;</code>
      */
     private $encrypted_time = '';
+    /**
+     * Fine timestamp from the Gateway FPGA (decrypted)
+     *
+     * Generated from protobuf field <code>int64 fine_time = 11;</code>
+     */
+    private $fine_time = 0;
 
     public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Gateway\Gateway::initOnce();
@@ -238,7 +244,7 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Encrypted time from the Gateway FPGA
+     * Encrypted fine timestamp from the Gateway FPGA
      *
      * Generated from protobuf field <code>bytes encrypted_time = 10;</code>
      * @return string
@@ -249,7 +255,7 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Encrypted time from the Gateway FPGA
+     * Encrypted fine timestamp from the Gateway FPGA
      *
      * Generated from protobuf field <code>bytes encrypted_time = 10;</code>
      * @param string $var
@@ -259,6 +265,32 @@ class RxMetadata_Antenna extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, False);
         $this->encrypted_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Fine timestamp from the Gateway FPGA (decrypted)
+     *
+     * Generated from protobuf field <code>int64 fine_time = 11;</code>
+     * @return int|string
+     */
+    public function getFineTime()
+    {
+        return $this->fine_time;
+    }
+
+    /**
+     * Fine timestamp from the Gateway FPGA (decrypted)
+     *
+     * Generated from protobuf field <code>int64 fine_time = 11;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setFineTime($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->fine_time = $var;
 
         return $this;
     }
