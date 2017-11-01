@@ -289,6 +289,12 @@ void   google__protobuf__oneof_descriptor_proto__free_unpacked
   assert(message->base.descriptor == &google__protobuf__oneof_descriptor_proto__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
+void   google__protobuf__enum_descriptor_proto__enum_reserved_range__init
+                     (Google__Protobuf__EnumDescriptorProto__EnumReservedRange         *message)
+{
+  static const Google__Protobuf__EnumDescriptorProto__EnumReservedRange init_value = GOOGLE__PROTOBUF__ENUM_DESCRIPTOR_PROTO__ENUM_RESERVED_RANGE__INIT;
+  *message = init_value;
+}
 void   google__protobuf__enum_descriptor_proto__init
                      (Google__Protobuf__EnumDescriptorProto         *message)
 {
@@ -1805,7 +1811,58 @@ const ProtobufCMessageDescriptor google__protobuf__oneof_descriptor_proto__descr
   (ProtobufCMessageInit) google__protobuf__oneof_descriptor_proto__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor google__protobuf__enum_descriptor_proto__field_descriptors[3] =
+static const ProtobufCFieldDescriptor google__protobuf__enum_descriptor_proto__enum_reserved_range__field_descriptors[2] =
+{
+  {
+    "start",
+    1,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_INT32,
+    offsetof(Google__Protobuf__EnumDescriptorProto__EnumReservedRange, has_start),
+    offsetof(Google__Protobuf__EnumDescriptorProto__EnumReservedRange, start),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "end",
+    2,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_INT32,
+    offsetof(Google__Protobuf__EnumDescriptorProto__EnumReservedRange, has_end),
+    offsetof(Google__Protobuf__EnumDescriptorProto__EnumReservedRange, end),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+};
+static const unsigned google__protobuf__enum_descriptor_proto__enum_reserved_range__field_indices_by_name[] = {
+  1,   /* field[1] = end */
+  0,   /* field[0] = start */
+};
+static const ProtobufCIntRange google__protobuf__enum_descriptor_proto__enum_reserved_range__number_ranges[1 + 1] =
+{
+  { 1, 0 },
+  { 0, 2 }
+};
+const ProtobufCMessageDescriptor google__protobuf__enum_descriptor_proto__enum_reserved_range__descriptor =
+{
+  PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
+  "google.protobuf.EnumDescriptorProto.EnumReservedRange",
+  "EnumReservedRange",
+  "Google__Protobuf__EnumDescriptorProto__EnumReservedRange",
+  "google.protobuf",
+  sizeof(Google__Protobuf__EnumDescriptorProto__EnumReservedRange),
+  2,
+  google__protobuf__enum_descriptor_proto__enum_reserved_range__field_descriptors,
+  google__protobuf__enum_descriptor_proto__enum_reserved_range__field_indices_by_name,
+  1,  google__protobuf__enum_descriptor_proto__enum_reserved_range__number_ranges,
+  (ProtobufCMessageInit) google__protobuf__enum_descriptor_proto__enum_reserved_range__init,
+  NULL,NULL,NULL    /* reserved[123] */
+};
+static const ProtobufCFieldDescriptor google__protobuf__enum_descriptor_proto__field_descriptors[5] =
 {
   {
     "name",
@@ -1843,16 +1900,42 @@ static const ProtobufCFieldDescriptor google__protobuf__enum_descriptor_proto__f
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
+  {
+    "reserved_range",
+    4,
+    PROTOBUF_C_LABEL_REPEATED,
+    PROTOBUF_C_TYPE_MESSAGE,
+    offsetof(Google__Protobuf__EnumDescriptorProto, n_reserved_range),
+    offsetof(Google__Protobuf__EnumDescriptorProto, reserved_range),
+    &google__protobuf__enum_descriptor_proto__enum_reserved_range__descriptor,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "reserved_name",
+    5,
+    PROTOBUF_C_LABEL_REPEATED,
+    PROTOBUF_C_TYPE_STRING,
+    offsetof(Google__Protobuf__EnumDescriptorProto, n_reserved_name),
+    offsetof(Google__Protobuf__EnumDescriptorProto, reserved_name),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
 };
 static const unsigned google__protobuf__enum_descriptor_proto__field_indices_by_name[] = {
   0,   /* field[0] = name */
   2,   /* field[2] = options */
+  4,   /* field[4] = reserved_name */
+  3,   /* field[3] = reserved_range */
   1,   /* field[1] = value */
 };
 static const ProtobufCIntRange google__protobuf__enum_descriptor_proto__number_ranges[1 + 1] =
 {
   { 1, 0 },
-  { 0, 3 }
+  { 0, 5 }
 };
 const ProtobufCMessageDescriptor google__protobuf__enum_descriptor_proto__descriptor =
 {
@@ -1862,7 +1945,7 @@ const ProtobufCMessageDescriptor google__protobuf__enum_descriptor_proto__descri
   "Google__Protobuf__EnumDescriptorProto",
   "google.protobuf",
   sizeof(Google__Protobuf__EnumDescriptorProto),
-  3,
+  5,
   google__protobuf__enum_descriptor_proto__field_descriptors,
   google__protobuf__enum_descriptor_proto__field_indices_by_name,
   1,  google__protobuf__enum_descriptor_proto__number_ranges,
@@ -2240,18 +2323,6 @@ static const ProtobufCFieldDescriptor google__protobuf__file_options__field_desc
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
-    "php_generic_services",
-    19,
-    PROTOBUF_C_LABEL_OPTIONAL,
-    PROTOBUF_C_TYPE_BOOL,
-    offsetof(Google__Protobuf__FileOptions, has_php_generic_services),
-    offsetof(Google__Protobuf__FileOptions, php_generic_services),
-    NULL,
-    &google__protobuf__file_options__php_generic_services__default_value,
-    0,             /* flags */
-    0,NULL,NULL    /* reserved1,reserved2, etc */
-  },
-  {
     "java_generate_equals_and_hash",
     20,
     PROTOBUF_C_LABEL_OPTIONAL,
@@ -2360,6 +2431,18 @@ static const ProtobufCFieldDescriptor google__protobuf__file_options__field_desc
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
+    "php_generic_services",
+    42,
+    PROTOBUF_C_LABEL_OPTIONAL,
+    PROTOBUF_C_TYPE_BOOL,
+    offsetof(Google__Protobuf__FileOptions, has_php_generic_services),
+    offsetof(Google__Protobuf__FileOptions, php_generic_services),
+    NULL,
+    &google__protobuf__file_options__php_generic_services__default_value,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
     "uninterpreted_option",
     999,
     PROTOBUF_C_LABEL_REPEATED,
@@ -2373,36 +2456,37 @@ static const ProtobufCFieldDescriptor google__protobuf__file_options__field_desc
   },
 };
 static const unsigned google__protobuf__file_options__field_indices_by_name[] = {
-  12,   /* field[12] = cc_enable_arenas */
+  11,   /* field[11] = cc_enable_arenas */
   5,   /* field[5] = cc_generic_services */
-  14,   /* field[14] = csharp_namespace */
-  10,   /* field[10] = deprecated */
+  13,   /* field[13] = csharp_namespace */
+  9,   /* field[9] = deprecated */
   4,   /* field[4] = go_package */
-  9,   /* field[9] = java_generate_equals_and_hash */
+  8,   /* field[8] = java_generate_equals_and_hash */
   6,   /* field[6] = java_generic_services */
   3,   /* field[3] = java_multiple_files */
   1,   /* field[1] = java_outer_classname */
   0,   /* field[0] = java_package */
-  11,   /* field[11] = java_string_check_utf8 */
-  13,   /* field[13] = objc_class_prefix */
+  10,   /* field[10] = java_string_check_utf8 */
+  12,   /* field[12] = objc_class_prefix */
   2,   /* field[2] = optimize_for */
-  16,   /* field[16] = php_class_prefix */
-  8,   /* field[8] = php_generic_services */
-  17,   /* field[17] = php_namespace */
+  15,   /* field[15] = php_class_prefix */
+  17,   /* field[17] = php_generic_services */
+  16,   /* field[16] = php_namespace */
   7,   /* field[7] = py_generic_services */
-  15,   /* field[15] = swift_prefix */
+  14,   /* field[14] = swift_prefix */
   18,   /* field[18] = uninterpreted_option */
 };
-static const ProtobufCIntRange google__protobuf__file_options__number_ranges[9 + 1] =
+static const ProtobufCIntRange google__protobuf__file_options__number_ranges[10 + 1] =
 {
   { 1, 0 },
   { 8, 1 },
   { 16, 5 },
-  { 23, 10 },
-  { 27, 11 },
-  { 31, 12 },
-  { 36, 13 },
-  { 39, 15 },
+  { 20, 8 },
+  { 23, 9 },
+  { 27, 10 },
+  { 31, 11 },
+  { 36, 12 },
+  { 39, 14 },
   { 999, 18 },
   { 0, 19 }
 };
@@ -2417,7 +2501,7 @@ const ProtobufCMessageDescriptor google__protobuf__file_options__descriptor =
   19,
   google__protobuf__file_options__field_descriptors,
   google__protobuf__file_options__field_indices_by_name,
-  9,  google__protobuf__file_options__number_ranges,
+  10,  google__protobuf__file_options__number_ranges,
   (ProtobufCMessageInit) google__protobuf__file_options__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
