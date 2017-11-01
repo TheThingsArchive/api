@@ -38,7 +38,7 @@ protoc:
 
 .PHONY: protos
 
-protos: protos.go protos.js protos.java protos.swift protos.php protos.ruby protos.c
+protos: protos.go protos.js protos.java protos.swift protos.php protos.ruby protos.c protos.python
 
 .PHONY: protos.go
 
@@ -177,6 +177,12 @@ protos.c: $(C_PROTO_TARGETS)
 %.pb-c.c: %.proto
 	$(PROTOC) $(C_PROTOC_FLAGS) $(PWD)/$<
 
+# Python
+.PHONY: protos.python
+
+protos.python:
+	./gen-python.sh
+
 # Dependencies
 
 $(GOPATH)/src/github.com/%:
@@ -219,7 +225,7 @@ mocks: mockgen
 clean: clean-protos clean-mocks
 
 clean-protos:
-	find . -name '*pb.*' -delete -or -name '*pb_test.go' -delete -or -name '*.pb-c.*' -delete -or -wholename './php/*' -delete -or -wholename './java/src/*' -delete
+	find . -name '*pb.*' -delete -or -name '*pb_test.go' -delete -or -name '*.pb-c.*' -delete -or -name '*_pb2*.py' -delete -or -name '__init__.py' -delete -or -wholename './php/*' -delete -or -wholename './java/src/*' -delete
 
 clean-mocks:
 	find . -name '*_mock.go' -delete
