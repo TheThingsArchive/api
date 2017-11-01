@@ -23,15 +23,6 @@ DOCKER_IMAGE ?= thethingsindustries/protoc:2
 PROTOC ?= $(DOCKER) $(DOCKER_ARGS) $(DOCKER_IMAGE) -I/usr/include
 PROTOC += -I$(GOPATH)/src -I$(GRPC_GATEWAY_PKG)/third_party/googleapis
 
-# Go
-GO_PROTO_TARGETS ?= $(patsubst %.proto,%.pb.go,$(shell $(PROTO_FILES)))
-GO_PROTO_TYPES = any duration empty struct timestamp
-GO_PROTO_TYPE_CONVERSIONS = $(subst $(SPACE),$(COMMA),$(foreach type,$(GO_PROTO_TYPES),Mgoogle/protobuf/$(type).proto=$(GOGO_REPO)/types))
-GO_PROTOC_FLAGS ?= \
-	--gogottn_out=plugins=grpc,$(GO_PROTO_TYPE_CONVERSIONS):$(GOPATH)/src \
-	--grpc-gateway_out=:$(GOPATH)/src
-GO_GW_SED ?= -e 's/\.AppId/\.AppID/g' -e 's/\.DevId/\.DevID/g' -e 's/\.AppEui/\.AppEUI/g' -e 's/\.DevEui/\.DevEUI/g' -e 's/\.Id/\.ID/g'
-
 .PHONY: all
 
 all: deps protos mocks
@@ -51,6 +42,15 @@ protos: protos.go protos.js protos.java protos.swift protos.php protos.ruby prot
 
 .PHONY: protos.go
 
+# Go
+GO_PROTO_TARGETS ?= $(patsubst %.proto,%.pb.go,$(shell $(PROTO_FILES)))
+GO_PROTO_TYPES = any duration empty struct timestamp
+GO_PROTO_TYPE_CONVERSIONS = $(subst $(SPACE),$(COMMA),$(foreach type,$(GO_PROTO_TYPES),Mgoogle/protobuf/$(type).proto=$(GOGO_REPO)/types))
+GO_PROTOC_FLAGS ?= \
+	--gogottn_out=plugins=grpc,$(GO_PROTO_TYPE_CONVERSIONS):$(GOPATH)/src \
+	--grpc-gateway_out=:$(GOPATH)/src
+GO_GW_SED ?= -e 's/\.AppId/\.AppID/g' -e 's/\.DevId/\.DevID/g' -e 's/\.AppEui/\.AppEUI/g' -e 's/\.DevEui/\.DevEUI/g' -e 's/\.Id/\.ID/g'
+
 protos.go: $(GO_PROTO_TARGETS)
 	$(SED) -i'' $(GO_GW_SED) $(shell $(ALL_FILES) | grep "\.pb\.gw\.go$$")
 
@@ -58,7 +58,6 @@ protos.go: $(GO_PROTO_TARGETS)
 	$(PROTOC) $(GO_PROTOC_FLAGS) $(PWD)/$<
 
 # Java
-
 JAVA_PROTO_TARGETS ?= $(patsubst %.proto,%.pb.java,$(shell $(PROTO_FILES)))
 JAVA_PROTOC_FLAGS ?= \
 	--grpc-java_out=:$(PWD)/java/src \
@@ -158,7 +157,7 @@ protos.ruby: $(RUBY_PROTO_TARGETS)
 
 C_PROTO_TARGETS ?= $(patsubst %.proto,%.pb-c.c,$(shell $(PROTO_FILES)))
 C_PROTOC_FLAGS ?=  \
-	--c_out=:$(PWD)/c
+	--c_out=$(PWD)/c
 
 .PHONY: protos.c
 
