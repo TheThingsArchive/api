@@ -24,6 +24,7 @@ typedef struct _Google__Protobuf__ExtensionRangeOptions Google__Protobuf__Extens
 typedef struct _Google__Protobuf__FieldDescriptorProto Google__Protobuf__FieldDescriptorProto;
 typedef struct _Google__Protobuf__OneofDescriptorProto Google__Protobuf__OneofDescriptorProto;
 typedef struct _Google__Protobuf__EnumDescriptorProto Google__Protobuf__EnumDescriptorProto;
+typedef struct _Google__Protobuf__EnumDescriptorProto__EnumReservedRange Google__Protobuf__EnumDescriptorProto__EnumReservedRange;
 typedef struct _Google__Protobuf__EnumValueDescriptorProto Google__Protobuf__EnumValueDescriptorProto;
 typedef struct _Google__Protobuf__ServiceDescriptorProto Google__Protobuf__ServiceDescriptorProto;
 typedef struct _Google__Protobuf__MethodDescriptorProto Google__Protobuf__MethodDescriptorProto;
@@ -404,6 +405,32 @@ struct  _Google__Protobuf__OneofDescriptorProto
 
 
 /*
+ * Range of reserved numeric values. Reserved values may not be used by
+ * entries in the same enum. Reserved ranges may not overlap.
+ * Note that this is distinct from DescriptorProto.ReservedRange in that it
+ * is inclusive such that it can appropriately represent the entire int32
+ * domain.
+ */
+struct  _Google__Protobuf__EnumDescriptorProto__EnumReservedRange
+{
+  ProtobufCMessage base;
+  /*
+   * Inclusive.
+   */
+  protobuf_c_boolean has_start;
+  int32_t start;
+  /*
+   * Inclusive.
+   */
+  protobuf_c_boolean has_end;
+  int32_t end;
+};
+#define GOOGLE__PROTOBUF__ENUM_DESCRIPTOR_PROTO__ENUM_RESERVED_RANGE__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&google__protobuf__enum_descriptor_proto__enum_reserved_range__descriptor) \
+    , 0, 0, 0, 0 }
+
+
+/*
  * Describes an enum type.
  */
 struct  _Google__Protobuf__EnumDescriptorProto
@@ -413,10 +440,23 @@ struct  _Google__Protobuf__EnumDescriptorProto
   size_t n_value;
   Google__Protobuf__EnumValueDescriptorProto **value;
   Google__Protobuf__EnumOptions *options;
+  /*
+   * Range of reserved numeric values. Reserved numeric values may not be used
+   * by enum values in the same enum declaration. Reserved ranges may not
+   * overlap.
+   */
+  size_t n_reserved_range;
+  Google__Protobuf__EnumDescriptorProto__EnumReservedRange **reserved_range;
+  /*
+   * Reserved enum value names, which may not be reused. A given name may only
+   * be reserved once.
+   */
+  size_t n_reserved_name;
+  char **reserved_name;
 };
 #define GOOGLE__PROTOBUF__ENUM_DESCRIPTOR_PROTO__INIT \
  { PROTOBUF_C_MESSAGE_INIT (&google__protobuf__enum_descriptor_proto__descriptor) \
-    , NULL, 0,NULL, NULL }
+    , NULL, 0,NULL, NULL, 0,NULL, 0,NULL }
 
 
 /*
@@ -1237,6 +1277,9 @@ Google__Protobuf__OneofDescriptorProto *
 void   google__protobuf__oneof_descriptor_proto__free_unpacked
                      (Google__Protobuf__OneofDescriptorProto *message,
                       ProtobufCAllocator *allocator);
+/* Google__Protobuf__EnumDescriptorProto__EnumReservedRange methods */
+void   google__protobuf__enum_descriptor_proto__enum_reserved_range__init
+                     (Google__Protobuf__EnumDescriptorProto__EnumReservedRange         *message);
 /* Google__Protobuf__EnumDescriptorProto methods */
 void   google__protobuf__enum_descriptor_proto__init
                      (Google__Protobuf__EnumDescriptorProto         *message);
@@ -1557,6 +1600,9 @@ typedef void (*Google__Protobuf__FieldDescriptorProto_Closure)
 typedef void (*Google__Protobuf__OneofDescriptorProto_Closure)
                  (const Google__Protobuf__OneofDescriptorProto *message,
                   void *closure_data);
+typedef void (*Google__Protobuf__EnumDescriptorProto__EnumReservedRange_Closure)
+                 (const Google__Protobuf__EnumDescriptorProto__EnumReservedRange *message,
+                  void *closure_data);
 typedef void (*Google__Protobuf__EnumDescriptorProto_Closure)
                  (const Google__Protobuf__EnumDescriptorProto *message,
                   void *closure_data);
@@ -1628,6 +1674,7 @@ extern const ProtobufCEnumDescriptor    google__protobuf__field_descriptor_proto
 extern const ProtobufCEnumDescriptor    google__protobuf__field_descriptor_proto__label__descriptor;
 extern const ProtobufCMessageDescriptor google__protobuf__oneof_descriptor_proto__descriptor;
 extern const ProtobufCMessageDescriptor google__protobuf__enum_descriptor_proto__descriptor;
+extern const ProtobufCMessageDescriptor google__protobuf__enum_descriptor_proto__enum_reserved_range__descriptor;
 extern const ProtobufCMessageDescriptor google__protobuf__enum_value_descriptor_proto__descriptor;
 extern const ProtobufCMessageDescriptor google__protobuf__service_descriptor_proto__descriptor;
 extern const ProtobufCMessageDescriptor google__protobuf__method_descriptor_proto__descriptor;
