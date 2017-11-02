@@ -14,14 +14,14 @@
 | Javascript   | [sdk available](https://github.com/TheThingsNetwork/node-app-sdk) | **core team** |
 | Objective-C  | nothing yet; help wanted | you? |
 | PHP          | files generated; not tested; help wanted | you? |
-| Python       | files generated; not tested; help wanted | you? |
+| Python       | files generated; not tested ([#23](https://github.com/TheThingsNetwork/api/pull/23)) | **core team** |
 | Ruby         | files generated; not tested; help wanted | you? |
 | Swift        | files generated; not tested; help wanted | you? |
-| Rust         | help wanted (#18) | you? |
+| Rust         | help wanted ([#18](https://github.com/TheThingsNetwork/api/issues/18)) | you? |
 
 ## Updating the generated files
 1. Install [Docker](https://docs.docker.com/engine/installation/)
-2. Run `make`
+2. Run `make clean all`
 
 If you only want to update the files for a specific language, you can use one of:
 - `protos.go`
