@@ -302,26 +302,32 @@ func (c *Client) NewGatewayStreams(id string, token string, downlinkActive bool)
 			log.Debug("Start handling Gateway streams")
 			defer log.Debug("Done handling Gateway streams")
 			for {
-				select {
-				case <-ctx.Done():
-					return
-				case msg := <-chStatus:
-					if err := status.Send(msg); err != nil {
-						log.WithError(err).Warn("Could not send GatewayStatus to router")
-						if err == restartstream.ErrStreamClosed {
-							return
+				func() {
+					defer func() {
+						if p := recover(); p != nil {
+							log.WithField("panic", p).Warn("Unexpected error in stream send")
+						}
+					}()
+					select {
+					case <-ctx.Done():
+						return
+					case msg := <-chStatus:
+						if err := status.Send(msg); err != nil {
+							log.WithError(err).Warn("Could not send GatewayStatus to router")
+							if err == restartstream.ErrStreamClosed {
+								return
+							}
+						}
+					case msg := <-chUplink:
+						if err := uplink.Send(msg); err != nil {
+							log.WithError(err).Warn("Could not send UplinkMessage to router")
+							if err == restartstream.ErrStreamClosed {
+								return
+							}
 						}
 					}
-				case msg := <-chUplink:
-					if err := uplink.Send(msg); err != nil {
-						log.WithError(err).Warn("Could not send UplinkMessage to router")
-						if err == restartstream.ErrStreamClosed {
-							return
-						}
-					}
-				}
+				}()
 			}
-
 		}(server)
 	}
 

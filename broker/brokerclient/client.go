@@ -242,17 +242,24 @@ func (c *Client) NewRouterStreams(id string, token string) RouterStream {
 			log.Debug("Start handling Associate stream")
 			defer log.Debug("Done handling Associate stream")
 			for {
-				select {
-				case <-ctx.Done():
-					return
-				case msg := <-chUplink:
-					if err := associate.Send(msg); err != nil {
-						log.WithError(err).Warn("Could not send UplinkMessage to broker")
-						if err == restartstream.ErrStreamClosed {
-							return
+				func() {
+					defer func() {
+						if p := recover(); p != nil {
+							log.WithField("panic", p).Warn("Unexpected error in stream send")
+						}
+					}()
+					select {
+					case <-ctx.Done():
+						return
+					case msg := <-chUplink:
+						if err := associate.Send(msg); err != nil {
+							log.WithError(err).Warn("Could not send UplinkMessage to broker")
+							if err == restartstream.ErrStreamClosed {
+								return
+							}
 						}
 					}
-				}
+				}()
 			}
 
 		}(server)
@@ -397,17 +404,24 @@ func (c *Client) NewHandlerStreams(id string, token string) HandlerStream {
 			log.Debug("Start handling Publish/Subscribe streams")
 			defer log.Debug("Done handling Publish/Subscribe streams")
 			for {
-				select {
-				case <-ctx.Done():
-					return
-				case msg := <-chDownlink:
-					if err := downlink.Send(msg); err != nil {
-						log.WithError(err).Warn("Could not send DownlinkMessage to broker")
-						if err == restartstream.ErrStreamClosed {
-							return
+				func() {
+					defer func() {
+						if p := recover(); p != nil {
+							log.WithField("panic", p).Warn("Unexpected error in stream send")
+						}
+					}()
+					select {
+					case <-ctx.Done():
+						return
+					case msg := <-chDownlink:
+						if err := downlink.Send(msg); err != nil {
+							log.WithError(err).Warn("Could not send DownlinkMessage to broker")
+							if err == restartstream.ErrStreamClosed {
+								return
+							}
 						}
 					}
-				}
+				}()
 			}
 
 		}(server)
