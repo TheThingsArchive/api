@@ -4,6 +4,8 @@
 package lorawan
 
 import (
+	fmt "fmt"
+
 	"github.com/TheThingsNetwork/ttn/core/types"
 	"github.com/brocaar/lorawan"
 	"github.com/brocaar/lorawan/band"
@@ -237,11 +239,7 @@ func (c *TxConfiguration) SetDataRate(dataRate band.DataRate) error {
 	switch dataRate.Modulation {
 	case band.LoRaModulation:
 		c.Modulation = Modulation_LORA
-		datr, err := types.ConvertDataRate(dataRate)
-		if err != nil {
-			return err
-		}
-		c.DataRate = datr.String()
+		c.DataRate = fmt.Sprintf("SF%dBW%d", dataRate.SpreadFactor, dataRate.Bandwidth)
 	case band.FSKModulation:
 		c.Modulation = Modulation_FSK
 		c.BitRate = uint32(dataRate.BitRate)
