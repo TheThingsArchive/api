@@ -101,6 +101,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     value :AS_923_925, 62
     value :KR_920_923, 7
     value :IN_865_867, 8
+    value :RU_864_870, 9
   end
   add_enum "lorawan.Major" do
     value :LORAWAN_R1, 0

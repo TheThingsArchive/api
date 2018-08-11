@@ -53,5 +53,9 @@ class FrequencyPlan
      * Generated from protobuf enum <code>IN_865_867 = 8;</code>
      */
     const IN_865_867 = 8;
+    /**
+     * Generated from protobuf enum <code>RU_864_870 = 9;</code>
+     */
+    const RU_864_870 = 9;
 }
 
