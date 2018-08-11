@@ -151,20 +151,20 @@ public final class LoRaWANProtocolProto {
       "\006CFList\"O\n\nDLSettings\022&\n\rrx1_dr_offset\030\001" +
       " \001(\rB\017\342\336\037\013Rx1DROffset\022\031\n\006rx2_dr\030\002 \001(\rB\t\342" +
       "\336\037\005Rx2DR\"\026\n\006CFList\022\014\n\004freq\030\001 \003(\r*\037\n\nModu" +
-      "lation\022\010\n\004LORA\020\000\022\007\n\003FSK\020\001*\267\001\n\rFrequencyP" +
+      "lation\022\010\n\004LORA\020\000\022\007\n\003FSK\020\001*\307\001\n\rFrequencyP" +
       "lan\022\016\n\nEU_863_870\020\000\022\016\n\nUS_902_928\020\001\022\016\n\nC" +
       "N_779_787\020\002\022\n\n\006EU_433\020\003\022\016\n\nAU_915_928\020\004\022" +
       "\016\n\nCN_470_510\020\005\022\n\n\006AS_923\020\006\022\016\n\nAS_920_92" +
       "3\020=\022\016\n\nAS_923_925\020>\022\016\n\nKR_920_923\020\007\022\016\n\nI" +
-      "N_865_867\020\010*\027\n\005Major\022\016\n\nLORAWAN_R1\020\000*z\n\005" +
-      "MType\022\020\n\014JOIN_REQUEST\020\000\022\017\n\013JOIN_ACCEPT\020\001",
-      "\022\022\n\016UNCONFIRMED_UP\020\002\022\024\n\020UNCONFIRMED_DOWN" +
-      "\020\003\022\020\n\014CONFIRMED_UP\020\004\022\022\n\016CONFIRMED_DOWN\020\005" +
-      "B\234\001\n)org.thethingsnetwork.api.protocol.l" +
-      "orawanB\024LoRaWANProtocolProtoP\001Z0github.c" +
-      "om/TheThingsNetwork/api/protocol/lorawan" +
-      "\252\002$TheThingsNetwork.API.LoRaWANProtocolb" +
-      "\006proto3"
+      "N_865_867\020\010\022\016\n\nRU_864_870\020\t*\027\n\005Major\022\016\n\n" +
+      "LORAWAN_R1\020\000*z\n\005MType\022\020\n\014JOIN_REQUEST\020\000\022",
+      "\017\n\013JOIN_ACCEPT\020\001\022\022\n\016UNCONFIRMED_UP\020\002\022\024\n\020" +
+      "UNCONFIRMED_DOWN\020\003\022\020\n\014CONFIRMED_UP\020\004\022\022\n\016" +
+      "CONFIRMED_DOWN\020\005B\234\001\n)org.thethingsnetwor" +
+      "k.api.protocol.lorawanB\024LoRaWANProtocolP" +
+      "rotoP\001Z0github.com/TheThingsNetwork/api/" +
+      "protocol/lorawan\252\002$TheThingsNetwork.API." +
+      "LoRaWANProtocolb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

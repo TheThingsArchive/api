@@ -52,6 +52,10 @@ public enum FrequencyPlan
    * <code>IN_865_867 = 8;</code>
    */
   IN_865_867(8),
+  /**
+   * <code>RU_864_870 = 9;</code>
+   */
+  RU_864_870(9),
   UNRECOGNIZED(-1),
   ;
 
@@ -99,6 +103,10 @@ public enum FrequencyPlan
    * <code>IN_865_867 = 8;</code>
    */
   public static final int IN_865_867_VALUE = 8;
+  /**
+   * <code>RU_864_870 = 9;</code>
+   */
+  public static final int RU_864_870_VALUE = 9;
 
 
   public final int getNumber() {
@@ -130,6 +138,7 @@ public enum FrequencyPlan
       case 62: return AS_923_925;
       case 7: return KR_920_923;
       case 8: return IN_865_867;
+      case 9: return RU_864_870;
       default: return null;
     }
   }
