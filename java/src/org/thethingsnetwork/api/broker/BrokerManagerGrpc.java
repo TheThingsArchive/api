@@ -1,19 +1,19 @@
 package org.thethingsnetwork.api.broker;
 
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
+import static io.grpc.stub.ClientCalls.blockingUnaryCall;
+import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -30,30 +30,69 @@ public final class BrokerManagerGrpc {
   public static final String SERVICE_NAME = "broker.BrokerManager";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.ApplicationHandlerRegistration,
-      com.google.protobuf.Empty> METHOD_REGISTER_APPLICATION_HANDLER =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.ApplicationHandlerRegistration, com.google.protobuf.Empty>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "broker.BrokerManager", "RegisterApplicationHandler"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.broker.ApplicationHandlerRegistration.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.google.protobuf.Empty.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.StatusRequest,
-      org.thethingsnetwork.api.broker.Status> METHOD_GET_STATUS =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.StatusRequest, org.thethingsnetwork.api.broker.Status>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "broker.BrokerManager", "GetStatus"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.broker.StatusRequest.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.broker.Status.getDefaultInstance()))
-          .build();
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.ApplicationHandlerRegistration,
+      com.google.protobuf.Empty> getRegisterApplicationHandlerMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RegisterApplicationHandler",
+      requestType = org.thethingsnetwork.api.broker.ApplicationHandlerRegistration.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.ApplicationHandlerRegistration,
+      com.google.protobuf.Empty> getRegisterApplicationHandlerMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.ApplicationHandlerRegistration, com.google.protobuf.Empty> getRegisterApplicationHandlerMethod;
+    if ((getRegisterApplicationHandlerMethod = BrokerManagerGrpc.getRegisterApplicationHandlerMethod) == null) {
+      synchronized (BrokerManagerGrpc.class) {
+        if ((getRegisterApplicationHandlerMethod = BrokerManagerGrpc.getRegisterApplicationHandlerMethod) == null) {
+          BrokerManagerGrpc.getRegisterApplicationHandlerMethod = getRegisterApplicationHandlerMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.ApplicationHandlerRegistration, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "broker.BrokerManager", "RegisterApplicationHandler"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.broker.ApplicationHandlerRegistration.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new BrokerManagerMethodDescriptorSupplier("RegisterApplicationHandler"))
+                  .build();
+          }
+        }
+     }
+     return getRegisterApplicationHandlerMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.StatusRequest,
+      org.thethingsnetwork.api.broker.Status> getGetStatusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetStatus",
+      requestType = org.thethingsnetwork.api.broker.StatusRequest.class,
+      responseType = org.thethingsnetwork.api.broker.Status.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.StatusRequest,
+      org.thethingsnetwork.api.broker.Status> getGetStatusMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.StatusRequest, org.thethingsnetwork.api.broker.Status> getGetStatusMethod;
+    if ((getGetStatusMethod = BrokerManagerGrpc.getGetStatusMethod) == null) {
+      synchronized (BrokerManagerGrpc.class) {
+        if ((getGetStatusMethod = BrokerManagerGrpc.getGetStatusMethod) == null) {
+          BrokerManagerGrpc.getGetStatusMethod = getGetStatusMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.StatusRequest, org.thethingsnetwork.api.broker.Status>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "broker.BrokerManager", "GetStatus"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.broker.StatusRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.broker.Status.getDefaultInstance()))
+                  .setSchemaDescriptor(new BrokerManagerMethodDescriptorSupplier("GetStatus"))
+                  .build();
+          }
+        }
+     }
+     return getGetStatusMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -93,7 +132,7 @@ public final class BrokerManagerGrpc {
      */
     public void registerApplicationHandler(org.thethingsnetwork.api.broker.ApplicationHandlerRegistration request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_REGISTER_APPLICATION_HANDLER, responseObserver);
+      asyncUnimplementedUnaryCall(getRegisterApplicationHandlerMethod(), responseObserver);
     }
 
     /**
@@ -103,20 +142,20 @@ public final class BrokerManagerGrpc {
      */
     public void getStatus(org.thethingsnetwork.api.broker.StatusRequest request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.broker.Status> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_GET_STATUS, responseObserver);
+      asyncUnimplementedUnaryCall(getGetStatusMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            METHOD_REGISTER_APPLICATION_HANDLER,
+            getRegisterApplicationHandlerMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.broker.ApplicationHandlerRegistration,
                 com.google.protobuf.Empty>(
                   this, METHODID_REGISTER_APPLICATION_HANDLER)))
           .addMethod(
-            METHOD_GET_STATUS,
+            getGetStatusMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.broker.StatusRequest,
@@ -156,7 +195,7 @@ public final class BrokerManagerGrpc {
     public void registerApplicationHandler(org.thethingsnetwork.api.broker.ApplicationHandlerRegistration request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_REGISTER_APPLICATION_HANDLER, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getRegisterApplicationHandlerMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -167,7 +206,7 @@ public final class BrokerManagerGrpc {
     public void getStatus(org.thethingsnetwork.api.broker.StatusRequest request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.broker.Status> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_GET_STATUS, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetStatusMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -200,7 +239,7 @@ public final class BrokerManagerGrpc {
      */
     public com.google.protobuf.Empty registerApplicationHandler(org.thethingsnetwork.api.broker.ApplicationHandlerRegistration request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_REGISTER_APPLICATION_HANDLER, getCallOptions(), request);
+          getChannel(), getRegisterApplicationHandlerMethod(), getCallOptions(), request);
     }
 
     /**
@@ -210,7 +249,7 @@ public final class BrokerManagerGrpc {
      */
     public org.thethingsnetwork.api.broker.Status getStatus(org.thethingsnetwork.api.broker.StatusRequest request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_GET_STATUS, getCallOptions(), request);
+          getChannel(), getGetStatusMethod(), getCallOptions(), request);
     }
   }
 
@@ -244,7 +283,7 @@ public final class BrokerManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> registerApplicationHandler(
         org.thethingsnetwork.api.broker.ApplicationHandlerRegistration request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_REGISTER_APPLICATION_HANDLER, getCallOptions()), request);
+          getChannel().newCall(getRegisterApplicationHandlerMethod(), getCallOptions()), request);
     }
 
     /**
@@ -255,7 +294,7 @@ public final class BrokerManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<org.thethingsnetwork.api.broker.Status> getStatus(
         org.thethingsnetwork.api.broker.StatusRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_GET_STATUS, getCallOptions()), request);
+          getChannel().newCall(getGetStatusMethod(), getCallOptions()), request);
     }
   }
 
@@ -303,10 +342,38 @@ public final class BrokerManagerGrpc {
     }
   }
 
-  private static final class BrokerManagerDescriptorSupplier implements io.grpc.protobuf.ProtoFileDescriptorSupplier {
+  private static abstract class BrokerManagerBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
+    BrokerManagerBaseDescriptorSupplier() {}
+
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
       return org.thethingsnetwork.api.broker.BrokerProto.getDescriptor();
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
+      return getFileDescriptor().findServiceByName("BrokerManager");
+    }
+  }
+
+  private static final class BrokerManagerFileDescriptorSupplier
+      extends BrokerManagerBaseDescriptorSupplier {
+    BrokerManagerFileDescriptorSupplier() {}
+  }
+
+  private static final class BrokerManagerMethodDescriptorSupplier
+      extends BrokerManagerBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
+    private final String methodName;
+
+    BrokerManagerMethodDescriptorSupplier(String methodName) {
+      this.methodName = methodName;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
+      return getServiceDescriptor().findMethodByName(methodName);
     }
   }
 
@@ -319,9 +386,9 @@ public final class BrokerManagerGrpc {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new BrokerManagerDescriptorSupplier())
-              .addMethod(METHOD_REGISTER_APPLICATION_HANDLER)
-              .addMethod(METHOD_GET_STATUS)
+              .setSchemaDescriptor(new BrokerManagerFileDescriptorSupplier())
+              .addMethod(getRegisterApplicationHandlerMethod())
+              .addMethod(getGetStatusMethod())
               .build();
         }
       }

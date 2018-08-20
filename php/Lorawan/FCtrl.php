@@ -30,9 +30,21 @@ class FCtrl extends \Google\Protobuf\Internal\Message
      */
     private $f_pending = false;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type bool $adr
+     *     @type bool $adr_ack_req
+     *     @type bool $ack
+     *     @type bool $f_pending
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Protocol\Lorawan\Lorawan::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

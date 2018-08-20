@@ -1,19 +1,19 @@
 package org.thethingsnetwork.api.handler;
 
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
+import static io.grpc.stub.ClientCalls.blockingUnaryCall;
+import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -30,30 +30,69 @@ public final class HandlerGrpc {
   public static final String SERVICE_NAME = "handler.Handler";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.ActivationChallengeRequest,
-      org.thethingsnetwork.api.broker.ActivationChallengeResponse> METHOD_ACTIVATION_CHALLENGE =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.ActivationChallengeRequest, org.thethingsnetwork.api.broker.ActivationChallengeResponse>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "handler.Handler", "ActivationChallenge"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.broker.ActivationChallengeRequest.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.broker.ActivationChallengeResponse.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest,
-      org.thethingsnetwork.api.handler.DeviceActivationResponse> METHOD_ACTIVATE =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest, org.thethingsnetwork.api.handler.DeviceActivationResponse>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "handler.Handler", "Activate"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.handler.DeviceActivationResponse.getDefaultInstance()))
-          .build();
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.ActivationChallengeRequest,
+      org.thethingsnetwork.api.broker.ActivationChallengeResponse> getActivationChallengeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ActivationChallenge",
+      requestType = org.thethingsnetwork.api.broker.ActivationChallengeRequest.class,
+      responseType = org.thethingsnetwork.api.broker.ActivationChallengeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.ActivationChallengeRequest,
+      org.thethingsnetwork.api.broker.ActivationChallengeResponse> getActivationChallengeMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.ActivationChallengeRequest, org.thethingsnetwork.api.broker.ActivationChallengeResponse> getActivationChallengeMethod;
+    if ((getActivationChallengeMethod = HandlerGrpc.getActivationChallengeMethod) == null) {
+      synchronized (HandlerGrpc.class) {
+        if ((getActivationChallengeMethod = HandlerGrpc.getActivationChallengeMethod) == null) {
+          HandlerGrpc.getActivationChallengeMethod = getActivationChallengeMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.ActivationChallengeRequest, org.thethingsnetwork.api.broker.ActivationChallengeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "handler.Handler", "ActivationChallenge"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.broker.ActivationChallengeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.broker.ActivationChallengeResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new HandlerMethodDescriptorSupplier("ActivationChallenge"))
+                  .build();
+          }
+        }
+     }
+     return getActivationChallengeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest,
+      org.thethingsnetwork.api.handler.DeviceActivationResponse> getActivateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Activate",
+      requestType = org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest.class,
+      responseType = org.thethingsnetwork.api.handler.DeviceActivationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest,
+      org.thethingsnetwork.api.handler.DeviceActivationResponse> getActivateMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest, org.thethingsnetwork.api.handler.DeviceActivationResponse> getActivateMethod;
+    if ((getActivateMethod = HandlerGrpc.getActivateMethod) == null) {
+      synchronized (HandlerGrpc.class) {
+        if ((getActivateMethod = HandlerGrpc.getActivateMethod) == null) {
+          HandlerGrpc.getActivateMethod = getActivateMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest, org.thethingsnetwork.api.handler.DeviceActivationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "handler.Handler", "Activate"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.handler.DeviceActivationResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new HandlerMethodDescriptorSupplier("Activate"))
+                  .build();
+          }
+        }
+     }
+     return getActivateMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -89,27 +128,27 @@ public final class HandlerGrpc {
      */
     public void activationChallenge(org.thethingsnetwork.api.broker.ActivationChallengeRequest request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.broker.ActivationChallengeResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_ACTIVATION_CHALLENGE, responseObserver);
+      asyncUnimplementedUnaryCall(getActivationChallengeMethod(), responseObserver);
     }
 
     /**
      */
     public void activate(org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.handler.DeviceActivationResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_ACTIVATE, responseObserver);
+      asyncUnimplementedUnaryCall(getActivateMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            METHOD_ACTIVATION_CHALLENGE,
+            getActivationChallengeMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.broker.ActivationChallengeRequest,
                 org.thethingsnetwork.api.broker.ActivationChallengeResponse>(
                   this, METHODID_ACTIVATION_CHALLENGE)))
           .addMethod(
-            METHOD_ACTIVATE,
+            getActivateMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest,
@@ -145,7 +184,7 @@ public final class HandlerGrpc {
     public void activationChallenge(org.thethingsnetwork.api.broker.ActivationChallengeRequest request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.broker.ActivationChallengeResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_ACTIVATION_CHALLENGE, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getActivationChallengeMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -153,7 +192,7 @@ public final class HandlerGrpc {
     public void activate(org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.handler.DeviceActivationResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_ACTIVATE, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getActivateMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -182,14 +221,14 @@ public final class HandlerGrpc {
      */
     public org.thethingsnetwork.api.broker.ActivationChallengeResponse activationChallenge(org.thethingsnetwork.api.broker.ActivationChallengeRequest request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_ACTIVATION_CHALLENGE, getCallOptions(), request);
+          getChannel(), getActivationChallengeMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.thethingsnetwork.api.handler.DeviceActivationResponse activate(org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_ACTIVATE, getCallOptions(), request);
+          getChannel(), getActivateMethod(), getCallOptions(), request);
     }
   }
 
@@ -219,7 +258,7 @@ public final class HandlerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<org.thethingsnetwork.api.broker.ActivationChallengeResponse> activationChallenge(
         org.thethingsnetwork.api.broker.ActivationChallengeRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_ACTIVATION_CHALLENGE, getCallOptions()), request);
+          getChannel().newCall(getActivationChallengeMethod(), getCallOptions()), request);
     }
 
     /**
@@ -227,7 +266,7 @@ public final class HandlerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<org.thethingsnetwork.api.handler.DeviceActivationResponse> activate(
         org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_ACTIVATE, getCallOptions()), request);
+          getChannel().newCall(getActivateMethod(), getCallOptions()), request);
     }
   }
 
@@ -275,10 +314,38 @@ public final class HandlerGrpc {
     }
   }
 
-  private static final class HandlerDescriptorSupplier implements io.grpc.protobuf.ProtoFileDescriptorSupplier {
+  private static abstract class HandlerBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
+    HandlerBaseDescriptorSupplier() {}
+
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
       return org.thethingsnetwork.api.handler.HandlerProto.getDescriptor();
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
+      return getFileDescriptor().findServiceByName("Handler");
+    }
+  }
+
+  private static final class HandlerFileDescriptorSupplier
+      extends HandlerBaseDescriptorSupplier {
+    HandlerFileDescriptorSupplier() {}
+  }
+
+  private static final class HandlerMethodDescriptorSupplier
+      extends HandlerBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
+    private final String methodName;
+
+    HandlerMethodDescriptorSupplier(String methodName) {
+      this.methodName = methodName;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
+      return getServiceDescriptor().findMethodByName(methodName);
     }
   }
 
@@ -291,9 +358,9 @@ public final class HandlerGrpc {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new HandlerDescriptorSupplier())
-              .addMethod(METHOD_ACTIVATION_CHALLENGE)
-              .addMethod(METHOD_ACTIVATE)
+              .setSchemaDescriptor(new HandlerFileDescriptorSupplier())
+              .addMethod(getActivationChallengeMethod())
+              .addMethod(getActivateMethod())
               .build();
         }
       }

@@ -20,9 +20,19 @@ class GetByGatewayIDRequest extends \Google\Protobuf\Internal\Message
      */
     private $gateway_id = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $gateway_id
+     *           compatible with Metadata message
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Discovery\Discovery::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

@@ -231,7 +231,7 @@ proto.broker.DownlinkOption.prototype.getIdentifier = function() {
 
 /** @param {string} value */
 proto.broker.DownlinkOption.prototype.setIdentifier = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -246,7 +246,7 @@ proto.broker.DownlinkOption.prototype.getGatewayId = function() {
 
 /** @param {string} value */
 proto.broker.DownlinkOption.prototype.setGatewayId = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -261,7 +261,7 @@ proto.broker.DownlinkOption.prototype.getScore = function() {
 
 /** @param {number} value */
 proto.broker.DownlinkOption.prototype.setScore = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -276,7 +276,7 @@ proto.broker.DownlinkOption.prototype.getDeadline = function() {
 
 /** @param {number} value */
 proto.broker.DownlinkOption.prototype.setDeadline = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -628,7 +628,7 @@ proto.broker.UplinkMessage.prototype.getPayload_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.broker.UplinkMessage.prototype.setPayload = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -697,7 +697,7 @@ proto.broker.UplinkMessage.prototype.getDevEui_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.broker.UplinkMessage.prototype.setDevEui = function(value) {
-  jspb.Message.setField(this, 11, value);
+  jspb.Message.setProto3BytesField(this, 11, value);
 };
 
 
@@ -736,7 +736,7 @@ proto.broker.UplinkMessage.prototype.getAppEui_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.broker.UplinkMessage.prototype.setAppEui = function(value) {
-  jspb.Message.setField(this, 12, value);
+  jspb.Message.setProto3BytesField(this, 12, value);
 };
 
 
@@ -751,7 +751,7 @@ proto.broker.UplinkMessage.prototype.getAppId = function() {
 
 /** @param {string} value */
 proto.broker.UplinkMessage.prototype.setAppId = function(value) {
-  jspb.Message.setField(this, 13, value);
+  jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
@@ -766,7 +766,7 @@ proto.broker.UplinkMessage.prototype.getDevId = function() {
 
 /** @param {string} value */
 proto.broker.UplinkMessage.prototype.setDevId = function(value) {
-  jspb.Message.setField(this, 14, value);
+  jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
@@ -832,15 +832,15 @@ proto.broker.UplinkMessage.prototype.hasGatewayMetadata = function() {
 
 /**
  * repeated DownlinkOption downlink_options = 31;
- * @return {!Array.<!proto.broker.DownlinkOption>}
+ * @return {!Array<!proto.broker.DownlinkOption>}
  */
 proto.broker.UplinkMessage.prototype.getDownlinkOptionsList = function() {
-  return /** @type{!Array.<!proto.broker.DownlinkOption>} */ (
+  return /** @type{!Array<!proto.broker.DownlinkOption>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.broker.DownlinkOption, 31));
 };
 
 
-/** @param {!Array.<!proto.broker.DownlinkOption>} value */
+/** @param {!Array<!proto.broker.DownlinkOption>} value */
 proto.broker.UplinkMessage.prototype.setDownlinkOptionsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 31, value);
 };
@@ -1143,7 +1143,7 @@ proto.broker.DownlinkMessage.prototype.getPayload_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.broker.DownlinkMessage.prototype.setPayload = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -1212,7 +1212,7 @@ proto.broker.DownlinkMessage.prototype.getDevEui_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.broker.DownlinkMessage.prototype.setDevEui = function(value) {
-  jspb.Message.setField(this, 11, value);
+  jspb.Message.setProto3BytesField(this, 11, value);
 };
 
 
@@ -1251,7 +1251,7 @@ proto.broker.DownlinkMessage.prototype.getAppEui_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.broker.DownlinkMessage.prototype.setAppEui = function(value) {
-  jspb.Message.setField(this, 12, value);
+  jspb.Message.setProto3BytesField(this, 12, value);
 };
 
 
@@ -1266,7 +1266,7 @@ proto.broker.DownlinkMessage.prototype.getAppId = function() {
 
 /** @param {string} value */
 proto.broker.DownlinkMessage.prototype.setAppId = function(value) {
-  jspb.Message.setField(this, 13, value);
+  jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
@@ -1281,7 +1281,7 @@ proto.broker.DownlinkMessage.prototype.getDevId = function() {
 
 /** @param {string} value */
 proto.broker.DownlinkMessage.prototype.setDevId = function(value) {
-  jspb.Message.setField(this, 14, value);
+  jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
@@ -1549,7 +1549,7 @@ proto.broker.DeviceActivationResponse.prototype.getPayload_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.broker.DeviceActivationResponse.prototype.setPayload = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -1943,7 +1943,7 @@ proto.broker.DeduplicatedUplinkMessage.prototype.getPayload_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.broker.DeduplicatedUplinkMessage.prototype.setPayload = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -2012,7 +2012,7 @@ proto.broker.DeduplicatedUplinkMessage.prototype.getDevEui_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.broker.DeduplicatedUplinkMessage.prototype.setDevEui = function(value) {
-  jspb.Message.setField(this, 11, value);
+  jspb.Message.setProto3BytesField(this, 11, value);
 };
 
 
@@ -2051,7 +2051,7 @@ proto.broker.DeduplicatedUplinkMessage.prototype.getAppEui_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.broker.DeduplicatedUplinkMessage.prototype.setAppEui = function(value) {
-  jspb.Message.setField(this, 12, value);
+  jspb.Message.setProto3BytesField(this, 12, value);
 };
 
 
@@ -2066,7 +2066,7 @@ proto.broker.DeduplicatedUplinkMessage.prototype.getAppId = function() {
 
 /** @param {string} value */
 proto.broker.DeduplicatedUplinkMessage.prototype.setAppId = function(value) {
-  jspb.Message.setField(this, 13, value);
+  jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
@@ -2081,7 +2081,7 @@ proto.broker.DeduplicatedUplinkMessage.prototype.getDevId = function() {
 
 /** @param {string} value */
 proto.broker.DeduplicatedUplinkMessage.prototype.setDevId = function(value) {
-  jspb.Message.setField(this, 14, value);
+  jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
@@ -2117,15 +2117,15 @@ proto.broker.DeduplicatedUplinkMessage.prototype.hasProtocolMetadata = function(
 
 /**
  * repeated gateway.RxMetadata gateway_metadata = 22;
- * @return {!Array.<!proto.gateway.RxMetadata>}
+ * @return {!Array<!proto.gateway.RxMetadata>}
  */
 proto.broker.DeduplicatedUplinkMessage.prototype.getGatewayMetadataList = function() {
-  return /** @type{!Array.<!proto.gateway.RxMetadata>} */ (
+  return /** @type{!Array<!proto.gateway.RxMetadata>} */ (
     jspb.Message.getRepeatedWrapperField(this, ttn_gateway_gateway_pb.RxMetadata, 22));
 };
 
 
-/** @param {!Array.<!proto.gateway.RxMetadata>} value */
+/** @param {!Array<!proto.gateway.RxMetadata>} value */
 proto.broker.DeduplicatedUplinkMessage.prototype.setGatewayMetadataList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 22, value);
 };
@@ -2157,7 +2157,7 @@ proto.broker.DeduplicatedUplinkMessage.prototype.getServerTime = function() {
 
 /** @param {number} value */
 proto.broker.DeduplicatedUplinkMessage.prototype.setServerTime = function(value) {
-  jspb.Message.setField(this, 23, value);
+  jspb.Message.setProto3IntField(this, 23, value);
 };
 
 
@@ -2499,7 +2499,7 @@ proto.broker.DeviceActivationRequest.prototype.getPayload_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.broker.DeviceActivationRequest.prototype.setPayload = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -2568,7 +2568,7 @@ proto.broker.DeviceActivationRequest.prototype.getDevEui_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.broker.DeviceActivationRequest.prototype.setDevEui = function(value) {
-  jspb.Message.setField(this, 11, value);
+  jspb.Message.setProto3BytesField(this, 11, value);
 };
 
 
@@ -2607,7 +2607,7 @@ proto.broker.DeviceActivationRequest.prototype.getAppEui_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.broker.DeviceActivationRequest.prototype.setAppEui = function(value) {
-  jspb.Message.setField(this, 12, value);
+  jspb.Message.setProto3BytesField(this, 12, value);
 };
 
 
@@ -2703,15 +2703,15 @@ proto.broker.DeviceActivationRequest.prototype.hasActivationMetadata = function(
 
 /**
  * repeated DownlinkOption downlink_options = 31;
- * @return {!Array.<!proto.broker.DownlinkOption>}
+ * @return {!Array<!proto.broker.DownlinkOption>}
  */
 proto.broker.DeviceActivationRequest.prototype.getDownlinkOptionsList = function() {
-  return /** @type{!Array.<!proto.broker.DownlinkOption>} */ (
+  return /** @type{!Array<!proto.broker.DownlinkOption>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.broker.DownlinkOption, 31));
 };
 
 
-/** @param {!Array.<!proto.broker.DownlinkOption>} value */
+/** @param {!Array<!proto.broker.DownlinkOption>} value */
 proto.broker.DeviceActivationRequest.prototype.setDownlinkOptionsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 31, value);
 };
@@ -3076,7 +3076,7 @@ proto.broker.DeduplicatedDeviceActivationRequest.prototype.getPayload_asU8 = fun
 
 /** @param {!(string|Uint8Array)} value */
 proto.broker.DeduplicatedDeviceActivationRequest.prototype.setPayload = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -3145,7 +3145,7 @@ proto.broker.DeduplicatedDeviceActivationRequest.prototype.getDevEui_asU8 = func
 
 /** @param {!(string|Uint8Array)} value */
 proto.broker.DeduplicatedDeviceActivationRequest.prototype.setDevEui = function(value) {
-  jspb.Message.setField(this, 11, value);
+  jspb.Message.setProto3BytesField(this, 11, value);
 };
 
 
@@ -3184,7 +3184,7 @@ proto.broker.DeduplicatedDeviceActivationRequest.prototype.getAppEui_asU8 = func
 
 /** @param {!(string|Uint8Array)} value */
 proto.broker.DeduplicatedDeviceActivationRequest.prototype.setAppEui = function(value) {
-  jspb.Message.setField(this, 12, value);
+  jspb.Message.setProto3BytesField(this, 12, value);
 };
 
 
@@ -3199,7 +3199,7 @@ proto.broker.DeduplicatedDeviceActivationRequest.prototype.getAppId = function()
 
 /** @param {string} value */
 proto.broker.DeduplicatedDeviceActivationRequest.prototype.setAppId = function(value) {
-  jspb.Message.setField(this, 13, value);
+  jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
@@ -3214,7 +3214,7 @@ proto.broker.DeduplicatedDeviceActivationRequest.prototype.getDevId = function()
 
 /** @param {string} value */
 proto.broker.DeduplicatedDeviceActivationRequest.prototype.setDevId = function(value) {
-  jspb.Message.setField(this, 14, value);
+  jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
@@ -3250,15 +3250,15 @@ proto.broker.DeduplicatedDeviceActivationRequest.prototype.hasProtocolMetadata =
 
 /**
  * repeated gateway.RxMetadata gateway_metadata = 22;
- * @return {!Array.<!proto.gateway.RxMetadata>}
+ * @return {!Array<!proto.gateway.RxMetadata>}
  */
 proto.broker.DeduplicatedDeviceActivationRequest.prototype.getGatewayMetadataList = function() {
-  return /** @type{!Array.<!proto.gateway.RxMetadata>} */ (
+  return /** @type{!Array<!proto.gateway.RxMetadata>} */ (
     jspb.Message.getRepeatedWrapperField(this, ttn_gateway_gateway_pb.RxMetadata, 22));
 };
 
 
-/** @param {!Array.<!proto.gateway.RxMetadata>} value */
+/** @param {!Array<!proto.gateway.RxMetadata>} value */
 proto.broker.DeduplicatedDeviceActivationRequest.prototype.setGatewayMetadataList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 22, value);
 };
@@ -3320,7 +3320,7 @@ proto.broker.DeduplicatedDeviceActivationRequest.prototype.getServerTime = funct
 
 /** @param {number} value */
 proto.broker.DeduplicatedDeviceActivationRequest.prototype.setServerTime = function(value) {
-  jspb.Message.setField(this, 24, value);
+  jspb.Message.setProto3IntField(this, 24, value);
 };
 
 
@@ -3608,7 +3608,7 @@ proto.broker.ActivationChallengeRequest.prototype.getPayload_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.broker.ActivationChallengeRequest.prototype.setPayload = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -3677,7 +3677,7 @@ proto.broker.ActivationChallengeRequest.prototype.getDevEui_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.broker.ActivationChallengeRequest.prototype.setDevEui = function(value) {
-  jspb.Message.setField(this, 11, value);
+  jspb.Message.setProto3BytesField(this, 11, value);
 };
 
 
@@ -3716,7 +3716,7 @@ proto.broker.ActivationChallengeRequest.prototype.getAppEui_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.broker.ActivationChallengeRequest.prototype.setAppEui = function(value) {
-  jspb.Message.setField(this, 12, value);
+  jspb.Message.setProto3BytesField(this, 12, value);
 };
 
 
@@ -3731,7 +3731,7 @@ proto.broker.ActivationChallengeRequest.prototype.getAppId = function() {
 
 /** @param {string} value */
 proto.broker.ActivationChallengeRequest.prototype.setAppId = function(value) {
-  jspb.Message.setField(this, 13, value);
+  jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
@@ -3746,7 +3746,7 @@ proto.broker.ActivationChallengeRequest.prototype.getDevId = function() {
 
 /** @param {string} value */
 proto.broker.ActivationChallengeRequest.prototype.setDevId = function(value) {
-  jspb.Message.setField(this, 14, value);
+  jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
@@ -3926,7 +3926,7 @@ proto.broker.ActivationChallengeResponse.prototype.getPayload_asU8 = function() 
 
 /** @param {!(string|Uint8Array)} value */
 proto.broker.ActivationChallengeResponse.prototype.setPayload = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -4694,7 +4694,7 @@ proto.broker.Status.prototype.getConnectedRouters = function() {
 
 /** @param {number} value */
 proto.broker.Status.prototype.setConnectedRouters = function(value) {
-  jspb.Message.setField(this, 21, value);
+  jspb.Message.setProto3IntField(this, 21, value);
 };
 
 
@@ -4709,7 +4709,7 @@ proto.broker.Status.prototype.getConnectedHandlers = function() {
 
 /** @param {number} value */
 proto.broker.Status.prototype.setConnectedHandlers = function(value) {
-  jspb.Message.setField(this, 22, value);
+  jspb.Message.setProto3IntField(this, 22, value);
 };
 
 
@@ -4863,7 +4863,7 @@ proto.broker.ApplicationHandlerRegistration.prototype.getAppId = function() {
 
 /** @param {string} value */
 proto.broker.ApplicationHandlerRegistration.prototype.setAppId = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -4878,7 +4878,7 @@ proto.broker.ApplicationHandlerRegistration.prototype.getHandlerId = function() 
 
 /** @param {string} value */
 proto.broker.ApplicationHandlerRegistration.prototype.setHandlerId = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

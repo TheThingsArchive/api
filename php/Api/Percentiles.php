@@ -50,9 +50,26 @@ class Percentiles extends \Google\Protobuf\Internal\Message
      */
     private $percentile99 = 0.0;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type float $percentile1
+     *     @type float $percentile5
+     *     @type float $percentile10
+     *     @type float $percentile25
+     *     @type float $percentile50
+     *     @type float $percentile75
+     *     @type float $percentile90
+     *     @type float $percentile95
+     *     @type float $percentile99
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Api::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

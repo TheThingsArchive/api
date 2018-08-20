@@ -249,7 +249,7 @@ proto.handler.DeviceActivationResponse.prototype.getPayload_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.handler.DeviceActivationResponse.prototype.setPayload = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -962,7 +962,7 @@ proto.handler.ApplicationIdentifier.prototype.getAppId = function() {
 
 /** @param {string} value */
 proto.handler.ApplicationIdentifier.prototype.setAppId = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1176,7 +1176,7 @@ proto.handler.Application.prototype.getAppId = function() {
 
 /** @param {string} value */
 proto.handler.Application.prototype.setAppId = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1191,7 +1191,7 @@ proto.handler.Application.prototype.getPayloadFormat = function() {
 
 /** @param {string} value */
 proto.handler.Application.prototype.setPayloadFormat = function(value) {
-  jspb.Message.setField(this, 6, value);
+  jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -1206,7 +1206,7 @@ proto.handler.Application.prototype.getDecoder = function() {
 
 /** @param {string} value */
 proto.handler.Application.prototype.setDecoder = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1221,7 +1221,7 @@ proto.handler.Application.prototype.getConverter = function() {
 
 /** @param {string} value */
 proto.handler.Application.prototype.setConverter = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -1236,7 +1236,7 @@ proto.handler.Application.prototype.getValidator = function() {
 
 /** @param {string} value */
 proto.handler.Application.prototype.setValidator = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -1251,7 +1251,7 @@ proto.handler.Application.prototype.getEncoder = function() {
 
 /** @param {string} value */
 proto.handler.Application.prototype.setEncoder = function(value) {
-  jspb.Message.setField(this, 5, value);
+  jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -1266,7 +1266,7 @@ proto.handler.Application.prototype.getRegisterOnJoinAccessKey = function() {
 
 /** @param {string} value */
 proto.handler.Application.prototype.setRegisterOnJoinAccessKey = function(value) {
-  jspb.Message.setField(this, 7, value);
+  jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -1420,7 +1420,7 @@ proto.handler.DeviceIdentifier.prototype.getAppId = function() {
 
 /** @param {string} value */
 proto.handler.DeviceIdentifier.prototype.setAppId = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1435,7 +1435,7 @@ proto.handler.DeviceIdentifier.prototype.getDevId = function() {
 
 /** @param {string} value */
 proto.handler.DeviceIdentifier.prototype.setDevId = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1583,7 +1583,7 @@ proto.handler.Device.deserializeBinaryFromReader = function(msg, reader) {
     case 13:
       var value = msg.getAttributesMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
          });
       break;
     case 20:
@@ -1687,7 +1687,7 @@ proto.handler.Device.prototype.getAppId = function() {
 
 /** @param {string} value */
 proto.handler.Device.prototype.setAppId = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1702,7 +1702,7 @@ proto.handler.Device.prototype.getDevId = function() {
 
 /** @param {string} value */
 proto.handler.Device.prototype.setDevId = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1747,7 +1747,7 @@ proto.handler.Device.prototype.getLatitude = function() {
 
 /** @param {number} value */
 proto.handler.Device.prototype.setLatitude = function(value) {
-  jspb.Message.setField(this, 10, value);
+  jspb.Message.setProto3FloatField(this, 10, value);
 };
 
 
@@ -1762,7 +1762,7 @@ proto.handler.Device.prototype.getLongitude = function() {
 
 /** @param {number} value */
 proto.handler.Device.prototype.setLongitude = function(value) {
-  jspb.Message.setField(this, 11, value);
+  jspb.Message.setProto3FloatField(this, 11, value);
 };
 
 
@@ -1777,7 +1777,7 @@ proto.handler.Device.prototype.getAltitude = function() {
 
 /** @param {number} value */
 proto.handler.Device.prototype.setAltitude = function(value) {
-  jspb.Message.setField(this, 12, value);
+  jspb.Message.setProto3IntField(this, 12, value);
 };
 
 
@@ -1810,7 +1810,7 @@ proto.handler.Device.prototype.getDescription = function() {
 
 /** @param {string} value */
 proto.handler.Device.prototype.setDescription = function(value) {
-  jspb.Message.setField(this, 20, value);
+  jspb.Message.setProto3StringField(this, 20, value);
 };
 
 
@@ -1953,15 +1953,15 @@ proto.handler.DeviceList.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * repeated Device devices = 1;
- * @return {!Array.<!proto.handler.Device>}
+ * @return {!Array<!proto.handler.Device>}
  */
 proto.handler.DeviceList.prototype.getDevicesList = function() {
-  return /** @type{!Array.<!proto.handler.Device>} */ (
+  return /** @type{!Array<!proto.handler.Device>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.handler.Device, 1));
 };
 
 
-/** @param {!Array.<!proto.handler.Device>} value */
+/** @param {!Array<!proto.handler.Device>} value */
 proto.handler.DeviceList.prototype.setDevicesList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
@@ -2182,7 +2182,7 @@ proto.handler.DryDownlinkMessage.prototype.getPayload_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.handler.DryDownlinkMessage.prototype.setPayload = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -2197,7 +2197,7 @@ proto.handler.DryDownlinkMessage.prototype.getFields = function() {
 
 /** @param {string} value */
 proto.handler.DryDownlinkMessage.prototype.setFields = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2242,7 +2242,7 @@ proto.handler.DryDownlinkMessage.prototype.getPort = function() {
 
 /** @param {number} value */
 proto.handler.DryDownlinkMessage.prototype.setPort = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -2434,7 +2434,7 @@ proto.handler.DryUplinkMessage.prototype.getPayload_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.handler.DryUplinkMessage.prototype.setPayload = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -2479,7 +2479,7 @@ proto.handler.DryUplinkMessage.prototype.getPort = function() {
 
 /** @param {number} value */
 proto.handler.DryUplinkMessage.prototype.setPort = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -2657,7 +2657,7 @@ proto.handler.SimulatedUplinkMessage.prototype.getAppId = function() {
 
 /** @param {string} value */
 proto.handler.SimulatedUplinkMessage.prototype.setAppId = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2672,7 +2672,7 @@ proto.handler.SimulatedUplinkMessage.prototype.getDevId = function() {
 
 /** @param {string} value */
 proto.handler.SimulatedUplinkMessage.prototype.setDevId = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2711,7 +2711,7 @@ proto.handler.SimulatedUplinkMessage.prototype.getPayload_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.handler.SimulatedUplinkMessage.prototype.setPayload = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3BytesField(this, 3, value);
 };
 
 
@@ -2726,7 +2726,7 @@ proto.handler.SimulatedUplinkMessage.prototype.getPort = function() {
 
 /** @param {number} value */
 proto.handler.SimulatedUplinkMessage.prototype.setPort = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -2887,20 +2887,20 @@ proto.handler.LogEntry.prototype.getFunction = function() {
 
 /** @param {string} value */
 proto.handler.LogEntry.prototype.setFunction = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
  * repeated string fields = 2;
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.handler.LogEntry.prototype.getFieldsList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getRepeatedField(this, 2));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
-/** @param {!Array.<string>} value */
+/** @param {!Array<string>} value */
 proto.handler.LogEntry.prototype.setFieldsList = function(value) {
   jspb.Message.setField(this, 2, value || []);
 };
@@ -3128,7 +3128,7 @@ proto.handler.DryUplinkResult.prototype.getPayload_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.handler.DryUplinkResult.prototype.setPayload = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -3143,7 +3143,7 @@ proto.handler.DryUplinkResult.prototype.getFields = function() {
 
 /** @param {string} value */
 proto.handler.DryUplinkResult.prototype.setFields = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -3160,21 +3160,21 @@ proto.handler.DryUplinkResult.prototype.getValid = function() {
 
 /** @param {boolean} value */
 proto.handler.DryUplinkResult.prototype.setValid = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
 /**
  * repeated LogEntry logs = 4;
- * @return {!Array.<!proto.handler.LogEntry>}
+ * @return {!Array<!proto.handler.LogEntry>}
  */
 proto.handler.DryUplinkResult.prototype.getLogsList = function() {
-  return /** @type{!Array.<!proto.handler.LogEntry>} */ (
+  return /** @type{!Array<!proto.handler.LogEntry>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.handler.LogEntry, 4));
 };
 
 
-/** @param {!Array.<!proto.handler.LogEntry>} value */
+/** @param {!Array<!proto.handler.LogEntry>} value */
 proto.handler.DryUplinkResult.prototype.setLogsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
@@ -3379,21 +3379,21 @@ proto.handler.DryDownlinkResult.prototype.getPayload_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.handler.DryDownlinkResult.prototype.setPayload = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
 /**
  * repeated LogEntry logs = 2;
- * @return {!Array.<!proto.handler.LogEntry>}
+ * @return {!Array<!proto.handler.LogEntry>}
  */
 proto.handler.DryDownlinkResult.prototype.getLogsList = function() {
-  return /** @type{!Array.<!proto.handler.LogEntry>} */ (
+  return /** @type{!Array<!proto.handler.LogEntry>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.handler.LogEntry, 2));
 };
 
 
-/** @param {!Array.<!proto.handler.LogEntry>} value */
+/** @param {!Array<!proto.handler.LogEntry>} value */
 proto.handler.DryDownlinkResult.prototype.setLogsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
 };

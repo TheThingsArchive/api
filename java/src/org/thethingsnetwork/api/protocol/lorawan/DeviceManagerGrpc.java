@@ -1,19 +1,19 @@
 package org.thethingsnetwork.api.protocol.lorawan;
 
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
+import static io.grpc.stub.ClientCalls.blockingUnaryCall;
+import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  */
@@ -27,42 +27,101 @@ public final class DeviceManagerGrpc {
   public static final String SERVICE_NAME = "lorawan.DeviceManager";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier,
-      org.thethingsnetwork.api.protocol.lorawan.Device> METHOD_GET_DEVICE =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier, org.thethingsnetwork.api.protocol.lorawan.Device>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "lorawan.DeviceManager", "GetDevice"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.protocol.lorawan.Device.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.Device,
-      com.google.protobuf.Empty> METHOD_SET_DEVICE =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.protocol.lorawan.Device, com.google.protobuf.Empty>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "lorawan.DeviceManager", "SetDevice"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.protocol.lorawan.Device.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.google.protobuf.Empty.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier,
-      com.google.protobuf.Empty> METHOD_DELETE_DEVICE =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier, com.google.protobuf.Empty>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "lorawan.DeviceManager", "DeleteDevice"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.google.protobuf.Empty.getDefaultInstance()))
-          .build();
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier,
+      org.thethingsnetwork.api.protocol.lorawan.Device> getGetDeviceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDevice",
+      requestType = org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier.class,
+      responseType = org.thethingsnetwork.api.protocol.lorawan.Device.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier,
+      org.thethingsnetwork.api.protocol.lorawan.Device> getGetDeviceMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier, org.thethingsnetwork.api.protocol.lorawan.Device> getGetDeviceMethod;
+    if ((getGetDeviceMethod = DeviceManagerGrpc.getGetDeviceMethod) == null) {
+      synchronized (DeviceManagerGrpc.class) {
+        if ((getGetDeviceMethod = DeviceManagerGrpc.getGetDeviceMethod) == null) {
+          DeviceManagerGrpc.getGetDeviceMethod = getGetDeviceMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier, org.thethingsnetwork.api.protocol.lorawan.Device>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "lorawan.DeviceManager", "GetDevice"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.protocol.lorawan.Device.getDefaultInstance()))
+                  .setSchemaDescriptor(new DeviceManagerMethodDescriptorSupplier("GetDevice"))
+                  .build();
+          }
+        }
+     }
+     return getGetDeviceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.Device,
+      com.google.protobuf.Empty> getSetDeviceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetDevice",
+      requestType = org.thethingsnetwork.api.protocol.lorawan.Device.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.Device,
+      com.google.protobuf.Empty> getSetDeviceMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.Device, com.google.protobuf.Empty> getSetDeviceMethod;
+    if ((getSetDeviceMethod = DeviceManagerGrpc.getSetDeviceMethod) == null) {
+      synchronized (DeviceManagerGrpc.class) {
+        if ((getSetDeviceMethod = DeviceManagerGrpc.getSetDeviceMethod) == null) {
+          DeviceManagerGrpc.getSetDeviceMethod = getSetDeviceMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.protocol.lorawan.Device, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "lorawan.DeviceManager", "SetDevice"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.protocol.lorawan.Device.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new DeviceManagerMethodDescriptorSupplier("SetDevice"))
+                  .build();
+          }
+        }
+     }
+     return getSetDeviceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier,
+      com.google.protobuf.Empty> getDeleteDeviceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDevice",
+      requestType = org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier,
+      com.google.protobuf.Empty> getDeleteDeviceMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier, com.google.protobuf.Empty> getDeleteDeviceMethod;
+    if ((getDeleteDeviceMethod = DeviceManagerGrpc.getDeleteDeviceMethod) == null) {
+      synchronized (DeviceManagerGrpc.class) {
+        if ((getDeleteDeviceMethod = DeviceManagerGrpc.getDeleteDeviceMethod) == null) {
+          DeviceManagerGrpc.getDeleteDeviceMethod = getDeleteDeviceMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "lorawan.DeviceManager", "DeleteDevice"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new DeviceManagerMethodDescriptorSupplier("DeleteDevice"))
+                  .build();
+          }
+        }
+     }
+     return getDeleteDeviceMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -95,41 +154,41 @@ public final class DeviceManagerGrpc {
      */
     public void getDevice(org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.protocol.lorawan.Device> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_GET_DEVICE, responseObserver);
+      asyncUnimplementedUnaryCall(getGetDeviceMethod(), responseObserver);
     }
 
     /**
      */
     public void setDevice(org.thethingsnetwork.api.protocol.lorawan.Device request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_SET_DEVICE, responseObserver);
+      asyncUnimplementedUnaryCall(getSetDeviceMethod(), responseObserver);
     }
 
     /**
      */
     public void deleteDevice(org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_DELETE_DEVICE, responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteDeviceMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            METHOD_GET_DEVICE,
+            getGetDeviceMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier,
                 org.thethingsnetwork.api.protocol.lorawan.Device>(
                   this, METHODID_GET_DEVICE)))
           .addMethod(
-            METHOD_SET_DEVICE,
+            getSetDeviceMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.protocol.lorawan.Device,
                 com.google.protobuf.Empty>(
                   this, METHODID_SET_DEVICE)))
           .addMethod(
-            METHOD_DELETE_DEVICE,
+            getDeleteDeviceMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier,
@@ -162,7 +221,7 @@ public final class DeviceManagerGrpc {
     public void getDevice(org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.protocol.lorawan.Device> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_GET_DEVICE, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetDeviceMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -170,7 +229,7 @@ public final class DeviceManagerGrpc {
     public void setDevice(org.thethingsnetwork.api.protocol.lorawan.Device request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_SET_DEVICE, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getSetDeviceMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -178,7 +237,7 @@ public final class DeviceManagerGrpc {
     public void deleteDevice(org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_DELETE_DEVICE, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getDeleteDeviceMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -204,21 +263,21 @@ public final class DeviceManagerGrpc {
      */
     public org.thethingsnetwork.api.protocol.lorawan.Device getDevice(org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_GET_DEVICE, getCallOptions(), request);
+          getChannel(), getGetDeviceMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public com.google.protobuf.Empty setDevice(org.thethingsnetwork.api.protocol.lorawan.Device request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_SET_DEVICE, getCallOptions(), request);
+          getChannel(), getSetDeviceMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public com.google.protobuf.Empty deleteDevice(org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_DELETE_DEVICE, getCallOptions(), request);
+          getChannel(), getDeleteDeviceMethod(), getCallOptions(), request);
     }
   }
 
@@ -245,7 +304,7 @@ public final class DeviceManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<org.thethingsnetwork.api.protocol.lorawan.Device> getDevice(
         org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_GET_DEVICE, getCallOptions()), request);
+          getChannel().newCall(getGetDeviceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -253,7 +312,7 @@ public final class DeviceManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> setDevice(
         org.thethingsnetwork.api.protocol.lorawan.Device request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_SET_DEVICE, getCallOptions()), request);
+          getChannel().newCall(getSetDeviceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -261,7 +320,7 @@ public final class DeviceManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteDevice(
         org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_DELETE_DEVICE, getCallOptions()), request);
+          getChannel().newCall(getDeleteDeviceMethod(), getCallOptions()), request);
     }
   }
 
@@ -314,10 +373,38 @@ public final class DeviceManagerGrpc {
     }
   }
 
-  private static final class DeviceManagerDescriptorSupplier implements io.grpc.protobuf.ProtoFileDescriptorSupplier {
+  private static abstract class DeviceManagerBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
+    DeviceManagerBaseDescriptorSupplier() {}
+
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProtocolProto.getDescriptor();
+      return org.thethingsnetwork.api.protocol.lorawan.LoRaWANDeviceProto.getDescriptor();
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
+      return getFileDescriptor().findServiceByName("DeviceManager");
+    }
+  }
+
+  private static final class DeviceManagerFileDescriptorSupplier
+      extends DeviceManagerBaseDescriptorSupplier {
+    DeviceManagerFileDescriptorSupplier() {}
+  }
+
+  private static final class DeviceManagerMethodDescriptorSupplier
+      extends DeviceManagerBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
+    private final String methodName;
+
+    DeviceManagerMethodDescriptorSupplier(String methodName) {
+      this.methodName = methodName;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
+      return getServiceDescriptor().findMethodByName(methodName);
     }
   }
 
@@ -330,10 +417,10 @@ public final class DeviceManagerGrpc {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new DeviceManagerDescriptorSupplier())
-              .addMethod(METHOD_GET_DEVICE)
-              .addMethod(METHOD_SET_DEVICE)
-              .addMethod(METHOD_DELETE_DEVICE)
+              .setSchemaDescriptor(new DeviceManagerFileDescriptorSupplier())
+              .addMethod(getGetDeviceMethod())
+              .addMethod(getSetDeviceMethod())
+              .addMethod(getDeleteDeviceMethod())
               .build();
         }
       }

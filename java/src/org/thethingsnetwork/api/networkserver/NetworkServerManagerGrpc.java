@@ -1,19 +1,19 @@
 package org.thethingsnetwork.api.networkserver;
 
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
+import static io.grpc.stub.ClientCalls.blockingUnaryCall;
+import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -31,18 +31,37 @@ public final class NetworkServerManagerGrpc {
   public static final String SERVICE_NAME = "networkserver.NetworkServerManager";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.networkserver.StatusRequest,
-      org.thethingsnetwork.api.networkserver.Status> METHOD_GET_STATUS =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.networkserver.StatusRequest, org.thethingsnetwork.api.networkserver.Status>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "networkserver.NetworkServerManager", "GetStatus"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.networkserver.StatusRequest.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.networkserver.Status.getDefaultInstance()))
-          .build();
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.networkserver.StatusRequest,
+      org.thethingsnetwork.api.networkserver.Status> getGetStatusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetStatus",
+      requestType = org.thethingsnetwork.api.networkserver.StatusRequest.class,
+      responseType = org.thethingsnetwork.api.networkserver.Status.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.networkserver.StatusRequest,
+      org.thethingsnetwork.api.networkserver.Status> getGetStatusMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.networkserver.StatusRequest, org.thethingsnetwork.api.networkserver.Status> getGetStatusMethod;
+    if ((getGetStatusMethod = NetworkServerManagerGrpc.getGetStatusMethod) == null) {
+      synchronized (NetworkServerManagerGrpc.class) {
+        if ((getGetStatusMethod = NetworkServerManagerGrpc.getGetStatusMethod) == null) {
+          NetworkServerManagerGrpc.getGetStatusMethod = getGetStatusMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.networkserver.StatusRequest, org.thethingsnetwork.api.networkserver.Status>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "networkserver.NetworkServerManager", "GetStatus"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.networkserver.StatusRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.networkserver.Status.getDefaultInstance()))
+                  .setSchemaDescriptor(new NetworkServerManagerMethodDescriptorSupplier("GetStatus"))
+                  .build();
+          }
+        }
+     }
+     return getGetStatusMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -79,13 +98,13 @@ public final class NetworkServerManagerGrpc {
      */
     public void getStatus(org.thethingsnetwork.api.networkserver.StatusRequest request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.networkserver.Status> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_GET_STATUS, responseObserver);
+      asyncUnimplementedUnaryCall(getGetStatusMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            METHOD_GET_STATUS,
+            getGetStatusMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.networkserver.StatusRequest,
@@ -122,7 +141,7 @@ public final class NetworkServerManagerGrpc {
     public void getStatus(org.thethingsnetwork.api.networkserver.StatusRequest request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.networkserver.Status> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_GET_STATUS, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetStatusMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -152,7 +171,7 @@ public final class NetworkServerManagerGrpc {
      */
     public org.thethingsnetwork.api.networkserver.Status getStatus(org.thethingsnetwork.api.networkserver.StatusRequest request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_GET_STATUS, getCallOptions(), request);
+          getChannel(), getGetStatusMethod(), getCallOptions(), request);
     }
   }
 
@@ -183,7 +202,7 @@ public final class NetworkServerManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<org.thethingsnetwork.api.networkserver.Status> getStatus(
         org.thethingsnetwork.api.networkserver.StatusRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_GET_STATUS, getCallOptions()), request);
+          getChannel().newCall(getGetStatusMethod(), getCallOptions()), request);
     }
   }
 
@@ -226,10 +245,38 @@ public final class NetworkServerManagerGrpc {
     }
   }
 
-  private static final class NetworkServerManagerDescriptorSupplier implements io.grpc.protobuf.ProtoFileDescriptorSupplier {
+  private static abstract class NetworkServerManagerBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
+    NetworkServerManagerBaseDescriptorSupplier() {}
+
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return org.thethingsnetwork.api.networkserver.MonitorProto.getDescriptor();
+      return org.thethingsnetwork.api.networkserver.NetworkServerProto.getDescriptor();
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
+      return getFileDescriptor().findServiceByName("NetworkServerManager");
+    }
+  }
+
+  private static final class NetworkServerManagerFileDescriptorSupplier
+      extends NetworkServerManagerBaseDescriptorSupplier {
+    NetworkServerManagerFileDescriptorSupplier() {}
+  }
+
+  private static final class NetworkServerManagerMethodDescriptorSupplier
+      extends NetworkServerManagerBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
+    private final String methodName;
+
+    NetworkServerManagerMethodDescriptorSupplier(String methodName) {
+      this.methodName = methodName;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
+      return getServiceDescriptor().findMethodByName(methodName);
     }
   }
 
@@ -242,8 +289,8 @@ public final class NetworkServerManagerGrpc {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new NetworkServerManagerDescriptorSupplier())
-              .addMethod(METHOD_GET_STATUS)
+              .setSchemaDescriptor(new NetworkServerManagerFileDescriptorSupplier())
+              .addMethod(getGetStatusMethod())
               .build();
         }
       }

@@ -28,6 +28,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -39,13 +42,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             org.thethingsnetwork.api.SystemStats.Loadstats.Builder subBuilder = null;
             if (load_ != null) {
@@ -85,6 +81,13 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -102,6 +105,7 @@ private static final long serialVersionUID = 0L;
     return org.thethingsnetwork.api.APIProto.internal_static_api_SystemStats_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return org.thethingsnetwork.api.APIProto.internal_static_api_SystemStats_fieldAccessorTable
@@ -156,6 +160,9 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -167,13 +174,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 13: {
 
               load1_ = input.readFloat();
@@ -187,6 +187,13 @@ private static final long serialVersionUID = 0L;
             case 29: {
 
               load15_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -206,6 +213,7 @@ private static final long serialVersionUID = 0L;
       return org.thethingsnetwork.api.APIProto.internal_static_api_SystemStats_Loadstats_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return org.thethingsnetwork.api.APIProto.internal_static_api_SystemStats_Loadstats_fieldAccessorTable
@@ -241,6 +249,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -250,6 +259,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (load1_ != 0F) {
@@ -264,6 +274,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -404,6 +415,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -411,6 +423,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(org.thethingsnetwork.api.SystemStats.Loadstats prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -434,6 +447,7 @@ private static final long serialVersionUID = 0L;
         return org.thethingsnetwork.api.APIProto.internal_static_api_SystemStats_Loadstats_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return org.thethingsnetwork.api.APIProto.internal_static_api_SystemStats_Loadstats_fieldAccessorTable
@@ -456,6 +470,7 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         load1_ = 0F;
@@ -467,15 +482,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return org.thethingsnetwork.api.APIProto.internal_static_api_SystemStats_Loadstats_descriptor;
       }
 
+      @java.lang.Override
       public org.thethingsnetwork.api.SystemStats.Loadstats getDefaultInstanceForType() {
         return org.thethingsnetwork.api.SystemStats.Loadstats.getDefaultInstance();
       }
 
+      @java.lang.Override
       public org.thethingsnetwork.api.SystemStats.Loadstats build() {
         org.thethingsnetwork.api.SystemStats.Loadstats result = buildPartial();
         if (!result.isInitialized()) {
@@ -484,6 +502,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public org.thethingsnetwork.api.SystemStats.Loadstats buildPartial() {
         org.thethingsnetwork.api.SystemStats.Loadstats result = new org.thethingsnetwork.api.SystemStats.Loadstats(this);
         result.load1_ = load1_;
@@ -493,32 +512,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof org.thethingsnetwork.api.SystemStats.Loadstats) {
           return mergeFrom((org.thethingsnetwork.api.SystemStats.Loadstats)other);
@@ -544,10 +570,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -643,11 +671,13 @@ private static final long serialVersionUID = 0L;
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -669,11 +699,12 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<Loadstats>
         PARSER = new com.google.protobuf.AbstractParser<Loadstats>() {
+      @java.lang.Override
       public Loadstats parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Loadstats(input, extensionRegistry);
+        return new Loadstats(input, extensionRegistry);
       }
     };
 
@@ -686,6 +717,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public org.thethingsnetwork.api.SystemStats.Loadstats getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -745,6 +777,9 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -756,13 +791,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 13: {
 
               user_ = input.readFloat();
@@ -783,6 +811,13 @@ private static final long serialVersionUID = 0L;
               percentage_ = input.readFloat();
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -800,6 +835,7 @@ private static final long serialVersionUID = 0L;
       return org.thethingsnetwork.api.APIProto.internal_static_api_SystemStats_CPUStats_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return org.thethingsnetwork.api.APIProto.internal_static_api_SystemStats_CPUStats_fieldAccessorTable
@@ -844,6 +880,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -853,6 +890,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (user_ != 0F) {
@@ -870,6 +908,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1021,6 +1060,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1028,6 +1068,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(org.thethingsnetwork.api.SystemStats.CPUStats prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1051,6 +1092,7 @@ private static final long serialVersionUID = 0L;
         return org.thethingsnetwork.api.APIProto.internal_static_api_SystemStats_CPUStats_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return org.thethingsnetwork.api.APIProto.internal_static_api_SystemStats_CPUStats_fieldAccessorTable
@@ -1073,6 +1115,7 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         user_ = 0F;
@@ -1086,15 +1129,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return org.thethingsnetwork.api.APIProto.internal_static_api_SystemStats_CPUStats_descriptor;
       }
 
+      @java.lang.Override
       public org.thethingsnetwork.api.SystemStats.CPUStats getDefaultInstanceForType() {
         return org.thethingsnetwork.api.SystemStats.CPUStats.getDefaultInstance();
       }
 
+      @java.lang.Override
       public org.thethingsnetwork.api.SystemStats.CPUStats build() {
         org.thethingsnetwork.api.SystemStats.CPUStats result = buildPartial();
         if (!result.isInitialized()) {
@@ -1103,6 +1149,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public org.thethingsnetwork.api.SystemStats.CPUStats buildPartial() {
         org.thethingsnetwork.api.SystemStats.CPUStats result = new org.thethingsnetwork.api.SystemStats.CPUStats(this);
         result.user_ = user_;
@@ -1113,32 +1160,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof org.thethingsnetwork.api.SystemStats.CPUStats) {
           return mergeFrom((org.thethingsnetwork.api.SystemStats.CPUStats)other);
@@ -1167,10 +1221,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1292,11 +1348,13 @@ private static final long serialVersionUID = 0L;
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1318,11 +1376,12 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<CPUStats>
         PARSER = new com.google.protobuf.AbstractParser<CPUStats>() {
+      @java.lang.Override
       public CPUStats parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CPUStats(input, extensionRegistry);
+        return new CPUStats(input, extensionRegistry);
       }
     };
 
@@ -1335,6 +1394,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public org.thethingsnetwork.api.SystemStats.CPUStats getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1388,6 +1448,9 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1399,13 +1462,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               total_ = input.readUInt64();
@@ -1419,6 +1475,13 @@ private static final long serialVersionUID = 0L;
             case 24: {
 
               used_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1438,6 +1501,7 @@ private static final long serialVersionUID = 0L;
       return org.thethingsnetwork.api.APIProto.internal_static_api_SystemStats_MemoryStats_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return org.thethingsnetwork.api.APIProto.internal_static_api_SystemStats_MemoryStats_fieldAccessorTable
@@ -1473,6 +1537,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1482,6 +1547,7 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (total_ != 0L) {
@@ -1496,6 +1562,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1630,6 +1697,7 @@ private static final long serialVersionUID = 0L;
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1637,6 +1705,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder(org.thethingsnetwork.api.SystemStats.MemoryStats prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1660,6 +1729,7 @@ private static final long serialVersionUID = 0L;
         return org.thethingsnetwork.api.APIProto.internal_static_api_SystemStats_MemoryStats_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return org.thethingsnetwork.api.APIProto.internal_static_api_SystemStats_MemoryStats_fieldAccessorTable
@@ -1682,6 +1752,7 @@ private static final long serialVersionUID = 0L;
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         total_ = 0L;
@@ -1693,15 +1764,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return org.thethingsnetwork.api.APIProto.internal_static_api_SystemStats_MemoryStats_descriptor;
       }
 
+      @java.lang.Override
       public org.thethingsnetwork.api.SystemStats.MemoryStats getDefaultInstanceForType() {
         return org.thethingsnetwork.api.SystemStats.MemoryStats.getDefaultInstance();
       }
 
+      @java.lang.Override
       public org.thethingsnetwork.api.SystemStats.MemoryStats build() {
         org.thethingsnetwork.api.SystemStats.MemoryStats result = buildPartial();
         if (!result.isInitialized()) {
@@ -1710,6 +1784,7 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public org.thethingsnetwork.api.SystemStats.MemoryStats buildPartial() {
         org.thethingsnetwork.api.SystemStats.MemoryStats result = new org.thethingsnetwork.api.SystemStats.MemoryStats(this);
         result.total_ = total_;
@@ -1719,32 +1794,39 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof org.thethingsnetwork.api.SystemStats.MemoryStats) {
           return mergeFrom((org.thethingsnetwork.api.SystemStats.MemoryStats)other);
@@ -1770,10 +1852,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1869,11 +1953,13 @@ private static final long serialVersionUID = 0L;
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1895,11 +1981,12 @@ private static final long serialVersionUID = 0L;
 
     private static final com.google.protobuf.Parser<MemoryStats>
         PARSER = new com.google.protobuf.AbstractParser<MemoryStats>() {
+      @java.lang.Override
       public MemoryStats parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MemoryStats(input, extensionRegistry);
+        return new MemoryStats(input, extensionRegistry);
       }
     };
 
@@ -1912,6 +1999,7 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public org.thethingsnetwork.api.SystemStats.MemoryStats getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1982,6 +2070,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -1991,6 +2080,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (load_ != null) {
@@ -2005,6 +2095,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -2151,6 +2242,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -2158,6 +2250,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(org.thethingsnetwork.api.SystemStats prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -2181,6 +2274,7 @@ private static final long serialVersionUID = 0L;
       return org.thethingsnetwork.api.APIProto.internal_static_api_SystemStats_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return org.thethingsnetwork.api.APIProto.internal_static_api_SystemStats_fieldAccessorTable
@@ -2203,6 +2297,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (loadBuilder_ == null) {
@@ -2226,15 +2321,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return org.thethingsnetwork.api.APIProto.internal_static_api_SystemStats_descriptor;
     }
 
+    @java.lang.Override
     public org.thethingsnetwork.api.SystemStats getDefaultInstanceForType() {
       return org.thethingsnetwork.api.SystemStats.getDefaultInstance();
     }
 
+    @java.lang.Override
     public org.thethingsnetwork.api.SystemStats build() {
       org.thethingsnetwork.api.SystemStats result = buildPartial();
       if (!result.isInitialized()) {
@@ -2243,6 +2341,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public org.thethingsnetwork.api.SystemStats buildPartial() {
       org.thethingsnetwork.api.SystemStats result = new org.thethingsnetwork.api.SystemStats(this);
       if (loadBuilder_ == null) {
@@ -2264,32 +2363,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof org.thethingsnetwork.api.SystemStats) {
         return mergeFrom((org.thethingsnetwork.api.SystemStats)other);
@@ -2315,10 +2421,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2687,11 +2795,13 @@ private static final long serialVersionUID = 0L;
       }
       return memoryBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -2713,11 +2823,12 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<SystemStats>
       PARSER = new com.google.protobuf.AbstractParser<SystemStats>() {
+    @java.lang.Override
     public SystemStats parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SystemStats(input, extensionRegistry);
+      return new SystemStats(input, extensionRegistry);
     }
   };
 
@@ -2730,6 +2841,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public org.thethingsnetwork.api.SystemStats getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

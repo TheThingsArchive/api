@@ -52,7 +52,7 @@ public final class ProtocolProto {
       "\n\n\010protocol\"K\n\nRxMetadata\0221\n\007lorawan\030\001 \001" +
       "(\0132\021.lorawan.MetadataB\013\342\336\037\007LoRaWANH\000B\n\n\010" +
       "protocol\"W\n\017TxConfiguration\0228\n\007lorawan\030\001" +
-      " \001(\0132\030.lorawan.TxConfigurationB\013\342\336\037\007LoRa",
+      " \001(\0132\030.lorawan.TxConfigurationB\013\342\336\037\007LoRa" +
       "WANH\000B\n\n\010protocol\"]\n\022ActivationMetadata\022" +
       ";\n\007lorawan\030\001 \001(\0132\033.lorawan.ActivationMet" +
       "adataB\013\342\336\037\007LoRaWANH\000B\n\n\010protocolB~\n!org." +
@@ -73,7 +73,7 @@ public final class ProtocolProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.GoGoProtos.getDescriptor(),
-          org.thethingsnetwork.api.protocol.lorawan.LoRaWANProtocolProto.getDescriptor(),
+          org.thethingsnetwork.api.protocol.lorawan.LoRaWANProto.getDescriptor(),
         }, assigner);
     internal_static_protocol_Message_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -105,7 +105,7 @@ public final class ProtocolProto {
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf.GoGoProtos.getDescriptor();
-    org.thethingsnetwork.api.protocol.lorawan.LoRaWANProtocolProto.getDescriptor();
+    org.thethingsnetwork.api.protocol.lorawan.LoRaWANProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -22,8 +22,10 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Gateway_LocationMetadata: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".LocationMetadata"
+struct Gateway_LocationMetadata {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   /// Time (unix nanoseconds)
   var time: Int64 = 0
@@ -92,54 +94,27 @@ struct Gateway_LocationMetadata: SwiftProtobuf.Message {
   }
 
   init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularInt64Field(value: &self.time)
-      case 2: try decoder.decodeSingularFloatField(value: &self.latitude)
-      case 3: try decoder.decodeSingularFloatField(value: &self.longitude)
-      case 4: try decoder.decodeSingularInt32Field(value: &self.altitude)
-      case 5: try decoder.decodeSingularInt32Field(value: &self.accuracy)
-      case 6: try decoder.decodeSingularEnumField(value: &self.source)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.time != 0 {
-      try visitor.visitSingularInt64Field(value: self.time, fieldNumber: 1)
-    }
-    if self.latitude != 0 {
-      try visitor.visitSingularFloatField(value: self.latitude, fieldNumber: 2)
-    }
-    if self.longitude != 0 {
-      try visitor.visitSingularFloatField(value: self.longitude, fieldNumber: 3)
-    }
-    if self.altitude != 0 {
-      try visitor.visitSingularInt32Field(value: self.altitude, fieldNumber: 4)
-    }
-    if self.accuracy != 0 {
-      try visitor.visitSingularInt32Field(value: self.accuracy, fieldNumber: 5)
-    }
-    if self.source != .unknown {
-      try visitor.visitSingularEnumField(value: self.source, fieldNumber: 6)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
 }
 
-struct Gateway_RxMetadata: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".RxMetadata"
+#if swift(>=4.2)
+
+extension Gateway_LocationMetadata.LocationSource: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  static var allCases: [Gateway_LocationMetadata.LocationSource] = [
+    .unknown,
+    .gps,
+    .config,
+    .registry,
+    .ipGeolocation,
+  ]
+}
+
+#endif  // swift(>=4.2)
+
+struct Gateway_RxMetadata {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var gatewayID: String {
     get {return _storage._gatewayID}
@@ -210,12 +185,14 @@ struct Gateway_RxMetadata: SwiftProtobuf.Message {
   /// Returns true if `location` has been explicitly set.
   var hasLocation: Bool {return _storage._location != nil}
   /// Clears the value of `location`. Subsequent reads from it will return its default value.
-  mutating func clearLocation() {_storage._location = nil}
+  mutating func clearLocation() {_uniqueStorage()._location = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  struct Antenna: SwiftProtobuf.Message {
-    static let protoMessageName: String = Gateway_RxMetadata.protoMessageName + ".Antenna"
+  struct Antenna {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
 
     var antenna: UInt32 = 0
 
@@ -245,144 +222,17 @@ struct Gateway_RxMetadata: SwiftProtobuf.Message {
     var unknownFields = SwiftProtobuf.UnknownStorage()
 
     init() {}
-
-    /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-    /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-    /// initializers are defined in the SwiftProtobuf library. See the Message and
-    /// Message+*Additions` files.
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularUInt32Field(value: &self.antenna)
-        case 2: try decoder.decodeSingularUInt32Field(value: &self.channel)
-        case 3: try decoder.decodeSingularFloatField(value: &self.rssi)
-        case 4: try decoder.decodeSingularFloatField(value: &self.snr)
-        case 5: try decoder.decodeSingularFloatField(value: &self.channelRssi)
-        case 6: try decoder.decodeSingularFloatField(value: &self.rssiStandardDeviation)
-        case 7: try decoder.decodeSingularInt64Field(value: &self.frequencyOffset)
-        case 10: try decoder.decodeSingularBytesField(value: &self.encryptedTime)
-        case 11: try decoder.decodeSingularInt64Field(value: &self.fineTime)
-        default: break
-        }
-      }
-    }
-
-    /// Used by the encoding methods of the SwiftProtobuf library, not generally
-    /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-    /// other serializer methods are defined in the SwiftProtobuf library. See the
-    /// `Message` and `Message+*Additions` files.
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-      if self.antenna != 0 {
-        try visitor.visitSingularUInt32Field(value: self.antenna, fieldNumber: 1)
-      }
-      if self.channel != 0 {
-        try visitor.visitSingularUInt32Field(value: self.channel, fieldNumber: 2)
-      }
-      if self.rssi != 0 {
-        try visitor.visitSingularFloatField(value: self.rssi, fieldNumber: 3)
-      }
-      if self.snr != 0 {
-        try visitor.visitSingularFloatField(value: self.snr, fieldNumber: 4)
-      }
-      if self.channelRssi != 0 {
-        try visitor.visitSingularFloatField(value: self.channelRssi, fieldNumber: 5)
-      }
-      if self.rssiStandardDeviation != 0 {
-        try visitor.visitSingularFloatField(value: self.rssiStandardDeviation, fieldNumber: 6)
-      }
-      if self.frequencyOffset != 0 {
-        try visitor.visitSingularInt64Field(value: self.frequencyOffset, fieldNumber: 7)
-      }
-      if !self.encryptedTime.isEmpty {
-        try visitor.visitSingularBytesField(value: self.encryptedTime, fieldNumber: 10)
-      }
-      if self.fineTime != 0 {
-        try visitor.visitSingularInt64Field(value: self.fineTime, fieldNumber: 11)
-      }
-      try unknownFields.traverse(visitor: &visitor)
-    }
   }
 
   init() {}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularStringField(value: &_storage._gatewayID)
-        case 2: try decoder.decodeSingularBoolField(value: &_storage._gatewayTrusted)
-        case 11: try decoder.decodeSingularUInt32Field(value: &_storage._timestamp)
-        case 12: try decoder.decodeSingularInt64Field(value: &_storage._time)
-        case 13: try decoder.decodeSingularBytesField(value: &_storage._encryptedTime)
-        case 21: try decoder.decodeSingularUInt32Field(value: &_storage._rfChain)
-        case 22: try decoder.decodeSingularUInt32Field(value: &_storage._channel)
-        case 30: try decoder.decodeRepeatedMessageField(value: &_storage._antennas)
-        case 31: try decoder.decodeSingularUInt64Field(value: &_storage._frequency)
-        case 32: try decoder.decodeSingularFloatField(value: &_storage._rssi)
-        case 33: try decoder.decodeSingularFloatField(value: &_storage._snr)
-        case 41: try decoder.decodeSingularMessageField(value: &_storage._location)
-        default: break
-        }
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if !_storage._gatewayID.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._gatewayID, fieldNumber: 1)
-      }
-      if _storage._gatewayTrusted != false {
-        try visitor.visitSingularBoolField(value: _storage._gatewayTrusted, fieldNumber: 2)
-      }
-      if _storage._timestamp != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._timestamp, fieldNumber: 11)
-      }
-      if _storage._time != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._time, fieldNumber: 12)
-      }
-      if !_storage._encryptedTime.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._encryptedTime, fieldNumber: 13)
-      }
-      if _storage._rfChain != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._rfChain, fieldNumber: 21)
-      }
-      if _storage._channel != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._channel, fieldNumber: 22)
-      }
-      if !_storage._antennas.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._antennas, fieldNumber: 30)
-      }
-      if _storage._frequency != 0 {
-        try visitor.visitSingularUInt64Field(value: _storage._frequency, fieldNumber: 31)
-      }
-      if _storage._rssi != 0 {
-        try visitor.visitSingularFloatField(value: _storage._rssi, fieldNumber: 32)
-      }
-      if _storage._snr != 0 {
-        try visitor.visitSingularFloatField(value: _storage._snr, fieldNumber: 33)
-      }
-      if let v = _storage._location {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 41)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct Gateway_TxConfiguration: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TxConfiguration"
+struct Gateway_TxConfiguration {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   /// Timestamp (uptime of LoRa module) in microseconds with rollover
   var timestamp: UInt32 = 0
@@ -404,55 +254,13 @@ struct Gateway_TxConfiguration: SwiftProtobuf.Message {
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 11: try decoder.decodeSingularUInt32Field(value: &self.timestamp)
-      case 21: try decoder.decodeSingularUInt32Field(value: &self.rfChain)
-      case 22: try decoder.decodeSingularUInt64Field(value: &self.frequency)
-      case 23: try decoder.decodeSingularInt32Field(value: &self.power)
-      case 31: try decoder.decodeSingularBoolField(value: &self.polarizationInversion)
-      case 32: try decoder.decodeSingularUInt32Field(value: &self.frequencyDeviation)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.timestamp != 0 {
-      try visitor.visitSingularUInt32Field(value: self.timestamp, fieldNumber: 11)
-    }
-    if self.rfChain != 0 {
-      try visitor.visitSingularUInt32Field(value: self.rfChain, fieldNumber: 21)
-    }
-    if self.frequency != 0 {
-      try visitor.visitSingularUInt64Field(value: self.frequency, fieldNumber: 22)
-    }
-    if self.power != 0 {
-      try visitor.visitSingularInt32Field(value: self.power, fieldNumber: 23)
-    }
-    if self.polarizationInversion != false {
-      try visitor.visitSingularBoolField(value: self.polarizationInversion, fieldNumber: 31)
-    }
-    if self.frequencyDeviation != 0 {
-      try visitor.visitSingularUInt32Field(value: self.frequencyDeviation, fieldNumber: 32)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
 }
 
 /// message Status represents a status update from a Gateway.
-struct Gateway_Status: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Status"
+struct Gateway_Status {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   /// Timestamp (uptime of gateway) in microseconds with rollover
   var timestamp: UInt32 {
@@ -541,7 +349,7 @@ struct Gateway_Status: SwiftProtobuf.Message {
   /// Returns true if `location` has been explicitly set.
   var hasLocation: Bool {return _storage._location != nil}
   /// Clears the value of `location`. Subsequent reads from it will return its default value.
-  mutating func clearLocation() {_storage._location = nil}
+  mutating func clearLocation() {_uniqueStorage()._location = nil}
 
   /// Round-trip time to the server in milliseconds
   var rtt: UInt32 {
@@ -604,7 +412,7 @@ struct Gateway_Status: SwiftProtobuf.Message {
   /// Returns true if `os` has been explicitly set.
   var hasOs: Bool {return _storage._os != nil}
   /// Clears the value of `os`. Subsequent reads from it will return its default value.
-  mutating func clearOs() {_storage._os = nil}
+  mutating func clearOs() {_uniqueStorage()._os = nil}
 
   /// debug or warning messages from the gateway
   var messages: [String] {
@@ -615,8 +423,10 @@ struct Gateway_Status: SwiftProtobuf.Message {
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   /// Additional metrics from the operating system
-  struct OSMetrics: SwiftProtobuf.Message {
-    static let protoMessageName: String = Gateway_Status.protoMessageName + ".OSMetrics"
+  struct OSMetrics {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
 
     var load1: Float = 0
 
@@ -633,182 +443,9 @@ struct Gateway_Status: SwiftProtobuf.Message {
     var unknownFields = SwiftProtobuf.UnknownStorage()
 
     init() {}
-
-    /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-    /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-    /// initializers are defined in the SwiftProtobuf library. See the Message and
-    /// Message+*Additions` files.
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularFloatField(value: &self.load1)
-        case 2: try decoder.decodeSingularFloatField(value: &self.load5)
-        case 3: try decoder.decodeSingularFloatField(value: &self.load15)
-        case 11: try decoder.decodeSingularFloatField(value: &self.cpuPercentage)
-        case 21: try decoder.decodeSingularFloatField(value: &self.memoryPercentage)
-        case 31: try decoder.decodeSingularFloatField(value: &self.temperature)
-        default: break
-        }
-      }
-    }
-
-    /// Used by the encoding methods of the SwiftProtobuf library, not generally
-    /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-    /// other serializer methods are defined in the SwiftProtobuf library. See the
-    /// `Message` and `Message+*Additions` files.
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-      if self.load1 != 0 {
-        try visitor.visitSingularFloatField(value: self.load1, fieldNumber: 1)
-      }
-      if self.load5 != 0 {
-        try visitor.visitSingularFloatField(value: self.load5, fieldNumber: 2)
-      }
-      if self.load15 != 0 {
-        try visitor.visitSingularFloatField(value: self.load15, fieldNumber: 3)
-      }
-      if self.cpuPercentage != 0 {
-        try visitor.visitSingularFloatField(value: self.cpuPercentage, fieldNumber: 11)
-      }
-      if self.memoryPercentage != 0 {
-        try visitor.visitSingularFloatField(value: self.memoryPercentage, fieldNumber: 21)
-      }
-      if self.temperature != 0 {
-        try visitor.visitSingularFloatField(value: self.temperature, fieldNumber: 31)
-      }
-      try unknownFields.traverse(visitor: &visitor)
-    }
   }
 
   init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularUInt32Field(value: &_storage._timestamp)
-        case 2: try decoder.decodeSingularInt64Field(value: &_storage._time)
-        case 3: try decoder.decodeSingularBoolField(value: &_storage._gatewayTrusted)
-        case 4: try decoder.decodeSingularInt64Field(value: &_storage._bootTime)
-        case 11: try decoder.decodeRepeatedStringField(value: &_storage._ip)
-        case 12: try decoder.decodeSingularStringField(value: &_storage._platform)
-        case 13: try decoder.decodeSingularStringField(value: &_storage._contactEmail)
-        case 14: try decoder.decodeSingularStringField(value: &_storage._description_p)
-        case 15: try decoder.decodeSingularStringField(value: &_storage._frequencyPlan)
-        case 16: try decoder.decodeSingularStringField(value: &_storage._bridge)
-        case 17: try decoder.decodeSingularStringField(value: &_storage._router)
-        case 18: try decoder.decodeSingularUInt32Field(value: &_storage._fpga)
-        case 19: try decoder.decodeSingularUInt32Field(value: &_storage._dsp)
-        case 20: try decoder.decodeSingularStringField(value: &_storage._hal)
-        case 21: try decoder.decodeSingularMessageField(value: &_storage._location)
-        case 31: try decoder.decodeSingularUInt32Field(value: &_storage._rtt)
-        case 41: try decoder.decodeSingularUInt32Field(value: &_storage._rxIn)
-        case 42: try decoder.decodeSingularUInt32Field(value: &_storage._rxOk)
-        case 43: try decoder.decodeSingularUInt32Field(value: &_storage._txIn)
-        case 44: try decoder.decodeSingularUInt32Field(value: &_storage._txOk)
-        case 45: try decoder.decodeSingularUInt32Field(value: &_storage._lmOk)
-        case 46: try decoder.decodeSingularUInt32Field(value: &_storage._lmSt)
-        case 47: try decoder.decodeSingularUInt32Field(value: &_storage._lmNw)
-        case 48: try decoder.decodeSingularUInt32Field(value: &_storage._lPps)
-        case 51: try decoder.decodeSingularMessageField(value: &_storage._os)
-        case 52: try decoder.decodeRepeatedStringField(value: &_storage._messages)
-        default: break
-        }
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if _storage._timestamp != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._timestamp, fieldNumber: 1)
-      }
-      if _storage._time != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._time, fieldNumber: 2)
-      }
-      if _storage._gatewayTrusted != false {
-        try visitor.visitSingularBoolField(value: _storage._gatewayTrusted, fieldNumber: 3)
-      }
-      if _storage._bootTime != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._bootTime, fieldNumber: 4)
-      }
-      if !_storage._ip.isEmpty {
-        try visitor.visitRepeatedStringField(value: _storage._ip, fieldNumber: 11)
-      }
-      if !_storage._platform.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._platform, fieldNumber: 12)
-      }
-      if !_storage._contactEmail.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._contactEmail, fieldNumber: 13)
-      }
-      if !_storage._description_p.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._description_p, fieldNumber: 14)
-      }
-      if !_storage._frequencyPlan.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._frequencyPlan, fieldNumber: 15)
-      }
-      if !_storage._bridge.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._bridge, fieldNumber: 16)
-      }
-      if !_storage._router.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._router, fieldNumber: 17)
-      }
-      if _storage._fpga != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._fpga, fieldNumber: 18)
-      }
-      if _storage._dsp != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._dsp, fieldNumber: 19)
-      }
-      if !_storage._hal.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._hal, fieldNumber: 20)
-      }
-      if let v = _storage._location {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
-      }
-      if _storage._rtt != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._rtt, fieldNumber: 31)
-      }
-      if _storage._rxIn != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._rxIn, fieldNumber: 41)
-      }
-      if _storage._rxOk != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._rxOk, fieldNumber: 42)
-      }
-      if _storage._txIn != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._txIn, fieldNumber: 43)
-      }
-      if _storage._txOk != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._txOk, fieldNumber: 44)
-      }
-      if _storage._lmOk != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._lmOk, fieldNumber: 45)
-      }
-      if _storage._lmSt != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._lmSt, fieldNumber: 46)
-      }
-      if _storage._lmNw != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._lmNw, fieldNumber: 47)
-      }
-      if _storage._lPps != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._lPps, fieldNumber: 48)
-      }
-      if let v = _storage._os {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 51)
-      }
-      if !_storage._messages.isEmpty {
-        try visitor.visitRepeatedStringField(value: _storage._messages, fieldNumber: 52)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -817,7 +454,8 @@ struct Gateway_Status: SwiftProtobuf.Message {
 
 fileprivate let _protobuf_package = "gateway"
 
-extension Gateway_LocationMetadata: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Gateway_LocationMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".LocationMetadata"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "time"),
     2: .same(proto: "latitude"),
@@ -827,14 +465,50 @@ extension Gateway_LocationMetadata: SwiftProtobuf._MessageImplementationBase, Sw
     6: .same(proto: "source"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Gateway_LocationMetadata) -> Bool {
-    if self.time != other.time {return false}
-    if self.latitude != other.latitude {return false}
-    if self.longitude != other.longitude {return false}
-    if self.altitude != other.altitude {return false}
-    if self.accuracy != other.accuracy {return false}
-    if self.source != other.source {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularInt64Field(value: &self.time)
+      case 2: try decoder.decodeSingularFloatField(value: &self.latitude)
+      case 3: try decoder.decodeSingularFloatField(value: &self.longitude)
+      case 4: try decoder.decodeSingularInt32Field(value: &self.altitude)
+      case 5: try decoder.decodeSingularInt32Field(value: &self.accuracy)
+      case 6: try decoder.decodeSingularEnumField(value: &self.source)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.time != 0 {
+      try visitor.visitSingularInt64Field(value: self.time, fieldNumber: 1)
+    }
+    if self.latitude != 0 {
+      try visitor.visitSingularFloatField(value: self.latitude, fieldNumber: 2)
+    }
+    if self.longitude != 0 {
+      try visitor.visitSingularFloatField(value: self.longitude, fieldNumber: 3)
+    }
+    if self.altitude != 0 {
+      try visitor.visitSingularInt32Field(value: self.altitude, fieldNumber: 4)
+    }
+    if self.accuracy != 0 {
+      try visitor.visitSingularInt32Field(value: self.accuracy, fieldNumber: 5)
+    }
+    if self.source != .unknown {
+      try visitor.visitSingularEnumField(value: self.source, fieldNumber: 6)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Gateway_LocationMetadata, rhs: Gateway_LocationMetadata) -> Bool {
+    if lhs.time != rhs.time {return false}
+    if lhs.latitude != rhs.latitude {return false}
+    if lhs.longitude != rhs.longitude {return false}
+    if lhs.altitude != rhs.altitude {return false}
+    if lhs.accuracy != rhs.accuracy {return false}
+    if lhs.source != rhs.source {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
@@ -849,7 +523,8 @@ extension Gateway_LocationMetadata.LocationSource: SwiftProtobuf._ProtoNameProvi
   ]
 }
 
-extension Gateway_RxMetadata: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Gateway_RxMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".RxMetadata"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "gateway_id"),
     2: .standard(proto: "gateway_trusted"),
@@ -906,31 +581,99 @@ extension Gateway_RxMetadata: SwiftProtobuf._MessageImplementationBase, SwiftPro
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Gateway_RxMetadata) -> Bool {
-    if _storage !== other._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._gatewayID != other_storage._gatewayID {return false}
-        if _storage._gatewayTrusted != other_storage._gatewayTrusted {return false}
-        if _storage._timestamp != other_storage._timestamp {return false}
-        if _storage._time != other_storage._time {return false}
-        if _storage._encryptedTime != other_storage._encryptedTime {return false}
-        if _storage._rfChain != other_storage._rfChain {return false}
-        if _storage._channel != other_storage._channel {return false}
-        if _storage._antennas != other_storage._antennas {return false}
-        if _storage._frequency != other_storage._frequency {return false}
-        if _storage._rssi != other_storage._rssi {return false}
-        if _storage._snr != other_storage._snr {return false}
-        if _storage._location != other_storage._location {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularStringField(value: &_storage._gatewayID)
+        case 2: try decoder.decodeSingularBoolField(value: &_storage._gatewayTrusted)
+        case 11: try decoder.decodeSingularUInt32Field(value: &_storage._timestamp)
+        case 12: try decoder.decodeSingularInt64Field(value: &_storage._time)
+        case 13: try decoder.decodeSingularBytesField(value: &_storage._encryptedTime)
+        case 21: try decoder.decodeSingularUInt32Field(value: &_storage._rfChain)
+        case 22: try decoder.decodeSingularUInt32Field(value: &_storage._channel)
+        case 30: try decoder.decodeRepeatedMessageField(value: &_storage._antennas)
+        case 31: try decoder.decodeSingularUInt64Field(value: &_storage._frequency)
+        case 32: try decoder.decodeSingularFloatField(value: &_storage._rssi)
+        case 33: try decoder.decodeSingularFloatField(value: &_storage._snr)
+        case 41: try decoder.decodeSingularMessageField(value: &_storage._location)
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._gatewayID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._gatewayID, fieldNumber: 1)
+      }
+      if _storage._gatewayTrusted != false {
+        try visitor.visitSingularBoolField(value: _storage._gatewayTrusted, fieldNumber: 2)
+      }
+      if _storage._timestamp != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._timestamp, fieldNumber: 11)
+      }
+      if _storage._time != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._time, fieldNumber: 12)
+      }
+      if !_storage._encryptedTime.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._encryptedTime, fieldNumber: 13)
+      }
+      if _storage._rfChain != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._rfChain, fieldNumber: 21)
+      }
+      if _storage._channel != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._channel, fieldNumber: 22)
+      }
+      if !_storage._antennas.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._antennas, fieldNumber: 30)
+      }
+      if _storage._frequency != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._frequency, fieldNumber: 31)
+      }
+      if _storage._rssi != 0 {
+        try visitor.visitSingularFloatField(value: _storage._rssi, fieldNumber: 32)
+      }
+      if _storage._snr != 0 {
+        try visitor.visitSingularFloatField(value: _storage._snr, fieldNumber: 33)
+      }
+      if let v = _storage._location {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 41)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Gateway_RxMetadata, rhs: Gateway_RxMetadata) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._gatewayID != rhs_storage._gatewayID {return false}
+        if _storage._gatewayTrusted != rhs_storage._gatewayTrusted {return false}
+        if _storage._timestamp != rhs_storage._timestamp {return false}
+        if _storage._time != rhs_storage._time {return false}
+        if _storage._encryptedTime != rhs_storage._encryptedTime {return false}
+        if _storage._rfChain != rhs_storage._rfChain {return false}
+        if _storage._channel != rhs_storage._channel {return false}
+        if _storage._antennas != rhs_storage._antennas {return false}
+        if _storage._frequency != rhs_storage._frequency {return false}
+        if _storage._rssi != rhs_storage._rssi {return false}
+        if _storage._snr != rhs_storage._snr {return false}
+        if _storage._location != rhs_storage._location {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Gateway_RxMetadata.Antenna: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Gateway_RxMetadata.Antenna: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = Gateway_RxMetadata.protoMessageName + ".Antenna"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "antenna"),
     2: .same(proto: "channel"),
@@ -943,22 +686,71 @@ extension Gateway_RxMetadata.Antenna: SwiftProtobuf._MessageImplementationBase, 
     11: .standard(proto: "fine_time"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Gateway_RxMetadata.Antenna) -> Bool {
-    if self.antenna != other.antenna {return false}
-    if self.channel != other.channel {return false}
-    if self.rssi != other.rssi {return false}
-    if self.channelRssi != other.channelRssi {return false}
-    if self.rssiStandardDeviation != other.rssiStandardDeviation {return false}
-    if self.frequencyOffset != other.frequencyOffset {return false}
-    if self.snr != other.snr {return false}
-    if self.encryptedTime != other.encryptedTime {return false}
-    if self.fineTime != other.fineTime {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularUInt32Field(value: &self.antenna)
+      case 2: try decoder.decodeSingularUInt32Field(value: &self.channel)
+      case 3: try decoder.decodeSingularFloatField(value: &self.rssi)
+      case 4: try decoder.decodeSingularFloatField(value: &self.snr)
+      case 5: try decoder.decodeSingularFloatField(value: &self.channelRssi)
+      case 6: try decoder.decodeSingularFloatField(value: &self.rssiStandardDeviation)
+      case 7: try decoder.decodeSingularInt64Field(value: &self.frequencyOffset)
+      case 10: try decoder.decodeSingularBytesField(value: &self.encryptedTime)
+      case 11: try decoder.decodeSingularInt64Field(value: &self.fineTime)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.antenna != 0 {
+      try visitor.visitSingularUInt32Field(value: self.antenna, fieldNumber: 1)
+    }
+    if self.channel != 0 {
+      try visitor.visitSingularUInt32Field(value: self.channel, fieldNumber: 2)
+    }
+    if self.rssi != 0 {
+      try visitor.visitSingularFloatField(value: self.rssi, fieldNumber: 3)
+    }
+    if self.snr != 0 {
+      try visitor.visitSingularFloatField(value: self.snr, fieldNumber: 4)
+    }
+    if self.channelRssi != 0 {
+      try visitor.visitSingularFloatField(value: self.channelRssi, fieldNumber: 5)
+    }
+    if self.rssiStandardDeviation != 0 {
+      try visitor.visitSingularFloatField(value: self.rssiStandardDeviation, fieldNumber: 6)
+    }
+    if self.frequencyOffset != 0 {
+      try visitor.visitSingularInt64Field(value: self.frequencyOffset, fieldNumber: 7)
+    }
+    if !self.encryptedTime.isEmpty {
+      try visitor.visitSingularBytesField(value: self.encryptedTime, fieldNumber: 10)
+    }
+    if self.fineTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.fineTime, fieldNumber: 11)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Gateway_RxMetadata.Antenna, rhs: Gateway_RxMetadata.Antenna) -> Bool {
+    if lhs.antenna != rhs.antenna {return false}
+    if lhs.channel != rhs.channel {return false}
+    if lhs.rssi != rhs.rssi {return false}
+    if lhs.channelRssi != rhs.channelRssi {return false}
+    if lhs.rssiStandardDeviation != rhs.rssiStandardDeviation {return false}
+    if lhs.frequencyOffset != rhs.frequencyOffset {return false}
+    if lhs.snr != rhs.snr {return false}
+    if lhs.encryptedTime != rhs.encryptedTime {return false}
+    if lhs.fineTime != rhs.fineTime {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Gateway_TxConfiguration: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Gateway_TxConfiguration: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TxConfiguration"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     11: .same(proto: "timestamp"),
     21: .standard(proto: "rf_chain"),
@@ -968,19 +760,56 @@ extension Gateway_TxConfiguration: SwiftProtobuf._MessageImplementationBase, Swi
     32: .standard(proto: "frequency_deviation"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Gateway_TxConfiguration) -> Bool {
-    if self.timestamp != other.timestamp {return false}
-    if self.rfChain != other.rfChain {return false}
-    if self.frequency != other.frequency {return false}
-    if self.power != other.power {return false}
-    if self.polarizationInversion != other.polarizationInversion {return false}
-    if self.frequencyDeviation != other.frequencyDeviation {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 11: try decoder.decodeSingularUInt32Field(value: &self.timestamp)
+      case 21: try decoder.decodeSingularUInt32Field(value: &self.rfChain)
+      case 22: try decoder.decodeSingularUInt64Field(value: &self.frequency)
+      case 23: try decoder.decodeSingularInt32Field(value: &self.power)
+      case 31: try decoder.decodeSingularBoolField(value: &self.polarizationInversion)
+      case 32: try decoder.decodeSingularUInt32Field(value: &self.frequencyDeviation)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.timestamp != 0 {
+      try visitor.visitSingularUInt32Field(value: self.timestamp, fieldNumber: 11)
+    }
+    if self.rfChain != 0 {
+      try visitor.visitSingularUInt32Field(value: self.rfChain, fieldNumber: 21)
+    }
+    if self.frequency != 0 {
+      try visitor.visitSingularUInt64Field(value: self.frequency, fieldNumber: 22)
+    }
+    if self.power != 0 {
+      try visitor.visitSingularInt32Field(value: self.power, fieldNumber: 23)
+    }
+    if self.polarizationInversion != false {
+      try visitor.visitSingularBoolField(value: self.polarizationInversion, fieldNumber: 31)
+    }
+    if self.frequencyDeviation != 0 {
+      try visitor.visitSingularUInt32Field(value: self.frequencyDeviation, fieldNumber: 32)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Gateway_TxConfiguration, rhs: Gateway_TxConfiguration) -> Bool {
+    if lhs.timestamp != rhs.timestamp {return false}
+    if lhs.rfChain != rhs.rfChain {return false}
+    if lhs.frequency != rhs.frequency {return false}
+    if lhs.power != rhs.power {return false}
+    if lhs.polarizationInversion != rhs.polarizationInversion {return false}
+    if lhs.frequencyDeviation != rhs.frequencyDeviation {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Gateway_Status: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Gateway_Status: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".Status"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "timestamp"),
     2: .same(proto: "time"),
@@ -1079,45 +908,169 @@ extension Gateway_Status: SwiftProtobuf._MessageImplementationBase, SwiftProtobu
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Gateway_Status) -> Bool {
-    if _storage !== other._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._timestamp != other_storage._timestamp {return false}
-        if _storage._time != other_storage._time {return false}
-        if _storage._gatewayTrusted != other_storage._gatewayTrusted {return false}
-        if _storage._bootTime != other_storage._bootTime {return false}
-        if _storage._ip != other_storage._ip {return false}
-        if _storage._platform != other_storage._platform {return false}
-        if _storage._contactEmail != other_storage._contactEmail {return false}
-        if _storage._description_p != other_storage._description_p {return false}
-        if _storage._frequencyPlan != other_storage._frequencyPlan {return false}
-        if _storage._bridge != other_storage._bridge {return false}
-        if _storage._router != other_storage._router {return false}
-        if _storage._fpga != other_storage._fpga {return false}
-        if _storage._dsp != other_storage._dsp {return false}
-        if _storage._hal != other_storage._hal {return false}
-        if _storage._location != other_storage._location {return false}
-        if _storage._rtt != other_storage._rtt {return false}
-        if _storage._rxIn != other_storage._rxIn {return false}
-        if _storage._rxOk != other_storage._rxOk {return false}
-        if _storage._txIn != other_storage._txIn {return false}
-        if _storage._txOk != other_storage._txOk {return false}
-        if _storage._lmOk != other_storage._lmOk {return false}
-        if _storage._lmSt != other_storage._lmSt {return false}
-        if _storage._lmNw != other_storage._lmNw {return false}
-        if _storage._lPps != other_storage._lPps {return false}
-        if _storage._os != other_storage._os {return false}
-        if _storage._messages != other_storage._messages {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularUInt32Field(value: &_storage._timestamp)
+        case 2: try decoder.decodeSingularInt64Field(value: &_storage._time)
+        case 3: try decoder.decodeSingularBoolField(value: &_storage._gatewayTrusted)
+        case 4: try decoder.decodeSingularInt64Field(value: &_storage._bootTime)
+        case 11: try decoder.decodeRepeatedStringField(value: &_storage._ip)
+        case 12: try decoder.decodeSingularStringField(value: &_storage._platform)
+        case 13: try decoder.decodeSingularStringField(value: &_storage._contactEmail)
+        case 14: try decoder.decodeSingularStringField(value: &_storage._description_p)
+        case 15: try decoder.decodeSingularStringField(value: &_storage._frequencyPlan)
+        case 16: try decoder.decodeSingularStringField(value: &_storage._bridge)
+        case 17: try decoder.decodeSingularStringField(value: &_storage._router)
+        case 18: try decoder.decodeSingularUInt32Field(value: &_storage._fpga)
+        case 19: try decoder.decodeSingularUInt32Field(value: &_storage._dsp)
+        case 20: try decoder.decodeSingularStringField(value: &_storage._hal)
+        case 21: try decoder.decodeSingularMessageField(value: &_storage._location)
+        case 31: try decoder.decodeSingularUInt32Field(value: &_storage._rtt)
+        case 41: try decoder.decodeSingularUInt32Field(value: &_storage._rxIn)
+        case 42: try decoder.decodeSingularUInt32Field(value: &_storage._rxOk)
+        case 43: try decoder.decodeSingularUInt32Field(value: &_storage._txIn)
+        case 44: try decoder.decodeSingularUInt32Field(value: &_storage._txOk)
+        case 45: try decoder.decodeSingularUInt32Field(value: &_storage._lmOk)
+        case 46: try decoder.decodeSingularUInt32Field(value: &_storage._lmSt)
+        case 47: try decoder.decodeSingularUInt32Field(value: &_storage._lmNw)
+        case 48: try decoder.decodeSingularUInt32Field(value: &_storage._lPps)
+        case 51: try decoder.decodeSingularMessageField(value: &_storage._os)
+        case 52: try decoder.decodeRepeatedStringField(value: &_storage._messages)
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if _storage._timestamp != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._timestamp, fieldNumber: 1)
+      }
+      if _storage._time != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._time, fieldNumber: 2)
+      }
+      if _storage._gatewayTrusted != false {
+        try visitor.visitSingularBoolField(value: _storage._gatewayTrusted, fieldNumber: 3)
+      }
+      if _storage._bootTime != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._bootTime, fieldNumber: 4)
+      }
+      if !_storage._ip.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._ip, fieldNumber: 11)
+      }
+      if !_storage._platform.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._platform, fieldNumber: 12)
+      }
+      if !_storage._contactEmail.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._contactEmail, fieldNumber: 13)
+      }
+      if !_storage._description_p.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._description_p, fieldNumber: 14)
+      }
+      if !_storage._frequencyPlan.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._frequencyPlan, fieldNumber: 15)
+      }
+      if !_storage._bridge.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._bridge, fieldNumber: 16)
+      }
+      if !_storage._router.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._router, fieldNumber: 17)
+      }
+      if _storage._fpga != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._fpga, fieldNumber: 18)
+      }
+      if _storage._dsp != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._dsp, fieldNumber: 19)
+      }
+      if !_storage._hal.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._hal, fieldNumber: 20)
+      }
+      if let v = _storage._location {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
+      }
+      if _storage._rtt != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._rtt, fieldNumber: 31)
+      }
+      if _storage._rxIn != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._rxIn, fieldNumber: 41)
+      }
+      if _storage._rxOk != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._rxOk, fieldNumber: 42)
+      }
+      if _storage._txIn != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._txIn, fieldNumber: 43)
+      }
+      if _storage._txOk != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._txOk, fieldNumber: 44)
+      }
+      if _storage._lmOk != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._lmOk, fieldNumber: 45)
+      }
+      if _storage._lmSt != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._lmSt, fieldNumber: 46)
+      }
+      if _storage._lmNw != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._lmNw, fieldNumber: 47)
+      }
+      if _storage._lPps != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._lPps, fieldNumber: 48)
+      }
+      if let v = _storage._os {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 51)
+      }
+      if !_storage._messages.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._messages, fieldNumber: 52)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Gateway_Status, rhs: Gateway_Status) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._timestamp != rhs_storage._timestamp {return false}
+        if _storage._time != rhs_storage._time {return false}
+        if _storage._gatewayTrusted != rhs_storage._gatewayTrusted {return false}
+        if _storage._bootTime != rhs_storage._bootTime {return false}
+        if _storage._ip != rhs_storage._ip {return false}
+        if _storage._platform != rhs_storage._platform {return false}
+        if _storage._contactEmail != rhs_storage._contactEmail {return false}
+        if _storage._description_p != rhs_storage._description_p {return false}
+        if _storage._frequencyPlan != rhs_storage._frequencyPlan {return false}
+        if _storage._bridge != rhs_storage._bridge {return false}
+        if _storage._router != rhs_storage._router {return false}
+        if _storage._fpga != rhs_storage._fpga {return false}
+        if _storage._dsp != rhs_storage._dsp {return false}
+        if _storage._hal != rhs_storage._hal {return false}
+        if _storage._location != rhs_storage._location {return false}
+        if _storage._rtt != rhs_storage._rtt {return false}
+        if _storage._rxIn != rhs_storage._rxIn {return false}
+        if _storage._rxOk != rhs_storage._rxOk {return false}
+        if _storage._txIn != rhs_storage._txIn {return false}
+        if _storage._txOk != rhs_storage._txOk {return false}
+        if _storage._lmOk != rhs_storage._lmOk {return false}
+        if _storage._lmSt != rhs_storage._lmSt {return false}
+        if _storage._lmNw != rhs_storage._lmNw {return false}
+        if _storage._lPps != rhs_storage._lPps {return false}
+        if _storage._os != rhs_storage._os {return false}
+        if _storage._messages != rhs_storage._messages {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Gateway_Status.OSMetrics: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Gateway_Status.OSMetrics: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = Gateway_Status.protoMessageName + ".OSMetrics"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "load_1"),
     2: .standard(proto: "load_5"),
@@ -1127,14 +1080,50 @@ extension Gateway_Status.OSMetrics: SwiftProtobuf._MessageImplementationBase, Sw
     31: .same(proto: "temperature"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Gateway_Status.OSMetrics) -> Bool {
-    if self.load1 != other.load1 {return false}
-    if self.load5 != other.load5 {return false}
-    if self.load15 != other.load15 {return false}
-    if self.cpuPercentage != other.cpuPercentage {return false}
-    if self.memoryPercentage != other.memoryPercentage {return false}
-    if self.temperature != other.temperature {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularFloatField(value: &self.load1)
+      case 2: try decoder.decodeSingularFloatField(value: &self.load5)
+      case 3: try decoder.decodeSingularFloatField(value: &self.load15)
+      case 11: try decoder.decodeSingularFloatField(value: &self.cpuPercentage)
+      case 21: try decoder.decodeSingularFloatField(value: &self.memoryPercentage)
+      case 31: try decoder.decodeSingularFloatField(value: &self.temperature)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.load1 != 0 {
+      try visitor.visitSingularFloatField(value: self.load1, fieldNumber: 1)
+    }
+    if self.load5 != 0 {
+      try visitor.visitSingularFloatField(value: self.load5, fieldNumber: 2)
+    }
+    if self.load15 != 0 {
+      try visitor.visitSingularFloatField(value: self.load15, fieldNumber: 3)
+    }
+    if self.cpuPercentage != 0 {
+      try visitor.visitSingularFloatField(value: self.cpuPercentage, fieldNumber: 11)
+    }
+    if self.memoryPercentage != 0 {
+      try visitor.visitSingularFloatField(value: self.memoryPercentage, fieldNumber: 21)
+    }
+    if self.temperature != 0 {
+      try visitor.visitSingularFloatField(value: self.temperature, fieldNumber: 31)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Gateway_Status.OSMetrics, rhs: Gateway_Status.OSMetrics) -> Bool {
+    if lhs.load1 != rhs.load1 {return false}
+    if lhs.load5 != rhs.load5 {return false}
+    if lhs.load15 != rhs.load15 {return false}
+    if lhs.cpuPercentage != rhs.cpuPercentage {return false}
+    if lhs.memoryPercentage != rhs.memoryPercentage {return false}
+    if lhs.temperature != rhs.temperature {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }

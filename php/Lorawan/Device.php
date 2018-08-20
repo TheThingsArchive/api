@@ -113,9 +113,52 @@ class Device extends \Google\Protobuf\Internal\Message
      */
     private $last_seen = 0;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $app_eui
+     *           The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
+     *     @type string $dev_eui
+     *           The DevEUI is a unique, 8 byte identifier for the device.
+     *     @type string $app_id
+     *           The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
+     *     @type string $dev_id
+     *           The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
+     *     @type string $dev_addr
+     *           The DevAddr is a dynamic, 4 byte session address for the device.
+     *     @type string $nwk_s_key
+     *           The NwkSKey is a 16 byte session key that is known by the device and the network. It is used for routing and MAC related functionality.
+     *           This key is negotiated during the OTAA join procedure, or statically configured using ABP.
+     *     @type string $app_s_key
+     *           The AppSKey is a 16 byte session key that is known by the device and the application. It is used for payload encryption.
+     *           This key is negotiated during the OTAA join procedure, or statically configured using ABP.
+     *     @type string $app_key
+     *           The AppKey is a 16 byte static key that is known by the device and the application. It is used for negotiating session keys (OTAA).
+     *     @type int $f_cnt_up
+     *           FCntUp is the uplink frame counter for a device session.
+     *     @type int $f_cnt_down
+     *           FCntDown is the downlink frame counter for a device session.
+     *     @type bool $disable_f_cnt_check
+     *           The DisableFCntCheck option disables the frame counter check. Disabling this makes the device vulnerable to replay attacks, but makes ABP slightly easier.
+     *     @type bool $uses32_bit_f_cnt
+     *           The Uses32BitFCnt option indicates that the device keeps track of full 32 bit frame counters. As only the 16 lsb are actually transmitted, the 16 msb will have to be inferred.
+     *     @type string $activation_constraints
+     *           The ActivationContstraints are used to allocate a device address for a device (comma-separated).
+     *           There are different prefixes for `otaa`, `abp`, `world`, `local`, `private`, `testing`.
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $used_dev_nonces
+     *           The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $used_app_nonces
+     *           The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
+     *     @type int|string $last_seen
+     *           When the device was last seen (Unix nanoseconds)
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Protocol\Lorawan\Device::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

@@ -22,8 +22,10 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Broker_DownlinkOption: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".DownlinkOption"
+struct Broker_DownlinkOption {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   /// String that identifies this downlink option in the Router
   var identifier: String {
@@ -56,7 +58,7 @@ struct Broker_DownlinkOption: SwiftProtobuf.Message {
   /// Returns true if `protocolConfiguration` has been explicitly set.
   var hasProtocolConfiguration: Bool {return _storage._protocolConfiguration != nil}
   /// Clears the value of `protocolConfiguration`. Subsequent reads from it will return its default value.
-  mutating func clearProtocolConfiguration() {_storage._protocolConfiguration = nil}
+  mutating func clearProtocolConfiguration() {_uniqueStorage()._protocolConfiguration = nil}
 
   var gatewayConfiguration: Gateway_TxConfiguration {
     get {return _storage._gatewayConfiguration ?? Gateway_TxConfiguration()}
@@ -65,67 +67,20 @@ struct Broker_DownlinkOption: SwiftProtobuf.Message {
   /// Returns true if `gatewayConfiguration` has been explicitly set.
   var hasGatewayConfiguration: Bool {return _storage._gatewayConfiguration != nil}
   /// Clears the value of `gatewayConfiguration`. Subsequent reads from it will return its default value.
-  mutating func clearGatewayConfiguration() {_storage._gatewayConfiguration = nil}
+  mutating func clearGatewayConfiguration() {_uniqueStorage()._gatewayConfiguration = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularStringField(value: &_storage._identifier)
-        case 2: try decoder.decodeSingularStringField(value: &_storage._gatewayID)
-        case 3: try decoder.decodeSingularUInt32Field(value: &_storage._score)
-        case 4: try decoder.decodeSingularInt64Field(value: &_storage._deadline)
-        case 5: try decoder.decodeSingularMessageField(value: &_storage._protocolConfiguration)
-        case 6: try decoder.decodeSingularMessageField(value: &_storage._gatewayConfiguration)
-        default: break
-        }
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if !_storage._identifier.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._identifier, fieldNumber: 1)
-      }
-      if !_storage._gatewayID.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._gatewayID, fieldNumber: 2)
-      }
-      if _storage._score != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._score, fieldNumber: 3)
-      }
-      if _storage._deadline != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._deadline, fieldNumber: 4)
-      }
-      if let v = _storage._protocolConfiguration {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      }
-      if let v = _storage._gatewayConfiguration {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 /// received from the Router
-struct Broker_UplinkMessage: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".UplinkMessage"
+struct Broker_UplinkMessage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var payload: Data {
     get {return _storage._payload}
@@ -139,7 +94,7 @@ struct Broker_UplinkMessage: SwiftProtobuf.Message {
   /// Returns true if `message` has been explicitly set.
   var hasMessage: Bool {return _storage._message != nil}
   /// Clears the value of `message`. Subsequent reads from it will return its default value.
-  mutating func clearMessage() {_storage._message = nil}
+  mutating func clearMessage() {_uniqueStorage()._message = nil}
 
   var devEui: Data {
     get {return _storage._devEui}
@@ -168,7 +123,7 @@ struct Broker_UplinkMessage: SwiftProtobuf.Message {
   /// Returns true if `protocolMetadata` has been explicitly set.
   var hasProtocolMetadata: Bool {return _storage._protocolMetadata != nil}
   /// Clears the value of `protocolMetadata`. Subsequent reads from it will return its default value.
-  mutating func clearProtocolMetadata() {_storage._protocolMetadata = nil}
+  mutating func clearProtocolMetadata() {_uniqueStorage()._protocolMetadata = nil}
 
   var gatewayMetadata: Gateway_RxMetadata {
     get {return _storage._gatewayMetadata ?? Gateway_RxMetadata()}
@@ -177,7 +132,7 @@ struct Broker_UplinkMessage: SwiftProtobuf.Message {
   /// Returns true if `gatewayMetadata` has been explicitly set.
   var hasGatewayMetadata: Bool {return _storage._gatewayMetadata != nil}
   /// Clears the value of `gatewayMetadata`. Subsequent reads from it will return its default value.
-  mutating func clearGatewayMetadata() {_storage._gatewayMetadata = nil}
+  mutating func clearGatewayMetadata() {_uniqueStorage()._gatewayMetadata = nil}
 
   var downlinkOptions: [Broker_DownlinkOption] {
     get {return _storage._downlinkOptions}
@@ -191,83 +146,20 @@ struct Broker_UplinkMessage: SwiftProtobuf.Message {
   /// Returns true if `trace` has been explicitly set.
   var hasTrace: Bool {return _storage._trace != nil}
   /// Clears the value of `trace`. Subsequent reads from it will return its default value.
-  mutating func clearTrace() {_storage._trace = nil}
+  mutating func clearTrace() {_uniqueStorage()._trace = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularBytesField(value: &_storage._payload)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._message)
-        case 11: try decoder.decodeSingularBytesField(value: &_storage._devEui)
-        case 12: try decoder.decodeSingularBytesField(value: &_storage._appEui)
-        case 13: try decoder.decodeSingularStringField(value: &_storage._appID)
-        case 14: try decoder.decodeSingularStringField(value: &_storage._devID)
-        case 21: try decoder.decodeSingularMessageField(value: &_storage._protocolMetadata)
-        case 22: try decoder.decodeSingularMessageField(value: &_storage._gatewayMetadata)
-        case 31: try decoder.decodeRepeatedMessageField(value: &_storage._downlinkOptions)
-        case 41: try decoder.decodeSingularMessageField(value: &_storage._trace)
-        default: break
-        }
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if !_storage._payload.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._payload, fieldNumber: 1)
-      }
-      if let v = _storage._message {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-      if !_storage._devEui.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._devEui, fieldNumber: 11)
-      }
-      if !_storage._appEui.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._appEui, fieldNumber: 12)
-      }
-      if !_storage._appID.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._appID, fieldNumber: 13)
-      }
-      if !_storage._devID.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._devID, fieldNumber: 14)
-      }
-      if let v = _storage._protocolMetadata {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
-      }
-      if let v = _storage._gatewayMetadata {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 22)
-      }
-      if !_storage._downlinkOptions.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._downlinkOptions, fieldNumber: 31)
-      }
-      if let v = _storage._trace {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 41)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 /// received from the Handler, sent to the Router, used as Template
-struct Broker_DownlinkMessage: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".DownlinkMessage"
+struct Broker_DownlinkMessage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var payload: Data {
     get {return _storage._payload}
@@ -281,7 +173,7 @@ struct Broker_DownlinkMessage: SwiftProtobuf.Message {
   /// Returns true if `message` has been explicitly set.
   var hasMessage: Bool {return _storage._message != nil}
   /// Clears the value of `message`. Subsequent reads from it will return its default value.
-  mutating func clearMessage() {_storage._message = nil}
+  mutating func clearMessage() {_uniqueStorage()._message = nil}
 
   var devEui: Data {
     get {return _storage._devEui}
@@ -310,7 +202,7 @@ struct Broker_DownlinkMessage: SwiftProtobuf.Message {
   /// Returns true if `downlinkOption` has been explicitly set.
   var hasDownlinkOption: Bool {return _storage._downlinkOption != nil}
   /// Clears the value of `downlinkOption`. Subsequent reads from it will return its default value.
-  mutating func clearDownlinkOption() {_storage._downlinkOption = nil}
+  mutating func clearDownlinkOption() {_uniqueStorage()._downlinkOption = nil}
 
   var trace: Trace_Trace {
     get {return _storage._trace ?? Trace_Trace()}
@@ -319,75 +211,20 @@ struct Broker_DownlinkMessage: SwiftProtobuf.Message {
   /// Returns true if `trace` has been explicitly set.
   var hasTrace: Bool {return _storage._trace != nil}
   /// Clears the value of `trace`. Subsequent reads from it will return its default value.
-  mutating func clearTrace() {_storage._trace = nil}
+  mutating func clearTrace() {_uniqueStorage()._trace = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularBytesField(value: &_storage._payload)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._message)
-        case 11: try decoder.decodeSingularBytesField(value: &_storage._devEui)
-        case 12: try decoder.decodeSingularBytesField(value: &_storage._appEui)
-        case 13: try decoder.decodeSingularStringField(value: &_storage._appID)
-        case 14: try decoder.decodeSingularStringField(value: &_storage._devID)
-        case 21: try decoder.decodeSingularMessageField(value: &_storage._downlinkOption)
-        case 31: try decoder.decodeSingularMessageField(value: &_storage._trace)
-        default: break
-        }
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if !_storage._payload.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._payload, fieldNumber: 1)
-      }
-      if let v = _storage._message {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-      if !_storage._devEui.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._devEui, fieldNumber: 11)
-      }
-      if !_storage._appEui.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._appEui, fieldNumber: 12)
-      }
-      if !_storage._appID.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._appID, fieldNumber: 13)
-      }
-      if !_storage._devID.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._devID, fieldNumber: 14)
-      }
-      if let v = _storage._downlinkOption {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
-      }
-      if let v = _storage._trace {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 31)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 /// sent to the Router, used as Template
-struct Broker_DeviceActivationResponse: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".DeviceActivationResponse"
+struct Broker_DeviceActivationResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var payload: Data {
     get {return _storage._payload}
@@ -401,7 +238,7 @@ struct Broker_DeviceActivationResponse: SwiftProtobuf.Message {
   /// Returns true if `message` has been explicitly set.
   var hasMessage: Bool {return _storage._message != nil}
   /// Clears the value of `message`. Subsequent reads from it will return its default value.
-  mutating func clearMessage() {_storage._message = nil}
+  mutating func clearMessage() {_uniqueStorage()._message = nil}
 
   var downlinkOption: Broker_DownlinkOption {
     get {return _storage._downlinkOption ?? Broker_DownlinkOption()}
@@ -410,7 +247,7 @@ struct Broker_DeviceActivationResponse: SwiftProtobuf.Message {
   /// Returns true if `downlinkOption` has been explicitly set.
   var hasDownlinkOption: Bool {return _storage._downlinkOption != nil}
   /// Clears the value of `downlinkOption`. Subsequent reads from it will return its default value.
-  mutating func clearDownlinkOption() {_storage._downlinkOption = nil}
+  mutating func clearDownlinkOption() {_uniqueStorage()._downlinkOption = nil}
 
   var trace: Trace_Trace {
     get {return _storage._trace ?? Trace_Trace()}
@@ -419,59 +256,20 @@ struct Broker_DeviceActivationResponse: SwiftProtobuf.Message {
   /// Returns true if `trace` has been explicitly set.
   var hasTrace: Bool {return _storage._trace != nil}
   /// Clears the value of `trace`. Subsequent reads from it will return its default value.
-  mutating func clearTrace() {_storage._trace = nil}
+  mutating func clearTrace() {_uniqueStorage()._trace = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularBytesField(value: &_storage._payload)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._message)
-        case 11: try decoder.decodeSingularMessageField(value: &_storage._downlinkOption)
-        case 21: try decoder.decodeSingularMessageField(value: &_storage._trace)
-        default: break
-        }
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if !_storage._payload.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._payload, fieldNumber: 1)
-      }
-      if let v = _storage._message {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-      if let v = _storage._downlinkOption {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
-      }
-      if let v = _storage._trace {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 /// sent to the Handler
-struct Broker_DeduplicatedUplinkMessage: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".DeduplicatedUplinkMessage"
+struct Broker_DeduplicatedUplinkMessage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var payload: Data {
     get {return _storage._payload}
@@ -485,7 +283,7 @@ struct Broker_DeduplicatedUplinkMessage: SwiftProtobuf.Message {
   /// Returns true if `message` has been explicitly set.
   var hasMessage: Bool {return _storage._message != nil}
   /// Clears the value of `message`. Subsequent reads from it will return its default value.
-  mutating func clearMessage() {_storage._message = nil}
+  mutating func clearMessage() {_uniqueStorage()._message = nil}
 
   var devEui: Data {
     get {return _storage._devEui}
@@ -514,7 +312,7 @@ struct Broker_DeduplicatedUplinkMessage: SwiftProtobuf.Message {
   /// Returns true if `protocolMetadata` has been explicitly set.
   var hasProtocolMetadata: Bool {return _storage._protocolMetadata != nil}
   /// Clears the value of `protocolMetadata`. Subsequent reads from it will return its default value.
-  mutating func clearProtocolMetadata() {_storage._protocolMetadata = nil}
+  mutating func clearProtocolMetadata() {_uniqueStorage()._protocolMetadata = nil}
 
   var gatewayMetadata: [Gateway_RxMetadata] {
     get {return _storage._gatewayMetadata}
@@ -533,7 +331,7 @@ struct Broker_DeduplicatedUplinkMessage: SwiftProtobuf.Message {
   /// Returns true if `responseTemplate` has been explicitly set.
   var hasResponseTemplate: Bool {return _storage._responseTemplate != nil}
   /// Clears the value of `responseTemplate`. Subsequent reads from it will return its default value.
-  mutating func clearResponseTemplate() {_storage._responseTemplate = nil}
+  mutating func clearResponseTemplate() {_uniqueStorage()._responseTemplate = nil}
 
   var trace: Trace_Trace {
     get {return _storage._trace ?? Trace_Trace()}
@@ -542,87 +340,20 @@ struct Broker_DeduplicatedUplinkMessage: SwiftProtobuf.Message {
   /// Returns true if `trace` has been explicitly set.
   var hasTrace: Bool {return _storage._trace != nil}
   /// Clears the value of `trace`. Subsequent reads from it will return its default value.
-  mutating func clearTrace() {_storage._trace = nil}
+  mutating func clearTrace() {_uniqueStorage()._trace = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularBytesField(value: &_storage._payload)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._message)
-        case 11: try decoder.decodeSingularBytesField(value: &_storage._devEui)
-        case 12: try decoder.decodeSingularBytesField(value: &_storage._appEui)
-        case 13: try decoder.decodeSingularStringField(value: &_storage._appID)
-        case 14: try decoder.decodeSingularStringField(value: &_storage._devID)
-        case 21: try decoder.decodeSingularMessageField(value: &_storage._protocolMetadata)
-        case 22: try decoder.decodeRepeatedMessageField(value: &_storage._gatewayMetadata)
-        case 23: try decoder.decodeSingularInt64Field(value: &_storage._serverTime)
-        case 31: try decoder.decodeSingularMessageField(value: &_storage._responseTemplate)
-        case 41: try decoder.decodeSingularMessageField(value: &_storage._trace)
-        default: break
-        }
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if !_storage._payload.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._payload, fieldNumber: 1)
-      }
-      if let v = _storage._message {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-      if !_storage._devEui.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._devEui, fieldNumber: 11)
-      }
-      if !_storage._appEui.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._appEui, fieldNumber: 12)
-      }
-      if !_storage._appID.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._appID, fieldNumber: 13)
-      }
-      if !_storage._devID.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._devID, fieldNumber: 14)
-      }
-      if let v = _storage._protocolMetadata {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
-      }
-      if !_storage._gatewayMetadata.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._gatewayMetadata, fieldNumber: 22)
-      }
-      if _storage._serverTime != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._serverTime, fieldNumber: 23)
-      }
-      if let v = _storage._responseTemplate {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 31)
-      }
-      if let v = _storage._trace {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 41)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 /// received from the Router
-struct Broker_DeviceActivationRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".DeviceActivationRequest"
+struct Broker_DeviceActivationRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var payload: Data {
     get {return _storage._payload}
@@ -636,7 +367,7 @@ struct Broker_DeviceActivationRequest: SwiftProtobuf.Message {
   /// Returns true if `message` has been explicitly set.
   var hasMessage: Bool {return _storage._message != nil}
   /// Clears the value of `message`. Subsequent reads from it will return its default value.
-  mutating func clearMessage() {_storage._message = nil}
+  mutating func clearMessage() {_uniqueStorage()._message = nil}
 
   var devEui: Data {
     get {return _storage._devEui}
@@ -655,7 +386,7 @@ struct Broker_DeviceActivationRequest: SwiftProtobuf.Message {
   /// Returns true if `protocolMetadata` has been explicitly set.
   var hasProtocolMetadata: Bool {return _storage._protocolMetadata != nil}
   /// Clears the value of `protocolMetadata`. Subsequent reads from it will return its default value.
-  mutating func clearProtocolMetadata() {_storage._protocolMetadata = nil}
+  mutating func clearProtocolMetadata() {_uniqueStorage()._protocolMetadata = nil}
 
   var gatewayMetadata: Gateway_RxMetadata {
     get {return _storage._gatewayMetadata ?? Gateway_RxMetadata()}
@@ -664,7 +395,7 @@ struct Broker_DeviceActivationRequest: SwiftProtobuf.Message {
   /// Returns true if `gatewayMetadata` has been explicitly set.
   var hasGatewayMetadata: Bool {return _storage._gatewayMetadata != nil}
   /// Clears the value of `gatewayMetadata`. Subsequent reads from it will return its default value.
-  mutating func clearGatewayMetadata() {_storage._gatewayMetadata = nil}
+  mutating func clearGatewayMetadata() {_uniqueStorage()._gatewayMetadata = nil}
 
   var activationMetadata: Protocol_ActivationMetadata {
     get {return _storage._activationMetadata ?? Protocol_ActivationMetadata()}
@@ -673,7 +404,7 @@ struct Broker_DeviceActivationRequest: SwiftProtobuf.Message {
   /// Returns true if `activationMetadata` has been explicitly set.
   var hasActivationMetadata: Bool {return _storage._activationMetadata != nil}
   /// Clears the value of `activationMetadata`. Subsequent reads from it will return its default value.
-  mutating func clearActivationMetadata() {_storage._activationMetadata = nil}
+  mutating func clearActivationMetadata() {_uniqueStorage()._activationMetadata = nil}
 
   var downlinkOptions: [Broker_DownlinkOption] {
     get {return _storage._downlinkOptions}
@@ -687,79 +418,20 @@ struct Broker_DeviceActivationRequest: SwiftProtobuf.Message {
   /// Returns true if `trace` has been explicitly set.
   var hasTrace: Bool {return _storage._trace != nil}
   /// Clears the value of `trace`. Subsequent reads from it will return its default value.
-  mutating func clearTrace() {_storage._trace = nil}
+  mutating func clearTrace() {_uniqueStorage()._trace = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularBytesField(value: &_storage._payload)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._message)
-        case 11: try decoder.decodeSingularBytesField(value: &_storage._devEui)
-        case 12: try decoder.decodeSingularBytesField(value: &_storage._appEui)
-        case 21: try decoder.decodeSingularMessageField(value: &_storage._protocolMetadata)
-        case 22: try decoder.decodeSingularMessageField(value: &_storage._gatewayMetadata)
-        case 23: try decoder.decodeSingularMessageField(value: &_storage._activationMetadata)
-        case 31: try decoder.decodeRepeatedMessageField(value: &_storage._downlinkOptions)
-        case 41: try decoder.decodeSingularMessageField(value: &_storage._trace)
-        default: break
-        }
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if !_storage._payload.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._payload, fieldNumber: 1)
-      }
-      if let v = _storage._message {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-      if !_storage._devEui.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._devEui, fieldNumber: 11)
-      }
-      if !_storage._appEui.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._appEui, fieldNumber: 12)
-      }
-      if let v = _storage._protocolMetadata {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
-      }
-      if let v = _storage._gatewayMetadata {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 22)
-      }
-      if let v = _storage._activationMetadata {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 23)
-      }
-      if !_storage._downlinkOptions.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._downlinkOptions, fieldNumber: 31)
-      }
-      if let v = _storage._trace {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 41)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 /// sent to the Handler
-struct Broker_DeduplicatedDeviceActivationRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".DeduplicatedDeviceActivationRequest"
+struct Broker_DeduplicatedDeviceActivationRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var payload: Data {
     get {return _storage._payload}
@@ -773,7 +445,7 @@ struct Broker_DeduplicatedDeviceActivationRequest: SwiftProtobuf.Message {
   /// Returns true if `message` has been explicitly set.
   var hasMessage: Bool {return _storage._message != nil}
   /// Clears the value of `message`. Subsequent reads from it will return its default value.
-  mutating func clearMessage() {_storage._message = nil}
+  mutating func clearMessage() {_uniqueStorage()._message = nil}
 
   var devEui: Data {
     get {return _storage._devEui}
@@ -802,7 +474,7 @@ struct Broker_DeduplicatedDeviceActivationRequest: SwiftProtobuf.Message {
   /// Returns true if `protocolMetadata` has been explicitly set.
   var hasProtocolMetadata: Bool {return _storage._protocolMetadata != nil}
   /// Clears the value of `protocolMetadata`. Subsequent reads from it will return its default value.
-  mutating func clearProtocolMetadata() {_storage._protocolMetadata = nil}
+  mutating func clearProtocolMetadata() {_uniqueStorage()._protocolMetadata = nil}
 
   var gatewayMetadata: [Gateway_RxMetadata] {
     get {return _storage._gatewayMetadata}
@@ -816,7 +488,7 @@ struct Broker_DeduplicatedDeviceActivationRequest: SwiftProtobuf.Message {
   /// Returns true if `activationMetadata` has been explicitly set.
   var hasActivationMetadata: Bool {return _storage._activationMetadata != nil}
   /// Clears the value of `activationMetadata`. Subsequent reads from it will return its default value.
-  mutating func clearActivationMetadata() {_storage._activationMetadata = nil}
+  mutating func clearActivationMetadata() {_uniqueStorage()._activationMetadata = nil}
 
   var serverTime: Int64 {
     get {return _storage._serverTime}
@@ -830,7 +502,7 @@ struct Broker_DeduplicatedDeviceActivationRequest: SwiftProtobuf.Message {
   /// Returns true if `responseTemplate` has been explicitly set.
   var hasResponseTemplate: Bool {return _storage._responseTemplate != nil}
   /// Clears the value of `responseTemplate`. Subsequent reads from it will return its default value.
-  mutating func clearResponseTemplate() {_storage._responseTemplate = nil}
+  mutating func clearResponseTemplate() {_uniqueStorage()._responseTemplate = nil}
 
   var trace: Trace_Trace {
     get {return _storage._trace ?? Trace_Trace()}
@@ -839,90 +511,19 @@ struct Broker_DeduplicatedDeviceActivationRequest: SwiftProtobuf.Message {
   /// Returns true if `trace` has been explicitly set.
   var hasTrace: Bool {return _storage._trace != nil}
   /// Clears the value of `trace`. Subsequent reads from it will return its default value.
-  mutating func clearTrace() {_storage._trace = nil}
+  mutating func clearTrace() {_uniqueStorage()._trace = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularBytesField(value: &_storage._payload)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._message)
-        case 11: try decoder.decodeSingularBytesField(value: &_storage._devEui)
-        case 12: try decoder.decodeSingularBytesField(value: &_storage._appEui)
-        case 13: try decoder.decodeSingularStringField(value: &_storage._appID)
-        case 14: try decoder.decodeSingularStringField(value: &_storage._devID)
-        case 21: try decoder.decodeSingularMessageField(value: &_storage._protocolMetadata)
-        case 22: try decoder.decodeRepeatedMessageField(value: &_storage._gatewayMetadata)
-        case 23: try decoder.decodeSingularMessageField(value: &_storage._activationMetadata)
-        case 24: try decoder.decodeSingularInt64Field(value: &_storage._serverTime)
-        case 31: try decoder.decodeSingularMessageField(value: &_storage._responseTemplate)
-        case 41: try decoder.decodeSingularMessageField(value: &_storage._trace)
-        default: break
-        }
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if !_storage._payload.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._payload, fieldNumber: 1)
-      }
-      if let v = _storage._message {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-      if !_storage._devEui.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._devEui, fieldNumber: 11)
-      }
-      if !_storage._appEui.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._appEui, fieldNumber: 12)
-      }
-      if !_storage._appID.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._appID, fieldNumber: 13)
-      }
-      if !_storage._devID.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._devID, fieldNumber: 14)
-      }
-      if let v = _storage._protocolMetadata {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
-      }
-      if !_storage._gatewayMetadata.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._gatewayMetadata, fieldNumber: 22)
-      }
-      if let v = _storage._activationMetadata {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 23)
-      }
-      if _storage._serverTime != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._serverTime, fieldNumber: 24)
-      }
-      if let v = _storage._responseTemplate {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 31)
-      }
-      if let v = _storage._trace {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 41)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct Broker_ActivationChallengeRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ActivationChallengeRequest"
+struct Broker_ActivationChallengeRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var payload: Data {
     get {return _storage._payload}
@@ -936,7 +537,7 @@ struct Broker_ActivationChallengeRequest: SwiftProtobuf.Message {
   /// Returns true if `message` has been explicitly set.
   var hasMessage: Bool {return _storage._message != nil}
   /// Clears the value of `message`. Subsequent reads from it will return its default value.
-  mutating func clearMessage() {_storage._message = nil}
+  mutating func clearMessage() {_uniqueStorage()._message = nil}
 
   var devEui: Data {
     get {return _storage._devEui}
@@ -962,60 +563,13 @@ struct Broker_ActivationChallengeRequest: SwiftProtobuf.Message {
 
   init() {}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularBytesField(value: &_storage._payload)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._message)
-        case 11: try decoder.decodeSingularBytesField(value: &_storage._devEui)
-        case 12: try decoder.decodeSingularBytesField(value: &_storage._appEui)
-        case 13: try decoder.decodeSingularStringField(value: &_storage._appID)
-        case 14: try decoder.decodeSingularStringField(value: &_storage._devID)
-        default: break
-        }
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if !_storage._payload.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._payload, fieldNumber: 1)
-      }
-      if let v = _storage._message {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-      if !_storage._devEui.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._devEui, fieldNumber: 11)
-      }
-      if !_storage._appEui.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._appEui, fieldNumber: 12)
-      }
-      if !_storage._appID.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._appID, fieldNumber: 13)
-      }
-      if !_storage._devID.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._devID, fieldNumber: 14)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct Broker_ActivationChallengeResponse: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ActivationChallengeResponse"
+struct Broker_ActivationChallengeResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var payload: Data {
     get {return _storage._payload}
@@ -1029,102 +583,41 @@ struct Broker_ActivationChallengeResponse: SwiftProtobuf.Message {
   /// Returns true if `message` has been explicitly set.
   var hasMessage: Bool {return _storage._message != nil}
   /// Clears the value of `message`. Subsequent reads from it will return its default value.
-  mutating func clearMessage() {_storage._message = nil}
+  mutating func clearMessage() {_uniqueStorage()._message = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularBytesField(value: &_storage._payload)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._message)
-        default: break
-        }
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if !_storage._payload.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._payload, fieldNumber: 1)
-      }
-      if let v = _storage._message {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 /// message SubscribeRequest is used by a Handler to subscribe to uplink messages
-struct Broker_SubscribeRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".SubscribeRequest"
+struct Broker_SubscribeRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let _ = try decoder.nextFieldNumber() {
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try unknownFields.traverse(visitor: &visitor)
-  }
 }
 
 /// message StatusRequest is used to request the status of this Broker
-struct Broker_StatusRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".StatusRequest"
+struct Broker_StatusRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let _ = try decoder.nextFieldNumber() {
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try unknownFields.traverse(visitor: &visitor)
-  }
 }
 
-struct Broker_Status: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Status"
+struct Broker_Status {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var system: Api_SystemStats {
     get {return _storage._system ?? Api_SystemStats()}
@@ -1133,7 +626,7 @@ struct Broker_Status: SwiftProtobuf.Message {
   /// Returns true if `system` has been explicitly set.
   var hasSystem: Bool {return _storage._system != nil}
   /// Clears the value of `system`. Subsequent reads from it will return its default value.
-  mutating func clearSystem() {_storage._system = nil}
+  mutating func clearSystem() {_uniqueStorage()._system = nil}
 
   var component: Api_ComponentStats {
     get {return _storage._component ?? Api_ComponentStats()}
@@ -1142,7 +635,7 @@ struct Broker_Status: SwiftProtobuf.Message {
   /// Returns true if `component` has been explicitly set.
   var hasComponent: Bool {return _storage._component != nil}
   /// Clears the value of `component`. Subsequent reads from it will return its default value.
-  mutating func clearComponent() {_storage._component = nil}
+  mutating func clearComponent() {_uniqueStorage()._component = nil}
 
   var uplink: Api_Rates {
     get {return _storage._uplink ?? Api_Rates()}
@@ -1151,7 +644,7 @@ struct Broker_Status: SwiftProtobuf.Message {
   /// Returns true if `uplink` has been explicitly set.
   var hasUplink: Bool {return _storage._uplink != nil}
   /// Clears the value of `uplink`. Subsequent reads from it will return its default value.
-  mutating func clearUplink() {_storage._uplink = nil}
+  mutating func clearUplink() {_uniqueStorage()._uplink = nil}
 
   var uplinkUnique: Api_Rates {
     get {return _storage._uplinkUnique ?? Api_Rates()}
@@ -1160,7 +653,7 @@ struct Broker_Status: SwiftProtobuf.Message {
   /// Returns true if `uplinkUnique` has been explicitly set.
   var hasUplinkUnique: Bool {return _storage._uplinkUnique != nil}
   /// Clears the value of `uplinkUnique`. Subsequent reads from it will return its default value.
-  mutating func clearUplinkUnique() {_storage._uplinkUnique = nil}
+  mutating func clearUplinkUnique() {_uniqueStorage()._uplinkUnique = nil}
 
   var downlink: Api_Rates {
     get {return _storage._downlink ?? Api_Rates()}
@@ -1169,7 +662,7 @@ struct Broker_Status: SwiftProtobuf.Message {
   /// Returns true if `downlink` has been explicitly set.
   var hasDownlink: Bool {return _storage._downlink != nil}
   /// Clears the value of `downlink`. Subsequent reads from it will return its default value.
-  mutating func clearDownlink() {_storage._downlink = nil}
+  mutating func clearDownlink() {_uniqueStorage()._downlink = nil}
 
   var activations: Api_Rates {
     get {return _storage._activations ?? Api_Rates()}
@@ -1178,7 +671,7 @@ struct Broker_Status: SwiftProtobuf.Message {
   /// Returns true if `activations` has been explicitly set.
   var hasActivations: Bool {return _storage._activations != nil}
   /// Clears the value of `activations`. Subsequent reads from it will return its default value.
-  mutating func clearActivations() {_storage._activations = nil}
+  mutating func clearActivations() {_uniqueStorage()._activations = nil}
 
   var activationsUnique: Api_Rates {
     get {return _storage._activationsUnique ?? Api_Rates()}
@@ -1187,7 +680,7 @@ struct Broker_Status: SwiftProtobuf.Message {
   /// Returns true if `activationsUnique` has been explicitly set.
   var hasActivationsUnique: Bool {return _storage._activationsUnique != nil}
   /// Clears the value of `activationsUnique`. Subsequent reads from it will return its default value.
-  mutating func clearActivationsUnique() {_storage._activationsUnique = nil}
+  mutating func clearActivationsUnique() {_uniqueStorage()._activationsUnique = nil}
 
   var deduplication: Api_Percentiles {
     get {return _storage._deduplication ?? Api_Percentiles()}
@@ -1196,7 +689,7 @@ struct Broker_Status: SwiftProtobuf.Message {
   /// Returns true if `deduplication` has been explicitly set.
   var hasDeduplication: Bool {return _storage._deduplication != nil}
   /// Clears the value of `deduplication`. Subsequent reads from it will return its default value.
-  mutating func clearDeduplication() {_storage._deduplication = nil}
+  mutating func clearDeduplication() {_uniqueStorage()._deduplication = nil}
 
   /// Connections
   var connectedRouters: UInt32 {
@@ -1213,76 +706,13 @@ struct Broker_Status: SwiftProtobuf.Message {
 
   init() {}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularMessageField(value: &_storage._system)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._component)
-        case 11: try decoder.decodeSingularMessageField(value: &_storage._uplink)
-        case 12: try decoder.decodeSingularMessageField(value: &_storage._uplinkUnique)
-        case 13: try decoder.decodeSingularMessageField(value: &_storage._downlink)
-        case 14: try decoder.decodeSingularMessageField(value: &_storage._activations)
-        case 15: try decoder.decodeSingularMessageField(value: &_storage._activationsUnique)
-        case 16: try decoder.decodeSingularMessageField(value: &_storage._deduplication)
-        case 21: try decoder.decodeSingularUInt32Field(value: &_storage._connectedRouters)
-        case 22: try decoder.decodeSingularUInt32Field(value: &_storage._connectedHandlers)
-        default: break
-        }
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._system {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      }
-      if let v = _storage._component {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-      if let v = _storage._uplink {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
-      }
-      if let v = _storage._uplinkUnique {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
-      }
-      if let v = _storage._downlink {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
-      }
-      if let v = _storage._activations {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 14)
-      }
-      if let v = _storage._activationsUnique {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 15)
-      }
-      if let v = _storage._deduplication {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 16)
-      }
-      if _storage._connectedRouters != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._connectedRouters, fieldNumber: 21)
-      }
-      if _storage._connectedHandlers != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._connectedHandlers, fieldNumber: 22)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct Broker_ApplicationHandlerRegistration: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ApplicationHandlerRegistration"
+struct Broker_ApplicationHandlerRegistration {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var appID: String = String()
 
@@ -1291,41 +721,14 @@ struct Broker_ApplicationHandlerRegistration: SwiftProtobuf.Message {
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularStringField(value: &self.appID)
-      case 2: try decoder.decodeSingularStringField(value: &self.handlerID)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.appID.isEmpty {
-      try visitor.visitSingularStringField(value: self.appID, fieldNumber: 1)
-    }
-    if !self.handlerID.isEmpty {
-      try visitor.visitSingularStringField(value: self.handlerID, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "broker"
 
-extension Broker_DownlinkOption: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Broker_DownlinkOption: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DownlinkOption"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "identifier"),
     2: .standard(proto: "gateway_id"),
@@ -1364,25 +767,69 @@ extension Broker_DownlinkOption: SwiftProtobuf._MessageImplementationBase, Swift
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Broker_DownlinkOption) -> Bool {
-    if _storage !== other._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._identifier != other_storage._identifier {return false}
-        if _storage._gatewayID != other_storage._gatewayID {return false}
-        if _storage._score != other_storage._score {return false}
-        if _storage._deadline != other_storage._deadline {return false}
-        if _storage._protocolConfiguration != other_storage._protocolConfiguration {return false}
-        if _storage._gatewayConfiguration != other_storage._gatewayConfiguration {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularStringField(value: &_storage._identifier)
+        case 2: try decoder.decodeSingularStringField(value: &_storage._gatewayID)
+        case 3: try decoder.decodeSingularUInt32Field(value: &_storage._score)
+        case 4: try decoder.decodeSingularInt64Field(value: &_storage._deadline)
+        case 5: try decoder.decodeSingularMessageField(value: &_storage._protocolConfiguration)
+        case 6: try decoder.decodeSingularMessageField(value: &_storage._gatewayConfiguration)
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._identifier.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._identifier, fieldNumber: 1)
+      }
+      if !_storage._gatewayID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._gatewayID, fieldNumber: 2)
+      }
+      if _storage._score != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._score, fieldNumber: 3)
+      }
+      if _storage._deadline != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._deadline, fieldNumber: 4)
+      }
+      if let v = _storage._protocolConfiguration {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
+      }
+      if let v = _storage._gatewayConfiguration {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Broker_DownlinkOption, rhs: Broker_DownlinkOption) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._identifier != rhs_storage._identifier {return false}
+        if _storage._gatewayID != rhs_storage._gatewayID {return false}
+        if _storage._score != rhs_storage._score {return false}
+        if _storage._deadline != rhs_storage._deadline {return false}
+        if _storage._protocolConfiguration != rhs_storage._protocolConfiguration {return false}
+        if _storage._gatewayConfiguration != rhs_storage._gatewayConfiguration {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Broker_UplinkMessage: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Broker_UplinkMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".UplinkMessage"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "payload"),
     2: .same(proto: "message"),
@@ -1433,29 +880,89 @@ extension Broker_UplinkMessage: SwiftProtobuf._MessageImplementationBase, SwiftP
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Broker_UplinkMessage) -> Bool {
-    if _storage !== other._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._payload != other_storage._payload {return false}
-        if _storage._message != other_storage._message {return false}
-        if _storage._devEui != other_storage._devEui {return false}
-        if _storage._appEui != other_storage._appEui {return false}
-        if _storage._appID != other_storage._appID {return false}
-        if _storage._devID != other_storage._devID {return false}
-        if _storage._protocolMetadata != other_storage._protocolMetadata {return false}
-        if _storage._gatewayMetadata != other_storage._gatewayMetadata {return false}
-        if _storage._downlinkOptions != other_storage._downlinkOptions {return false}
-        if _storage._trace != other_storage._trace {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularBytesField(value: &_storage._payload)
+        case 2: try decoder.decodeSingularMessageField(value: &_storage._message)
+        case 11: try decoder.decodeSingularBytesField(value: &_storage._devEui)
+        case 12: try decoder.decodeSingularBytesField(value: &_storage._appEui)
+        case 13: try decoder.decodeSingularStringField(value: &_storage._appID)
+        case 14: try decoder.decodeSingularStringField(value: &_storage._devID)
+        case 21: try decoder.decodeSingularMessageField(value: &_storage._protocolMetadata)
+        case 22: try decoder.decodeSingularMessageField(value: &_storage._gatewayMetadata)
+        case 31: try decoder.decodeRepeatedMessageField(value: &_storage._downlinkOptions)
+        case 41: try decoder.decodeSingularMessageField(value: &_storage._trace)
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._payload.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._payload, fieldNumber: 1)
+      }
+      if let v = _storage._message {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
+      if !_storage._devEui.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._devEui, fieldNumber: 11)
+      }
+      if !_storage._appEui.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._appEui, fieldNumber: 12)
+      }
+      if !_storage._appID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._appID, fieldNumber: 13)
+      }
+      if !_storage._devID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._devID, fieldNumber: 14)
+      }
+      if let v = _storage._protocolMetadata {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
+      }
+      if let v = _storage._gatewayMetadata {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 22)
+      }
+      if !_storage._downlinkOptions.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._downlinkOptions, fieldNumber: 31)
+      }
+      if let v = _storage._trace {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 41)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Broker_UplinkMessage, rhs: Broker_UplinkMessage) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._payload != rhs_storage._payload {return false}
+        if _storage._message != rhs_storage._message {return false}
+        if _storage._devEui != rhs_storage._devEui {return false}
+        if _storage._appEui != rhs_storage._appEui {return false}
+        if _storage._appID != rhs_storage._appID {return false}
+        if _storage._devID != rhs_storage._devID {return false}
+        if _storage._protocolMetadata != rhs_storage._protocolMetadata {return false}
+        if _storage._gatewayMetadata != rhs_storage._gatewayMetadata {return false}
+        if _storage._downlinkOptions != rhs_storage._downlinkOptions {return false}
+        if _storage._trace != rhs_storage._trace {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Broker_DownlinkMessage: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Broker_DownlinkMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DownlinkMessage"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "payload"),
     2: .same(proto: "message"),
@@ -1500,27 +1007,79 @@ extension Broker_DownlinkMessage: SwiftProtobuf._MessageImplementationBase, Swif
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Broker_DownlinkMessage) -> Bool {
-    if _storage !== other._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._payload != other_storage._payload {return false}
-        if _storage._message != other_storage._message {return false}
-        if _storage._devEui != other_storage._devEui {return false}
-        if _storage._appEui != other_storage._appEui {return false}
-        if _storage._appID != other_storage._appID {return false}
-        if _storage._devID != other_storage._devID {return false}
-        if _storage._downlinkOption != other_storage._downlinkOption {return false}
-        if _storage._trace != other_storage._trace {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularBytesField(value: &_storage._payload)
+        case 2: try decoder.decodeSingularMessageField(value: &_storage._message)
+        case 11: try decoder.decodeSingularBytesField(value: &_storage._devEui)
+        case 12: try decoder.decodeSingularBytesField(value: &_storage._appEui)
+        case 13: try decoder.decodeSingularStringField(value: &_storage._appID)
+        case 14: try decoder.decodeSingularStringField(value: &_storage._devID)
+        case 21: try decoder.decodeSingularMessageField(value: &_storage._downlinkOption)
+        case 31: try decoder.decodeSingularMessageField(value: &_storage._trace)
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._payload.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._payload, fieldNumber: 1)
+      }
+      if let v = _storage._message {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
+      if !_storage._devEui.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._devEui, fieldNumber: 11)
+      }
+      if !_storage._appEui.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._appEui, fieldNumber: 12)
+      }
+      if !_storage._appID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._appID, fieldNumber: 13)
+      }
+      if !_storage._devID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._devID, fieldNumber: 14)
+      }
+      if let v = _storage._downlinkOption {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
+      }
+      if let v = _storage._trace {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 31)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Broker_DownlinkMessage, rhs: Broker_DownlinkMessage) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._payload != rhs_storage._payload {return false}
+        if _storage._message != rhs_storage._message {return false}
+        if _storage._devEui != rhs_storage._devEui {return false}
+        if _storage._appEui != rhs_storage._appEui {return false}
+        if _storage._appID != rhs_storage._appID {return false}
+        if _storage._devID != rhs_storage._devID {return false}
+        if _storage._downlinkOption != rhs_storage._downlinkOption {return false}
+        if _storage._trace != rhs_storage._trace {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Broker_DeviceActivationResponse: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Broker_DeviceActivationResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DeviceActivationResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "payload"),
     2: .same(proto: "message"),
@@ -1553,23 +1112,59 @@ extension Broker_DeviceActivationResponse: SwiftProtobuf._MessageImplementationB
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Broker_DeviceActivationResponse) -> Bool {
-    if _storage !== other._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._payload != other_storage._payload {return false}
-        if _storage._message != other_storage._message {return false}
-        if _storage._downlinkOption != other_storage._downlinkOption {return false}
-        if _storage._trace != other_storage._trace {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularBytesField(value: &_storage._payload)
+        case 2: try decoder.decodeSingularMessageField(value: &_storage._message)
+        case 11: try decoder.decodeSingularMessageField(value: &_storage._downlinkOption)
+        case 21: try decoder.decodeSingularMessageField(value: &_storage._trace)
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._payload.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._payload, fieldNumber: 1)
+      }
+      if let v = _storage._message {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
+      if let v = _storage._downlinkOption {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
+      }
+      if let v = _storage._trace {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Broker_DeviceActivationResponse, rhs: Broker_DeviceActivationResponse) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._payload != rhs_storage._payload {return false}
+        if _storage._message != rhs_storage._message {return false}
+        if _storage._downlinkOption != rhs_storage._downlinkOption {return false}
+        if _storage._trace != rhs_storage._trace {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Broker_DeduplicatedUplinkMessage: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Broker_DeduplicatedUplinkMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DeduplicatedUplinkMessage"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "payload"),
     2: .same(proto: "message"),
@@ -1623,30 +1218,94 @@ extension Broker_DeduplicatedUplinkMessage: SwiftProtobuf._MessageImplementation
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Broker_DeduplicatedUplinkMessage) -> Bool {
-    if _storage !== other._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._payload != other_storage._payload {return false}
-        if _storage._message != other_storage._message {return false}
-        if _storage._devEui != other_storage._devEui {return false}
-        if _storage._appEui != other_storage._appEui {return false}
-        if _storage._appID != other_storage._appID {return false}
-        if _storage._devID != other_storage._devID {return false}
-        if _storage._protocolMetadata != other_storage._protocolMetadata {return false}
-        if _storage._gatewayMetadata != other_storage._gatewayMetadata {return false}
-        if _storage._serverTime != other_storage._serverTime {return false}
-        if _storage._responseTemplate != other_storage._responseTemplate {return false}
-        if _storage._trace != other_storage._trace {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularBytesField(value: &_storage._payload)
+        case 2: try decoder.decodeSingularMessageField(value: &_storage._message)
+        case 11: try decoder.decodeSingularBytesField(value: &_storage._devEui)
+        case 12: try decoder.decodeSingularBytesField(value: &_storage._appEui)
+        case 13: try decoder.decodeSingularStringField(value: &_storage._appID)
+        case 14: try decoder.decodeSingularStringField(value: &_storage._devID)
+        case 21: try decoder.decodeSingularMessageField(value: &_storage._protocolMetadata)
+        case 22: try decoder.decodeRepeatedMessageField(value: &_storage._gatewayMetadata)
+        case 23: try decoder.decodeSingularInt64Field(value: &_storage._serverTime)
+        case 31: try decoder.decodeSingularMessageField(value: &_storage._responseTemplate)
+        case 41: try decoder.decodeSingularMessageField(value: &_storage._trace)
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._payload.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._payload, fieldNumber: 1)
+      }
+      if let v = _storage._message {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
+      if !_storage._devEui.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._devEui, fieldNumber: 11)
+      }
+      if !_storage._appEui.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._appEui, fieldNumber: 12)
+      }
+      if !_storage._appID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._appID, fieldNumber: 13)
+      }
+      if !_storage._devID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._devID, fieldNumber: 14)
+      }
+      if let v = _storage._protocolMetadata {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
+      }
+      if !_storage._gatewayMetadata.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._gatewayMetadata, fieldNumber: 22)
+      }
+      if _storage._serverTime != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._serverTime, fieldNumber: 23)
+      }
+      if let v = _storage._responseTemplate {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 31)
+      }
+      if let v = _storage._trace {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 41)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Broker_DeduplicatedUplinkMessage, rhs: Broker_DeduplicatedUplinkMessage) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._payload != rhs_storage._payload {return false}
+        if _storage._message != rhs_storage._message {return false}
+        if _storage._devEui != rhs_storage._devEui {return false}
+        if _storage._appEui != rhs_storage._appEui {return false}
+        if _storage._appID != rhs_storage._appID {return false}
+        if _storage._devID != rhs_storage._devID {return false}
+        if _storage._protocolMetadata != rhs_storage._protocolMetadata {return false}
+        if _storage._gatewayMetadata != rhs_storage._gatewayMetadata {return false}
+        if _storage._serverTime != rhs_storage._serverTime {return false}
+        if _storage._responseTemplate != rhs_storage._responseTemplate {return false}
+        if _storage._trace != rhs_storage._trace {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Broker_DeviceActivationRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Broker_DeviceActivationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DeviceActivationRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "payload"),
     2: .same(proto: "message"),
@@ -1694,28 +1353,84 @@ extension Broker_DeviceActivationRequest: SwiftProtobuf._MessageImplementationBa
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Broker_DeviceActivationRequest) -> Bool {
-    if _storage !== other._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._payload != other_storage._payload {return false}
-        if _storage._message != other_storage._message {return false}
-        if _storage._devEui != other_storage._devEui {return false}
-        if _storage._appEui != other_storage._appEui {return false}
-        if _storage._protocolMetadata != other_storage._protocolMetadata {return false}
-        if _storage._gatewayMetadata != other_storage._gatewayMetadata {return false}
-        if _storage._activationMetadata != other_storage._activationMetadata {return false}
-        if _storage._downlinkOptions != other_storage._downlinkOptions {return false}
-        if _storage._trace != other_storage._trace {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularBytesField(value: &_storage._payload)
+        case 2: try decoder.decodeSingularMessageField(value: &_storage._message)
+        case 11: try decoder.decodeSingularBytesField(value: &_storage._devEui)
+        case 12: try decoder.decodeSingularBytesField(value: &_storage._appEui)
+        case 21: try decoder.decodeSingularMessageField(value: &_storage._protocolMetadata)
+        case 22: try decoder.decodeSingularMessageField(value: &_storage._gatewayMetadata)
+        case 23: try decoder.decodeSingularMessageField(value: &_storage._activationMetadata)
+        case 31: try decoder.decodeRepeatedMessageField(value: &_storage._downlinkOptions)
+        case 41: try decoder.decodeSingularMessageField(value: &_storage._trace)
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._payload.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._payload, fieldNumber: 1)
+      }
+      if let v = _storage._message {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
+      if !_storage._devEui.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._devEui, fieldNumber: 11)
+      }
+      if !_storage._appEui.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._appEui, fieldNumber: 12)
+      }
+      if let v = _storage._protocolMetadata {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
+      }
+      if let v = _storage._gatewayMetadata {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 22)
+      }
+      if let v = _storage._activationMetadata {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 23)
+      }
+      if !_storage._downlinkOptions.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._downlinkOptions, fieldNumber: 31)
+      }
+      if let v = _storage._trace {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 41)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Broker_DeviceActivationRequest, rhs: Broker_DeviceActivationRequest) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._payload != rhs_storage._payload {return false}
+        if _storage._message != rhs_storage._message {return false}
+        if _storage._devEui != rhs_storage._devEui {return false}
+        if _storage._appEui != rhs_storage._appEui {return false}
+        if _storage._protocolMetadata != rhs_storage._protocolMetadata {return false}
+        if _storage._gatewayMetadata != rhs_storage._gatewayMetadata {return false}
+        if _storage._activationMetadata != rhs_storage._activationMetadata {return false}
+        if _storage._downlinkOptions != rhs_storage._downlinkOptions {return false}
+        if _storage._trace != rhs_storage._trace {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Broker_DeduplicatedDeviceActivationRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Broker_DeduplicatedDeviceActivationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DeduplicatedDeviceActivationRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "payload"),
     2: .same(proto: "message"),
@@ -1772,31 +1487,99 @@ extension Broker_DeduplicatedDeviceActivationRequest: SwiftProtobuf._MessageImpl
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Broker_DeduplicatedDeviceActivationRequest) -> Bool {
-    if _storage !== other._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._payload != other_storage._payload {return false}
-        if _storage._message != other_storage._message {return false}
-        if _storage._devEui != other_storage._devEui {return false}
-        if _storage._appEui != other_storage._appEui {return false}
-        if _storage._appID != other_storage._appID {return false}
-        if _storage._devID != other_storage._devID {return false}
-        if _storage._protocolMetadata != other_storage._protocolMetadata {return false}
-        if _storage._gatewayMetadata != other_storage._gatewayMetadata {return false}
-        if _storage._activationMetadata != other_storage._activationMetadata {return false}
-        if _storage._serverTime != other_storage._serverTime {return false}
-        if _storage._responseTemplate != other_storage._responseTemplate {return false}
-        if _storage._trace != other_storage._trace {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularBytesField(value: &_storage._payload)
+        case 2: try decoder.decodeSingularMessageField(value: &_storage._message)
+        case 11: try decoder.decodeSingularBytesField(value: &_storage._devEui)
+        case 12: try decoder.decodeSingularBytesField(value: &_storage._appEui)
+        case 13: try decoder.decodeSingularStringField(value: &_storage._appID)
+        case 14: try decoder.decodeSingularStringField(value: &_storage._devID)
+        case 21: try decoder.decodeSingularMessageField(value: &_storage._protocolMetadata)
+        case 22: try decoder.decodeRepeatedMessageField(value: &_storage._gatewayMetadata)
+        case 23: try decoder.decodeSingularMessageField(value: &_storage._activationMetadata)
+        case 24: try decoder.decodeSingularInt64Field(value: &_storage._serverTime)
+        case 31: try decoder.decodeSingularMessageField(value: &_storage._responseTemplate)
+        case 41: try decoder.decodeSingularMessageField(value: &_storage._trace)
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._payload.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._payload, fieldNumber: 1)
+      }
+      if let v = _storage._message {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
+      if !_storage._devEui.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._devEui, fieldNumber: 11)
+      }
+      if !_storage._appEui.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._appEui, fieldNumber: 12)
+      }
+      if !_storage._appID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._appID, fieldNumber: 13)
+      }
+      if !_storage._devID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._devID, fieldNumber: 14)
+      }
+      if let v = _storage._protocolMetadata {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
+      }
+      if !_storage._gatewayMetadata.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._gatewayMetadata, fieldNumber: 22)
+      }
+      if let v = _storage._activationMetadata {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 23)
+      }
+      if _storage._serverTime != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._serverTime, fieldNumber: 24)
+      }
+      if let v = _storage._responseTemplate {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 31)
+      }
+      if let v = _storage._trace {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 41)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Broker_DeduplicatedDeviceActivationRequest, rhs: Broker_DeduplicatedDeviceActivationRequest) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._payload != rhs_storage._payload {return false}
+        if _storage._message != rhs_storage._message {return false}
+        if _storage._devEui != rhs_storage._devEui {return false}
+        if _storage._appEui != rhs_storage._appEui {return false}
+        if _storage._appID != rhs_storage._appID {return false}
+        if _storage._devID != rhs_storage._devID {return false}
+        if _storage._protocolMetadata != rhs_storage._protocolMetadata {return false}
+        if _storage._gatewayMetadata != rhs_storage._gatewayMetadata {return false}
+        if _storage._activationMetadata != rhs_storage._activationMetadata {return false}
+        if _storage._serverTime != rhs_storage._serverTime {return false}
+        if _storage._responseTemplate != rhs_storage._responseTemplate {return false}
+        if _storage._trace != rhs_storage._trace {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Broker_ActivationChallengeRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Broker_ActivationChallengeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ActivationChallengeRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "payload"),
     2: .same(proto: "message"),
@@ -1835,25 +1618,69 @@ extension Broker_ActivationChallengeRequest: SwiftProtobuf._MessageImplementatio
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Broker_ActivationChallengeRequest) -> Bool {
-    if _storage !== other._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._payload != other_storage._payload {return false}
-        if _storage._message != other_storage._message {return false}
-        if _storage._devEui != other_storage._devEui {return false}
-        if _storage._appEui != other_storage._appEui {return false}
-        if _storage._appID != other_storage._appID {return false}
-        if _storage._devID != other_storage._devID {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularBytesField(value: &_storage._payload)
+        case 2: try decoder.decodeSingularMessageField(value: &_storage._message)
+        case 11: try decoder.decodeSingularBytesField(value: &_storage._devEui)
+        case 12: try decoder.decodeSingularBytesField(value: &_storage._appEui)
+        case 13: try decoder.decodeSingularStringField(value: &_storage._appID)
+        case 14: try decoder.decodeSingularStringField(value: &_storage._devID)
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._payload.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._payload, fieldNumber: 1)
+      }
+      if let v = _storage._message {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
+      if !_storage._devEui.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._devEui, fieldNumber: 11)
+      }
+      if !_storage._appEui.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._appEui, fieldNumber: 12)
+      }
+      if !_storage._appID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._appID, fieldNumber: 13)
+      }
+      if !_storage._devID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._devID, fieldNumber: 14)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Broker_ActivationChallengeRequest, rhs: Broker_ActivationChallengeRequest) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._payload != rhs_storage._payload {return false}
+        if _storage._message != rhs_storage._message {return false}
+        if _storage._devEui != rhs_storage._devEui {return false}
+        if _storage._appEui != rhs_storage._appEui {return false}
+        if _storage._appID != rhs_storage._appID {return false}
+        if _storage._devID != rhs_storage._devID {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Broker_ActivationChallengeResponse: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Broker_ActivationChallengeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ActivationChallengeResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "payload"),
     2: .same(proto: "message"),
@@ -1880,39 +1707,87 @@ extension Broker_ActivationChallengeResponse: SwiftProtobuf._MessageImplementati
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Broker_ActivationChallengeResponse) -> Bool {
-    if _storage !== other._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._payload != other_storage._payload {return false}
-        if _storage._message != other_storage._message {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularBytesField(value: &_storage._payload)
+        case 2: try decoder.decodeSingularMessageField(value: &_storage._message)
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._payload.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._payload, fieldNumber: 1)
+      }
+      if let v = _storage._message {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Broker_ActivationChallengeResponse, rhs: Broker_ActivationChallengeResponse) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._payload != rhs_storage._payload {return false}
+        if _storage._message != rhs_storage._message {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Broker_SubscribeRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Broker_SubscribeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".SubscribeRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  func _protobuf_generated_isEqualTo(other: Broker_SubscribeRequest) -> Bool {
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let _ = try decoder.nextFieldNumber() {
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Broker_SubscribeRequest, rhs: Broker_SubscribeRequest) -> Bool {
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Broker_StatusRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Broker_StatusRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".StatusRequest"
   static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  func _protobuf_generated_isEqualTo(other: Broker_StatusRequest) -> Bool {
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let _ = try decoder.nextFieldNumber() {
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Broker_StatusRequest, rhs: Broker_StatusRequest) -> Bool {
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Broker_Status: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Broker_Status: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".Status"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "system"),
     2: .same(proto: "component"),
@@ -1963,38 +1838,118 @@ extension Broker_Status: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Broker_Status) -> Bool {
-    if _storage !== other._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._system != other_storage._system {return false}
-        if _storage._component != other_storage._component {return false}
-        if _storage._uplink != other_storage._uplink {return false}
-        if _storage._uplinkUnique != other_storage._uplinkUnique {return false}
-        if _storage._downlink != other_storage._downlink {return false}
-        if _storage._activations != other_storage._activations {return false}
-        if _storage._activationsUnique != other_storage._activationsUnique {return false}
-        if _storage._deduplication != other_storage._deduplication {return false}
-        if _storage._connectedRouters != other_storage._connectedRouters {return false}
-        if _storage._connectedHandlers != other_storage._connectedHandlers {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularMessageField(value: &_storage._system)
+        case 2: try decoder.decodeSingularMessageField(value: &_storage._component)
+        case 11: try decoder.decodeSingularMessageField(value: &_storage._uplink)
+        case 12: try decoder.decodeSingularMessageField(value: &_storage._uplinkUnique)
+        case 13: try decoder.decodeSingularMessageField(value: &_storage._downlink)
+        case 14: try decoder.decodeSingularMessageField(value: &_storage._activations)
+        case 15: try decoder.decodeSingularMessageField(value: &_storage._activationsUnique)
+        case 16: try decoder.decodeSingularMessageField(value: &_storage._deduplication)
+        case 21: try decoder.decodeSingularUInt32Field(value: &_storage._connectedRouters)
+        case 22: try decoder.decodeSingularUInt32Field(value: &_storage._connectedHandlers)
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if let v = _storage._system {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      }
+      if let v = _storage._component {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
+      if let v = _storage._uplink {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
+      }
+      if let v = _storage._uplinkUnique {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
+      }
+      if let v = _storage._downlink {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
+      }
+      if let v = _storage._activations {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 14)
+      }
+      if let v = _storage._activationsUnique {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 15)
+      }
+      if let v = _storage._deduplication {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 16)
+      }
+      if _storage._connectedRouters != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._connectedRouters, fieldNumber: 21)
+      }
+      if _storage._connectedHandlers != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._connectedHandlers, fieldNumber: 22)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Broker_Status, rhs: Broker_Status) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._system != rhs_storage._system {return false}
+        if _storage._component != rhs_storage._component {return false}
+        if _storage._uplink != rhs_storage._uplink {return false}
+        if _storage._uplinkUnique != rhs_storage._uplinkUnique {return false}
+        if _storage._downlink != rhs_storage._downlink {return false}
+        if _storage._activations != rhs_storage._activations {return false}
+        if _storage._activationsUnique != rhs_storage._activationsUnique {return false}
+        if _storage._deduplication != rhs_storage._deduplication {return false}
+        if _storage._connectedRouters != rhs_storage._connectedRouters {return false}
+        if _storage._connectedHandlers != rhs_storage._connectedHandlers {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Broker_ApplicationHandlerRegistration: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Broker_ApplicationHandlerRegistration: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ApplicationHandlerRegistration"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "app_id"),
     2: .standard(proto: "handler_id"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Broker_ApplicationHandlerRegistration) -> Bool {
-    if self.appID != other.appID {return false}
-    if self.handlerID != other.handlerID {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.appID)
+      case 2: try decoder.decodeSingularStringField(value: &self.handlerID)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.appID.isEmpty {
+      try visitor.visitSingularStringField(value: self.appID, fieldNumber: 1)
+    }
+    if !self.handlerID.isEmpty {
+      try visitor.visitSingularStringField(value: self.handlerID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Broker_ApplicationHandlerRegistration, rhs: Broker_ApplicationHandlerRegistration) -> Bool {
+    if lhs.appID != rhs.appID {return false}
+    if lhs.handlerID != rhs.handlerID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }

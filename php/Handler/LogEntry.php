@@ -26,9 +26,21 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      */
     private $fields;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $function
+     *           The location where the log was created (what payload function)
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $fields
+     *           A list of JSON-encoded fields that were logged
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Handler\Handler::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

@@ -42,7 +42,7 @@ public final class TraceProto {
       "\032.trace.Trace.MetadataEntry\022\035\n\007parents\030\013" +
       " \003(\0132\014.trace.Trace\032/\n\rMetadataEntry\022\013\n\003k" +
       "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001Br\n\036org.theth" +
-      "ingsnetwork.api.traceB\nTraceProtoP\001Z%git",
+      "ingsnetwork.api.traceB\nTraceProtoP\001Z%git" +
       "hub.com/TheThingsNetwork/api/trace\252\002\032The" +
       "ThingsNetwork.API.Traceb\006proto3"
     };

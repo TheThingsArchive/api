@@ -77,7 +77,7 @@ public final class DiscoveryProto {
       "refix\030\024 \001(\014H\000\022\033\n\006app_id\030\036 \001(\tB\t\342\336\037\005AppID" +
       "H\000\022\035\n\007app_eui\030\037 \001(\014B\n\342\336\037\006AppEUIH\000B\n\n\010met" +
       "adata\"\251\002\n\014Announcement\022\022\n\002id\030\001 \001(\tB\006\342\336\037\002" +
-      "ID\022\024\n\014service_name\030\002 \001(\t\022\027\n\017service_vers",
+      "ID\022\024\n\014service_name\030\002 \001(\t\022\027\n\017service_vers" +
       "ion\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\013\n\003url\030\005 " +
       "\001(\t\022\016\n\006public\030\006 \001(\010\022\023\n\013net_address\030\013 \001(\t" +
       "\022\022\n\npublic_key\030\014 \001(\t\022\023\n\013certificate\030\r \001(" +
@@ -87,7 +87,7 @@ public final class DiscoveryProto {
       "equest\022\024\n\014service_name\030\001 \001(\t\"6\n\nGetReque" +
       "st\022\022\n\002id\030\001 \001(\tB\006\342\336\037\002ID\022\024\n\014service_name\030\002" +
       " \001(\t\"h\n\017MetadataRequest\022\022\n\002id\030\001 \001(\tB\006\342\336\037" +
-      "\002ID\022\024\n\014service_name\030\002 \001(\t\022+\n\010metadata\030\014 ",
+      "\002ID\022\024\n\014service_name\030\002 \001(\t\022+\n\010metadata\030\014 " +
       "\001(\0132\023.discovery.MetadataB\004\310\336\037\000\"B\n\025Announ" +
       "cementsResponse\022)\n\010services\030\001 \003(\0132\027.disc" +
       "overy.Announcement\".\n\021GetByAppIDRequest\022" +
@@ -97,7 +97,7 @@ public final class DiscoveryProto {
       "\037 \001(\014BC\342\336\037\006AppEUI\310\336\037\000\332\336\0371github.com/TheT" +
       "hingsNetwork/ttn/core/types.AppEUI2\376\004\n\tD" +
       "iscovery\022;\n\010Announce\022\027.discovery.Announc" +
-      "ement\032\026.google.protobuf.Empty\022o\n\006GetAll\022",
+      "ement\032\026.google.protobuf.Empty\022o\n\006GetAll\022" +
       "\034.discovery.GetServiceRequest\032 .discover" +
       "y.AnnouncementsResponse\"%\202\323\344\223\002\037\022\035/announ" +
       "cements/{service_name}\022a\n\003Get\022\025.discover" +
@@ -107,7 +107,7 @@ public final class DiscoveryProto {
       "uest\032\026.google.protobuf.Empty\022D\n\016DeleteMe" +
       "tadata\022\032.discovery.MetadataRequest\032\026.goo" +
       "gle.protobuf.Empty\022C\n\nGetByAppID\022\034.disco" +
-      "very.GetByAppIDRequest\032\027.discovery.Annou",
+      "very.GetByAppIDRequest\032\027.discovery.Annou" +
       "ncement\022K\n\016GetByGatewayID\022 .discovery.Ge" +
       "tByGatewayIDRequest\032\027.discovery.Announce" +
       "ment\022E\n\013GetByAppEUI\022\035.discovery.GetByApp" +

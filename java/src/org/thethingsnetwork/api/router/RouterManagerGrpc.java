@@ -1,19 +1,19 @@
 package org.thethingsnetwork.api.router;
 
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
+import static io.grpc.stub.ClientCalls.blockingUnaryCall;
+import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -30,30 +30,69 @@ public final class RouterManagerGrpc {
   public static final String SERVICE_NAME = "router.RouterManager";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.GatewayStatusRequest,
-      org.thethingsnetwork.api.router.GatewayStatusResponse> METHOD_GATEWAY_STATUS =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.router.GatewayStatusRequest, org.thethingsnetwork.api.router.GatewayStatusResponse>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "router.RouterManager", "GatewayStatus"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.router.GatewayStatusRequest.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.router.GatewayStatusResponse.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.StatusRequest,
-      org.thethingsnetwork.api.router.Status> METHOD_GET_STATUS =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.router.StatusRequest, org.thethingsnetwork.api.router.Status>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "router.RouterManager", "GetStatus"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.router.StatusRequest.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.router.Status.getDefaultInstance()))
-          .build();
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.GatewayStatusRequest,
+      org.thethingsnetwork.api.router.GatewayStatusResponse> getGatewayStatusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GatewayStatus",
+      requestType = org.thethingsnetwork.api.router.GatewayStatusRequest.class,
+      responseType = org.thethingsnetwork.api.router.GatewayStatusResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.GatewayStatusRequest,
+      org.thethingsnetwork.api.router.GatewayStatusResponse> getGatewayStatusMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.GatewayStatusRequest, org.thethingsnetwork.api.router.GatewayStatusResponse> getGatewayStatusMethod;
+    if ((getGatewayStatusMethod = RouterManagerGrpc.getGatewayStatusMethod) == null) {
+      synchronized (RouterManagerGrpc.class) {
+        if ((getGatewayStatusMethod = RouterManagerGrpc.getGatewayStatusMethod) == null) {
+          RouterManagerGrpc.getGatewayStatusMethod = getGatewayStatusMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.router.GatewayStatusRequest, org.thethingsnetwork.api.router.GatewayStatusResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "router.RouterManager", "GatewayStatus"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.router.GatewayStatusRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.router.GatewayStatusResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new RouterManagerMethodDescriptorSupplier("GatewayStatus"))
+                  .build();
+          }
+        }
+     }
+     return getGatewayStatusMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.StatusRequest,
+      org.thethingsnetwork.api.router.Status> getGetStatusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetStatus",
+      requestType = org.thethingsnetwork.api.router.StatusRequest.class,
+      responseType = org.thethingsnetwork.api.router.Status.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.StatusRequest,
+      org.thethingsnetwork.api.router.Status> getGetStatusMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.StatusRequest, org.thethingsnetwork.api.router.Status> getGetStatusMethod;
+    if ((getGetStatusMethod = RouterManagerGrpc.getGetStatusMethod) == null) {
+      synchronized (RouterManagerGrpc.class) {
+        if ((getGetStatusMethod = RouterManagerGrpc.getGetStatusMethod) == null) {
+          RouterManagerGrpc.getGetStatusMethod = getGetStatusMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.router.StatusRequest, org.thethingsnetwork.api.router.Status>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "router.RouterManager", "GetStatus"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.router.StatusRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.router.Status.getDefaultInstance()))
+                  .setSchemaDescriptor(new RouterManagerMethodDescriptorSupplier("GetStatus"))
+                  .build();
+          }
+        }
+     }
+     return getGetStatusMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -93,7 +132,7 @@ public final class RouterManagerGrpc {
      */
     public void gatewayStatus(org.thethingsnetwork.api.router.GatewayStatusRequest request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.router.GatewayStatusResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_GATEWAY_STATUS, responseObserver);
+      asyncUnimplementedUnaryCall(getGatewayStatusMethod(), responseObserver);
     }
 
     /**
@@ -103,20 +142,20 @@ public final class RouterManagerGrpc {
      */
     public void getStatus(org.thethingsnetwork.api.router.StatusRequest request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.router.Status> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_GET_STATUS, responseObserver);
+      asyncUnimplementedUnaryCall(getGetStatusMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            METHOD_GATEWAY_STATUS,
+            getGatewayStatusMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.router.GatewayStatusRequest,
                 org.thethingsnetwork.api.router.GatewayStatusResponse>(
                   this, METHODID_GATEWAY_STATUS)))
           .addMethod(
-            METHOD_GET_STATUS,
+            getGetStatusMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.router.StatusRequest,
@@ -156,7 +195,7 @@ public final class RouterManagerGrpc {
     public void gatewayStatus(org.thethingsnetwork.api.router.GatewayStatusRequest request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.router.GatewayStatusResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_GATEWAY_STATUS, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGatewayStatusMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -167,7 +206,7 @@ public final class RouterManagerGrpc {
     public void getStatus(org.thethingsnetwork.api.router.StatusRequest request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.router.Status> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_GET_STATUS, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetStatusMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -200,7 +239,7 @@ public final class RouterManagerGrpc {
      */
     public org.thethingsnetwork.api.router.GatewayStatusResponse gatewayStatus(org.thethingsnetwork.api.router.GatewayStatusRequest request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_GATEWAY_STATUS, getCallOptions(), request);
+          getChannel(), getGatewayStatusMethod(), getCallOptions(), request);
     }
 
     /**
@@ -210,7 +249,7 @@ public final class RouterManagerGrpc {
      */
     public org.thethingsnetwork.api.router.Status getStatus(org.thethingsnetwork.api.router.StatusRequest request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_GET_STATUS, getCallOptions(), request);
+          getChannel(), getGetStatusMethod(), getCallOptions(), request);
     }
   }
 
@@ -244,7 +283,7 @@ public final class RouterManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<org.thethingsnetwork.api.router.GatewayStatusResponse> gatewayStatus(
         org.thethingsnetwork.api.router.GatewayStatusRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_GATEWAY_STATUS, getCallOptions()), request);
+          getChannel().newCall(getGatewayStatusMethod(), getCallOptions()), request);
     }
 
     /**
@@ -255,7 +294,7 @@ public final class RouterManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<org.thethingsnetwork.api.router.Status> getStatus(
         org.thethingsnetwork.api.router.StatusRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_GET_STATUS, getCallOptions()), request);
+          getChannel().newCall(getGetStatusMethod(), getCallOptions()), request);
     }
   }
 
@@ -303,10 +342,38 @@ public final class RouterManagerGrpc {
     }
   }
 
-  private static final class RouterManagerDescriptorSupplier implements io.grpc.protobuf.ProtoFileDescriptorSupplier {
+  private static abstract class RouterManagerBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
+    RouterManagerBaseDescriptorSupplier() {}
+
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
       return org.thethingsnetwork.api.router.RouterProto.getDescriptor();
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
+      return getFileDescriptor().findServiceByName("RouterManager");
+    }
+  }
+
+  private static final class RouterManagerFileDescriptorSupplier
+      extends RouterManagerBaseDescriptorSupplier {
+    RouterManagerFileDescriptorSupplier() {}
+  }
+
+  private static final class RouterManagerMethodDescriptorSupplier
+      extends RouterManagerBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
+    private final String methodName;
+
+    RouterManagerMethodDescriptorSupplier(String methodName) {
+      this.methodName = methodName;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
+      return getServiceDescriptor().findMethodByName(methodName);
     }
   }
 
@@ -319,9 +386,9 @@ public final class RouterManagerGrpc {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new RouterManagerDescriptorSupplier())
-              .addMethod(METHOD_GATEWAY_STATUS)
-              .addMethod(METHOD_GET_STATUS)
+              .setSchemaDescriptor(new RouterManagerFileDescriptorSupplier())
+              .addMethod(getGatewayStatusMethod())
+              .addMethod(getGetStatusMethod())
               .build();
         }
       }

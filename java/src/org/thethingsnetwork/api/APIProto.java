@@ -77,7 +77,7 @@ public final class APIProto {
       "\n\014percentile99\030\t \001(\002\"5\n\005Rates\022\r\n\005rate1\030\001" +
       " \001(\002\022\r\n\005rate5\030\002 \001(\002\022\016\n\006rate15\030\003 \001(\002\"\323\002\n\013" +
       "SystemStats\022(\n\004load\030\001 \001(\0132\032.api.SystemSt" +
-      "ats.Loadstats\022&\n\003cpu\030\002 \001(\0132\031.api.SystemS",
+      "ats.Loadstats\022&\n\003cpu\030\002 \001(\0132\031.api.SystemS" +
       "tats.CPUStats\022,\n\006memory\030\003 \001(\0132\034.api.Syst" +
       "emStats.MemoryStats\0329\n\tLoadstats\022\r\n\005load" +
       "1\030\001 \001(\002\022\r\n\005load5\030\002 \001(\002\022\016\n\006load15\030\003 \001(\002\032J" +
@@ -87,7 +87,7 @@ public final class APIProto {
       "\001(\004\022\014\n\004used\030\003 \001(\004\"\277\002\n\016ComponentStats\022\016\n\006" +
       "uptime\030\001 \001(\004\022)\n\003cpu\030\002 \001(\0132\034.api.Componen" +
       "tStats.CPUStats\022/\n\006memory\030\003 \001(\0132\037.api.Co" +
-      "mponentStats.MemoryStats\022\022\n\ngoroutines\030\004",
+      "mponentStats.MemoryStats\022\022\n\ngoroutines\030\004" +
       " \001(\004\022\027\n\017gc_cpu_fraction\030\005 \001(\002\032J\n\010CPUStat" +
       "s\022\014\n\004user\030\001 \001(\002\022\016\n\006system\030\002 \001(\002\022\014\n\004idle\030" +
       "\003 \001(\002\022\022\n\npercentage\030\004 \001(\002\032H\n\013MemoryStats" +

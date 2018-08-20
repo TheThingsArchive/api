@@ -254,7 +254,7 @@ proto.api.Percentiles.prototype.getPercentile1 = function() {
 
 /** @param {number} value */
 proto.api.Percentiles.prototype.setPercentile1 = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3FloatField(this, 1, value);
 };
 
 
@@ -269,7 +269,7 @@ proto.api.Percentiles.prototype.getPercentile5 = function() {
 
 /** @param {number} value */
 proto.api.Percentiles.prototype.setPercentile5 = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3FloatField(this, 2, value);
 };
 
 
@@ -284,7 +284,7 @@ proto.api.Percentiles.prototype.getPercentile10 = function() {
 
 /** @param {number} value */
 proto.api.Percentiles.prototype.setPercentile10 = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3FloatField(this, 3, value);
 };
 
 
@@ -299,7 +299,7 @@ proto.api.Percentiles.prototype.getPercentile25 = function() {
 
 /** @param {number} value */
 proto.api.Percentiles.prototype.setPercentile25 = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3FloatField(this, 4, value);
 };
 
 
@@ -314,7 +314,7 @@ proto.api.Percentiles.prototype.getPercentile50 = function() {
 
 /** @param {number} value */
 proto.api.Percentiles.prototype.setPercentile50 = function(value) {
-  jspb.Message.setField(this, 5, value);
+  jspb.Message.setProto3FloatField(this, 5, value);
 };
 
 
@@ -329,7 +329,7 @@ proto.api.Percentiles.prototype.getPercentile75 = function() {
 
 /** @param {number} value */
 proto.api.Percentiles.prototype.setPercentile75 = function(value) {
-  jspb.Message.setField(this, 6, value);
+  jspb.Message.setProto3FloatField(this, 6, value);
 };
 
 
@@ -344,7 +344,7 @@ proto.api.Percentiles.prototype.getPercentile90 = function() {
 
 /** @param {number} value */
 proto.api.Percentiles.prototype.setPercentile90 = function(value) {
-  jspb.Message.setField(this, 7, value);
+  jspb.Message.setProto3FloatField(this, 7, value);
 };
 
 
@@ -359,7 +359,7 @@ proto.api.Percentiles.prototype.getPercentile95 = function() {
 
 /** @param {number} value */
 proto.api.Percentiles.prototype.setPercentile95 = function(value) {
-  jspb.Message.setField(this, 8, value);
+  jspb.Message.setProto3FloatField(this, 8, value);
 };
 
 
@@ -374,7 +374,7 @@ proto.api.Percentiles.prototype.getPercentile99 = function() {
 
 /** @param {number} value */
 proto.api.Percentiles.prototype.setPercentile99 = function(value) {
-  jspb.Message.setField(this, 9, value);
+  jspb.Message.setProto3FloatField(this, 9, value);
 };
 
 
@@ -540,7 +540,7 @@ proto.api.Rates.prototype.getRate1 = function() {
 
 /** @param {number} value */
 proto.api.Rates.prototype.setRate1 = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3FloatField(this, 1, value);
 };
 
 
@@ -555,7 +555,7 @@ proto.api.Rates.prototype.getRate5 = function() {
 
 /** @param {number} value */
 proto.api.Rates.prototype.setRate5 = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3FloatField(this, 2, value);
 };
 
 
@@ -570,7 +570,7 @@ proto.api.Rates.prototype.getRate15 = function() {
 
 /** @param {number} value */
 proto.api.Rates.prototype.setRate15 = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3FloatField(this, 3, value);
 };
 
 
@@ -893,7 +893,7 @@ proto.api.SystemStats.Loadstats.prototype.getLoad1 = function() {
 
 /** @param {number} value */
 proto.api.SystemStats.Loadstats.prototype.setLoad1 = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3FloatField(this, 1, value);
 };
 
 
@@ -908,7 +908,7 @@ proto.api.SystemStats.Loadstats.prototype.getLoad5 = function() {
 
 /** @param {number} value */
 proto.api.SystemStats.Loadstats.prototype.setLoad5 = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3FloatField(this, 2, value);
 };
 
 
@@ -923,7 +923,7 @@ proto.api.SystemStats.Loadstats.prototype.getLoad15 = function() {
 
 /** @param {number} value */
 proto.api.SystemStats.Loadstats.prototype.setLoad15 = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3FloatField(this, 3, value);
 };
 
 
@@ -1101,7 +1101,7 @@ proto.api.SystemStats.CPUStats.prototype.getUser = function() {
 
 /** @param {number} value */
 proto.api.SystemStats.CPUStats.prototype.setUser = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3FloatField(this, 1, value);
 };
 
 
@@ -1116,7 +1116,7 @@ proto.api.SystemStats.CPUStats.prototype.getSystem = function() {
 
 /** @param {number} value */
 proto.api.SystemStats.CPUStats.prototype.setSystem = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3FloatField(this, 2, value);
 };
 
 
@@ -1131,7 +1131,7 @@ proto.api.SystemStats.CPUStats.prototype.getIdle = function() {
 
 /** @param {number} value */
 proto.api.SystemStats.CPUStats.prototype.setIdle = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3FloatField(this, 3, value);
 };
 
 
@@ -1146,7 +1146,7 @@ proto.api.SystemStats.CPUStats.prototype.getPercentage = function() {
 
 /** @param {number} value */
 proto.api.SystemStats.CPUStats.prototype.setPercentage = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3FloatField(this, 4, value);
 };
 
 
@@ -1312,7 +1312,7 @@ proto.api.SystemStats.MemoryStats.prototype.getTotal = function() {
 
 /** @param {number} value */
 proto.api.SystemStats.MemoryStats.prototype.setTotal = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -1327,7 +1327,7 @@ proto.api.SystemStats.MemoryStats.prototype.getAvailable = function() {
 
 /** @param {number} value */
 proto.api.SystemStats.MemoryStats.prototype.setAvailable = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -1342,7 +1342,7 @@ proto.api.SystemStats.MemoryStats.prototype.getUsed = function() {
 
 /** @param {number} value */
 proto.api.SystemStats.MemoryStats.prototype.setUsed = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -1789,7 +1789,7 @@ proto.api.ComponentStats.CPUStats.prototype.getUser = function() {
 
 /** @param {number} value */
 proto.api.ComponentStats.CPUStats.prototype.setUser = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3FloatField(this, 1, value);
 };
 
 
@@ -1804,7 +1804,7 @@ proto.api.ComponentStats.CPUStats.prototype.getSystem = function() {
 
 /** @param {number} value */
 proto.api.ComponentStats.CPUStats.prototype.setSystem = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3FloatField(this, 2, value);
 };
 
 
@@ -1819,7 +1819,7 @@ proto.api.ComponentStats.CPUStats.prototype.getIdle = function() {
 
 /** @param {number} value */
 proto.api.ComponentStats.CPUStats.prototype.setIdle = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3FloatField(this, 3, value);
 };
 
 
@@ -1834,7 +1834,7 @@ proto.api.ComponentStats.CPUStats.prototype.getPercentage = function() {
 
 /** @param {number} value */
 proto.api.ComponentStats.CPUStats.prototype.setPercentage = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3FloatField(this, 4, value);
 };
 
 
@@ -2012,7 +2012,7 @@ proto.api.ComponentStats.MemoryStats.prototype.getMemory = function() {
 
 /** @param {number} value */
 proto.api.ComponentStats.MemoryStats.prototype.setMemory = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -2027,7 +2027,7 @@ proto.api.ComponentStats.MemoryStats.prototype.getSwap = function() {
 
 /** @param {number} value */
 proto.api.ComponentStats.MemoryStats.prototype.setSwap = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -2042,7 +2042,7 @@ proto.api.ComponentStats.MemoryStats.prototype.getHeap = function() {
 
 /** @param {number} value */
 proto.api.ComponentStats.MemoryStats.prototype.setHeap = function(value) {
-  jspb.Message.setField(this, 10, value);
+  jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
@@ -2057,7 +2057,7 @@ proto.api.ComponentStats.MemoryStats.prototype.getStack = function() {
 
 /** @param {number} value */
 proto.api.ComponentStats.MemoryStats.prototype.setStack = function(value) {
-  jspb.Message.setField(this, 11, value);
+  jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
@@ -2072,7 +2072,7 @@ proto.api.ComponentStats.prototype.getUptime = function() {
 
 /** @param {number} value */
 proto.api.ComponentStats.prototype.setUptime = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -2147,7 +2147,7 @@ proto.api.ComponentStats.prototype.getGoroutines = function() {
 
 /** @param {number} value */
 proto.api.ComponentStats.prototype.setGoroutines = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -2162,7 +2162,7 @@ proto.api.ComponentStats.prototype.getGcCpuFraction = function() {
 
 /** @param {number} value */
 proto.api.ComponentStats.prototype.setGcCpuFraction = function(value) {
-  jspb.Message.setField(this, 5, value);
+  jspb.Message.setProto3FloatField(this, 5, value);
 };
 
 

@@ -26,7 +26,7 @@ class MonitorClient extends \Grpc\BaseStub {
      */
     public function RouterStatus($metadata = [], $options = []) {
         return $this->_clientStreamRequest('/monitor.Monitor/RouterStatus',
-        ['\Google\Protobuf\Empty','decode'],
+        ['\Google\Protobuf\GPBEmpty','decode'],
         $metadata, $options);
     }
 
@@ -36,7 +36,7 @@ class MonitorClient extends \Grpc\BaseStub {
      */
     public function GatewayStatus($metadata = [], $options = []) {
         return $this->_clientStreamRequest('/monitor.Monitor/GatewayStatus',
-        ['\Google\Protobuf\Empty','decode'],
+        ['\Google\Protobuf\GPBEmpty','decode'],
         $metadata, $options);
     }
 
@@ -46,7 +46,7 @@ class MonitorClient extends \Grpc\BaseStub {
      */
     public function GatewayUplink($metadata = [], $options = []) {
         return $this->_clientStreamRequest('/monitor.Monitor/GatewayUplink',
-        ['\Google\Protobuf\Empty','decode'],
+        ['\Google\Protobuf\GPBEmpty','decode'],
         $metadata, $options);
     }
 
@@ -56,7 +56,7 @@ class MonitorClient extends \Grpc\BaseStub {
      */
     public function GatewayDownlink($metadata = [], $options = []) {
         return $this->_clientStreamRequest('/monitor.Monitor/GatewayDownlink',
-        ['\Google\Protobuf\Empty','decode'],
+        ['\Google\Protobuf\GPBEmpty','decode'],
         $metadata, $options);
     }
 
@@ -66,7 +66,7 @@ class MonitorClient extends \Grpc\BaseStub {
      */
     public function BrokerStatus($metadata = [], $options = []) {
         return $this->_clientStreamRequest('/monitor.Monitor/BrokerStatus',
-        ['\Google\Protobuf\Empty','decode'],
+        ['\Google\Protobuf\GPBEmpty','decode'],
         $metadata, $options);
     }
 
@@ -76,7 +76,7 @@ class MonitorClient extends \Grpc\BaseStub {
      */
     public function BrokerUplink($metadata = [], $options = []) {
         return $this->_clientStreamRequest('/monitor.Monitor/BrokerUplink',
-        ['\Google\Protobuf\Empty','decode'],
+        ['\Google\Protobuf\GPBEmpty','decode'],
         $metadata, $options);
     }
 
@@ -86,7 +86,7 @@ class MonitorClient extends \Grpc\BaseStub {
      */
     public function BrokerDownlink($metadata = [], $options = []) {
         return $this->_clientStreamRequest('/monitor.Monitor/BrokerDownlink',
-        ['\Google\Protobuf\Empty','decode'],
+        ['\Google\Protobuf\GPBEmpty','decode'],
         $metadata, $options);
     }
 
@@ -96,7 +96,7 @@ class MonitorClient extends \Grpc\BaseStub {
      */
     public function HandlerStatus($metadata = [], $options = []) {
         return $this->_clientStreamRequest('/monitor.Monitor/HandlerStatus',
-        ['\Google\Protobuf\Empty','decode'],
+        ['\Google\Protobuf\GPBEmpty','decode'],
         $metadata, $options);
     }
 
@@ -106,7 +106,7 @@ class MonitorClient extends \Grpc\BaseStub {
      */
     public function HandlerUplink($metadata = [], $options = []) {
         return $this->_clientStreamRequest('/monitor.Monitor/HandlerUplink',
-        ['\Google\Protobuf\Empty','decode'],
+        ['\Google\Protobuf\GPBEmpty','decode'],
         $metadata, $options);
     }
 
@@ -116,7 +116,7 @@ class MonitorClient extends \Grpc\BaseStub {
      */
     public function HandlerDownlink($metadata = [], $options = []) {
         return $this->_clientStreamRequest('/monitor.Monitor/HandlerDownlink',
-        ['\Google\Protobuf\Empty','decode'],
+        ['\Google\Protobuf\GPBEmpty','decode'],
         $metadata, $options);
     }
 
@@ -126,7 +126,7 @@ class MonitorClient extends \Grpc\BaseStub {
      */
     public function NetworkServerStatus($metadata = [], $options = []) {
         return $this->_clientStreamRequest('/monitor.Monitor/NetworkServerStatus',
-        ['\Google\Protobuf\Empty','decode'],
+        ['\Google\Protobuf\GPBEmpty','decode'],
         $metadata, $options);
     }
 

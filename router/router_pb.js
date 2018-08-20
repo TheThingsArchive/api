@@ -359,7 +359,7 @@ proto.router.UplinkMessage.prototype.getPayload_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.router.UplinkMessage.prototype.setPayload = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -701,7 +701,7 @@ proto.router.DownlinkMessage.prototype.getPayload_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.router.DownlinkMessage.prototype.setPayload = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -1081,7 +1081,7 @@ proto.router.DeviceActivationRequest.prototype.getPayload_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.router.DeviceActivationRequest.prototype.setPayload = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -1150,7 +1150,7 @@ proto.router.DeviceActivationRequest.prototype.getDevEui_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.router.DeviceActivationRequest.prototype.setDevEui = function(value) {
-  jspb.Message.setField(this, 11, value);
+  jspb.Message.setProto3BytesField(this, 11, value);
 };
 
 
@@ -1189,7 +1189,7 @@ proto.router.DeviceActivationRequest.prototype.getAppEui_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.router.DeviceActivationRequest.prototype.setAppEui = function(value) {
-  jspb.Message.setField(this, 12, value);
+  jspb.Message.setProto3BytesField(this, 12, value);
 };
 
 
@@ -1567,7 +1567,7 @@ proto.router.GatewayStatusRequest.prototype.getGatewayId = function() {
 
 /** @param {string} value */
 proto.router.GatewayStatusRequest.prototype.setGatewayId = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1723,7 +1723,7 @@ proto.router.GatewayStatusResponse.prototype.getLastSeen = function() {
 
 /** @param {number} value */
 proto.router.GatewayStatusResponse.prototype.setLastSeen = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -2287,7 +2287,7 @@ proto.router.Status.prototype.getConnectedGateways = function() {
 
 /** @param {number} value */
 proto.router.Status.prototype.setConnectedGateways = function(value) {
-  jspb.Message.setField(this, 21, value);
+  jspb.Message.setProto3IntField(this, 21, value);
 };
 
 
@@ -2302,7 +2302,7 @@ proto.router.Status.prototype.getConnectedBrokers = function() {
 
 /** @param {number} value */
 proto.router.Status.prototype.setConnectedBrokers = function(value) {
-  jspb.Message.setField(this, 22, value);
+  jspb.Message.setProto3IntField(this, 22, value);
 };
 
 

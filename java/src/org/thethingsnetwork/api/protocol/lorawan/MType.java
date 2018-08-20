@@ -111,7 +111,7 @@ public enum MType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProtocolProto.getDescriptor().getEnumTypes().get(3);
+    return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProto.getDescriptor().getEnumTypes().get(3);
   }
 
   private static final MType[] VALUES = values();

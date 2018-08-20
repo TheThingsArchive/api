@@ -133,7 +133,7 @@ proto.trace.Trace.deserializeBinaryFromReader = function(msg, reader) {
     case 6:
       var value = msg.getMetadataMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
          });
       break;
     case 11:
@@ -231,7 +231,7 @@ proto.trace.Trace.prototype.getId = function() {
 
 /** @param {string} value */
 proto.trace.Trace.prototype.setId = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -246,7 +246,7 @@ proto.trace.Trace.prototype.getTime = function() {
 
 /** @param {number} value */
 proto.trace.Trace.prototype.setTime = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -261,7 +261,7 @@ proto.trace.Trace.prototype.getServiceId = function() {
 
 /** @param {string} value */
 proto.trace.Trace.prototype.setServiceId = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -276,7 +276,7 @@ proto.trace.Trace.prototype.getServiceName = function() {
 
 /** @param {string} value */
 proto.trace.Trace.prototype.setServiceName = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -291,7 +291,7 @@ proto.trace.Trace.prototype.getEvent = function() {
 
 /** @param {string} value */
 proto.trace.Trace.prototype.setEvent = function(value) {
-  jspb.Message.setField(this, 5, value);
+  jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -315,15 +315,15 @@ proto.trace.Trace.prototype.clearMetadataMap = function() {
 
 /**
  * repeated Trace parents = 11;
- * @return {!Array.<!proto.trace.Trace>}
+ * @return {!Array<!proto.trace.Trace>}
  */
 proto.trace.Trace.prototype.getParentsList = function() {
-  return /** @type{!Array.<!proto.trace.Trace>} */ (
+  return /** @type{!Array<!proto.trace.Trace>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.trace.Trace, 11));
 };
 
 
-/** @param {!Array.<!proto.trace.Trace>} value */
+/** @param {!Array<!proto.trace.Trace>} value */
 proto.trace.Trace.prototype.setParentsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 11, value);
 };

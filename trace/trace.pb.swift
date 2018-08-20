@@ -23,8 +23,10 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// Trace information
-struct Trace_Trace: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Trace"
+struct Trace_Trace {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   /// Generated ID
   var id: String = String()
@@ -50,11 +52,24 @@ struct Trace_Trace: SwiftProtobuf.Message {
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
+// MARK: - Code below here is support for the SwiftProtobuf runtime.
+
+fileprivate let _protobuf_package = "trace"
+
+extension Trace_Trace: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".Trace"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "id"),
+    2: .same(proto: "time"),
+    3: .standard(proto: "service_id"),
+    4: .standard(proto: "service_name"),
+    5: .same(proto: "event"),
+    6: .same(proto: "metadata"),
+    11: .same(proto: "parents"),
+  ]
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
@@ -70,10 +85,6 @@ struct Trace_Trace: SwiftProtobuf.Message {
     }
   }
 
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.id.isEmpty {
       try visitor.visitSingularStringField(value: self.id, fieldNumber: 1)
@@ -98,32 +109,16 @@ struct Trace_Trace: SwiftProtobuf.Message {
     }
     try unknownFields.traverse(visitor: &visitor)
   }
-}
 
-// MARK: - Code below here is support for the SwiftProtobuf runtime.
-
-fileprivate let _protobuf_package = "trace"
-
-extension Trace_Trace: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "id"),
-    2: .same(proto: "time"),
-    3: .standard(proto: "service_id"),
-    4: .standard(proto: "service_name"),
-    5: .same(proto: "event"),
-    6: .same(proto: "metadata"),
-    11: .same(proto: "parents"),
-  ]
-
-  func _protobuf_generated_isEqualTo(other: Trace_Trace) -> Bool {
-    if self.id != other.id {return false}
-    if self.time != other.time {return false}
-    if self.serviceID != other.serviceID {return false}
-    if self.serviceName != other.serviceName {return false}
-    if self.event != other.event {return false}
-    if self.metadata != other.metadata {return false}
-    if self.parents != other.parents {return false}
-    if unknownFields != other.unknownFields {return false}
+  static func ==(lhs: Trace_Trace, rhs: Trace_Trace) -> Bool {
+    if lhs.id != rhs.id {return false}
+    if lhs.time != rhs.time {return false}
+    if lhs.serviceID != rhs.serviceID {return false}
+    if lhs.serviceName != rhs.serviceName {return false}
+    if lhs.event != rhs.event {return false}
+    if lhs.metadata != rhs.metadata {return false}
+    if lhs.parents != rhs.parents {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }

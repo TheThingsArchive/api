@@ -76,9 +76,36 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
      */
     private $location = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $gateway_id
+     *     @type bool $gateway_trusted
+     *           Indicates whether the gateway is trusted. Components that are able to verify gateway trust MUST do so and set this value accordingly
+     *     @type int $timestamp
+     *           Timestamp (uptime of LoRa module) in microseconds with rollover
+     *     @type int|string $time
+     *           Time in Unix nanoseconds
+     *     @type string $encrypted_time
+     *           Encrypted time from the Gateway FPGA
+     *     @type int $rf_chain
+     *     @type int $channel
+     *     @type \Gateway\RxMetadata\Antenna[]|\Google\Protobuf\Internal\RepeatedField $antennas
+     *     @type int|string $frequency
+     *           Frequency in Hz
+     *     @type float $rssi
+     *           Received signal strength in dBm
+     *     @type float $snr
+     *           Signal-to-noise-ratio in dB
+     *     @type \Gateway\LocationMetadata $location
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Gateway\Gateway::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
@@ -262,12 +289,12 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .gateway.RxMetadata.Antenna antennas = 30;</code>
-     * @param \Gateway\RxMetadata_Antenna[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Gateway\RxMetadata\Antenna[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAntennas($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Gateway\RxMetadata_Antenna::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Gateway\RxMetadata\Antenna::class);
         $this->antennas = $arr;
 
         return $this;

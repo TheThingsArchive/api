@@ -66,7 +66,7 @@ public enum Major
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProtocolProto.getDescriptor().getEnumTypes().get(2);
+    return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProto.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final Major[] VALUES = values();

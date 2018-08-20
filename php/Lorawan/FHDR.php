@@ -30,9 +30,21 @@ class FHDR extends \Google\Protobuf\Internal\Message
      */
     private $f_opts;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $dev_addr
+     *     @type \Lorawan\FCtrl $f_ctrl
+     *     @type int $f_cnt
+     *     @type \Lorawan\MACCommand[]|\Google\Protobuf\Internal\RepeatedField $f_opts
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Protocol\Lorawan\Lorawan::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

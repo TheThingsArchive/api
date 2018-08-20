@@ -28,7 +28,7 @@ class RouterClient extends \Grpc\BaseStub {
      */
     public function GatewayStatus($metadata = [], $options = []) {
         return $this->_clientStreamRequest('/router.Router/GatewayStatus',
-        ['\Google\Protobuf\Empty','decode'],
+        ['\Google\Protobuf\GPBEmpty','decode'],
         $metadata, $options);
     }
 
@@ -39,7 +39,7 @@ class RouterClient extends \Grpc\BaseStub {
      */
     public function Uplink($metadata = [], $options = []) {
         return $this->_clientStreamRequest('/router.Router/Uplink',
-        ['\Google\Protobuf\Empty','decode'],
+        ['\Google\Protobuf\GPBEmpty','decode'],
         $metadata, $options);
     }
 

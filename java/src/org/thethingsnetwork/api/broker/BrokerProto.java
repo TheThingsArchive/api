@@ -97,7 +97,7 @@ public final class BrokerProto {
       "ithub.com/TheThingsNetwork/api/gateway/g" +
       "ateway.proto\0321github.com/TheThingsNetwor" +
       "k/api/trace/trace.proto\"\350\001\n\016DownlinkOpti" +
-      "on\022\022\n\nidentifier\030\001 \001(\t\022!\n\ngateway_id\030\002 \001",
+      "on\022\022\n\nidentifier\030\001 \001(\t\022!\n\ngateway_id\030\002 \001" +
       "(\tB\r\342\336\037\tGatewayID\022\r\n\005score\030\003 \001(\r\022\020\n\010dead" +
       "line\030\004 \001(\003\022?\n\026protocol_configuration\030\005 \001" +
       "(\0132\031.protocol.TxConfigurationB\004\310\336\037\000\022=\n\025g" +
@@ -107,7 +107,7 @@ public final class BrokerProto {
       "l.Message\022P\n\007dev_eui\030\013 \001(\014B?\342\336\037\006DevEUI\332\336" +
       "\0371github.com/TheThingsNetwork/ttn/core/t" +
       "ypes.DevEUI\022P\n\007app_eui\030\014 \001(\014B?\342\336\037\006AppEUI" +
-      "\332\336\0371github.com/TheThingsNetwork/ttn/core",
+      "\332\336\0371github.com/TheThingsNetwork/ttn/core" +
       "/types.AppEUI\022\031\n\006app_id\030\r \001(\tB\t\342\336\037\005AppID" +
       "\022\031\n\006dev_id\030\016 \001(\tB\t\342\336\037\005DevID\0225\n\021protocol_" +
       "metadata\030\025 \001(\0132\024.protocol.RxMetadataB\004\310\336" +
@@ -117,7 +117,7 @@ public final class BrokerProto {
       "2\014.trace.Trace\"\366\002\n\017DownlinkMessage\022\017\n\007pa" +
       "yload\030\001 \001(\014\022\"\n\007message\030\002 \001(\0132\021.protocol." +
       "Message\022T\n\007dev_eui\030\013 \001(\014BC\310\336\037\000\342\336\037\006DevEUI" +
-      "\332\336\0371github.com/TheThingsNetwork/ttn/core",
+      "\332\336\0371github.com/TheThingsNetwork/ttn/core" +
       "/types.DevEUI\022T\n\007app_eui\030\014 \001(\014BC\310\336\037\000\342\336\037\006" +
       "AppEUI\332\336\0371github.com/TheThingsNetwork/tt" +
       "n/core/types.AppEUI\022\031\n\006app_id\030\r \001(\tB\t\342\336\037" +
@@ -127,7 +127,7 @@ public final class BrokerProto {
       "ceActivationResponse\022\017\n\007payload\030\001 \001(\014\022\"\n" +
       "\007message\030\002 \001(\0132\021.protocol.Message\022/\n\017dow" +
       "nlink_option\030\013 \001(\0132\026.broker.DownlinkOpti" +
-      "on\022\033\n\005trace\030\025 \001(\0132\014.trace.Trace\"\366\003\n\031Dedu",
+      "on\022\033\n\005trace\030\025 \001(\0132\014.trace.Trace\"\366\003\n\031Dedu" +
       "plicatedUplinkMessage\022\017\n\007payload\030\001 \001(\014\022\"" +
       "\n\007message\030\002 \001(\0132\021.protocol.Message\022P\n\007de" +
       "v_eui\030\013 \001(\014B?\342\336\037\006DevEUI\332\336\0371github.com/Th" +
@@ -137,7 +137,7 @@ public final class BrokerProto {
       "\n\006app_id\030\r \001(\tB\t\342\336\037\005AppID\022\031\n\006dev_id\030\016 \001(" +
       "\tB\t\342\336\037\005DevID\0225\n\021protocol_metadata\030\025 \001(\0132" +
       "\024.protocol.RxMetadataB\004\310\336\037\000\022-\n\020gateway_m" +
-      "etadata\030\026 \003(\0132\023.gateway.RxMetadata\022\023\n\013se",
+      "etadata\030\026 \003(\0132\023.gateway.RxMetadata\022\023\n\013se" +
       "rver_time\030\027 \001(\003\0222\n\021response_template\030\037 \001" +
       "(\0132\027.broker.DownlinkMessage\022\033\n\005trace\030) \001" +
       "(\0132\014.trace.Trace\"\360\003\n\027DeviceActivationReq" +
@@ -147,7 +147,7 @@ public final class BrokerProto {
       "k/ttn/core/types.DevEUI\022T\n\007app_eui\030\014 \001(\014" +
       "BC\310\336\037\000\342\336\037\006AppEUI\332\336\0371github.com/TheThings" +
       "Network/ttn/core/types.AppEUI\0225\n\021protoco" +
-      "l_metadata\030\025 \001(\0132\024.protocol.RxMetadataB\004",
+      "l_metadata\030\025 \001(\0132\024.protocol.RxMetadataB\004" +
       "\310\336\037\000\0223\n\020gateway_metadata\030\026 \001(\0132\023.gateway" +
       ".RxMetadataB\004\310\336\037\000\0229\n\023activation_metadata" +
       "\030\027 \001(\0132\034.protocol.ActivationMetadata\0220\n\020" +
@@ -157,7 +157,7 @@ public final class BrokerProto {
       "ayload\030\001 \001(\014\022\"\n\007message\030\002 \001(\0132\021.protocol" +
       ".Message\022T\n\007dev_eui\030\013 \001(\014BC\310\336\037\000\342\336\037\006DevEU" +
       "I\332\336\0371github.com/TheThingsNetwork/ttn/cor" +
-      "e/types.DevEUI\022T\n\007app_eui\030\014 \001(\014BC\310\336\037\000\342\336\037",
+      "e/types.DevEUI\022T\n\007app_eui\030\014 \001(\014BC\310\336\037\000\342\336\037" +
       "\006AppEUI\332\336\0371github.com/TheThingsNetwork/t" +
       "tn/core/types.AppEUI\022\031\n\006app_id\030\r \001(\tB\t\342\336" +
       "\037\005AppID\022\031\n\006dev_id\030\016 \001(\tB\t\342\336\037\005DevID\0225\n\021pr" +
@@ -167,7 +167,7 @@ public final class BrokerProto {
       "\027 \001(\0132\034.protocol.ActivationMetadata\022\023\n\013s" +
       "erver_time\030\030 \001(\003\022;\n\021response_template\030\037 " +
       "\001(\0132 .broker.DeviceActivationResponse\022\033\n" +
-      "\005trace\030) \001(\0132\014.trace.Trace\"\263\002\n\032Activatio",
+      "\005trace\030) \001(\0132\014.trace.Trace\"\263\002\n\032Activatio" +
       "nChallengeRequest\022\017\n\007payload\030\001 \001(\014\022\"\n\007me" +
       "ssage\030\002 \001(\0132\021.protocol.Message\022T\n\007dev_eu" +
       "i\030\013 \001(\014BC\310\336\037\000\342\336\037\006DevEUI\332\336\0371github.com/Th" +
@@ -177,7 +177,7 @@ public final class BrokerProto {
       "UI\022\031\n\006app_id\030\r \001(\tB\t\342\336\037\005AppID\022\031\n\006dev_id\030" +
       "\016 \001(\tB\t\342\336\037\005DevID\"R\n\033ActivationChallengeR" +
       "esponse\022\017\n\007payload\030\001 \001(\014\022\"\n\007message\030\002 \001(" +
-      "\0132\021.protocol.Message\"\022\n\020SubscribeRequest",
+      "\0132\021.protocol.Message\"\022\n\020SubscribeRequest" +
       "\"\017\n\rStatusRequest\"\344\002\n\006Status\022&\n\006system\030\001" +
       " \001(\0132\020.api.SystemStatsB\004\310\336\037\000\022,\n\tcomponen" +
       "t\030\002 \001(\0132\023.api.ComponentStatsB\004\310\336\037\000\022\032\n\006up" +
@@ -187,7 +187,7 @@ public final class BrokerProto {
       "\022&\n\022activations_unique\030\017 \001(\0132\n.api.Rates" +
       "\022\'\n\rdeduplication\030\020 \001(\0132\020.api.Percentile" +
       "s\022\031\n\021connected_routers\030\025 \001(\r\022\032\n\022connecte" +
-      "d_handlers\030\026 \001(\r\"^\n\036ApplicationHandlerRe",
+      "d_handlers\030\026 \001(\r\"^\n\036ApplicationHandlerRe" +
       "gistration\022\031\n\006app_id\030\001 \001(\tB\t\342\336\037\005AppID\022!\n" +
       "\nhandler_id\030\002 \001(\tB\r\342\336\037\tHandlerID2\242\002\n\006Bro" +
       "ker\022?\n\tAssociate\022\025.broker.UplinkMessage\032" +
@@ -197,7 +197,7 @@ public final class BrokerProto {
       "oker.DownlinkMessage\032\026.google.protobuf.E" +
       "mpty(\001\022M\n\010Activate\022\037.broker.DeviceActiva" +
       "tionRequest\032 .broker.DeviceActivationRes" +
-      "ponse2\241\001\n\rBrokerManager\022\\\n\032RegisterAppli",
+      "ponse2\241\001\n\rBrokerManager\022\\\n\032RegisterAppli" +
       "cationHandler\022&.broker.ApplicationHandle" +
       "rRegistration\032\026.google.protobuf.Empty\0222\n" +
       "\tGetStatus\022\025.broker.StatusRequest\032\016.brok" +
