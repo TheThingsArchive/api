@@ -20,9 +20,18 @@ class AnnouncementsResponse extends \Google\Protobuf\Internal\Message
      */
     private $services;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Discovery\Announcement[]|\Google\Protobuf\Internal\RepeatedField $services
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Discovery\Discovery::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

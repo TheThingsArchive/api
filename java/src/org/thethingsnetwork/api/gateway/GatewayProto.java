@@ -62,7 +62,7 @@ public final class GatewayProto {
       "teway.LocationMetadata.LocationSource\"T\n" +
       "\016LocationSource\022\013\n\007UNKNOWN\020\000\022\007\n\003GPS\020\001\022\n\n" +
       "\006CONFIG\020\002\022\014\n\010REGISTRY\020\003\022\022\n\016IP_GEOLOCATIO" +
-      "N\020\004\"\305\004\n\nRxMetadata\022!\n\ngateway_id\030\001 \001(\tB\r",
+      "N\020\004\"\305\004\n\nRxMetadata\022!\n\ngateway_id\030\001 \001(\tB\r" +
       "\342\336\037\tGatewayID\022\027\n\017gateway_trusted\030\002 \001(\010\022\021" +
       "\n\ttimestamp\030\013 \001(\r\022\014\n\004time\030\014 \001(\003\022\026\n\016encry" +
       "pted_time\030\r \001(\014\022\020\n\010rf_chain\030\025 \001(\r\022\017\n\007cha" +
@@ -72,7 +72,7 @@ public final class GatewayProto {
       "NR\022+\n\010location\030) \001(\0132\031.gateway.LocationM" +
       "etadata\032\201\002\n\007Antenna\022\017\n\007antenna\030\001 \001(\r\022\017\n\007" +
       "channel\030\002 \001(\r\022\026\n\004rssi\030\003 \001(\002B\010\342\336\037\004RSSI\022%\n" +
-      "\014channel_rssi\030\005 \001(\002B\017\342\336\037\013ChannelRSSI\022:\n\027",
+      "\014channel_rssi\030\005 \001(\002B\017\342\336\037\013ChannelRSSI\022:\n\027" +
       "rssi_standard_deviation\030\006 \001(\002B\031\342\336\037\025RSSIS" +
       "tandardDeviation\022\030\n\020frequency_offset\030\007 \001" +
       "(\003\022\024\n\003snr\030\004 \001(\002B\007\342\336\037\003SNR\022\026\n\016encrypted_ti" +
@@ -82,7 +82,7 @@ public final class GatewayProto {
       "\n\026polarization_inversion\030\037 \001(\010\022\033\n\023freque" +
       "ncy_deviation\030  \001(\r\"\303\005\n\006Status\022\021\n\ttimest" +
       "amp\030\001 \001(\r\022\014\n\004time\030\002 \001(\003\022\027\n\017gateway_trust" +
-      "ed\030\003 \001(\010\022\021\n\tboot_time\030\004 \001(\003\022\022\n\002ip\030\013 \003(\tB",
+      "ed\030\003 \001(\010\022\021\n\tboot_time\030\004 \001(\003\022\022\n\002ip\030\013 \003(\tB" +
       "\006\342\336\037\002IP\022\020\n\010platform\030\014 \001(\t\022\025\n\rcontact_ema" +
       "il\030\r \001(\t\022\023\n\013description\030\016 \001(\t\022\026\n\016frequen" +
       "cy_plan\030\017 \001(\t\022\016\n\006bridge\030\020 \001(\t\022\016\n\006router\030" +
@@ -92,7 +92,7 @@ public final class GatewayProto {
       "\n\003rtt\030\037 \001(\rB\007\342\336\037\003RTT\022\r\n\005rx_in\030) \001(\r\022\r\n\005r" +
       "x_ok\030* \001(\r\022\r\n\005tx_in\030+ \001(\r\022\r\n\005tx_ok\030, \001(\r" +
       "\022\r\n\005lm_ok\030- \001(\r\022\r\n\005lm_st\030. \001(\r\022\r\n\005lm_nw\030" +
-      "/ \001(\r\022\027\n\005l_pps\0300 \001(\rB\010\342\336\037\004LPPS\022-\n\002os\0303 \001",
+      "/ \001(\r\022\027\n\005l_pps\0300 \001(\rB\010\342\336\037\004LPPS\022-\n\002os\0303 \001" +
       "(\0132\031.gateway.Status.OSMetricsB\006\342\336\037\002OS\022\020\n" +
       "\010messages\0304 \003(\t\032\227\001\n\tOSMetrics\022\016\n\006load_1\030" +
       "\001 \001(\002\022\016\n\006load_5\030\002 \001(\002\022\017\n\007load_15\030\003 \001(\002\022)" +

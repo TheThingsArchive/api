@@ -48,9 +48,28 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
      */
     private $frequency_deviation = 0;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type int $timestamp
+     *           Timestamp (uptime of LoRa module) in microseconds with rollover
+     *     @type int $rf_chain
+     *     @type int|string $frequency
+     *           Frequency in Hz
+     *     @type int $power
+     *           Transmit power in dBm
+     *     @type bool $polarization_inversion
+     *           LoRa polarization inversion (basically always true for messages from gateway to node)
+     *     @type int $frequency_deviation
+     *           FSK frequency deviation in Hz
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Gateway\Gateway::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

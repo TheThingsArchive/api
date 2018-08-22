@@ -1,19 +1,19 @@
 package org.thethingsnetwork.api.protocol.lorawan;
 
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
+import static io.grpc.stub.ClientCalls.blockingUnaryCall;
+import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -30,30 +30,69 @@ public final class DevAddrManagerGrpc {
   public static final String SERVICE_NAME = "lorawan.DevAddrManager";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.PrefixesRequest,
-      org.thethingsnetwork.api.protocol.lorawan.PrefixesResponse> METHOD_GET_PREFIXES =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.protocol.lorawan.PrefixesRequest, org.thethingsnetwork.api.protocol.lorawan.PrefixesResponse>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "lorawan.DevAddrManager", "GetPrefixes"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.protocol.lorawan.PrefixesRequest.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.protocol.lorawan.PrefixesResponse.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest,
-      org.thethingsnetwork.api.protocol.lorawan.DevAddrResponse> METHOD_GET_DEV_ADDR =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest, org.thethingsnetwork.api.protocol.lorawan.DevAddrResponse>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "lorawan.DevAddrManager", "GetDevAddr"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.protocol.lorawan.DevAddrResponse.getDefaultInstance()))
-          .build();
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.PrefixesRequest,
+      org.thethingsnetwork.api.protocol.lorawan.PrefixesResponse> getGetPrefixesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPrefixes",
+      requestType = org.thethingsnetwork.api.protocol.lorawan.PrefixesRequest.class,
+      responseType = org.thethingsnetwork.api.protocol.lorawan.PrefixesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.PrefixesRequest,
+      org.thethingsnetwork.api.protocol.lorawan.PrefixesResponse> getGetPrefixesMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.PrefixesRequest, org.thethingsnetwork.api.protocol.lorawan.PrefixesResponse> getGetPrefixesMethod;
+    if ((getGetPrefixesMethod = DevAddrManagerGrpc.getGetPrefixesMethod) == null) {
+      synchronized (DevAddrManagerGrpc.class) {
+        if ((getGetPrefixesMethod = DevAddrManagerGrpc.getGetPrefixesMethod) == null) {
+          DevAddrManagerGrpc.getGetPrefixesMethod = getGetPrefixesMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.protocol.lorawan.PrefixesRequest, org.thethingsnetwork.api.protocol.lorawan.PrefixesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "lorawan.DevAddrManager", "GetPrefixes"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.protocol.lorawan.PrefixesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.protocol.lorawan.PrefixesResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new DevAddrManagerMethodDescriptorSupplier("GetPrefixes"))
+                  .build();
+          }
+        }
+     }
+     return getGetPrefixesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest,
+      org.thethingsnetwork.api.protocol.lorawan.DevAddrResponse> getGetDevAddrMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDevAddr",
+      requestType = org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest.class,
+      responseType = org.thethingsnetwork.api.protocol.lorawan.DevAddrResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest,
+      org.thethingsnetwork.api.protocol.lorawan.DevAddrResponse> getGetDevAddrMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest, org.thethingsnetwork.api.protocol.lorawan.DevAddrResponse> getGetDevAddrMethod;
+    if ((getGetDevAddrMethod = DevAddrManagerGrpc.getGetDevAddrMethod) == null) {
+      synchronized (DevAddrManagerGrpc.class) {
+        if ((getGetDevAddrMethod = DevAddrManagerGrpc.getGetDevAddrMethod) == null) {
+          DevAddrManagerGrpc.getGetDevAddrMethod = getGetDevAddrMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest, org.thethingsnetwork.api.protocol.lorawan.DevAddrResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "lorawan.DevAddrManager", "GetDevAddr"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.protocol.lorawan.DevAddrResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new DevAddrManagerMethodDescriptorSupplier("GetDevAddr"))
+                  .build();
+          }
+        }
+     }
+     return getGetDevAddrMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -92,7 +131,7 @@ public final class DevAddrManagerGrpc {
      */
     public void getPrefixes(org.thethingsnetwork.api.protocol.lorawan.PrefixesRequest request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.protocol.lorawan.PrefixesResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_GET_PREFIXES, responseObserver);
+      asyncUnimplementedUnaryCall(getGetPrefixesMethod(), responseObserver);
     }
 
     /**
@@ -102,20 +141,20 @@ public final class DevAddrManagerGrpc {
      */
     public void getDevAddr(org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.protocol.lorawan.DevAddrResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_GET_DEV_ADDR, responseObserver);
+      asyncUnimplementedUnaryCall(getGetDevAddrMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            METHOD_GET_PREFIXES,
+            getGetPrefixesMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.protocol.lorawan.PrefixesRequest,
                 org.thethingsnetwork.api.protocol.lorawan.PrefixesResponse>(
                   this, METHODID_GET_PREFIXES)))
           .addMethod(
-            METHOD_GET_DEV_ADDR,
+            getGetDevAddrMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest,
@@ -154,7 +193,7 @@ public final class DevAddrManagerGrpc {
     public void getPrefixes(org.thethingsnetwork.api.protocol.lorawan.PrefixesRequest request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.protocol.lorawan.PrefixesResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_GET_PREFIXES, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetPrefixesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -165,7 +204,7 @@ public final class DevAddrManagerGrpc {
     public void getDevAddr(org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.protocol.lorawan.DevAddrResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_GET_DEV_ADDR, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetDevAddrMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -197,7 +236,7 @@ public final class DevAddrManagerGrpc {
      */
     public org.thethingsnetwork.api.protocol.lorawan.PrefixesResponse getPrefixes(org.thethingsnetwork.api.protocol.lorawan.PrefixesRequest request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_GET_PREFIXES, getCallOptions(), request);
+          getChannel(), getGetPrefixesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -207,7 +246,7 @@ public final class DevAddrManagerGrpc {
      */
     public org.thethingsnetwork.api.protocol.lorawan.DevAddrResponse getDevAddr(org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_GET_DEV_ADDR, getCallOptions(), request);
+          getChannel(), getGetDevAddrMethod(), getCallOptions(), request);
     }
   }
 
@@ -240,7 +279,7 @@ public final class DevAddrManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<org.thethingsnetwork.api.protocol.lorawan.PrefixesResponse> getPrefixes(
         org.thethingsnetwork.api.protocol.lorawan.PrefixesRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_GET_PREFIXES, getCallOptions()), request);
+          getChannel().newCall(getGetPrefixesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -251,7 +290,7 @@ public final class DevAddrManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<org.thethingsnetwork.api.protocol.lorawan.DevAddrResponse> getDevAddr(
         org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_GET_DEV_ADDR, getCallOptions()), request);
+          getChannel().newCall(getGetDevAddrMethod(), getCallOptions()), request);
     }
   }
 
@@ -299,10 +338,38 @@ public final class DevAddrManagerGrpc {
     }
   }
 
-  private static final class DevAddrManagerDescriptorSupplier implements io.grpc.protobuf.ProtoFileDescriptorSupplier {
+  private static abstract class DevAddrManagerBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
+    DevAddrManagerBaseDescriptorSupplier() {}
+
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProtocolProto.getDescriptor();
+      return org.thethingsnetwork.api.protocol.lorawan.LoRaWANDeviceAddressProto.getDescriptor();
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
+      return getFileDescriptor().findServiceByName("DevAddrManager");
+    }
+  }
+
+  private static final class DevAddrManagerFileDescriptorSupplier
+      extends DevAddrManagerBaseDescriptorSupplier {
+    DevAddrManagerFileDescriptorSupplier() {}
+  }
+
+  private static final class DevAddrManagerMethodDescriptorSupplier
+      extends DevAddrManagerBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
+    private final String methodName;
+
+    DevAddrManagerMethodDescriptorSupplier(String methodName) {
+      this.methodName = methodName;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
+      return getServiceDescriptor().findMethodByName(methodName);
     }
   }
 
@@ -315,9 +382,9 @@ public final class DevAddrManagerGrpc {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new DevAddrManagerDescriptorSupplier())
-              .addMethod(METHOD_GET_PREFIXES)
-              .addMethod(METHOD_GET_DEV_ADDR)
+              .setSchemaDescriptor(new DevAddrManagerFileDescriptorSupplier())
+              .addMethod(getGetPrefixesMethod())
+              .addMethod(getGetDevAddrMethod())
               .build();
         }
       }

@@ -15,7 +15,7 @@ package networkserver;
 option csharp_namespace = "TheThingsNetwork.API.Monitor";
 option go_package = "github.com/TheThingsNetwork/api/networkserver";
 option java_package = "org.thethingsnetwork.api.networkserver";
-option java_outer_classname = "MonitorProto";
+option java_outer_classname = "NetworkServerProto";
 option java_multiple_files = true;
 
 message DevicesRequest {

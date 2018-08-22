@@ -40,9 +40,25 @@ class DryUplinkResult extends \Google\Protobuf\Internal\Message
      */
     private $logs;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $payload
+     *           The binary payload
+     *     @type string $fields
+     *           The decoded fields
+     *     @type bool $valid
+     *           Was validation of the message successful
+     *     @type \Handler\LogEntry[]|\Google\Protobuf\Internal\RepeatedField $logs
+     *           Logs that have been generated while processing
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Handler\Handler::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

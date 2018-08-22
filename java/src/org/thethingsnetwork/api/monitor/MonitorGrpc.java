@@ -1,19 +1,19 @@
 package org.thethingsnetwork.api.monitor;
 
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
+import static io.grpc.stub.ClientCalls.blockingUnaryCall;
+import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  */
@@ -27,138 +27,357 @@ public final class MonitorGrpc {
   public static final String SERVICE_NAME = "monitor.Monitor";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.Status,
-      com.google.protobuf.Empty> METHOD_ROUTER_STATUS =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.router.Status, com.google.protobuf.Empty>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-          .setFullMethodName(generateFullMethodName(
-              "monitor.Monitor", "RouterStatus"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.router.Status.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.google.protobuf.Empty.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.gateway.Status,
-      com.google.protobuf.Empty> METHOD_GATEWAY_STATUS =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.gateway.Status, com.google.protobuf.Empty>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-          .setFullMethodName(generateFullMethodName(
-              "monitor.Monitor", "GatewayStatus"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.gateway.Status.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.google.protobuf.Empty.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.UplinkMessage,
-      com.google.protobuf.Empty> METHOD_GATEWAY_UPLINK =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.router.UplinkMessage, com.google.protobuf.Empty>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-          .setFullMethodName(generateFullMethodName(
-              "monitor.Monitor", "GatewayUplink"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.router.UplinkMessage.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.google.protobuf.Empty.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.DownlinkMessage,
-      com.google.protobuf.Empty> METHOD_GATEWAY_DOWNLINK =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.router.DownlinkMessage, com.google.protobuf.Empty>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-          .setFullMethodName(generateFullMethodName(
-              "monitor.Monitor", "GatewayDownlink"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.router.DownlinkMessage.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.google.protobuf.Empty.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.Status,
-      com.google.protobuf.Empty> METHOD_BROKER_STATUS =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.Status, com.google.protobuf.Empty>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-          .setFullMethodName(generateFullMethodName(
-              "monitor.Monitor", "BrokerStatus"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.broker.Status.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.google.protobuf.Empty.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage,
-      com.google.protobuf.Empty> METHOD_BROKER_UPLINK =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage, com.google.protobuf.Empty>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-          .setFullMethodName(generateFullMethodName(
-              "monitor.Monitor", "BrokerUplink"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.google.protobuf.Empty.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DownlinkMessage,
-      com.google.protobuf.Empty> METHOD_BROKER_DOWNLINK =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.DownlinkMessage, com.google.protobuf.Empty>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-          .setFullMethodName(generateFullMethodName(
-              "monitor.Monitor", "BrokerDownlink"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.broker.DownlinkMessage.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.google.protobuf.Empty.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.Status,
-      com.google.protobuf.Empty> METHOD_HANDLER_STATUS =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.Status, com.google.protobuf.Empty>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-          .setFullMethodName(generateFullMethodName(
-              "monitor.Monitor", "HandlerStatus"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.handler.Status.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.google.protobuf.Empty.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage,
-      com.google.protobuf.Empty> METHOD_HANDLER_UPLINK =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage, com.google.protobuf.Empty>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-          .setFullMethodName(generateFullMethodName(
-              "monitor.Monitor", "HandlerUplink"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.google.protobuf.Empty.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DownlinkMessage,
-      com.google.protobuf.Empty> METHOD_HANDLER_DOWNLINK =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.DownlinkMessage, com.google.protobuf.Empty>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-          .setFullMethodName(generateFullMethodName(
-              "monitor.Monitor", "HandlerDownlink"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.broker.DownlinkMessage.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.google.protobuf.Empty.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.networkserver.Status,
-      com.google.protobuf.Empty> METHOD_NETWORK_SERVER_STATUS =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.networkserver.Status, com.google.protobuf.Empty>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-          .setFullMethodName(generateFullMethodName(
-              "monitor.Monitor", "NetworkServerStatus"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.networkserver.Status.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.google.protobuf.Empty.getDefaultInstance()))
-          .build();
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.Status,
+      com.google.protobuf.Empty> getRouterStatusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RouterStatus",
+      requestType = org.thethingsnetwork.api.router.Status.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.Status,
+      com.google.protobuf.Empty> getRouterStatusMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.Status, com.google.protobuf.Empty> getRouterStatusMethod;
+    if ((getRouterStatusMethod = MonitorGrpc.getRouterStatusMethod) == null) {
+      synchronized (MonitorGrpc.class) {
+        if ((getRouterStatusMethod = MonitorGrpc.getRouterStatusMethod) == null) {
+          MonitorGrpc.getRouterStatusMethod = getRouterStatusMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.router.Status, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "monitor.Monitor", "RouterStatus"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.router.Status.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new MonitorMethodDescriptorSupplier("RouterStatus"))
+                  .build();
+          }
+        }
+     }
+     return getRouterStatusMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.gateway.Status,
+      com.google.protobuf.Empty> getGatewayStatusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GatewayStatus",
+      requestType = org.thethingsnetwork.api.gateway.Status.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.gateway.Status,
+      com.google.protobuf.Empty> getGatewayStatusMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.gateway.Status, com.google.protobuf.Empty> getGatewayStatusMethod;
+    if ((getGatewayStatusMethod = MonitorGrpc.getGatewayStatusMethod) == null) {
+      synchronized (MonitorGrpc.class) {
+        if ((getGatewayStatusMethod = MonitorGrpc.getGatewayStatusMethod) == null) {
+          MonitorGrpc.getGatewayStatusMethod = getGatewayStatusMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.gateway.Status, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "monitor.Monitor", "GatewayStatus"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.gateway.Status.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new MonitorMethodDescriptorSupplier("GatewayStatus"))
+                  .build();
+          }
+        }
+     }
+     return getGatewayStatusMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.UplinkMessage,
+      com.google.protobuf.Empty> getGatewayUplinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GatewayUplink",
+      requestType = org.thethingsnetwork.api.router.UplinkMessage.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.UplinkMessage,
+      com.google.protobuf.Empty> getGatewayUplinkMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.UplinkMessage, com.google.protobuf.Empty> getGatewayUplinkMethod;
+    if ((getGatewayUplinkMethod = MonitorGrpc.getGatewayUplinkMethod) == null) {
+      synchronized (MonitorGrpc.class) {
+        if ((getGatewayUplinkMethod = MonitorGrpc.getGatewayUplinkMethod) == null) {
+          MonitorGrpc.getGatewayUplinkMethod = getGatewayUplinkMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.router.UplinkMessage, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "monitor.Monitor", "GatewayUplink"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.router.UplinkMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new MonitorMethodDescriptorSupplier("GatewayUplink"))
+                  .build();
+          }
+        }
+     }
+     return getGatewayUplinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.DownlinkMessage,
+      com.google.protobuf.Empty> getGatewayDownlinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GatewayDownlink",
+      requestType = org.thethingsnetwork.api.router.DownlinkMessage.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.DownlinkMessage,
+      com.google.protobuf.Empty> getGatewayDownlinkMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.DownlinkMessage, com.google.protobuf.Empty> getGatewayDownlinkMethod;
+    if ((getGatewayDownlinkMethod = MonitorGrpc.getGatewayDownlinkMethod) == null) {
+      synchronized (MonitorGrpc.class) {
+        if ((getGatewayDownlinkMethod = MonitorGrpc.getGatewayDownlinkMethod) == null) {
+          MonitorGrpc.getGatewayDownlinkMethod = getGatewayDownlinkMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.router.DownlinkMessage, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "monitor.Monitor", "GatewayDownlink"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.router.DownlinkMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new MonitorMethodDescriptorSupplier("GatewayDownlink"))
+                  .build();
+          }
+        }
+     }
+     return getGatewayDownlinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.Status,
+      com.google.protobuf.Empty> getBrokerStatusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BrokerStatus",
+      requestType = org.thethingsnetwork.api.broker.Status.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.Status,
+      com.google.protobuf.Empty> getBrokerStatusMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.Status, com.google.protobuf.Empty> getBrokerStatusMethod;
+    if ((getBrokerStatusMethod = MonitorGrpc.getBrokerStatusMethod) == null) {
+      synchronized (MonitorGrpc.class) {
+        if ((getBrokerStatusMethod = MonitorGrpc.getBrokerStatusMethod) == null) {
+          MonitorGrpc.getBrokerStatusMethod = getBrokerStatusMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.Status, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "monitor.Monitor", "BrokerStatus"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.broker.Status.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new MonitorMethodDescriptorSupplier("BrokerStatus"))
+                  .build();
+          }
+        }
+     }
+     return getBrokerStatusMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage,
+      com.google.protobuf.Empty> getBrokerUplinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BrokerUplink",
+      requestType = org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage,
+      com.google.protobuf.Empty> getBrokerUplinkMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage, com.google.protobuf.Empty> getBrokerUplinkMethod;
+    if ((getBrokerUplinkMethod = MonitorGrpc.getBrokerUplinkMethod) == null) {
+      synchronized (MonitorGrpc.class) {
+        if ((getBrokerUplinkMethod = MonitorGrpc.getBrokerUplinkMethod) == null) {
+          MonitorGrpc.getBrokerUplinkMethod = getBrokerUplinkMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "monitor.Monitor", "BrokerUplink"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new MonitorMethodDescriptorSupplier("BrokerUplink"))
+                  .build();
+          }
+        }
+     }
+     return getBrokerUplinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DownlinkMessage,
+      com.google.protobuf.Empty> getBrokerDownlinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BrokerDownlink",
+      requestType = org.thethingsnetwork.api.broker.DownlinkMessage.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DownlinkMessage,
+      com.google.protobuf.Empty> getBrokerDownlinkMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DownlinkMessage, com.google.protobuf.Empty> getBrokerDownlinkMethod;
+    if ((getBrokerDownlinkMethod = MonitorGrpc.getBrokerDownlinkMethod) == null) {
+      synchronized (MonitorGrpc.class) {
+        if ((getBrokerDownlinkMethod = MonitorGrpc.getBrokerDownlinkMethod) == null) {
+          MonitorGrpc.getBrokerDownlinkMethod = getBrokerDownlinkMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.DownlinkMessage, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "monitor.Monitor", "BrokerDownlink"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.broker.DownlinkMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new MonitorMethodDescriptorSupplier("BrokerDownlink"))
+                  .build();
+          }
+        }
+     }
+     return getBrokerDownlinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.Status,
+      com.google.protobuf.Empty> getHandlerStatusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "HandlerStatus",
+      requestType = org.thethingsnetwork.api.handler.Status.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.Status,
+      com.google.protobuf.Empty> getHandlerStatusMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.Status, com.google.protobuf.Empty> getHandlerStatusMethod;
+    if ((getHandlerStatusMethod = MonitorGrpc.getHandlerStatusMethod) == null) {
+      synchronized (MonitorGrpc.class) {
+        if ((getHandlerStatusMethod = MonitorGrpc.getHandlerStatusMethod) == null) {
+          MonitorGrpc.getHandlerStatusMethod = getHandlerStatusMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.Status, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "monitor.Monitor", "HandlerStatus"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.handler.Status.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new MonitorMethodDescriptorSupplier("HandlerStatus"))
+                  .build();
+          }
+        }
+     }
+     return getHandlerStatusMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage,
+      com.google.protobuf.Empty> getHandlerUplinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "HandlerUplink",
+      requestType = org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage,
+      com.google.protobuf.Empty> getHandlerUplinkMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage, com.google.protobuf.Empty> getHandlerUplinkMethod;
+    if ((getHandlerUplinkMethod = MonitorGrpc.getHandlerUplinkMethod) == null) {
+      synchronized (MonitorGrpc.class) {
+        if ((getHandlerUplinkMethod = MonitorGrpc.getHandlerUplinkMethod) == null) {
+          MonitorGrpc.getHandlerUplinkMethod = getHandlerUplinkMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "monitor.Monitor", "HandlerUplink"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new MonitorMethodDescriptorSupplier("HandlerUplink"))
+                  .build();
+          }
+        }
+     }
+     return getHandlerUplinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DownlinkMessage,
+      com.google.protobuf.Empty> getHandlerDownlinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "HandlerDownlink",
+      requestType = org.thethingsnetwork.api.broker.DownlinkMessage.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DownlinkMessage,
+      com.google.protobuf.Empty> getHandlerDownlinkMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DownlinkMessage, com.google.protobuf.Empty> getHandlerDownlinkMethod;
+    if ((getHandlerDownlinkMethod = MonitorGrpc.getHandlerDownlinkMethod) == null) {
+      synchronized (MonitorGrpc.class) {
+        if ((getHandlerDownlinkMethod = MonitorGrpc.getHandlerDownlinkMethod) == null) {
+          MonitorGrpc.getHandlerDownlinkMethod = getHandlerDownlinkMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.DownlinkMessage, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "monitor.Monitor", "HandlerDownlink"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.broker.DownlinkMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new MonitorMethodDescriptorSupplier("HandlerDownlink"))
+                  .build();
+          }
+        }
+     }
+     return getHandlerDownlinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.networkserver.Status,
+      com.google.protobuf.Empty> getNetworkServerStatusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "NetworkServerStatus",
+      requestType = org.thethingsnetwork.api.networkserver.Status.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.networkserver.Status,
+      com.google.protobuf.Empty> getNetworkServerStatusMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.networkserver.Status, com.google.protobuf.Empty> getNetworkServerStatusMethod;
+    if ((getNetworkServerStatusMethod = MonitorGrpc.getNetworkServerStatusMethod) == null) {
+      synchronized (MonitorGrpc.class) {
+        if ((getNetworkServerStatusMethod = MonitorGrpc.getNetworkServerStatusMethod) == null) {
+          MonitorGrpc.getNetworkServerStatusMethod = getNetworkServerStatusMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.networkserver.Status, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "monitor.Monitor", "NetworkServerStatus"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.networkserver.Status.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new MonitorMethodDescriptorSupplier("NetworkServerStatus"))
+                  .build();
+          }
+        }
+     }
+     return getNetworkServerStatusMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -191,153 +410,153 @@ public final class MonitorGrpc {
      */
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.router.Status> routerStatus(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      return asyncUnimplementedStreamingCall(METHOD_ROUTER_STATUS, responseObserver);
+      return asyncUnimplementedStreamingCall(getRouterStatusMethod(), responseObserver);
     }
 
     /**
      */
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.gateway.Status> gatewayStatus(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      return asyncUnimplementedStreamingCall(METHOD_GATEWAY_STATUS, responseObserver);
+      return asyncUnimplementedStreamingCall(getGatewayStatusMethod(), responseObserver);
     }
 
     /**
      */
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.router.UplinkMessage> gatewayUplink(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      return asyncUnimplementedStreamingCall(METHOD_GATEWAY_UPLINK, responseObserver);
+      return asyncUnimplementedStreamingCall(getGatewayUplinkMethod(), responseObserver);
     }
 
     /**
      */
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.router.DownlinkMessage> gatewayDownlink(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      return asyncUnimplementedStreamingCall(METHOD_GATEWAY_DOWNLINK, responseObserver);
+      return asyncUnimplementedStreamingCall(getGatewayDownlinkMethod(), responseObserver);
     }
 
     /**
      */
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.broker.Status> brokerStatus(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      return asyncUnimplementedStreamingCall(METHOD_BROKER_STATUS, responseObserver);
+      return asyncUnimplementedStreamingCall(getBrokerStatusMethod(), responseObserver);
     }
 
     /**
      */
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage> brokerUplink(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      return asyncUnimplementedStreamingCall(METHOD_BROKER_UPLINK, responseObserver);
+      return asyncUnimplementedStreamingCall(getBrokerUplinkMethod(), responseObserver);
     }
 
     /**
      */
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.broker.DownlinkMessage> brokerDownlink(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      return asyncUnimplementedStreamingCall(METHOD_BROKER_DOWNLINK, responseObserver);
+      return asyncUnimplementedStreamingCall(getBrokerDownlinkMethod(), responseObserver);
     }
 
     /**
      */
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.handler.Status> handlerStatus(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      return asyncUnimplementedStreamingCall(METHOD_HANDLER_STATUS, responseObserver);
+      return asyncUnimplementedStreamingCall(getHandlerStatusMethod(), responseObserver);
     }
 
     /**
      */
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage> handlerUplink(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      return asyncUnimplementedStreamingCall(METHOD_HANDLER_UPLINK, responseObserver);
+      return asyncUnimplementedStreamingCall(getHandlerUplinkMethod(), responseObserver);
     }
 
     /**
      */
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.broker.DownlinkMessage> handlerDownlink(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      return asyncUnimplementedStreamingCall(METHOD_HANDLER_DOWNLINK, responseObserver);
+      return asyncUnimplementedStreamingCall(getHandlerDownlinkMethod(), responseObserver);
     }
 
     /**
      */
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.networkserver.Status> networkServerStatus(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      return asyncUnimplementedStreamingCall(METHOD_NETWORK_SERVER_STATUS, responseObserver);
+      return asyncUnimplementedStreamingCall(getNetworkServerStatusMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            METHOD_ROUTER_STATUS,
+            getRouterStatusMethod(),
             asyncClientStreamingCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.router.Status,
                 com.google.protobuf.Empty>(
                   this, METHODID_ROUTER_STATUS)))
           .addMethod(
-            METHOD_GATEWAY_STATUS,
+            getGatewayStatusMethod(),
             asyncClientStreamingCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.gateway.Status,
                 com.google.protobuf.Empty>(
                   this, METHODID_GATEWAY_STATUS)))
           .addMethod(
-            METHOD_GATEWAY_UPLINK,
+            getGatewayUplinkMethod(),
             asyncClientStreamingCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.router.UplinkMessage,
                 com.google.protobuf.Empty>(
                   this, METHODID_GATEWAY_UPLINK)))
           .addMethod(
-            METHOD_GATEWAY_DOWNLINK,
+            getGatewayDownlinkMethod(),
             asyncClientStreamingCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.router.DownlinkMessage,
                 com.google.protobuf.Empty>(
                   this, METHODID_GATEWAY_DOWNLINK)))
           .addMethod(
-            METHOD_BROKER_STATUS,
+            getBrokerStatusMethod(),
             asyncClientStreamingCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.broker.Status,
                 com.google.protobuf.Empty>(
                   this, METHODID_BROKER_STATUS)))
           .addMethod(
-            METHOD_BROKER_UPLINK,
+            getBrokerUplinkMethod(),
             asyncClientStreamingCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage,
                 com.google.protobuf.Empty>(
                   this, METHODID_BROKER_UPLINK)))
           .addMethod(
-            METHOD_BROKER_DOWNLINK,
+            getBrokerDownlinkMethod(),
             asyncClientStreamingCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.broker.DownlinkMessage,
                 com.google.protobuf.Empty>(
                   this, METHODID_BROKER_DOWNLINK)))
           .addMethod(
-            METHOD_HANDLER_STATUS,
+            getHandlerStatusMethod(),
             asyncClientStreamingCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.handler.Status,
                 com.google.protobuf.Empty>(
                   this, METHODID_HANDLER_STATUS)))
           .addMethod(
-            METHOD_HANDLER_UPLINK,
+            getHandlerUplinkMethod(),
             asyncClientStreamingCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage,
                 com.google.protobuf.Empty>(
                   this, METHODID_HANDLER_UPLINK)))
           .addMethod(
-            METHOD_HANDLER_DOWNLINK,
+            getHandlerDownlinkMethod(),
             asyncClientStreamingCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.broker.DownlinkMessage,
                 com.google.protobuf.Empty>(
                   this, METHODID_HANDLER_DOWNLINK)))
           .addMethod(
-            METHOD_NETWORK_SERVER_STATUS,
+            getNetworkServerStatusMethod(),
             asyncClientStreamingCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.networkserver.Status,
@@ -370,7 +589,7 @@ public final class MonitorGrpc {
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.router.Status> routerStatus(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       return asyncClientStreamingCall(
-          getChannel().newCall(METHOD_ROUTER_STATUS, getCallOptions()), responseObserver);
+          getChannel().newCall(getRouterStatusMethod(), getCallOptions()), responseObserver);
     }
 
     /**
@@ -378,7 +597,7 @@ public final class MonitorGrpc {
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.gateway.Status> gatewayStatus(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       return asyncClientStreamingCall(
-          getChannel().newCall(METHOD_GATEWAY_STATUS, getCallOptions()), responseObserver);
+          getChannel().newCall(getGatewayStatusMethod(), getCallOptions()), responseObserver);
     }
 
     /**
@@ -386,7 +605,7 @@ public final class MonitorGrpc {
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.router.UplinkMessage> gatewayUplink(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       return asyncClientStreamingCall(
-          getChannel().newCall(METHOD_GATEWAY_UPLINK, getCallOptions()), responseObserver);
+          getChannel().newCall(getGatewayUplinkMethod(), getCallOptions()), responseObserver);
     }
 
     /**
@@ -394,7 +613,7 @@ public final class MonitorGrpc {
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.router.DownlinkMessage> gatewayDownlink(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       return asyncClientStreamingCall(
-          getChannel().newCall(METHOD_GATEWAY_DOWNLINK, getCallOptions()), responseObserver);
+          getChannel().newCall(getGatewayDownlinkMethod(), getCallOptions()), responseObserver);
     }
 
     /**
@@ -402,7 +621,7 @@ public final class MonitorGrpc {
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.broker.Status> brokerStatus(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       return asyncClientStreamingCall(
-          getChannel().newCall(METHOD_BROKER_STATUS, getCallOptions()), responseObserver);
+          getChannel().newCall(getBrokerStatusMethod(), getCallOptions()), responseObserver);
     }
 
     /**
@@ -410,7 +629,7 @@ public final class MonitorGrpc {
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage> brokerUplink(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       return asyncClientStreamingCall(
-          getChannel().newCall(METHOD_BROKER_UPLINK, getCallOptions()), responseObserver);
+          getChannel().newCall(getBrokerUplinkMethod(), getCallOptions()), responseObserver);
     }
 
     /**
@@ -418,7 +637,7 @@ public final class MonitorGrpc {
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.broker.DownlinkMessage> brokerDownlink(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       return asyncClientStreamingCall(
-          getChannel().newCall(METHOD_BROKER_DOWNLINK, getCallOptions()), responseObserver);
+          getChannel().newCall(getBrokerDownlinkMethod(), getCallOptions()), responseObserver);
     }
 
     /**
@@ -426,7 +645,7 @@ public final class MonitorGrpc {
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.handler.Status> handlerStatus(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       return asyncClientStreamingCall(
-          getChannel().newCall(METHOD_HANDLER_STATUS, getCallOptions()), responseObserver);
+          getChannel().newCall(getHandlerStatusMethod(), getCallOptions()), responseObserver);
     }
 
     /**
@@ -434,7 +653,7 @@ public final class MonitorGrpc {
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage> handlerUplink(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       return asyncClientStreamingCall(
-          getChannel().newCall(METHOD_HANDLER_UPLINK, getCallOptions()), responseObserver);
+          getChannel().newCall(getHandlerUplinkMethod(), getCallOptions()), responseObserver);
     }
 
     /**
@@ -442,7 +661,7 @@ public final class MonitorGrpc {
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.broker.DownlinkMessage> handlerDownlink(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       return asyncClientStreamingCall(
-          getChannel().newCall(METHOD_HANDLER_DOWNLINK, getCallOptions()), responseObserver);
+          getChannel().newCall(getHandlerDownlinkMethod(), getCallOptions()), responseObserver);
     }
 
     /**
@@ -450,7 +669,7 @@ public final class MonitorGrpc {
     public io.grpc.stub.StreamObserver<org.thethingsnetwork.api.networkserver.Status> networkServerStatus(
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       return asyncClientStreamingCall(
-          getChannel().newCall(METHOD_NETWORK_SERVER_STATUS, getCallOptions()), responseObserver);
+          getChannel().newCall(getNetworkServerStatusMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -570,10 +789,38 @@ public final class MonitorGrpc {
     }
   }
 
-  private static final class MonitorDescriptorSupplier implements io.grpc.protobuf.ProtoFileDescriptorSupplier {
+  private static abstract class MonitorBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
+    MonitorBaseDescriptorSupplier() {}
+
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
       return org.thethingsnetwork.api.monitor.MonitorProto.getDescriptor();
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
+      return getFileDescriptor().findServiceByName("Monitor");
+    }
+  }
+
+  private static final class MonitorFileDescriptorSupplier
+      extends MonitorBaseDescriptorSupplier {
+    MonitorFileDescriptorSupplier() {}
+  }
+
+  private static final class MonitorMethodDescriptorSupplier
+      extends MonitorBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
+    private final String methodName;
+
+    MonitorMethodDescriptorSupplier(String methodName) {
+      this.methodName = methodName;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
+      return getServiceDescriptor().findMethodByName(methodName);
     }
   }
 
@@ -586,18 +833,18 @@ public final class MonitorGrpc {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new MonitorDescriptorSupplier())
-              .addMethod(METHOD_ROUTER_STATUS)
-              .addMethod(METHOD_GATEWAY_STATUS)
-              .addMethod(METHOD_GATEWAY_UPLINK)
-              .addMethod(METHOD_GATEWAY_DOWNLINK)
-              .addMethod(METHOD_BROKER_STATUS)
-              .addMethod(METHOD_BROKER_UPLINK)
-              .addMethod(METHOD_BROKER_DOWNLINK)
-              .addMethod(METHOD_HANDLER_STATUS)
-              .addMethod(METHOD_HANDLER_UPLINK)
-              .addMethod(METHOD_HANDLER_DOWNLINK)
-              .addMethod(METHOD_NETWORK_SERVER_STATUS)
+              .setSchemaDescriptor(new MonitorFileDescriptorSupplier())
+              .addMethod(getRouterStatusMethod())
+              .addMethod(getGatewayStatusMethod())
+              .addMethod(getGatewayUplinkMethod())
+              .addMethod(getGatewayDownlinkMethod())
+              .addMethod(getBrokerStatusMethod())
+              .addMethod(getBrokerUplinkMethod())
+              .addMethod(getBrokerDownlinkMethod())
+              .addMethod(getHandlerStatusMethod())
+              .addMethod(getHandlerUplinkMethod())
+              .addMethod(getHandlerDownlinkMethod())
+              .addMethod(getNetworkServerStatusMethod())
               .build();
         }
       }

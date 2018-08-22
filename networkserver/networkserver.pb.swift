@@ -22,8 +22,10 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Networkserver_DevicesRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".DevicesRequest"
+struct Networkserver_DevicesRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   /// Device address from the uplink message
   var devAddr: Data = SwiftProtobuf.Internal.emptyData
@@ -34,11 +36,109 @@ struct Networkserver_DevicesRequest: SwiftProtobuf.Message {
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
+struct Networkserver_DevicesResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var results: [Lorawan_Device] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+/// message StatusRequest is used to request the status of this NetworkServer
+struct Networkserver_StatusRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+/// message Status is the response to the StatusRequest
+struct Networkserver_Status {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var system: Api_SystemStats {
+    get {return _storage._system ?? Api_SystemStats()}
+    set {_uniqueStorage()._system = newValue}
+  }
+  /// Returns true if `system` has been explicitly set.
+  var hasSystem: Bool {return _storage._system != nil}
+  /// Clears the value of `system`. Subsequent reads from it will return its default value.
+  mutating func clearSystem() {_uniqueStorage()._system = nil}
+
+  var component: Api_ComponentStats {
+    get {return _storage._component ?? Api_ComponentStats()}
+    set {_uniqueStorage()._component = newValue}
+  }
+  /// Returns true if `component` has been explicitly set.
+  var hasComponent: Bool {return _storage._component != nil}
+  /// Clears the value of `component`. Subsequent reads from it will return its default value.
+  mutating func clearComponent() {_uniqueStorage()._component = nil}
+
+  var uplink: Api_Rates {
+    get {return _storage._uplink ?? Api_Rates()}
+    set {_uniqueStorage()._uplink = newValue}
+  }
+  /// Returns true if `uplink` has been explicitly set.
+  var hasUplink: Bool {return _storage._uplink != nil}
+  /// Clears the value of `uplink`. Subsequent reads from it will return its default value.
+  mutating func clearUplink() {_uniqueStorage()._uplink = nil}
+
+  var downlink: Api_Rates {
+    get {return _storage._downlink ?? Api_Rates()}
+    set {_uniqueStorage()._downlink = newValue}
+  }
+  /// Returns true if `downlink` has been explicitly set.
+  var hasDownlink: Bool {return _storage._downlink != nil}
+  /// Clears the value of `downlink`. Subsequent reads from it will return its default value.
+  mutating func clearDownlink() {_uniqueStorage()._downlink = nil}
+
+  var activations: Api_Rates {
+    get {return _storage._activations ?? Api_Rates()}
+    set {_uniqueStorage()._activations = newValue}
+  }
+  /// Returns true if `activations` has been explicitly set.
+  var hasActivations: Bool {return _storage._activations != nil}
+  /// Clears the value of `activations`. Subsequent reads from it will return its default value.
+  mutating func clearActivations() {_uniqueStorage()._activations = nil}
+
+  var devicesPerAddress: Api_Percentiles {
+    get {return _storage._devicesPerAddress ?? Api_Percentiles()}
+    set {_uniqueStorage()._devicesPerAddress = newValue}
+  }
+  /// Returns true if `devicesPerAddress` has been explicitly set.
+  var hasDevicesPerAddress: Bool {return _storage._devicesPerAddress != nil}
+  /// Clears the value of `devicesPerAddress`. Subsequent reads from it will return its default value.
+  mutating func clearDevicesPerAddress() {_uniqueStorage()._devicesPerAddress = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
+}
+
+// MARK: - Code below here is support for the SwiftProtobuf runtime.
+
+fileprivate let _protobuf_package = "networkserver"
+
+extension Networkserver_DevicesRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DevicesRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "dev_addr"),
+    2: .standard(proto: "f_cnt"),
+  ]
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
@@ -49,10 +149,6 @@ struct Networkserver_DevicesRequest: SwiftProtobuf.Message {
     }
   }
 
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.devAddr.isEmpty {
       try visitor.visitSingularBytesField(value: self.devAddr, fieldNumber: 1)
@@ -62,21 +158,21 @@ struct Networkserver_DevicesRequest: SwiftProtobuf.Message {
     }
     try unknownFields.traverse(visitor: &visitor)
   }
+
+  static func ==(lhs: Networkserver_DevicesRequest, rhs: Networkserver_DevicesRequest) -> Bool {
+    if lhs.devAddr != rhs.devAddr {return false}
+    if lhs.fCnt != rhs.fCnt {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
 }
 
-struct Networkserver_DevicesResponse: SwiftProtobuf.Message {
+extension Networkserver_DevicesResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DevicesResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "results"),
+  ]
 
-  var results: [Lorawan_Device] = []
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
@@ -86,198 +182,41 @@ struct Networkserver_DevicesResponse: SwiftProtobuf.Message {
     }
   }
 
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.results.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.results, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
+
+  static func ==(lhs: Networkserver_DevicesResponse, rhs: Networkserver_DevicesResponse) -> Bool {
+    if lhs.results != rhs.results {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
 }
 
-/// message StatusRequest is used to request the status of this NetworkServer
-struct Networkserver_StatusRequest: SwiftProtobuf.Message {
+extension Networkserver_StatusRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".StatusRequest"
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let _ = try decoder.nextFieldNumber() {
     }
   }
 
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try unknownFields.traverse(visitor: &visitor)
   }
+
+  static func ==(lhs: Networkserver_StatusRequest, rhs: Networkserver_StatusRequest) -> Bool {
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
 }
 
-/// message Status is the response to the StatusRequest
-struct Networkserver_Status: SwiftProtobuf.Message {
+extension Networkserver_Status: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Status"
-
-  var system: Api_SystemStats {
-    get {return _storage._system ?? Api_SystemStats()}
-    set {_uniqueStorage()._system = newValue}
-  }
-  /// Returns true if `system` has been explicitly set.
-  var hasSystem: Bool {return _storage._system != nil}
-  /// Clears the value of `system`. Subsequent reads from it will return its default value.
-  mutating func clearSystem() {_storage._system = nil}
-
-  var component: Api_ComponentStats {
-    get {return _storage._component ?? Api_ComponentStats()}
-    set {_uniqueStorage()._component = newValue}
-  }
-  /// Returns true if `component` has been explicitly set.
-  var hasComponent: Bool {return _storage._component != nil}
-  /// Clears the value of `component`. Subsequent reads from it will return its default value.
-  mutating func clearComponent() {_storage._component = nil}
-
-  var uplink: Api_Rates {
-    get {return _storage._uplink ?? Api_Rates()}
-    set {_uniqueStorage()._uplink = newValue}
-  }
-  /// Returns true if `uplink` has been explicitly set.
-  var hasUplink: Bool {return _storage._uplink != nil}
-  /// Clears the value of `uplink`. Subsequent reads from it will return its default value.
-  mutating func clearUplink() {_storage._uplink = nil}
-
-  var downlink: Api_Rates {
-    get {return _storage._downlink ?? Api_Rates()}
-    set {_uniqueStorage()._downlink = newValue}
-  }
-  /// Returns true if `downlink` has been explicitly set.
-  var hasDownlink: Bool {return _storage._downlink != nil}
-  /// Clears the value of `downlink`. Subsequent reads from it will return its default value.
-  mutating func clearDownlink() {_storage._downlink = nil}
-
-  var activations: Api_Rates {
-    get {return _storage._activations ?? Api_Rates()}
-    set {_uniqueStorage()._activations = newValue}
-  }
-  /// Returns true if `activations` has been explicitly set.
-  var hasActivations: Bool {return _storage._activations != nil}
-  /// Clears the value of `activations`. Subsequent reads from it will return its default value.
-  mutating func clearActivations() {_storage._activations = nil}
-
-  var devicesPerAddress: Api_Percentiles {
-    get {return _storage._devicesPerAddress ?? Api_Percentiles()}
-    set {_uniqueStorage()._devicesPerAddress = newValue}
-  }
-  /// Returns true if `devicesPerAddress` has been explicitly set.
-  var hasDevicesPerAddress: Bool {return _storage._devicesPerAddress != nil}
-  /// Clears the value of `devicesPerAddress`. Subsequent reads from it will return its default value.
-  mutating func clearDevicesPerAddress() {_storage._devicesPerAddress = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularMessageField(value: &_storage._system)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._component)
-        case 11: try decoder.decodeSingularMessageField(value: &_storage._uplink)
-        case 12: try decoder.decodeSingularMessageField(value: &_storage._downlink)
-        case 13: try decoder.decodeSingularMessageField(value: &_storage._activations)
-        case 21: try decoder.decodeSingularMessageField(value: &_storage._devicesPerAddress)
-        default: break
-        }
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._system {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      }
-      if let v = _storage._component {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-      if let v = _storage._uplink {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
-      }
-      if let v = _storage._downlink {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
-      }
-      if let v = _storage._activations {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
-      }
-      if let v = _storage._devicesPerAddress {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  fileprivate var _storage = _StorageClass.defaultInstance
-}
-
-// MARK: - Code below here is support for the SwiftProtobuf runtime.
-
-fileprivate let _protobuf_package = "networkserver"
-
-extension Networkserver_DevicesRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "dev_addr"),
-    2: .standard(proto: "f_cnt"),
-  ]
-
-  func _protobuf_generated_isEqualTo(other: Networkserver_DevicesRequest) -> Bool {
-    if self.devAddr != other.devAddr {return false}
-    if self.fCnt != other.fCnt {return false}
-    if unknownFields != other.unknownFields {return false}
-    return true
-  }
-}
-
-extension Networkserver_DevicesResponse: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "results"),
-  ]
-
-  func _protobuf_generated_isEqualTo(other: Networkserver_DevicesResponse) -> Bool {
-    if self.results != other.results {return false}
-    if unknownFields != other.unknownFields {return false}
-    return true
-  }
-}
-
-extension Networkserver_StatusRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
-
-  func _protobuf_generated_isEqualTo(other: Networkserver_StatusRequest) -> Bool {
-    if unknownFields != other.unknownFields {return false}
-    return true
-  }
-}
-
-extension Networkserver_Status: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "system"),
     2: .same(proto: "component"),
@@ -316,20 +255,63 @@ extension Networkserver_Status: SwiftProtobuf._MessageImplementationBase, SwiftP
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Networkserver_Status) -> Bool {
-    if _storage !== other._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._system != other_storage._system {return false}
-        if _storage._component != other_storage._component {return false}
-        if _storage._uplink != other_storage._uplink {return false}
-        if _storage._downlink != other_storage._downlink {return false}
-        if _storage._activations != other_storage._activations {return false}
-        if _storage._devicesPerAddress != other_storage._devicesPerAddress {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularMessageField(value: &_storage._system)
+        case 2: try decoder.decodeSingularMessageField(value: &_storage._component)
+        case 11: try decoder.decodeSingularMessageField(value: &_storage._uplink)
+        case 12: try decoder.decodeSingularMessageField(value: &_storage._downlink)
+        case 13: try decoder.decodeSingularMessageField(value: &_storage._activations)
+        case 21: try decoder.decodeSingularMessageField(value: &_storage._devicesPerAddress)
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if let v = _storage._system {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      }
+      if let v = _storage._component {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
+      if let v = _storage._uplink {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
+      }
+      if let v = _storage._downlink {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
+      }
+      if let v = _storage._activations {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
+      }
+      if let v = _storage._devicesPerAddress {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Networkserver_Status, rhs: Networkserver_Status) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._system != rhs_storage._system {return false}
+        if _storage._component != rhs_storage._component {return false}
+        if _storage._uplink != rhs_storage._uplink {return false}
+        if _storage._downlink != rhs_storage._downlink {return false}
+        if _storage._activations != rhs_storage._activations {return false}
+        if _storage._devicesPerAddress != rhs_storage._devicesPerAddress {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }

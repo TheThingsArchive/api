@@ -53,7 +53,7 @@ class BrokerClient extends \Grpc\BaseStub {
      */
     public function Publish($metadata = [], $options = []) {
         return $this->_clientStreamRequest('/broker.Broker/Publish',
-        ['\Google\Protobuf\Empty','decode'],
+        ['\Google\Protobuf\GPBEmpty','decode'],
         $metadata, $options);
     }
 

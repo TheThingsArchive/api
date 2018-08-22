@@ -16,14 +16,13 @@ func main() {
 
 	for _, opt := range []func(*descriptor.FileDescriptorProto){
 		vanity.TurnOffGoStringerAll,
-		vanity.TurnOnStringerAll,
-
+		vanity.TurnOffGoUnrecognizedAll,
+		vanity.TurnOnEqualAll,
 		vanity.TurnOnMarshalerAll,
-		vanity.TurnOnUnmarshalerAll,
 		vanity.TurnOnSizerAll,
-
-		vanity.TurnOffGoEnumStringerAll,
-		vanity.TurnOnEnumStringerAll,
+		vanity.TurnOnStringerAll,
+		vanity.TurnOnUnmarshalerAll,
+		vanity.TurnOnVerboseEqualAll,
 	} {
 		vanity.ForEachFile(files, opt)
 	}

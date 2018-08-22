@@ -56,9 +56,28 @@ class Status extends \Google\Protobuf\Internal\Message
      */
     private $connected_handlers = 0;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Api\SystemStats $system
+     *     @type \Api\ComponentStats $component
+     *     @type \Api\Rates $uplink
+     *     @type \Api\Rates $uplink_unique
+     *     @type \Api\Rates $downlink
+     *     @type \Api\Rates $activations
+     *     @type \Api\Rates $activations_unique
+     *     @type \Api\Percentiles $deduplication
+     *     @type int $connected_routers
+     *           Connections
+     *     @type int $connected_handlers
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Broker\Broker::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

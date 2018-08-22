@@ -22,8 +22,10 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Api_Percentiles: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Percentiles"
+struct Api_Percentiles {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var percentile1: Float = 0
 
@@ -46,11 +48,212 @@ struct Api_Percentiles: SwiftProtobuf.Message {
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
+struct Api_Rates {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var rate1: Float = 0
+
+  var rate5: Float = 0
+
+  var rate15: Float = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct Api_SystemStats {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var load: Api_SystemStats.Loadstats {
+    get {return _storage._load ?? Api_SystemStats.Loadstats()}
+    set {_uniqueStorage()._load = newValue}
+  }
+  /// Returns true if `load` has been explicitly set.
+  var hasLoad: Bool {return _storage._load != nil}
+  /// Clears the value of `load`. Subsequent reads from it will return its default value.
+  mutating func clearLoad() {_uniqueStorage()._load = nil}
+
+  var cpu: Api_SystemStats.CPUStats {
+    get {return _storage._cpu ?? Api_SystemStats.CPUStats()}
+    set {_uniqueStorage()._cpu = newValue}
+  }
+  /// Returns true if `cpu` has been explicitly set.
+  var hasCpu: Bool {return _storage._cpu != nil}
+  /// Clears the value of `cpu`. Subsequent reads from it will return its default value.
+  mutating func clearCpu() {_uniqueStorage()._cpu = nil}
+
+  var memory: Api_SystemStats.MemoryStats {
+    get {return _storage._memory ?? Api_SystemStats.MemoryStats()}
+    set {_uniqueStorage()._memory = newValue}
+  }
+  /// Returns true if `memory` has been explicitly set.
+  var hasMemory: Bool {return _storage._memory != nil}
+  /// Clears the value of `memory`. Subsequent reads from it will return its default value.
+  mutating func clearMemory() {_uniqueStorage()._memory = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  struct Loadstats {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    var load1: Float = 0
+
+    var load5: Float = 0
+
+    var load15: Float = 0
+
+    var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    init() {}
+  }
+
+  struct CPUStats {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    var user: Float = 0
+
+    var system: Float = 0
+
+    var idle: Float = 0
+
+    var percentage: Float = 0
+
+    var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    init() {}
+  }
+
+  struct MemoryStats {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    var total: UInt64 = 0
+
+    var available: UInt64 = 0
+
+    var used: UInt64 = 0
+
+    var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    init() {}
+  }
+
+  init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
+}
+
+struct Api_ComponentStats {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var uptime: UInt64 {
+    get {return _storage._uptime}
+    set {_uniqueStorage()._uptime = newValue}
+  }
+
+  var cpu: Api_ComponentStats.CPUStats {
+    get {return _storage._cpu ?? Api_ComponentStats.CPUStats()}
+    set {_uniqueStorage()._cpu = newValue}
+  }
+  /// Returns true if `cpu` has been explicitly set.
+  var hasCpu: Bool {return _storage._cpu != nil}
+  /// Clears the value of `cpu`. Subsequent reads from it will return its default value.
+  mutating func clearCpu() {_uniqueStorage()._cpu = nil}
+
+  var memory: Api_ComponentStats.MemoryStats {
+    get {return _storage._memory ?? Api_ComponentStats.MemoryStats()}
+    set {_uniqueStorage()._memory = newValue}
+  }
+  /// Returns true if `memory` has been explicitly set.
+  var hasMemory: Bool {return _storage._memory != nil}
+  /// Clears the value of `memory`. Subsequent reads from it will return its default value.
+  mutating func clearMemory() {_uniqueStorage()._memory = nil}
+
+  var goroutines: UInt64 {
+    get {return _storage._goroutines}
+    set {_uniqueStorage()._goroutines = newValue}
+  }
+
+  var gcCpuFraction: Float {
+    get {return _storage._gcCpuFraction}
+    set {_uniqueStorage()._gcCpuFraction = newValue}
+  }
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  struct CPUStats {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    var user: Float = 0
+
+    var system: Float = 0
+
+    var idle: Float = 0
+
+    var percentage: Float = 0
+
+    var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    init() {}
+  }
+
+  struct MemoryStats {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    var memory: UInt64 = 0
+
+    var swap: UInt64 = 0
+
+    var heap: UInt64 = 0
+
+    var stack: UInt64 = 0
+
+    var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    init() {}
+  }
+
+  init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
+}
+
+// MARK: - Code below here is support for the SwiftProtobuf runtime.
+
+fileprivate let _protobuf_package = "api"
+
+extension Api_Percentiles: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".Percentiles"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "percentile1"),
+    2: .same(proto: "percentile5"),
+    3: .same(proto: "percentile10"),
+    4: .same(proto: "percentile25"),
+    5: .same(proto: "percentile50"),
+    6: .same(proto: "percentile75"),
+    7: .same(proto: "percentile90"),
+    8: .same(proto: "percentile95"),
+    9: .same(proto: "percentile99"),
+  ]
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
@@ -68,10 +271,6 @@ struct Api_Percentiles: SwiftProtobuf.Message {
     }
   }
 
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.percentile1 != 0 {
       try visitor.visitSingularFloatField(value: self.percentile1, fieldNumber: 1)
@@ -102,25 +301,30 @@ struct Api_Percentiles: SwiftProtobuf.Message {
     }
     try unknownFields.traverse(visitor: &visitor)
   }
+
+  static func ==(lhs: Api_Percentiles, rhs: Api_Percentiles) -> Bool {
+    if lhs.percentile1 != rhs.percentile1 {return false}
+    if lhs.percentile5 != rhs.percentile5 {return false}
+    if lhs.percentile10 != rhs.percentile10 {return false}
+    if lhs.percentile25 != rhs.percentile25 {return false}
+    if lhs.percentile50 != rhs.percentile50 {return false}
+    if lhs.percentile75 != rhs.percentile75 {return false}
+    if lhs.percentile90 != rhs.percentile90 {return false}
+    if lhs.percentile95 != rhs.percentile95 {return false}
+    if lhs.percentile99 != rhs.percentile99 {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
 }
 
-struct Api_Rates: SwiftProtobuf.Message {
+extension Api_Rates: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Rates"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "rate1"),
+    2: .same(proto: "rate5"),
+    3: .same(proto: "rate15"),
+  ]
 
-  var rate1: Float = 0
-
-  var rate5: Float = 0
-
-  var rate15: Float = 0
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
@@ -132,10 +336,6 @@ struct Api_Rates: SwiftProtobuf.Message {
     }
   }
 
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.rate1 != 0 {
       try visitor.visitSingularFloatField(value: self.rate1, fieldNumber: 1)
@@ -148,467 +348,18 @@ struct Api_Rates: SwiftProtobuf.Message {
     }
     try unknownFields.traverse(visitor: &visitor)
   }
+
+  static func ==(lhs: Api_Rates, rhs: Api_Rates) -> Bool {
+    if lhs.rate1 != rhs.rate1 {return false}
+    if lhs.rate5 != rhs.rate5 {return false}
+    if lhs.rate15 != rhs.rate15 {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
 }
 
-struct Api_SystemStats: SwiftProtobuf.Message {
+extension Api_SystemStats: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SystemStats"
-
-  var load: Api_SystemStats.Loadstats {
-    get {return _storage._load ?? Api_SystemStats.Loadstats()}
-    set {_uniqueStorage()._load = newValue}
-  }
-  /// Returns true if `load` has been explicitly set.
-  var hasLoad: Bool {return _storage._load != nil}
-  /// Clears the value of `load`. Subsequent reads from it will return its default value.
-  mutating func clearLoad() {_storage._load = nil}
-
-  var cpu: Api_SystemStats.CPUStats {
-    get {return _storage._cpu ?? Api_SystemStats.CPUStats()}
-    set {_uniqueStorage()._cpu = newValue}
-  }
-  /// Returns true if `cpu` has been explicitly set.
-  var hasCpu: Bool {return _storage._cpu != nil}
-  /// Clears the value of `cpu`. Subsequent reads from it will return its default value.
-  mutating func clearCpu() {_storage._cpu = nil}
-
-  var memory: Api_SystemStats.MemoryStats {
-    get {return _storage._memory ?? Api_SystemStats.MemoryStats()}
-    set {_uniqueStorage()._memory = newValue}
-  }
-  /// Returns true if `memory` has been explicitly set.
-  var hasMemory: Bool {return _storage._memory != nil}
-  /// Clears the value of `memory`. Subsequent reads from it will return its default value.
-  mutating func clearMemory() {_storage._memory = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  struct Loadstats: SwiftProtobuf.Message {
-    static let protoMessageName: String = Api_SystemStats.protoMessageName + ".Loadstats"
-
-    var load1: Float = 0
-
-    var load5: Float = 0
-
-    var load15: Float = 0
-
-    var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    init() {}
-
-    /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-    /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-    /// initializers are defined in the SwiftProtobuf library. See the Message and
-    /// Message+*Additions` files.
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularFloatField(value: &self.load1)
-        case 2: try decoder.decodeSingularFloatField(value: &self.load5)
-        case 3: try decoder.decodeSingularFloatField(value: &self.load15)
-        default: break
-        }
-      }
-    }
-
-    /// Used by the encoding methods of the SwiftProtobuf library, not generally
-    /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-    /// other serializer methods are defined in the SwiftProtobuf library. See the
-    /// `Message` and `Message+*Additions` files.
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-      if self.load1 != 0 {
-        try visitor.visitSingularFloatField(value: self.load1, fieldNumber: 1)
-      }
-      if self.load5 != 0 {
-        try visitor.visitSingularFloatField(value: self.load5, fieldNumber: 2)
-      }
-      if self.load15 != 0 {
-        try visitor.visitSingularFloatField(value: self.load15, fieldNumber: 3)
-      }
-      try unknownFields.traverse(visitor: &visitor)
-    }
-  }
-
-  struct CPUStats: SwiftProtobuf.Message {
-    static let protoMessageName: String = Api_SystemStats.protoMessageName + ".CPUStats"
-
-    var user: Float = 0
-
-    var system: Float = 0
-
-    var idle: Float = 0
-
-    var percentage: Float = 0
-
-    var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    init() {}
-
-    /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-    /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-    /// initializers are defined in the SwiftProtobuf library. See the Message and
-    /// Message+*Additions` files.
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularFloatField(value: &self.user)
-        case 2: try decoder.decodeSingularFloatField(value: &self.system)
-        case 3: try decoder.decodeSingularFloatField(value: &self.idle)
-        case 4: try decoder.decodeSingularFloatField(value: &self.percentage)
-        default: break
-        }
-      }
-    }
-
-    /// Used by the encoding methods of the SwiftProtobuf library, not generally
-    /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-    /// other serializer methods are defined in the SwiftProtobuf library. See the
-    /// `Message` and `Message+*Additions` files.
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-      if self.user != 0 {
-        try visitor.visitSingularFloatField(value: self.user, fieldNumber: 1)
-      }
-      if self.system != 0 {
-        try visitor.visitSingularFloatField(value: self.system, fieldNumber: 2)
-      }
-      if self.idle != 0 {
-        try visitor.visitSingularFloatField(value: self.idle, fieldNumber: 3)
-      }
-      if self.percentage != 0 {
-        try visitor.visitSingularFloatField(value: self.percentage, fieldNumber: 4)
-      }
-      try unknownFields.traverse(visitor: &visitor)
-    }
-  }
-
-  struct MemoryStats: SwiftProtobuf.Message {
-    static let protoMessageName: String = Api_SystemStats.protoMessageName + ".MemoryStats"
-
-    var total: UInt64 = 0
-
-    var available: UInt64 = 0
-
-    var used: UInt64 = 0
-
-    var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    init() {}
-
-    /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-    /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-    /// initializers are defined in the SwiftProtobuf library. See the Message and
-    /// Message+*Additions` files.
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularUInt64Field(value: &self.total)
-        case 2: try decoder.decodeSingularUInt64Field(value: &self.available)
-        case 3: try decoder.decodeSingularUInt64Field(value: &self.used)
-        default: break
-        }
-      }
-    }
-
-    /// Used by the encoding methods of the SwiftProtobuf library, not generally
-    /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-    /// other serializer methods are defined in the SwiftProtobuf library. See the
-    /// `Message` and `Message+*Additions` files.
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-      if self.total != 0 {
-        try visitor.visitSingularUInt64Field(value: self.total, fieldNumber: 1)
-      }
-      if self.available != 0 {
-        try visitor.visitSingularUInt64Field(value: self.available, fieldNumber: 2)
-      }
-      if self.used != 0 {
-        try visitor.visitSingularUInt64Field(value: self.used, fieldNumber: 3)
-      }
-      try unknownFields.traverse(visitor: &visitor)
-    }
-  }
-
-  init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularMessageField(value: &_storage._load)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._cpu)
-        case 3: try decoder.decodeSingularMessageField(value: &_storage._memory)
-        default: break
-        }
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._load {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      }
-      if let v = _storage._cpu {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-      if let v = _storage._memory {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  fileprivate var _storage = _StorageClass.defaultInstance
-}
-
-struct Api_ComponentStats: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ComponentStats"
-
-  var uptime: UInt64 {
-    get {return _storage._uptime}
-    set {_uniqueStorage()._uptime = newValue}
-  }
-
-  var cpu: Api_ComponentStats.CPUStats {
-    get {return _storage._cpu ?? Api_ComponentStats.CPUStats()}
-    set {_uniqueStorage()._cpu = newValue}
-  }
-  /// Returns true if `cpu` has been explicitly set.
-  var hasCpu: Bool {return _storage._cpu != nil}
-  /// Clears the value of `cpu`. Subsequent reads from it will return its default value.
-  mutating func clearCpu() {_storage._cpu = nil}
-
-  var memory: Api_ComponentStats.MemoryStats {
-    get {return _storage._memory ?? Api_ComponentStats.MemoryStats()}
-    set {_uniqueStorage()._memory = newValue}
-  }
-  /// Returns true if `memory` has been explicitly set.
-  var hasMemory: Bool {return _storage._memory != nil}
-  /// Clears the value of `memory`. Subsequent reads from it will return its default value.
-  mutating func clearMemory() {_storage._memory = nil}
-
-  var goroutines: UInt64 {
-    get {return _storage._goroutines}
-    set {_uniqueStorage()._goroutines = newValue}
-  }
-
-  var gcCpuFraction: Float {
-    get {return _storage._gcCpuFraction}
-    set {_uniqueStorage()._gcCpuFraction = newValue}
-  }
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  struct CPUStats: SwiftProtobuf.Message {
-    static let protoMessageName: String = Api_ComponentStats.protoMessageName + ".CPUStats"
-
-    var user: Float = 0
-
-    var system: Float = 0
-
-    var idle: Float = 0
-
-    var percentage: Float = 0
-
-    var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    init() {}
-
-    /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-    /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-    /// initializers are defined in the SwiftProtobuf library. See the Message and
-    /// Message+*Additions` files.
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularFloatField(value: &self.user)
-        case 2: try decoder.decodeSingularFloatField(value: &self.system)
-        case 3: try decoder.decodeSingularFloatField(value: &self.idle)
-        case 4: try decoder.decodeSingularFloatField(value: &self.percentage)
-        default: break
-        }
-      }
-    }
-
-    /// Used by the encoding methods of the SwiftProtobuf library, not generally
-    /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-    /// other serializer methods are defined in the SwiftProtobuf library. See the
-    /// `Message` and `Message+*Additions` files.
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-      if self.user != 0 {
-        try visitor.visitSingularFloatField(value: self.user, fieldNumber: 1)
-      }
-      if self.system != 0 {
-        try visitor.visitSingularFloatField(value: self.system, fieldNumber: 2)
-      }
-      if self.idle != 0 {
-        try visitor.visitSingularFloatField(value: self.idle, fieldNumber: 3)
-      }
-      if self.percentage != 0 {
-        try visitor.visitSingularFloatField(value: self.percentage, fieldNumber: 4)
-      }
-      try unknownFields.traverse(visitor: &visitor)
-    }
-  }
-
-  struct MemoryStats: SwiftProtobuf.Message {
-    static let protoMessageName: String = Api_ComponentStats.protoMessageName + ".MemoryStats"
-
-    var memory: UInt64 = 0
-
-    var swap: UInt64 = 0
-
-    var heap: UInt64 = 0
-
-    var stack: UInt64 = 0
-
-    var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    init() {}
-
-    /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-    /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-    /// initializers are defined in the SwiftProtobuf library. See the Message and
-    /// Message+*Additions` files.
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularUInt64Field(value: &self.memory)
-        case 2: try decoder.decodeSingularUInt64Field(value: &self.swap)
-        case 10: try decoder.decodeSingularUInt64Field(value: &self.heap)
-        case 11: try decoder.decodeSingularUInt64Field(value: &self.stack)
-        default: break
-        }
-      }
-    }
-
-    /// Used by the encoding methods of the SwiftProtobuf library, not generally
-    /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-    /// other serializer methods are defined in the SwiftProtobuf library. See the
-    /// `Message` and `Message+*Additions` files.
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-      if self.memory != 0 {
-        try visitor.visitSingularUInt64Field(value: self.memory, fieldNumber: 1)
-      }
-      if self.swap != 0 {
-        try visitor.visitSingularUInt64Field(value: self.swap, fieldNumber: 2)
-      }
-      if self.heap != 0 {
-        try visitor.visitSingularUInt64Field(value: self.heap, fieldNumber: 10)
-      }
-      if self.stack != 0 {
-        try visitor.visitSingularUInt64Field(value: self.stack, fieldNumber: 11)
-      }
-      try unknownFields.traverse(visitor: &visitor)
-    }
-  }
-
-  init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularUInt64Field(value: &_storage._uptime)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._cpu)
-        case 3: try decoder.decodeSingularMessageField(value: &_storage._memory)
-        case 4: try decoder.decodeSingularUInt64Field(value: &_storage._goroutines)
-        case 5: try decoder.decodeSingularFloatField(value: &_storage._gcCpuFraction)
-        default: break
-        }
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if _storage._uptime != 0 {
-        try visitor.visitSingularUInt64Field(value: _storage._uptime, fieldNumber: 1)
-      }
-      if let v = _storage._cpu {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-      if let v = _storage._memory {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      }
-      if _storage._goroutines != 0 {
-        try visitor.visitSingularUInt64Field(value: _storage._goroutines, fieldNumber: 4)
-      }
-      if _storage._gcCpuFraction != 0 {
-        try visitor.visitSingularFloatField(value: _storage._gcCpuFraction, fieldNumber: 5)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  fileprivate var _storage = _StorageClass.defaultInstance
-}
-
-// MARK: - Code below here is support for the SwiftProtobuf runtime.
-
-fileprivate let _protobuf_package = "api"
-
-extension Api_Percentiles: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "percentile1"),
-    2: .same(proto: "percentile5"),
-    3: .same(proto: "percentile10"),
-    4: .same(proto: "percentile25"),
-    5: .same(proto: "percentile50"),
-    6: .same(proto: "percentile75"),
-    7: .same(proto: "percentile90"),
-    8: .same(proto: "percentile95"),
-    9: .same(proto: "percentile99"),
-  ]
-
-  func _protobuf_generated_isEqualTo(other: Api_Percentiles) -> Bool {
-    if self.percentile1 != other.percentile1 {return false}
-    if self.percentile5 != other.percentile5 {return false}
-    if self.percentile10 != other.percentile10 {return false}
-    if self.percentile25 != other.percentile25 {return false}
-    if self.percentile50 != other.percentile50 {return false}
-    if self.percentile75 != other.percentile75 {return false}
-    if self.percentile90 != other.percentile90 {return false}
-    if self.percentile95 != other.percentile95 {return false}
-    if self.percentile99 != other.percentile99 {return false}
-    if unknownFields != other.unknownFields {return false}
-    return true
-  }
-}
-
-extension Api_Rates: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "rate1"),
-    2: .same(proto: "rate5"),
-    3: .same(proto: "rate15"),
-  ]
-
-  func _protobuf_generated_isEqualTo(other: Api_Rates) -> Bool {
-    if self.rate1 != other.rate1 {return false}
-    if self.rate5 != other.rate5 {return false}
-    if self.rate15 != other.rate15 {return false}
-    if unknownFields != other.unknownFields {return false}
-    return true
-  }
-}
-
-extension Api_SystemStats: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "load"),
     2: .same(proto: "cpu"),
@@ -638,38 +389,95 @@ extension Api_SystemStats: SwiftProtobuf._MessageImplementationBase, SwiftProtob
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Api_SystemStats) -> Bool {
-    if _storage !== other._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._load != other_storage._load {return false}
-        if _storage._cpu != other_storage._cpu {return false}
-        if _storage._memory != other_storage._memory {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularMessageField(value: &_storage._load)
+        case 2: try decoder.decodeSingularMessageField(value: &_storage._cpu)
+        case 3: try decoder.decodeSingularMessageField(value: &_storage._memory)
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if let v = _storage._load {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      }
+      if let v = _storage._cpu {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
+      if let v = _storage._memory {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Api_SystemStats, rhs: Api_SystemStats) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._load != rhs_storage._load {return false}
+        if _storage._cpu != rhs_storage._cpu {return false}
+        if _storage._memory != rhs_storage._memory {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Api_SystemStats.Loadstats: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Api_SystemStats.Loadstats: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = Api_SystemStats.protoMessageName + ".Loadstats"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "load1"),
     2: .same(proto: "load5"),
     3: .same(proto: "load15"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Api_SystemStats.Loadstats) -> Bool {
-    if self.load1 != other.load1 {return false}
-    if self.load5 != other.load5 {return false}
-    if self.load15 != other.load15 {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularFloatField(value: &self.load1)
+      case 2: try decoder.decodeSingularFloatField(value: &self.load5)
+      case 3: try decoder.decodeSingularFloatField(value: &self.load15)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.load1 != 0 {
+      try visitor.visitSingularFloatField(value: self.load1, fieldNumber: 1)
+    }
+    if self.load5 != 0 {
+      try visitor.visitSingularFloatField(value: self.load5, fieldNumber: 2)
+    }
+    if self.load15 != 0 {
+      try visitor.visitSingularFloatField(value: self.load15, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Api_SystemStats.Loadstats, rhs: Api_SystemStats.Loadstats) -> Bool {
+    if lhs.load1 != rhs.load1 {return false}
+    if lhs.load5 != rhs.load5 {return false}
+    if lhs.load15 != rhs.load15 {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Api_SystemStats.CPUStats: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Api_SystemStats.CPUStats: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = Api_SystemStats.protoMessageName + ".CPUStats"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "user"),
     2: .same(proto: "system"),
@@ -677,33 +485,87 @@ extension Api_SystemStats.CPUStats: SwiftProtobuf._MessageImplementationBase, Sw
     4: .same(proto: "percentage"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Api_SystemStats.CPUStats) -> Bool {
-    if self.user != other.user {return false}
-    if self.system != other.system {return false}
-    if self.idle != other.idle {return false}
-    if self.percentage != other.percentage {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularFloatField(value: &self.user)
+      case 2: try decoder.decodeSingularFloatField(value: &self.system)
+      case 3: try decoder.decodeSingularFloatField(value: &self.idle)
+      case 4: try decoder.decodeSingularFloatField(value: &self.percentage)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.user != 0 {
+      try visitor.visitSingularFloatField(value: self.user, fieldNumber: 1)
+    }
+    if self.system != 0 {
+      try visitor.visitSingularFloatField(value: self.system, fieldNumber: 2)
+    }
+    if self.idle != 0 {
+      try visitor.visitSingularFloatField(value: self.idle, fieldNumber: 3)
+    }
+    if self.percentage != 0 {
+      try visitor.visitSingularFloatField(value: self.percentage, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Api_SystemStats.CPUStats, rhs: Api_SystemStats.CPUStats) -> Bool {
+    if lhs.user != rhs.user {return false}
+    if lhs.system != rhs.system {return false}
+    if lhs.idle != rhs.idle {return false}
+    if lhs.percentage != rhs.percentage {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Api_SystemStats.MemoryStats: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Api_SystemStats.MemoryStats: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = Api_SystemStats.protoMessageName + ".MemoryStats"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "total"),
     2: .same(proto: "available"),
     3: .same(proto: "used"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Api_SystemStats.MemoryStats) -> Bool {
-    if self.total != other.total {return false}
-    if self.available != other.available {return false}
-    if self.used != other.used {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularUInt64Field(value: &self.total)
+      case 2: try decoder.decodeSingularUInt64Field(value: &self.available)
+      case 3: try decoder.decodeSingularUInt64Field(value: &self.used)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.total != 0 {
+      try visitor.visitSingularUInt64Field(value: self.total, fieldNumber: 1)
+    }
+    if self.available != 0 {
+      try visitor.visitSingularUInt64Field(value: self.available, fieldNumber: 2)
+    }
+    if self.used != 0 {
+      try visitor.visitSingularUInt64Field(value: self.used, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Api_SystemStats.MemoryStats, rhs: Api_SystemStats.MemoryStats) -> Bool {
+    if lhs.total != rhs.total {return false}
+    if lhs.available != rhs.available {return false}
+    if lhs.used != rhs.used {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Api_ComponentStats: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Api_ComponentStats: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ComponentStats"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "uptime"),
     2: .same(proto: "cpu"),
@@ -739,24 +601,64 @@ extension Api_ComponentStats: SwiftProtobuf._MessageImplementationBase, SwiftPro
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Api_ComponentStats) -> Bool {
-    if _storage !== other._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._uptime != other_storage._uptime {return false}
-        if _storage._cpu != other_storage._cpu {return false}
-        if _storage._memory != other_storage._memory {return false}
-        if _storage._goroutines != other_storage._goroutines {return false}
-        if _storage._gcCpuFraction != other_storage._gcCpuFraction {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularUInt64Field(value: &_storage._uptime)
+        case 2: try decoder.decodeSingularMessageField(value: &_storage._cpu)
+        case 3: try decoder.decodeSingularMessageField(value: &_storage._memory)
+        case 4: try decoder.decodeSingularUInt64Field(value: &_storage._goroutines)
+        case 5: try decoder.decodeSingularFloatField(value: &_storage._gcCpuFraction)
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if _storage._uptime != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._uptime, fieldNumber: 1)
+      }
+      if let v = _storage._cpu {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
+      if let v = _storage._memory {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      }
+      if _storage._goroutines != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._goroutines, fieldNumber: 4)
+      }
+      if _storage._gcCpuFraction != 0 {
+        try visitor.visitSingularFloatField(value: _storage._gcCpuFraction, fieldNumber: 5)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Api_ComponentStats, rhs: Api_ComponentStats) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._uptime != rhs_storage._uptime {return false}
+        if _storage._cpu != rhs_storage._cpu {return false}
+        if _storage._memory != rhs_storage._memory {return false}
+        if _storage._goroutines != rhs_storage._goroutines {return false}
+        if _storage._gcCpuFraction != rhs_storage._gcCpuFraction {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Api_ComponentStats.CPUStats: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Api_ComponentStats.CPUStats: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = Api_ComponentStats.protoMessageName + ".CPUStats"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "user"),
     2: .same(proto: "system"),
@@ -764,17 +666,46 @@ extension Api_ComponentStats.CPUStats: SwiftProtobuf._MessageImplementationBase,
     4: .same(proto: "percentage"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Api_ComponentStats.CPUStats) -> Bool {
-    if self.user != other.user {return false}
-    if self.system != other.system {return false}
-    if self.idle != other.idle {return false}
-    if self.percentage != other.percentage {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularFloatField(value: &self.user)
+      case 2: try decoder.decodeSingularFloatField(value: &self.system)
+      case 3: try decoder.decodeSingularFloatField(value: &self.idle)
+      case 4: try decoder.decodeSingularFloatField(value: &self.percentage)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.user != 0 {
+      try visitor.visitSingularFloatField(value: self.user, fieldNumber: 1)
+    }
+    if self.system != 0 {
+      try visitor.visitSingularFloatField(value: self.system, fieldNumber: 2)
+    }
+    if self.idle != 0 {
+      try visitor.visitSingularFloatField(value: self.idle, fieldNumber: 3)
+    }
+    if self.percentage != 0 {
+      try visitor.visitSingularFloatField(value: self.percentage, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Api_ComponentStats.CPUStats, rhs: Api_ComponentStats.CPUStats) -> Bool {
+    if lhs.user != rhs.user {return false}
+    if lhs.system != rhs.system {return false}
+    if lhs.idle != rhs.idle {return false}
+    if lhs.percentage != rhs.percentage {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Api_ComponentStats.MemoryStats: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Api_ComponentStats.MemoryStats: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = Api_ComponentStats.protoMessageName + ".MemoryStats"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "memory"),
     2: .same(proto: "swap"),
@@ -782,12 +713,40 @@ extension Api_ComponentStats.MemoryStats: SwiftProtobuf._MessageImplementationBa
     11: .same(proto: "stack"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Api_ComponentStats.MemoryStats) -> Bool {
-    if self.memory != other.memory {return false}
-    if self.swap != other.swap {return false}
-    if self.heap != other.heap {return false}
-    if self.stack != other.stack {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularUInt64Field(value: &self.memory)
+      case 2: try decoder.decodeSingularUInt64Field(value: &self.swap)
+      case 10: try decoder.decodeSingularUInt64Field(value: &self.heap)
+      case 11: try decoder.decodeSingularUInt64Field(value: &self.stack)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.memory != 0 {
+      try visitor.visitSingularUInt64Field(value: self.memory, fieldNumber: 1)
+    }
+    if self.swap != 0 {
+      try visitor.visitSingularUInt64Field(value: self.swap, fieldNumber: 2)
+    }
+    if self.heap != 0 {
+      try visitor.visitSingularUInt64Field(value: self.heap, fieldNumber: 10)
+    }
+    if self.stack != 0 {
+      try visitor.visitSingularUInt64Field(value: self.stack, fieldNumber: 11)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Api_ComponentStats.MemoryStats, rhs: Api_ComponentStats.MemoryStats) -> Bool {
+    if lhs.memory != rhs.memory {return false}
+    if lhs.swap != rhs.swap {return false}
+    if lhs.heap != rhs.heap {return false}
+    if lhs.stack != rhs.stack {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }

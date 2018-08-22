@@ -20,9 +20,19 @@ class PrefixesResponse extends \Google\Protobuf\Internal\Message
      */
     private $prefixes;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Lorawan\PrefixesResponse\PrefixMapping[]|\Google\Protobuf\Internal\RepeatedField $prefixes
+     *           The prefixes that are in use or available
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Protocol\Lorawan\DeviceAddress::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
@@ -40,12 +50,12 @@ class PrefixesResponse extends \Google\Protobuf\Internal\Message
      * The prefixes that are in use or available
      *
      * Generated from protobuf field <code>repeated .lorawan.PrefixesResponse.PrefixMapping prefixes = 1;</code>
-     * @param \Lorawan\PrefixesResponse_PrefixMapping[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Lorawan\PrefixesResponse\PrefixMapping[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPrefixes($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Lorawan\PrefixesResponse_PrefixMapping::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Lorawan\PrefixesResponse\PrefixMapping::class);
         $this->prefixes = $arr;
 
         return $this;

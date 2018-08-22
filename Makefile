@@ -1,231 +1,164 @@
-# Hacks for Make
-EMPTY :=
-SPACE := $(EMPTY) $(EMPTY)
-COMMA := ,
-SED = $(shell command -v gsed || command -v sed)
+empty :=
+space := $(empty) $(empty)
+comma := ,
 
-ALL_FILES ?= (git ls-files . && git ls-files . --exclude-standard --others) | grep -v node_modules | sed 's:^:./:'
-PROTO_FILES ?= $(ALL_FILES) | grep "\.proto$$"
-
-GO := $(shell command -v go 2> /dev/null)
-# Assuming this Makefile is located at `$GOPATH/src/TheThingsNetwork/api/Makefile`
-GOPATH = $(shell dirname $(shell dirname $(shell dirname $(shell dirname $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))))))
-
-GOGO_REPO=github.com/gogo/protobuf
-GOGO_PKG=$(GOPATH)/src/$(GOGO_REPO)
-
-GRPC_GATEWAY_REPO=github.com/grpc-ecosystem/grpc-gateway
-GRPC_GATEWAY_PKG=$(GOPATH)/src/$(GRPC_GATEWAY_REPO)
-
-DOCKER ?= docker
-DOCKER_ARGS = run --user `id -u` --rm -v$(GOPATH):$(GOPATH) -w`pwd`
-DOCKER_IMAGE ?= thethingsindustries/protoc:2
-PROTOC ?= $(DOCKER) $(DOCKER_ARGS) $(DOCKER_IMAGE) -I/usr/include
-PROTOC += -I$(GOPATH)/src -I$(GRPC_GATEWAY_PKG)/third_party/googleapis
+languages := go java js php ruby python c swift
 
 .PHONY: all
 
-all: deps protos mocks
+all: docker $(patsubst %,protos/%,$(languages)) mocks
 
-.PHONY: deps
+clean: $(patsubst %,clean/%,$(languages)) clean/mocks
 
-deps: protoc mockgen
+proto_files := $(shell find . -name '*.proto')
 
-.PHONY: protoc
+.PHONY: docker
 
-protoc:
-	docker pull $(DOCKER_IMAGE)
+DOCKER_IMAGE ?= thethingsnetwork/api-protoc
 
-.PHONY: protos
+docker:
+	docker build -t $(DOCKER_IMAGE):latest .
 
-protos: protos.go protos.js protos.java protos.swift protos.php protos.ruby protos.c protos.python
+docker_run = docker run --user `id -u` --rm -v $(PWD):$(PWD)
 
-.PHONY: protos.go
+protoc = $(docker_run) -w $(PWD) $(DOCKER_IMAGE) -I $(GOPATH)/src
+sed = $(docker_run) -w $(PWD) --entrypoint sed $(DOCKER_IMAGE)
 
-# Go
-GO_PROTO_TARGETS ?= $(patsubst %.proto,%.pb.go,$(shell $(PROTO_FILES)))
-GO_PROTO_TYPES = any duration empty struct timestamp
-GO_PROTO_TYPE_CONVERSIONS = $(subst $(SPACE),$(COMMA),$(foreach type,$(GO_PROTO_TYPES),Mgoogle/protobuf/$(type).proto=$(GOGO_REPO)/types))
-GO_PROTOC_FLAGS ?= \
-	--gogottn_out=plugins=grpc,$(GO_PROTO_TYPE_CONVERSIONS):$(GOPATH)/src \
-	--grpc-gateway_out=:$(GOPATH)/src
-GO_GW_SED ?= -e 's/\.AppId/\.AppID/g' -e 's/\.DevId/\.DevID/g' -e 's/\.AppEui/\.AppEUI/g' -e 's/\.DevEui/\.DevEUI/g' -e 's/\.Id/\.ID/g'
+define language_template
+.PHONY: protos/$(1)
 
-protos.go: $(GO_PROTO_TARGETS)
-	$(SED) -i'' $(GO_GW_SED) $(shell $(ALL_FILES) | grep "\.pb\.gw\.go$$")
+protos/$(1):
+	@echo Generating $(1) protos...
+	@$$(MAKE) $(patsubst %.proto,%.pb.$(1),$(proto_files))
+
+.PHONY: clean/$(1)
+endef
+
+$(foreach lang,$(languages),$(eval $(call language_template,$(lang))))
+
+go_proto_types := any duration empty field_mask struct timestamp wrappers
+go_proto_conversions := $(subst $(space),$(comma),$(foreach type,$(go_proto_types),Mgoogle/protobuf/$(type).proto=github.com/gogo/protobuf/types))
+
+go_subst = -e 's/\.$(1)/.$(subst Eui,EUI,$(subst Id,ID,$(1)))/g'
+go_gw_replace := $(foreach id,AppId AppEui DevId DevEui Id,$(call go_subst,$(id)))
 
 %.pb.go: %.proto
-	$(PROTOC) $(GO_PROTOC_FLAGS) $(PWD)/$<
+	@$(protoc) --gogottn_out=plugins=grpc,$(go_proto_conversions):$(GOPATH)/src --grpc-gateway_out=$(GOPATH)/src $(PWD)/$<
+	@file=$(patsubst %.proto,%.pb.gw.go,$<); if [ -f $$file ]; then \
+		$(sed) -i'' $(go_gw_replace) $$file; \
+	fi
 
-# Java
-JAVA_PROTO_TARGETS ?= $(patsubst %.proto,%.pb.java,$(shell $(PROTO_FILES)))
-JAVA_PROTOC_FLAGS ?= \
-	--grpc-java_out=:$(PWD)/java/src \
-	--java_out=:$(PWD)/java/src
+clean/go:
+	find . -name '*pb.go' -delete
+	find . -name '*pb.gw.go' -delete
 
-.PHONY: protos.java
-
-protos.java: $(JAVA_PROTO_TARGETS)
+.PHONY: %.pb.java
 
 %.pb.java: %.proto
-	$(PROTOC) $(JAVA_PROTOC_FLAGS) $(PWD)/$<
+	@$(protoc) --java_out=$(PWD)/java/src --grpc-java_out=$(PWD)/java/src $(PWD)/$<
 
-# JS
-GRPC_NODE_PLUGIN ?= /usr/bin/grpc_node_plugin
-JS_PROTO_TARGETS ?= $(patsubst %.proto,%_pb.js,$(shell $(PROTO_FILES)))
-JS_PROTOC_FLAGS ?= \
-	--plugin=protoc-gen-grpc-js=$(GRPC_NODE_PLUGIN) \
-	--grpc-js_out=$(GOPATH)/src \
-	--js_out=import_style=commonjs,binary:$(GOPATH)/src
-JS_SED ?= -e 's/github.com_/github_com_/g' \
+clean/java:
+	rm -rf java/src/org/thethingsnetwork/api
+
+js_replace := -e 's/github.com_/github_com_/g' \
 	-e 's|../../../github.com/TheThingsNetwork/api/||g' \
 	-e 's/github_com_TheThingsNetwork_api/ttn/g' \
 	-e '/github_com_gogo_protobuf_gogoproto_gogo_pb/d' \
 	-e '/google_api_annotations_pb/d'
 
-.PHONY: protos.js
+.PHONY: %.pb.js
 
-protos.js: $(JS_PROTO_TARGETS)
-	$(SED) -i'' $(JS_SED) $(shell $(ALL_FILES) | grep "\_pb.js$$")
+%.pb.js: %.proto
+	@$(protoc) --js_out=import_style=commonjs,binary:$(GOPATH)/src --grpc-js_out=$(GOPATH)/src $(PWD)/$<
+	@file=$(patsubst %.proto,%_pb.js,$<); if [ -f $$file ]; then \
+		$(sed) -i'' $(js_replace) $$file; \
+	fi
+	@file=$(patsubst %.proto,%_grpc_pb.js,$<); if [ -f $$file ]; then \
+		$(sed) -i'' $(js_replace) $$file; \
+	fi
 
-%_pb.js: %.proto
-	$(PROTOC) $(JS_PROTOC_FLAGS) $(PWD)/$<
+clean/js:
+	find . -name '*_pb.js' -delete
 
-# Swift
-
-SWIFT_PROTO_TARGETS ?= $(patsubst %.proto,%.pb.swift,$(shell $(PROTO_FILES)))
-SWIFT_PROTOC_FLAGS ?= \
-	--swiftgrpc_out=$(PWD) \
-	--swift_out=$(GOPATH)/src
-
-.PHONY: protos.swift
-
-protos.swift: $(SWIFT_PROTO_TARGETS)
-	-mv broker.client.pb.swift broker
-	-mv broker.server.pb.swift broker
-	-mv discovery.client.pb.swift discovery
-	-mv discovery.server.pb.swift discovery
-	-mv handler.client.pb.swift handler
-	-mv handler.server.pb.swift handler
-	-mv lorawan.client.pb.swift protocol/lorawan
-	-mv lorawan.server.pb.swift protocol/lorawan
-	-mv monitor.client.pb.swift monitor
-	-mv monitor.server.pb.swift monitor
-	-mv networkserver.client.pb.swift networkserver
-	-mv networkserver.server.pb.swift networkserver
-	-mv router.client.pb.swift router
-	-mv router.server.pb.swift router
-
-%.pb.swift: %.proto
-	$(PROTOC) $(SWIFT_PROTOC_FLAGS) $(PWD)/$<
-
-# PHP
-
-PHP_GRPC_PLUGIN ?= /usr/bin/grpc_php_plugin
-PHP_PROTO_TARGETS ?= $(patsubst %.proto,%.pb.php,$(shell $(PROTO_FILES)))
-PHP_PROTOC_FLAGS ?= \
-	--plugin=protoc-gen-grpc-php=$(PHP_GRPC_PLUGIN) \
-	--grpc-php_out=$(PWD)/php \
-	--php_out=:$(PWD)/php
-
-.PHONY: protos.php
-
-protos.php: $(PHP_PROTO_TARGETS)
+.PHONY: %.pb.php
 
 %.pb.php: %.proto
-	$(PROTOC) $(PHP_PROTOC_FLAGS) $(PWD)/$<
+	@$(protoc) --php_out=$(PWD)/php --grpc-php_out=$(PWD)/php $(PWD)/$<
 
-# Ruby
+clean/php:
+	rm -rf php/*
 
-RUBY_GPRC_PLUGIN ?= /usr/bin/grpc_ruby_plugin
-RUBY_PROTO_TARGETS ?= $(patsubst %.proto,%_pb.rb,$(shell $(PROTO_FILES)))
-RUBY_PROTOC_FLAGS ?= \
-	--plugin=protoc-gen-grpc-ruby=$(RUBY_GPRC_PLUGIN) \
-	--grpc-ruby_out=$(GOPATH)/src \
-	--ruby_out=:$(GOPATH)/src
-RUBY_SED ?= -e "s|github.com/TheThingsNetwork/api/||g"
+ruby_replace := -e "s|require 'github.com/TheThingsNetwork/api/|require '|g"
 
-.PHONY: protos.ruby
+.PHONY: %.pb.ruby
 
-protos.ruby: $(RUBY_PROTO_TARGETS)
-	$(SED) -i'' $(RUBY_SED) $(shell $(ALL_FILES) | grep "\_pb.rb$$")
+%.pb.ruby: %.proto
+	@$(protoc) --ruby_out=$(GOPATH)/src --grpc-ruby_out=$(GOPATH)/src $(PWD)/$<
+	@file=$(patsubst %.proto,%_pb.rb,$<); if [ -f $$file ]; then \
+		$(sed) -i'' $(ruby_replace) $$file; \
+	fi
+	@file=$(patsubst %.proto,%_services_pb.rb,$<); if [ -f $$file ]; then \
+		$(sed) -i'' $(ruby_replace) $$file; \
+	fi
 
-%_pb.rb: %.proto
-	$(PROTOC) $(RUBY_PROTOC_FLAGS) $(PWD)/$<
+clean/ruby:
+	find . -name '*_pb.rb' -delete
 
-# C
+.PHONY: %.pb.python
 
-C_PROTO_TARGETS ?= $(patsubst %.proto,%.pb-c.c,$(shell $(PROTO_FILES)))
-C_PROTOC_FLAGS ?=  \
-	--c_out=$(PWD)/c
+python_replace := -e 's/from github\.com/from github_com/g' \
+	-e '/from github_com\.gogo\.protobuf/d' \
+	-e 's/github_dot_com_dot_gogo_dot_protobuf_dot_gogoproto_dot_gogo__pb2\.DESCRIPTOR,//g' \
+	-e '/from google\.api/d' \
+	-e 's/google_dot_api_dot_annotations__pb2\.DESCRIPTOR,//g'
 
-.PHONY: protos.c
+%.pb.python: %.proto
+	@$(protoc) --python_out=$(PWD)/python --grpc-python_out=$(PWD)/python $(PWD)/$<
+	@file=$(patsubst %.proto,python/github/com/TheThingsNetwork/api/%_pb2.py,$<); if [ -f $$file ]; then \
+		target=$(patsubst %.proto,python/github_com/TheThingsNetwork/api/%_pb2.py,$<); \
+		mkdir -p `dirname $$target`; \
+		mv $$file $$target; \
+		$(sed) -i'' $(python_replace) $$target; \
+	fi
+	@file=$(patsubst %.proto,python/github.com/TheThingsNetwork/api/%_pb2_grpc.py,$<); if [ -f $$file ]; then \
+		target=$(patsubst %.proto,python/github_com/TheThingsNetwork/api/%_pb2_grpc.py,$<); \
+		mkdir -p `dirname $$target`; \
+		mv $$file $$target; \
+		$(sed) -i'' $(python_replace) $$target; \
+	fi
 
-protos.c: $(C_PROTO_TARGETS)
-	$(PROTOC) $(C_PROTOC_FLAGS) $(GOPATH)/src/github.com/gogo/protobuf/protobuf/google/protobuf/*.proto
-	mkdir -p c/google/protobuf
-	mv $(PWD)/c/github.com/gogo/protobuf/protobuf/google/protobuf/*.pb-c.* c/google/protobuf
-	rm -rf $(PWD)/c/github.com/gogo/protobuf/protobuf
+clean/python:
+	find . -name '*_pb2.py' -delete
+	find . -name '*_pb2_grpc.py' -delete
+	rm -rf python/github python/github.com
 
-	$(PROTOC) $(C_PROTOC_FLAGS) $(GOPATH)/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis/google/api/annotations.proto
-	mkdir -p c/google/api
-	mv $(PWD)/c/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis/google/api/*.pb-c.* c/google/api
-	rm -rf $(PWD)/c/github.com/grpc-ecosystem
+.PHONY: %.pb.c
 
-	$(PROTOC) $(C_PROTOC_FLAGS) $(GOPATH)/src/github.com/gogo/protobuf/gogoproto/gogo.proto
+%.pb.c: %.proto
+	@$(protoc) --c_out=$(PWD)/c $(PWD)/$<
 
-%.pb-c.c: %.proto
-	$(PROTOC) $(C_PROTOC_FLAGS) $(PWD)/$<
+clean/c:
+	rm -rf c/github.com/TheThingsNetwork
 
-# Python
-.PHONY: protos.python
+.PHONY: %.pb.swift
 
-protos.python:
-	./gen-python.sh
+%.pb.swift: %.proto
+	@$(protoc) --swift_out=$(GOPATH)/src --grpc-swift_out=$(GOPATH)/src $(PWD)/$<
 
-# Dependencies
-
-$(GOPATH)/src/github.com/%:
-ifeq ($(shell command -v $(GO) 2> /dev/null),)
-	git clone https://github.com/$* $@
-else
-	$(GO) get -d github.com/$*/...
-endif
-
-PROTO_TARGETS = $(GO_PROTO_TARGETS) $(JS_PROTO_TARGETS) $(JAVA_PROTO_TARGETS) $(SWIFT_PROTO_TARGETS) $(PHP_PROTO_TARGETS) $(RUBY_PROTO_TARGETS) $(C_PROTO_TARGETS)
-$(PROTO_TARGETS): $(GOGO_PKG) $(GRPC_GATEWAY_PKG)
-
-# Mocks
-
-MOCKGEN ?= mockgen
+clean/swift:
+	find . -name '*.swift' -delete
 
 .PHONY: mockgen
 
 mockgen:
-ifeq ($(shell command -v $(MOCKGEN) 2> /dev/null),)
-ifeq ($(shell command -v $(GO) 2> /dev/null),)
-	$(error go is not installed)
-else
-	$(GO) get github.com/golang/mock/mockgen
-endif
-endif
-
+	@command -v mockgen > /dev/null || go get github.com/golang/mock/mockgen
 
 .PHONY: mocks
 
 mocks: mockgen
-	$(MOCKGEN) -source=./protocol/lorawan/device.pb.go -package lorawan DeviceManagerClient > protocol/lorawan/device_mock.go
-	$(MOCKGEN) -source=./discovery/discoveryclient/client.go -package discoveryclient Client > discovery/discoveryclient/client_mock.go
-	$(MOCKGEN) -source=./networkserver/networkserver.pb.go -package networkserver NetworkServerClient > networkserver/networkserver_mock.go
+	mockgen -source=./protocol/lorawan/device.pb.go -package lorawan DeviceManagerClient > protocol/lorawan/device_mock.go
+	mockgen -source=./discovery/discoveryclient/client.go -package discoveryclient Client > discovery/discoveryclient/client_mock.go
+	mockgen -source=./networkserver/networkserver.pb.go -package networkserver NetworkServerClient > networkserver/networkserver_mock.go
 
-# Clean
-
-.PHONY: clean
-
-clean: clean-protos clean-mocks
-
-clean-protos:
-	find . -name '*pb.*' -delete -or -name '*pb_test.go' -delete -or -name '*.pb-c.*' -delete -or -name '*_pb2*.py' -delete -or -name '__init__.py' -delete -or -wholename './php/*' -delete -or -wholename './java/src/*' -delete
-
-clean-mocks:
+clean/mocks:
 	find . -name '*_mock.go' -delete

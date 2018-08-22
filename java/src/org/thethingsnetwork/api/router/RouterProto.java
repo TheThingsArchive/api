@@ -77,7 +77,7 @@ public final class RouterProto {
       "ithub.com/TheThingsNetwork/api/gateway/g" +
       "ateway.proto\0321github.com/TheThingsNetwor" +
       "k/api/trace/trace.proto\"\022\n\020SubscribeRequ" +
-      "est\"\315\001\n\rUplinkMessage\022\017\n\007payload\030\001 \001(\014\022\"",
+      "est\"\315\001\n\rUplinkMessage\022\017\n\007payload\030\001 \001(\014\022\"" +
       "\n\007message\030\002 \001(\0132\021.protocol.Message\0225\n\021pr" +
       "otocol_metadata\030\013 \001(\0132\024.protocol.RxMetad" +
       "ataB\004\310\336\037\000\0223\n\020gateway_metadata\030\014 \001(\0132\023.ga" +
@@ -87,7 +87,7 @@ public final class RouterProto {
       "sage\022?\n\026protocol_configuration\030\013 \001(\0132\031.p" +
       "rotocol.TxConfigurationB\004\310\336\037\000\022=\n\025gateway" +
       "_configuration\030\014 \001(\0132\030.gateway.TxConfigu" +
-      "rationB\004\310\336\037\000\022\033\n\005trace\030\025 \001(\0132\014.trace.Trac",
+      "rationB\004\310\336\037\000\022\033\n\005trace\030\025 \001(\0132\014.trace.Trac" +
       "e\"\276\003\n\027DeviceActivationRequest\022\017\n\007payload" +
       "\030\001 \001(\014\022\"\n\007message\030\002 \001(\0132\021.protocol.Messa" +
       "ge\022T\n\007dev_eui\030\013 \001(\014BC\342\336\037\006DevEUI\310\336\037\000\332\336\0371g" +
@@ -97,7 +97,7 @@ public final class RouterProto {
       "e/types.AppEUI\0225\n\021protocol_metadata\030\025 \001(" +
       "\0132\024.protocol.RxMetadataB\004\310\336\037\000\0223\n\020gateway" +
       "_metadata\030\026 \001(\0132\023.gateway.RxMetadataB\004\310\336" +
-      "\037\000\0229\n\023activation_metadata\030\027 \001(\0132\034.protoc",
+      "\037\000\0229\n\023activation_metadata\030\027 \001(\0132\034.protoc" +
       "ol.ActivationMetadata\022\033\n\005trace\030\037 \001(\0132\014.t" +
       "race.Trace\"\032\n\030DeviceActivationResponse\"9" +
       "\n\024GatewayStatusRequest\022!\n\ngateway_id\030\001 \001" +
@@ -107,7 +107,7 @@ public final class RouterProto {
       "\n\006Status\022 \n\006system\030\001 \001(\0132\020.api.SystemSta" +
       "ts\022&\n\tcomponent\030\002 \001(\0132\023.api.ComponentSta" +
       "ts\022\"\n\016gateway_status\030\013 \001(\0132\n.api.Rates\022\032" +
-      "\n\006uplink\030\014 \001(\0132\n.api.Rates\022\034\n\010downlink\030\r",
+      "\n\006uplink\030\014 \001(\0132\n.api.Rates\022\034\n\010downlink\030\r" +
       " \001(\0132\n.api.Rates\022\037\n\013activations\030\016 \001(\0132\n." +
       "api.Rates\022\032\n\022connected_gateways\030\025 \001(\r\022\031\n" +
       "\021connected_brokers\030\026 \001(\r2\220\002\n\006Router\022:\n\rG" +
@@ -117,7 +117,7 @@ public final class RouterProto {
       "bscribe\022\030.router.SubscribeRequest\032\027.rout" +
       "er.DownlinkMessage0\001\022M\n\010Activate\022\037.route" +
       "r.DeviceActivationRequest\032 .router.Devic" +
-      "eActivationResponse2\221\001\n\rRouterManager\022L\n",
+      "eActivationResponse2\221\001\n\rRouterManager\022L\n" +
       "\rGatewayStatus\022\034.router.GatewayStatusReq" +
       "uest\032\035.router.GatewayStatusResponse\0222\n\tG" +
       "etStatus\022\025.router.StatusRequest\032\016.router" +

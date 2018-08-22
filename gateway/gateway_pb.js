@@ -227,7 +227,7 @@ proto.gateway.LocationMetadata.prototype.getTime = function() {
 
 /** @param {number} value */
 proto.gateway.LocationMetadata.prototype.setTime = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -242,7 +242,7 @@ proto.gateway.LocationMetadata.prototype.getLatitude = function() {
 
 /** @param {number} value */
 proto.gateway.LocationMetadata.prototype.setLatitude = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3FloatField(this, 2, value);
 };
 
 
@@ -257,7 +257,7 @@ proto.gateway.LocationMetadata.prototype.getLongitude = function() {
 
 /** @param {number} value */
 proto.gateway.LocationMetadata.prototype.setLongitude = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3FloatField(this, 3, value);
 };
 
 
@@ -272,7 +272,7 @@ proto.gateway.LocationMetadata.prototype.getAltitude = function() {
 
 /** @param {number} value */
 proto.gateway.LocationMetadata.prototype.setAltitude = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -287,7 +287,7 @@ proto.gateway.LocationMetadata.prototype.getAccuracy = function() {
 
 /** @param {number} value */
 proto.gateway.LocationMetadata.prototype.setAccuracy = function(value) {
-  jspb.Message.setField(this, 5, value);
+  jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
@@ -302,7 +302,7 @@ proto.gateway.LocationMetadata.prototype.getSource = function() {
 
 /** @param {!proto.gateway.LocationMetadata.LocationSource} value */
 proto.gateway.LocationMetadata.prototype.setSource = function(value) {
-  jspb.Message.setField(this, 6, value);
+  jspb.Message.setProto3EnumField(this, 6, value);
 };
 
 
@@ -811,7 +811,7 @@ proto.gateway.RxMetadata.Antenna.prototype.getAntenna = function() {
 
 /** @param {number} value */
 proto.gateway.RxMetadata.Antenna.prototype.setAntenna = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -826,7 +826,7 @@ proto.gateway.RxMetadata.Antenna.prototype.getChannel = function() {
 
 /** @param {number} value */
 proto.gateway.RxMetadata.Antenna.prototype.setChannel = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -841,7 +841,7 @@ proto.gateway.RxMetadata.Antenna.prototype.getRssi = function() {
 
 /** @param {number} value */
 proto.gateway.RxMetadata.Antenna.prototype.setRssi = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3FloatField(this, 3, value);
 };
 
 
@@ -856,7 +856,7 @@ proto.gateway.RxMetadata.Antenna.prototype.getChannelRssi = function() {
 
 /** @param {number} value */
 proto.gateway.RxMetadata.Antenna.prototype.setChannelRssi = function(value) {
-  jspb.Message.setField(this, 5, value);
+  jspb.Message.setProto3FloatField(this, 5, value);
 };
 
 
@@ -871,7 +871,7 @@ proto.gateway.RxMetadata.Antenna.prototype.getRssiStandardDeviation = function()
 
 /** @param {number} value */
 proto.gateway.RxMetadata.Antenna.prototype.setRssiStandardDeviation = function(value) {
-  jspb.Message.setField(this, 6, value);
+  jspb.Message.setProto3FloatField(this, 6, value);
 };
 
 
@@ -886,7 +886,7 @@ proto.gateway.RxMetadata.Antenna.prototype.getFrequencyOffset = function() {
 
 /** @param {number} value */
 proto.gateway.RxMetadata.Antenna.prototype.setFrequencyOffset = function(value) {
-  jspb.Message.setField(this, 7, value);
+  jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
@@ -901,7 +901,7 @@ proto.gateway.RxMetadata.Antenna.prototype.getSnr = function() {
 
 /** @param {number} value */
 proto.gateway.RxMetadata.Antenna.prototype.setSnr = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3FloatField(this, 4, value);
 };
 
 
@@ -940,7 +940,7 @@ proto.gateway.RxMetadata.Antenna.prototype.getEncryptedTime_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.gateway.RxMetadata.Antenna.prototype.setEncryptedTime = function(value) {
-  jspb.Message.setField(this, 10, value);
+  jspb.Message.setProto3BytesField(this, 10, value);
 };
 
 
@@ -955,7 +955,7 @@ proto.gateway.RxMetadata.Antenna.prototype.getFineTime = function() {
 
 /** @param {number} value */
 proto.gateway.RxMetadata.Antenna.prototype.setFineTime = function(value) {
-  jspb.Message.setField(this, 11, value);
+  jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
@@ -970,7 +970,7 @@ proto.gateway.RxMetadata.prototype.getGatewayId = function() {
 
 /** @param {string} value */
 proto.gateway.RxMetadata.prototype.setGatewayId = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -987,7 +987,7 @@ proto.gateway.RxMetadata.prototype.getGatewayTrusted = function() {
 
 /** @param {boolean} value */
 proto.gateway.RxMetadata.prototype.setGatewayTrusted = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
@@ -1002,7 +1002,7 @@ proto.gateway.RxMetadata.prototype.getTimestamp = function() {
 
 /** @param {number} value */
 proto.gateway.RxMetadata.prototype.setTimestamp = function(value) {
-  jspb.Message.setField(this, 11, value);
+  jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
@@ -1017,7 +1017,7 @@ proto.gateway.RxMetadata.prototype.getTime = function() {
 
 /** @param {number} value */
 proto.gateway.RxMetadata.prototype.setTime = function(value) {
-  jspb.Message.setField(this, 12, value);
+  jspb.Message.setProto3IntField(this, 12, value);
 };
 
 
@@ -1056,7 +1056,7 @@ proto.gateway.RxMetadata.prototype.getEncryptedTime_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.gateway.RxMetadata.prototype.setEncryptedTime = function(value) {
-  jspb.Message.setField(this, 13, value);
+  jspb.Message.setProto3BytesField(this, 13, value);
 };
 
 
@@ -1071,7 +1071,7 @@ proto.gateway.RxMetadata.prototype.getRfChain = function() {
 
 /** @param {number} value */
 proto.gateway.RxMetadata.prototype.setRfChain = function(value) {
-  jspb.Message.setField(this, 21, value);
+  jspb.Message.setProto3IntField(this, 21, value);
 };
 
 
@@ -1086,21 +1086,21 @@ proto.gateway.RxMetadata.prototype.getChannel = function() {
 
 /** @param {number} value */
 proto.gateway.RxMetadata.prototype.setChannel = function(value) {
-  jspb.Message.setField(this, 22, value);
+  jspb.Message.setProto3IntField(this, 22, value);
 };
 
 
 /**
  * repeated Antenna antennas = 30;
- * @return {!Array.<!proto.gateway.RxMetadata.Antenna>}
+ * @return {!Array<!proto.gateway.RxMetadata.Antenna>}
  */
 proto.gateway.RxMetadata.prototype.getAntennasList = function() {
-  return /** @type{!Array.<!proto.gateway.RxMetadata.Antenna>} */ (
+  return /** @type{!Array<!proto.gateway.RxMetadata.Antenna>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.gateway.RxMetadata.Antenna, 30));
 };
 
 
-/** @param {!Array.<!proto.gateway.RxMetadata.Antenna>} value */
+/** @param {!Array<!proto.gateway.RxMetadata.Antenna>} value */
 proto.gateway.RxMetadata.prototype.setAntennasList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 30, value);
 };
@@ -1132,7 +1132,7 @@ proto.gateway.RxMetadata.prototype.getFrequency = function() {
 
 /** @param {number} value */
 proto.gateway.RxMetadata.prototype.setFrequency = function(value) {
-  jspb.Message.setField(this, 31, value);
+  jspb.Message.setProto3IntField(this, 31, value);
 };
 
 
@@ -1147,7 +1147,7 @@ proto.gateway.RxMetadata.prototype.getRssi = function() {
 
 /** @param {number} value */
 proto.gateway.RxMetadata.prototype.setRssi = function(value) {
-  jspb.Message.setField(this, 32, value);
+  jspb.Message.setProto3FloatField(this, 32, value);
 };
 
 
@@ -1162,7 +1162,7 @@ proto.gateway.RxMetadata.prototype.getSnr = function() {
 
 /** @param {number} value */
 proto.gateway.RxMetadata.prototype.setSnr = function(value) {
-  jspb.Message.setField(this, 33, value);
+  jspb.Message.setProto3FloatField(this, 33, value);
 };
 
 
@@ -1394,7 +1394,7 @@ proto.gateway.TxConfiguration.prototype.getTimestamp = function() {
 
 /** @param {number} value */
 proto.gateway.TxConfiguration.prototype.setTimestamp = function(value) {
-  jspb.Message.setField(this, 11, value);
+  jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
@@ -1409,7 +1409,7 @@ proto.gateway.TxConfiguration.prototype.getRfChain = function() {
 
 /** @param {number} value */
 proto.gateway.TxConfiguration.prototype.setRfChain = function(value) {
-  jspb.Message.setField(this, 21, value);
+  jspb.Message.setProto3IntField(this, 21, value);
 };
 
 
@@ -1424,7 +1424,7 @@ proto.gateway.TxConfiguration.prototype.getFrequency = function() {
 
 /** @param {number} value */
 proto.gateway.TxConfiguration.prototype.setFrequency = function(value) {
-  jspb.Message.setField(this, 22, value);
+  jspb.Message.setProto3IntField(this, 22, value);
 };
 
 
@@ -1439,7 +1439,7 @@ proto.gateway.TxConfiguration.prototype.getPower = function() {
 
 /** @param {number} value */
 proto.gateway.TxConfiguration.prototype.setPower = function(value) {
-  jspb.Message.setField(this, 23, value);
+  jspb.Message.setProto3IntField(this, 23, value);
 };
 
 
@@ -1456,7 +1456,7 @@ proto.gateway.TxConfiguration.prototype.getPolarizationInversion = function() {
 
 /** @param {boolean} value */
 proto.gateway.TxConfiguration.prototype.setPolarizationInversion = function(value) {
-  jspb.Message.setField(this, 31, value);
+  jspb.Message.setProto3BooleanField(this, 31, value);
 };
 
 
@@ -1471,7 +1471,7 @@ proto.gateway.TxConfiguration.prototype.getFrequencyDeviation = function() {
 
 /** @param {number} value */
 proto.gateway.TxConfiguration.prototype.setFrequencyDeviation = function(value) {
-  jspb.Message.setField(this, 32, value);
+  jspb.Message.setProto3IntField(this, 32, value);
 };
 
 
@@ -2111,7 +2111,7 @@ proto.gateway.Status.OSMetrics.prototype.getLoad1 = function() {
 
 /** @param {number} value */
 proto.gateway.Status.OSMetrics.prototype.setLoad1 = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3FloatField(this, 1, value);
 };
 
 
@@ -2126,7 +2126,7 @@ proto.gateway.Status.OSMetrics.prototype.getLoad5 = function() {
 
 /** @param {number} value */
 proto.gateway.Status.OSMetrics.prototype.setLoad5 = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3FloatField(this, 2, value);
 };
 
 
@@ -2141,7 +2141,7 @@ proto.gateway.Status.OSMetrics.prototype.getLoad15 = function() {
 
 /** @param {number} value */
 proto.gateway.Status.OSMetrics.prototype.setLoad15 = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3FloatField(this, 3, value);
 };
 
 
@@ -2156,7 +2156,7 @@ proto.gateway.Status.OSMetrics.prototype.getCpuPercentage = function() {
 
 /** @param {number} value */
 proto.gateway.Status.OSMetrics.prototype.setCpuPercentage = function(value) {
-  jspb.Message.setField(this, 11, value);
+  jspb.Message.setProto3FloatField(this, 11, value);
 };
 
 
@@ -2171,7 +2171,7 @@ proto.gateway.Status.OSMetrics.prototype.getMemoryPercentage = function() {
 
 /** @param {number} value */
 proto.gateway.Status.OSMetrics.prototype.setMemoryPercentage = function(value) {
-  jspb.Message.setField(this, 21, value);
+  jspb.Message.setProto3FloatField(this, 21, value);
 };
 
 
@@ -2186,7 +2186,7 @@ proto.gateway.Status.OSMetrics.prototype.getTemperature = function() {
 
 /** @param {number} value */
 proto.gateway.Status.OSMetrics.prototype.setTemperature = function(value) {
-  jspb.Message.setField(this, 31, value);
+  jspb.Message.setProto3FloatField(this, 31, value);
 };
 
 
@@ -2201,7 +2201,7 @@ proto.gateway.Status.prototype.getTimestamp = function() {
 
 /** @param {number} value */
 proto.gateway.Status.prototype.setTimestamp = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -2216,7 +2216,7 @@ proto.gateway.Status.prototype.getTime = function() {
 
 /** @param {number} value */
 proto.gateway.Status.prototype.setTime = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -2233,7 +2233,7 @@ proto.gateway.Status.prototype.getGatewayTrusted = function() {
 
 /** @param {boolean} value */
 proto.gateway.Status.prototype.setGatewayTrusted = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
@@ -2248,20 +2248,20 @@ proto.gateway.Status.prototype.getBootTime = function() {
 
 /** @param {number} value */
 proto.gateway.Status.prototype.setBootTime = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
 /**
  * repeated string ip = 11;
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.gateway.Status.prototype.getIpList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getRepeatedField(this, 11));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 11));
 };
 
 
-/** @param {!Array.<string>} value */
+/** @param {!Array<string>} value */
 proto.gateway.Status.prototype.setIpList = function(value) {
   jspb.Message.setField(this, 11, value || []);
 };
@@ -2292,7 +2292,7 @@ proto.gateway.Status.prototype.getPlatform = function() {
 
 /** @param {string} value */
 proto.gateway.Status.prototype.setPlatform = function(value) {
-  jspb.Message.setField(this, 12, value);
+  jspb.Message.setProto3StringField(this, 12, value);
 };
 
 
@@ -2307,7 +2307,7 @@ proto.gateway.Status.prototype.getContactEmail = function() {
 
 /** @param {string} value */
 proto.gateway.Status.prototype.setContactEmail = function(value) {
-  jspb.Message.setField(this, 13, value);
+  jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
@@ -2322,7 +2322,7 @@ proto.gateway.Status.prototype.getDescription = function() {
 
 /** @param {string} value */
 proto.gateway.Status.prototype.setDescription = function(value) {
-  jspb.Message.setField(this, 14, value);
+  jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
@@ -2337,7 +2337,7 @@ proto.gateway.Status.prototype.getFrequencyPlan = function() {
 
 /** @param {string} value */
 proto.gateway.Status.prototype.setFrequencyPlan = function(value) {
-  jspb.Message.setField(this, 15, value);
+  jspb.Message.setProto3StringField(this, 15, value);
 };
 
 
@@ -2352,7 +2352,7 @@ proto.gateway.Status.prototype.getBridge = function() {
 
 /** @param {string} value */
 proto.gateway.Status.prototype.setBridge = function(value) {
-  jspb.Message.setField(this, 16, value);
+  jspb.Message.setProto3StringField(this, 16, value);
 };
 
 
@@ -2367,7 +2367,7 @@ proto.gateway.Status.prototype.getRouter = function() {
 
 /** @param {string} value */
 proto.gateway.Status.prototype.setRouter = function(value) {
-  jspb.Message.setField(this, 17, value);
+  jspb.Message.setProto3StringField(this, 17, value);
 };
 
 
@@ -2382,7 +2382,7 @@ proto.gateway.Status.prototype.getFpga = function() {
 
 /** @param {number} value */
 proto.gateway.Status.prototype.setFpga = function(value) {
-  jspb.Message.setField(this, 18, value);
+  jspb.Message.setProto3IntField(this, 18, value);
 };
 
 
@@ -2397,7 +2397,7 @@ proto.gateway.Status.prototype.getDsp = function() {
 
 /** @param {number} value */
 proto.gateway.Status.prototype.setDsp = function(value) {
-  jspb.Message.setField(this, 19, value);
+  jspb.Message.setProto3IntField(this, 19, value);
 };
 
 
@@ -2412,7 +2412,7 @@ proto.gateway.Status.prototype.getHal = function() {
 
 /** @param {string} value */
 proto.gateway.Status.prototype.setHal = function(value) {
-  jspb.Message.setField(this, 20, value);
+  jspb.Message.setProto3StringField(this, 20, value);
 };
 
 
@@ -2457,7 +2457,7 @@ proto.gateway.Status.prototype.getRtt = function() {
 
 /** @param {number} value */
 proto.gateway.Status.prototype.setRtt = function(value) {
-  jspb.Message.setField(this, 31, value);
+  jspb.Message.setProto3IntField(this, 31, value);
 };
 
 
@@ -2472,7 +2472,7 @@ proto.gateway.Status.prototype.getRxIn = function() {
 
 /** @param {number} value */
 proto.gateway.Status.prototype.setRxIn = function(value) {
-  jspb.Message.setField(this, 41, value);
+  jspb.Message.setProto3IntField(this, 41, value);
 };
 
 
@@ -2487,7 +2487,7 @@ proto.gateway.Status.prototype.getRxOk = function() {
 
 /** @param {number} value */
 proto.gateway.Status.prototype.setRxOk = function(value) {
-  jspb.Message.setField(this, 42, value);
+  jspb.Message.setProto3IntField(this, 42, value);
 };
 
 
@@ -2502,7 +2502,7 @@ proto.gateway.Status.prototype.getTxIn = function() {
 
 /** @param {number} value */
 proto.gateway.Status.prototype.setTxIn = function(value) {
-  jspb.Message.setField(this, 43, value);
+  jspb.Message.setProto3IntField(this, 43, value);
 };
 
 
@@ -2517,7 +2517,7 @@ proto.gateway.Status.prototype.getTxOk = function() {
 
 /** @param {number} value */
 proto.gateway.Status.prototype.setTxOk = function(value) {
-  jspb.Message.setField(this, 44, value);
+  jspb.Message.setProto3IntField(this, 44, value);
 };
 
 
@@ -2532,7 +2532,7 @@ proto.gateway.Status.prototype.getLmOk = function() {
 
 /** @param {number} value */
 proto.gateway.Status.prototype.setLmOk = function(value) {
-  jspb.Message.setField(this, 45, value);
+  jspb.Message.setProto3IntField(this, 45, value);
 };
 
 
@@ -2547,7 +2547,7 @@ proto.gateway.Status.prototype.getLmSt = function() {
 
 /** @param {number} value */
 proto.gateway.Status.prototype.setLmSt = function(value) {
-  jspb.Message.setField(this, 46, value);
+  jspb.Message.setProto3IntField(this, 46, value);
 };
 
 
@@ -2562,7 +2562,7 @@ proto.gateway.Status.prototype.getLmNw = function() {
 
 /** @param {number} value */
 proto.gateway.Status.prototype.setLmNw = function(value) {
-  jspb.Message.setField(this, 47, value);
+  jspb.Message.setProto3IntField(this, 47, value);
 };
 
 
@@ -2577,7 +2577,7 @@ proto.gateway.Status.prototype.getLPps = function() {
 
 /** @param {number} value */
 proto.gateway.Status.prototype.setLPps = function(value) {
-  jspb.Message.setField(this, 48, value);
+  jspb.Message.setProto3IntField(this, 48, value);
 };
 
 
@@ -2613,14 +2613,14 @@ proto.gateway.Status.prototype.hasOs = function() {
 
 /**
  * repeated string messages = 52;
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.gateway.Status.prototype.getMessagesList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getRepeatedField(this, 52));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 52));
 };
 
 
-/** @param {!Array.<string>} value */
+/** @param {!Array<string>} value */
 proto.gateway.Status.prototype.setMessagesList = function(value) {
   jspb.Message.setField(this, 52, value || []);
 };

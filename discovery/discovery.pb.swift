@@ -22,8 +22,10 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Discovery_Metadata: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Metadata"
+struct Discovery_Metadata {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   /// General metadata (0-9)
   var metadata: Discovery_Metadata.OneOf_Metadata? = nil
@@ -87,6 +89,7 @@ struct Discovery_Metadata: SwiftProtobuf.Message {
     /// Only authorized Join Handlers can announce APP_EUI metadata (and we don't have any of those yet).
     case appEui(Data)
 
+  #if !swift(>=4.1)
     static func ==(lhs: Discovery_Metadata.OneOf_Metadata, rhs: Discovery_Metadata.OneOf_Metadata) -> Bool {
       switch (lhs, rhs) {
       case (.gatewayID(let l), .gatewayID(let r)): return l == r
@@ -96,65 +99,17 @@ struct Discovery_Metadata: SwiftProtobuf.Message {
       default: return false
       }
     }
+  #endif
   }
 
   init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 10:
-        if self.metadata != nil {try decoder.handleConflictingOneOf()}
-        var v: String?
-        try decoder.decodeSingularStringField(value: &v)
-        if let v = v {self.metadata = .gatewayID(v)}
-      case 20:
-        if self.metadata != nil {try decoder.handleConflictingOneOf()}
-        var v: Data?
-        try decoder.decodeSingularBytesField(value: &v)
-        if let v = v {self.metadata = .devAddrPrefix(v)}
-      case 30:
-        if self.metadata != nil {try decoder.handleConflictingOneOf()}
-        var v: String?
-        try decoder.decodeSingularStringField(value: &v)
-        if let v = v {self.metadata = .appID(v)}
-      case 31:
-        if self.metadata != nil {try decoder.handleConflictingOneOf()}
-        var v: Data?
-        try decoder.decodeSingularBytesField(value: &v)
-        if let v = v {self.metadata = .appEui(v)}
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    switch self.metadata {
-    case .gatewayID(let v)?:
-      try visitor.visitSingularStringField(value: v, fieldNumber: 10)
-    case .devAddrPrefix(let v)?:
-      try visitor.visitSingularBytesField(value: v, fieldNumber: 20)
-    case .appID(let v)?:
-      try visitor.visitSingularStringField(value: v, fieldNumber: 30)
-    case .appEui(let v)?:
-      try visitor.visitSingularBytesField(value: v, fieldNumber: 31)
-    case nil: break
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
 }
 
 /// The Announcement of a service (also called component)
-struct Discovery_Announcement: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Announcement"
+struct Discovery_Announcement {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   /// The ID of the component
   var id: String = String()
@@ -216,11 +171,206 @@ struct Discovery_Announcement: SwiftProtobuf.Message {
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
+struct Discovery_GetServiceRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// The name of the service (router/broker/handler)
+  var serviceName: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+/// The identifier of the service that should be returned
+struct Discovery_GetRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// The ID of the service
+  var id: String = String()
+
+  /// The name of the service (router/broker/handler)
+  var serviceName: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+/// The metadata to add or remove from an announement
+struct Discovery_MetadataRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// The ID of the service that should be modified
+  var id: String {
+    get {return _storage._id}
+    set {_uniqueStorage()._id = newValue}
+  }
+
+  /// The name of the service (router/broker/handler) that should be modified
+  var serviceName: String {
+    get {return _storage._serviceName}
+    set {_uniqueStorage()._serviceName = newValue}
+  }
+
+  /// Metadata to add or remove
+  var metadata: Discovery_Metadata {
+    get {return _storage._metadata ?? Discovery_Metadata()}
+    set {_uniqueStorage()._metadata = newValue}
+  }
+  /// Returns true if `metadata` has been explicitly set.
+  var hasMetadata: Bool {return _storage._metadata != nil}
+  /// Clears the value of `metadata`. Subsequent reads from it will return its default value.
+  mutating func clearMetadata() {_uniqueStorage()._metadata = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
+}
+
+/// A list of announcements
+struct Discovery_AnnouncementsResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var services: [Discovery_Announcement] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct Discovery_GetByAppIDRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// compatible with Metadata message
+  var appID: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct Discovery_GetByGatewayIDRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// compatible with Metadata message
+  var gatewayID: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct Discovery_GetByAppEUIRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// compatible with Metadata message
+  var appEui: Data = SwiftProtobuf.Internal.emptyData
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+// MARK: - Code below here is support for the SwiftProtobuf runtime.
+
+fileprivate let _protobuf_package = "discovery"
+
+extension Discovery_Metadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".Metadata"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    10: .standard(proto: "gateway_id"),
+    20: .standard(proto: "dev_addr_prefix"),
+    30: .standard(proto: "app_id"),
+    31: .standard(proto: "app_eui"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 10:
+        if self.metadata != nil {try decoder.handleConflictingOneOf()}
+        var v: String?
+        try decoder.decodeSingularStringField(value: &v)
+        if let v = v {self.metadata = .gatewayID(v)}
+      case 20:
+        if self.metadata != nil {try decoder.handleConflictingOneOf()}
+        var v: Data?
+        try decoder.decodeSingularBytesField(value: &v)
+        if let v = v {self.metadata = .devAddrPrefix(v)}
+      case 30:
+        if self.metadata != nil {try decoder.handleConflictingOneOf()}
+        var v: String?
+        try decoder.decodeSingularStringField(value: &v)
+        if let v = v {self.metadata = .appID(v)}
+      case 31:
+        if self.metadata != nil {try decoder.handleConflictingOneOf()}
+        var v: Data?
+        try decoder.decodeSingularBytesField(value: &v)
+        if let v = v {self.metadata = .appEui(v)}
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    switch self.metadata {
+    case .gatewayID(let v)?:
+      try visitor.visitSingularStringField(value: v, fieldNumber: 10)
+    case .devAddrPrefix(let v)?:
+      try visitor.visitSingularBytesField(value: v, fieldNumber: 20)
+    case .appID(let v)?:
+      try visitor.visitSingularStringField(value: v, fieldNumber: 30)
+    case .appEui(let v)?:
+      try visitor.visitSingularBytesField(value: v, fieldNumber: 31)
+    case nil: break
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Discovery_Metadata, rhs: Discovery_Metadata) -> Bool {
+    if lhs.metadata != rhs.metadata {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Discovery_Announcement: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".Announcement"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "id"),
+    2: .standard(proto: "service_name"),
+    3: .standard(proto: "service_version"),
+    4: .same(proto: "description"),
+    5: .same(proto: "url"),
+    6: .same(proto: "public"),
+    11: .standard(proto: "net_address"),
+    12: .standard(proto: "public_key"),
+    13: .same(proto: "certificate"),
+    14: .standard(proto: "api_address"),
+    15: .standard(proto: "mqtt_address"),
+    16: .standard(proto: "amqp_address"),
+    22: .same(proto: "metadata"),
+  ]
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
@@ -242,10 +392,6 @@ struct Discovery_Announcement: SwiftProtobuf.Message {
     }
   }
 
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.id.isEmpty {
       try visitor.visitSingularStringField(value: self.id, fieldNumber: 1)
@@ -288,22 +434,32 @@ struct Discovery_Announcement: SwiftProtobuf.Message {
     }
     try unknownFields.traverse(visitor: &visitor)
   }
+
+  static func ==(lhs: Discovery_Announcement, rhs: Discovery_Announcement) -> Bool {
+    if lhs.id != rhs.id {return false}
+    if lhs.serviceName != rhs.serviceName {return false}
+    if lhs.serviceVersion != rhs.serviceVersion {return false}
+    if lhs.description_p != rhs.description_p {return false}
+    if lhs.url != rhs.url {return false}
+    if lhs.`public` != rhs.`public` {return false}
+    if lhs.netAddress != rhs.netAddress {return false}
+    if lhs.publicKey != rhs.publicKey {return false}
+    if lhs.certificate != rhs.certificate {return false}
+    if lhs.apiAddress != rhs.apiAddress {return false}
+    if lhs.mqttAddress != rhs.mqttAddress {return false}
+    if lhs.amqpAddress != rhs.amqpAddress {return false}
+    if lhs.metadata != rhs.metadata {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
 }
 
-struct Discovery_GetServiceRequest: SwiftProtobuf.Message {
+extension Discovery_GetServiceRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetServiceRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "service_name"),
+  ]
 
-  /// The name of the service (router/broker/handler)
-  var serviceName: String = String()
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
@@ -313,36 +469,27 @@ struct Discovery_GetServiceRequest: SwiftProtobuf.Message {
     }
   }
 
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.serviceName.isEmpty {
       try visitor.visitSingularStringField(value: self.serviceName, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
+
+  static func ==(lhs: Discovery_GetServiceRequest, rhs: Discovery_GetServiceRequest) -> Bool {
+    if lhs.serviceName != rhs.serviceName {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
 }
 
-/// The identifier of the service that should be returned
-struct Discovery_GetRequest: SwiftProtobuf.Message {
+extension Discovery_GetRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "id"),
+    2: .standard(proto: "service_name"),
+  ]
 
-  /// The ID of the service
-  var id: String = String()
-
-  /// The name of the service (router/broker/handler)
-  var serviceName: String = String()
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
@@ -353,10 +500,6 @@ struct Discovery_GetRequest: SwiftProtobuf.Message {
     }
   }
 
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.id.isEmpty {
       try visitor.visitSingularStringField(value: self.id, fieldNumber: 1)
@@ -366,300 +509,17 @@ struct Discovery_GetRequest: SwiftProtobuf.Message {
     }
     try unknownFields.traverse(visitor: &visitor)
   }
+
+  static func ==(lhs: Discovery_GetRequest, rhs: Discovery_GetRequest) -> Bool {
+    if lhs.id != rhs.id {return false}
+    if lhs.serviceName != rhs.serviceName {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
 }
 
-/// The metadata to add or remove from an announement
-struct Discovery_MetadataRequest: SwiftProtobuf.Message {
+extension Discovery_MetadataRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MetadataRequest"
-
-  /// The ID of the service that should be modified
-  var id: String {
-    get {return _storage._id}
-    set {_uniqueStorage()._id = newValue}
-  }
-
-  /// The name of the service (router/broker/handler) that should be modified
-  var serviceName: String {
-    get {return _storage._serviceName}
-    set {_uniqueStorage()._serviceName = newValue}
-  }
-
-  /// Metadata to add or remove
-  var metadata: Discovery_Metadata {
-    get {return _storage._metadata ?? Discovery_Metadata()}
-    set {_uniqueStorage()._metadata = newValue}
-  }
-  /// Returns true if `metadata` has been explicitly set.
-  var hasMetadata: Bool {return _storage._metadata != nil}
-  /// Clears the value of `metadata`. Subsequent reads from it will return its default value.
-  mutating func clearMetadata() {_storage._metadata = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularStringField(value: &_storage._id)
-        case 2: try decoder.decodeSingularStringField(value: &_storage._serviceName)
-        case 12: try decoder.decodeSingularMessageField(value: &_storage._metadata)
-        default: break
-        }
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if !_storage._id.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._id, fieldNumber: 1)
-      }
-      if !_storage._serviceName.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._serviceName, fieldNumber: 2)
-      }
-      if let v = _storage._metadata {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  fileprivate var _storage = _StorageClass.defaultInstance
-}
-
-/// A list of announcements
-struct Discovery_AnnouncementsResponse: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".AnnouncementsResponse"
-
-  var services: [Discovery_Announcement] = []
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeRepeatedMessageField(value: &self.services)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.services.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.services, fieldNumber: 1)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-}
-
-struct Discovery_GetByAppIDRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".GetByAppIDRequest"
-
-  /// compatible with Metadata message
-  var appID: String = String()
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 30: try decoder.decodeSingularStringField(value: &self.appID)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.appID.isEmpty {
-      try visitor.visitSingularStringField(value: self.appID, fieldNumber: 30)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-}
-
-struct Discovery_GetByGatewayIDRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".GetByGatewayIDRequest"
-
-  /// compatible with Metadata message
-  var gatewayID: String = String()
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 30: try decoder.decodeSingularStringField(value: &self.gatewayID)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.gatewayID.isEmpty {
-      try visitor.visitSingularStringField(value: self.gatewayID, fieldNumber: 30)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-}
-
-struct Discovery_GetByAppEUIRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".GetByAppEUIRequest"
-
-  /// compatible with Metadata message
-  var appEui: Data = SwiftProtobuf.Internal.emptyData
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 31: try decoder.decodeSingularBytesField(value: &self.appEui)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.appEui.isEmpty {
-      try visitor.visitSingularBytesField(value: self.appEui, fieldNumber: 31)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-}
-
-// MARK: - Code below here is support for the SwiftProtobuf runtime.
-
-fileprivate let _protobuf_package = "discovery"
-
-extension Discovery_Metadata: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    10: .standard(proto: "gateway_id"),
-    20: .standard(proto: "dev_addr_prefix"),
-    30: .standard(proto: "app_id"),
-    31: .standard(proto: "app_eui"),
-  ]
-
-  func _protobuf_generated_isEqualTo(other: Discovery_Metadata) -> Bool {
-    if self.metadata != other.metadata {return false}
-    if unknownFields != other.unknownFields {return false}
-    return true
-  }
-}
-
-extension Discovery_Announcement: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "id"),
-    2: .standard(proto: "service_name"),
-    3: .standard(proto: "service_version"),
-    4: .same(proto: "description"),
-    5: .same(proto: "url"),
-    6: .same(proto: "public"),
-    11: .standard(proto: "net_address"),
-    12: .standard(proto: "public_key"),
-    13: .same(proto: "certificate"),
-    14: .standard(proto: "api_address"),
-    15: .standard(proto: "mqtt_address"),
-    16: .standard(proto: "amqp_address"),
-    22: .same(proto: "metadata"),
-  ]
-
-  func _protobuf_generated_isEqualTo(other: Discovery_Announcement) -> Bool {
-    if self.id != other.id {return false}
-    if self.serviceName != other.serviceName {return false}
-    if self.serviceVersion != other.serviceVersion {return false}
-    if self.description_p != other.description_p {return false}
-    if self.url != other.url {return false}
-    if self.`public` != other.`public` {return false}
-    if self.netAddress != other.netAddress {return false}
-    if self.publicKey != other.publicKey {return false}
-    if self.certificate != other.certificate {return false}
-    if self.apiAddress != other.apiAddress {return false}
-    if self.mqttAddress != other.mqttAddress {return false}
-    if self.amqpAddress != other.amqpAddress {return false}
-    if self.metadata != other.metadata {return false}
-    if unknownFields != other.unknownFields {return false}
-    return true
-  }
-}
-
-extension Discovery_GetServiceRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "service_name"),
-  ]
-
-  func _protobuf_generated_isEqualTo(other: Discovery_GetServiceRequest) -> Bool {
-    if self.serviceName != other.serviceName {return false}
-    if unknownFields != other.unknownFields {return false}
-    return true
-  }
-}
-
-extension Discovery_GetRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "id"),
-    2: .standard(proto: "service_name"),
-  ]
-
-  func _protobuf_generated_isEqualTo(other: Discovery_GetRequest) -> Bool {
-    if self.id != other.id {return false}
-    if self.serviceName != other.serviceName {return false}
-    if unknownFields != other.unknownFields {return false}
-    return true
-  }
-}
-
-extension Discovery_MetadataRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
     2: .standard(proto: "service_name"),
@@ -689,65 +549,164 @@ extension Discovery_MetadataRequest: SwiftProtobuf._MessageImplementationBase, S
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Discovery_MetadataRequest) -> Bool {
-    if _storage !== other._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._id != other_storage._id {return false}
-        if _storage._serviceName != other_storage._serviceName {return false}
-        if _storage._metadata != other_storage._metadata {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularStringField(value: &_storage._id)
+        case 2: try decoder.decodeSingularStringField(value: &_storage._serviceName)
+        case 12: try decoder.decodeSingularMessageField(value: &_storage._metadata)
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._id.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._id, fieldNumber: 1)
+      }
+      if !_storage._serviceName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._serviceName, fieldNumber: 2)
+      }
+      if let v = _storage._metadata {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Discovery_MetadataRequest, rhs: Discovery_MetadataRequest) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._id != rhs_storage._id {return false}
+        if _storage._serviceName != rhs_storage._serviceName {return false}
+        if _storage._metadata != rhs_storage._metadata {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Discovery_AnnouncementsResponse: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Discovery_AnnouncementsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".AnnouncementsResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "services"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Discovery_AnnouncementsResponse) -> Bool {
-    if self.services != other.services {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeRepeatedMessageField(value: &self.services)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.services.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.services, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Discovery_AnnouncementsResponse, rhs: Discovery_AnnouncementsResponse) -> Bool {
+    if lhs.services != rhs.services {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Discovery_GetByAppIDRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Discovery_GetByAppIDRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetByAppIDRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     30: .standard(proto: "app_id"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Discovery_GetByAppIDRequest) -> Bool {
-    if self.appID != other.appID {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 30: try decoder.decodeSingularStringField(value: &self.appID)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.appID.isEmpty {
+      try visitor.visitSingularStringField(value: self.appID, fieldNumber: 30)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Discovery_GetByAppIDRequest, rhs: Discovery_GetByAppIDRequest) -> Bool {
+    if lhs.appID != rhs.appID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Discovery_GetByGatewayIDRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Discovery_GetByGatewayIDRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetByGatewayIDRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     30: .standard(proto: "gateway_id"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Discovery_GetByGatewayIDRequest) -> Bool {
-    if self.gatewayID != other.gatewayID {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 30: try decoder.decodeSingularStringField(value: &self.gatewayID)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.gatewayID.isEmpty {
+      try visitor.visitSingularStringField(value: self.gatewayID, fieldNumber: 30)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Discovery_GetByGatewayIDRequest, rhs: Discovery_GetByGatewayIDRequest) -> Bool {
+    if lhs.gatewayID != rhs.gatewayID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Discovery_GetByAppEUIRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Discovery_GetByAppEUIRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetByAppEUIRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     31: .standard(proto: "app_eui"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Discovery_GetByAppEUIRequest) -> Bool {
-    if self.appEui != other.appEui {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 31: try decoder.decodeSingularBytesField(value: &self.appEui)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.appEui.isEmpty {
+      try visitor.visitSingularBytesField(value: self.appEui, fieldNumber: 31)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Discovery_GetByAppEUIRequest, rhs: Discovery_GetByAppEUIRequest) -> Bool {
+    if lhs.appEui != rhs.appEui {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }

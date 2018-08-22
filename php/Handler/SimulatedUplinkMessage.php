@@ -36,9 +36,23 @@ class SimulatedUplinkMessage extends \Google\Protobuf\Internal\Message
      */
     private $port = 0;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $app_id
+     *     @type string $dev_id
+     *     @type string $payload
+     *           The binary payload to use
+     *     @type int $port
+     *           The port number
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Handler\Handler::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

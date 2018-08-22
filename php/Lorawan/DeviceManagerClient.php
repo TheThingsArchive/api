@@ -42,7 +42,7 @@ class DeviceManagerClient extends \Grpc\BaseStub {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/lorawan.DeviceManager/SetDevice',
         $argument,
-        ['\Google\Protobuf\Empty', 'decode'],
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
         $metadata, $options);
     }
 
@@ -55,7 +55,7 @@ class DeviceManagerClient extends \Grpc\BaseStub {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/lorawan.DeviceManager/DeleteDevice',
         $argument,
-        ['\Google\Protobuf\Empty', 'decode'],
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
         $metadata, $options);
     }
 

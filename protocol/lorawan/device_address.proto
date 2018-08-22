@@ -10,7 +10,7 @@ package lorawan;
 option csharp_namespace = "TheThingsNetwork.API.LoRaWANProtocol";
 option go_package = "github.com/TheThingsNetwork/api/protocol/lorawan";
 option java_package = "org.thethingsnetwork.api.protocol.lorawan";
-option java_outer_classname = "LoRaWANProtocolProto";
+option java_outer_classname = "LoRaWANDeviceAddressProto";
 option java_multiple_files = true;
 
 message PrefixesRequest {}

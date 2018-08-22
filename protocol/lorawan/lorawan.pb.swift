@@ -50,6 +50,18 @@ enum Lorawan_Modulation: SwiftProtobuf.Enum {
 
 }
 
+#if swift(>=4.2)
+
+extension Lorawan_Modulation: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  static var allCases: [Lorawan_Modulation] = [
+    .lora,
+    .fsk,
+  ]
+}
+
+#endif  // swift(>=4.2)
+
 enum Lorawan_FrequencyPlan: SwiftProtobuf.Enum {
   typealias RawValue = Int
   case eu863870 // = 0
@@ -105,6 +117,27 @@ enum Lorawan_FrequencyPlan: SwiftProtobuf.Enum {
 
 }
 
+#if swift(>=4.2)
+
+extension Lorawan_FrequencyPlan: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  static var allCases: [Lorawan_FrequencyPlan] = [
+    .eu863870,
+    .us902928,
+    .cn779787,
+    .eu433,
+    .au915928,
+    .cn470510,
+    .as923,
+    .as920923,
+    .as923925,
+    .kr920923,
+    .in865867,
+  ]
+}
+
+#endif  // swift(>=4.2)
+
 enum Lorawan_Major: SwiftProtobuf.Enum {
   typealias RawValue = Int
   case lorawanR1 // = 0
@@ -129,6 +162,17 @@ enum Lorawan_Major: SwiftProtobuf.Enum {
   }
 
 }
+
+#if swift(>=4.2)
+
+extension Lorawan_Major: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  static var allCases: [Lorawan_Major] = [
+    .lorawanR1,
+  ]
+}
+
+#endif  // swift(>=4.2)
 
 enum Lorawan_MType: SwiftProtobuf.Enum {
   typealias RawValue = Int
@@ -170,8 +214,26 @@ enum Lorawan_MType: SwiftProtobuf.Enum {
 
 }
 
-struct Lorawan_Metadata: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Metadata"
+#if swift(>=4.2)
+
+extension Lorawan_MType: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  static var allCases: [Lorawan_MType] = [
+    .joinRequest,
+    .joinAccept,
+    .unconfirmedUp,
+    .unconfirmedDown,
+    .confirmedUp,
+    .confirmedDown,
+  ]
+}
+
+#endif  // swift(>=4.2)
+
+struct Lorawan_Metadata {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var modulation: Lorawan_Modulation = .lora
 
@@ -192,54 +254,12 @@ struct Lorawan_Metadata: SwiftProtobuf.Message {
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 11: try decoder.decodeSingularEnumField(value: &self.modulation)
-      case 12: try decoder.decodeSingularStringField(value: &self.dataRate)
-      case 13: try decoder.decodeSingularUInt32Field(value: &self.bitRate)
-      case 14: try decoder.decodeSingularStringField(value: &self.codingRate)
-      case 15: try decoder.decodeSingularUInt32Field(value: &self.fCnt)
-      case 16: try decoder.decodeSingularEnumField(value: &self.frequencyPlan)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.modulation != .lora {
-      try visitor.visitSingularEnumField(value: self.modulation, fieldNumber: 11)
-    }
-    if !self.dataRate.isEmpty {
-      try visitor.visitSingularStringField(value: self.dataRate, fieldNumber: 12)
-    }
-    if self.bitRate != 0 {
-      try visitor.visitSingularUInt32Field(value: self.bitRate, fieldNumber: 13)
-    }
-    if !self.codingRate.isEmpty {
-      try visitor.visitSingularStringField(value: self.codingRate, fieldNumber: 14)
-    }
-    if self.fCnt != 0 {
-      try visitor.visitSingularUInt32Field(value: self.fCnt, fieldNumber: 15)
-    }
-    if self.frequencyPlan != .eu863870 {
-      try visitor.visitSingularEnumField(value: self.frequencyPlan, fieldNumber: 16)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
 }
 
-struct Lorawan_TxConfiguration: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TxConfiguration"
+struct Lorawan_TxConfiguration {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var modulation: Lorawan_Modulation = .lora
 
@@ -258,50 +278,12 @@ struct Lorawan_TxConfiguration: SwiftProtobuf.Message {
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 11: try decoder.decodeSingularEnumField(value: &self.modulation)
-      case 12: try decoder.decodeSingularStringField(value: &self.dataRate)
-      case 13: try decoder.decodeSingularUInt32Field(value: &self.bitRate)
-      case 14: try decoder.decodeSingularStringField(value: &self.codingRate)
-      case 15: try decoder.decodeSingularUInt32Field(value: &self.fCnt)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.modulation != .lora {
-      try visitor.visitSingularEnumField(value: self.modulation, fieldNumber: 11)
-    }
-    if !self.dataRate.isEmpty {
-      try visitor.visitSingularStringField(value: self.dataRate, fieldNumber: 12)
-    }
-    if self.bitRate != 0 {
-      try visitor.visitSingularUInt32Field(value: self.bitRate, fieldNumber: 13)
-    }
-    if !self.codingRate.isEmpty {
-      try visitor.visitSingularStringField(value: self.codingRate, fieldNumber: 14)
-    }
-    if self.fCnt != 0 {
-      try visitor.visitSingularUInt32Field(value: self.fCnt, fieldNumber: 15)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
 }
 
-struct Lorawan_ActivationMetadata: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ActivationMetadata"
+struct Lorawan_ActivationMetadata {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var appEui: Data {
     get {return _storage._appEui}
@@ -345,7 +327,7 @@ struct Lorawan_ActivationMetadata: SwiftProtobuf.Message {
   /// Returns true if `cfList` has been explicitly set.
   var hasCfList: Bool {return _storage._cfList != nil}
   /// Clears the value of `cfList`. Subsequent reads from it will return its default value.
-  mutating func clearCfList() {_storage._cfList = nil}
+  mutating func clearCfList() {_uniqueStorage()._cfList = nil}
 
   var frequencyPlan: Lorawan_FrequencyPlan {
     get {return _storage._frequencyPlan}
@@ -356,72 +338,13 @@ struct Lorawan_ActivationMetadata: SwiftProtobuf.Message {
 
   init() {}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularBytesField(value: &_storage._appEui)
-        case 2: try decoder.decodeSingularBytesField(value: &_storage._devEui)
-        case 3: try decoder.decodeSingularBytesField(value: &_storage._devAddr)
-        case 4: try decoder.decodeSingularBytesField(value: &_storage._nwkSKey)
-        case 11: try decoder.decodeSingularUInt32Field(value: &_storage._rx1DrOffset)
-        case 12: try decoder.decodeSingularUInt32Field(value: &_storage._rx2Dr)
-        case 13: try decoder.decodeSingularUInt32Field(value: &_storage._rxDelay)
-        case 14: try decoder.decodeSingularMessageField(value: &_storage._cfList)
-        case 15: try decoder.decodeSingularEnumField(value: &_storage._frequencyPlan)
-        default: break
-        }
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if !_storage._appEui.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._appEui, fieldNumber: 1)
-      }
-      if !_storage._devEui.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._devEui, fieldNumber: 2)
-      }
-      if !_storage._devAddr.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._devAddr, fieldNumber: 3)
-      }
-      if !_storage._nwkSKey.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._nwkSKey, fieldNumber: 4)
-      }
-      if _storage._rx1DrOffset != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._rx1DrOffset, fieldNumber: 11)
-      }
-      if _storage._rx2Dr != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._rx2Dr, fieldNumber: 12)
-      }
-      if _storage._rxDelay != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._rxDelay, fieldNumber: 13)
-      }
-      if let v = _storage._cfList {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 14)
-      }
-      if _storage._frequencyPlan != .eu863870 {
-        try visitor.visitSingularEnumField(value: _storage._frequencyPlan, fieldNumber: 15)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct Lorawan_Message: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Message"
+struct Lorawan_Message {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var mHdr: Lorawan_MHDR {
     get {return _storage._mHdr ?? Lorawan_MHDR()}
@@ -430,7 +353,7 @@ struct Lorawan_Message: SwiftProtobuf.Message {
   /// Returns true if `mHdr` has been explicitly set.
   var hasMHdr: Bool {return _storage._mHdr != nil}
   /// Clears the value of `mHdr`. Subsequent reads from it will return its default value.
-  mutating func clearMHdr() {_storage._mHdr = nil}
+  mutating func clearMHdr() {_uniqueStorage()._mHdr = nil}
 
   var mic: Data {
     get {return _storage._mic}
@@ -473,6 +396,7 @@ struct Lorawan_Message: SwiftProtobuf.Message {
     case joinRequestPayload(Lorawan_JoinRequestPayload)
     case joinAcceptPayload(Lorawan_JoinAcceptPayload)
 
+  #if !swift(>=4.1)
     static func ==(lhs: Lorawan_Message.OneOf_Payload, rhs: Lorawan_Message.OneOf_Payload) -> Bool {
       switch (lhs, rhs) {
       case (.macPayload(let l), .macPayload(let r)): return l == r
@@ -481,81 +405,18 @@ struct Lorawan_Message: SwiftProtobuf.Message {
       default: return false
       }
     }
+  #endif
   }
 
   init() {}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularMessageField(value: &_storage._mHdr)
-        case 2: try decoder.decodeSingularBytesField(value: &_storage._mic)
-        case 3:
-          var v: Lorawan_MACPayload?
-          if let current = _storage._payload {
-            try decoder.handleConflictingOneOf()
-            if case .macPayload(let m) = current {v = m}
-          }
-          try decoder.decodeSingularMessageField(value: &v)
-          if let v = v {_storage._payload = .macPayload(v)}
-        case 4:
-          var v: Lorawan_JoinRequestPayload?
-          if let current = _storage._payload {
-            try decoder.handleConflictingOneOf()
-            if case .joinRequestPayload(let m) = current {v = m}
-          }
-          try decoder.decodeSingularMessageField(value: &v)
-          if let v = v {_storage._payload = .joinRequestPayload(v)}
-        case 5:
-          var v: Lorawan_JoinAcceptPayload?
-          if let current = _storage._payload {
-            try decoder.handleConflictingOneOf()
-            if case .joinAcceptPayload(let m) = current {v = m}
-          }
-          try decoder.decodeSingularMessageField(value: &v)
-          if let v = v {_storage._payload = .joinAcceptPayload(v)}
-        default: break
-        }
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._mHdr {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      }
-      if !_storage._mic.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._mic, fieldNumber: 2)
-      }
-      switch _storage._payload {
-      case .macPayload(let v)?:
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      case .joinRequestPayload(let v)?:
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-      case .joinAcceptPayload(let v)?:
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      case nil: break
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct Lorawan_MHDR: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".MHDR"
+struct Lorawan_MHDR {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var mType: Lorawan_MType = .joinRequest
 
@@ -564,38 +425,12 @@ struct Lorawan_MHDR: SwiftProtobuf.Message {
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularEnumField(value: &self.mType)
-      case 2: try decoder.decodeSingularEnumField(value: &self.major)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.mType != .joinRequest {
-      try visitor.visitSingularEnumField(value: self.mType, fieldNumber: 1)
-    }
-    if self.major != .lorawanR1 {
-      try visitor.visitSingularEnumField(value: self.major, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
 }
 
-struct Lorawan_MACPayload: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".MACPayload"
+struct Lorawan_MACPayload {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var fHdr: Lorawan_FHDR {
     get {return _storage._fHdr ?? Lorawan_FHDR()}
@@ -604,7 +439,7 @@ struct Lorawan_MACPayload: SwiftProtobuf.Message {
   /// Returns true if `fHdr` has been explicitly set.
   var hasFHdr: Bool {return _storage._fHdr != nil}
   /// Clears the value of `fHdr`. Subsequent reads from it will return its default value.
-  mutating func clearFHdr() {_storage._fHdr = nil}
+  mutating func clearFHdr() {_uniqueStorage()._fHdr = nil}
 
   var fPort: Int32 {
     get {return _storage._fPort}
@@ -620,48 +455,13 @@ struct Lorawan_MACPayload: SwiftProtobuf.Message {
 
   init() {}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularMessageField(value: &_storage._fHdr)
-        case 2: try decoder.decodeSingularInt32Field(value: &_storage._fPort)
-        case 3: try decoder.decodeSingularBytesField(value: &_storage._frmPayload)
-        default: break
-        }
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._fHdr {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      }
-      if _storage._fPort != 0 {
-        try visitor.visitSingularInt32Field(value: _storage._fPort, fieldNumber: 2)
-      }
-      if !_storage._frmPayload.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._frmPayload, fieldNumber: 3)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct Lorawan_FHDR: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".FHDR"
+struct Lorawan_FHDR {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var devAddr: Data {
     get {return _storage._devAddr}
@@ -675,7 +475,7 @@ struct Lorawan_FHDR: SwiftProtobuf.Message {
   /// Returns true if `fCtrl` has been explicitly set.
   var hasFCtrl: Bool {return _storage._fCtrl != nil}
   /// Clears the value of `fCtrl`. Subsequent reads from it will return its default value.
-  mutating func clearFCtrl() {_storage._fCtrl = nil}
+  mutating func clearFCtrl() {_uniqueStorage()._fCtrl = nil}
 
   var fCnt: UInt32 {
     get {return _storage._fCnt}
@@ -691,52 +491,13 @@ struct Lorawan_FHDR: SwiftProtobuf.Message {
 
   init() {}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularBytesField(value: &_storage._devAddr)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._fCtrl)
-        case 3: try decoder.decodeSingularUInt32Field(value: &_storage._fCnt)
-        case 4: try decoder.decodeRepeatedMessageField(value: &_storage._fOpts)
-        default: break
-        }
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if !_storage._devAddr.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._devAddr, fieldNumber: 1)
-      }
-      if let v = _storage._fCtrl {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-      if _storage._fCnt != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._fCnt, fieldNumber: 3)
-      }
-      if !_storage._fOpts.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._fOpts, fieldNumber: 4)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct Lorawan_FCtrl: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".FCtrl"
+struct Lorawan_FCtrl {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var adr: Bool = false
 
@@ -749,46 +510,12 @@ struct Lorawan_FCtrl: SwiftProtobuf.Message {
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularBoolField(value: &self.adr)
-      case 2: try decoder.decodeSingularBoolField(value: &self.adrAckReq)
-      case 3: try decoder.decodeSingularBoolField(value: &self.ack)
-      case 4: try decoder.decodeSingularBoolField(value: &self.fPending)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.adr != false {
-      try visitor.visitSingularBoolField(value: self.adr, fieldNumber: 1)
-    }
-    if self.adrAckReq != false {
-      try visitor.visitSingularBoolField(value: self.adrAckReq, fieldNumber: 2)
-    }
-    if self.ack != false {
-      try visitor.visitSingularBoolField(value: self.ack, fieldNumber: 3)
-    }
-    if self.fPending != false {
-      try visitor.visitSingularBoolField(value: self.fPending, fieldNumber: 4)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
 }
 
-struct Lorawan_MACCommand: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".MACCommand"
+struct Lorawan_MACCommand {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var cid: UInt32 = 0
 
@@ -797,38 +524,12 @@ struct Lorawan_MACCommand: SwiftProtobuf.Message {
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularUInt32Field(value: &self.cid)
-      case 2: try decoder.decodeSingularBytesField(value: &self.payload)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.cid != 0 {
-      try visitor.visitSingularUInt32Field(value: self.cid, fieldNumber: 1)
-    }
-    if !self.payload.isEmpty {
-      try visitor.visitSingularBytesField(value: self.payload, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
 }
 
-struct Lorawan_JoinRequestPayload: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".JoinRequestPayload"
+struct Lorawan_JoinRequestPayload {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var appEui: Data = SwiftProtobuf.Internal.emptyData
 
@@ -839,42 +540,12 @@ struct Lorawan_JoinRequestPayload: SwiftProtobuf.Message {
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularBytesField(value: &self.appEui)
-      case 2: try decoder.decodeSingularBytesField(value: &self.devEui)
-      case 3: try decoder.decodeSingularBytesField(value: &self.devNonce)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.appEui.isEmpty {
-      try visitor.visitSingularBytesField(value: self.appEui, fieldNumber: 1)
-    }
-    if !self.devEui.isEmpty {
-      try visitor.visitSingularBytesField(value: self.devEui, fieldNumber: 2)
-    }
-    if !self.devNonce.isEmpty {
-      try visitor.visitSingularBytesField(value: self.devNonce, fieldNumber: 3)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
 }
 
-struct Lorawan_JoinAcceptPayload: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".JoinAcceptPayload"
+struct Lorawan_JoinAcceptPayload {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var encrypted: Data {
     get {return _storage._encrypted}
@@ -903,7 +574,7 @@ struct Lorawan_JoinAcceptPayload: SwiftProtobuf.Message {
   /// Returns true if `dlSettings` has been explicitly set.
   var hasDlSettings: Bool {return _storage._dlSettings != nil}
   /// Clears the value of `dlSettings`. Subsequent reads from it will return its default value.
-  mutating func clearDlSettings() {_storage._dlSettings = nil}
+  mutating func clearDlSettings() {_uniqueStorage()._dlSettings = nil}
 
   var rxDelay: UInt32 {
     get {return _storage._rxDelay}
@@ -917,70 +588,19 @@ struct Lorawan_JoinAcceptPayload: SwiftProtobuf.Message {
   /// Returns true if `cfList` has been explicitly set.
   var hasCfList: Bool {return _storage._cfList != nil}
   /// Clears the value of `cfList`. Subsequent reads from it will return its default value.
-  mutating func clearCfList() {_storage._cfList = nil}
+  mutating func clearCfList() {_uniqueStorage()._cfList = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularBytesField(value: &_storage._encrypted)
-        case 2: try decoder.decodeSingularBytesField(value: &_storage._appNonce)
-        case 3: try decoder.decodeSingularBytesField(value: &_storage._netID)
-        case 4: try decoder.decodeSingularBytesField(value: &_storage._devAddr)
-        case 5: try decoder.decodeSingularMessageField(value: &_storage._dlSettings)
-        case 6: try decoder.decodeSingularUInt32Field(value: &_storage._rxDelay)
-        case 7: try decoder.decodeSingularMessageField(value: &_storage._cfList)
-        default: break
-        }
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if !_storage._encrypted.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._encrypted, fieldNumber: 1)
-      }
-      if !_storage._appNonce.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._appNonce, fieldNumber: 2)
-      }
-      if !_storage._netID.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._netID, fieldNumber: 3)
-      }
-      if !_storage._devAddr.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._devAddr, fieldNumber: 4)
-      }
-      if let v = _storage._dlSettings {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      }
-      if _storage._rxDelay != 0 {
-        try visitor.visitSingularUInt32Field(value: _storage._rxDelay, fieldNumber: 6)
-      }
-      if let v = _storage._cfList {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct Lorawan_DLSettings: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".DLSettings"
+struct Lorawan_DLSettings {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var rx1DrOffset: UInt32 = 0
 
@@ -989,68 +609,18 @@ struct Lorawan_DLSettings: SwiftProtobuf.Message {
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularUInt32Field(value: &self.rx1DrOffset)
-      case 2: try decoder.decodeSingularUInt32Field(value: &self.rx2Dr)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.rx1DrOffset != 0 {
-      try visitor.visitSingularUInt32Field(value: self.rx1DrOffset, fieldNumber: 1)
-    }
-    if self.rx2Dr != 0 {
-      try visitor.visitSingularUInt32Field(value: self.rx2Dr, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
 }
 
-struct Lorawan_CFList: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".CFList"
+struct Lorawan_CFList {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var freq: [UInt32] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeRepeatedUInt32Field(value: &self.freq)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.freq.isEmpty {
-      try visitor.visitPackedUInt32Field(value: self.freq, fieldNumber: 1)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -1097,7 +667,8 @@ extension Lorawan_MType: SwiftProtobuf._ProtoNameProviding {
   ]
 }
 
-extension Lorawan_Metadata: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Lorawan_Metadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".Metadata"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     11: .same(proto: "modulation"),
     12: .standard(proto: "data_rate"),
@@ -1107,19 +678,56 @@ extension Lorawan_Metadata: SwiftProtobuf._MessageImplementationBase, SwiftProto
     16: .standard(proto: "frequency_plan"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Lorawan_Metadata) -> Bool {
-    if self.modulation != other.modulation {return false}
-    if self.dataRate != other.dataRate {return false}
-    if self.bitRate != other.bitRate {return false}
-    if self.codingRate != other.codingRate {return false}
-    if self.fCnt != other.fCnt {return false}
-    if self.frequencyPlan != other.frequencyPlan {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 11: try decoder.decodeSingularEnumField(value: &self.modulation)
+      case 12: try decoder.decodeSingularStringField(value: &self.dataRate)
+      case 13: try decoder.decodeSingularUInt32Field(value: &self.bitRate)
+      case 14: try decoder.decodeSingularStringField(value: &self.codingRate)
+      case 15: try decoder.decodeSingularUInt32Field(value: &self.fCnt)
+      case 16: try decoder.decodeSingularEnumField(value: &self.frequencyPlan)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.modulation != .lora {
+      try visitor.visitSingularEnumField(value: self.modulation, fieldNumber: 11)
+    }
+    if !self.dataRate.isEmpty {
+      try visitor.visitSingularStringField(value: self.dataRate, fieldNumber: 12)
+    }
+    if self.bitRate != 0 {
+      try visitor.visitSingularUInt32Field(value: self.bitRate, fieldNumber: 13)
+    }
+    if !self.codingRate.isEmpty {
+      try visitor.visitSingularStringField(value: self.codingRate, fieldNumber: 14)
+    }
+    if self.fCnt != 0 {
+      try visitor.visitSingularUInt32Field(value: self.fCnt, fieldNumber: 15)
+    }
+    if self.frequencyPlan != .eu863870 {
+      try visitor.visitSingularEnumField(value: self.frequencyPlan, fieldNumber: 16)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Lorawan_Metadata, rhs: Lorawan_Metadata) -> Bool {
+    if lhs.modulation != rhs.modulation {return false}
+    if lhs.dataRate != rhs.dataRate {return false}
+    if lhs.bitRate != rhs.bitRate {return false}
+    if lhs.codingRate != rhs.codingRate {return false}
+    if lhs.fCnt != rhs.fCnt {return false}
+    if lhs.frequencyPlan != rhs.frequencyPlan {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Lorawan_TxConfiguration: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Lorawan_TxConfiguration: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TxConfiguration"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     11: .same(proto: "modulation"),
     12: .standard(proto: "data_rate"),
@@ -1128,18 +736,51 @@ extension Lorawan_TxConfiguration: SwiftProtobuf._MessageImplementationBase, Swi
     15: .standard(proto: "f_cnt"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Lorawan_TxConfiguration) -> Bool {
-    if self.modulation != other.modulation {return false}
-    if self.dataRate != other.dataRate {return false}
-    if self.bitRate != other.bitRate {return false}
-    if self.codingRate != other.codingRate {return false}
-    if self.fCnt != other.fCnt {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 11: try decoder.decodeSingularEnumField(value: &self.modulation)
+      case 12: try decoder.decodeSingularStringField(value: &self.dataRate)
+      case 13: try decoder.decodeSingularUInt32Field(value: &self.bitRate)
+      case 14: try decoder.decodeSingularStringField(value: &self.codingRate)
+      case 15: try decoder.decodeSingularUInt32Field(value: &self.fCnt)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.modulation != .lora {
+      try visitor.visitSingularEnumField(value: self.modulation, fieldNumber: 11)
+    }
+    if !self.dataRate.isEmpty {
+      try visitor.visitSingularStringField(value: self.dataRate, fieldNumber: 12)
+    }
+    if self.bitRate != 0 {
+      try visitor.visitSingularUInt32Field(value: self.bitRate, fieldNumber: 13)
+    }
+    if !self.codingRate.isEmpty {
+      try visitor.visitSingularStringField(value: self.codingRate, fieldNumber: 14)
+    }
+    if self.fCnt != 0 {
+      try visitor.visitSingularUInt32Field(value: self.fCnt, fieldNumber: 15)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Lorawan_TxConfiguration, rhs: Lorawan_TxConfiguration) -> Bool {
+    if lhs.modulation != rhs.modulation {return false}
+    if lhs.dataRate != rhs.dataRate {return false}
+    if lhs.bitRate != rhs.bitRate {return false}
+    if lhs.codingRate != rhs.codingRate {return false}
+    if lhs.fCnt != rhs.fCnt {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Lorawan_ActivationMetadata: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Lorawan_ActivationMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ActivationMetadata"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "app_eui"),
     2: .standard(proto: "dev_eui"),
@@ -1187,28 +828,84 @@ extension Lorawan_ActivationMetadata: SwiftProtobuf._MessageImplementationBase, 
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Lorawan_ActivationMetadata) -> Bool {
-    if _storage !== other._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._appEui != other_storage._appEui {return false}
-        if _storage._devEui != other_storage._devEui {return false}
-        if _storage._devAddr != other_storage._devAddr {return false}
-        if _storage._nwkSKey != other_storage._nwkSKey {return false}
-        if _storage._rx1DrOffset != other_storage._rx1DrOffset {return false}
-        if _storage._rx2Dr != other_storage._rx2Dr {return false}
-        if _storage._rxDelay != other_storage._rxDelay {return false}
-        if _storage._cfList != other_storage._cfList {return false}
-        if _storage._frequencyPlan != other_storage._frequencyPlan {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularBytesField(value: &_storage._appEui)
+        case 2: try decoder.decodeSingularBytesField(value: &_storage._devEui)
+        case 3: try decoder.decodeSingularBytesField(value: &_storage._devAddr)
+        case 4: try decoder.decodeSingularBytesField(value: &_storage._nwkSKey)
+        case 11: try decoder.decodeSingularUInt32Field(value: &_storage._rx1DrOffset)
+        case 12: try decoder.decodeSingularUInt32Field(value: &_storage._rx2Dr)
+        case 13: try decoder.decodeSingularUInt32Field(value: &_storage._rxDelay)
+        case 14: try decoder.decodeSingularMessageField(value: &_storage._cfList)
+        case 15: try decoder.decodeSingularEnumField(value: &_storage._frequencyPlan)
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._appEui.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._appEui, fieldNumber: 1)
+      }
+      if !_storage._devEui.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._devEui, fieldNumber: 2)
+      }
+      if !_storage._devAddr.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._devAddr, fieldNumber: 3)
+      }
+      if !_storage._nwkSKey.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._nwkSKey, fieldNumber: 4)
+      }
+      if _storage._rx1DrOffset != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._rx1DrOffset, fieldNumber: 11)
+      }
+      if _storage._rx2Dr != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._rx2Dr, fieldNumber: 12)
+      }
+      if _storage._rxDelay != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._rxDelay, fieldNumber: 13)
+      }
+      if let v = _storage._cfList {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 14)
+      }
+      if _storage._frequencyPlan != .eu863870 {
+        try visitor.visitSingularEnumField(value: _storage._frequencyPlan, fieldNumber: 15)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Lorawan_ActivationMetadata, rhs: Lorawan_ActivationMetadata) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._appEui != rhs_storage._appEui {return false}
+        if _storage._devEui != rhs_storage._devEui {return false}
+        if _storage._devAddr != rhs_storage._devAddr {return false}
+        if _storage._nwkSKey != rhs_storage._nwkSKey {return false}
+        if _storage._rx1DrOffset != rhs_storage._rx1DrOffset {return false}
+        if _storage._rx2Dr != rhs_storage._rx2Dr {return false}
+        if _storage._rxDelay != rhs_storage._rxDelay {return false}
+        if _storage._cfList != rhs_storage._cfList {return false}
+        if _storage._frequencyPlan != rhs_storage._frequencyPlan {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Lorawan_Message: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Lorawan_Message: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".Message"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "m_hdr"),
     2: .same(proto: "mic"),
@@ -1240,36 +937,118 @@ extension Lorawan_Message: SwiftProtobuf._MessageImplementationBase, SwiftProtob
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Lorawan_Message) -> Bool {
-    if _storage !== other._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._mHdr != other_storage._mHdr {return false}
-        if _storage._mic != other_storage._mic {return false}
-        if _storage._payload != other_storage._payload {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularMessageField(value: &_storage._mHdr)
+        case 2: try decoder.decodeSingularBytesField(value: &_storage._mic)
+        case 3:
+          var v: Lorawan_MACPayload?
+          if let current = _storage._payload {
+            try decoder.handleConflictingOneOf()
+            if case .macPayload(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._payload = .macPayload(v)}
+        case 4:
+          var v: Lorawan_JoinRequestPayload?
+          if let current = _storage._payload {
+            try decoder.handleConflictingOneOf()
+            if case .joinRequestPayload(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._payload = .joinRequestPayload(v)}
+        case 5:
+          var v: Lorawan_JoinAcceptPayload?
+          if let current = _storage._payload {
+            try decoder.handleConflictingOneOf()
+            if case .joinAcceptPayload(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._payload = .joinAcceptPayload(v)}
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if let v = _storage._mHdr {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      }
+      if !_storage._mic.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._mic, fieldNumber: 2)
+      }
+      switch _storage._payload {
+      case .macPayload(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      case .joinRequestPayload(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+      case .joinAcceptPayload(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
+      case nil: break
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Lorawan_Message, rhs: Lorawan_Message) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._mHdr != rhs_storage._mHdr {return false}
+        if _storage._mic != rhs_storage._mic {return false}
+        if _storage._payload != rhs_storage._payload {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Lorawan_MHDR: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Lorawan_MHDR: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".MHDR"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "m_type"),
     2: .same(proto: "major"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Lorawan_MHDR) -> Bool {
-    if self.mType != other.mType {return false}
-    if self.major != other.major {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularEnumField(value: &self.mType)
+      case 2: try decoder.decodeSingularEnumField(value: &self.major)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.mType != .joinRequest {
+      try visitor.visitSingularEnumField(value: self.mType, fieldNumber: 1)
+    }
+    if self.major != .lorawanR1 {
+      try visitor.visitSingularEnumField(value: self.major, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Lorawan_MHDR, rhs: Lorawan_MHDR) -> Bool {
+    if lhs.mType != rhs.mType {return false}
+    if lhs.major != rhs.major {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Lorawan_MACPayload: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Lorawan_MACPayload: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".MACPayload"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "f_hdr"),
     2: .standard(proto: "f_port"),
@@ -1299,22 +1078,54 @@ extension Lorawan_MACPayload: SwiftProtobuf._MessageImplementationBase, SwiftPro
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Lorawan_MACPayload) -> Bool {
-    if _storage !== other._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._fHdr != other_storage._fHdr {return false}
-        if _storage._fPort != other_storage._fPort {return false}
-        if _storage._frmPayload != other_storage._frmPayload {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularMessageField(value: &_storage._fHdr)
+        case 2: try decoder.decodeSingularInt32Field(value: &_storage._fPort)
+        case 3: try decoder.decodeSingularBytesField(value: &_storage._frmPayload)
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if let v = _storage._fHdr {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      }
+      if _storage._fPort != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._fPort, fieldNumber: 2)
+      }
+      if !_storage._frmPayload.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._frmPayload, fieldNumber: 3)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Lorawan_MACPayload, rhs: Lorawan_MACPayload) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._fHdr != rhs_storage._fHdr {return false}
+        if _storage._fPort != rhs_storage._fPort {return false}
+        if _storage._frmPayload != rhs_storage._frmPayload {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Lorawan_FHDR: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Lorawan_FHDR: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".FHDR"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "dev_addr"),
     2: .standard(proto: "f_ctrl"),
@@ -1347,23 +1158,59 @@ extension Lorawan_FHDR: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf.
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Lorawan_FHDR) -> Bool {
-    if _storage !== other._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._devAddr != other_storage._devAddr {return false}
-        if _storage._fCtrl != other_storage._fCtrl {return false}
-        if _storage._fCnt != other_storage._fCnt {return false}
-        if _storage._fOpts != other_storage._fOpts {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularBytesField(value: &_storage._devAddr)
+        case 2: try decoder.decodeSingularMessageField(value: &_storage._fCtrl)
+        case 3: try decoder.decodeSingularUInt32Field(value: &_storage._fCnt)
+        case 4: try decoder.decodeRepeatedMessageField(value: &_storage._fOpts)
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._devAddr.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._devAddr, fieldNumber: 1)
+      }
+      if let v = _storage._fCtrl {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
+      if _storage._fCnt != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._fCnt, fieldNumber: 3)
+      }
+      if !_storage._fOpts.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._fOpts, fieldNumber: 4)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Lorawan_FHDR, rhs: Lorawan_FHDR) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._devAddr != rhs_storage._devAddr {return false}
+        if _storage._fCtrl != rhs_storage._fCtrl {return false}
+        if _storage._fCnt != rhs_storage._fCnt {return false}
+        if _storage._fOpts != rhs_storage._fOpts {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Lorawan_FCtrl: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Lorawan_FCtrl: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".FCtrl"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "adr"),
     2: .standard(proto: "adr_ack_req"),
@@ -1371,47 +1218,122 @@ extension Lorawan_FCtrl: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf
     4: .standard(proto: "f_pending"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Lorawan_FCtrl) -> Bool {
-    if self.adr != other.adr {return false}
-    if self.adrAckReq != other.adrAckReq {return false}
-    if self.ack != other.ack {return false}
-    if self.fPending != other.fPending {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularBoolField(value: &self.adr)
+      case 2: try decoder.decodeSingularBoolField(value: &self.adrAckReq)
+      case 3: try decoder.decodeSingularBoolField(value: &self.ack)
+      case 4: try decoder.decodeSingularBoolField(value: &self.fPending)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.adr != false {
+      try visitor.visitSingularBoolField(value: self.adr, fieldNumber: 1)
+    }
+    if self.adrAckReq != false {
+      try visitor.visitSingularBoolField(value: self.adrAckReq, fieldNumber: 2)
+    }
+    if self.ack != false {
+      try visitor.visitSingularBoolField(value: self.ack, fieldNumber: 3)
+    }
+    if self.fPending != false {
+      try visitor.visitSingularBoolField(value: self.fPending, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Lorawan_FCtrl, rhs: Lorawan_FCtrl) -> Bool {
+    if lhs.adr != rhs.adr {return false}
+    if lhs.adrAckReq != rhs.adrAckReq {return false}
+    if lhs.ack != rhs.ack {return false}
+    if lhs.fPending != rhs.fPending {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Lorawan_MACCommand: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Lorawan_MACCommand: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".MACCommand"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "cid"),
     2: .same(proto: "payload"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Lorawan_MACCommand) -> Bool {
-    if self.cid != other.cid {return false}
-    if self.payload != other.payload {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularUInt32Field(value: &self.cid)
+      case 2: try decoder.decodeSingularBytesField(value: &self.payload)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.cid != 0 {
+      try visitor.visitSingularUInt32Field(value: self.cid, fieldNumber: 1)
+    }
+    if !self.payload.isEmpty {
+      try visitor.visitSingularBytesField(value: self.payload, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Lorawan_MACCommand, rhs: Lorawan_MACCommand) -> Bool {
+    if lhs.cid != rhs.cid {return false}
+    if lhs.payload != rhs.payload {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Lorawan_JoinRequestPayload: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Lorawan_JoinRequestPayload: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".JoinRequestPayload"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "app_eui"),
     2: .standard(proto: "dev_eui"),
     3: .standard(proto: "dev_nonce"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Lorawan_JoinRequestPayload) -> Bool {
-    if self.appEui != other.appEui {return false}
-    if self.devEui != other.devEui {return false}
-    if self.devNonce != other.devNonce {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularBytesField(value: &self.appEui)
+      case 2: try decoder.decodeSingularBytesField(value: &self.devEui)
+      case 3: try decoder.decodeSingularBytesField(value: &self.devNonce)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.appEui.isEmpty {
+      try visitor.visitSingularBytesField(value: self.appEui, fieldNumber: 1)
+    }
+    if !self.devEui.isEmpty {
+      try visitor.visitSingularBytesField(value: self.devEui, fieldNumber: 2)
+    }
+    if !self.devNonce.isEmpty {
+      try visitor.visitSingularBytesField(value: self.devNonce, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Lorawan_JoinRequestPayload, rhs: Lorawan_JoinRequestPayload) -> Bool {
+    if lhs.appEui != rhs.appEui {return false}
+    if lhs.devEui != rhs.devEui {return false}
+    if lhs.devNonce != rhs.devNonce {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Lorawan_JoinAcceptPayload: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Lorawan_JoinAcceptPayload: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".JoinAcceptPayload"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "encrypted"),
     2: .standard(proto: "app_nonce"),
@@ -1453,47 +1375,132 @@ extension Lorawan_JoinAcceptPayload: SwiftProtobuf._MessageImplementationBase, S
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Lorawan_JoinAcceptPayload) -> Bool {
-    if _storage !== other._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._encrypted != other_storage._encrypted {return false}
-        if _storage._appNonce != other_storage._appNonce {return false}
-        if _storage._netID != other_storage._netID {return false}
-        if _storage._devAddr != other_storage._devAddr {return false}
-        if _storage._dlSettings != other_storage._dlSettings {return false}
-        if _storage._rxDelay != other_storage._rxDelay {return false}
-        if _storage._cfList != other_storage._cfList {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularBytesField(value: &_storage._encrypted)
+        case 2: try decoder.decodeSingularBytesField(value: &_storage._appNonce)
+        case 3: try decoder.decodeSingularBytesField(value: &_storage._netID)
+        case 4: try decoder.decodeSingularBytesField(value: &_storage._devAddr)
+        case 5: try decoder.decodeSingularMessageField(value: &_storage._dlSettings)
+        case 6: try decoder.decodeSingularUInt32Field(value: &_storage._rxDelay)
+        case 7: try decoder.decodeSingularMessageField(value: &_storage._cfList)
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._encrypted.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._encrypted, fieldNumber: 1)
+      }
+      if !_storage._appNonce.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._appNonce, fieldNumber: 2)
+      }
+      if !_storage._netID.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._netID, fieldNumber: 3)
+      }
+      if !_storage._devAddr.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._devAddr, fieldNumber: 4)
+      }
+      if let v = _storage._dlSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
+      }
+      if _storage._rxDelay != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._rxDelay, fieldNumber: 6)
+      }
+      if let v = _storage._cfList {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Lorawan_JoinAcceptPayload, rhs: Lorawan_JoinAcceptPayload) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._encrypted != rhs_storage._encrypted {return false}
+        if _storage._appNonce != rhs_storage._appNonce {return false}
+        if _storage._netID != rhs_storage._netID {return false}
+        if _storage._devAddr != rhs_storage._devAddr {return false}
+        if _storage._dlSettings != rhs_storage._dlSettings {return false}
+        if _storage._rxDelay != rhs_storage._rxDelay {return false}
+        if _storage._cfList != rhs_storage._cfList {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Lorawan_DLSettings: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Lorawan_DLSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DLSettings"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "rx1_dr_offset"),
     2: .standard(proto: "rx2_dr"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Lorawan_DLSettings) -> Bool {
-    if self.rx1DrOffset != other.rx1DrOffset {return false}
-    if self.rx2Dr != other.rx2Dr {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularUInt32Field(value: &self.rx1DrOffset)
+      case 2: try decoder.decodeSingularUInt32Field(value: &self.rx2Dr)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.rx1DrOffset != 0 {
+      try visitor.visitSingularUInt32Field(value: self.rx1DrOffset, fieldNumber: 1)
+    }
+    if self.rx2Dr != 0 {
+      try visitor.visitSingularUInt32Field(value: self.rx2Dr, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Lorawan_DLSettings, rhs: Lorawan_DLSettings) -> Bool {
+    if lhs.rx1DrOffset != rhs.rx1DrOffset {return false}
+    if lhs.rx2Dr != rhs.rx2Dr {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Lorawan_CFList: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Lorawan_CFList: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".CFList"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "freq"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Lorawan_CFList) -> Bool {
-    if self.freq != other.freq {return false}
-    if unknownFields != other.unknownFields {return false}
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeRepeatedUInt32Field(value: &self.freq)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.freq.isEmpty {
+      try visitor.visitPackedUInt32Field(value: self.freq, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Lorawan_CFList, rhs: Lorawan_CFList) -> Bool {
+    if lhs.freq != rhs.freq {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }

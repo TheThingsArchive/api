@@ -668,7 +668,7 @@ proto.discovery.Announcement.prototype.getId = function() {
 
 /** @param {string} value */
 proto.discovery.Announcement.prototype.setId = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -683,7 +683,7 @@ proto.discovery.Announcement.prototype.getServiceName = function() {
 
 /** @param {string} value */
 proto.discovery.Announcement.prototype.setServiceName = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -698,7 +698,7 @@ proto.discovery.Announcement.prototype.getServiceVersion = function() {
 
 /** @param {string} value */
 proto.discovery.Announcement.prototype.setServiceVersion = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -713,7 +713,7 @@ proto.discovery.Announcement.prototype.getDescription = function() {
 
 /** @param {string} value */
 proto.discovery.Announcement.prototype.setDescription = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -728,7 +728,7 @@ proto.discovery.Announcement.prototype.getUrl = function() {
 
 /** @param {string} value */
 proto.discovery.Announcement.prototype.setUrl = function(value) {
-  jspb.Message.setField(this, 5, value);
+  jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -745,7 +745,7 @@ proto.discovery.Announcement.prototype.getPublic = function() {
 
 /** @param {boolean} value */
 proto.discovery.Announcement.prototype.setPublic = function(value) {
-  jspb.Message.setField(this, 6, value);
+  jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
@@ -760,7 +760,7 @@ proto.discovery.Announcement.prototype.getNetAddress = function() {
 
 /** @param {string} value */
 proto.discovery.Announcement.prototype.setNetAddress = function(value) {
-  jspb.Message.setField(this, 11, value);
+  jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
@@ -775,7 +775,7 @@ proto.discovery.Announcement.prototype.getPublicKey = function() {
 
 /** @param {string} value */
 proto.discovery.Announcement.prototype.setPublicKey = function(value) {
-  jspb.Message.setField(this, 12, value);
+  jspb.Message.setProto3StringField(this, 12, value);
 };
 
 
@@ -790,7 +790,7 @@ proto.discovery.Announcement.prototype.getCertificate = function() {
 
 /** @param {string} value */
 proto.discovery.Announcement.prototype.setCertificate = function(value) {
-  jspb.Message.setField(this, 13, value);
+  jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
@@ -805,7 +805,7 @@ proto.discovery.Announcement.prototype.getApiAddress = function() {
 
 /** @param {string} value */
 proto.discovery.Announcement.prototype.setApiAddress = function(value) {
-  jspb.Message.setField(this, 14, value);
+  jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
@@ -820,7 +820,7 @@ proto.discovery.Announcement.prototype.getMqttAddress = function() {
 
 /** @param {string} value */
 proto.discovery.Announcement.prototype.setMqttAddress = function(value) {
-  jspb.Message.setField(this, 15, value);
+  jspb.Message.setProto3StringField(this, 15, value);
 };
 
 
@@ -835,21 +835,21 @@ proto.discovery.Announcement.prototype.getAmqpAddress = function() {
 
 /** @param {string} value */
 proto.discovery.Announcement.prototype.setAmqpAddress = function(value) {
-  jspb.Message.setField(this, 16, value);
+  jspb.Message.setProto3StringField(this, 16, value);
 };
 
 
 /**
  * repeated Metadata metadata = 22;
- * @return {!Array.<!proto.discovery.Metadata>}
+ * @return {!Array<!proto.discovery.Metadata>}
  */
 proto.discovery.Announcement.prototype.getMetadataList = function() {
-  return /** @type{!Array.<!proto.discovery.Metadata>} */ (
+  return /** @type{!Array<!proto.discovery.Metadata>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.discovery.Metadata, 22));
 };
 
 
-/** @param {!Array.<!proto.discovery.Metadata>} value */
+/** @param {!Array<!proto.discovery.Metadata>} value */
 proto.discovery.Announcement.prototype.setMetadataList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 22, value);
 };
@@ -1008,7 +1008,7 @@ proto.discovery.GetServiceRequest.prototype.getServiceName = function() {
 
 /** @param {string} value */
 proto.discovery.GetServiceRequest.prototype.setServiceName = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1162,7 +1162,7 @@ proto.discovery.GetRequest.prototype.getId = function() {
 
 /** @param {string} value */
 proto.discovery.GetRequest.prototype.setId = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1177,7 +1177,7 @@ proto.discovery.GetRequest.prototype.getServiceName = function() {
 
 /** @param {string} value */
 proto.discovery.GetRequest.prototype.setServiceName = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1345,7 +1345,7 @@ proto.discovery.MetadataRequest.prototype.getId = function() {
 
 /** @param {string} value */
 proto.discovery.MetadataRequest.prototype.setId = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1360,7 +1360,7 @@ proto.discovery.MetadataRequest.prototype.getServiceName = function() {
 
 /** @param {string} value */
 proto.discovery.MetadataRequest.prototype.setServiceName = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1533,15 +1533,15 @@ proto.discovery.AnnouncementsResponse.serializeBinaryToWriter = function(message
 
 /**
  * repeated Announcement services = 1;
- * @return {!Array.<!proto.discovery.Announcement>}
+ * @return {!Array<!proto.discovery.Announcement>}
  */
 proto.discovery.AnnouncementsResponse.prototype.getServicesList = function() {
-  return /** @type{!Array.<!proto.discovery.Announcement>} */ (
+  return /** @type{!Array<!proto.discovery.Announcement>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.discovery.Announcement, 1));
 };
 
 
-/** @param {!Array.<!proto.discovery.Announcement>} value */
+/** @param {!Array<!proto.discovery.Announcement>} value */
 proto.discovery.AnnouncementsResponse.prototype.setServicesList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
@@ -1700,7 +1700,7 @@ proto.discovery.GetByAppIDRequest.prototype.getAppId = function() {
 
 /** @param {string} value */
 proto.discovery.GetByAppIDRequest.prototype.setAppId = function(value) {
-  jspb.Message.setField(this, 30, value);
+  jspb.Message.setProto3StringField(this, 30, value);
 };
 
 
@@ -1842,7 +1842,7 @@ proto.discovery.GetByGatewayIDRequest.prototype.getGatewayId = function() {
 
 /** @param {string} value */
 proto.discovery.GetByGatewayIDRequest.prototype.setGatewayId = function(value) {
-  jspb.Message.setField(this, 30, value);
+  jspb.Message.setProto3StringField(this, 30, value);
 };
 
 
@@ -2008,7 +2008,7 @@ proto.discovery.GetByAppEUIRequest.prototype.getAppEui_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.discovery.GetByAppEUIRequest.prototype.setAppEui = function(value) {
-  jspb.Message.setField(this, 31, value);
+  jspb.Message.setProto3BytesField(this, 31, value);
 };
 
 

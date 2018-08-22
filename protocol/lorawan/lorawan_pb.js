@@ -226,7 +226,7 @@ proto.lorawan.Metadata.prototype.getModulation = function() {
 
 /** @param {!proto.lorawan.Modulation} value */
 proto.lorawan.Metadata.prototype.setModulation = function(value) {
-  jspb.Message.setField(this, 11, value);
+  jspb.Message.setProto3EnumField(this, 11, value);
 };
 
 
@@ -241,7 +241,7 @@ proto.lorawan.Metadata.prototype.getDataRate = function() {
 
 /** @param {string} value */
 proto.lorawan.Metadata.prototype.setDataRate = function(value) {
-  jspb.Message.setField(this, 12, value);
+  jspb.Message.setProto3StringField(this, 12, value);
 };
 
 
@@ -256,7 +256,7 @@ proto.lorawan.Metadata.prototype.getBitRate = function() {
 
 /** @param {number} value */
 proto.lorawan.Metadata.prototype.setBitRate = function(value) {
-  jspb.Message.setField(this, 13, value);
+  jspb.Message.setProto3IntField(this, 13, value);
 };
 
 
@@ -271,7 +271,7 @@ proto.lorawan.Metadata.prototype.getCodingRate = function() {
 
 /** @param {string} value */
 proto.lorawan.Metadata.prototype.setCodingRate = function(value) {
-  jspb.Message.setField(this, 14, value);
+  jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
@@ -286,7 +286,7 @@ proto.lorawan.Metadata.prototype.getFCnt = function() {
 
 /** @param {number} value */
 proto.lorawan.Metadata.prototype.setFCnt = function(value) {
-  jspb.Message.setField(this, 15, value);
+  jspb.Message.setProto3IntField(this, 15, value);
 };
 
 
@@ -301,7 +301,7 @@ proto.lorawan.Metadata.prototype.getFrequencyPlan = function() {
 
 /** @param {!proto.lorawan.FrequencyPlan} value */
 proto.lorawan.Metadata.prototype.setFrequencyPlan = function(value) {
-  jspb.Message.setField(this, 16, value);
+  jspb.Message.setProto3EnumField(this, 16, value);
 };
 
 
@@ -491,7 +491,7 @@ proto.lorawan.TxConfiguration.prototype.getModulation = function() {
 
 /** @param {!proto.lorawan.Modulation} value */
 proto.lorawan.TxConfiguration.prototype.setModulation = function(value) {
-  jspb.Message.setField(this, 11, value);
+  jspb.Message.setProto3EnumField(this, 11, value);
 };
 
 
@@ -506,7 +506,7 @@ proto.lorawan.TxConfiguration.prototype.getDataRate = function() {
 
 /** @param {string} value */
 proto.lorawan.TxConfiguration.prototype.setDataRate = function(value) {
-  jspb.Message.setField(this, 12, value);
+  jspb.Message.setProto3StringField(this, 12, value);
 };
 
 
@@ -521,7 +521,7 @@ proto.lorawan.TxConfiguration.prototype.getBitRate = function() {
 
 /** @param {number} value */
 proto.lorawan.TxConfiguration.prototype.setBitRate = function(value) {
-  jspb.Message.setField(this, 13, value);
+  jspb.Message.setProto3IntField(this, 13, value);
 };
 
 
@@ -536,7 +536,7 @@ proto.lorawan.TxConfiguration.prototype.getCodingRate = function() {
 
 /** @param {string} value */
 proto.lorawan.TxConfiguration.prototype.setCodingRate = function(value) {
-  jspb.Message.setField(this, 14, value);
+  jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
@@ -551,7 +551,7 @@ proto.lorawan.TxConfiguration.prototype.getFCnt = function() {
 
 /** @param {number} value */
 proto.lorawan.TxConfiguration.prototype.setFCnt = function(value) {
-  jspb.Message.setField(this, 15, value);
+  jspb.Message.setProto3IntField(this, 15, value);
 };
 
 
@@ -815,7 +815,7 @@ proto.lorawan.ActivationMetadata.prototype.getAppEui_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.ActivationMetadata.prototype.setAppEui = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -854,7 +854,7 @@ proto.lorawan.ActivationMetadata.prototype.getDevEui_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.ActivationMetadata.prototype.setDevEui = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
@@ -893,7 +893,7 @@ proto.lorawan.ActivationMetadata.prototype.getDevAddr_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.ActivationMetadata.prototype.setDevAddr = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3BytesField(this, 3, value);
 };
 
 
@@ -932,7 +932,7 @@ proto.lorawan.ActivationMetadata.prototype.getNwkSKey_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.ActivationMetadata.prototype.setNwkSKey = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3BytesField(this, 4, value);
 };
 
 
@@ -947,7 +947,7 @@ proto.lorawan.ActivationMetadata.prototype.getRx1DrOffset = function() {
 
 /** @param {number} value */
 proto.lorawan.ActivationMetadata.prototype.setRx1DrOffset = function(value) {
-  jspb.Message.setField(this, 11, value);
+  jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
@@ -962,7 +962,7 @@ proto.lorawan.ActivationMetadata.prototype.getRx2Dr = function() {
 
 /** @param {number} value */
 proto.lorawan.ActivationMetadata.prototype.setRx2Dr = function(value) {
-  jspb.Message.setField(this, 12, value);
+  jspb.Message.setProto3IntField(this, 12, value);
 };
 
 
@@ -977,7 +977,7 @@ proto.lorawan.ActivationMetadata.prototype.getRxDelay = function() {
 
 /** @param {number} value */
 proto.lorawan.ActivationMetadata.prototype.setRxDelay = function(value) {
-  jspb.Message.setField(this, 13, value);
+  jspb.Message.setProto3IntField(this, 13, value);
 };
 
 
@@ -1022,7 +1022,7 @@ proto.lorawan.ActivationMetadata.prototype.getFrequencyPlan = function() {
 
 /** @param {!proto.lorawan.FrequencyPlan} value */
 proto.lorawan.ActivationMetadata.prototype.setFrequencyPlan = function(value) {
-  jspb.Message.setField(this, 15, value);
+  jspb.Message.setProto3EnumField(this, 15, value);
 };
 
 
@@ -1301,7 +1301,7 @@ proto.lorawan.Message.prototype.getMic_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.Message.prototype.setMic = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
@@ -1545,7 +1545,7 @@ proto.lorawan.MHDR.prototype.getMType = function() {
 
 /** @param {!proto.lorawan.MType} value */
 proto.lorawan.MHDR.prototype.setMType = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -1560,7 +1560,7 @@ proto.lorawan.MHDR.prototype.getMajor = function() {
 
 /** @param {!proto.lorawan.Major} value */
 proto.lorawan.MHDR.prototype.setMajor = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 
@@ -1758,7 +1758,7 @@ proto.lorawan.MACPayload.prototype.getFPort = function() {
 
 /** @param {number} value */
 proto.lorawan.MACPayload.prototype.setFPort = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -1797,7 +1797,7 @@ proto.lorawan.MACPayload.prototype.getFrmPayload_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.MACPayload.prototype.setFrmPayload = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3BytesField(this, 3, value);
 };
 
 
@@ -2011,7 +2011,7 @@ proto.lorawan.FHDR.prototype.getDevAddr_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.FHDR.prototype.setDevAddr = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -2056,21 +2056,21 @@ proto.lorawan.FHDR.prototype.getFCnt = function() {
 
 /** @param {number} value */
 proto.lorawan.FHDR.prototype.setFCnt = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
 /**
  * repeated MACCommand f_opts = 4;
- * @return {!Array.<!proto.lorawan.MACCommand>}
+ * @return {!Array<!proto.lorawan.MACCommand>}
  */
 proto.lorawan.FHDR.prototype.getFOptsList = function() {
-  return /** @type{!Array.<!proto.lorawan.MACCommand>} */ (
+  return /** @type{!Array<!proto.lorawan.MACCommand>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.lorawan.MACCommand, 4));
 };
 
 
-/** @param {!Array.<!proto.lorawan.MACCommand>} value */
+/** @param {!Array<!proto.lorawan.MACCommand>} value */
 proto.lorawan.FHDR.prototype.setFOptsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
@@ -2267,7 +2267,7 @@ proto.lorawan.FCtrl.prototype.getAdr = function() {
 
 /** @param {boolean} value */
 proto.lorawan.FCtrl.prototype.setAdr = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
 
@@ -2284,7 +2284,7 @@ proto.lorawan.FCtrl.prototype.getAdrAckReq = function() {
 
 /** @param {boolean} value */
 proto.lorawan.FCtrl.prototype.setAdrAckReq = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
@@ -2301,7 +2301,7 @@ proto.lorawan.FCtrl.prototype.getAck = function() {
 
 /** @param {boolean} value */
 proto.lorawan.FCtrl.prototype.setAck = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
@@ -2318,7 +2318,7 @@ proto.lorawan.FCtrl.prototype.getFPending = function() {
 
 /** @param {boolean} value */
 proto.lorawan.FCtrl.prototype.setFPending = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 
@@ -2472,7 +2472,7 @@ proto.lorawan.MACCommand.prototype.getCid = function() {
 
 /** @param {number} value */
 proto.lorawan.MACCommand.prototype.setCid = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -2511,7 +2511,7 @@ proto.lorawan.MACCommand.prototype.getPayload_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.MACCommand.prototype.setPayload = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
@@ -2701,7 +2701,7 @@ proto.lorawan.JoinRequestPayload.prototype.getAppEui_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.JoinRequestPayload.prototype.setAppEui = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -2740,7 +2740,7 @@ proto.lorawan.JoinRequestPayload.prototype.getDevEui_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.JoinRequestPayload.prototype.setDevEui = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
@@ -2779,7 +2779,7 @@ proto.lorawan.JoinRequestPayload.prototype.getDevNonce_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.JoinRequestPayload.prototype.setDevNonce = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3BytesField(this, 3, value);
 };
 
 
@@ -3021,7 +3021,7 @@ proto.lorawan.JoinAcceptPayload.prototype.getEncrypted_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.JoinAcceptPayload.prototype.setEncrypted = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -3060,7 +3060,7 @@ proto.lorawan.JoinAcceptPayload.prototype.getAppNonce_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.JoinAcceptPayload.prototype.setAppNonce = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
@@ -3099,7 +3099,7 @@ proto.lorawan.JoinAcceptPayload.prototype.getNetId_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.JoinAcceptPayload.prototype.setNetId = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3BytesField(this, 3, value);
 };
 
 
@@ -3138,7 +3138,7 @@ proto.lorawan.JoinAcceptPayload.prototype.getDevAddr_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.JoinAcceptPayload.prototype.setDevAddr = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3BytesField(this, 4, value);
 };
 
 
@@ -3183,7 +3183,7 @@ proto.lorawan.JoinAcceptPayload.prototype.getRxDelay = function() {
 
 /** @param {number} value */
 proto.lorawan.JoinAcceptPayload.prototype.setRxDelay = function(value) {
-  jspb.Message.setField(this, 6, value);
+  jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
@@ -3367,7 +3367,7 @@ proto.lorawan.DLSettings.prototype.getRx1DrOffset = function() {
 
 /** @param {number} value */
 proto.lorawan.DLSettings.prototype.setRx1DrOffset = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -3382,7 +3382,7 @@ proto.lorawan.DLSettings.prototype.getRx2Dr = function() {
 
 /** @param {number} value */
 proto.lorawan.DLSettings.prototype.setRx2Dr = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -3478,7 +3478,7 @@ proto.lorawan.CFList.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!Array.<number>} */ (reader.readPackedUint32());
+      var value = /** @type {!Array<number>} */ (reader.readPackedUint32());
       msg.setFreqList(value);
       break;
     default:
@@ -3522,14 +3522,14 @@ proto.lorawan.CFList.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * repeated uint32 freq = 1;
- * @return {!Array.<number>}
+ * @return {!Array<number>}
  */
 proto.lorawan.CFList.prototype.getFreqList = function() {
-  return /** @type {!Array.<number>} */ (jspb.Message.getRepeatedField(this, 1));
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
-/** @param {!Array.<number>} value */
+/** @param {!Array<number>} value */
 proto.lorawan.CFList.prototype.setFreqList = function(value) {
   jspb.Message.setField(this, 1, value || []);
 };

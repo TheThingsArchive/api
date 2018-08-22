@@ -121,10 +121,18 @@ func RegisterDiscoveryHandlerFromEndpoint(ctx context.Context, mux *runtime.Serv
 // RegisterDiscoveryHandler registers the http handlers for service Discovery to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
 func RegisterDiscoveryHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	client := NewDiscoveryClient(conn)
+	return RegisterDiscoveryHandlerClient(ctx, mux, NewDiscoveryClient(conn))
+}
+
+// RegisterDiscoveryHandler registers the http handlers for service Discovery to "mux".
+// The handlers forward requests to the grpc endpoint over the given implementation of "DiscoveryClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "DiscoveryClient"
+// doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
+// "DiscoveryClient" to call the correct interceptors.
+func RegisterDiscoveryHandlerClient(ctx context.Context, mux *runtime.ServeMux, client DiscoveryClient) error {
 
 	mux.Handle("GET", pattern_Discovery_GetAll_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
-		ctx, cancel := context.WithCancel(ctx)
+		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		if cn, ok := w.(http.CloseNotifier); ok {
 			go func(done <-chan struct{}, closed <-chan bool) {
@@ -153,7 +161,7 @@ func RegisterDiscoveryHandler(ctx context.Context, mux *runtime.ServeMux, conn *
 	})
 
 	mux.Handle("GET", pattern_Discovery_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
-		ctx, cancel := context.WithCancel(ctx)
+		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		if cn, ok := w.(http.CloseNotifier); ok {
 			go func(done <-chan struct{}, closed <-chan bool) {

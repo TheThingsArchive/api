@@ -1,19 +1,19 @@
 package org.thethingsnetwork.api.handler;
 
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
+import static io.grpc.stub.ClientCalls.blockingUnaryCall;
+import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -33,138 +33,357 @@ public final class ApplicationManagerGrpc {
   public static final String SERVICE_NAME = "handler.ApplicationManager";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.ApplicationIdentifier,
-      com.google.protobuf.Empty> METHOD_REGISTER_APPLICATION =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.ApplicationIdentifier, com.google.protobuf.Empty>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "handler.ApplicationManager", "RegisterApplication"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.handler.ApplicationIdentifier.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.google.protobuf.Empty.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.ApplicationIdentifier,
-      org.thethingsnetwork.api.handler.Application> METHOD_GET_APPLICATION =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.ApplicationIdentifier, org.thethingsnetwork.api.handler.Application>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "handler.ApplicationManager", "GetApplication"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.handler.ApplicationIdentifier.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.handler.Application.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.Application,
-      com.google.protobuf.Empty> METHOD_SET_APPLICATION =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.Application, com.google.protobuf.Empty>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "handler.ApplicationManager", "SetApplication"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.handler.Application.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.google.protobuf.Empty.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.ApplicationIdentifier,
-      com.google.protobuf.Empty> METHOD_DELETE_APPLICATION =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.ApplicationIdentifier, com.google.protobuf.Empty>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "handler.ApplicationManager", "DeleteApplication"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.handler.ApplicationIdentifier.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.google.protobuf.Empty.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.DeviceIdentifier,
-      org.thethingsnetwork.api.handler.Device> METHOD_GET_DEVICE =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.DeviceIdentifier, org.thethingsnetwork.api.handler.Device>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "handler.ApplicationManager", "GetDevice"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.handler.DeviceIdentifier.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.handler.Device.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.Device,
-      com.google.protobuf.Empty> METHOD_SET_DEVICE =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.Device, com.google.protobuf.Empty>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "handler.ApplicationManager", "SetDevice"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.handler.Device.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.google.protobuf.Empty.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.DeviceIdentifier,
-      com.google.protobuf.Empty> METHOD_DELETE_DEVICE =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.DeviceIdentifier, com.google.protobuf.Empty>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "handler.ApplicationManager", "DeleteDevice"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.handler.DeviceIdentifier.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.google.protobuf.Empty.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.ApplicationIdentifier,
-      org.thethingsnetwork.api.handler.DeviceList> METHOD_GET_DEVICES_FOR_APPLICATION =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.ApplicationIdentifier, org.thethingsnetwork.api.handler.DeviceList>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "handler.ApplicationManager", "GetDevicesForApplication"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.handler.ApplicationIdentifier.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.handler.DeviceList.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.DryDownlinkMessage,
-      org.thethingsnetwork.api.handler.DryDownlinkResult> METHOD_DRY_DOWNLINK =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.DryDownlinkMessage, org.thethingsnetwork.api.handler.DryDownlinkResult>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "handler.ApplicationManager", "DryDownlink"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.handler.DryDownlinkMessage.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.handler.DryDownlinkResult.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.DryUplinkMessage,
-      org.thethingsnetwork.api.handler.DryUplinkResult> METHOD_DRY_UPLINK =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.DryUplinkMessage, org.thethingsnetwork.api.handler.DryUplinkResult>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "handler.ApplicationManager", "DryUplink"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.handler.DryUplinkMessage.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.handler.DryUplinkResult.getDefaultInstance()))
-          .build();
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.SimulatedUplinkMessage,
-      com.google.protobuf.Empty> METHOD_SIMULATE_UPLINK =
-      io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.SimulatedUplinkMessage, com.google.protobuf.Empty>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "handler.ApplicationManager", "SimulateUplink"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.thethingsnetwork.api.handler.SimulatedUplinkMessage.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              com.google.protobuf.Empty.getDefaultInstance()))
-          .build();
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.ApplicationIdentifier,
+      com.google.protobuf.Empty> getRegisterApplicationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RegisterApplication",
+      requestType = org.thethingsnetwork.api.handler.ApplicationIdentifier.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.ApplicationIdentifier,
+      com.google.protobuf.Empty> getRegisterApplicationMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.ApplicationIdentifier, com.google.protobuf.Empty> getRegisterApplicationMethod;
+    if ((getRegisterApplicationMethod = ApplicationManagerGrpc.getRegisterApplicationMethod) == null) {
+      synchronized (ApplicationManagerGrpc.class) {
+        if ((getRegisterApplicationMethod = ApplicationManagerGrpc.getRegisterApplicationMethod) == null) {
+          ApplicationManagerGrpc.getRegisterApplicationMethod = getRegisterApplicationMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.ApplicationIdentifier, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "handler.ApplicationManager", "RegisterApplication"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.handler.ApplicationIdentifier.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new ApplicationManagerMethodDescriptorSupplier("RegisterApplication"))
+                  .build();
+          }
+        }
+     }
+     return getRegisterApplicationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.ApplicationIdentifier,
+      org.thethingsnetwork.api.handler.Application> getGetApplicationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetApplication",
+      requestType = org.thethingsnetwork.api.handler.ApplicationIdentifier.class,
+      responseType = org.thethingsnetwork.api.handler.Application.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.ApplicationIdentifier,
+      org.thethingsnetwork.api.handler.Application> getGetApplicationMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.ApplicationIdentifier, org.thethingsnetwork.api.handler.Application> getGetApplicationMethod;
+    if ((getGetApplicationMethod = ApplicationManagerGrpc.getGetApplicationMethod) == null) {
+      synchronized (ApplicationManagerGrpc.class) {
+        if ((getGetApplicationMethod = ApplicationManagerGrpc.getGetApplicationMethod) == null) {
+          ApplicationManagerGrpc.getGetApplicationMethod = getGetApplicationMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.ApplicationIdentifier, org.thethingsnetwork.api.handler.Application>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "handler.ApplicationManager", "GetApplication"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.handler.ApplicationIdentifier.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.handler.Application.getDefaultInstance()))
+                  .setSchemaDescriptor(new ApplicationManagerMethodDescriptorSupplier("GetApplication"))
+                  .build();
+          }
+        }
+     }
+     return getGetApplicationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.Application,
+      com.google.protobuf.Empty> getSetApplicationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetApplication",
+      requestType = org.thethingsnetwork.api.handler.Application.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.Application,
+      com.google.protobuf.Empty> getSetApplicationMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.Application, com.google.protobuf.Empty> getSetApplicationMethod;
+    if ((getSetApplicationMethod = ApplicationManagerGrpc.getSetApplicationMethod) == null) {
+      synchronized (ApplicationManagerGrpc.class) {
+        if ((getSetApplicationMethod = ApplicationManagerGrpc.getSetApplicationMethod) == null) {
+          ApplicationManagerGrpc.getSetApplicationMethod = getSetApplicationMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.Application, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "handler.ApplicationManager", "SetApplication"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.handler.Application.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new ApplicationManagerMethodDescriptorSupplier("SetApplication"))
+                  .build();
+          }
+        }
+     }
+     return getSetApplicationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.ApplicationIdentifier,
+      com.google.protobuf.Empty> getDeleteApplicationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteApplication",
+      requestType = org.thethingsnetwork.api.handler.ApplicationIdentifier.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.ApplicationIdentifier,
+      com.google.protobuf.Empty> getDeleteApplicationMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.ApplicationIdentifier, com.google.protobuf.Empty> getDeleteApplicationMethod;
+    if ((getDeleteApplicationMethod = ApplicationManagerGrpc.getDeleteApplicationMethod) == null) {
+      synchronized (ApplicationManagerGrpc.class) {
+        if ((getDeleteApplicationMethod = ApplicationManagerGrpc.getDeleteApplicationMethod) == null) {
+          ApplicationManagerGrpc.getDeleteApplicationMethod = getDeleteApplicationMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.ApplicationIdentifier, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "handler.ApplicationManager", "DeleteApplication"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.handler.ApplicationIdentifier.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new ApplicationManagerMethodDescriptorSupplier("DeleteApplication"))
+                  .build();
+          }
+        }
+     }
+     return getDeleteApplicationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.DeviceIdentifier,
+      org.thethingsnetwork.api.handler.Device> getGetDeviceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDevice",
+      requestType = org.thethingsnetwork.api.handler.DeviceIdentifier.class,
+      responseType = org.thethingsnetwork.api.handler.Device.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.DeviceIdentifier,
+      org.thethingsnetwork.api.handler.Device> getGetDeviceMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.DeviceIdentifier, org.thethingsnetwork.api.handler.Device> getGetDeviceMethod;
+    if ((getGetDeviceMethod = ApplicationManagerGrpc.getGetDeviceMethod) == null) {
+      synchronized (ApplicationManagerGrpc.class) {
+        if ((getGetDeviceMethod = ApplicationManagerGrpc.getGetDeviceMethod) == null) {
+          ApplicationManagerGrpc.getGetDeviceMethod = getGetDeviceMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.DeviceIdentifier, org.thethingsnetwork.api.handler.Device>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "handler.ApplicationManager", "GetDevice"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.handler.DeviceIdentifier.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.handler.Device.getDefaultInstance()))
+                  .setSchemaDescriptor(new ApplicationManagerMethodDescriptorSupplier("GetDevice"))
+                  .build();
+          }
+        }
+     }
+     return getGetDeviceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.Device,
+      com.google.protobuf.Empty> getSetDeviceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetDevice",
+      requestType = org.thethingsnetwork.api.handler.Device.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.Device,
+      com.google.protobuf.Empty> getSetDeviceMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.Device, com.google.protobuf.Empty> getSetDeviceMethod;
+    if ((getSetDeviceMethod = ApplicationManagerGrpc.getSetDeviceMethod) == null) {
+      synchronized (ApplicationManagerGrpc.class) {
+        if ((getSetDeviceMethod = ApplicationManagerGrpc.getSetDeviceMethod) == null) {
+          ApplicationManagerGrpc.getSetDeviceMethod = getSetDeviceMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.Device, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "handler.ApplicationManager", "SetDevice"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.handler.Device.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new ApplicationManagerMethodDescriptorSupplier("SetDevice"))
+                  .build();
+          }
+        }
+     }
+     return getSetDeviceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.DeviceIdentifier,
+      com.google.protobuf.Empty> getDeleteDeviceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDevice",
+      requestType = org.thethingsnetwork.api.handler.DeviceIdentifier.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.DeviceIdentifier,
+      com.google.protobuf.Empty> getDeleteDeviceMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.DeviceIdentifier, com.google.protobuf.Empty> getDeleteDeviceMethod;
+    if ((getDeleteDeviceMethod = ApplicationManagerGrpc.getDeleteDeviceMethod) == null) {
+      synchronized (ApplicationManagerGrpc.class) {
+        if ((getDeleteDeviceMethod = ApplicationManagerGrpc.getDeleteDeviceMethod) == null) {
+          ApplicationManagerGrpc.getDeleteDeviceMethod = getDeleteDeviceMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.DeviceIdentifier, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "handler.ApplicationManager", "DeleteDevice"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.handler.DeviceIdentifier.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new ApplicationManagerMethodDescriptorSupplier("DeleteDevice"))
+                  .build();
+          }
+        }
+     }
+     return getDeleteDeviceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.ApplicationIdentifier,
+      org.thethingsnetwork.api.handler.DeviceList> getGetDevicesForApplicationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDevicesForApplication",
+      requestType = org.thethingsnetwork.api.handler.ApplicationIdentifier.class,
+      responseType = org.thethingsnetwork.api.handler.DeviceList.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.ApplicationIdentifier,
+      org.thethingsnetwork.api.handler.DeviceList> getGetDevicesForApplicationMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.ApplicationIdentifier, org.thethingsnetwork.api.handler.DeviceList> getGetDevicesForApplicationMethod;
+    if ((getGetDevicesForApplicationMethod = ApplicationManagerGrpc.getGetDevicesForApplicationMethod) == null) {
+      synchronized (ApplicationManagerGrpc.class) {
+        if ((getGetDevicesForApplicationMethod = ApplicationManagerGrpc.getGetDevicesForApplicationMethod) == null) {
+          ApplicationManagerGrpc.getGetDevicesForApplicationMethod = getGetDevicesForApplicationMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.ApplicationIdentifier, org.thethingsnetwork.api.handler.DeviceList>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "handler.ApplicationManager", "GetDevicesForApplication"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.handler.ApplicationIdentifier.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.handler.DeviceList.getDefaultInstance()))
+                  .setSchemaDescriptor(new ApplicationManagerMethodDescriptorSupplier("GetDevicesForApplication"))
+                  .build();
+          }
+        }
+     }
+     return getGetDevicesForApplicationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.DryDownlinkMessage,
+      org.thethingsnetwork.api.handler.DryDownlinkResult> getDryDownlinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DryDownlink",
+      requestType = org.thethingsnetwork.api.handler.DryDownlinkMessage.class,
+      responseType = org.thethingsnetwork.api.handler.DryDownlinkResult.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.DryDownlinkMessage,
+      org.thethingsnetwork.api.handler.DryDownlinkResult> getDryDownlinkMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.DryDownlinkMessage, org.thethingsnetwork.api.handler.DryDownlinkResult> getDryDownlinkMethod;
+    if ((getDryDownlinkMethod = ApplicationManagerGrpc.getDryDownlinkMethod) == null) {
+      synchronized (ApplicationManagerGrpc.class) {
+        if ((getDryDownlinkMethod = ApplicationManagerGrpc.getDryDownlinkMethod) == null) {
+          ApplicationManagerGrpc.getDryDownlinkMethod = getDryDownlinkMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.DryDownlinkMessage, org.thethingsnetwork.api.handler.DryDownlinkResult>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "handler.ApplicationManager", "DryDownlink"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.handler.DryDownlinkMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.handler.DryDownlinkResult.getDefaultInstance()))
+                  .setSchemaDescriptor(new ApplicationManagerMethodDescriptorSupplier("DryDownlink"))
+                  .build();
+          }
+        }
+     }
+     return getDryDownlinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.DryUplinkMessage,
+      org.thethingsnetwork.api.handler.DryUplinkResult> getDryUplinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DryUplink",
+      requestType = org.thethingsnetwork.api.handler.DryUplinkMessage.class,
+      responseType = org.thethingsnetwork.api.handler.DryUplinkResult.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.DryUplinkMessage,
+      org.thethingsnetwork.api.handler.DryUplinkResult> getDryUplinkMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.DryUplinkMessage, org.thethingsnetwork.api.handler.DryUplinkResult> getDryUplinkMethod;
+    if ((getDryUplinkMethod = ApplicationManagerGrpc.getDryUplinkMethod) == null) {
+      synchronized (ApplicationManagerGrpc.class) {
+        if ((getDryUplinkMethod = ApplicationManagerGrpc.getDryUplinkMethod) == null) {
+          ApplicationManagerGrpc.getDryUplinkMethod = getDryUplinkMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.DryUplinkMessage, org.thethingsnetwork.api.handler.DryUplinkResult>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "handler.ApplicationManager", "DryUplink"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.handler.DryUplinkMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.handler.DryUplinkResult.getDefaultInstance()))
+                  .setSchemaDescriptor(new ApplicationManagerMethodDescriptorSupplier("DryUplink"))
+                  .build();
+          }
+        }
+     }
+     return getDryUplinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.SimulatedUplinkMessage,
+      com.google.protobuf.Empty> getSimulateUplinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SimulateUplink",
+      requestType = org.thethingsnetwork.api.handler.SimulatedUplinkMessage.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.SimulatedUplinkMessage,
+      com.google.protobuf.Empty> getSimulateUplinkMethod() {
+    io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.SimulatedUplinkMessage, com.google.protobuf.Empty> getSimulateUplinkMethod;
+    if ((getSimulateUplinkMethod = ApplicationManagerGrpc.getSimulateUplinkMethod) == null) {
+      synchronized (ApplicationManagerGrpc.class) {
+        if ((getSimulateUplinkMethod = ApplicationManagerGrpc.getSimulateUplinkMethod) == null) {
+          ApplicationManagerGrpc.getSimulateUplinkMethod = getSimulateUplinkMethod = 
+              io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.SimulatedUplinkMessage, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "handler.ApplicationManager", "SimulateUplink"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.thethingsnetwork.api.handler.SimulatedUplinkMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+                  .setSchemaDescriptor(new ApplicationManagerMethodDescriptorSupplier("SimulateUplink"))
+                  .build();
+          }
+        }
+     }
+     return getSimulateUplinkMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -206,7 +425,7 @@ public final class ApplicationManagerGrpc {
      */
     public void registerApplication(org.thethingsnetwork.api.handler.ApplicationIdentifier request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_REGISTER_APPLICATION, responseObserver);
+      asyncUnimplementedUnaryCall(getRegisterApplicationMethod(), responseObserver);
     }
 
     /**
@@ -216,7 +435,7 @@ public final class ApplicationManagerGrpc {
      */
     public void getApplication(org.thethingsnetwork.api.handler.ApplicationIdentifier request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.handler.Application> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_GET_APPLICATION, responseObserver);
+      asyncUnimplementedUnaryCall(getGetApplicationMethod(), responseObserver);
     }
 
     /**
@@ -226,7 +445,7 @@ public final class ApplicationManagerGrpc {
      */
     public void setApplication(org.thethingsnetwork.api.handler.Application request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_SET_APPLICATION, responseObserver);
+      asyncUnimplementedUnaryCall(getSetApplicationMethod(), responseObserver);
     }
 
     /**
@@ -236,7 +455,7 @@ public final class ApplicationManagerGrpc {
      */
     public void deleteApplication(org.thethingsnetwork.api.handler.ApplicationIdentifier request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_DELETE_APPLICATION, responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteApplicationMethod(), responseObserver);
     }
 
     /**
@@ -246,7 +465,7 @@ public final class ApplicationManagerGrpc {
      */
     public void getDevice(org.thethingsnetwork.api.handler.DeviceIdentifier request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.handler.Device> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_GET_DEVICE, responseObserver);
+      asyncUnimplementedUnaryCall(getGetDeviceMethod(), responseObserver);
     }
 
     /**
@@ -256,7 +475,7 @@ public final class ApplicationManagerGrpc {
      */
     public void setDevice(org.thethingsnetwork.api.handler.Device request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_SET_DEVICE, responseObserver);
+      asyncUnimplementedUnaryCall(getSetDeviceMethod(), responseObserver);
     }
 
     /**
@@ -266,7 +485,7 @@ public final class ApplicationManagerGrpc {
      */
     public void deleteDevice(org.thethingsnetwork.api.handler.DeviceIdentifier request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_DELETE_DEVICE, responseObserver);
+      asyncUnimplementedUnaryCall(getDeleteDeviceMethod(), responseObserver);
     }
 
     /**
@@ -276,7 +495,7 @@ public final class ApplicationManagerGrpc {
      */
     public void getDevicesForApplication(org.thethingsnetwork.api.handler.ApplicationIdentifier request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.handler.DeviceList> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_GET_DEVICES_FOR_APPLICATION, responseObserver);
+      asyncUnimplementedUnaryCall(getGetDevicesForApplicationMethod(), responseObserver);
     }
 
     /**
@@ -286,7 +505,7 @@ public final class ApplicationManagerGrpc {
      */
     public void dryDownlink(org.thethingsnetwork.api.handler.DryDownlinkMessage request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.handler.DryDownlinkResult> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_DRY_DOWNLINK, responseObserver);
+      asyncUnimplementedUnaryCall(getDryDownlinkMethod(), responseObserver);
     }
 
     /**
@@ -296,7 +515,7 @@ public final class ApplicationManagerGrpc {
      */
     public void dryUplink(org.thethingsnetwork.api.handler.DryUplinkMessage request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.handler.DryUplinkResult> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_DRY_UPLINK, responseObserver);
+      asyncUnimplementedUnaryCall(getDryUplinkMethod(), responseObserver);
     }
 
     /**
@@ -306,83 +525,83 @@ public final class ApplicationManagerGrpc {
      */
     public void simulateUplink(org.thethingsnetwork.api.handler.SimulatedUplinkMessage request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_SIMULATE_UPLINK, responseObserver);
+      asyncUnimplementedUnaryCall(getSimulateUplinkMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            METHOD_REGISTER_APPLICATION,
+            getRegisterApplicationMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.handler.ApplicationIdentifier,
                 com.google.protobuf.Empty>(
                   this, METHODID_REGISTER_APPLICATION)))
           .addMethod(
-            METHOD_GET_APPLICATION,
+            getGetApplicationMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.handler.ApplicationIdentifier,
                 org.thethingsnetwork.api.handler.Application>(
                   this, METHODID_GET_APPLICATION)))
           .addMethod(
-            METHOD_SET_APPLICATION,
+            getSetApplicationMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.handler.Application,
                 com.google.protobuf.Empty>(
                   this, METHODID_SET_APPLICATION)))
           .addMethod(
-            METHOD_DELETE_APPLICATION,
+            getDeleteApplicationMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.handler.ApplicationIdentifier,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_APPLICATION)))
           .addMethod(
-            METHOD_GET_DEVICE,
+            getGetDeviceMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.handler.DeviceIdentifier,
                 org.thethingsnetwork.api.handler.Device>(
                   this, METHODID_GET_DEVICE)))
           .addMethod(
-            METHOD_SET_DEVICE,
+            getSetDeviceMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.handler.Device,
                 com.google.protobuf.Empty>(
                   this, METHODID_SET_DEVICE)))
           .addMethod(
-            METHOD_DELETE_DEVICE,
+            getDeleteDeviceMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.handler.DeviceIdentifier,
                 com.google.protobuf.Empty>(
                   this, METHODID_DELETE_DEVICE)))
           .addMethod(
-            METHOD_GET_DEVICES_FOR_APPLICATION,
+            getGetDevicesForApplicationMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.handler.ApplicationIdentifier,
                 org.thethingsnetwork.api.handler.DeviceList>(
                   this, METHODID_GET_DEVICES_FOR_APPLICATION)))
           .addMethod(
-            METHOD_DRY_DOWNLINK,
+            getDryDownlinkMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.handler.DryDownlinkMessage,
                 org.thethingsnetwork.api.handler.DryDownlinkResult>(
                   this, METHODID_DRY_DOWNLINK)))
           .addMethod(
-            METHOD_DRY_UPLINK,
+            getDryUplinkMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.handler.DryUplinkMessage,
                 org.thethingsnetwork.api.handler.DryUplinkResult>(
                   this, METHODID_DRY_UPLINK)))
           .addMethod(
-            METHOD_SIMULATE_UPLINK,
+            getSimulateUplinkMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 org.thethingsnetwork.api.handler.SimulatedUplinkMessage,
@@ -424,7 +643,7 @@ public final class ApplicationManagerGrpc {
     public void registerApplication(org.thethingsnetwork.api.handler.ApplicationIdentifier request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_REGISTER_APPLICATION, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getRegisterApplicationMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -435,7 +654,7 @@ public final class ApplicationManagerGrpc {
     public void getApplication(org.thethingsnetwork.api.handler.ApplicationIdentifier request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.handler.Application> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_GET_APPLICATION, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetApplicationMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -446,7 +665,7 @@ public final class ApplicationManagerGrpc {
     public void setApplication(org.thethingsnetwork.api.handler.Application request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_SET_APPLICATION, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getSetApplicationMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -457,7 +676,7 @@ public final class ApplicationManagerGrpc {
     public void deleteApplication(org.thethingsnetwork.api.handler.ApplicationIdentifier request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_DELETE_APPLICATION, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getDeleteApplicationMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -468,7 +687,7 @@ public final class ApplicationManagerGrpc {
     public void getDevice(org.thethingsnetwork.api.handler.DeviceIdentifier request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.handler.Device> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_GET_DEVICE, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetDeviceMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -479,7 +698,7 @@ public final class ApplicationManagerGrpc {
     public void setDevice(org.thethingsnetwork.api.handler.Device request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_SET_DEVICE, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getSetDeviceMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -490,7 +709,7 @@ public final class ApplicationManagerGrpc {
     public void deleteDevice(org.thethingsnetwork.api.handler.DeviceIdentifier request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_DELETE_DEVICE, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getDeleteDeviceMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -501,7 +720,7 @@ public final class ApplicationManagerGrpc {
     public void getDevicesForApplication(org.thethingsnetwork.api.handler.ApplicationIdentifier request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.handler.DeviceList> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_GET_DEVICES_FOR_APPLICATION, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetDevicesForApplicationMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -512,7 +731,7 @@ public final class ApplicationManagerGrpc {
     public void dryDownlink(org.thethingsnetwork.api.handler.DryDownlinkMessage request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.handler.DryDownlinkResult> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_DRY_DOWNLINK, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getDryDownlinkMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -523,7 +742,7 @@ public final class ApplicationManagerGrpc {
     public void dryUplink(org.thethingsnetwork.api.handler.DryUplinkMessage request,
         io.grpc.stub.StreamObserver<org.thethingsnetwork.api.handler.DryUplinkResult> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_DRY_UPLINK, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getDryUplinkMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -534,7 +753,7 @@ public final class ApplicationManagerGrpc {
     public void simulateUplink(org.thethingsnetwork.api.handler.SimulatedUplinkMessage request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_SIMULATE_UPLINK, getCallOptions()), request, responseObserver);
+          getChannel().newCall(getSimulateUplinkMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -569,7 +788,7 @@ public final class ApplicationManagerGrpc {
      */
     public com.google.protobuf.Empty registerApplication(org.thethingsnetwork.api.handler.ApplicationIdentifier request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_REGISTER_APPLICATION, getCallOptions(), request);
+          getChannel(), getRegisterApplicationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -579,7 +798,7 @@ public final class ApplicationManagerGrpc {
      */
     public org.thethingsnetwork.api.handler.Application getApplication(org.thethingsnetwork.api.handler.ApplicationIdentifier request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_GET_APPLICATION, getCallOptions(), request);
+          getChannel(), getGetApplicationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -589,7 +808,7 @@ public final class ApplicationManagerGrpc {
      */
     public com.google.protobuf.Empty setApplication(org.thethingsnetwork.api.handler.Application request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_SET_APPLICATION, getCallOptions(), request);
+          getChannel(), getSetApplicationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -599,7 +818,7 @@ public final class ApplicationManagerGrpc {
      */
     public com.google.protobuf.Empty deleteApplication(org.thethingsnetwork.api.handler.ApplicationIdentifier request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_DELETE_APPLICATION, getCallOptions(), request);
+          getChannel(), getDeleteApplicationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -609,7 +828,7 @@ public final class ApplicationManagerGrpc {
      */
     public org.thethingsnetwork.api.handler.Device getDevice(org.thethingsnetwork.api.handler.DeviceIdentifier request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_GET_DEVICE, getCallOptions(), request);
+          getChannel(), getGetDeviceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -619,7 +838,7 @@ public final class ApplicationManagerGrpc {
      */
     public com.google.protobuf.Empty setDevice(org.thethingsnetwork.api.handler.Device request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_SET_DEVICE, getCallOptions(), request);
+          getChannel(), getSetDeviceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -629,7 +848,7 @@ public final class ApplicationManagerGrpc {
      */
     public com.google.protobuf.Empty deleteDevice(org.thethingsnetwork.api.handler.DeviceIdentifier request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_DELETE_DEVICE, getCallOptions(), request);
+          getChannel(), getDeleteDeviceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -639,7 +858,7 @@ public final class ApplicationManagerGrpc {
      */
     public org.thethingsnetwork.api.handler.DeviceList getDevicesForApplication(org.thethingsnetwork.api.handler.ApplicationIdentifier request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_GET_DEVICES_FOR_APPLICATION, getCallOptions(), request);
+          getChannel(), getGetDevicesForApplicationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -649,7 +868,7 @@ public final class ApplicationManagerGrpc {
      */
     public org.thethingsnetwork.api.handler.DryDownlinkResult dryDownlink(org.thethingsnetwork.api.handler.DryDownlinkMessage request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_DRY_DOWNLINK, getCallOptions(), request);
+          getChannel(), getDryDownlinkMethod(), getCallOptions(), request);
     }
 
     /**
@@ -659,7 +878,7 @@ public final class ApplicationManagerGrpc {
      */
     public org.thethingsnetwork.api.handler.DryUplinkResult dryUplink(org.thethingsnetwork.api.handler.DryUplinkMessage request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_DRY_UPLINK, getCallOptions(), request);
+          getChannel(), getDryUplinkMethod(), getCallOptions(), request);
     }
 
     /**
@@ -669,7 +888,7 @@ public final class ApplicationManagerGrpc {
      */
     public com.google.protobuf.Empty simulateUplink(org.thethingsnetwork.api.handler.SimulatedUplinkMessage request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_SIMULATE_UPLINK, getCallOptions(), request);
+          getChannel(), getSimulateUplinkMethod(), getCallOptions(), request);
     }
   }
 
@@ -705,7 +924,7 @@ public final class ApplicationManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> registerApplication(
         org.thethingsnetwork.api.handler.ApplicationIdentifier request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_REGISTER_APPLICATION, getCallOptions()), request);
+          getChannel().newCall(getRegisterApplicationMethod(), getCallOptions()), request);
     }
 
     /**
@@ -716,7 +935,7 @@ public final class ApplicationManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<org.thethingsnetwork.api.handler.Application> getApplication(
         org.thethingsnetwork.api.handler.ApplicationIdentifier request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_GET_APPLICATION, getCallOptions()), request);
+          getChannel().newCall(getGetApplicationMethod(), getCallOptions()), request);
     }
 
     /**
@@ -727,7 +946,7 @@ public final class ApplicationManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> setApplication(
         org.thethingsnetwork.api.handler.Application request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_SET_APPLICATION, getCallOptions()), request);
+          getChannel().newCall(getSetApplicationMethod(), getCallOptions()), request);
     }
 
     /**
@@ -738,7 +957,7 @@ public final class ApplicationManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteApplication(
         org.thethingsnetwork.api.handler.ApplicationIdentifier request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_DELETE_APPLICATION, getCallOptions()), request);
+          getChannel().newCall(getDeleteApplicationMethod(), getCallOptions()), request);
     }
 
     /**
@@ -749,7 +968,7 @@ public final class ApplicationManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<org.thethingsnetwork.api.handler.Device> getDevice(
         org.thethingsnetwork.api.handler.DeviceIdentifier request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_GET_DEVICE, getCallOptions()), request);
+          getChannel().newCall(getGetDeviceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -760,7 +979,7 @@ public final class ApplicationManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> setDevice(
         org.thethingsnetwork.api.handler.Device request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_SET_DEVICE, getCallOptions()), request);
+          getChannel().newCall(getSetDeviceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -771,7 +990,7 @@ public final class ApplicationManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteDevice(
         org.thethingsnetwork.api.handler.DeviceIdentifier request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_DELETE_DEVICE, getCallOptions()), request);
+          getChannel().newCall(getDeleteDeviceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -782,7 +1001,7 @@ public final class ApplicationManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<org.thethingsnetwork.api.handler.DeviceList> getDevicesForApplication(
         org.thethingsnetwork.api.handler.ApplicationIdentifier request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_GET_DEVICES_FOR_APPLICATION, getCallOptions()), request);
+          getChannel().newCall(getGetDevicesForApplicationMethod(), getCallOptions()), request);
     }
 
     /**
@@ -793,7 +1012,7 @@ public final class ApplicationManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<org.thethingsnetwork.api.handler.DryDownlinkResult> dryDownlink(
         org.thethingsnetwork.api.handler.DryDownlinkMessage request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_DRY_DOWNLINK, getCallOptions()), request);
+          getChannel().newCall(getDryDownlinkMethod(), getCallOptions()), request);
     }
 
     /**
@@ -804,7 +1023,7 @@ public final class ApplicationManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<org.thethingsnetwork.api.handler.DryUplinkResult> dryUplink(
         org.thethingsnetwork.api.handler.DryUplinkMessage request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_DRY_UPLINK, getCallOptions()), request);
+          getChannel().newCall(getDryUplinkMethod(), getCallOptions()), request);
     }
 
     /**
@@ -815,7 +1034,7 @@ public final class ApplicationManagerGrpc {
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> simulateUplink(
         org.thethingsnetwork.api.handler.SimulatedUplinkMessage request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_SIMULATE_UPLINK, getCallOptions()), request);
+          getChannel().newCall(getSimulateUplinkMethod(), getCallOptions()), request);
     }
   }
 
@@ -908,10 +1127,38 @@ public final class ApplicationManagerGrpc {
     }
   }
 
-  private static final class ApplicationManagerDescriptorSupplier implements io.grpc.protobuf.ProtoFileDescriptorSupplier {
+  private static abstract class ApplicationManagerBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
+    ApplicationManagerBaseDescriptorSupplier() {}
+
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
       return org.thethingsnetwork.api.handler.HandlerProto.getDescriptor();
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
+      return getFileDescriptor().findServiceByName("ApplicationManager");
+    }
+  }
+
+  private static final class ApplicationManagerFileDescriptorSupplier
+      extends ApplicationManagerBaseDescriptorSupplier {
+    ApplicationManagerFileDescriptorSupplier() {}
+  }
+
+  private static final class ApplicationManagerMethodDescriptorSupplier
+      extends ApplicationManagerBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
+    private final String methodName;
+
+    ApplicationManagerMethodDescriptorSupplier(String methodName) {
+      this.methodName = methodName;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
+      return getServiceDescriptor().findMethodByName(methodName);
     }
   }
 
@@ -924,18 +1171,18 @@ public final class ApplicationManagerGrpc {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new ApplicationManagerDescriptorSupplier())
-              .addMethod(METHOD_REGISTER_APPLICATION)
-              .addMethod(METHOD_GET_APPLICATION)
-              .addMethod(METHOD_SET_APPLICATION)
-              .addMethod(METHOD_DELETE_APPLICATION)
-              .addMethod(METHOD_GET_DEVICE)
-              .addMethod(METHOD_SET_DEVICE)
-              .addMethod(METHOD_DELETE_DEVICE)
-              .addMethod(METHOD_GET_DEVICES_FOR_APPLICATION)
-              .addMethod(METHOD_DRY_DOWNLINK)
-              .addMethod(METHOD_DRY_UPLINK)
-              .addMethod(METHOD_SIMULATE_UPLINK)
+              .setSchemaDescriptor(new ApplicationManagerFileDescriptorSupplier())
+              .addMethod(getRegisterApplicationMethod())
+              .addMethod(getGetApplicationMethod())
+              .addMethod(getSetApplicationMethod())
+              .addMethod(getDeleteApplicationMethod())
+              .addMethod(getGetDeviceMethod())
+              .addMethod(getSetDeviceMethod())
+              .addMethod(getDeleteDeviceMethod())
+              .addMethod(getGetDevicesForApplicationMethod())
+              .addMethod(getDryDownlinkMethod())
+              .addMethod(getDryUplinkMethod())
+              .addMethod(getSimulateUplinkMethod())
               .build();
         }
       }

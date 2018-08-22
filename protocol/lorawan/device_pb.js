@@ -188,7 +188,7 @@ proto.lorawan.DeviceIdentifier.prototype.getAppEui_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.DeviceIdentifier.prototype.setAppEui = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -227,7 +227,7 @@ proto.lorawan.DeviceIdentifier.prototype.getDevEui_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.DeviceIdentifier.prototype.setDevEui = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
@@ -580,7 +580,7 @@ proto.lorawan.Device.prototype.getAppEui_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.Device.prototype.setAppEui = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -619,7 +619,7 @@ proto.lorawan.Device.prototype.getDevEui_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.Device.prototype.setDevEui = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
@@ -634,7 +634,7 @@ proto.lorawan.Device.prototype.getAppId = function() {
 
 /** @param {string} value */
 proto.lorawan.Device.prototype.setAppId = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -649,7 +649,7 @@ proto.lorawan.Device.prototype.getDevId = function() {
 
 /** @param {string} value */
 proto.lorawan.Device.prototype.setDevId = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -688,7 +688,7 @@ proto.lorawan.Device.prototype.getDevAddr_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.Device.prototype.setDevAddr = function(value) {
-  jspb.Message.setField(this, 5, value);
+  jspb.Message.setProto3BytesField(this, 5, value);
 };
 
 
@@ -727,7 +727,7 @@ proto.lorawan.Device.prototype.getNwkSKey_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.Device.prototype.setNwkSKey = function(value) {
-  jspb.Message.setField(this, 6, value);
+  jspb.Message.setProto3BytesField(this, 6, value);
 };
 
 
@@ -766,7 +766,7 @@ proto.lorawan.Device.prototype.getAppSKey_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.Device.prototype.setAppSKey = function(value) {
-  jspb.Message.setField(this, 7, value);
+  jspb.Message.setProto3BytesField(this, 7, value);
 };
 
 
@@ -805,7 +805,7 @@ proto.lorawan.Device.prototype.getAppKey_asU8 = function() {
 
 /** @param {!(string|Uint8Array)} value */
 proto.lorawan.Device.prototype.setAppKey = function(value) {
-  jspb.Message.setField(this, 8, value);
+  jspb.Message.setProto3BytesField(this, 8, value);
 };
 
 
@@ -820,7 +820,7 @@ proto.lorawan.Device.prototype.getFCntUp = function() {
 
 /** @param {number} value */
 proto.lorawan.Device.prototype.setFCntUp = function(value) {
-  jspb.Message.setField(this, 9, value);
+  jspb.Message.setProto3IntField(this, 9, value);
 };
 
 
@@ -835,7 +835,7 @@ proto.lorawan.Device.prototype.getFCntDown = function() {
 
 /** @param {number} value */
 proto.lorawan.Device.prototype.setFCntDown = function(value) {
-  jspb.Message.setField(this, 10, value);
+  jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
@@ -852,7 +852,7 @@ proto.lorawan.Device.prototype.getDisableFCntCheck = function() {
 
 /** @param {boolean} value */
 proto.lorawan.Device.prototype.setDisableFCntCheck = function(value) {
-  jspb.Message.setField(this, 11, value);
+  jspb.Message.setProto3BooleanField(this, 11, value);
 };
 
 
@@ -869,7 +869,7 @@ proto.lorawan.Device.prototype.getUses32BitFCnt = function() {
 
 /** @param {boolean} value */
 proto.lorawan.Device.prototype.setUses32BitFCnt = function(value) {
-  jspb.Message.setField(this, 12, value);
+  jspb.Message.setProto3BooleanField(this, 12, value);
 };
 
 
@@ -884,7 +884,7 @@ proto.lorawan.Device.prototype.getActivationConstraints = function() {
 
 /** @param {string} value */
 proto.lorawan.Device.prototype.setActivationConstraints = function(value) {
-  jspb.Message.setField(this, 13, value);
+  jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
@@ -900,10 +900,10 @@ proto.lorawan.Device.prototype.getUsedDevNoncesList = function() {
 /**
  * repeated bytes used_dev_nonces = 14;
  * This is a type-conversion wrapper around `getUsedDevNoncesList()`
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.lorawan.Device.prototype.getUsedDevNoncesList_asB64 = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.bytesListAsB64(
+  return /** @type {!Array<string>} */ (jspb.Message.bytesListAsB64(
       this.getUsedDevNoncesList()));
 };
 
@@ -913,10 +913,10 @@ proto.lorawan.Device.prototype.getUsedDevNoncesList_asB64 = function() {
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getUsedDevNoncesList()`
- * @return {!Array.<!Uint8Array>}
+ * @return {!Array<!Uint8Array>}
  */
 proto.lorawan.Device.prototype.getUsedDevNoncesList_asU8 = function() {
-  return /** @type {!Array.<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
+  return /** @type {!Array<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
       this.getUsedDevNoncesList()));
 };
 
@@ -953,10 +953,10 @@ proto.lorawan.Device.prototype.getUsedAppNoncesList = function() {
 /**
  * repeated bytes used_app_nonces = 15;
  * This is a type-conversion wrapper around `getUsedAppNoncesList()`
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.lorawan.Device.prototype.getUsedAppNoncesList_asB64 = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.bytesListAsB64(
+  return /** @type {!Array<string>} */ (jspb.Message.bytesListAsB64(
       this.getUsedAppNoncesList()));
 };
 
@@ -966,10 +966,10 @@ proto.lorawan.Device.prototype.getUsedAppNoncesList_asB64 = function() {
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getUsedAppNoncesList()`
- * @return {!Array.<!Uint8Array>}
+ * @return {!Array<!Uint8Array>}
  */
 proto.lorawan.Device.prototype.getUsedAppNoncesList_asU8 = function() {
-  return /** @type {!Array.<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
+  return /** @type {!Array<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
       this.getUsedAppNoncesList()));
 };
 
@@ -1005,7 +1005,7 @@ proto.lorawan.Device.prototype.getLastSeen = function() {
 
 /** @param {number} value */
 proto.lorawan.Device.prototype.setLastSeen = function(value) {
-  jspb.Message.setField(this, 21, value);
+  jspb.Message.setProto3IntField(this, 21, value);
 };
 
 

@@ -22,41 +22,30 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Lorawan_PrefixesRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".PrefixesRequest"
+struct Lorawan_PrefixesRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let _ = try decoder.nextFieldNumber() {
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try unknownFields.traverse(visitor: &visitor)
-  }
 }
 
-struct Lorawan_PrefixesResponse: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".PrefixesResponse"
+struct Lorawan_PrefixesResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   /// The prefixes that are in use or available
   var prefixes: [Lorawan_PrefixesResponse.PrefixMapping] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  struct PrefixMapping: SwiftProtobuf.Message {
-    static let protoMessageName: String = Lorawan_PrefixesResponse.protoMessageName + ".PrefixMapping"
+  struct PrefixMapping {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
 
     /// The prefix that can be used
     var prefix: String = String()
@@ -67,42 +56,65 @@ struct Lorawan_PrefixesResponse: SwiftProtobuf.Message {
     var unknownFields = SwiftProtobuf.UnknownStorage()
 
     init() {}
-
-    /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-    /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-    /// initializers are defined in the SwiftProtobuf library. See the Message and
-    /// Message+*Additions` files.
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularStringField(value: &self.prefix)
-        case 2: try decoder.decodeRepeatedStringField(value: &self.usage)
-        default: break
-        }
-      }
-    }
-
-    /// Used by the encoding methods of the SwiftProtobuf library, not generally
-    /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-    /// other serializer methods are defined in the SwiftProtobuf library. See the
-    /// `Message` and `Message+*Additions` files.
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-      if !self.prefix.isEmpty {
-        try visitor.visitSingularStringField(value: self.prefix, fieldNumber: 1)
-      }
-      if !self.usage.isEmpty {
-        try visitor.visitRepeatedStringField(value: self.usage, fieldNumber: 2)
-      }
-      try unknownFields.traverse(visitor: &visitor)
-    }
   }
 
   init() {}
+}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
+struct Lorawan_DevAddrRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// The usage constraints (see activation_constraints in device.proto)
+  var usage: [String] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct Lorawan_DevAddrResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var devAddr: Data = SwiftProtobuf.Internal.emptyData
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+// MARK: - Code below here is support for the SwiftProtobuf runtime.
+
+fileprivate let _protobuf_package = "lorawan"
+
+extension Lorawan_PrefixesRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".PrefixesRequest"
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let _ = try decoder.nextFieldNumber() {
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Lorawan_PrefixesRequest, rhs: Lorawan_PrefixesRequest) -> Bool {
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Lorawan_PrefixesResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".PrefixesResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "prefixes"),
+  ]
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
@@ -112,32 +124,61 @@ struct Lorawan_PrefixesResponse: SwiftProtobuf.Message {
     }
   }
 
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.prefixes.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.prefixes, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
+
+  static func ==(lhs: Lorawan_PrefixesResponse, rhs: Lorawan_PrefixesResponse) -> Bool {
+    if lhs.prefixes != rhs.prefixes {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
 }
 
-struct Lorawan_DevAddrRequest: SwiftProtobuf.Message {
+extension Lorawan_PrefixesResponse.PrefixMapping: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = Lorawan_PrefixesResponse.protoMessageName + ".PrefixMapping"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "prefix"),
+    2: .same(proto: "usage"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.prefix)
+      case 2: try decoder.decodeRepeatedStringField(value: &self.usage)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.prefix.isEmpty {
+      try visitor.visitSingularStringField(value: self.prefix, fieldNumber: 1)
+    }
+    if !self.usage.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.usage, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Lorawan_PrefixesResponse.PrefixMapping, rhs: Lorawan_PrefixesResponse.PrefixMapping) -> Bool {
+    if lhs.prefix != rhs.prefix {return false}
+    if lhs.usage != rhs.usage {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Lorawan_DevAddrRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DevAddrRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "usage"),
+  ]
 
-  /// The usage constraints (see activation_constraints in device.proto)
-  var usage: [String] = []
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
@@ -147,31 +188,26 @@ struct Lorawan_DevAddrRequest: SwiftProtobuf.Message {
     }
   }
 
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.usage.isEmpty {
       try visitor.visitRepeatedStringField(value: self.usage, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
+
+  static func ==(lhs: Lorawan_DevAddrRequest, rhs: Lorawan_DevAddrRequest) -> Bool {
+    if lhs.usage != rhs.usage {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
 }
 
-struct Lorawan_DevAddrResponse: SwiftProtobuf.Message {
+extension Lorawan_DevAddrResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".DevAddrResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "dev_addr"),
+  ]
 
-  var devAddr: Data = SwiftProtobuf.Internal.emptyData
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
@@ -181,77 +217,16 @@ struct Lorawan_DevAddrResponse: SwiftProtobuf.Message {
     }
   }
 
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.devAddr.isEmpty {
       try visitor.visitSingularBytesField(value: self.devAddr, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
-}
 
-// MARK: - Code below here is support for the SwiftProtobuf runtime.
-
-fileprivate let _protobuf_package = "lorawan"
-
-extension Lorawan_PrefixesRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
-
-  func _protobuf_generated_isEqualTo(other: Lorawan_PrefixesRequest) -> Bool {
-    if unknownFields != other.unknownFields {return false}
-    return true
-  }
-}
-
-extension Lorawan_PrefixesResponse: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "prefixes"),
-  ]
-
-  func _protobuf_generated_isEqualTo(other: Lorawan_PrefixesResponse) -> Bool {
-    if self.prefixes != other.prefixes {return false}
-    if unknownFields != other.unknownFields {return false}
-    return true
-  }
-}
-
-extension Lorawan_PrefixesResponse.PrefixMapping: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "prefix"),
-    2: .same(proto: "usage"),
-  ]
-
-  func _protobuf_generated_isEqualTo(other: Lorawan_PrefixesResponse.PrefixMapping) -> Bool {
-    if self.prefix != other.prefix {return false}
-    if self.usage != other.usage {return false}
-    if unknownFields != other.unknownFields {return false}
-    return true
-  }
-}
-
-extension Lorawan_DevAddrRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "usage"),
-  ]
-
-  func _protobuf_generated_isEqualTo(other: Lorawan_DevAddrRequest) -> Bool {
-    if self.usage != other.usage {return false}
-    if unknownFields != other.unknownFields {return false}
-    return true
-  }
-}
-
-extension Lorawan_DevAddrResponse: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "dev_addr"),
-  ]
-
-  func _protobuf_generated_isEqualTo(other: Lorawan_DevAddrResponse) -> Bool {
-    if self.devAddr != other.devAddr {return false}
-    if unknownFields != other.unknownFields {return false}
+  static func ==(lhs: Lorawan_DevAddrResponse, rhs: Lorawan_DevAddrResponse) -> Bool {
+    if lhs.devAddr != rhs.devAddr {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }

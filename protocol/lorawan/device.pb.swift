@@ -22,8 +22,10 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Lorawan_DeviceIdentifier: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".DeviceIdentifier"
+struct Lorawan_DeviceIdentifier {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   /// The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
   var appEui: Data = SwiftProtobuf.Internal.emptyData
@@ -34,38 +36,12 @@ struct Lorawan_DeviceIdentifier: SwiftProtobuf.Message {
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularBytesField(value: &self.appEui)
-      case 2: try decoder.decodeSingularBytesField(value: &self.devEui)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.appEui.isEmpty {
-      try visitor.visitSingularBytesField(value: self.appEui, fieldNumber: 1)
-    }
-    if !self.devEui.isEmpty {
-      try visitor.visitSingularBytesField(value: self.devEui, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
 }
 
-struct Lorawan_Device: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Device"
+struct Lorawan_Device {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
 
   /// The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
   var appEui: Data = SwiftProtobuf.Internal.emptyData
@@ -121,11 +97,68 @@ struct Lorawan_Device: SwiftProtobuf.Message {
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+}
 
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
+// MARK: - Code below here is support for the SwiftProtobuf runtime.
+
+fileprivate let _protobuf_package = "lorawan"
+
+extension Lorawan_DeviceIdentifier: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DeviceIdentifier"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "app_eui"),
+    2: .standard(proto: "dev_eui"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularBytesField(value: &self.appEui)
+      case 2: try decoder.decodeSingularBytesField(value: &self.devEui)
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.appEui.isEmpty {
+      try visitor.visitSingularBytesField(value: self.appEui, fieldNumber: 1)
+    }
+    if !self.devEui.isEmpty {
+      try visitor.visitSingularBytesField(value: self.devEui, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: Lorawan_DeviceIdentifier, rhs: Lorawan_DeviceIdentifier) -> Bool {
+    if lhs.appEui != rhs.appEui {return false}
+    if lhs.devEui != rhs.devEui {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Lorawan_Device: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".Device"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "app_eui"),
+    2: .standard(proto: "dev_eui"),
+    3: .standard(proto: "app_id"),
+    4: .standard(proto: "dev_id"),
+    5: .standard(proto: "dev_addr"),
+    6: .standard(proto: "nwk_s_key"),
+    7: .standard(proto: "app_s_key"),
+    8: .standard(proto: "app_key"),
+    9: .standard(proto: "f_cnt_up"),
+    10: .standard(proto: "f_cnt_down"),
+    11: .standard(proto: "disable_f_cnt_check"),
+    12: .standard(proto: "uses32_bit_f_cnt"),
+    13: .standard(proto: "activation_constraints"),
+    14: .standard(proto: "used_dev_nonces"),
+    15: .standard(proto: "used_app_nonces"),
+    21: .standard(proto: "last_seen"),
+  ]
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
@@ -150,10 +183,6 @@ struct Lorawan_Device: SwiftProtobuf.Message {
     }
   }
 
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.appEui.isEmpty {
       try visitor.visitSingularBytesField(value: self.appEui, fieldNumber: 1)
@@ -205,64 +234,25 @@ struct Lorawan_Device: SwiftProtobuf.Message {
     }
     try unknownFields.traverse(visitor: &visitor)
   }
-}
 
-// MARK: - Code below here is support for the SwiftProtobuf runtime.
-
-fileprivate let _protobuf_package = "lorawan"
-
-extension Lorawan_DeviceIdentifier: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "app_eui"),
-    2: .standard(proto: "dev_eui"),
-  ]
-
-  func _protobuf_generated_isEqualTo(other: Lorawan_DeviceIdentifier) -> Bool {
-    if self.appEui != other.appEui {return false}
-    if self.devEui != other.devEui {return false}
-    if unknownFields != other.unknownFields {return false}
-    return true
-  }
-}
-
-extension Lorawan_Device: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "app_eui"),
-    2: .standard(proto: "dev_eui"),
-    3: .standard(proto: "app_id"),
-    4: .standard(proto: "dev_id"),
-    5: .standard(proto: "dev_addr"),
-    6: .standard(proto: "nwk_s_key"),
-    7: .standard(proto: "app_s_key"),
-    8: .standard(proto: "app_key"),
-    9: .standard(proto: "f_cnt_up"),
-    10: .standard(proto: "f_cnt_down"),
-    11: .standard(proto: "disable_f_cnt_check"),
-    12: .standard(proto: "uses32_bit_f_cnt"),
-    13: .standard(proto: "activation_constraints"),
-    14: .standard(proto: "used_dev_nonces"),
-    15: .standard(proto: "used_app_nonces"),
-    21: .standard(proto: "last_seen"),
-  ]
-
-  func _protobuf_generated_isEqualTo(other: Lorawan_Device) -> Bool {
-    if self.appEui != other.appEui {return false}
-    if self.devEui != other.devEui {return false}
-    if self.appID != other.appID {return false}
-    if self.devID != other.devID {return false}
-    if self.devAddr != other.devAddr {return false}
-    if self.nwkSKey != other.nwkSKey {return false}
-    if self.appSKey != other.appSKey {return false}
-    if self.appKey != other.appKey {return false}
-    if self.fCntUp != other.fCntUp {return false}
-    if self.fCntDown != other.fCntDown {return false}
-    if self.disableFCntCheck != other.disableFCntCheck {return false}
-    if self.uses32BitFCnt != other.uses32BitFCnt {return false}
-    if self.activationConstraints != other.activationConstraints {return false}
-    if self.usedDevNonces != other.usedDevNonces {return false}
-    if self.usedAppNonces != other.usedAppNonces {return false}
-    if self.lastSeen != other.lastSeen {return false}
-    if unknownFields != other.unknownFields {return false}
+  static func ==(lhs: Lorawan_Device, rhs: Lorawan_Device) -> Bool {
+    if lhs.appEui != rhs.appEui {return false}
+    if lhs.devEui != rhs.devEui {return false}
+    if lhs.appID != rhs.appID {return false}
+    if lhs.devID != rhs.devID {return false}
+    if lhs.devAddr != rhs.devAddr {return false}
+    if lhs.nwkSKey != rhs.nwkSKey {return false}
+    if lhs.appSKey != rhs.appSKey {return false}
+    if lhs.appKey != rhs.appKey {return false}
+    if lhs.fCntUp != rhs.fCntUp {return false}
+    if lhs.fCntDown != rhs.fCntDown {return false}
+    if lhs.disableFCntCheck != rhs.disableFCntCheck {return false}
+    if lhs.uses32BitFCnt != rhs.uses32BitFCnt {return false}
+    if lhs.activationConstraints != rhs.activationConstraints {return false}
+    if lhs.usedDevNonces != rhs.usedDevNonces {return false}
+    if lhs.usedAppNonces != rhs.usedAppNonces {return false}
+    if lhs.lastSeen != rhs.lastSeen {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }

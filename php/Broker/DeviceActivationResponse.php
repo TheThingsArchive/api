@@ -32,9 +32,21 @@ class DeviceActivationResponse extends \Google\Protobuf\Internal\Message
      */
     private $trace = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $payload
+     *     @type \Protocol\Message $message
+     *     @type \Broker\DownlinkOption $downlink_option
+     *     @type \Trace\Trace $trace
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Broker\Broker::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

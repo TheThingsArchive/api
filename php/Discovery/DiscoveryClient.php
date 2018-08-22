@@ -33,7 +33,7 @@ class DiscoveryClient extends \Grpc\BaseStub {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/discovery.Discovery/Announce',
         $argument,
-        ['\Google\Protobuf\Empty', 'decode'],
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
         $metadata, $options);
     }
 
@@ -75,7 +75,7 @@ class DiscoveryClient extends \Grpc\BaseStub {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/discovery.Discovery/AddMetadata',
         $argument,
-        ['\Google\Protobuf\Empty', 'decode'],
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
         $metadata, $options);
     }
 
@@ -89,7 +89,7 @@ class DiscoveryClient extends \Grpc\BaseStub {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/discovery.Discovery/DeleteMetadata',
         $argument,
-        ['\Google\Protobuf\Empty', 'decode'],
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
         $metadata, $options);
     }
 

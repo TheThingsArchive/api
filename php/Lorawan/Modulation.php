@@ -5,7 +5,7 @@
 namespace Lorawan;
 
 /**
- * Protobuf enum <code>Lorawan\Modulation</code>
+ * Protobuf type <code>lorawan.Modulation</code>
  */
 class Modulation
 {
