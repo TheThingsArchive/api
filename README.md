@@ -20,14 +20,6 @@
 | Rust         | help wanted ([#18](https://github.com/TheThingsNetwork/api/issues/18)) | you? |
 
 ## Updating the generated files
+
 1. Install [Docker](https://docs.docker.com/engine/installation/)
 2. Run `make clean all`
-
-If you only want to update the files for a specific language, you can use one of:
-- `protos.go`
-- `protos.java`
-- `protos.js`
-- `protos.swift`
-- `protos.php`
-- `protos.ruby`
-- `protos.python`
