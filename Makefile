@@ -19,17 +19,17 @@ DOCKER_IMAGE ?= thethingsnetwork/api-protoc
 docker:
 	docker build -t $(DOCKER_IMAGE):latest .
 
-docker_run = docker run --user `id -u` --rm -v $(PWD):$(PWD)
-
-protoc = $(docker_run) -w $(PWD) $(DOCKER_IMAGE) -I $(GOPATH)/src
-sed = $(docker_run) -w $(PWD) --entrypoint sed $(DOCKER_IMAGE)
+api_path = /src/github.com/TheThingsNetwork/api
+docker_run = docker run --user `id -u` --rm -v $(PWD):$(api_path) -w $(api_path)
+protoc = $(docker_run) $(DOCKER_IMAGE) -I /src
+sed = $(docker_run) --entrypoint sed $(DOCKER_IMAGE)
 
 define language_template
 .PHONY: protos/$(1)
 
 protos/$(1):
 	@echo Generating $(1) protos...
-	@$$(MAKE) $(patsubst %.proto,%.pb.$(1),$(proto_files))
+	@$$(MAKE) -j 8 $(patsubst %.proto,%.pb.$(1),$(proto_files))
 
 .PHONY: clean/$(1)
 endef
@@ -43,7 +43,7 @@ go_subst = -e 's/\.$(1)/.$(subst Eui,EUI,$(subst Id,ID,$(1)))/g'
 go_gw_replace := $(foreach id,AppId AppEui DevId DevEui Id,$(call go_subst,$(id)))
 
 %.pb.go: %.proto
-	@$(protoc) --gogottn_out=plugins=grpc,$(go_proto_conversions):$(GOPATH)/src --grpc-gateway_out=$(GOPATH)/src $(PWD)/$<
+	@$(protoc) --gogottn_out=plugins=grpc,$(go_proto_conversions):/src --grpc-gateway_out=/src $(api_path)/$<
 	@file=$(patsubst %.proto,%.pb.gw.go,$<); if [ -f $$file ]; then \
 		$(sed) -i'' $(go_gw_replace) $$file; \
 	fi
@@ -55,7 +55,7 @@ clean/go:
 .PHONY: %.pb.java
 
 %.pb.java: %.proto
-	@$(protoc) --java_out=$(PWD)/java/src --grpc-java_out=$(PWD)/java/src $(PWD)/$<
+	@$(protoc) --java_out=$(api_path)/java/src --grpc-java_out=$(api_path)/java/src $(api_path)/$<
 
 clean/java:
 	rm -rf java/src/org/thethingsnetwork/api
@@ -69,7 +69,7 @@ js_replace := -e 's/github.com_/github_com_/g' \
 .PHONY: %.pb.js
 
 %.pb.js: %.proto
-	@$(protoc) --js_out=import_style=commonjs,binary:$(GOPATH)/src --grpc-js_out=$(GOPATH)/src $(PWD)/$<
+	@$(protoc) --js_out=import_style=commonjs,binary:/src --grpc-js_out=/src $(api_path)/$<
 	@file=$(patsubst %.proto,%_pb.js,$<); if [ -f $$file ]; then \
 		$(sed) -i'' $(js_replace) $$file; \
 	fi
@@ -83,7 +83,7 @@ clean/js:
 .PHONY: %.pb.php
 
 %.pb.php: %.proto
-	@$(protoc) --php_out=$(PWD)/php --grpc-php_out=$(PWD)/php $(PWD)/$<
+	@$(protoc) --php_out=$(api_path)/php --grpc-php_out=$(api_path)/php $(api_path)/$<
 
 clean/php:
 	rm -rf php/*
@@ -93,7 +93,7 @@ ruby_replace := -e "s|require 'github.com/TheThingsNetwork/api/|require '|g"
 .PHONY: %.pb.ruby
 
 %.pb.ruby: %.proto
-	@$(protoc) --ruby_out=$(GOPATH)/src --grpc-ruby_out=$(GOPATH)/src $(PWD)/$<
+	@$(protoc) --ruby_out=/src --grpc-ruby_out=/src $(api_path)/$<
 	@file=$(patsubst %.proto,%_pb.rb,$<); if [ -f $$file ]; then \
 		$(sed) -i'' $(ruby_replace) $$file; \
 	fi
@@ -113,7 +113,7 @@ python_replace := -e 's/from github\.com/from github_com/g' \
 	-e 's/google_dot_api_dot_annotations__pb2\.DESCRIPTOR,//g'
 
 %.pb.python: %.proto
-	@$(protoc) --python_out=$(PWD)/python --grpc-python_out=$(PWD)/python $(PWD)/$<
+	@$(protoc) --python_out=$(api_path)/python --grpc-python_out=$(api_path)/python $(api_path)/$<
 	@file=$(patsubst %.proto,python/github/com/TheThingsNetwork/api/%_pb2.py,$<); if [ -f $$file ]; then \
 		target=$(patsubst %.proto,python/github_com/TheThingsNetwork/api/%_pb2.py,$<); \
 		mkdir -p `dirname $$target`; \
@@ -135,7 +135,7 @@ clean/python:
 .PHONY: %.pb.c
 
 %.pb.c: %.proto
-	@$(protoc) --c_out=$(PWD)/c $(PWD)/$<
+	@$(protoc) --c_out=$(api_path)/c $(api_path)/$<
 
 clean/c:
 	rm -rf c/github.com/TheThingsNetwork
@@ -143,7 +143,7 @@ clean/c:
 .PHONY: %.pb.swift
 
 %.pb.swift: %.proto
-	@$(protoc) --swift_out=$(GOPATH)/src --grpc-swift_out=$(GOPATH)/src $(PWD)/$<
+	@$(protoc) --swift_out=/src --grpc-swift_out=/src $(api_path)/$<
 
 clean/swift:
 	find . -name '*.swift' -delete
