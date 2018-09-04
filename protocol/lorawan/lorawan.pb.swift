@@ -75,6 +75,7 @@ enum Lorawan_FrequencyPlan: SwiftProtobuf.Enum {
   case as923925 // = 62
   case kr920923 // = 7
   case in865867 // = 8
+  case ru864870 // = 9
   case UNRECOGNIZED(Int)
 
   init() {
@@ -92,6 +93,7 @@ enum Lorawan_FrequencyPlan: SwiftProtobuf.Enum {
     case 6: self = .as923
     case 7: self = .kr920923
     case 8: self = .in865867
+    case 9: self = .ru864870
     case 61: self = .as920923
     case 62: self = .as923925
     default: self = .UNRECOGNIZED(rawValue)
@@ -109,6 +111,7 @@ enum Lorawan_FrequencyPlan: SwiftProtobuf.Enum {
     case .as923: return 6
     case .kr920923: return 7
     case .in865867: return 8
+    case .ru864870: return 9
     case .as920923: return 61
     case .as923925: return 62
     case .UNRECOGNIZED(let i): return i
@@ -133,6 +136,7 @@ extension Lorawan_FrequencyPlan: CaseIterable {
     .as923925,
     .kr920923,
     .in865867,
+    .ru864870,
   ]
 }
 
@@ -645,6 +649,7 @@ extension Lorawan_FrequencyPlan: SwiftProtobuf._ProtoNameProviding {
     6: .same(proto: "AS_923"),
     7: .same(proto: "KR_920_923"),
     8: .same(proto: "IN_865_867"),
+    9: .same(proto: "RU_864_870"),
     61: .same(proto: "AS_920_923"),
     62: .same(proto: "AS_923_925"),
   ]
