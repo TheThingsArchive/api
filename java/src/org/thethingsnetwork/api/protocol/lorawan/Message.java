@@ -124,13 +124,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProto.internal_static_lorawan_Message_descriptor;
+    return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProtocolProto.internal_static_lorawan_Message_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProto.internal_static_lorawan_Message_fieldAccessorTable
+    return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProtocolProto.internal_static_lorawan_Message_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             org.thethingsnetwork.api.protocol.lorawan.Message.class, org.thethingsnetwork.api.protocol.lorawan.Message.Builder.class);
   }
@@ -520,13 +520,13 @@ private static final long serialVersionUID = 0L;
       org.thethingsnetwork.api.protocol.lorawan.MessageOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProto.internal_static_lorawan_Message_descriptor;
+      return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProtocolProto.internal_static_lorawan_Message_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProto.internal_static_lorawan_Message_fieldAccessorTable
+      return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProtocolProto.internal_static_lorawan_Message_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               org.thethingsnetwork.api.protocol.lorawan.Message.class, org.thethingsnetwork.api.protocol.lorawan.Message.Builder.class);
     }
@@ -565,7 +565,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProto.internal_static_lorawan_Message_descriptor;
+      return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProtocolProto.internal_static_lorawan_Message_descriptor;
     }
 
     @java.lang.Override

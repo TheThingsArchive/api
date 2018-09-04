@@ -10,7 +10,7 @@ package lorawan;
 option csharp_namespace = "TheThingsNetwork.API.LoRaWANProtocol";
 option go_package = "github.com/TheThingsNetwork/api/protocol/lorawan";
 option java_package = "org.thethingsnetwork.api.protocol.lorawan";
-option java_outer_classname = "LoRaWANProto";
+option java_outer_classname = "LoRaWANProtocolProto";
 option java_multiple_files = true;
 
 enum Modulation {
@@ -79,6 +79,8 @@ enum FrequencyPlan {
   KR_920_923 = 7;
 
   IN_865_867 = 8;
+
+  RU_864_870 = 9;
 }
 
 message Message {

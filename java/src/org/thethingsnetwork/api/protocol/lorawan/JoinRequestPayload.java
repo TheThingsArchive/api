@@ -81,13 +81,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProto.internal_static_lorawan_JoinRequestPayload_descriptor;
+    return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProtocolProto.internal_static_lorawan_JoinRequestPayload_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProto.internal_static_lorawan_JoinRequestPayload_fieldAccessorTable
+    return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProtocolProto.internal_static_lorawan_JoinRequestPayload_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             org.thethingsnetwork.api.protocol.lorawan.JoinRequestPayload.class, org.thethingsnetwork.api.protocol.lorawan.JoinRequestPayload.Builder.class);
   }
@@ -306,13 +306,13 @@ private static final long serialVersionUID = 0L;
       org.thethingsnetwork.api.protocol.lorawan.JoinRequestPayloadOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProto.internal_static_lorawan_JoinRequestPayload_descriptor;
+      return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProtocolProto.internal_static_lorawan_JoinRequestPayload_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProto.internal_static_lorawan_JoinRequestPayload_fieldAccessorTable
+      return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProtocolProto.internal_static_lorawan_JoinRequestPayload_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               org.thethingsnetwork.api.protocol.lorawan.JoinRequestPayload.class, org.thethingsnetwork.api.protocol.lorawan.JoinRequestPayload.Builder.class);
     }
@@ -347,7 +347,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProto.internal_static_lorawan_JoinRequestPayload_descriptor;
+      return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProtocolProto.internal_static_lorawan_JoinRequestPayload_descriptor;
     }
 
     @java.lang.Override

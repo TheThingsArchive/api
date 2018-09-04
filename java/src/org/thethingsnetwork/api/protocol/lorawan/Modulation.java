@@ -75,7 +75,7 @@ public enum Modulation
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProto.getDescriptor().getEnumTypes().get(0);
+    return org.thethingsnetwork.api.protocol.lorawan.LoRaWANProtocolProto.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final Modulation[] VALUES = values();
