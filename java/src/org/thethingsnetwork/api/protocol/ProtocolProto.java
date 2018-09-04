@@ -73,7 +73,7 @@ public final class ProtocolProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.GoGoProtos.getDescriptor(),
-          org.thethingsnetwork.api.protocol.lorawan.LoRaWANProto.getDescriptor(),
+          org.thethingsnetwork.api.protocol.lorawan.LoRaWANProtocolProto.getDescriptor(),
         }, assigner);
     internal_static_protocol_Message_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -105,7 +105,7 @@ public final class ProtocolProto {
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf.GoGoProtos.getDescriptor();
-    org.thethingsnetwork.api.protocol.lorawan.LoRaWANProto.getDescriptor();
+    org.thethingsnetwork.api.protocol.lorawan.LoRaWANProtocolProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

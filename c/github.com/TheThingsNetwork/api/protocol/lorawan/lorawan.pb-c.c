@@ -1635,7 +1635,7 @@ const ProtobufCEnumDescriptor lorawan__modulation__descriptor =
   lorawan__modulation__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
-static const ProtobufCEnumValue lorawan__frequency_plan__enum_values_by_number[11] =
+static const ProtobufCEnumValue lorawan__frequency_plan__enum_values_by_number[12] =
 {
   { "EU_863_870", "LORAWAN__FREQUENCY_PLAN__EU_863_870", 0 },
   { "US_902_928", "LORAWAN__FREQUENCY_PLAN__US_902_928", 1 },
@@ -1646,17 +1646,18 @@ static const ProtobufCEnumValue lorawan__frequency_plan__enum_values_by_number[1
   { "AS_923", "LORAWAN__FREQUENCY_PLAN__AS_923", 6 },
   { "KR_920_923", "LORAWAN__FREQUENCY_PLAN__KR_920_923", 7 },
   { "IN_865_867", "LORAWAN__FREQUENCY_PLAN__IN_865_867", 8 },
+  { "RU_864_870", "LORAWAN__FREQUENCY_PLAN__RU_864_870", 9 },
   { "AS_920_923", "LORAWAN__FREQUENCY_PLAN__AS_920_923", 61 },
   { "AS_923_925", "LORAWAN__FREQUENCY_PLAN__AS_923_925", 62 },
 };
 static const ProtobufCIntRange lorawan__frequency_plan__value_ranges[] = {
-{0, 0},{61, 9},{0, 11}
+{0, 0},{61, 10},{0, 12}
 };
-static const ProtobufCEnumValueIndex lorawan__frequency_plan__enum_values_by_name[11] =
+static const ProtobufCEnumValueIndex lorawan__frequency_plan__enum_values_by_name[12] =
 {
-  { "AS_920_923", 9 },
+  { "AS_920_923", 10 },
   { "AS_923", 6 },
-  { "AS_923_925", 10 },
+  { "AS_923_925", 11 },
   { "AU_915_928", 4 },
   { "CN_470_510", 5 },
   { "CN_779_787", 2 },
@@ -1664,6 +1665,7 @@ static const ProtobufCEnumValueIndex lorawan__frequency_plan__enum_values_by_nam
   { "EU_863_870", 0 },
   { "IN_865_867", 8 },
   { "KR_920_923", 7 },
+  { "RU_864_870", 9 },
   { "US_902_928", 1 },
 };
 const ProtobufCEnumDescriptor lorawan__frequency_plan__descriptor =
@@ -1673,9 +1675,9 @@ const ProtobufCEnumDescriptor lorawan__frequency_plan__descriptor =
   "FrequencyPlan",
   "Lorawan__FrequencyPlan",
   "lorawan",
-  11,
+  12,
   lorawan__frequency_plan__enum_values_by_number,
-  11,
+  12,
   lorawan__frequency_plan__enum_values_by_name,
   2,
   lorawan__frequency_plan__value_ranges,
