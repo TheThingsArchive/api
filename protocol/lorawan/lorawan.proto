@@ -79,6 +79,8 @@ enum FrequencyPlan {
   KR_920_923 = 7;
 
   IN_865_867 = 8;
+  
+  RU_864_870 = 9;
 }
 
 message Message {
