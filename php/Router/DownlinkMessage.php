@@ -34,22 +34,9 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
      */
     private $trace = null;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $payload
-     *     @type \Protocol\Message $message
-     *     @type \Protocol\TxConfiguration $protocol_configuration
-     *     @type \Gateway\TxConfiguration $gateway_configuration
-     *     @type \Trace\Trace $trace
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Router\Router::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**

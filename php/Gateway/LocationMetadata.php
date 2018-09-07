@@ -48,28 +48,9 @@ class LocationMetadata extends \Google\Protobuf\Internal\Message
      */
     private $source = 0;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type int|string $time
-     *           Time (unix nanoseconds)
-     *     @type float $latitude
-     *           the north–south position (degrees; -90 to +90), where 0 is the equator, north pole is positive, south pole is negative
-     *     @type float $longitude
-     *           the east-west position (degrees; -180 to +180), where 0 is the Prime Meridian (Greenwich), east is positive , west is negative
-     *     @type int $altitude
-     *           the altitude (meters), where 0 is the mean sea level
-     *     @type int $accuracy
-     *           the accuracy of the location (meters)
-     *     @type int $source
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Gateway\Gateway::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**

@@ -4,6 +4,7 @@
 package api // import "github.com/TheThingsNetwork/api"
 
 import proto "github.com/gogo/protobuf/proto"
+import golang_proto "github.com/golang/protobuf/proto"
 import fmt "fmt"
 import math "math"
 
@@ -16,6 +17,7 @@ import io "io"
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
+var _ = golang_proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
@@ -42,7 +44,7 @@ type Percentiles struct {
 func (m *Percentiles) Reset()      { *m = Percentiles{} }
 func (*Percentiles) ProtoMessage() {}
 func (*Percentiles) Descriptor() ([]byte, []int) {
-	return fileDescriptor_api_07913d4a21146439, []int{0}
+	return fileDescriptor_api_fd27205e52c30c80, []int{0}
 }
 func (m *Percentiles) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -145,7 +147,7 @@ type Rates struct {
 func (m *Rates) Reset()      { *m = Rates{} }
 func (*Rates) ProtoMessage() {}
 func (*Rates) Descriptor() ([]byte, []int) {
-	return fileDescriptor_api_07913d4a21146439, []int{1}
+	return fileDescriptor_api_fd27205e52c30c80, []int{1}
 }
 func (m *Rates) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -206,7 +208,7 @@ type SystemStats struct {
 func (m *SystemStats) Reset()      { *m = SystemStats{} }
 func (*SystemStats) ProtoMessage() {}
 func (*SystemStats) Descriptor() ([]byte, []int) {
-	return fileDescriptor_api_07913d4a21146439, []int{2}
+	return fileDescriptor_api_fd27205e52c30c80, []int{2}
 }
 func (m *SystemStats) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -267,7 +269,7 @@ type SystemStats_Loadstats struct {
 func (m *SystemStats_Loadstats) Reset()      { *m = SystemStats_Loadstats{} }
 func (*SystemStats_Loadstats) ProtoMessage() {}
 func (*SystemStats_Loadstats) Descriptor() ([]byte, []int) {
-	return fileDescriptor_api_07913d4a21146439, []int{2, 0}
+	return fileDescriptor_api_fd27205e52c30c80, []int{2, 0}
 }
 func (m *SystemStats_Loadstats) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -329,7 +331,7 @@ type SystemStats_CPUStats struct {
 func (m *SystemStats_CPUStats) Reset()      { *m = SystemStats_CPUStats{} }
 func (*SystemStats_CPUStats) ProtoMessage() {}
 func (*SystemStats_CPUStats) Descriptor() ([]byte, []int) {
-	return fileDescriptor_api_07913d4a21146439, []int{2, 1}
+	return fileDescriptor_api_fd27205e52c30c80, []int{2, 1}
 }
 func (m *SystemStats_CPUStats) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -397,7 +399,7 @@ type SystemStats_MemoryStats struct {
 func (m *SystemStats_MemoryStats) Reset()      { *m = SystemStats_MemoryStats{} }
 func (*SystemStats_MemoryStats) ProtoMessage() {}
 func (*SystemStats_MemoryStats) Descriptor() ([]byte, []int) {
-	return fileDescriptor_api_07913d4a21146439, []int{2, 2}
+	return fileDescriptor_api_fd27205e52c30c80, []int{2, 2}
 }
 func (m *SystemStats_MemoryStats) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -460,7 +462,7 @@ type ComponentStats struct {
 func (m *ComponentStats) Reset()      { *m = ComponentStats{} }
 func (*ComponentStats) ProtoMessage() {}
 func (*ComponentStats) Descriptor() ([]byte, []int) {
-	return fileDescriptor_api_07913d4a21146439, []int{3}
+	return fileDescriptor_api_fd27205e52c30c80, []int{3}
 }
 func (m *ComponentStats) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -536,7 +538,7 @@ type ComponentStats_CPUStats struct {
 func (m *ComponentStats_CPUStats) Reset()      { *m = ComponentStats_CPUStats{} }
 func (*ComponentStats_CPUStats) ProtoMessage() {}
 func (*ComponentStats_CPUStats) Descriptor() ([]byte, []int) {
-	return fileDescriptor_api_07913d4a21146439, []int{3, 0}
+	return fileDescriptor_api_fd27205e52c30c80, []int{3, 0}
 }
 func (m *ComponentStats_CPUStats) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -605,7 +607,7 @@ type ComponentStats_MemoryStats struct {
 func (m *ComponentStats_MemoryStats) Reset()      { *m = ComponentStats_MemoryStats{} }
 func (*ComponentStats_MemoryStats) ProtoMessage() {}
 func (*ComponentStats_MemoryStats) Descriptor() ([]byte, []int) {
-	return fileDescriptor_api_07913d4a21146439, []int{3, 1}
+	return fileDescriptor_api_fd27205e52c30c80, []int{3, 1}
 }
 func (m *ComponentStats_MemoryStats) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -664,68 +666,23 @@ func (m *ComponentStats_MemoryStats) GetStack() uint64 {
 
 func init() {
 	proto.RegisterType((*Percentiles)(nil), "api.Percentiles")
+	golang_proto.RegisterType((*Percentiles)(nil), "api.Percentiles")
 	proto.RegisterType((*Rates)(nil), "api.Rates")
+	golang_proto.RegisterType((*Rates)(nil), "api.Rates")
 	proto.RegisterType((*SystemStats)(nil), "api.SystemStats")
+	golang_proto.RegisterType((*SystemStats)(nil), "api.SystemStats")
 	proto.RegisterType((*SystemStats_Loadstats)(nil), "api.SystemStats.Loadstats")
+	golang_proto.RegisterType((*SystemStats_Loadstats)(nil), "api.SystemStats.Loadstats")
 	proto.RegisterType((*SystemStats_CPUStats)(nil), "api.SystemStats.CPUStats")
+	golang_proto.RegisterType((*SystemStats_CPUStats)(nil), "api.SystemStats.CPUStats")
 	proto.RegisterType((*SystemStats_MemoryStats)(nil), "api.SystemStats.MemoryStats")
+	golang_proto.RegisterType((*SystemStats_MemoryStats)(nil), "api.SystemStats.MemoryStats")
 	proto.RegisterType((*ComponentStats)(nil), "api.ComponentStats")
+	golang_proto.RegisterType((*ComponentStats)(nil), "api.ComponentStats")
 	proto.RegisterType((*ComponentStats_CPUStats)(nil), "api.ComponentStats.CPUStats")
+	golang_proto.RegisterType((*ComponentStats_CPUStats)(nil), "api.ComponentStats.CPUStats")
 	proto.RegisterType((*ComponentStats_MemoryStats)(nil), "api.ComponentStats.MemoryStats")
-}
-func (this *Percentiles) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*Percentiles)
-	if !ok {
-		that2, ok := that.(Percentiles)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *Percentiles")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *Percentiles but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *Percentiles but is not nil && this == nil")
-	}
-	if this.Percentile1 != that1.Percentile1 {
-		return fmt.Errorf("Percentile1 this(%v) Not Equal that(%v)", this.Percentile1, that1.Percentile1)
-	}
-	if this.Percentile5 != that1.Percentile5 {
-		return fmt.Errorf("Percentile5 this(%v) Not Equal that(%v)", this.Percentile5, that1.Percentile5)
-	}
-	if this.Percentile10 != that1.Percentile10 {
-		return fmt.Errorf("Percentile10 this(%v) Not Equal that(%v)", this.Percentile10, that1.Percentile10)
-	}
-	if this.Percentile25 != that1.Percentile25 {
-		return fmt.Errorf("Percentile25 this(%v) Not Equal that(%v)", this.Percentile25, that1.Percentile25)
-	}
-	if this.Percentile50 != that1.Percentile50 {
-		return fmt.Errorf("Percentile50 this(%v) Not Equal that(%v)", this.Percentile50, that1.Percentile50)
-	}
-	if this.Percentile75 != that1.Percentile75 {
-		return fmt.Errorf("Percentile75 this(%v) Not Equal that(%v)", this.Percentile75, that1.Percentile75)
-	}
-	if this.Percentile90 != that1.Percentile90 {
-		return fmt.Errorf("Percentile90 this(%v) Not Equal that(%v)", this.Percentile90, that1.Percentile90)
-	}
-	if this.Percentile95 != that1.Percentile95 {
-		return fmt.Errorf("Percentile95 this(%v) Not Equal that(%v)", this.Percentile95, that1.Percentile95)
-	}
-	if this.Percentile99 != that1.Percentile99 {
-		return fmt.Errorf("Percentile99 this(%v) Not Equal that(%v)", this.Percentile99, that1.Percentile99)
-	}
-	return nil
+	golang_proto.RegisterType((*ComponentStats_MemoryStats)(nil), "api.ComponentStats.MemoryStats")
 }
 func (this *Percentiles) Equal(that interface{}) bool {
 	if that == nil {
@@ -775,42 +732,6 @@ func (this *Percentiles) Equal(that interface{}) bool {
 	}
 	return true
 }
-func (this *Rates) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*Rates)
-	if !ok {
-		that2, ok := that.(Rates)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *Rates")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *Rates but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *Rates but is not nil && this == nil")
-	}
-	if this.Rate1 != that1.Rate1 {
-		return fmt.Errorf("Rate1 this(%v) Not Equal that(%v)", this.Rate1, that1.Rate1)
-	}
-	if this.Rate5 != that1.Rate5 {
-		return fmt.Errorf("Rate5 this(%v) Not Equal that(%v)", this.Rate5, that1.Rate5)
-	}
-	if this.Rate15 != that1.Rate15 {
-		return fmt.Errorf("Rate15 this(%v) Not Equal that(%v)", this.Rate15, that1.Rate15)
-	}
-	return nil
-}
 func (this *Rates) Equal(that interface{}) bool {
 	if that == nil {
 		return this == nil
@@ -840,42 +761,6 @@ func (this *Rates) Equal(that interface{}) bool {
 		return false
 	}
 	return true
-}
-func (this *SystemStats) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*SystemStats)
-	if !ok {
-		that2, ok := that.(SystemStats)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *SystemStats")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *SystemStats but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *SystemStats but is not nil && this == nil")
-	}
-	if !this.Load.Equal(that1.Load) {
-		return fmt.Errorf("Load this(%v) Not Equal that(%v)", this.Load, that1.Load)
-	}
-	if !this.Cpu.Equal(that1.Cpu) {
-		return fmt.Errorf("Cpu this(%v) Not Equal that(%v)", this.Cpu, that1.Cpu)
-	}
-	if !this.Memory.Equal(that1.Memory) {
-		return fmt.Errorf("Memory this(%v) Not Equal that(%v)", this.Memory, that1.Memory)
-	}
-	return nil
 }
 func (this *SystemStats) Equal(that interface{}) bool {
 	if that == nil {
@@ -907,42 +792,6 @@ func (this *SystemStats) Equal(that interface{}) bool {
 	}
 	return true
 }
-func (this *SystemStats_Loadstats) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*SystemStats_Loadstats)
-	if !ok {
-		that2, ok := that.(SystemStats_Loadstats)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *SystemStats_Loadstats")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *SystemStats_Loadstats but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *SystemStats_Loadstats but is not nil && this == nil")
-	}
-	if this.Load1 != that1.Load1 {
-		return fmt.Errorf("Load1 this(%v) Not Equal that(%v)", this.Load1, that1.Load1)
-	}
-	if this.Load5 != that1.Load5 {
-		return fmt.Errorf("Load5 this(%v) Not Equal that(%v)", this.Load5, that1.Load5)
-	}
-	if this.Load15 != that1.Load15 {
-		return fmt.Errorf("Load15 this(%v) Not Equal that(%v)", this.Load15, that1.Load15)
-	}
-	return nil
-}
 func (this *SystemStats_Loadstats) Equal(that interface{}) bool {
 	if that == nil {
 		return this == nil
@@ -972,45 +821,6 @@ func (this *SystemStats_Loadstats) Equal(that interface{}) bool {
 		return false
 	}
 	return true
-}
-func (this *SystemStats_CPUStats) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*SystemStats_CPUStats)
-	if !ok {
-		that2, ok := that.(SystemStats_CPUStats)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *SystemStats_CPUStats")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *SystemStats_CPUStats but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *SystemStats_CPUStats but is not nil && this == nil")
-	}
-	if this.User != that1.User {
-		return fmt.Errorf("User this(%v) Not Equal that(%v)", this.User, that1.User)
-	}
-	if this.System != that1.System {
-		return fmt.Errorf("System this(%v) Not Equal that(%v)", this.System, that1.System)
-	}
-	if this.Idle != that1.Idle {
-		return fmt.Errorf("Idle this(%v) Not Equal that(%v)", this.Idle, that1.Idle)
-	}
-	if this.Percentage != that1.Percentage {
-		return fmt.Errorf("Percentage this(%v) Not Equal that(%v)", this.Percentage, that1.Percentage)
-	}
-	return nil
 }
 func (this *SystemStats_CPUStats) Equal(that interface{}) bool {
 	if that == nil {
@@ -1045,42 +855,6 @@ func (this *SystemStats_CPUStats) Equal(that interface{}) bool {
 	}
 	return true
 }
-func (this *SystemStats_MemoryStats) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*SystemStats_MemoryStats)
-	if !ok {
-		that2, ok := that.(SystemStats_MemoryStats)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *SystemStats_MemoryStats")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *SystemStats_MemoryStats but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *SystemStats_MemoryStats but is not nil && this == nil")
-	}
-	if this.Total != that1.Total {
-		return fmt.Errorf("Total this(%v) Not Equal that(%v)", this.Total, that1.Total)
-	}
-	if this.Available != that1.Available {
-		return fmt.Errorf("Available this(%v) Not Equal that(%v)", this.Available, that1.Available)
-	}
-	if this.Used != that1.Used {
-		return fmt.Errorf("Used this(%v) Not Equal that(%v)", this.Used, that1.Used)
-	}
-	return nil
-}
 func (this *SystemStats_MemoryStats) Equal(that interface{}) bool {
 	if that == nil {
 		return this == nil
@@ -1110,48 +884,6 @@ func (this *SystemStats_MemoryStats) Equal(that interface{}) bool {
 		return false
 	}
 	return true
-}
-func (this *ComponentStats) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*ComponentStats)
-	if !ok {
-		that2, ok := that.(ComponentStats)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *ComponentStats")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *ComponentStats but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *ComponentStats but is not nil && this == nil")
-	}
-	if this.Uptime != that1.Uptime {
-		return fmt.Errorf("Uptime this(%v) Not Equal that(%v)", this.Uptime, that1.Uptime)
-	}
-	if !this.Cpu.Equal(that1.Cpu) {
-		return fmt.Errorf("Cpu this(%v) Not Equal that(%v)", this.Cpu, that1.Cpu)
-	}
-	if !this.Memory.Equal(that1.Memory) {
-		return fmt.Errorf("Memory this(%v) Not Equal that(%v)", this.Memory, that1.Memory)
-	}
-	if this.Goroutines != that1.Goroutines {
-		return fmt.Errorf("Goroutines this(%v) Not Equal that(%v)", this.Goroutines, that1.Goroutines)
-	}
-	if this.GcCpuFraction != that1.GcCpuFraction {
-		return fmt.Errorf("GcCpuFraction this(%v) Not Equal that(%v)", this.GcCpuFraction, that1.GcCpuFraction)
-	}
-	return nil
 }
 func (this *ComponentStats) Equal(that interface{}) bool {
 	if that == nil {
@@ -1189,45 +921,6 @@ func (this *ComponentStats) Equal(that interface{}) bool {
 	}
 	return true
 }
-func (this *ComponentStats_CPUStats) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*ComponentStats_CPUStats)
-	if !ok {
-		that2, ok := that.(ComponentStats_CPUStats)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *ComponentStats_CPUStats")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *ComponentStats_CPUStats but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *ComponentStats_CPUStats but is not nil && this == nil")
-	}
-	if this.User != that1.User {
-		return fmt.Errorf("User this(%v) Not Equal that(%v)", this.User, that1.User)
-	}
-	if this.System != that1.System {
-		return fmt.Errorf("System this(%v) Not Equal that(%v)", this.System, that1.System)
-	}
-	if this.Idle != that1.Idle {
-		return fmt.Errorf("Idle this(%v) Not Equal that(%v)", this.Idle, that1.Idle)
-	}
-	if this.Percentage != that1.Percentage {
-		return fmt.Errorf("Percentage this(%v) Not Equal that(%v)", this.Percentage, that1.Percentage)
-	}
-	return nil
-}
 func (this *ComponentStats_CPUStats) Equal(that interface{}) bool {
 	if that == nil {
 		return this == nil
@@ -1260,45 +953,6 @@ func (this *ComponentStats_CPUStats) Equal(that interface{}) bool {
 		return false
 	}
 	return true
-}
-func (this *ComponentStats_MemoryStats) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*ComponentStats_MemoryStats)
-	if !ok {
-		that2, ok := that.(ComponentStats_MemoryStats)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *ComponentStats_MemoryStats")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *ComponentStats_MemoryStats but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *ComponentStats_MemoryStats but is not nil && this == nil")
-	}
-	if this.Memory != that1.Memory {
-		return fmt.Errorf("Memory this(%v) Not Equal that(%v)", this.Memory, that1.Memory)
-	}
-	if this.Swap != that1.Swap {
-		return fmt.Errorf("Swap this(%v) Not Equal that(%v)", this.Swap, that1.Swap)
-	}
-	if this.Heap != that1.Heap {
-		return fmt.Errorf("Heap this(%v) Not Equal that(%v)", this.Heap, that1.Heap)
-	}
-	if this.Stack != that1.Stack {
-		return fmt.Errorf("Stack this(%v) Not Equal that(%v)", this.Stack, that1.Stack)
-	}
-	return nil
 }
 func (this *ComponentStats_MemoryStats) Equal(that interface{}) bool {
 	if that == nil {
@@ -1742,6 +1396,261 @@ func encodeVarintApi(dAtA []byte, offset int, v uint64) int {
 	}
 	dAtA[offset] = uint8(v)
 	return offset + 1
+}
+func NewPopulatedPercentiles(r randyApi, easy bool) *Percentiles {
+	this := &Percentiles{}
+	this.Percentile1 = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.Percentile1 *= -1
+	}
+	this.Percentile5 = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.Percentile5 *= -1
+	}
+	this.Percentile10 = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.Percentile10 *= -1
+	}
+	this.Percentile25 = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.Percentile25 *= -1
+	}
+	this.Percentile50 = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.Percentile50 *= -1
+	}
+	this.Percentile75 = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.Percentile75 *= -1
+	}
+	this.Percentile90 = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.Percentile90 *= -1
+	}
+	this.Percentile95 = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.Percentile95 *= -1
+	}
+	this.Percentile99 = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.Percentile99 *= -1
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedRates(r randyApi, easy bool) *Rates {
+	this := &Rates{}
+	this.Rate1 = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.Rate1 *= -1
+	}
+	this.Rate5 = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.Rate5 *= -1
+	}
+	this.Rate15 = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.Rate15 *= -1
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedSystemStats(r randyApi, easy bool) *SystemStats {
+	this := &SystemStats{}
+	if r.Intn(10) != 0 {
+		this.Load = NewPopulatedSystemStats_Loadstats(r, easy)
+	}
+	if r.Intn(10) != 0 {
+		this.Cpu = NewPopulatedSystemStats_CPUStats(r, easy)
+	}
+	if r.Intn(10) != 0 {
+		this.Memory = NewPopulatedSystemStats_MemoryStats(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedSystemStats_Loadstats(r randyApi, easy bool) *SystemStats_Loadstats {
+	this := &SystemStats_Loadstats{}
+	this.Load1 = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.Load1 *= -1
+	}
+	this.Load5 = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.Load5 *= -1
+	}
+	this.Load15 = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.Load15 *= -1
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedSystemStats_CPUStats(r randyApi, easy bool) *SystemStats_CPUStats {
+	this := &SystemStats_CPUStats{}
+	this.User = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.User *= -1
+	}
+	this.System = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.System *= -1
+	}
+	this.Idle = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.Idle *= -1
+	}
+	this.Percentage = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.Percentage *= -1
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedSystemStats_MemoryStats(r randyApi, easy bool) *SystemStats_MemoryStats {
+	this := &SystemStats_MemoryStats{}
+	this.Total = uint64(uint64(r.Uint32()))
+	this.Available = uint64(uint64(r.Uint32()))
+	this.Used = uint64(uint64(r.Uint32()))
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedComponentStats(r randyApi, easy bool) *ComponentStats {
+	this := &ComponentStats{}
+	this.Uptime = uint64(uint64(r.Uint32()))
+	if r.Intn(10) != 0 {
+		this.Cpu = NewPopulatedComponentStats_CPUStats(r, easy)
+	}
+	if r.Intn(10) != 0 {
+		this.Memory = NewPopulatedComponentStats_MemoryStats(r, easy)
+	}
+	this.Goroutines = uint64(uint64(r.Uint32()))
+	this.GcCpuFraction = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.GcCpuFraction *= -1
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedComponentStats_CPUStats(r randyApi, easy bool) *ComponentStats_CPUStats {
+	this := &ComponentStats_CPUStats{}
+	this.User = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.User *= -1
+	}
+	this.System = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.System *= -1
+	}
+	this.Idle = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.Idle *= -1
+	}
+	this.Percentage = float32(r.Float32())
+	if r.Intn(2) == 0 {
+		this.Percentage *= -1
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedComponentStats_MemoryStats(r randyApi, easy bool) *ComponentStats_MemoryStats {
+	this := &ComponentStats_MemoryStats{}
+	this.Memory = uint64(uint64(r.Uint32()))
+	this.Swap = uint64(uint64(r.Uint32()))
+	this.Heap = uint64(uint64(r.Uint32()))
+	this.Stack = uint64(uint64(r.Uint32()))
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+type randyApi interface {
+	Float32() float32
+	Float64() float64
+	Int63() int64
+	Int31() int32
+	Uint32() uint32
+	Intn(n int) int
+}
+
+func randUTF8RuneApi(r randyApi) rune {
+	ru := r.Intn(62)
+	if ru < 10 {
+		return rune(ru + 48)
+	} else if ru < 36 {
+		return rune(ru + 55)
+	}
+	return rune(ru + 61)
+}
+func randStringApi(r randyApi) string {
+	v1 := r.Intn(100)
+	tmps := make([]rune, v1)
+	for i := 0; i < v1; i++ {
+		tmps[i] = randUTF8RuneApi(r)
+	}
+	return string(tmps)
+}
+func randUnrecognizedApi(r randyApi, maxFieldNumber int) (dAtA []byte) {
+	l := r.Intn(5)
+	for i := 0; i < l; i++ {
+		wire := r.Intn(4)
+		if wire == 3 {
+			wire = 5
+		}
+		fieldNumber := maxFieldNumber + r.Intn(100)
+		dAtA = randFieldApi(dAtA, r, fieldNumber, wire)
+	}
+	return dAtA
+}
+func randFieldApi(dAtA []byte, r randyApi, fieldNumber int, wire int) []byte {
+	key := uint32(fieldNumber)<<3 | uint32(wire)
+	switch wire {
+	case 0:
+		dAtA = encodeVarintPopulateApi(dAtA, uint64(key))
+		v2 := r.Int63()
+		if r.Intn(2) == 0 {
+			v2 *= -1
+		}
+		dAtA = encodeVarintPopulateApi(dAtA, uint64(v2))
+	case 1:
+		dAtA = encodeVarintPopulateApi(dAtA, uint64(key))
+		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
+	case 2:
+		dAtA = encodeVarintPopulateApi(dAtA, uint64(key))
+		ll := r.Intn(100)
+		dAtA = encodeVarintPopulateApi(dAtA, uint64(ll))
+		for j := 0; j < ll; j++ {
+			dAtA = append(dAtA, byte(r.Intn(256)))
+		}
+	default:
+		dAtA = encodeVarintPopulateApi(dAtA, uint64(key))
+		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
+	}
+	return dAtA
+}
+func encodeVarintPopulateApi(dAtA []byte, v uint64) []byte {
+	for v >= 1<<7 {
+		dAtA = append(dAtA, uint8(uint64(v)&0x7f|0x80))
+		v >>= 7
+	}
+	dAtA = append(dAtA, uint8(v))
+	return dAtA
 }
 func (m *Percentiles) Size() (n int) {
 	var l int
@@ -3212,49 +3121,56 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/api.proto", fileDescriptor_api_07913d4a21146439)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/api.proto", fileDescriptor_api_fd27205e52c30c80)
+}
+func init() {
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/api.proto", fileDescriptor_api_fd27205e52c30c80)
 }
 
-var fileDescriptor_api_07913d4a21146439 = []byte{
-	// 625 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xbc, 0x54, 0xcd, 0x6a, 0xdb, 0x4c,
-	0x14, 0x8d, 0x6c, 0xc5, 0x5f, 0x72, 0xf5, 0xb5, 0x85, 0x21, 0x84, 0xa9, 0x09, 0x4a, 0xf0, 0xa2,
-	0xb4, 0x14, 0x14, 0xd7, 0xad, 0x30, 0x5e, 0x26, 0x86, 0x42, 0xe8, 0x9f, 0x50, 0x92, 0x4d, 0x37,
-	0x61, 0x2c, 0x4f, 0x65, 0x35, 0x92, 0x46, 0x48, 0xa3, 0x86, 0x6c, 0x4a, 0x1f, 0xa1, 0x8f, 0x51,
-	0xb2, 0xee, 0x43, 0x74, 0x53, 0xe8, 0xb2, 0xcb, 0xc4, 0x7d, 0x91, 0x32, 0xa3, 0xb1, 0x2a, 0x8f,
-	0x03, 0xdd, 0x75, 0x61, 0xb8, 0xf7, 0xcc, 0x99, 0x73, 0x7f, 0x8e, 0x35, 0xf0, 0x28, 0x8c, 0xf8,
-	0xac, 0x9c, 0x38, 0x01, 0x4b, 0xf6, 0x4f, 0x66, 0xf4, 0x64, 0x16, 0xa5, 0x61, 0xf1, 0x9a, 0xf2,
-	0x0b, 0x96, 0x9f, 0xef, 0x93, 0x2c, 0x12, 0x3f, 0x27, 0xcb, 0x19, 0x67, 0xa8, 0x4d, 0xb2, 0xa8,
-	0xf7, 0xbd, 0x05, 0x96, 0x47, 0xf3, 0x80, 0xa6, 0x3c, 0x8a, 0x69, 0x81, 0xf6, 0xc0, 0xca, 0xea,
-	0xf4, 0x09, 0x36, 0xf6, 0x8c, 0x87, 0x2d, 0xbf, 0x09, 0x2d, 0x33, 0x5c, 0xdc, 0xd2, 0x19, 0x2e,
-	0xea, 0xc1, 0xff, 0x8d, 0x0b, 0x7d, 0xdc, 0x96, 0x94, 0x25, 0x6c, 0x99, 0x33, 0x70, 0xb1, 0xa9,
-	0x73, 0x06, 0x9a, 0x8e, 0xdb, 0xc7, 0xeb, 0x3a, 0xc7, 0xd5, 0x74, 0x86, 0x2e, 0xee, 0xe8, 0x9c,
-	0xa1, 0xa6, 0x33, 0xea, 0xe3, 0xff, 0x74, 0xce, 0x48, 0xd3, 0x19, 0xb9, 0x78, 0x63, 0x85, 0xa3,
-	0xeb, 0x8c, 0xf0, 0xe6, 0x0a, 0x67, 0xd4, 0x7b, 0x01, 0xeb, 0x3e, 0xe1, 0xb4, 0x40, 0x5b, 0xb0,
-	0x9e, 0x13, 0x5e, 0xaf, 0xb0, 0x4a, 0x16, 0xe8, 0x62, 0x6d, 0x55, 0x82, 0xb6, 0xa1, 0x23, 0x8f,
-	0x5d, 0xb5, 0x2a, 0x95, 0xf5, 0xbe, 0xb6, 0xc1, 0x3a, 0xbe, 0x2c, 0x38, 0x4d, 0x8e, 0x39, 0xe1,
-	0x05, 0x72, 0xc0, 0x8c, 0x19, 0x99, 0x4a, 0x49, 0x6b, 0xd0, 0x75, 0x84, 0x97, 0x8d, 0x73, 0xe7,
-	0x25, 0x23, 0xd3, 0x42, 0x44, 0xbe, 0xe4, 0xa1, 0xc7, 0xd0, 0x0e, 0xb2, 0x52, 0xd6, 0xb2, 0x06,
-	0xf7, 0x57, 0xe8, 0x63, 0xef, 0x54, 0x06, 0xbe, 0x60, 0xa1, 0x67, 0xd0, 0x49, 0x68, 0xc2, 0xf2,
-	0x4b, 0xd9, 0x84, 0x35, 0xd8, 0x59, 0xe1, 0xbf, 0x92, 0xc7, 0xd5, 0x15, 0xc5, 0xed, 0xbe, 0x81,
-	0xcd, 0xba, 0xaa, 0x98, 0x4e, 0xd4, 0xad, 0x67, 0x96, 0xc9, 0x02, 0xad, 0x67, 0x96, 0x89, 0x98,
-	0x59, 0x1e, 0xd7, 0x33, 0x57, 0x59, 0xf7, 0x3d, 0x6c, 0x2c, 0xfa, 0x42, 0x08, 0xcc, 0xb2, 0xa0,
-	0xb9, 0x92, 0x93, 0xb1, 0xb8, 0x57, 0xc8, 0x9e, 0x94, 0x9c, 0xca, 0x04, 0x37, 0x9a, 0xc6, 0x54,
-	0xa9, 0xc9, 0x18, 0xd9, 0x00, 0xca, 0x1c, 0x12, 0x52, 0xf5, 0x17, 0x6b, 0x20, 0xdd, 0x53, 0xb0,
-	0x1a, 0x33, 0x89, 0x46, 0x39, 0xe3, 0x24, 0x96, 0xf5, 0x4c, 0xbf, 0x4a, 0xd0, 0x0e, 0x6c, 0x92,
-	0x0f, 0x24, 0x8a, 0xc9, 0x24, 0xa6, 0xb2, 0xa6, 0xe9, 0xff, 0x01, 0x54, 0x8b, 0x53, 0x59, 0xd6,
-	0x94, 0x2d, 0x4e, 0x7b, 0x57, 0x6d, 0xb8, 0x3b, 0x66, 0x49, 0xc6, 0x52, 0x9a, 0xf2, 0x4a, 0x7a,
-	0x1b, 0x3a, 0x65, 0xc6, 0xa3, 0x84, 0x2a, 0x6d, 0x95, 0x21, 0xa7, 0xe9, 0x50, 0xb5, 0xf1, 0xe5,
-	0x9b, 0x9a, 0x49, 0x43, 0xcd, 0xa4, 0xdd, 0xdb, 0xae, 0xdc, 0xe2, 0x93, 0x58, 0x45, 0xc8, 0x72,
-	0x56, 0xf2, 0x28, 0xa5, 0x85, 0x5c, 0x85, 0xe9, 0x37, 0x10, 0xf4, 0x00, 0xee, 0x85, 0xc1, 0x59,
-	0x90, 0x95, 0x67, 0xef, 0x72, 0x12, 0xf0, 0x88, 0xa5, 0xea, 0x73, 0xbb, 0x13, 0x06, 0xe3, 0xac,
-	0x7c, 0xae, 0xc0, 0x7f, 0x6a, 0x4f, 0xb0, 0x6c, 0xcf, 0x76, 0x3d, 0xbb, 0xda, 0xa1, 0x1a, 0x0d,
-	0x81, 0x59, 0x5c, 0x90, 0x4c, 0x79, 0x23, 0x63, 0x81, 0xcd, 0x28, 0xc9, 0x30, 0x54, 0x98, 0x88,
-	0x85, 0xbd, 0x05, 0x27, 0xc1, 0x39, 0xb6, 0x2a, 0x7b, 0x65, 0x72, 0xf8, 0xf1, 0xe7, 0x8d, 0xbd,
-	0x76, 0x7d, 0x63, 0x1b, 0x9f, 0xe6, 0xb6, 0xf1, 0x65, 0x6e, 0x1b, 0xdf, 0xe6, 0xb6, 0xf1, 0x63,
-	0x6e, 0x1b, 0xd7, 0x73, 0xdb, 0xf8, 0xfc, 0xcb, 0x5e, 0x03, 0xcc, 0xf2, 0xd0, 0xe1, 0x33, 0xca,
-	0xe5, 0x5b, 0x9a, 0x56, 0x6f, 0xa9, 0xd8, 0xfb, 0xe1, 0xc6, 0x81, 0x77, 0xe4, 0x89, 0xb7, 0xd4,
-	0x33, 0xde, 0xee, 0xfe, 0xe5, 0xe1, 0xbd, 0x6a, 0x6d, 0xe9, 0xb0, 0x73, 0xe0, 0x1d, 0x4d, 0x3a,
-	0xf2, 0x31, 0x7e, 0xfa, 0x3b, 0x00, 0x00, 0xff, 0xff, 0x59, 0x02, 0x9a, 0xef, 0xb9, 0x05, 0x00,
-	0x00,
+var fileDescriptor_api_fd27205e52c30c80 = []byte{
+	// 703 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xbc, 0x54, 0x3f, 0x4c, 0xdb, 0x4e,
+	0x14, 0xbe, 0x4b, 0x4c, 0x7e, 0x70, 0xfe, 0xb5, 0x95, 0x4e, 0x08, 0xb9, 0x11, 0x7a, 0xa0, 0x0c,
+	0x55, 0xab, 0x4a, 0x86, 0xa6, 0xb5, 0x50, 0x46, 0x40, 0xaa, 0x84, 0xfa, 0x2f, 0x0a, 0xb0, 0x74,
+	0x41, 0x87, 0x73, 0x4d, 0x5c, 0x92, 0xd8, 0xb2, 0x2f, 0x45, 0x6c, 0x8c, 0x8c, 0x1d, 0x3b, 0x76,
+	0x44, 0x4c, 0x0c, 0x1d, 0x18, 0x19, 0x59, 0x2a, 0xa1, 0x4e, 0x8c, 0xc4, 0x5e, 0x18, 0x19, 0x19,
+	0xab, 0x3b, 0x5f, 0x52, 0xc7, 0x41, 0xea, 0xd6, 0x21, 0xd2, 0x7b, 0xdf, 0x7d, 0xf7, 0xbd, 0x3f,
+	0x5f, 0x7c, 0xe4, 0x59, 0xcb, 0x13, 0xed, 0xfe, 0xae, 0xed, 0xfa, 0xdd, 0xa5, 0xad, 0x36, 0xdf,
+	0x6a, 0x7b, 0xbd, 0x56, 0xf4, 0x9e, 0x8b, 0x7d, 0x3f, 0xdc, 0x5b, 0x62, 0x81, 0x27, 0x7f, 0x76,
+	0x10, 0xfa, 0xc2, 0xa7, 0x45, 0x16, 0x78, 0x95, 0x9f, 0x05, 0x62, 0xd6, 0x79, 0xe8, 0xf2, 0x9e,
+	0xf0, 0x3a, 0x3c, 0xa2, 0x8b, 0xc4, 0x0c, 0x46, 0xe9, 0x0b, 0x0b, 0x2f, 0xe2, 0xa7, 0x85, 0x46,
+	0x16, 0x1a, 0x67, 0x38, 0x56, 0x21, 0xcf, 0x70, 0x68, 0x85, 0xfc, 0x9f, 0xb9, 0xb0, 0x6c, 0x15,
+	0x15, 0x65, 0x0c, 0x1b, 0xe7, 0x54, 0x1d, 0xcb, 0xc8, 0x73, 0xaa, 0x39, 0x1d, 0x67, 0xd9, 0x9a,
+	0xca, 0x73, 0x9c, 0x9c, 0xce, 0x8a, 0x63, 0x95, 0xf2, 0x9c, 0x95, 0x9c, 0x4e, 0x6d, 0xd9, 0xfa,
+	0x2f, 0xcf, 0xa9, 0xe5, 0x74, 0x6a, 0x8e, 0x35, 0x3d, 0xc1, 0xc9, 0xeb, 0xd4, 0xac, 0x99, 0x09,
+	0x4e, 0xad, 0xf2, 0x86, 0x4c, 0x35, 0x98, 0xe0, 0x11, 0x9d, 0x25, 0x53, 0x21, 0x13, 0xa3, 0x15,
+	0xa6, 0xc9, 0x10, 0x1d, 0xae, 0x2d, 0x4d, 0xe8, 0x1c, 0x29, 0xa9, 0x63, 0x47, 0xaf, 0x4a, 0x67,
+	0x95, 0x1f, 0x45, 0x62, 0x6e, 0x1e, 0x44, 0x82, 0x77, 0x37, 0x05, 0x13, 0x11, 0xb5, 0x89, 0xd1,
+	0xf1, 0x59, 0x53, 0x49, 0x9a, 0xd5, 0xb2, 0x2d, 0xbd, 0xcc, 0x9c, 0xdb, 0x6f, 0x7d, 0xd6, 0x8c,
+	0x64, 0xd4, 0x50, 0x3c, 0xfa, 0x9c, 0x14, 0xdd, 0xa0, 0xaf, 0x6a, 0x99, 0xd5, 0xc7, 0x13, 0xf4,
+	0xf5, 0xfa, 0xb6, 0x0a, 0x1a, 0x92, 0x45, 0x5f, 0x91, 0x52, 0x97, 0x77, 0xfd, 0xf0, 0x40, 0x35,
+	0x61, 0x56, 0xe7, 0x27, 0xf8, 0xef, 0xd4, 0x71, 0x7a, 0x45, 0x73, 0xcb, 0x1f, 0xc8, 0xcc, 0xa8,
+	0xaa, 0x9c, 0x4e, 0xd6, 0x1d, 0xcd, 0xac, 0x92, 0x21, 0x3a, 0x9a, 0x59, 0x25, 0x72, 0x66, 0x75,
+	0x3c, 0x9a, 0x39, 0xcd, 0xca, 0x9f, 0xc9, 0xf4, 0xb0, 0x2f, 0x4a, 0x89, 0xd1, 0x8f, 0x78, 0xa8,
+	0xe5, 0x54, 0x2c, 0xef, 0x45, 0xaa, 0x27, 0x2d, 0xa7, 0x33, 0xc9, 0xf5, 0x9a, 0x1d, 0xae, 0xd5,
+	0x54, 0x4c, 0x81, 0x10, 0x6d, 0x0e, 0x6b, 0x71, 0xfd, 0x17, 0xcb, 0x20, 0xe5, 0x6d, 0x62, 0x66,
+	0x66, 0x92, 0x8d, 0x0a, 0x5f, 0xb0, 0x8e, 0xaa, 0x67, 0x34, 0xd2, 0x84, 0xce, 0x93, 0x19, 0xf6,
+	0x85, 0x79, 0x1d, 0xb6, 0xdb, 0xe1, 0xaa, 0xa6, 0xd1, 0xf8, 0x03, 0xe8, 0x16, 0x9b, 0xaa, 0xac,
+	0xa1, 0x5a, 0x6c, 0x56, 0x4e, 0x8a, 0xe4, 0xe1, 0xba, 0xdf, 0x0d, 0xfc, 0x1e, 0xef, 0x89, 0x54,
+	0x7a, 0x8e, 0x94, 0xfa, 0x81, 0xf0, 0xba, 0x5c, 0x6b, 0xeb, 0x8c, 0xda, 0x59, 0x87, 0xd2, 0x8d,
+	0x8f, 0xdf, 0xcc, 0x99, 0xb4, 0x92, 0x33, 0x69, 0xe1, 0xbe, 0x2b, 0xf7, 0xf8, 0x24, 0x57, 0xd1,
+	0xf2, 0x43, 0xbf, 0x2f, 0xbc, 0x1e, 0x8f, 0xd4, 0x2a, 0x8c, 0x46, 0x06, 0xa1, 0x4f, 0xc8, 0xa3,
+	0x96, 0xbb, 0xe3, 0x06, 0xfd, 0x9d, 0x4f, 0x21, 0x73, 0x85, 0xe7, 0xf7, 0xf4, 0xe7, 0xf6, 0xa0,
+	0xe5, 0xae, 0x07, 0xfd, 0xd7, 0x1a, 0xfc, 0xa7, 0xf6, 0xb8, 0xe3, 0xf6, 0xcc, 0x8d, 0x66, 0xd7,
+	0x3b, 0xd4, 0xa3, 0x51, 0x62, 0x44, 0xfb, 0x2c, 0xd0, 0xde, 0xa8, 0x58, 0x62, 0x6d, 0xce, 0x02,
+	0x8b, 0xa4, 0x98, 0x8c, 0xa5, 0xbd, 0x91, 0x60, 0xee, 0x9e, 0x65, 0xa6, 0xf6, 0xaa, 0x64, 0xed,
+	0x17, 0xbe, 0x18, 0x00, 0xbe, 0x1c, 0x00, 0xbe, 0x1a, 0x00, 0xba, 0x1e, 0x00, 0xba, 0x19, 0x00,
+	0xba, 0x1d, 0x00, 0xba, 0x1b, 0x00, 0x3e, 0x8c, 0x01, 0x1f, 0xc5, 0x80, 0x8e, 0x63, 0xc0, 0xa7,
+	0x31, 0xa0, 0xb3, 0x18, 0xd0, 0x79, 0x0c, 0xe8, 0x22, 0x06, 0x7c, 0x19, 0x03, 0xbe, 0x8a, 0x01,
+	0x5d, 0xc7, 0x80, 0x6f, 0x62, 0x40, 0xb7, 0x31, 0xe0, 0xbb, 0x18, 0xd0, 0x61, 0x02, 0xe8, 0x28,
+	0x01, 0xfc, 0x35, 0x01, 0xf4, 0x2d, 0x01, 0xfc, 0x3d, 0x01, 0x74, 0x9c, 0x00, 0x3a, 0x4d, 0x00,
+	0x9f, 0x25, 0x80, 0xcf, 0x13, 0xc0, 0xc4, 0xf2, 0xc3, 0x96, 0x2d, 0xda, 0x5c, 0xa8, 0x07, 0xba,
+	0x97, 0x3e, 0xd0, 0xd2, 0xcc, 0xb5, 0xe9, 0xd5, 0xfa, 0x46, 0x5d, 0x3e, 0xd0, 0x75, 0xfc, 0x71,
+	0xe1, 0x2f, 0xaf, 0xf9, 0x49, 0x61, 0x36, 0x0f, 0xdb, 0xab, 0xf5, 0x8d, 0xdd, 0x92, 0x7a, 0xe1,
+	0x5f, 0xfe, 0x0e, 0x00, 0x00, 0xff, 0xff, 0xad, 0xcc, 0x02, 0x4e, 0x0e, 0x06, 0x00, 0x00,
 }

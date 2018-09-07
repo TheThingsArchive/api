@@ -214,46 +214,11 @@ internal final class Broker_BrokerManagerServiceClient: ServiceClientBase, Broke
 }
 
 /// To build a server, implement a class that conforms to this protocol.
-/// If one of the methods returning `ServerStatus?` returns nil,
-/// it is expected that you have already returned a status to the client by means of `session.close`.
-internal protocol Broker_BrokerProvider: ServiceProvider {
-  func associate(session: Broker_BrokerAssociateSession) throws -> ServerStatus?
-  func subscribe(request: Broker_SubscribeRequest, session: Broker_BrokerSubscribeSession) throws -> ServerStatus?
-  func publish(session: Broker_BrokerPublishSession) throws -> SwiftProtobuf.Google_Protobuf_Empty?
+internal protocol Broker_BrokerProvider {
+  func associate(session: Broker_BrokerAssociateSession) throws
+  func subscribe(request: Broker_SubscribeRequest, session: Broker_BrokerSubscribeSession) throws
+  func publish(session: Broker_BrokerPublishSession) throws
   func activate(request: Broker_DeviceActivationRequest, session: Broker_BrokerActivateSession) throws -> Broker_DeviceActivationResponse
-}
-
-extension Broker_BrokerProvider {
-  internal var serviceName: String { return "broker.Broker" }
-
-  /// Determines and calls the appropriate request handler, depending on the request's method.
-  /// Throws `HandleMethodError.unknownMethod` for methods not handled by this service.
-  internal func handleMethod(_ method: String, handler: Handler) throws -> ServerStatus? {
-    switch method {
-    case "/broker.Broker/Associate":
-      return try Broker_BrokerAssociateSessionBase(
-        handler: handler,
-        providerBlock: { try self.associate(session: $0 as! Broker_BrokerAssociateSessionBase) })
-          .run()
-    case "/broker.Broker/Subscribe":
-      return try Broker_BrokerSubscribeSessionBase(
-        handler: handler,
-        providerBlock: { try self.subscribe(request: $0, session: $1 as! Broker_BrokerSubscribeSessionBase) })
-          .run()
-    case "/broker.Broker/Publish":
-      return try Broker_BrokerPublishSessionBase(
-        handler: handler,
-        providerBlock: { try self.publish(session: $0 as! Broker_BrokerPublishSessionBase) })
-          .run()
-    case "/broker.Broker/Activate":
-      return try Broker_BrokerActivateSessionBase(
-        handler: handler,
-        providerBlock: { try self.activate(request: $0, session: $1 as! Broker_BrokerActivateSessionBase) })
-          .run()
-    default:
-      throw HandleMethodError.unknownMethod
-    }
-  }
 }
 
 internal protocol Broker_BrokerAssociateSession: ServerSessionBidirectionalStreaming {
@@ -268,8 +233,7 @@ internal protocol Broker_BrokerAssociateSession: ServerSessionBidirectionalStrea
   func _send(_ message: Broker_DownlinkMessage, timeout: DispatchTime) throws
 
   /// Close the connection and send the status. Non-blocking.
-  /// This method should be called if and only if your request handler returns a nil value instead of a server status;
-  /// otherwise SwiftGRPC will take care of sending the status for you.
+  /// You MUST call this method once you are done processing the request.
   func close(withStatus status: ServerStatus, completion: (() -> Void)?) throws
 }
 
@@ -292,8 +256,7 @@ internal protocol Broker_BrokerSubscribeSession: ServerSessionServerStreaming {
   func _send(_ message: Broker_DeduplicatedUplinkMessage, timeout: DispatchTime) throws
 
   /// Close the connection and send the status. Non-blocking.
-  /// This method should be called if and only if your request handler returns a nil value instead of a server status;
-  /// otherwise SwiftGRPC will take care of sending the status for you.
+  /// You MUST call this method once you are done processing the request.
   func close(withStatus status: ServerStatus, completion: (() -> Void)?) throws
 }
 
@@ -310,8 +273,7 @@ internal protocol Broker_BrokerPublishSession: ServerSessionClientStreaming {
   /// Call this to wait for a result. Nonblocking.
   func receive(completion: @escaping (ResultOrRPCError<Broker_DownlinkMessage?>) -> Void) throws
 
-  /// Exactly one of these two methods should be called if and only if your request handler returns nil;
-  /// otherwise SwiftGRPC will take care of sending the response and status for you.
+  /// You MUST call one of these two methods once you are done processing the request.
   /// Close the connection and send a single result. Non-blocking.
   func sendAndClose(response: SwiftProtobuf.Google_Protobuf_Empty, status: ServerStatus, completion: (() -> Void)?) throws
   /// Close the connection and send an error. Non-blocking.
@@ -331,35 +293,64 @@ internal protocol Broker_BrokerActivateSession: ServerSessionUnary {}
 
 fileprivate final class Broker_BrokerActivateSessionBase: ServerSessionUnaryBase<Broker_DeviceActivationRequest, Broker_DeviceActivationResponse>, Broker_BrokerActivateSession {}
 
-/// To build a server, implement a class that conforms to this protocol.
-/// If one of the methods returning `ServerStatus?` returns nil,
-/// it is expected that you have already returned a status to the client by means of `session.close`.
-internal protocol Broker_BrokerManagerProvider: ServiceProvider {
-  func registerApplicationHandler(request: Broker_ApplicationHandlerRegistration, session: Broker_BrokerManagerRegisterApplicationHandlerSession) throws -> SwiftProtobuf.Google_Protobuf_Empty
-  func getStatus(request: Broker_StatusRequest, session: Broker_BrokerManagerGetStatusSession) throws -> Broker_Status
-}
 
-extension Broker_BrokerManagerProvider {
-  internal var serviceName: String { return "broker.BrokerManager" }
+/// Main server for generated service
+internal final class Broker_BrokerServer: ServiceServer {
+  private let provider: Broker_BrokerProvider
 
-  /// Determines and calls the appropriate request handler, depending on the request's method.
-  /// Throws `HandleMethodError.unknownMethod` for methods not handled by this service.
-  internal func handleMethod(_ method: String, handler: Handler) throws -> ServerStatus? {
+  internal init(address: String, provider: Broker_BrokerProvider) {
+    self.provider = provider
+    super.init(address: address)
+  }
+
+  internal init?(address: String, certificateURL: URL, keyURL: URL, provider: Broker_BrokerProvider) {
+    self.provider = provider
+    super.init(address: address, certificateURL: certificateURL, keyURL: keyURL)
+  }
+
+  internal init?(address: String, certificateString: String, keyString: String, provider: Broker_BrokerProvider) {
+    self.provider = provider
+    super.init(address: address, certificateString: certificateString, keyString: keyString)
+  }
+
+  /// Start the server.
+  internal override func handleMethod(_ method: String, handler: Handler, queue: DispatchQueue) throws -> Bool {
+    let provider = self.provider
     switch method {
-    case "/broker.BrokerManager/RegisterApplicationHandler":
-      return try Broker_BrokerManagerRegisterApplicationHandlerSessionBase(
+    case "/broker.Broker/Associate":
+      try Broker_BrokerAssociateSessionBase(
         handler: handler,
-        providerBlock: { try self.registerApplicationHandler(request: $0, session: $1 as! Broker_BrokerManagerRegisterApplicationHandlerSessionBase) })
-          .run()
-    case "/broker.BrokerManager/GetStatus":
-      return try Broker_BrokerManagerGetStatusSessionBase(
+        providerBlock: { try provider.associate(session: $0 as! Broker_BrokerAssociateSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/broker.Broker/Subscribe":
+      try Broker_BrokerSubscribeSessionBase(
         handler: handler,
-        providerBlock: { try self.getStatus(request: $0, session: $1 as! Broker_BrokerManagerGetStatusSessionBase) })
-          .run()
+        providerBlock: { try provider.subscribe(request: $0, session: $1 as! Broker_BrokerSubscribeSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/broker.Broker/Publish":
+      try Broker_BrokerPublishSessionBase(
+        handler: handler,
+        providerBlock: { try provider.publish(session: $0 as! Broker_BrokerPublishSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/broker.Broker/Activate":
+      try Broker_BrokerActivateSessionBase(
+        handler: handler,
+        providerBlock: { try provider.activate(request: $0, session: $1 as! Broker_BrokerActivateSessionBase) })
+          .run(queue: queue)
+      return true
     default:
-      throw HandleMethodError.unknownMethod
+      return false
     }
   }
+}
+
+/// To build a server, implement a class that conforms to this protocol.
+internal protocol Broker_BrokerManagerProvider {
+  func registerApplicationHandler(request: Broker_ApplicationHandlerRegistration, session: Broker_BrokerManagerRegisterApplicationHandlerSession) throws -> SwiftProtobuf.Google_Protobuf_Empty
+  func getStatus(request: Broker_StatusRequest, session: Broker_BrokerManagerGetStatusSession) throws -> Broker_Status
 }
 
 internal protocol Broker_BrokerManagerRegisterApplicationHandlerSession: ServerSessionUnary {}
@@ -369,4 +360,46 @@ fileprivate final class Broker_BrokerManagerRegisterApplicationHandlerSessionBas
 internal protocol Broker_BrokerManagerGetStatusSession: ServerSessionUnary {}
 
 fileprivate final class Broker_BrokerManagerGetStatusSessionBase: ServerSessionUnaryBase<Broker_StatusRequest, Broker_Status>, Broker_BrokerManagerGetStatusSession {}
+
+
+/// Main server for generated service
+internal final class Broker_BrokerManagerServer: ServiceServer {
+  private let provider: Broker_BrokerManagerProvider
+
+  internal init(address: String, provider: Broker_BrokerManagerProvider) {
+    self.provider = provider
+    super.init(address: address)
+  }
+
+  internal init?(address: String, certificateURL: URL, keyURL: URL, provider: Broker_BrokerManagerProvider) {
+    self.provider = provider
+    super.init(address: address, certificateURL: certificateURL, keyURL: keyURL)
+  }
+
+  internal init?(address: String, certificateString: String, keyString: String, provider: Broker_BrokerManagerProvider) {
+    self.provider = provider
+    super.init(address: address, certificateString: certificateString, keyString: keyString)
+  }
+
+  /// Start the server.
+  internal override func handleMethod(_ method: String, handler: Handler, queue: DispatchQueue) throws -> Bool {
+    let provider = self.provider
+    switch method {
+    case "/broker.BrokerManager/RegisterApplicationHandler":
+      try Broker_BrokerManagerRegisterApplicationHandlerSessionBase(
+        handler: handler,
+        providerBlock: { try provider.registerApplicationHandler(request: $0, session: $1 as! Broker_BrokerManagerRegisterApplicationHandlerSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/broker.BrokerManager/GetStatus":
+      try Broker_BrokerManagerGetStatusSessionBase(
+        handler: handler,
+        providerBlock: { try provider.getStatus(request: $0, session: $1 as! Broker_BrokerManagerGetStatusSessionBase) })
+          .run(queue: queue)
+      return true
+    default:
+      return false
+    }
+  }
+}
 

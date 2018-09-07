@@ -46,27 +46,9 @@ class Metadata extends \Google\Protobuf\Internal\Message
      */
     private $frequency_plan = 0;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type int $modulation
-     *     @type string $data_rate
-     *           LoRa data rate - SF{spreadingfactor}BW{bandwidth}
-     *     @type int $bit_rate
-     *           FSK bit rate in bit/s
-     *     @type string $coding_rate
-     *           LoRa coding rate
-     *     @type int $f_cnt
-     *           Store the full 32 bit FCnt (deprecated; do not use)
-     *     @type int $frequency_plan
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Protocol\Lorawan\Lorawan::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**

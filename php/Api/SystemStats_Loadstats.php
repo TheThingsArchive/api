@@ -4,13 +4,98 @@
 
 namespace Api;
 
-if (false) {
+use Google\Protobuf\Internal\GPBType;
+use Google\Protobuf\Internal\RepeatedField;
+use Google\Protobuf\Internal\GPBUtil;
+
+/**
+ * Generated from protobuf message <code>api.SystemStats.Loadstats</code>
+ */
+class SystemStats_Loadstats extends \Google\Protobuf\Internal\Message
+{
     /**
-     * This class is deprecated. Use Api\SystemStats\Loadstats instead.
-     * @deprecated
+     * Generated from protobuf field <code>float load1 = 1;</code>
      */
-    class SystemStats_Loadstats {}
+    private $load1 = 0.0;
+    /**
+     * Generated from protobuf field <code>float load5 = 2;</code>
+     */
+    private $load5 = 0.0;
+    /**
+     * Generated from protobuf field <code>float load15 = 3;</code>
+     */
+    private $load15 = 0.0;
+
+    public function __construct() {
+        \GPBMetadata\GithubCom\TheThingsNetwork\Api\Api::initOnce();
+        parent::__construct();
+    }
+
+    /**
+     * Generated from protobuf field <code>float load1 = 1;</code>
+     * @return float
+     */
+    public function getLoad1()
+    {
+        return $this->load1;
+    }
+
+    /**
+     * Generated from protobuf field <code>float load1 = 1;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setLoad1($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->load1 = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>float load5 = 2;</code>
+     * @return float
+     */
+    public function getLoad5()
+    {
+        return $this->load5;
+    }
+
+    /**
+     * Generated from protobuf field <code>float load5 = 2;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setLoad5($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->load5 = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>float load15 = 3;</code>
+     * @return float
+     */
+    public function getLoad15()
+    {
+        return $this->load15;
+    }
+
+    /**
+     * Generated from protobuf field <code>float load15 = 3;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setLoad15($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->load15 = $var;
+
+        return $this;
+    }
+
 }
-class_exists(SystemStats\Loadstats::class);
-@trigger_error('Api\SystemStats_Loadstats is deprecated and will be removed in the next major release. Use Api\SystemStats\Loadstats instead', E_USER_DEPRECATED);
 

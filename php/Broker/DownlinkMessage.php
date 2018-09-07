@@ -48,25 +48,9 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
      */
     private $trace = null;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $payload
-     *     @type \Protocol\Message $message
-     *     @type string $dev_eui
-     *     @type string $app_eui
-     *     @type string $app_id
-     *     @type string $dev_id
-     *     @type \Broker\DownlinkOption $downlink_option
-     *     @type \Trace\Trace $trace
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Broker\Broker::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**

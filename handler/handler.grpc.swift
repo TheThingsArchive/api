@@ -356,34 +356,9 @@ internal final class Handler_HandlerManagerServiceClient: ServiceClientBase, Han
 }
 
 /// To build a server, implement a class that conforms to this protocol.
-/// If one of the methods returning `ServerStatus?` returns nil,
-/// it is expected that you have already returned a status to the client by means of `session.close`.
-internal protocol Handler_HandlerProvider: ServiceProvider {
+internal protocol Handler_HandlerProvider {
   func activationChallenge(request: Broker_ActivationChallengeRequest, session: Handler_HandlerActivationChallengeSession) throws -> Broker_ActivationChallengeResponse
   func activate(request: Broker_DeduplicatedDeviceActivationRequest, session: Handler_HandlerActivateSession) throws -> Handler_DeviceActivationResponse
-}
-
-extension Handler_HandlerProvider {
-  internal var serviceName: String { return "handler.Handler" }
-
-  /// Determines and calls the appropriate request handler, depending on the request's method.
-  /// Throws `HandleMethodError.unknownMethod` for methods not handled by this service.
-  internal func handleMethod(_ method: String, handler: Handler) throws -> ServerStatus? {
-    switch method {
-    case "/handler.Handler/ActivationChallenge":
-      return try Handler_HandlerActivationChallengeSessionBase(
-        handler: handler,
-        providerBlock: { try self.activationChallenge(request: $0, session: $1 as! Handler_HandlerActivationChallengeSessionBase) })
-          .run()
-    case "/handler.Handler/Activate":
-      return try Handler_HandlerActivateSessionBase(
-        handler: handler,
-        providerBlock: { try self.activate(request: $0, session: $1 as! Handler_HandlerActivateSessionBase) })
-          .run()
-    default:
-      throw HandleMethodError.unknownMethod
-    }
-  }
 }
 
 internal protocol Handler_HandlerActivationChallengeSession: ServerSessionUnary {}
@@ -394,10 +369,50 @@ internal protocol Handler_HandlerActivateSession: ServerSessionUnary {}
 
 fileprivate final class Handler_HandlerActivateSessionBase: ServerSessionUnaryBase<Broker_DeduplicatedDeviceActivationRequest, Handler_DeviceActivationResponse>, Handler_HandlerActivateSession {}
 
+
+/// Main server for generated service
+internal final class Handler_HandlerServer: ServiceServer {
+  private let provider: Handler_HandlerProvider
+
+  internal init(address: String, provider: Handler_HandlerProvider) {
+    self.provider = provider
+    super.init(address: address)
+  }
+
+  internal init?(address: String, certificateURL: URL, keyURL: URL, provider: Handler_HandlerProvider) {
+    self.provider = provider
+    super.init(address: address, certificateURL: certificateURL, keyURL: keyURL)
+  }
+
+  internal init?(address: String, certificateString: String, keyString: String, provider: Handler_HandlerProvider) {
+    self.provider = provider
+    super.init(address: address, certificateString: certificateString, keyString: keyString)
+  }
+
+  /// Start the server.
+  internal override func handleMethod(_ method: String, handler: Handler, queue: DispatchQueue) throws -> Bool {
+    let provider = self.provider
+    switch method {
+    case "/handler.Handler/ActivationChallenge":
+      try Handler_HandlerActivationChallengeSessionBase(
+        handler: handler,
+        providerBlock: { try provider.activationChallenge(request: $0, session: $1 as! Handler_HandlerActivationChallengeSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/handler.Handler/Activate":
+      try Handler_HandlerActivateSessionBase(
+        handler: handler,
+        providerBlock: { try provider.activate(request: $0, session: $1 as! Handler_HandlerActivateSessionBase) })
+          .run(queue: queue)
+      return true
+    default:
+      return false
+    }
+  }
+}
+
 /// To build a server, implement a class that conforms to this protocol.
-/// If one of the methods returning `ServerStatus?` returns nil,
-/// it is expected that you have already returned a status to the client by means of `session.close`.
-internal protocol Handler_ApplicationManagerProvider: ServiceProvider {
+internal protocol Handler_ApplicationManagerProvider {
   func registerApplication(request: Handler_ApplicationIdentifier, session: Handler_ApplicationManagerRegisterApplicationSession) throws -> SwiftProtobuf.Google_Protobuf_Empty
   func getApplication(request: Handler_ApplicationIdentifier, session: Handler_ApplicationManagerGetApplicationSession) throws -> Handler_Application
   func setApplication(request: Handler_Application, session: Handler_ApplicationManagerSetApplicationSession) throws -> SwiftProtobuf.Google_Protobuf_Empty
@@ -409,74 +424,6 @@ internal protocol Handler_ApplicationManagerProvider: ServiceProvider {
   func dryDownlink(request: Handler_DryDownlinkMessage, session: Handler_ApplicationManagerDryDownlinkSession) throws -> Handler_DryDownlinkResult
   func dryUplink(request: Handler_DryUplinkMessage, session: Handler_ApplicationManagerDryUplinkSession) throws -> Handler_DryUplinkResult
   func simulateUplink(request: Handler_SimulatedUplinkMessage, session: Handler_ApplicationManagerSimulateUplinkSession) throws -> SwiftProtobuf.Google_Protobuf_Empty
-}
-
-extension Handler_ApplicationManagerProvider {
-  internal var serviceName: String { return "handler.ApplicationManager" }
-
-  /// Determines and calls the appropriate request handler, depending on the request's method.
-  /// Throws `HandleMethodError.unknownMethod` for methods not handled by this service.
-  internal func handleMethod(_ method: String, handler: Handler) throws -> ServerStatus? {
-    switch method {
-    case "/handler.ApplicationManager/RegisterApplication":
-      return try Handler_ApplicationManagerRegisterApplicationSessionBase(
-        handler: handler,
-        providerBlock: { try self.registerApplication(request: $0, session: $1 as! Handler_ApplicationManagerRegisterApplicationSessionBase) })
-          .run()
-    case "/handler.ApplicationManager/GetApplication":
-      return try Handler_ApplicationManagerGetApplicationSessionBase(
-        handler: handler,
-        providerBlock: { try self.getApplication(request: $0, session: $1 as! Handler_ApplicationManagerGetApplicationSessionBase) })
-          .run()
-    case "/handler.ApplicationManager/SetApplication":
-      return try Handler_ApplicationManagerSetApplicationSessionBase(
-        handler: handler,
-        providerBlock: { try self.setApplication(request: $0, session: $1 as! Handler_ApplicationManagerSetApplicationSessionBase) })
-          .run()
-    case "/handler.ApplicationManager/DeleteApplication":
-      return try Handler_ApplicationManagerDeleteApplicationSessionBase(
-        handler: handler,
-        providerBlock: { try self.deleteApplication(request: $0, session: $1 as! Handler_ApplicationManagerDeleteApplicationSessionBase) })
-          .run()
-    case "/handler.ApplicationManager/GetDevice":
-      return try Handler_ApplicationManagerGetDeviceSessionBase(
-        handler: handler,
-        providerBlock: { try self.getDevice(request: $0, session: $1 as! Handler_ApplicationManagerGetDeviceSessionBase) })
-          .run()
-    case "/handler.ApplicationManager/SetDevice":
-      return try Handler_ApplicationManagerSetDeviceSessionBase(
-        handler: handler,
-        providerBlock: { try self.setDevice(request: $0, session: $1 as! Handler_ApplicationManagerSetDeviceSessionBase) })
-          .run()
-    case "/handler.ApplicationManager/DeleteDevice":
-      return try Handler_ApplicationManagerDeleteDeviceSessionBase(
-        handler: handler,
-        providerBlock: { try self.deleteDevice(request: $0, session: $1 as! Handler_ApplicationManagerDeleteDeviceSessionBase) })
-          .run()
-    case "/handler.ApplicationManager/GetDevicesForApplication":
-      return try Handler_ApplicationManagerGetDevicesForApplicationSessionBase(
-        handler: handler,
-        providerBlock: { try self.getDevicesForApplication(request: $0, session: $1 as! Handler_ApplicationManagerGetDevicesForApplicationSessionBase) })
-          .run()
-    case "/handler.ApplicationManager/DryDownlink":
-      return try Handler_ApplicationManagerDryDownlinkSessionBase(
-        handler: handler,
-        providerBlock: { try self.dryDownlink(request: $0, session: $1 as! Handler_ApplicationManagerDryDownlinkSessionBase) })
-          .run()
-    case "/handler.ApplicationManager/DryUplink":
-      return try Handler_ApplicationManagerDryUplinkSessionBase(
-        handler: handler,
-        providerBlock: { try self.dryUplink(request: $0, session: $1 as! Handler_ApplicationManagerDryUplinkSessionBase) })
-          .run()
-    case "/handler.ApplicationManager/SimulateUplink":
-      return try Handler_ApplicationManagerSimulateUplinkSessionBase(
-        handler: handler,
-        providerBlock: { try self.simulateUplink(request: $0, session: $1 as! Handler_ApplicationManagerSimulateUplinkSessionBase) })
-          .run()
-    default:
-      throw HandleMethodError.unknownMethod
-    }
-  }
 }
 
 internal protocol Handler_ApplicationManagerRegisterApplicationSession: ServerSessionUnary {}
@@ -523,32 +470,144 @@ internal protocol Handler_ApplicationManagerSimulateUplinkSession: ServerSession
 
 fileprivate final class Handler_ApplicationManagerSimulateUplinkSessionBase: ServerSessionUnaryBase<Handler_SimulatedUplinkMessage, SwiftProtobuf.Google_Protobuf_Empty>, Handler_ApplicationManagerSimulateUplinkSession {}
 
-/// To build a server, implement a class that conforms to this protocol.
-/// If one of the methods returning `ServerStatus?` returns nil,
-/// it is expected that you have already returned a status to the client by means of `session.close`.
-internal protocol Handler_HandlerManagerProvider: ServiceProvider {
-  func getStatus(request: Handler_StatusRequest, session: Handler_HandlerManagerGetStatusSession) throws -> Handler_Status
-}
 
-extension Handler_HandlerManagerProvider {
-  internal var serviceName: String { return "handler.HandlerManager" }
+/// Main server for generated service
+internal final class Handler_ApplicationManagerServer: ServiceServer {
+  private let provider: Handler_ApplicationManagerProvider
 
-  /// Determines and calls the appropriate request handler, depending on the request's method.
-  /// Throws `HandleMethodError.unknownMethod` for methods not handled by this service.
-  internal func handleMethod(_ method: String, handler: Handler) throws -> ServerStatus? {
+  internal init(address: String, provider: Handler_ApplicationManagerProvider) {
+    self.provider = provider
+    super.init(address: address)
+  }
+
+  internal init?(address: String, certificateURL: URL, keyURL: URL, provider: Handler_ApplicationManagerProvider) {
+    self.provider = provider
+    super.init(address: address, certificateURL: certificateURL, keyURL: keyURL)
+  }
+
+  internal init?(address: String, certificateString: String, keyString: String, provider: Handler_ApplicationManagerProvider) {
+    self.provider = provider
+    super.init(address: address, certificateString: certificateString, keyString: keyString)
+  }
+
+  /// Start the server.
+  internal override func handleMethod(_ method: String, handler: Handler, queue: DispatchQueue) throws -> Bool {
+    let provider = self.provider
     switch method {
-    case "/handler.HandlerManager/GetStatus":
-      return try Handler_HandlerManagerGetStatusSessionBase(
+    case "/handler.ApplicationManager/RegisterApplication":
+      try Handler_ApplicationManagerRegisterApplicationSessionBase(
         handler: handler,
-        providerBlock: { try self.getStatus(request: $0, session: $1 as! Handler_HandlerManagerGetStatusSessionBase) })
-          .run()
+        providerBlock: { try provider.registerApplication(request: $0, session: $1 as! Handler_ApplicationManagerRegisterApplicationSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/handler.ApplicationManager/GetApplication":
+      try Handler_ApplicationManagerGetApplicationSessionBase(
+        handler: handler,
+        providerBlock: { try provider.getApplication(request: $0, session: $1 as! Handler_ApplicationManagerGetApplicationSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/handler.ApplicationManager/SetApplication":
+      try Handler_ApplicationManagerSetApplicationSessionBase(
+        handler: handler,
+        providerBlock: { try provider.setApplication(request: $0, session: $1 as! Handler_ApplicationManagerSetApplicationSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/handler.ApplicationManager/DeleteApplication":
+      try Handler_ApplicationManagerDeleteApplicationSessionBase(
+        handler: handler,
+        providerBlock: { try provider.deleteApplication(request: $0, session: $1 as! Handler_ApplicationManagerDeleteApplicationSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/handler.ApplicationManager/GetDevice":
+      try Handler_ApplicationManagerGetDeviceSessionBase(
+        handler: handler,
+        providerBlock: { try provider.getDevice(request: $0, session: $1 as! Handler_ApplicationManagerGetDeviceSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/handler.ApplicationManager/SetDevice":
+      try Handler_ApplicationManagerSetDeviceSessionBase(
+        handler: handler,
+        providerBlock: { try provider.setDevice(request: $0, session: $1 as! Handler_ApplicationManagerSetDeviceSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/handler.ApplicationManager/DeleteDevice":
+      try Handler_ApplicationManagerDeleteDeviceSessionBase(
+        handler: handler,
+        providerBlock: { try provider.deleteDevice(request: $0, session: $1 as! Handler_ApplicationManagerDeleteDeviceSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/handler.ApplicationManager/GetDevicesForApplication":
+      try Handler_ApplicationManagerGetDevicesForApplicationSessionBase(
+        handler: handler,
+        providerBlock: { try provider.getDevicesForApplication(request: $0, session: $1 as! Handler_ApplicationManagerGetDevicesForApplicationSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/handler.ApplicationManager/DryDownlink":
+      try Handler_ApplicationManagerDryDownlinkSessionBase(
+        handler: handler,
+        providerBlock: { try provider.dryDownlink(request: $0, session: $1 as! Handler_ApplicationManagerDryDownlinkSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/handler.ApplicationManager/DryUplink":
+      try Handler_ApplicationManagerDryUplinkSessionBase(
+        handler: handler,
+        providerBlock: { try provider.dryUplink(request: $0, session: $1 as! Handler_ApplicationManagerDryUplinkSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/handler.ApplicationManager/SimulateUplink":
+      try Handler_ApplicationManagerSimulateUplinkSessionBase(
+        handler: handler,
+        providerBlock: { try provider.simulateUplink(request: $0, session: $1 as! Handler_ApplicationManagerSimulateUplinkSessionBase) })
+          .run(queue: queue)
+      return true
     default:
-      throw HandleMethodError.unknownMethod
+      return false
     }
   }
+}
+
+/// To build a server, implement a class that conforms to this protocol.
+internal protocol Handler_HandlerManagerProvider {
+  func getStatus(request: Handler_StatusRequest, session: Handler_HandlerManagerGetStatusSession) throws -> Handler_Status
 }
 
 internal protocol Handler_HandlerManagerGetStatusSession: ServerSessionUnary {}
 
 fileprivate final class Handler_HandlerManagerGetStatusSessionBase: ServerSessionUnaryBase<Handler_StatusRequest, Handler_Status>, Handler_HandlerManagerGetStatusSession {}
+
+
+/// Main server for generated service
+internal final class Handler_HandlerManagerServer: ServiceServer {
+  private let provider: Handler_HandlerManagerProvider
+
+  internal init(address: String, provider: Handler_HandlerManagerProvider) {
+    self.provider = provider
+    super.init(address: address)
+  }
+
+  internal init?(address: String, certificateURL: URL, keyURL: URL, provider: Handler_HandlerManagerProvider) {
+    self.provider = provider
+    super.init(address: address, certificateURL: certificateURL, keyURL: keyURL)
+  }
+
+  internal init?(address: String, certificateString: String, keyString: String, provider: Handler_HandlerManagerProvider) {
+    self.provider = provider
+    super.init(address: address, certificateString: certificateString, keyString: keyString)
+  }
+
+  /// Start the server.
+  internal override func handleMethod(_ method: String, handler: Handler, queue: DispatchQueue) throws -> Bool {
+    let provider = self.provider
+    switch method {
+    case "/handler.HandlerManager/GetStatus":
+      try Handler_HandlerManagerGetStatusSessionBase(
+        handler: handler,
+        providerBlock: { try provider.getStatus(request: $0, session: $1 as! Handler_HandlerManagerGetStatusSessionBase) })
+          .run(queue: queue)
+      return true
+    default:
+      return false
+    }
+  }
+}
 

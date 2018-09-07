@@ -45,25 +45,9 @@ class Device extends \Google\Protobuf\Internal\Message
     private $description = '';
     protected $device;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $app_id
-     *     @type string $dev_id
-     *     @type \Lorawan\Device $lorawan_device
-     *     @type float $latitude
-     *     @type float $longitude
-     *     @type int $altitude
-     *     @type array|\Google\Protobuf\Internal\MapField $attributes
-     *     @type string $description
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Handler\Handler::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**

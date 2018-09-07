@@ -11,6 +11,7 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
+
 goog.exportSymbol('proto.lorawan.ActivationMetadata', null, global);
 goog.exportSymbol('proto.lorawan.CFList', null, global);
 goog.exportSymbol('proto.lorawan.DLSettings', null, global);
@@ -2062,15 +2063,15 @@ proto.lorawan.FHDR.prototype.setFCnt = function(value) {
 
 /**
  * repeated MACCommand f_opts = 4;
- * @return {!Array<!proto.lorawan.MACCommand>}
+ * @return {!Array.<!proto.lorawan.MACCommand>}
  */
 proto.lorawan.FHDR.prototype.getFOptsList = function() {
-  return /** @type{!Array<!proto.lorawan.MACCommand>} */ (
+  return /** @type{!Array.<!proto.lorawan.MACCommand>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.lorawan.MACCommand, 4));
 };
 
 
-/** @param {!Array<!proto.lorawan.MACCommand>} value */
+/** @param {!Array.<!proto.lorawan.MACCommand>} value */
 proto.lorawan.FHDR.prototype.setFOptsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
@@ -3478,7 +3479,7 @@ proto.lorawan.CFList.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!Array<number>} */ (reader.readPackedUint32());
+      var value = /** @type {!Array.<number>} */ (reader.readPackedUint32());
       msg.setFreqList(value);
       break;
     default:
@@ -3522,14 +3523,14 @@ proto.lorawan.CFList.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * repeated uint32 freq = 1;
- * @return {!Array<number>}
+ * @return {!Array.<number>}
  */
 proto.lorawan.CFList.prototype.getFreqList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
+  return /** @type {!Array.<number>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
-/** @param {!Array<number>} value */
+/** @param {!Array.<number>} value */
 proto.lorawan.CFList.prototype.setFreqList = function(value) {
   jspb.Message.setField(this, 1, value || []);
 };

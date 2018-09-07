@@ -46,27 +46,9 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
      */
     private $gateway_configuration = null;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $identifier
-     *           String that identifies this downlink option in the Router
-     *     @type string $gateway_id
-     *           ID of the gateway where this downlink should be sent
-     *     @type int $score
-     *           Score of this downlink option. Lower is better.
-     *     @type int|string $deadline
-     *           deadline time at server represented as Unix nanoseconds
-     *     @type \Protocol\TxConfiguration $protocol_configuration
-     *     @type \Gateway\TxConfiguration $gateway_configuration
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Broker\Broker::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**

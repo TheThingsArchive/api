@@ -34,23 +34,9 @@ class MetadataRequest extends \Google\Protobuf\Internal\Message
      */
     private $metadata = null;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $id
-     *           The ID of the service that should be modified
-     *     @type string $service_name
-     *           The name of the service (router/broker/handler) that should be modified
-     *     @type \Discovery\Metadata $metadata
-     *           Metadata to add or remove
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Discovery\Discovery::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**

@@ -12,6 +12,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
+
 var ttn_api_pb = require('../api_pb.js');
 var ttn_protocol_protocol_pb = require('../protocol/protocol_pb.js');
 var ttn_gateway_gateway_pb = require('../gateway/gateway_pb.js');
@@ -832,15 +833,15 @@ proto.broker.UplinkMessage.prototype.hasGatewayMetadata = function() {
 
 /**
  * repeated DownlinkOption downlink_options = 31;
- * @return {!Array<!proto.broker.DownlinkOption>}
+ * @return {!Array.<!proto.broker.DownlinkOption>}
  */
 proto.broker.UplinkMessage.prototype.getDownlinkOptionsList = function() {
-  return /** @type{!Array<!proto.broker.DownlinkOption>} */ (
+  return /** @type{!Array.<!proto.broker.DownlinkOption>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.broker.DownlinkOption, 31));
 };
 
 
-/** @param {!Array<!proto.broker.DownlinkOption>} value */
+/** @param {!Array.<!proto.broker.DownlinkOption>} value */
 proto.broker.UplinkMessage.prototype.setDownlinkOptionsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 31, value);
 };
@@ -2117,15 +2118,15 @@ proto.broker.DeduplicatedUplinkMessage.prototype.hasProtocolMetadata = function(
 
 /**
  * repeated gateway.RxMetadata gateway_metadata = 22;
- * @return {!Array<!proto.gateway.RxMetadata>}
+ * @return {!Array.<!proto.gateway.RxMetadata>}
  */
 proto.broker.DeduplicatedUplinkMessage.prototype.getGatewayMetadataList = function() {
-  return /** @type{!Array<!proto.gateway.RxMetadata>} */ (
+  return /** @type{!Array.<!proto.gateway.RxMetadata>} */ (
     jspb.Message.getRepeatedWrapperField(this, ttn_gateway_gateway_pb.RxMetadata, 22));
 };
 
 
-/** @param {!Array<!proto.gateway.RxMetadata>} value */
+/** @param {!Array.<!proto.gateway.RxMetadata>} value */
 proto.broker.DeduplicatedUplinkMessage.prototype.setGatewayMetadataList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 22, value);
 };
@@ -2703,15 +2704,15 @@ proto.broker.DeviceActivationRequest.prototype.hasActivationMetadata = function(
 
 /**
  * repeated DownlinkOption downlink_options = 31;
- * @return {!Array<!proto.broker.DownlinkOption>}
+ * @return {!Array.<!proto.broker.DownlinkOption>}
  */
 proto.broker.DeviceActivationRequest.prototype.getDownlinkOptionsList = function() {
-  return /** @type{!Array<!proto.broker.DownlinkOption>} */ (
+  return /** @type{!Array.<!proto.broker.DownlinkOption>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.broker.DownlinkOption, 31));
 };
 
 
-/** @param {!Array<!proto.broker.DownlinkOption>} value */
+/** @param {!Array.<!proto.broker.DownlinkOption>} value */
 proto.broker.DeviceActivationRequest.prototype.setDownlinkOptionsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 31, value);
 };
@@ -3250,15 +3251,15 @@ proto.broker.DeduplicatedDeviceActivationRequest.prototype.hasProtocolMetadata =
 
 /**
  * repeated gateway.RxMetadata gateway_metadata = 22;
- * @return {!Array<!proto.gateway.RxMetadata>}
+ * @return {!Array.<!proto.gateway.RxMetadata>}
  */
 proto.broker.DeduplicatedDeviceActivationRequest.prototype.getGatewayMetadataList = function() {
-  return /** @type{!Array<!proto.gateway.RxMetadata>} */ (
+  return /** @type{!Array.<!proto.gateway.RxMetadata>} */ (
     jspb.Message.getRepeatedWrapperField(this, ttn_gateway_gateway_pb.RxMetadata, 22));
 };
 
 
-/** @param {!Array<!proto.gateway.RxMetadata>} value */
+/** @param {!Array.<!proto.gateway.RxMetadata>} value */
 proto.broker.DeduplicatedDeviceActivationRequest.prototype.setGatewayMetadataList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 22, value);
 };

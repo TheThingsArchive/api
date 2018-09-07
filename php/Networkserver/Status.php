@@ -40,23 +40,9 @@ class Status extends \Google\Protobuf\Internal\Message
      */
     private $devices_per_address = null;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type \Api\SystemStats $system
-     *     @type \Api\ComponentStats $component
-     *     @type \Api\Rates $uplink
-     *     @type \Api\Rates $downlink
-     *     @type \Api\Rates $activations
-     *     @type \Api\Percentiles $devices_per_address
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Networkserver\Networkserver::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
