@@ -112,61 +112,9 @@ class Announcement extends \Google\Protobuf\Internal\Message
      */
     private $metadata;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $id
-     *           The ID of the component
-     *     @type string $service_name
-     *           The name of the component (router/broker/handler)
-     *     @type string $service_version
-     *           Service version in the form "[version]-[commit] ([build date])"
-     *     @type string $description
-     *           Description of the component
-     *     @type string $url
-     *           URL with documentation or more information about this component
-     *     @type bool $public
-     *           Indicates whether this service is part of The Things Network (the public community network)
-     *     @type string $net_address
-     *           Comma-separated network addresses in the form "domain1:port,domain2:port,domain3:port" (currently we only use the first)
-     *     @type string $public_key
-     *           ECDSA public key of this component
-     *     @type string $certificate
-     *           TLS Certificate for gRPC on net_address (if TLS is enabled)
-     *     @type string $api_address
-     *           Contains the address where the HTTP API is exposed (if there is one).
-     *           Format of api_address: `http(s)://domain(:port)`
-     *           default http port is 80, default https port is 443.
-     *     @type string $mqtt_address
-     *           Contains the address where the MQTT API is exposed (if there is one)
-     *           Format of mqtt_address: `(mqtt(s)://)host(:port)`
-     *           default mqtt port is 1883, default mqtts port is 8883.
-     *           Examples:
-     *           if `host:port` then `mqtt://host:port`
-     *           if `host:8883` then `mqtts://host:8883`
-     *           if `host` then `mqtt://host:1883` and `mqtts://host:8883`
-     *           if `mqtt://host` then `mqtt://host:1883`
-     *           if `mqtts://host` then `mqtt://host:1883` and `mqtts://host:8883`
-     *     @type string $amqp_address
-     *           Contains the address where the AMQP API is exposed (if there is one)
-     *           Format of amqp_address: `(amqp(s)://)host(:port)`
-     *           default amqp port is 5672, default amqps port is 5671.
-     *           Examples:
-     *           if `host:port` then `amqp://host:port`
-     *           if `host:5671` then `amqps://host:5671`
-     *           if `host` then `amqp://host:5672` and `amqps://host:5671`
-     *           if `amqp://host` then `amqp://host:5672`
-     *           if `amqps://host` then `amqp://host:5672` and `amqps://host:5671`
-     *     @type \Discovery\Metadata[]|\Google\Protobuf\Internal\RepeatedField $metadata
-     *           Metadata for this component
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Discovery\Discovery::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**

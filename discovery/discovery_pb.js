@@ -12,6 +12,8 @@ var goog = jspb;
 var global = Function('return this')();
 
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
+
+
 goog.exportSymbol('proto.discovery.Announcement', null, global);
 goog.exportSymbol('proto.discovery.AnnouncementsResponse', null, global);
 goog.exportSymbol('proto.discovery.GetByAppEUIRequest', null, global);
@@ -841,15 +843,15 @@ proto.discovery.Announcement.prototype.setAmqpAddress = function(value) {
 
 /**
  * repeated Metadata metadata = 22;
- * @return {!Array<!proto.discovery.Metadata>}
+ * @return {!Array.<!proto.discovery.Metadata>}
  */
 proto.discovery.Announcement.prototype.getMetadataList = function() {
-  return /** @type{!Array<!proto.discovery.Metadata>} */ (
+  return /** @type{!Array.<!proto.discovery.Metadata>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.discovery.Metadata, 22));
 };
 
 
-/** @param {!Array<!proto.discovery.Metadata>} value */
+/** @param {!Array.<!proto.discovery.Metadata>} value */
 proto.discovery.Announcement.prototype.setMetadataList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 22, value);
 };
@@ -1533,15 +1535,15 @@ proto.discovery.AnnouncementsResponse.serializeBinaryToWriter = function(message
 
 /**
  * repeated Announcement services = 1;
- * @return {!Array<!proto.discovery.Announcement>}
+ * @return {!Array.<!proto.discovery.Announcement>}
  */
 proto.discovery.AnnouncementsResponse.prototype.getServicesList = function() {
-  return /** @type{!Array<!proto.discovery.Announcement>} */ (
+  return /** @type{!Array.<!proto.discovery.Announcement>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.discovery.Announcement, 1));
 };
 
 
-/** @param {!Array<!proto.discovery.Announcement>} value */
+/** @param {!Array.<!proto.discovery.Announcement>} value */
 proto.discovery.AnnouncementsResponse.prototype.setServicesList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
 };

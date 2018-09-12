@@ -62,36 +62,9 @@ class Application extends \Google\Protobuf\Internal\Message
      */
     private $register_on_join_access_key = '';
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $app_id
-     *     @type string $payload_format
-     *           The payload format indicates how payload is formatted.
-     *     @type string $decoder
-     *           The decoder is a JavaScript function that decodes a byte array to an object.
-     *           This function is used when the payload format is set to custom.
-     *     @type string $converter
-     *           The converter is a JavaScript function that can be used to convert values
-     *           in the object returned from the decoder. This can for example be useful to
-     *           convert a voltage to a temperature. This function is used when the payload format is set to custom.
-     *     @type string $validator
-     *           The validator is a JavaScript function that checks the validity of the
-     *           object returned by the decoder or converter. If validation fails, the
-     *           message is dropped. This function is used when the payload format is set to custom.
-     *     @type string $encoder
-     *           The encoder is a JavaScript function that encodes an object to a byte array.
-     *           This function is used when the payload format is set to custom.
-     *     @type string $register_on_join_access_key
-     *           The "register on join" access key should only be set if devices need to be registered on join
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Handler\Handler::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**

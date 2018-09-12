@@ -5,7 +5,7 @@
 namespace Lorawan;
 
 /**
- * Protobuf type <code>lorawan.Major</code>
+ * Protobuf enum <code>Lorawan\Major</code>
  */
 class Major
 {

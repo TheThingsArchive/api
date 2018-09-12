@@ -34,22 +34,9 @@ class ComponentStats extends \Google\Protobuf\Internal\Message
      */
     private $gc_cpu_fraction = 0.0;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type int|string $uptime
-     *     @type \Api\ComponentStats\CPUStats $cpu
-     *     @type \Api\ComponentStats\MemoryStats $memory
-     *     @type int|string $goroutines
-     *     @type float $gc_cpu_fraction
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Api::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
@@ -76,7 +63,7 @@ class ComponentStats extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.api.ComponentStats.CPUStats cpu = 2;</code>
-     * @return \Api\ComponentStats\CPUStats
+     * @return \Api\ComponentStats_CPUStats
      */
     public function getCpu()
     {
@@ -85,7 +72,7 @@ class ComponentStats extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.api.ComponentStats.CPUStats cpu = 2;</code>
-     * @param \Api\ComponentStats\CPUStats $var
+     * @param \Api\ComponentStats_CPUStats $var
      * @return $this
      */
     public function setCpu($var)
@@ -98,7 +85,7 @@ class ComponentStats extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.api.ComponentStats.MemoryStats memory = 3;</code>
-     * @return \Api\ComponentStats\MemoryStats
+     * @return \Api\ComponentStats_MemoryStats
      */
     public function getMemory()
     {
@@ -107,7 +94,7 @@ class ComponentStats extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.api.ComponentStats.MemoryStats memory = 3;</code>
-     * @param \Api\ComponentStats\MemoryStats $var
+     * @param \Api\ComponentStats_MemoryStats $var
      * @return $this
      */
     public function setMemory($var)

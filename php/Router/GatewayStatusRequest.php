@@ -21,18 +21,9 @@ class GatewayStatusRequest extends \Google\Protobuf\Internal\Message
      */
     private $gateway_id = '';
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $gateway_id
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Router\Router::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**

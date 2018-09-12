@@ -26,21 +26,9 @@ class DeviceIdentifier extends \Google\Protobuf\Internal\Message
      */
     private $dev_eui = '';
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $app_eui
-     *           The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
-     *     @type string $dev_eui
-     *           The DevEUI is a unique, 8 byte identifier for the device.
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Protocol\Lorawan\Device::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**

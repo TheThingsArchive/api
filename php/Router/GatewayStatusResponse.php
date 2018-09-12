@@ -22,19 +22,9 @@ class GatewayStatusResponse extends \Google\Protobuf\Internal\Message
      */
     private $status = null;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type int|string $last_seen
-     *     @type \Gateway\Status $status
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Router\Router::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**

@@ -408,88 +408,18 @@ internal final class Monitor_MonitorServiceClient: ServiceClientBase, Monitor_Mo
 }
 
 /// To build a server, implement a class that conforms to this protocol.
-/// If one of the methods returning `ServerStatus?` returns nil,
-/// it is expected that you have already returned a status to the client by means of `session.close`.
-internal protocol Monitor_MonitorProvider: ServiceProvider {
-  func routerStatus(session: Monitor_MonitorRouterStatusSession) throws -> SwiftProtobuf.Google_Protobuf_Empty?
-  func gatewayStatus(session: Monitor_MonitorGatewayStatusSession) throws -> SwiftProtobuf.Google_Protobuf_Empty?
-  func gatewayUplink(session: Monitor_MonitorGatewayUplinkSession) throws -> SwiftProtobuf.Google_Protobuf_Empty?
-  func gatewayDownlink(session: Monitor_MonitorGatewayDownlinkSession) throws -> SwiftProtobuf.Google_Protobuf_Empty?
-  func brokerStatus(session: Monitor_MonitorBrokerStatusSession) throws -> SwiftProtobuf.Google_Protobuf_Empty?
-  func brokerUplink(session: Monitor_MonitorBrokerUplinkSession) throws -> SwiftProtobuf.Google_Protobuf_Empty?
-  func brokerDownlink(session: Monitor_MonitorBrokerDownlinkSession) throws -> SwiftProtobuf.Google_Protobuf_Empty?
-  func handlerStatus(session: Monitor_MonitorHandlerStatusSession) throws -> SwiftProtobuf.Google_Protobuf_Empty?
-  func handlerUplink(session: Monitor_MonitorHandlerUplinkSession) throws -> SwiftProtobuf.Google_Protobuf_Empty?
-  func handlerDownlink(session: Monitor_MonitorHandlerDownlinkSession) throws -> SwiftProtobuf.Google_Protobuf_Empty?
-  func networkServerStatus(session: Monitor_MonitorNetworkServerStatusSession) throws -> SwiftProtobuf.Google_Protobuf_Empty?
-}
-
-extension Monitor_MonitorProvider {
-  internal var serviceName: String { return "monitor.Monitor" }
-
-  /// Determines and calls the appropriate request handler, depending on the request's method.
-  /// Throws `HandleMethodError.unknownMethod` for methods not handled by this service.
-  internal func handleMethod(_ method: String, handler: Handler) throws -> ServerStatus? {
-    switch method {
-    case "/monitor.Monitor/RouterStatus":
-      return try Monitor_MonitorRouterStatusSessionBase(
-        handler: handler,
-        providerBlock: { try self.routerStatus(session: $0 as! Monitor_MonitorRouterStatusSessionBase) })
-          .run()
-    case "/monitor.Monitor/GatewayStatus":
-      return try Monitor_MonitorGatewayStatusSessionBase(
-        handler: handler,
-        providerBlock: { try self.gatewayStatus(session: $0 as! Monitor_MonitorGatewayStatusSessionBase) })
-          .run()
-    case "/monitor.Monitor/GatewayUplink":
-      return try Monitor_MonitorGatewayUplinkSessionBase(
-        handler: handler,
-        providerBlock: { try self.gatewayUplink(session: $0 as! Monitor_MonitorGatewayUplinkSessionBase) })
-          .run()
-    case "/monitor.Monitor/GatewayDownlink":
-      return try Monitor_MonitorGatewayDownlinkSessionBase(
-        handler: handler,
-        providerBlock: { try self.gatewayDownlink(session: $0 as! Monitor_MonitorGatewayDownlinkSessionBase) })
-          .run()
-    case "/monitor.Monitor/BrokerStatus":
-      return try Monitor_MonitorBrokerStatusSessionBase(
-        handler: handler,
-        providerBlock: { try self.brokerStatus(session: $0 as! Monitor_MonitorBrokerStatusSessionBase) })
-          .run()
-    case "/monitor.Monitor/BrokerUplink":
-      return try Monitor_MonitorBrokerUplinkSessionBase(
-        handler: handler,
-        providerBlock: { try self.brokerUplink(session: $0 as! Monitor_MonitorBrokerUplinkSessionBase) })
-          .run()
-    case "/monitor.Monitor/BrokerDownlink":
-      return try Monitor_MonitorBrokerDownlinkSessionBase(
-        handler: handler,
-        providerBlock: { try self.brokerDownlink(session: $0 as! Monitor_MonitorBrokerDownlinkSessionBase) })
-          .run()
-    case "/monitor.Monitor/HandlerStatus":
-      return try Monitor_MonitorHandlerStatusSessionBase(
-        handler: handler,
-        providerBlock: { try self.handlerStatus(session: $0 as! Monitor_MonitorHandlerStatusSessionBase) })
-          .run()
-    case "/monitor.Monitor/HandlerUplink":
-      return try Monitor_MonitorHandlerUplinkSessionBase(
-        handler: handler,
-        providerBlock: { try self.handlerUplink(session: $0 as! Monitor_MonitorHandlerUplinkSessionBase) })
-          .run()
-    case "/monitor.Monitor/HandlerDownlink":
-      return try Monitor_MonitorHandlerDownlinkSessionBase(
-        handler: handler,
-        providerBlock: { try self.handlerDownlink(session: $0 as! Monitor_MonitorHandlerDownlinkSessionBase) })
-          .run()
-    case "/monitor.Monitor/NetworkServerStatus":
-      return try Monitor_MonitorNetworkServerStatusSessionBase(
-        handler: handler,
-        providerBlock: { try self.networkServerStatus(session: $0 as! Monitor_MonitorNetworkServerStatusSessionBase) })
-          .run()
-    default:
-      throw HandleMethodError.unknownMethod
-    }
-  }
+internal protocol Monitor_MonitorProvider {
+  func routerStatus(session: Monitor_MonitorRouterStatusSession) throws
+  func gatewayStatus(session: Monitor_MonitorGatewayStatusSession) throws
+  func gatewayUplink(session: Monitor_MonitorGatewayUplinkSession) throws
+  func gatewayDownlink(session: Monitor_MonitorGatewayDownlinkSession) throws
+  func brokerStatus(session: Monitor_MonitorBrokerStatusSession) throws
+  func brokerUplink(session: Monitor_MonitorBrokerUplinkSession) throws
+  func brokerDownlink(session: Monitor_MonitorBrokerDownlinkSession) throws
+  func handlerStatus(session: Monitor_MonitorHandlerStatusSession) throws
+  func handlerUplink(session: Monitor_MonitorHandlerUplinkSession) throws
+  func handlerDownlink(session: Monitor_MonitorHandlerDownlinkSession) throws
+  func networkServerStatus(session: Monitor_MonitorNetworkServerStatusSession) throws
 }
 
 internal protocol Monitor_MonitorRouterStatusSession: ServerSessionClientStreaming {
@@ -498,8 +428,7 @@ internal protocol Monitor_MonitorRouterStatusSession: ServerSessionClientStreami
   /// Call this to wait for a result. Nonblocking.
   func receive(completion: @escaping (ResultOrRPCError<Router_Status?>) -> Void) throws
 
-  /// Exactly one of these two methods should be called if and only if your request handler returns nil;
-  /// otherwise SwiftGRPC will take care of sending the response and status for you.
+  /// You MUST call one of these two methods once you are done processing the request.
   /// Close the connection and send a single result. Non-blocking.
   func sendAndClose(response: SwiftProtobuf.Google_Protobuf_Empty, status: ServerStatus, completion: (() -> Void)?) throws
   /// Close the connection and send an error. Non-blocking.
@@ -521,8 +450,7 @@ internal protocol Monitor_MonitorGatewayStatusSession: ServerSessionClientStream
   /// Call this to wait for a result. Nonblocking.
   func receive(completion: @escaping (ResultOrRPCError<Gateway_Status?>) -> Void) throws
 
-  /// Exactly one of these two methods should be called if and only if your request handler returns nil;
-  /// otherwise SwiftGRPC will take care of sending the response and status for you.
+  /// You MUST call one of these two methods once you are done processing the request.
   /// Close the connection and send a single result. Non-blocking.
   func sendAndClose(response: SwiftProtobuf.Google_Protobuf_Empty, status: ServerStatus, completion: (() -> Void)?) throws
   /// Close the connection and send an error. Non-blocking.
@@ -544,8 +472,7 @@ internal protocol Monitor_MonitorGatewayUplinkSession: ServerSessionClientStream
   /// Call this to wait for a result. Nonblocking.
   func receive(completion: @escaping (ResultOrRPCError<Router_UplinkMessage?>) -> Void) throws
 
-  /// Exactly one of these two methods should be called if and only if your request handler returns nil;
-  /// otherwise SwiftGRPC will take care of sending the response and status for you.
+  /// You MUST call one of these two methods once you are done processing the request.
   /// Close the connection and send a single result. Non-blocking.
   func sendAndClose(response: SwiftProtobuf.Google_Protobuf_Empty, status: ServerStatus, completion: (() -> Void)?) throws
   /// Close the connection and send an error. Non-blocking.
@@ -567,8 +494,7 @@ internal protocol Monitor_MonitorGatewayDownlinkSession: ServerSessionClientStre
   /// Call this to wait for a result. Nonblocking.
   func receive(completion: @escaping (ResultOrRPCError<Router_DownlinkMessage?>) -> Void) throws
 
-  /// Exactly one of these two methods should be called if and only if your request handler returns nil;
-  /// otherwise SwiftGRPC will take care of sending the response and status for you.
+  /// You MUST call one of these two methods once you are done processing the request.
   /// Close the connection and send a single result. Non-blocking.
   func sendAndClose(response: SwiftProtobuf.Google_Protobuf_Empty, status: ServerStatus, completion: (() -> Void)?) throws
   /// Close the connection and send an error. Non-blocking.
@@ -590,8 +516,7 @@ internal protocol Monitor_MonitorBrokerStatusSession: ServerSessionClientStreami
   /// Call this to wait for a result. Nonblocking.
   func receive(completion: @escaping (ResultOrRPCError<Broker_Status?>) -> Void) throws
 
-  /// Exactly one of these two methods should be called if and only if your request handler returns nil;
-  /// otherwise SwiftGRPC will take care of sending the response and status for you.
+  /// You MUST call one of these two methods once you are done processing the request.
   /// Close the connection and send a single result. Non-blocking.
   func sendAndClose(response: SwiftProtobuf.Google_Protobuf_Empty, status: ServerStatus, completion: (() -> Void)?) throws
   /// Close the connection and send an error. Non-blocking.
@@ -613,8 +538,7 @@ internal protocol Monitor_MonitorBrokerUplinkSession: ServerSessionClientStreami
   /// Call this to wait for a result. Nonblocking.
   func receive(completion: @escaping (ResultOrRPCError<Broker_DeduplicatedUplinkMessage?>) -> Void) throws
 
-  /// Exactly one of these two methods should be called if and only if your request handler returns nil;
-  /// otherwise SwiftGRPC will take care of sending the response and status for you.
+  /// You MUST call one of these two methods once you are done processing the request.
   /// Close the connection and send a single result. Non-blocking.
   func sendAndClose(response: SwiftProtobuf.Google_Protobuf_Empty, status: ServerStatus, completion: (() -> Void)?) throws
   /// Close the connection and send an error. Non-blocking.
@@ -636,8 +560,7 @@ internal protocol Monitor_MonitorBrokerDownlinkSession: ServerSessionClientStrea
   /// Call this to wait for a result. Nonblocking.
   func receive(completion: @escaping (ResultOrRPCError<Broker_DownlinkMessage?>) -> Void) throws
 
-  /// Exactly one of these two methods should be called if and only if your request handler returns nil;
-  /// otherwise SwiftGRPC will take care of sending the response and status for you.
+  /// You MUST call one of these two methods once you are done processing the request.
   /// Close the connection and send a single result. Non-blocking.
   func sendAndClose(response: SwiftProtobuf.Google_Protobuf_Empty, status: ServerStatus, completion: (() -> Void)?) throws
   /// Close the connection and send an error. Non-blocking.
@@ -659,8 +582,7 @@ internal protocol Monitor_MonitorHandlerStatusSession: ServerSessionClientStream
   /// Call this to wait for a result. Nonblocking.
   func receive(completion: @escaping (ResultOrRPCError<Handler_Status?>) -> Void) throws
 
-  /// Exactly one of these two methods should be called if and only if your request handler returns nil;
-  /// otherwise SwiftGRPC will take care of sending the response and status for you.
+  /// You MUST call one of these two methods once you are done processing the request.
   /// Close the connection and send a single result. Non-blocking.
   func sendAndClose(response: SwiftProtobuf.Google_Protobuf_Empty, status: ServerStatus, completion: (() -> Void)?) throws
   /// Close the connection and send an error. Non-blocking.
@@ -682,8 +604,7 @@ internal protocol Monitor_MonitorHandlerUplinkSession: ServerSessionClientStream
   /// Call this to wait for a result. Nonblocking.
   func receive(completion: @escaping (ResultOrRPCError<Broker_DeduplicatedUplinkMessage?>) -> Void) throws
 
-  /// Exactly one of these two methods should be called if and only if your request handler returns nil;
-  /// otherwise SwiftGRPC will take care of sending the response and status for you.
+  /// You MUST call one of these two methods once you are done processing the request.
   /// Close the connection and send a single result. Non-blocking.
   func sendAndClose(response: SwiftProtobuf.Google_Protobuf_Empty, status: ServerStatus, completion: (() -> Void)?) throws
   /// Close the connection and send an error. Non-blocking.
@@ -705,8 +626,7 @@ internal protocol Monitor_MonitorHandlerDownlinkSession: ServerSessionClientStre
   /// Call this to wait for a result. Nonblocking.
   func receive(completion: @escaping (ResultOrRPCError<Broker_DownlinkMessage?>) -> Void) throws
 
-  /// Exactly one of these two methods should be called if and only if your request handler returns nil;
-  /// otherwise SwiftGRPC will take care of sending the response and status for you.
+  /// You MUST call one of these two methods once you are done processing the request.
   /// Close the connection and send a single result. Non-blocking.
   func sendAndClose(response: SwiftProtobuf.Google_Protobuf_Empty, status: ServerStatus, completion: (() -> Void)?) throws
   /// Close the connection and send an error. Non-blocking.
@@ -728,8 +648,7 @@ internal protocol Monitor_MonitorNetworkServerStatusSession: ServerSessionClient
   /// Call this to wait for a result. Nonblocking.
   func receive(completion: @escaping (ResultOrRPCError<Networkserver_Status?>) -> Void) throws
 
-  /// Exactly one of these two methods should be called if and only if your request handler returns nil;
-  /// otherwise SwiftGRPC will take care of sending the response and status for you.
+  /// You MUST call one of these two methods once you are done processing the request.
   /// Close the connection and send a single result. Non-blocking.
   func sendAndClose(response: SwiftProtobuf.Google_Protobuf_Empty, status: ServerStatus, completion: (() -> Void)?) throws
   /// Close the connection and send an error. Non-blocking.
@@ -744,4 +663,100 @@ internal extension Monitor_MonitorNetworkServerStatusSession {
 }
 
 fileprivate final class Monitor_MonitorNetworkServerStatusSessionBase: ServerSessionClientStreamingBase<Networkserver_Status, SwiftProtobuf.Google_Protobuf_Empty>, Monitor_MonitorNetworkServerStatusSession {}
+
+
+/// Main server for generated service
+internal final class Monitor_MonitorServer: ServiceServer {
+  private let provider: Monitor_MonitorProvider
+
+  internal init(address: String, provider: Monitor_MonitorProvider) {
+    self.provider = provider
+    super.init(address: address)
+  }
+
+  internal init?(address: String, certificateURL: URL, keyURL: URL, provider: Monitor_MonitorProvider) {
+    self.provider = provider
+    super.init(address: address, certificateURL: certificateURL, keyURL: keyURL)
+  }
+
+  internal init?(address: String, certificateString: String, keyString: String, provider: Monitor_MonitorProvider) {
+    self.provider = provider
+    super.init(address: address, certificateString: certificateString, keyString: keyString)
+  }
+
+  /// Start the server.
+  internal override func handleMethod(_ method: String, handler: Handler, queue: DispatchQueue) throws -> Bool {
+    let provider = self.provider
+    switch method {
+    case "/monitor.Monitor/RouterStatus":
+      try Monitor_MonitorRouterStatusSessionBase(
+        handler: handler,
+        providerBlock: { try provider.routerStatus(session: $0 as! Monitor_MonitorRouterStatusSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/monitor.Monitor/GatewayStatus":
+      try Monitor_MonitorGatewayStatusSessionBase(
+        handler: handler,
+        providerBlock: { try provider.gatewayStatus(session: $0 as! Monitor_MonitorGatewayStatusSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/monitor.Monitor/GatewayUplink":
+      try Monitor_MonitorGatewayUplinkSessionBase(
+        handler: handler,
+        providerBlock: { try provider.gatewayUplink(session: $0 as! Monitor_MonitorGatewayUplinkSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/monitor.Monitor/GatewayDownlink":
+      try Monitor_MonitorGatewayDownlinkSessionBase(
+        handler: handler,
+        providerBlock: { try provider.gatewayDownlink(session: $0 as! Monitor_MonitorGatewayDownlinkSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/monitor.Monitor/BrokerStatus":
+      try Monitor_MonitorBrokerStatusSessionBase(
+        handler: handler,
+        providerBlock: { try provider.brokerStatus(session: $0 as! Monitor_MonitorBrokerStatusSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/monitor.Monitor/BrokerUplink":
+      try Monitor_MonitorBrokerUplinkSessionBase(
+        handler: handler,
+        providerBlock: { try provider.brokerUplink(session: $0 as! Monitor_MonitorBrokerUplinkSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/monitor.Monitor/BrokerDownlink":
+      try Monitor_MonitorBrokerDownlinkSessionBase(
+        handler: handler,
+        providerBlock: { try provider.brokerDownlink(session: $0 as! Monitor_MonitorBrokerDownlinkSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/monitor.Monitor/HandlerStatus":
+      try Monitor_MonitorHandlerStatusSessionBase(
+        handler: handler,
+        providerBlock: { try provider.handlerStatus(session: $0 as! Monitor_MonitorHandlerStatusSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/monitor.Monitor/HandlerUplink":
+      try Monitor_MonitorHandlerUplinkSessionBase(
+        handler: handler,
+        providerBlock: { try provider.handlerUplink(session: $0 as! Monitor_MonitorHandlerUplinkSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/monitor.Monitor/HandlerDownlink":
+      try Monitor_MonitorHandlerDownlinkSessionBase(
+        handler: handler,
+        providerBlock: { try provider.handlerDownlink(session: $0 as! Monitor_MonitorHandlerDownlinkSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/monitor.Monitor/NetworkServerStatus":
+      try Monitor_MonitorNetworkServerStatusSessionBase(
+        handler: handler,
+        providerBlock: { try provider.networkServerStatus(session: $0 as! Monitor_MonitorNetworkServerStatusSessionBase) })
+          .run(queue: queue)
+      return true
+    default:
+      return false
+    }
+  }
+}
 

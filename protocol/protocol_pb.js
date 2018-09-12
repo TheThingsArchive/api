@@ -11,6 +11,7 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
+
 var ttn_protocol_lorawan_lorawan_pb = require('../protocol/lorawan/lorawan_pb.js');
 goog.exportSymbol('proto.protocol.ActivationMetadata', null, global);
 goog.exportSymbol('proto.protocol.Message', null, global);

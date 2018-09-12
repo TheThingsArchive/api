@@ -4,6 +4,7 @@
 package protocol // import "github.com/TheThingsNetwork/api/protocol"
 
 import proto "github.com/gogo/protobuf/proto"
+import golang_proto "github.com/golang/protobuf/proto"
 import fmt "fmt"
 import math "math"
 import lorawan "github.com/TheThingsNetwork/api/protocol/lorawan"
@@ -16,6 +17,7 @@ import io "io"
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
+var _ = golang_proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
@@ -36,7 +38,7 @@ type Message struct {
 func (m *Message) Reset()      { *m = Message{} }
 func (*Message) ProtoMessage() {}
 func (*Message) Descriptor() ([]byte, []int) {
-	return fileDescriptor_protocol_0124e87c18383420, []int{0}
+	return fileDescriptor_protocol_6b2961d47015f719, []int{0}
 }
 func (m *Message) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -68,7 +70,6 @@ var xxx_messageInfo_Message proto.InternalMessageInfo
 type isMessage_Protocol interface {
 	isMessage_Protocol()
 	Equal(interface{}) bool
-	VerboseEqual(interface{}) error
 	MarshalTo([]byte) (int, error)
 	Size() int
 }
@@ -159,7 +160,7 @@ type RxMetadata struct {
 func (m *RxMetadata) Reset()      { *m = RxMetadata{} }
 func (*RxMetadata) ProtoMessage() {}
 func (*RxMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_protocol_0124e87c18383420, []int{1}
+	return fileDescriptor_protocol_6b2961d47015f719, []int{1}
 }
 func (m *RxMetadata) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -191,7 +192,6 @@ var xxx_messageInfo_RxMetadata proto.InternalMessageInfo
 type isRxMetadata_Protocol interface {
 	isRxMetadata_Protocol()
 	Equal(interface{}) bool
-	VerboseEqual(interface{}) error
 	MarshalTo([]byte) (int, error)
 	Size() int
 }
@@ -282,7 +282,7 @@ type TxConfiguration struct {
 func (m *TxConfiguration) Reset()      { *m = TxConfiguration{} }
 func (*TxConfiguration) ProtoMessage() {}
 func (*TxConfiguration) Descriptor() ([]byte, []int) {
-	return fileDescriptor_protocol_0124e87c18383420, []int{2}
+	return fileDescriptor_protocol_6b2961d47015f719, []int{2}
 }
 func (m *TxConfiguration) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -314,7 +314,6 @@ var xxx_messageInfo_TxConfiguration proto.InternalMessageInfo
 type isTxConfiguration_Protocol interface {
 	isTxConfiguration_Protocol()
 	Equal(interface{}) bool
-	VerboseEqual(interface{}) error
 	MarshalTo([]byte) (int, error)
 	Size() int
 }
@@ -405,7 +404,7 @@ type ActivationMetadata struct {
 func (m *ActivationMetadata) Reset()      { *m = ActivationMetadata{} }
 func (*ActivationMetadata) ProtoMessage() {}
 func (*ActivationMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_protocol_0124e87c18383420, []int{3}
+	return fileDescriptor_protocol_6b2961d47015f719, []int{3}
 }
 func (m *ActivationMetadata) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -437,7 +436,6 @@ var xxx_messageInfo_ActivationMetadata proto.InternalMessageInfo
 type isActivationMetadata_Protocol interface {
 	isActivationMetadata_Protocol()
 	Equal(interface{}) bool
-	VerboseEqual(interface{}) error
 	MarshalTo([]byte) (int, error)
 	Size() int
 }
@@ -519,75 +517,13 @@ func _ActivationMetadata_OneofSizer(msg proto.Message) (n int) {
 
 func init() {
 	proto.RegisterType((*Message)(nil), "protocol.Message")
+	golang_proto.RegisterType((*Message)(nil), "protocol.Message")
 	proto.RegisterType((*RxMetadata)(nil), "protocol.RxMetadata")
+	golang_proto.RegisterType((*RxMetadata)(nil), "protocol.RxMetadata")
 	proto.RegisterType((*TxConfiguration)(nil), "protocol.TxConfiguration")
+	golang_proto.RegisterType((*TxConfiguration)(nil), "protocol.TxConfiguration")
 	proto.RegisterType((*ActivationMetadata)(nil), "protocol.ActivationMetadata")
-}
-func (this *Message) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*Message)
-	if !ok {
-		that2, ok := that.(Message)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *Message")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *Message but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *Message but is not nil && this == nil")
-	}
-	if that1.Protocol == nil {
-		if this.Protocol != nil {
-			return fmt.Errorf("this.Protocol != nil && that1.Protocol == nil")
-		}
-	} else if this.Protocol == nil {
-		return fmt.Errorf("this.Protocol == nil && that1.Protocol != nil")
-	} else if err := this.Protocol.VerboseEqual(that1.Protocol); err != nil {
-		return err
-	}
-	return nil
-}
-func (this *Message_LoRaWAN) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*Message_LoRaWAN)
-	if !ok {
-		that2, ok := that.(Message_LoRaWAN)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *Message_LoRaWAN")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *Message_LoRaWAN but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *Message_LoRaWAN but is not nil && this == nil")
-	}
-	if !this.LoRaWAN.Equal(that1.LoRaWAN) {
-		return fmt.Errorf("LoRaWAN this(%v) Not Equal that(%v)", this.LoRaWAN, that1.LoRaWAN)
-	}
-	return nil
+	golang_proto.RegisterType((*ActivationMetadata)(nil), "protocol.ActivationMetadata")
 }
 func (this *Message) Equal(that interface{}) bool {
 	if that == nil {
@@ -643,72 +579,6 @@ func (this *Message_LoRaWAN) Equal(that interface{}) bool {
 	}
 	return true
 }
-func (this *RxMetadata) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*RxMetadata)
-	if !ok {
-		that2, ok := that.(RxMetadata)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *RxMetadata")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *RxMetadata but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *RxMetadata but is not nil && this == nil")
-	}
-	if that1.Protocol == nil {
-		if this.Protocol != nil {
-			return fmt.Errorf("this.Protocol != nil && that1.Protocol == nil")
-		}
-	} else if this.Protocol == nil {
-		return fmt.Errorf("this.Protocol == nil && that1.Protocol != nil")
-	} else if err := this.Protocol.VerboseEqual(that1.Protocol); err != nil {
-		return err
-	}
-	return nil
-}
-func (this *RxMetadata_LoRaWAN) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*RxMetadata_LoRaWAN)
-	if !ok {
-		that2, ok := that.(RxMetadata_LoRaWAN)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *RxMetadata_LoRaWAN")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *RxMetadata_LoRaWAN but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *RxMetadata_LoRaWAN but is not nil && this == nil")
-	}
-	if !this.LoRaWAN.Equal(that1.LoRaWAN) {
-		return fmt.Errorf("LoRaWAN this(%v) Not Equal that(%v)", this.LoRaWAN, that1.LoRaWAN)
-	}
-	return nil
-}
 func (this *RxMetadata) Equal(that interface{}) bool {
 	if that == nil {
 		return this == nil
@@ -763,72 +633,6 @@ func (this *RxMetadata_LoRaWAN) Equal(that interface{}) bool {
 	}
 	return true
 }
-func (this *TxConfiguration) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*TxConfiguration)
-	if !ok {
-		that2, ok := that.(TxConfiguration)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *TxConfiguration")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *TxConfiguration but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *TxConfiguration but is not nil && this == nil")
-	}
-	if that1.Protocol == nil {
-		if this.Protocol != nil {
-			return fmt.Errorf("this.Protocol != nil && that1.Protocol == nil")
-		}
-	} else if this.Protocol == nil {
-		return fmt.Errorf("this.Protocol == nil && that1.Protocol != nil")
-	} else if err := this.Protocol.VerboseEqual(that1.Protocol); err != nil {
-		return err
-	}
-	return nil
-}
-func (this *TxConfiguration_LoRaWAN) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*TxConfiguration_LoRaWAN)
-	if !ok {
-		that2, ok := that.(TxConfiguration_LoRaWAN)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *TxConfiguration_LoRaWAN")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *TxConfiguration_LoRaWAN but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *TxConfiguration_LoRaWAN but is not nil && this == nil")
-	}
-	if !this.LoRaWAN.Equal(that1.LoRaWAN) {
-		return fmt.Errorf("LoRaWAN this(%v) Not Equal that(%v)", this.LoRaWAN, that1.LoRaWAN)
-	}
-	return nil
-}
 func (this *TxConfiguration) Equal(that interface{}) bool {
 	if that == nil {
 		return this == nil
@@ -882,72 +686,6 @@ func (this *TxConfiguration_LoRaWAN) Equal(that interface{}) bool {
 		return false
 	}
 	return true
-}
-func (this *ActivationMetadata) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*ActivationMetadata)
-	if !ok {
-		that2, ok := that.(ActivationMetadata)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *ActivationMetadata")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *ActivationMetadata but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *ActivationMetadata but is not nil && this == nil")
-	}
-	if that1.Protocol == nil {
-		if this.Protocol != nil {
-			return fmt.Errorf("this.Protocol != nil && that1.Protocol == nil")
-		}
-	} else if this.Protocol == nil {
-		return fmt.Errorf("this.Protocol == nil && that1.Protocol != nil")
-	} else if err := this.Protocol.VerboseEqual(that1.Protocol); err != nil {
-		return err
-	}
-	return nil
-}
-func (this *ActivationMetadata_LoRaWAN) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*ActivationMetadata_LoRaWAN)
-	if !ok {
-		that2, ok := that.(ActivationMetadata_LoRaWAN)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *ActivationMetadata_LoRaWAN")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *ActivationMetadata_LoRaWAN but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *ActivationMetadata_LoRaWAN but is not nil && this == nil")
-	}
-	if !this.LoRaWAN.Equal(that1.LoRaWAN) {
-		return fmt.Errorf("LoRaWAN this(%v) Not Equal that(%v)", this.LoRaWAN, that1.LoRaWAN)
-	}
-	return nil
 }
 func (this *ActivationMetadata) Equal(that interface{}) bool {
 	if that == nil {
@@ -1167,6 +905,147 @@ func encodeVarintProtocol(dAtA []byte, offset int, v uint64) int {
 	}
 	dAtA[offset] = uint8(v)
 	return offset + 1
+}
+func NewPopulatedMessage(r randyProtocol, easy bool) *Message {
+	this := &Message{}
+	oneofNumber_Protocol := []int32{1}[r.Intn(1)]
+	switch oneofNumber_Protocol {
+	case 1:
+		this.Protocol = NewPopulatedMessage_LoRaWAN(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedMessage_LoRaWAN(r randyProtocol, easy bool) *Message_LoRaWAN {
+	this := &Message_LoRaWAN{}
+	this.LoRaWAN = lorawan.NewPopulatedMessage(r, easy)
+	return this
+}
+func NewPopulatedRxMetadata(r randyProtocol, easy bool) *RxMetadata {
+	this := &RxMetadata{}
+	oneofNumber_Protocol := []int32{1}[r.Intn(1)]
+	switch oneofNumber_Protocol {
+	case 1:
+		this.Protocol = NewPopulatedRxMetadata_LoRaWAN(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedRxMetadata_LoRaWAN(r randyProtocol, easy bool) *RxMetadata_LoRaWAN {
+	this := &RxMetadata_LoRaWAN{}
+	this.LoRaWAN = lorawan.NewPopulatedMetadata(r, easy)
+	return this
+}
+func NewPopulatedTxConfiguration(r randyProtocol, easy bool) *TxConfiguration {
+	this := &TxConfiguration{}
+	oneofNumber_Protocol := []int32{1}[r.Intn(1)]
+	switch oneofNumber_Protocol {
+	case 1:
+		this.Protocol = NewPopulatedTxConfiguration_LoRaWAN(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedTxConfiguration_LoRaWAN(r randyProtocol, easy bool) *TxConfiguration_LoRaWAN {
+	this := &TxConfiguration_LoRaWAN{}
+	this.LoRaWAN = lorawan.NewPopulatedTxConfiguration(r, easy)
+	return this
+}
+func NewPopulatedActivationMetadata(r randyProtocol, easy bool) *ActivationMetadata {
+	this := &ActivationMetadata{}
+	oneofNumber_Protocol := []int32{1}[r.Intn(1)]
+	switch oneofNumber_Protocol {
+	case 1:
+		this.Protocol = NewPopulatedActivationMetadata_LoRaWAN(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedActivationMetadata_LoRaWAN(r randyProtocol, easy bool) *ActivationMetadata_LoRaWAN {
+	this := &ActivationMetadata_LoRaWAN{}
+	this.LoRaWAN = lorawan.NewPopulatedActivationMetadata(r, easy)
+	return this
+}
+
+type randyProtocol interface {
+	Float32() float32
+	Float64() float64
+	Int63() int64
+	Int31() int32
+	Uint32() uint32
+	Intn(n int) int
+}
+
+func randUTF8RuneProtocol(r randyProtocol) rune {
+	ru := r.Intn(62)
+	if ru < 10 {
+		return rune(ru + 48)
+	} else if ru < 36 {
+		return rune(ru + 55)
+	}
+	return rune(ru + 61)
+}
+func randStringProtocol(r randyProtocol) string {
+	v1 := r.Intn(100)
+	tmps := make([]rune, v1)
+	for i := 0; i < v1; i++ {
+		tmps[i] = randUTF8RuneProtocol(r)
+	}
+	return string(tmps)
+}
+func randUnrecognizedProtocol(r randyProtocol, maxFieldNumber int) (dAtA []byte) {
+	l := r.Intn(5)
+	for i := 0; i < l; i++ {
+		wire := r.Intn(4)
+		if wire == 3 {
+			wire = 5
+		}
+		fieldNumber := maxFieldNumber + r.Intn(100)
+		dAtA = randFieldProtocol(dAtA, r, fieldNumber, wire)
+	}
+	return dAtA
+}
+func randFieldProtocol(dAtA []byte, r randyProtocol, fieldNumber int, wire int) []byte {
+	key := uint32(fieldNumber)<<3 | uint32(wire)
+	switch wire {
+	case 0:
+		dAtA = encodeVarintPopulateProtocol(dAtA, uint64(key))
+		v2 := r.Int63()
+		if r.Intn(2) == 0 {
+			v2 *= -1
+		}
+		dAtA = encodeVarintPopulateProtocol(dAtA, uint64(v2))
+	case 1:
+		dAtA = encodeVarintPopulateProtocol(dAtA, uint64(key))
+		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
+	case 2:
+		dAtA = encodeVarintPopulateProtocol(dAtA, uint64(key))
+		ll := r.Intn(100)
+		dAtA = encodeVarintPopulateProtocol(dAtA, uint64(ll))
+		for j := 0; j < ll; j++ {
+			dAtA = append(dAtA, byte(r.Intn(256)))
+		}
+	default:
+		dAtA = encodeVarintPopulateProtocol(dAtA, uint64(key))
+		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
+	}
+	return dAtA
+}
+func encodeVarintPopulateProtocol(dAtA []byte, v uint64) []byte {
+	for v >= 1<<7 {
+		dAtA = append(dAtA, uint8(uint64(v)&0x7f|0x80))
+		v >>= 7
+	}
+	dAtA = append(dAtA, uint8(v))
+	return dAtA
 }
 func (m *Message) Size() (n int) {
 	var l int
@@ -1776,30 +1655,38 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/protocol.proto", fileDescriptor_protocol_0124e87c18383420)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/protocol.proto", fileDescriptor_protocol_6b2961d47015f719)
+}
+func init() {
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/protocol.proto", fileDescriptor_protocol_6b2961d47015f719)
 }
 
-var fileDescriptor_protocol_0124e87c18383420 = []byte{
-	// 332 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x32, 0x4f, 0xcf, 0x2c, 0xc9,
-	0x28, 0x4d, 0xd2, 0x4b, 0xce, 0xcf, 0xd5, 0x0f, 0xc9, 0x48, 0x0d, 0xc9, 0xc8, 0xcc, 0x4b, 0x2f,
-	0xf6, 0x4b, 0x2d, 0x29, 0xcf, 0x2f, 0xca, 0xd6, 0x4f, 0x2c, 0xc8, 0xd4, 0x2f, 0x28, 0xca, 0x2f,
-	0xc9, 0x4f, 0xce, 0xcf, 0x81, 0x33, 0xf4, 0xc0, 0x0c, 0x21, 0x0e, 0x18, 0x5f, 0x4a, 0x17, 0xc9,
-	0x88, 0xf4, 0xfc, 0xf4, 0x7c, 0x88, 0xca, 0xa4, 0xd2, 0x34, 0x30, 0x0f, 0xcc, 0x01, 0xb3, 0x20,
-	0x1a, 0xa5, 0xec, 0x88, 0xb6, 0x31, 0x27, 0xbf, 0x28, 0xb1, 0x3c, 0x31, 0x0f, 0x46, 0x43, 0xf4,
-	0x2b, 0x05, 0x70, 0xb1, 0xfb, 0xa6, 0x16, 0x17, 0x27, 0xa6, 0xa7, 0x0a, 0x59, 0x72, 0xb1, 0x43,
-	0xe5, 0x24, 0x18, 0x15, 0x18, 0x35, 0xb8, 0x8d, 0x04, 0xf4, 0x60, 0x6a, 0xa1, 0x4a, 0x9c, 0xb8,
-	0x1f, 0xdd, 0x93, 0x67, 0xf7, 0xc9, 0x0f, 0x4a, 0x0c, 0x77, 0xf4, 0xf3, 0x60, 0x08, 0x82, 0xa9,
-	0x77, 0xe2, 0xe2, 0x82, 0x7b, 0x40, 0x29, 0x84, 0x8b, 0x2b, 0xa8, 0xc2, 0x37, 0xb5, 0x24, 0x31,
-	0x25, 0xb1, 0x24, 0x51, 0xc8, 0x0a, 0xdd, 0x50, 0x41, 0x24, 0x43, 0x21, 0x6a, 0x88, 0x32, 0x35,
-	0x81, 0x8b, 0x3f, 0xa4, 0xc2, 0x39, 0x3f, 0x2f, 0x2d, 0x33, 0xbd, 0xb4, 0x28, 0xb1, 0x24, 0x33,
-	0x3f, 0x4f, 0xc8, 0x11, 0xdd, 0x68, 0x09, 0xb8, 0xd1, 0x68, 0x4a, 0x89, 0xb2, 0x21, 0x8d, 0x4b,
-	0xc8, 0x31, 0xb9, 0x24, 0xb3, 0x0c, 0xac, 0x03, 0xee, 0x7e, 0x17, 0x74, 0x4b, 0xa4, 0xe1, 0x96,
-	0x60, 0xaa, 0x26, 0xc6, 0x1e, 0xa7, 0x79, 0x8c, 0x37, 0x1e, 0xca, 0x31, 0x3c, 0x78, 0x28, 0xc7,
-	0xd8, 0xf0, 0x48, 0x8e, 0x71, 0xc5, 0x23, 0x39, 0xc6, 0x13, 0x8f, 0xe4, 0x18, 0x2f, 0x3c, 0x92,
-	0x63, 0x7c, 0xf0, 0x48, 0x8e, 0x71, 0xc2, 0x63, 0x39, 0x06, 0x2e, 0xc5, 0xfc, 0xa2, 0x74, 0xbd,
-	0x92, 0x8c, 0xd4, 0x12, 0x70, 0x6c, 0xe6, 0x41, 0x62, 0x53, 0x2f, 0xb1, 0x20, 0x53, 0x0f, 0x6e,
-	0x0a, 0x6f, 0x00, 0x94, 0x05, 0xa6, 0x03, 0x18, 0xa3, 0x34, 0x88, 0x4d, 0x08, 0xab, 0x98, 0x64,
-	0xd1, 0xe5, 0xf5, 0x1c, 0x03, 0x3c, 0xf5, 0x60, 0x06, 0x26, 0xb1, 0x81, 0x55, 0x1a, 0x03, 0x02,
-	0x00, 0x00, 0xff, 0xff, 0xdb, 0x36, 0x82, 0xa9, 0xcd, 0x02, 0x00, 0x00,
+var fileDescriptor_protocol_6b2961d47015f719 = []byte{
+	// 406 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x92, 0x31, 0x88, 0x13, 0x41,
+	0x14, 0x86, 0xdf, 0xb3, 0x30, 0x32, 0x87, 0xa8, 0x5b, 0x1d, 0x27, 0x3e, 0xf5, 0xaa, 0x6b, 0x9c,
+	0x80, 0x16, 0xa2, 0x85, 0xb0, 0xd1, 0x42, 0xc1, 0x3b, 0x96, 0xb0, 0x20, 0x58, 0x39, 0x89, 0x9b,
+	0xdd, 0xc5, 0x73, 0x27, 0x6c, 0x26, 0xde, 0x95, 0x29, 0x53, 0x5a, 0x5a, 0x5a, 0x06, 0xab, 0x94,
+	0x29, 0x53, 0xa6, 0x4c, 0x99, 0x4a, 0xb2, 0x33, 0x4d, 0xca, 0x60, 0x95, 0x52, 0x98, 0xcd, 0x2e,
+	0x61, 0xaf, 0xd9, 0x6a, 0xfe, 0xc7, 0xfb, 0xde, 0xff, 0xbf, 0x81, 0xc7, 0x5e, 0x86, 0xb1, 0x8a,
+	0x86, 0x1d, 0xde, 0x95, 0xdf, 0x9b, 0x7e, 0x14, 0xf8, 0x51, 0x9c, 0x84, 0x83, 0x8b, 0x40, 0x5d,
+	0xc9, 0xf4, 0x5b, 0x53, 0xf4, 0xe3, 0x66, 0x3f, 0x95, 0x4a, 0x76, 0xe5, 0x65, 0x29, 0xb8, 0x15,
+	0xce, 0x9d, 0xa2, 0x3e, 0x79, 0x76, 0x60, 0x11, 0xca, 0x50, 0xe6, 0x64, 0x67, 0xd8, 0xb3, 0x95,
+	0x2d, 0xac, 0xca, 0x07, 0x4f, 0xde, 0xd4, 0x4e, 0xbc, 0x94, 0xa9, 0xb8, 0x12, 0x49, 0xf1, 0xe6,
+	0xf3, 0xa7, 0x1e, 0x6b, 0x9c, 0x07, 0x83, 0x81, 0x08, 0x03, 0xe7, 0x15, 0x6b, 0xec, 0x7b, 0xc7,
+	0xf8, 0x04, 0xcf, 0x8e, 0x9e, 0xdf, 0xe7, 0x05, 0xbb, 0x47, 0x5a, 0x47, 0xfa, 0xef, 0xe3, 0xc6,
+	0x47, 0xd9, 0x16, 0x9f, 0xdc, 0x8b, 0xf7, 0xd0, 0x2e, 0xf8, 0x16, 0x63, 0xe5, 0x07, 0x4e, 0x7d,
+	0xc6, 0xda, 0xd7, 0xe7, 0x81, 0x12, 0x5f, 0x85, 0x12, 0xce, 0xeb, 0xaa, 0xe9, 0x83, 0x03, 0xd3,
+	0x9c, 0xa9, 0xe5, 0xfa, 0x85, 0xdd, 0xf3, 0xaf, 0xdf, 0xca, 0xa4, 0x17, 0x87, 0xc3, 0x54, 0xa8,
+	0x58, 0x26, 0x8e, 0x5b, 0xb5, 0x3e, 0x2e, 0xad, 0x2b, 0x68, 0xad, 0x84, 0x1e, 0x73, 0xdc, 0xae,
+	0x8a, 0x7f, 0xd8, 0x89, 0x72, 0xff, 0x77, 0xd5, 0x90, 0x87, 0x65, 0xc8, 0x4d, 0xba, 0x4e, 0x4e,
+	0xeb, 0x1f, 0x2e, 0x32, 0xc2, 0x65, 0x46, 0xb8, 0xca, 0x08, 0xd6, 0x19, 0xc1, 0x26, 0x23, 0xd8,
+	0x66, 0x04, 0xbb, 0x8c, 0x70, 0xa4, 0x09, 0xc7, 0x9a, 0x60, 0xa2, 0x09, 0xa7, 0x9a, 0x60, 0xa6,
+	0x09, 0xe6, 0x9a, 0x60, 0xa1, 0x09, 0x97, 0x9a, 0x70, 0xa5, 0x09, 0xd6, 0x9a, 0x70, 0xa3, 0x09,
+	0xb6, 0x9a, 0x70, 0xa7, 0x09, 0x46, 0x86, 0x60, 0x6c, 0x08, 0x7f, 0x1a, 0x82, 0x5f, 0x86, 0xf0,
+	0xb7, 0x21, 0x98, 0x18, 0x82, 0xa9, 0x21, 0x9c, 0x19, 0xc2, 0xb9, 0x21, 0x64, 0x4f, 0x65, 0x1a,
+	0x72, 0x15, 0x05, 0xca, 0x5e, 0x48, 0x92, 0x5f, 0x08, 0x17, 0xfd, 0x98, 0x97, 0x9b, 0xdd, 0xf5,
+	0xf6, 0xca, 0xbe, 0x1e, 0x7e, 0x3e, 0xab, 0x7b, 0x5c, 0x7f, 0x6e, 0x3d, 0xaa, 0xf6, 0xb9, 0xeb,
+	0x7d, 0xe0, 0x85, 0x61, 0xe7, 0xb6, 0x25, 0x5f, 0xfc, 0x0f, 0x00, 0x00, 0xff, 0xff, 0xba, 0xfe,
+	0x65, 0xe7, 0x21, 0x03, 0x00, 0x00,
 }

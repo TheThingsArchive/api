@@ -46,25 +46,9 @@ class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
      */
     private $trace = null;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $payload
-     *     @type \Protocol\Message $message
-     *     @type string $dev_eui
-     *     @type string $app_eui
-     *     @type \Protocol\RxMetadata $protocol_metadata
-     *     @type \Gateway\RxMetadata $gateway_metadata
-     *     @type \Protocol\ActivationMetadata $activation_metadata
-     *     @type \Trace\Trace $trace
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Router\Router::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**

@@ -4,6 +4,7 @@
 package broker // import "github.com/TheThingsNetwork/api/broker"
 
 import proto "github.com/gogo/protobuf/proto"
+import golang_proto "github.com/golang/protobuf/proto"
 import fmt "fmt"
 import math "math"
 import api "github.com/TheThingsNetwork/api"
@@ -27,6 +28,7 @@ import io "io"
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
+var _ = golang_proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
@@ -54,7 +56,7 @@ type DownlinkOption struct {
 func (m *DownlinkOption) Reset()      { *m = DownlinkOption{} }
 func (*DownlinkOption) ProtoMessage() {}
 func (*DownlinkOption) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_15c9682213122ca7, []int{0}
+	return fileDescriptor_broker_e5788470f79083a2, []int{0}
 }
 func (m *DownlinkOption) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -144,7 +146,7 @@ type UplinkMessage struct {
 func (m *UplinkMessage) Reset()      { *m = UplinkMessage{} }
 func (*UplinkMessage) ProtoMessage() {}
 func (*UplinkMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_15c9682213122ca7, []int{1}
+	return fileDescriptor_broker_e5788470f79083a2, []int{1}
 }
 func (m *UplinkMessage) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -246,7 +248,7 @@ type DownlinkMessage struct {
 func (m *DownlinkMessage) Reset()      { *m = DownlinkMessage{} }
 func (*DownlinkMessage) ProtoMessage() {}
 func (*DownlinkMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_15c9682213122ca7, []int{2}
+	return fileDescriptor_broker_e5788470f79083a2, []int{2}
 }
 func (m *DownlinkMessage) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -330,7 +332,7 @@ type DeviceActivationResponse struct {
 func (m *DeviceActivationResponse) Reset()      { *m = DeviceActivationResponse{} }
 func (*DeviceActivationResponse) ProtoMessage() {}
 func (*DeviceActivationResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_15c9682213122ca7, []int{3}
+	return fileDescriptor_broker_e5788470f79083a2, []int{3}
 }
 func (m *DeviceActivationResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -407,7 +409,7 @@ type DeduplicatedUplinkMessage struct {
 func (m *DeduplicatedUplinkMessage) Reset()      { *m = DeduplicatedUplinkMessage{} }
 func (*DeduplicatedUplinkMessage) ProtoMessage() {}
 func (*DeduplicatedUplinkMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_15c9682213122ca7, []int{4}
+	return fileDescriptor_broker_e5788470f79083a2, []int{4}
 }
 func (m *DeduplicatedUplinkMessage) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -517,7 +519,7 @@ type DeviceActivationRequest struct {
 func (m *DeviceActivationRequest) Reset()      { *m = DeviceActivationRequest{} }
 func (*DeviceActivationRequest) ProtoMessage() {}
 func (*DeviceActivationRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_15c9682213122ca7, []int{5}
+	return fileDescriptor_broker_e5788470f79083a2, []int{5}
 }
 func (m *DeviceActivationRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -616,7 +618,7 @@ type DeduplicatedDeviceActivationRequest struct {
 func (m *DeduplicatedDeviceActivationRequest) Reset()      { *m = DeduplicatedDeviceActivationRequest{} }
 func (*DeduplicatedDeviceActivationRequest) ProtoMessage() {}
 func (*DeduplicatedDeviceActivationRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_15c9682213122ca7, []int{6}
+	return fileDescriptor_broker_e5788470f79083a2, []int{6}
 }
 func (m *DeduplicatedDeviceActivationRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -729,7 +731,7 @@ type ActivationChallengeRequest struct {
 func (m *ActivationChallengeRequest) Reset()      { *m = ActivationChallengeRequest{} }
 func (*ActivationChallengeRequest) ProtoMessage() {}
 func (*ActivationChallengeRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_15c9682213122ca7, []int{7}
+	return fileDescriptor_broker_e5788470f79083a2, []int{7}
 }
 func (m *ActivationChallengeRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -796,7 +798,7 @@ type ActivationChallengeResponse struct {
 func (m *ActivationChallengeResponse) Reset()      { *m = ActivationChallengeResponse{} }
 func (*ActivationChallengeResponse) ProtoMessage() {}
 func (*ActivationChallengeResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_15c9682213122ca7, []int{8}
+	return fileDescriptor_broker_e5788470f79083a2, []int{8}
 }
 func (m *ActivationChallengeResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -848,7 +850,7 @@ type SubscribeRequest struct {
 func (m *SubscribeRequest) Reset()      { *m = SubscribeRequest{} }
 func (*SubscribeRequest) ProtoMessage() {}
 func (*SubscribeRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_15c9682213122ca7, []int{9}
+	return fileDescriptor_broker_e5788470f79083a2, []int{9}
 }
 func (m *SubscribeRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -886,7 +888,7 @@ type StatusRequest struct {
 func (m *StatusRequest) Reset()      { *m = StatusRequest{} }
 func (*StatusRequest) ProtoMessage() {}
 func (*StatusRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_15c9682213122ca7, []int{10}
+	return fileDescriptor_broker_e5788470f79083a2, []int{10}
 }
 func (m *StatusRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -934,7 +936,7 @@ type Status struct {
 func (m *Status) Reset()      { *m = Status{} }
 func (*Status) ProtoMessage() {}
 func (*Status) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_15c9682213122ca7, []int{11}
+	return fileDescriptor_broker_e5788470f79083a2, []int{11}
 }
 func (m *Status) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1043,7 +1045,7 @@ type ApplicationHandlerRegistration struct {
 func (m *ApplicationHandlerRegistration) Reset()      { *m = ApplicationHandlerRegistration{} }
 func (*ApplicationHandlerRegistration) ProtoMessage() {}
 func (*ApplicationHandlerRegistration) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_15c9682213122ca7, []int{12}
+	return fileDescriptor_broker_e5788470f79083a2, []int{12}
 }
 func (m *ApplicationHandlerRegistration) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1088,63 +1090,31 @@ func (m *ApplicationHandlerRegistration) GetHandlerID() string {
 
 func init() {
 	proto.RegisterType((*DownlinkOption)(nil), "broker.DownlinkOption")
+	golang_proto.RegisterType((*DownlinkOption)(nil), "broker.DownlinkOption")
 	proto.RegisterType((*UplinkMessage)(nil), "broker.UplinkMessage")
+	golang_proto.RegisterType((*UplinkMessage)(nil), "broker.UplinkMessage")
 	proto.RegisterType((*DownlinkMessage)(nil), "broker.DownlinkMessage")
+	golang_proto.RegisterType((*DownlinkMessage)(nil), "broker.DownlinkMessage")
 	proto.RegisterType((*DeviceActivationResponse)(nil), "broker.DeviceActivationResponse")
+	golang_proto.RegisterType((*DeviceActivationResponse)(nil), "broker.DeviceActivationResponse")
 	proto.RegisterType((*DeduplicatedUplinkMessage)(nil), "broker.DeduplicatedUplinkMessage")
+	golang_proto.RegisterType((*DeduplicatedUplinkMessage)(nil), "broker.DeduplicatedUplinkMessage")
 	proto.RegisterType((*DeviceActivationRequest)(nil), "broker.DeviceActivationRequest")
+	golang_proto.RegisterType((*DeviceActivationRequest)(nil), "broker.DeviceActivationRequest")
 	proto.RegisterType((*DeduplicatedDeviceActivationRequest)(nil), "broker.DeduplicatedDeviceActivationRequest")
+	golang_proto.RegisterType((*DeduplicatedDeviceActivationRequest)(nil), "broker.DeduplicatedDeviceActivationRequest")
 	proto.RegisterType((*ActivationChallengeRequest)(nil), "broker.ActivationChallengeRequest")
+	golang_proto.RegisterType((*ActivationChallengeRequest)(nil), "broker.ActivationChallengeRequest")
 	proto.RegisterType((*ActivationChallengeResponse)(nil), "broker.ActivationChallengeResponse")
+	golang_proto.RegisterType((*ActivationChallengeResponse)(nil), "broker.ActivationChallengeResponse")
 	proto.RegisterType((*SubscribeRequest)(nil), "broker.SubscribeRequest")
+	golang_proto.RegisterType((*SubscribeRequest)(nil), "broker.SubscribeRequest")
 	proto.RegisterType((*StatusRequest)(nil), "broker.StatusRequest")
+	golang_proto.RegisterType((*StatusRequest)(nil), "broker.StatusRequest")
 	proto.RegisterType((*Status)(nil), "broker.Status")
+	golang_proto.RegisterType((*Status)(nil), "broker.Status")
 	proto.RegisterType((*ApplicationHandlerRegistration)(nil), "broker.ApplicationHandlerRegistration")
-}
-func (this *DownlinkOption) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*DownlinkOption)
-	if !ok {
-		that2, ok := that.(DownlinkOption)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *DownlinkOption")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *DownlinkOption but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *DownlinkOption but is not nil && this == nil")
-	}
-	if this.Identifier != that1.Identifier {
-		return fmt.Errorf("Identifier this(%v) Not Equal that(%v)", this.Identifier, that1.Identifier)
-	}
-	if this.GatewayID != that1.GatewayID {
-		return fmt.Errorf("GatewayID this(%v) Not Equal that(%v)", this.GatewayID, that1.GatewayID)
-	}
-	if this.Score != that1.Score {
-		return fmt.Errorf("Score this(%v) Not Equal that(%v)", this.Score, that1.Score)
-	}
-	if this.Deadline != that1.Deadline {
-		return fmt.Errorf("Deadline this(%v) Not Equal that(%v)", this.Deadline, that1.Deadline)
-	}
-	if !this.ProtocolConfiguration.Equal(&that1.ProtocolConfiguration) {
-		return fmt.Errorf("ProtocolConfiguration this(%v) Not Equal that(%v)", this.ProtocolConfiguration, that1.ProtocolConfiguration)
-	}
-	if !this.GatewayConfiguration.Equal(&that1.GatewayConfiguration) {
-		return fmt.Errorf("GatewayConfiguration this(%v) Not Equal that(%v)", this.GatewayConfiguration, that1.GatewayConfiguration)
-	}
-	return nil
+	golang_proto.RegisterType((*ApplicationHandlerRegistration)(nil), "broker.ApplicationHandlerRegistration")
 }
 func (this *DownlinkOption) Equal(that interface{}) bool {
 	if that == nil {
@@ -1184,76 +1154,6 @@ func (this *DownlinkOption) Equal(that interface{}) bool {
 		return false
 	}
 	return true
-}
-func (this *UplinkMessage) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*UplinkMessage)
-	if !ok {
-		that2, ok := that.(UplinkMessage)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *UplinkMessage")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *UplinkMessage but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *UplinkMessage but is not nil && this == nil")
-	}
-	if !bytes.Equal(this.Payload, that1.Payload) {
-		return fmt.Errorf("Payload this(%v) Not Equal that(%v)", this.Payload, that1.Payload)
-	}
-	if !this.Message.Equal(that1.Message) {
-		return fmt.Errorf("Message this(%v) Not Equal that(%v)", this.Message, that1.Message)
-	}
-	if that1.DevEUI == nil {
-		if this.DevEUI != nil {
-			return fmt.Errorf("this.DevEUI != nil && that1.DevEUI == nil")
-		}
-	} else if !this.DevEUI.Equal(*that1.DevEUI) {
-		return fmt.Errorf("DevEUI this(%v) Not Equal that(%v)", this.DevEUI, that1.DevEUI)
-	}
-	if that1.AppEUI == nil {
-		if this.AppEUI != nil {
-			return fmt.Errorf("this.AppEUI != nil && that1.AppEUI == nil")
-		}
-	} else if !this.AppEUI.Equal(*that1.AppEUI) {
-		return fmt.Errorf("AppEUI this(%v) Not Equal that(%v)", this.AppEUI, that1.AppEUI)
-	}
-	if this.AppID != that1.AppID {
-		return fmt.Errorf("AppID this(%v) Not Equal that(%v)", this.AppID, that1.AppID)
-	}
-	if this.DevID != that1.DevID {
-		return fmt.Errorf("DevID this(%v) Not Equal that(%v)", this.DevID, that1.DevID)
-	}
-	if !this.ProtocolMetadata.Equal(&that1.ProtocolMetadata) {
-		return fmt.Errorf("ProtocolMetadata this(%v) Not Equal that(%v)", this.ProtocolMetadata, that1.ProtocolMetadata)
-	}
-	if !this.GatewayMetadata.Equal(&that1.GatewayMetadata) {
-		return fmt.Errorf("GatewayMetadata this(%v) Not Equal that(%v)", this.GatewayMetadata, that1.GatewayMetadata)
-	}
-	if len(this.DownlinkOptions) != len(that1.DownlinkOptions) {
-		return fmt.Errorf("DownlinkOptions this(%v) Not Equal that(%v)", len(this.DownlinkOptions), len(that1.DownlinkOptions))
-	}
-	for i := range this.DownlinkOptions {
-		if !this.DownlinkOptions[i].Equal(that1.DownlinkOptions[i]) {
-			return fmt.Errorf("DownlinkOptions this[%v](%v) Not Equal that[%v](%v)", i, this.DownlinkOptions[i], i, that1.DownlinkOptions[i])
-		}
-	}
-	if !this.Trace.Equal(that1.Trace) {
-		return fmt.Errorf("Trace this(%v) Not Equal that(%v)", this.Trace, that1.Trace)
-	}
-	return nil
 }
 func (this *UplinkMessage) Equal(that interface{}) bool {
 	if that == nil {
@@ -1319,57 +1219,6 @@ func (this *UplinkMessage) Equal(that interface{}) bool {
 	}
 	return true
 }
-func (this *DownlinkMessage) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*DownlinkMessage)
-	if !ok {
-		that2, ok := that.(DownlinkMessage)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *DownlinkMessage")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *DownlinkMessage but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *DownlinkMessage but is not nil && this == nil")
-	}
-	if !bytes.Equal(this.Payload, that1.Payload) {
-		return fmt.Errorf("Payload this(%v) Not Equal that(%v)", this.Payload, that1.Payload)
-	}
-	if !this.Message.Equal(that1.Message) {
-		return fmt.Errorf("Message this(%v) Not Equal that(%v)", this.Message, that1.Message)
-	}
-	if !this.DevEUI.Equal(that1.DevEUI) {
-		return fmt.Errorf("DevEUI this(%v) Not Equal that(%v)", this.DevEUI, that1.DevEUI)
-	}
-	if !this.AppEUI.Equal(that1.AppEUI) {
-		return fmt.Errorf("AppEUI this(%v) Not Equal that(%v)", this.AppEUI, that1.AppEUI)
-	}
-	if this.AppID != that1.AppID {
-		return fmt.Errorf("AppID this(%v) Not Equal that(%v)", this.AppID, that1.AppID)
-	}
-	if this.DevID != that1.DevID {
-		return fmt.Errorf("DevID this(%v) Not Equal that(%v)", this.DevID, that1.DevID)
-	}
-	if !this.DownlinkOption.Equal(that1.DownlinkOption) {
-		return fmt.Errorf("DownlinkOption this(%v) Not Equal that(%v)", this.DownlinkOption, that1.DownlinkOption)
-	}
-	if !this.Trace.Equal(that1.Trace) {
-		return fmt.Errorf("Trace this(%v) Not Equal that(%v)", this.Trace, that1.Trace)
-	}
-	return nil
-}
 func (this *DownlinkMessage) Equal(that interface{}) bool {
 	if that == nil {
 		return this == nil
@@ -1415,45 +1264,6 @@ func (this *DownlinkMessage) Equal(that interface{}) bool {
 	}
 	return true
 }
-func (this *DeviceActivationResponse) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*DeviceActivationResponse)
-	if !ok {
-		that2, ok := that.(DeviceActivationResponse)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *DeviceActivationResponse")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *DeviceActivationResponse but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *DeviceActivationResponse but is not nil && this == nil")
-	}
-	if !bytes.Equal(this.Payload, that1.Payload) {
-		return fmt.Errorf("Payload this(%v) Not Equal that(%v)", this.Payload, that1.Payload)
-	}
-	if !this.Message.Equal(that1.Message) {
-		return fmt.Errorf("Message this(%v) Not Equal that(%v)", this.Message, that1.Message)
-	}
-	if !this.DownlinkOption.Equal(that1.DownlinkOption) {
-		return fmt.Errorf("DownlinkOption this(%v) Not Equal that(%v)", this.DownlinkOption, that1.DownlinkOption)
-	}
-	if !this.Trace.Equal(that1.Trace) {
-		return fmt.Errorf("Trace this(%v) Not Equal that(%v)", this.Trace, that1.Trace)
-	}
-	return nil
-}
 func (this *DeviceActivationResponse) Equal(that interface{}) bool {
 	if that == nil {
 		return this == nil
@@ -1486,79 +1296,6 @@ func (this *DeviceActivationResponse) Equal(that interface{}) bool {
 		return false
 	}
 	return true
-}
-func (this *DeduplicatedUplinkMessage) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*DeduplicatedUplinkMessage)
-	if !ok {
-		that2, ok := that.(DeduplicatedUplinkMessage)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *DeduplicatedUplinkMessage")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *DeduplicatedUplinkMessage but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *DeduplicatedUplinkMessage but is not nil && this == nil")
-	}
-	if !bytes.Equal(this.Payload, that1.Payload) {
-		return fmt.Errorf("Payload this(%v) Not Equal that(%v)", this.Payload, that1.Payload)
-	}
-	if !this.Message.Equal(that1.Message) {
-		return fmt.Errorf("Message this(%v) Not Equal that(%v)", this.Message, that1.Message)
-	}
-	if that1.DevEUI == nil {
-		if this.DevEUI != nil {
-			return fmt.Errorf("this.DevEUI != nil && that1.DevEUI == nil")
-		}
-	} else if !this.DevEUI.Equal(*that1.DevEUI) {
-		return fmt.Errorf("DevEUI this(%v) Not Equal that(%v)", this.DevEUI, that1.DevEUI)
-	}
-	if that1.AppEUI == nil {
-		if this.AppEUI != nil {
-			return fmt.Errorf("this.AppEUI != nil && that1.AppEUI == nil")
-		}
-	} else if !this.AppEUI.Equal(*that1.AppEUI) {
-		return fmt.Errorf("AppEUI this(%v) Not Equal that(%v)", this.AppEUI, that1.AppEUI)
-	}
-	if this.AppID != that1.AppID {
-		return fmt.Errorf("AppID this(%v) Not Equal that(%v)", this.AppID, that1.AppID)
-	}
-	if this.DevID != that1.DevID {
-		return fmt.Errorf("DevID this(%v) Not Equal that(%v)", this.DevID, that1.DevID)
-	}
-	if !this.ProtocolMetadata.Equal(&that1.ProtocolMetadata) {
-		return fmt.Errorf("ProtocolMetadata this(%v) Not Equal that(%v)", this.ProtocolMetadata, that1.ProtocolMetadata)
-	}
-	if len(this.GatewayMetadata) != len(that1.GatewayMetadata) {
-		return fmt.Errorf("GatewayMetadata this(%v) Not Equal that(%v)", len(this.GatewayMetadata), len(that1.GatewayMetadata))
-	}
-	for i := range this.GatewayMetadata {
-		if !this.GatewayMetadata[i].Equal(that1.GatewayMetadata[i]) {
-			return fmt.Errorf("GatewayMetadata this[%v](%v) Not Equal that[%v](%v)", i, this.GatewayMetadata[i], i, that1.GatewayMetadata[i])
-		}
-	}
-	if this.ServerTime != that1.ServerTime {
-		return fmt.Errorf("ServerTime this(%v) Not Equal that(%v)", this.ServerTime, that1.ServerTime)
-	}
-	if !this.ResponseTemplate.Equal(that1.ResponseTemplate) {
-		return fmt.Errorf("ResponseTemplate this(%v) Not Equal that(%v)", this.ResponseTemplate, that1.ResponseTemplate)
-	}
-	if !this.Trace.Equal(that1.Trace) {
-		return fmt.Errorf("Trace this(%v) Not Equal that(%v)", this.Trace, that1.Trace)
-	}
-	return nil
 }
 func (this *DeduplicatedUplinkMessage) Equal(that interface{}) bool {
 	if that == nil {
@@ -1627,65 +1364,6 @@ func (this *DeduplicatedUplinkMessage) Equal(that interface{}) bool {
 	}
 	return true
 }
-func (this *DeviceActivationRequest) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*DeviceActivationRequest)
-	if !ok {
-		that2, ok := that.(DeviceActivationRequest)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *DeviceActivationRequest")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *DeviceActivationRequest but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *DeviceActivationRequest but is not nil && this == nil")
-	}
-	if !bytes.Equal(this.Payload, that1.Payload) {
-		return fmt.Errorf("Payload this(%v) Not Equal that(%v)", this.Payload, that1.Payload)
-	}
-	if !this.Message.Equal(that1.Message) {
-		return fmt.Errorf("Message this(%v) Not Equal that(%v)", this.Message, that1.Message)
-	}
-	if !this.DevEUI.Equal(that1.DevEUI) {
-		return fmt.Errorf("DevEUI this(%v) Not Equal that(%v)", this.DevEUI, that1.DevEUI)
-	}
-	if !this.AppEUI.Equal(that1.AppEUI) {
-		return fmt.Errorf("AppEUI this(%v) Not Equal that(%v)", this.AppEUI, that1.AppEUI)
-	}
-	if !this.ProtocolMetadata.Equal(&that1.ProtocolMetadata) {
-		return fmt.Errorf("ProtocolMetadata this(%v) Not Equal that(%v)", this.ProtocolMetadata, that1.ProtocolMetadata)
-	}
-	if !this.GatewayMetadata.Equal(&that1.GatewayMetadata) {
-		return fmt.Errorf("GatewayMetadata this(%v) Not Equal that(%v)", this.GatewayMetadata, that1.GatewayMetadata)
-	}
-	if !this.ActivationMetadata.Equal(that1.ActivationMetadata) {
-		return fmt.Errorf("ActivationMetadata this(%v) Not Equal that(%v)", this.ActivationMetadata, that1.ActivationMetadata)
-	}
-	if len(this.DownlinkOptions) != len(that1.DownlinkOptions) {
-		return fmt.Errorf("DownlinkOptions this(%v) Not Equal that(%v)", len(this.DownlinkOptions), len(that1.DownlinkOptions))
-	}
-	for i := range this.DownlinkOptions {
-		if !this.DownlinkOptions[i].Equal(that1.DownlinkOptions[i]) {
-			return fmt.Errorf("DownlinkOptions this[%v](%v) Not Equal that[%v](%v)", i, this.DownlinkOptions[i], i, that1.DownlinkOptions[i])
-		}
-	}
-	if !this.Trace.Equal(that1.Trace) {
-		return fmt.Errorf("Trace this(%v) Not Equal that(%v)", this.Trace, that1.Trace)
-	}
-	return nil
-}
 func (this *DeviceActivationRequest) Equal(that interface{}) bool {
 	if that == nil {
 		return this == nil
@@ -1738,74 +1416,6 @@ func (this *DeviceActivationRequest) Equal(that interface{}) bool {
 		return false
 	}
 	return true
-}
-func (this *DeduplicatedDeviceActivationRequest) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*DeduplicatedDeviceActivationRequest)
-	if !ok {
-		that2, ok := that.(DeduplicatedDeviceActivationRequest)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *DeduplicatedDeviceActivationRequest")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *DeduplicatedDeviceActivationRequest but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *DeduplicatedDeviceActivationRequest but is not nil && this == nil")
-	}
-	if !bytes.Equal(this.Payload, that1.Payload) {
-		return fmt.Errorf("Payload this(%v) Not Equal that(%v)", this.Payload, that1.Payload)
-	}
-	if !this.Message.Equal(that1.Message) {
-		return fmt.Errorf("Message this(%v) Not Equal that(%v)", this.Message, that1.Message)
-	}
-	if !this.DevEUI.Equal(that1.DevEUI) {
-		return fmt.Errorf("DevEUI this(%v) Not Equal that(%v)", this.DevEUI, that1.DevEUI)
-	}
-	if !this.AppEUI.Equal(that1.AppEUI) {
-		return fmt.Errorf("AppEUI this(%v) Not Equal that(%v)", this.AppEUI, that1.AppEUI)
-	}
-	if this.AppID != that1.AppID {
-		return fmt.Errorf("AppID this(%v) Not Equal that(%v)", this.AppID, that1.AppID)
-	}
-	if this.DevID != that1.DevID {
-		return fmt.Errorf("DevID this(%v) Not Equal that(%v)", this.DevID, that1.DevID)
-	}
-	if !this.ProtocolMetadata.Equal(&that1.ProtocolMetadata) {
-		return fmt.Errorf("ProtocolMetadata this(%v) Not Equal that(%v)", this.ProtocolMetadata, that1.ProtocolMetadata)
-	}
-	if len(this.GatewayMetadata) != len(that1.GatewayMetadata) {
-		return fmt.Errorf("GatewayMetadata this(%v) Not Equal that(%v)", len(this.GatewayMetadata), len(that1.GatewayMetadata))
-	}
-	for i := range this.GatewayMetadata {
-		if !this.GatewayMetadata[i].Equal(that1.GatewayMetadata[i]) {
-			return fmt.Errorf("GatewayMetadata this[%v](%v) Not Equal that[%v](%v)", i, this.GatewayMetadata[i], i, that1.GatewayMetadata[i])
-		}
-	}
-	if !this.ActivationMetadata.Equal(that1.ActivationMetadata) {
-		return fmt.Errorf("ActivationMetadata this(%v) Not Equal that(%v)", this.ActivationMetadata, that1.ActivationMetadata)
-	}
-	if this.ServerTime != that1.ServerTime {
-		return fmt.Errorf("ServerTime this(%v) Not Equal that(%v)", this.ServerTime, that1.ServerTime)
-	}
-	if !this.ResponseTemplate.Equal(that1.ResponseTemplate) {
-		return fmt.Errorf("ResponseTemplate this(%v) Not Equal that(%v)", this.ResponseTemplate, that1.ResponseTemplate)
-	}
-	if !this.Trace.Equal(that1.Trace) {
-		return fmt.Errorf("Trace this(%v) Not Equal that(%v)", this.Trace, that1.Trace)
-	}
-	return nil
 }
 func (this *DeduplicatedDeviceActivationRequest) Equal(that interface{}) bool {
 	if that == nil {
@@ -1869,51 +1479,6 @@ func (this *DeduplicatedDeviceActivationRequest) Equal(that interface{}) bool {
 	}
 	return true
 }
-func (this *ActivationChallengeRequest) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*ActivationChallengeRequest)
-	if !ok {
-		that2, ok := that.(ActivationChallengeRequest)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *ActivationChallengeRequest")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *ActivationChallengeRequest but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *ActivationChallengeRequest but is not nil && this == nil")
-	}
-	if !bytes.Equal(this.Payload, that1.Payload) {
-		return fmt.Errorf("Payload this(%v) Not Equal that(%v)", this.Payload, that1.Payload)
-	}
-	if !this.Message.Equal(that1.Message) {
-		return fmt.Errorf("Message this(%v) Not Equal that(%v)", this.Message, that1.Message)
-	}
-	if !this.DevEUI.Equal(that1.DevEUI) {
-		return fmt.Errorf("DevEUI this(%v) Not Equal that(%v)", this.DevEUI, that1.DevEUI)
-	}
-	if !this.AppEUI.Equal(that1.AppEUI) {
-		return fmt.Errorf("AppEUI this(%v) Not Equal that(%v)", this.AppEUI, that1.AppEUI)
-	}
-	if this.AppID != that1.AppID {
-		return fmt.Errorf("AppID this(%v) Not Equal that(%v)", this.AppID, that1.AppID)
-	}
-	if this.DevID != that1.DevID {
-		return fmt.Errorf("DevID this(%v) Not Equal that(%v)", this.DevID, that1.DevID)
-	}
-	return nil
-}
 func (this *ActivationChallengeRequest) Equal(that interface{}) bool {
 	if that == nil {
 		return this == nil
@@ -1953,39 +1518,6 @@ func (this *ActivationChallengeRequest) Equal(that interface{}) bool {
 	}
 	return true
 }
-func (this *ActivationChallengeResponse) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*ActivationChallengeResponse)
-	if !ok {
-		that2, ok := that.(ActivationChallengeResponse)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *ActivationChallengeResponse")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *ActivationChallengeResponse but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *ActivationChallengeResponse but is not nil && this == nil")
-	}
-	if !bytes.Equal(this.Payload, that1.Payload) {
-		return fmt.Errorf("Payload this(%v) Not Equal that(%v)", this.Payload, that1.Payload)
-	}
-	if !this.Message.Equal(that1.Message) {
-		return fmt.Errorf("Message this(%v) Not Equal that(%v)", this.Message, that1.Message)
-	}
-	return nil
-}
 func (this *ActivationChallengeResponse) Equal(that interface{}) bool {
 	if that == nil {
 		return this == nil
@@ -2013,33 +1545,6 @@ func (this *ActivationChallengeResponse) Equal(that interface{}) bool {
 	}
 	return true
 }
-func (this *SubscribeRequest) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*SubscribeRequest)
-	if !ok {
-		that2, ok := that.(SubscribeRequest)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *SubscribeRequest")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *SubscribeRequest but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *SubscribeRequest but is not nil && this == nil")
-	}
-	return nil
-}
 func (this *SubscribeRequest) Equal(that interface{}) bool {
 	if that == nil {
 		return this == nil
@@ -2061,33 +1566,6 @@ func (this *SubscribeRequest) Equal(that interface{}) bool {
 	}
 	return true
 }
-func (this *StatusRequest) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*StatusRequest)
-	if !ok {
-		that2, ok := that.(StatusRequest)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *StatusRequest")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *StatusRequest but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *StatusRequest but is not nil && this == nil")
-	}
-	return nil
-}
 func (this *StatusRequest) Equal(that interface{}) bool {
 	if that == nil {
 		return this == nil
@@ -2108,63 +1586,6 @@ func (this *StatusRequest) Equal(that interface{}) bool {
 		return false
 	}
 	return true
-}
-func (this *Status) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*Status)
-	if !ok {
-		that2, ok := that.(Status)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *Status")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *Status but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *Status but is not nil && this == nil")
-	}
-	if !this.System.Equal(&that1.System) {
-		return fmt.Errorf("System this(%v) Not Equal that(%v)", this.System, that1.System)
-	}
-	if !this.Component.Equal(&that1.Component) {
-		return fmt.Errorf("Component this(%v) Not Equal that(%v)", this.Component, that1.Component)
-	}
-	if !this.Uplink.Equal(that1.Uplink) {
-		return fmt.Errorf("Uplink this(%v) Not Equal that(%v)", this.Uplink, that1.Uplink)
-	}
-	if !this.UplinkUnique.Equal(that1.UplinkUnique) {
-		return fmt.Errorf("UplinkUnique this(%v) Not Equal that(%v)", this.UplinkUnique, that1.UplinkUnique)
-	}
-	if !this.Downlink.Equal(that1.Downlink) {
-		return fmt.Errorf("Downlink this(%v) Not Equal that(%v)", this.Downlink, that1.Downlink)
-	}
-	if !this.Activations.Equal(that1.Activations) {
-		return fmt.Errorf("Activations this(%v) Not Equal that(%v)", this.Activations, that1.Activations)
-	}
-	if !this.ActivationsUnique.Equal(that1.ActivationsUnique) {
-		return fmt.Errorf("ActivationsUnique this(%v) Not Equal that(%v)", this.ActivationsUnique, that1.ActivationsUnique)
-	}
-	if !this.Deduplication.Equal(that1.Deduplication) {
-		return fmt.Errorf("Deduplication this(%v) Not Equal that(%v)", this.Deduplication, that1.Deduplication)
-	}
-	if this.ConnectedRouters != that1.ConnectedRouters {
-		return fmt.Errorf("ConnectedRouters this(%v) Not Equal that(%v)", this.ConnectedRouters, that1.ConnectedRouters)
-	}
-	if this.ConnectedHandlers != that1.ConnectedHandlers {
-		return fmt.Errorf("ConnectedHandlers this(%v) Not Equal that(%v)", this.ConnectedHandlers, that1.ConnectedHandlers)
-	}
-	return nil
 }
 func (this *Status) Equal(that interface{}) bool {
 	if that == nil {
@@ -2216,39 +1637,6 @@ func (this *Status) Equal(that interface{}) bool {
 		return false
 	}
 	return true
-}
-func (this *ApplicationHandlerRegistration) VerboseEqual(that interface{}) error {
-	if that == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that == nil && this != nil")
-	}
-
-	that1, ok := that.(*ApplicationHandlerRegistration)
-	if !ok {
-		that2, ok := that.(ApplicationHandlerRegistration)
-		if ok {
-			that1 = &that2
-		} else {
-			return fmt.Errorf("that is not of type *ApplicationHandlerRegistration")
-		}
-	}
-	if that1 == nil {
-		if this == nil {
-			return nil
-		}
-		return fmt.Errorf("that is type *ApplicationHandlerRegistration but is nil && this != nil")
-	} else if this == nil {
-		return fmt.Errorf("that is type *ApplicationHandlerRegistration but is not nil && this == nil")
-	}
-	if this.AppID != that1.AppID {
-		return fmt.Errorf("AppID this(%v) Not Equal that(%v)", this.AppID, that1.AppID)
-	}
-	if this.HandlerID != that1.HandlerID {
-		return fmt.Errorf("HandlerID this(%v) Not Equal that(%v)", this.HandlerID, that1.HandlerID)
-	}
-	return nil
 }
 func (this *ApplicationHandlerRegistration) Equal(that interface{}) bool {
 	if that == nil {
@@ -3602,6 +2990,384 @@ func encodeVarintBroker(dAtA []byte, offset int, v uint64) int {
 	}
 	dAtA[offset] = uint8(v)
 	return offset + 1
+}
+func NewPopulatedDownlinkOption(r randyBroker, easy bool) *DownlinkOption {
+	this := &DownlinkOption{}
+	this.Identifier = string(randStringBroker(r))
+	this.GatewayID = string(randStringBroker(r))
+	this.Score = uint32(r.Uint32())
+	this.Deadline = int64(r.Int63())
+	if r.Intn(2) == 0 {
+		this.Deadline *= -1
+	}
+	v1 := protocol.NewPopulatedTxConfiguration(r, easy)
+	this.ProtocolConfiguration = *v1
+	v2 := gateway.NewPopulatedTxConfiguration(r, easy)
+	this.GatewayConfiguration = *v2
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedUplinkMessage(r randyBroker, easy bool) *UplinkMessage {
+	this := &UplinkMessage{}
+	v3 := r.Intn(100)
+	this.Payload = make([]byte, v3)
+	for i := 0; i < v3; i++ {
+		this.Payload[i] = byte(r.Intn(256))
+	}
+	if r.Intn(10) != 0 {
+		this.Message = protocol.NewPopulatedMessage(r, easy)
+	}
+	this.DevEUI = github_com_TheThingsNetwork_ttn_core_types.NewPopulatedDevEUI(r)
+	this.AppEUI = github_com_TheThingsNetwork_ttn_core_types.NewPopulatedAppEUI(r)
+	this.AppID = string(randStringBroker(r))
+	this.DevID = string(randStringBroker(r))
+	v4 := protocol.NewPopulatedRxMetadata(r, easy)
+	this.ProtocolMetadata = *v4
+	v5 := gateway.NewPopulatedRxMetadata(r, easy)
+	this.GatewayMetadata = *v5
+	if r.Intn(10) != 0 {
+		v6 := r.Intn(5)
+		this.DownlinkOptions = make([]*DownlinkOption, v6)
+		for i := 0; i < v6; i++ {
+			this.DownlinkOptions[i] = NewPopulatedDownlinkOption(r, easy)
+		}
+	}
+	if r.Intn(10) != 0 {
+		this.Trace = trace.NewPopulatedTrace(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedDownlinkMessage(r randyBroker, easy bool) *DownlinkMessage {
+	this := &DownlinkMessage{}
+	v7 := r.Intn(100)
+	this.Payload = make([]byte, v7)
+	for i := 0; i < v7; i++ {
+		this.Payload[i] = byte(r.Intn(256))
+	}
+	if r.Intn(10) != 0 {
+		this.Message = protocol.NewPopulatedMessage(r, easy)
+	}
+	v8 := github_com_TheThingsNetwork_ttn_core_types.NewPopulatedDevEUI(r)
+	this.DevEUI = *v8
+	v9 := github_com_TheThingsNetwork_ttn_core_types.NewPopulatedAppEUI(r)
+	this.AppEUI = *v9
+	this.AppID = string(randStringBroker(r))
+	this.DevID = string(randStringBroker(r))
+	if r.Intn(10) != 0 {
+		this.DownlinkOption = NewPopulatedDownlinkOption(r, easy)
+	}
+	if r.Intn(10) != 0 {
+		this.Trace = trace.NewPopulatedTrace(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedDeviceActivationResponse(r randyBroker, easy bool) *DeviceActivationResponse {
+	this := &DeviceActivationResponse{}
+	v10 := r.Intn(100)
+	this.Payload = make([]byte, v10)
+	for i := 0; i < v10; i++ {
+		this.Payload[i] = byte(r.Intn(256))
+	}
+	if r.Intn(10) != 0 {
+		this.Message = protocol.NewPopulatedMessage(r, easy)
+	}
+	if r.Intn(10) != 0 {
+		this.DownlinkOption = NewPopulatedDownlinkOption(r, easy)
+	}
+	if r.Intn(10) != 0 {
+		this.Trace = trace.NewPopulatedTrace(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedDeduplicatedUplinkMessage(r randyBroker, easy bool) *DeduplicatedUplinkMessage {
+	this := &DeduplicatedUplinkMessage{}
+	v11 := r.Intn(100)
+	this.Payload = make([]byte, v11)
+	for i := 0; i < v11; i++ {
+		this.Payload[i] = byte(r.Intn(256))
+	}
+	if r.Intn(10) != 0 {
+		this.Message = protocol.NewPopulatedMessage(r, easy)
+	}
+	this.DevEUI = github_com_TheThingsNetwork_ttn_core_types.NewPopulatedDevEUI(r)
+	this.AppEUI = github_com_TheThingsNetwork_ttn_core_types.NewPopulatedAppEUI(r)
+	this.AppID = string(randStringBroker(r))
+	this.DevID = string(randStringBroker(r))
+	v12 := protocol.NewPopulatedRxMetadata(r, easy)
+	this.ProtocolMetadata = *v12
+	if r.Intn(10) != 0 {
+		v13 := r.Intn(5)
+		this.GatewayMetadata = make([]*gateway.RxMetadata, v13)
+		for i := 0; i < v13; i++ {
+			this.GatewayMetadata[i] = gateway.NewPopulatedRxMetadata(r, easy)
+		}
+	}
+	this.ServerTime = int64(r.Int63())
+	if r.Intn(2) == 0 {
+		this.ServerTime *= -1
+	}
+	if r.Intn(10) != 0 {
+		this.ResponseTemplate = NewPopulatedDownlinkMessage(r, easy)
+	}
+	if r.Intn(10) != 0 {
+		this.Trace = trace.NewPopulatedTrace(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedDeviceActivationRequest(r randyBroker, easy bool) *DeviceActivationRequest {
+	this := &DeviceActivationRequest{}
+	v14 := r.Intn(100)
+	this.Payload = make([]byte, v14)
+	for i := 0; i < v14; i++ {
+		this.Payload[i] = byte(r.Intn(256))
+	}
+	if r.Intn(10) != 0 {
+		this.Message = protocol.NewPopulatedMessage(r, easy)
+	}
+	v15 := github_com_TheThingsNetwork_ttn_core_types.NewPopulatedDevEUI(r)
+	this.DevEUI = *v15
+	v16 := github_com_TheThingsNetwork_ttn_core_types.NewPopulatedAppEUI(r)
+	this.AppEUI = *v16
+	v17 := protocol.NewPopulatedRxMetadata(r, easy)
+	this.ProtocolMetadata = *v17
+	v18 := gateway.NewPopulatedRxMetadata(r, easy)
+	this.GatewayMetadata = *v18
+	if r.Intn(10) != 0 {
+		this.ActivationMetadata = protocol.NewPopulatedActivationMetadata(r, easy)
+	}
+	if r.Intn(10) != 0 {
+		v19 := r.Intn(5)
+		this.DownlinkOptions = make([]*DownlinkOption, v19)
+		for i := 0; i < v19; i++ {
+			this.DownlinkOptions[i] = NewPopulatedDownlinkOption(r, easy)
+		}
+	}
+	if r.Intn(10) != 0 {
+		this.Trace = trace.NewPopulatedTrace(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedDeduplicatedDeviceActivationRequest(r randyBroker, easy bool) *DeduplicatedDeviceActivationRequest {
+	this := &DeduplicatedDeviceActivationRequest{}
+	v20 := r.Intn(100)
+	this.Payload = make([]byte, v20)
+	for i := 0; i < v20; i++ {
+		this.Payload[i] = byte(r.Intn(256))
+	}
+	if r.Intn(10) != 0 {
+		this.Message = protocol.NewPopulatedMessage(r, easy)
+	}
+	v21 := github_com_TheThingsNetwork_ttn_core_types.NewPopulatedDevEUI(r)
+	this.DevEUI = *v21
+	v22 := github_com_TheThingsNetwork_ttn_core_types.NewPopulatedAppEUI(r)
+	this.AppEUI = *v22
+	this.AppID = string(randStringBroker(r))
+	this.DevID = string(randStringBroker(r))
+	v23 := protocol.NewPopulatedRxMetadata(r, easy)
+	this.ProtocolMetadata = *v23
+	if r.Intn(10) != 0 {
+		v24 := r.Intn(5)
+		this.GatewayMetadata = make([]*gateway.RxMetadata, v24)
+		for i := 0; i < v24; i++ {
+			this.GatewayMetadata[i] = gateway.NewPopulatedRxMetadata(r, easy)
+		}
+	}
+	if r.Intn(10) != 0 {
+		this.ActivationMetadata = protocol.NewPopulatedActivationMetadata(r, easy)
+	}
+	this.ServerTime = int64(r.Int63())
+	if r.Intn(2) == 0 {
+		this.ServerTime *= -1
+	}
+	if r.Intn(10) != 0 {
+		this.ResponseTemplate = NewPopulatedDeviceActivationResponse(r, easy)
+	}
+	if r.Intn(10) != 0 {
+		this.Trace = trace.NewPopulatedTrace(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedActivationChallengeRequest(r randyBroker, easy bool) *ActivationChallengeRequest {
+	this := &ActivationChallengeRequest{}
+	v25 := r.Intn(100)
+	this.Payload = make([]byte, v25)
+	for i := 0; i < v25; i++ {
+		this.Payload[i] = byte(r.Intn(256))
+	}
+	if r.Intn(10) != 0 {
+		this.Message = protocol.NewPopulatedMessage(r, easy)
+	}
+	v26 := github_com_TheThingsNetwork_ttn_core_types.NewPopulatedDevEUI(r)
+	this.DevEUI = *v26
+	v27 := github_com_TheThingsNetwork_ttn_core_types.NewPopulatedAppEUI(r)
+	this.AppEUI = *v27
+	this.AppID = string(randStringBroker(r))
+	this.DevID = string(randStringBroker(r))
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedActivationChallengeResponse(r randyBroker, easy bool) *ActivationChallengeResponse {
+	this := &ActivationChallengeResponse{}
+	v28 := r.Intn(100)
+	this.Payload = make([]byte, v28)
+	for i := 0; i < v28; i++ {
+		this.Payload[i] = byte(r.Intn(256))
+	}
+	if r.Intn(10) != 0 {
+		this.Message = protocol.NewPopulatedMessage(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedSubscribeRequest(r randyBroker, easy bool) *SubscribeRequest {
+	this := &SubscribeRequest{}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedStatusRequest(r randyBroker, easy bool) *StatusRequest {
+	this := &StatusRequest{}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedStatus(r randyBroker, easy bool) *Status {
+	this := &Status{}
+	v29 := api.NewPopulatedSystemStats(r, easy)
+	this.System = *v29
+	v30 := api.NewPopulatedComponentStats(r, easy)
+	this.Component = *v30
+	if r.Intn(10) != 0 {
+		this.Uplink = api.NewPopulatedRates(r, easy)
+	}
+	if r.Intn(10) != 0 {
+		this.UplinkUnique = api.NewPopulatedRates(r, easy)
+	}
+	if r.Intn(10) != 0 {
+		this.Downlink = api.NewPopulatedRates(r, easy)
+	}
+	if r.Intn(10) != 0 {
+		this.Activations = api.NewPopulatedRates(r, easy)
+	}
+	if r.Intn(10) != 0 {
+		this.ActivationsUnique = api.NewPopulatedRates(r, easy)
+	}
+	if r.Intn(10) != 0 {
+		this.Deduplication = api.NewPopulatedPercentiles(r, easy)
+	}
+	this.ConnectedRouters = uint32(r.Uint32())
+	this.ConnectedHandlers = uint32(r.Uint32())
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedApplicationHandlerRegistration(r randyBroker, easy bool) *ApplicationHandlerRegistration {
+	this := &ApplicationHandlerRegistration{}
+	this.AppID = string(randStringBroker(r))
+	this.HandlerID = string(randStringBroker(r))
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+type randyBroker interface {
+	Float32() float32
+	Float64() float64
+	Int63() int64
+	Int31() int32
+	Uint32() uint32
+	Intn(n int) int
+}
+
+func randUTF8RuneBroker(r randyBroker) rune {
+	ru := r.Intn(62)
+	if ru < 10 {
+		return rune(ru + 48)
+	} else if ru < 36 {
+		return rune(ru + 55)
+	}
+	return rune(ru + 61)
+}
+func randStringBroker(r randyBroker) string {
+	v31 := r.Intn(100)
+	tmps := make([]rune, v31)
+	for i := 0; i < v31; i++ {
+		tmps[i] = randUTF8RuneBroker(r)
+	}
+	return string(tmps)
+}
+func randUnrecognizedBroker(r randyBroker, maxFieldNumber int) (dAtA []byte) {
+	l := r.Intn(5)
+	for i := 0; i < l; i++ {
+		wire := r.Intn(4)
+		if wire == 3 {
+			wire = 5
+		}
+		fieldNumber := maxFieldNumber + r.Intn(100)
+		dAtA = randFieldBroker(dAtA, r, fieldNumber, wire)
+	}
+	return dAtA
+}
+func randFieldBroker(dAtA []byte, r randyBroker, fieldNumber int, wire int) []byte {
+	key := uint32(fieldNumber)<<3 | uint32(wire)
+	switch wire {
+	case 0:
+		dAtA = encodeVarintPopulateBroker(dAtA, uint64(key))
+		v32 := r.Int63()
+		if r.Intn(2) == 0 {
+			v32 *= -1
+		}
+		dAtA = encodeVarintPopulateBroker(dAtA, uint64(v32))
+	case 1:
+		dAtA = encodeVarintPopulateBroker(dAtA, uint64(key))
+		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
+	case 2:
+		dAtA = encodeVarintPopulateBroker(dAtA, uint64(key))
+		ll := r.Intn(100)
+		dAtA = encodeVarintPopulateBroker(dAtA, uint64(ll))
+		for j := 0; j < ll; j++ {
+			dAtA = append(dAtA, byte(r.Intn(256)))
+		}
+	default:
+		dAtA = encodeVarintPopulateBroker(dAtA, uint64(key))
+		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
+	}
+	return dAtA
+}
+func encodeVarintPopulateBroker(dAtA []byte, v uint64) []byte {
+	for v >= 1<<7 {
+		dAtA = append(dAtA, uint8(uint64(v)&0x7f|0x80))
+		v >>= 7
+	}
+	dAtA = append(dAtA, uint8(v))
+	return dAtA
 }
 func (m *DownlinkOption) Size() (n int) {
 	var l int
@@ -7359,94 +7125,102 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/broker/broker.proto", fileDescriptor_broker_15c9682213122ca7)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/broker/broker.proto", fileDescriptor_broker_e5788470f79083a2)
+}
+func init() {
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/broker/broker.proto", fileDescriptor_broker_e5788470f79083a2)
 }
 
-var fileDescriptor_broker_15c9682213122ca7 = []byte{
-	// 1351 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xec, 0x58, 0xcf, 0x6e, 0xdb, 0xc6,
-	0x13, 0x0e, 0xfd, 0x47, 0x8e, 0x46, 0x96, 0x2d, 0x6f, 0x62, 0x9b, 0x51, 0x7e, 0x90, 0xf4, 0x53,
-	0x81, 0x40, 0x41, 0x12, 0x2a, 0x55, 0xd0, 0x06, 0x05, 0x8a, 0x06, 0xb2, 0x15, 0xa4, 0x2a, 0xe0,
-	0xd6, 0xa0, 0x9d, 0xa2, 0x28, 0x02, 0x08, 0x2b, 0x72, 0x43, 0x2d, 0x22, 0x91, 0x1b, 0x72, 0xa9,
-	0xc4, 0xb7, 0x3e, 0x42, 0x4f, 0xbd, 0xb7, 0xa7, 0xa2, 0xef, 0x90, 0x5b, 0x51, 0xe4, 0xd8, 0x63,
-	0xd0, 0x83, 0x11, 0x2b, 0xc7, 0x02, 0x7d, 0x86, 0x82, 0xcb, 0x25, 0x29, 0x4a, 0x56, 0x1c, 0x18,
-	0x6e, 0x11, 0xa0, 0xbe, 0xd8, 0xdc, 0x99, 0x6f, 0xbe, 0xdd, 0x9d, 0x99, 0xfd, 0xb8, 0x22, 0xdc,
-	0xb1, 0x28, 0xef, 0xf9, 0x5d, 0xcd, 0x70, 0x06, 0xf5, 0xfd, 0x1e, 0xd9, 0xef, 0x51, 0xdb, 0xf2,
-	0xbe, 0x24, 0xfc, 0x99, 0xe3, 0x3e, 0xa9, 0x63, 0x46, 0xeb, 0x5d, 0xd7, 0x79, 0x42, 0x5c, 0xf9,
-	0x4f, 0x63, 0xae, 0xc3, 0x1d, 0x94, 0x09, 0x47, 0xc5, 0xab, 0x96, 0xe3, 0x58, 0x7d, 0x52, 0x17,
-	0xd6, 0xae, 0xff, 0xb8, 0x4e, 0x06, 0x8c, 0x1f, 0x84, 0xa0, 0xe2, 0xad, 0x31, 0x66, 0xcb, 0xb1,
-	0x9c, 0x04, 0x15, 0x8c, 0xc4, 0x40, 0x3c, 0x49, 0xf8, 0xf5, 0x93, 0x16, 0x82, 0x19, 0x95, 0xd0,
-	0xbb, 0x27, 0x41, 0x05, 0xcc, 0x70, 0xfa, 0xf1, 0x83, 0x0c, 0xfc, 0xe8, 0xa4, 0x40, 0x0b, 0x73,
-	0xf2, 0x0c, 0x1f, 0x44, 0xff, 0x65, 0xd8, 0x87, 0x27, 0x85, 0x71, 0x17, 0x1b, 0x24, 0xfc, 0x1b,
-	0x86, 0x54, 0x5f, 0xcc, 0xc1, 0x4a, 0xcb, 0x79, 0x66, 0xf7, 0xa9, 0xfd, 0xe4, 0x2b, 0xc6, 0xa9,
-	0x63, 0xa3, 0x12, 0x00, 0x35, 0x89, 0xcd, 0xe9, 0x63, 0x4a, 0x5c, 0x55, 0xa9, 0x28, 0xb5, 0xac,
-	0x3e, 0x66, 0x41, 0x37, 0x01, 0xe4, 0xb4, 0x1d, 0x6a, 0xaa, 0x73, 0x81, 0x7f, 0x2b, 0x3f, 0x3a,
-	0x2c, 0x67, 0x1f, 0x84, 0xd6, 0x76, 0x4b, 0xcf, 0x4a, 0x40, 0xdb, 0x44, 0x97, 0x61, 0xd1, 0x33,
-	0x1c, 0x97, 0xa8, 0xf3, 0x15, 0xa5, 0x96, 0xd7, 0xc3, 0x01, 0x2a, 0xc2, 0x45, 0x93, 0x60, 0xb3,
-	0x4f, 0x6d, 0xa2, 0x2e, 0x54, 0x94, 0xda, 0xbc, 0x1e, 0x8f, 0xd1, 0xd7, 0xb0, 0x11, 0xa5, 0xa3,
-	0x63, 0x38, 0xf6, 0x63, 0x6a, 0xf9, 0x2e, 0x0e, 0x56, 0xa6, 0x2e, 0x56, 0x94, 0x5a, 0xae, 0x71,
-	0x45, 0x8b, 0xb3, 0xb5, 0xff, 0x7c, 0x7b, 0x1c, 0xb0, 0xb5, 0xf0, 0xf2, 0xb0, 0x7c, 0x41, 0x5f,
-	0x8f, 0xfc, 0x29, 0x27, 0xda, 0x83, 0xf5, 0x68, 0xdd, 0x69, 0xda, 0x8c, 0xa0, 0x55, 0xb5, 0x28,
-	0x99, 0xc7, 0xb3, 0x5e, 0x96, 0xee, 0x94, 0xaf, 0xfa, 0xeb, 0x02, 0xe4, 0x1f, 0xb2, 0x20, 0x7b,
-	0x3b, 0xc4, 0xf3, 0xb0, 0x45, 0x90, 0x0a, 0x4b, 0x0c, 0x1f, 0xf4, 0x1d, 0x6c, 0x8a, 0xdc, 0x2d,
-	0xeb, 0xd1, 0x10, 0xdd, 0x80, 0xa5, 0x41, 0x08, 0x12, 0x59, 0xcb, 0x35, 0xd6, 0x92, 0x9d, 0xc8,
-	0x68, 0x3d, 0x42, 0xa0, 0x6f, 0x60, 0xc9, 0x24, 0xc3, 0x0e, 0xf1, 0xa9, 0x9a, 0x0b, 0x68, 0xb6,
-	0xee, 0xfd, 0x71, 0x58, 0x7e, 0x6b, 0x81, 0x39, 0xb7, 0xeb, 0x41, 0x72, 0xeb, 0xfc, 0x80, 0x11,
-	0x4f, 0x6b, 0x91, 0xe1, 0xfd, 0x87, 0xed, 0xd1, 0x61, 0x39, 0x13, 0x3e, 0xe9, 0x19, 0x93, 0x0c,
-	0xef, 0xfb, 0x34, 0x60, 0xc6, 0x8c, 0x09, 0xe6, 0xe5, 0x53, 0x31, 0x37, 0x19, 0x93, 0xcc, 0xe1,
-	0x93, 0x9e, 0xc1, 0x8c, 0x05, 0xcc, 0x15, 0x08, 0x9e, 0x82, 0xae, 0xc8, 0x8b, 0xae, 0xc8, 0x8e,
-	0x0e, 0xcb, 0x8b, 0x4d, 0xc6, 0xda, 0x2d, 0x7d, 0x11, 0x33, 0xd6, 0x36, 0x03, 0x44, 0xb0, 0x2b,
-	0x6a, 0xaa, 0x2b, 0x09, 0xa2, 0x45, 0x86, 0x01, 0xc2, 0x24, 0xc3, 0xb6, 0x89, 0x1e, 0xc0, 0x5a,
-	0x5c, 0xfd, 0x01, 0xe1, 0xd8, 0xc4, 0x1c, 0xab, 0xeb, 0x22, 0x5d, 0x97, 0x93, 0x74, 0xe9, 0xcf,
-	0x77, 0xa4, 0x4f, 0x56, 0xa7, 0x10, 0xb9, 0x22, 0x3b, 0x6a, 0x41, 0x21, 0x2a, 0x77, 0xcc, 0xb3,
-	0x21, 0x78, 0x2e, 0xc5, 0x95, 0x9e, 0xa2, 0x59, 0x95, 0x9e, 0x98, 0xa5, 0x09, 0x05, 0x53, 0x1e,
-	0x8f, 0x8e, 0x23, 0xce, 0x87, 0xa7, 0x96, 0x2b, 0xf3, 0xb5, 0x5c, 0x63, 0x43, 0x93, 0x52, 0x93,
-	0x3e, 0x3e, 0xfa, 0xaa, 0x99, 0x1a, 0x7b, 0xa8, 0x0a, 0x8b, 0xe2, 0xc4, 0xa9, 0xd7, 0xc5, 0xec,
-	0xcb, 0x5a, 0x78, 0xfe, 0xf6, 0x83, 0xbf, 0x7a, 0xe8, 0xaa, 0xbe, 0x98, 0x87, 0xd5, 0x88, 0xe7,
-	0x8c, 0x1b, 0xe9, 0xd1, 0x64, 0x23, 0x6d, 0x07, 0x3b, 0x3d, 0xab, 0x66, 0x7a, 0x34, 0xd9, 0x4c,
-	0xa7, 0x61, 0xff, 0x47, 0x1b, 0xea, 0x1e, 0xac, 0x4e, 0x54, 0x50, 0xb6, 0xd3, 0xac, 0x02, 0xae,
-	0xa4, 0x0b, 0x98, 0xd4, 0xaf, 0x3c, 0xbb, 0x7e, 0xbf, 0x29, 0xa0, 0xb6, 0xc8, 0x90, 0x1a, 0xa4,
-	0x69, 0x70, 0x3a, 0x14, 0xda, 0xa0, 0x13, 0x8f, 0x39, 0xb6, 0x77, 0x66, 0x85, 0x3c, 0x66, 0x23,
-	0xb9, 0xd3, 0x6d, 0x64, 0x7d, 0xf6, 0x46, 0xfe, 0x5a, 0x80, 0x2b, 0x2d, 0x62, 0xfa, 0xac, 0x4f,
-	0x0d, 0xcc, 0x89, 0x79, 0xae, 0x6d, 0xef, 0xa3, 0xb6, 0x7d, 0x76, 0xac, 0xb6, 0xcd, 0xcf, 0xd0,
-	0xb6, 0x69, 0x55, 0x2b, 0x43, 0xce, 0x23, 0xee, 0x90, 0xb8, 0x1d, 0x4e, 0x07, 0x44, 0xdd, 0x14,
-	0x6f, 0x60, 0x08, 0x4d, 0xfb, 0x74, 0x40, 0x50, 0x0b, 0xd6, 0x5c, 0xd9, 0xbe, 0x1d, 0x4e, 0x06,
-	0xac, 0x8f, 0x79, 0xd4, 0xff, 0x9b, 0x93, 0xdd, 0x16, 0x95, 0xb7, 0x10, 0x45, 0xec, 0xcb, 0x80,
-	0x77, 0x52, 0xbe, 0xa3, 0x05, 0xd8, 0x9c, 0x3e, 0x39, 0x4f, 0x7d, 0xe2, 0xf1, 0x73, 0x05, 0xa4,
-	0xef, 0xdb, 0xeb, 0x70, 0x07, 0x2e, 0xe1, 0xb8, 0x4c, 0x09, 0xd1, 0xa6, 0x20, 0xfa, 0x5f, 0xb2,
-	0xa0, 0xa4, 0x96, 0x71, 0x13, 0x22, 0x3c, 0x65, 0xfb, 0xb7, 0xde, 0xae, 0xaf, 0x16, 0xe1, 0x83,
-	0x71, 0x51, 0x3b, 0xef, 0xb7, 0xff, 0x86, 0xcc, 0x9d, 0x71, 0xb7, 0x4e, 0xa8, 0xa6, 0x3a, 0xa5,
-	0x9a, 0x3b, 0xb3, 0x55, 0xb3, 0x12, 0xf7, 0xf3, 0x8c, 0x5b, 0xc2, 0x29, 0xe5, 0xf3, 0xcd, 0x1c,
-	0x14, 0x13, 0xb2, 0xed, 0x1e, 0xee, 0xf7, 0x89, 0x6d, 0x91, 0xf3, 0x8e, 0x3e, 0xcb, 0x8e, 0xae,
-	0x9a, 0x70, 0xf5, 0xd8, 0x24, 0x9f, 0xe9, 0x05, 0xaf, 0x8a, 0xa0, 0xb0, 0xe7, 0x77, 0x3d, 0xc3,
-	0xa5, 0xdd, 0xa8, 0x80, 0xd5, 0x55, 0xc8, 0xef, 0x71, 0xcc, 0x7d, 0x2f, 0x32, 0xfc, 0x39, 0x0f,
-	0x99, 0xd0, 0x82, 0x34, 0xc8, 0x78, 0x07, 0x1e, 0x27, 0x03, 0x31, 0x6b, 0xae, 0x51, 0xd0, 0x30,
-	0xa3, 0xda, 0x9e, 0x30, 0x05, 0x10, 0x4f, 0x1e, 0x2c, 0x89, 0x42, 0x77, 0x21, 0x6b, 0x38, 0x03,
-	0xe6, 0xd8, 0xc4, 0xe6, 0x72, 0x39, 0x97, 0x44, 0xc8, 0x76, 0x64, 0x1d, 0x8f, 0x4a, 0xb0, 0xa8,
-	0x0a, 0x19, 0x5f, 0xdc, 0x03, 0xe5, 0x85, 0x13, 0x44, 0x94, 0x8e, 0x39, 0xf1, 0x74, 0xe9, 0x41,
-	0x75, 0xc8, 0x87, 0x4f, 0x1d, 0xdf, 0xa6, 0x4f, 0x7d, 0x22, 0x4a, 0x99, 0x86, 0x2e, 0x87, 0x80,
-	0x87, 0xc2, 0x8f, 0xae, 0xc1, 0xc5, 0x48, 0xcb, 0x45, 0x65, 0xd2, 0xd8, 0xd8, 0x87, 0x6e, 0x42,
-	0x2e, 0x39, 0x8b, 0x9e, 0x28, 0x51, 0x1a, 0x3a, 0xee, 0x46, 0x9f, 0xc0, 0xd8, 0xc9, 0xf5, 0xa2,
-	0xb5, 0xac, 0x4e, 0x05, 0xad, 0x8d, 0xa1, 0xe4, 0x82, 0x3e, 0x86, 0xbc, 0x19, 0xbf, 0x24, 0x82,
-	0xdb, 0x75, 0x61, 0x2c, 0xab, 0xbb, 0xc4, 0x35, 0x88, 0xcd, 0x69, 0x9f, 0x78, 0x7a, 0x1a, 0x86,
-	0x6e, 0xc0, 0x9a, 0xe1, 0xd8, 0x36, 0x31, 0x38, 0x31, 0x3b, 0xae, 0xe3, 0x73, 0xe2, 0x7a, 0x42,
-	0xee, 0xf2, 0x7a, 0x21, 0x76, 0xe8, 0xa1, 0x1d, 0xdd, 0x02, 0x94, 0x80, 0x7b, 0xd8, 0x36, 0xfb,
-	0x01, 0x7a, 0x43, 0xa0, 0x13, 0x9a, 0xcf, 0xa5, 0xa3, 0xca, 0xa0, 0xd4, 0x64, 0xf1, 0x54, 0xd2,
-	0xac, 0x13, 0x8b, 0x7a, 0x5c, 0x7e, 0xd5, 0x48, 0xda, 0x5b, 0x99, 0xd1, 0xde, 0x37, 0x01, 0xe4,
-	0x44, 0x13, 0xdf, 0x6b, 0x24, 0x5d, 0xbb, 0xa5, 0x67, 0x25, 0xa0, 0x6d, 0x36, 0x7e, 0x9a, 0x83,
-	0xcc, 0x96, 0x90, 0x2a, 0x74, 0x0f, 0xb2, 0x4d, 0xcf, 0x73, 0x0c, 0x1a, 0x88, 0xd1, 0x7a, 0x24,
-	0x60, 0xa9, 0x5f, 0x04, 0xc5, 0x59, 0xb7, 0xc1, 0x9a, 0x72, 0x5b, 0x41, 0x5f, 0x40, 0x36, 0x6e,
-	0x68, 0xa4, 0x46, 0xc8, 0xc9, 0x1e, 0x2f, 0xfe, 0x3f, 0xd1, 0xc6, 0x19, 0x3f, 0x3c, 0x6e, 0x2b,
-	0xe8, 0x53, 0x58, 0xda, 0xf5, 0xbb, 0x7d, 0xea, 0xf5, 0xd0, 0xac, 0x39, 0x8b, 0x1b, 0x5a, 0xf8,
-	0x9d, 0x4f, 0x8b, 0xbe, 0xe0, 0x69, 0xf7, 0x07, 0x8c, 0x1f, 0xd4, 0x14, 0xb4, 0x03, 0x17, 0xe5,
-	0x01, 0x26, 0xa8, 0x3c, 0x5b, 0x8a, 0xc3, 0xf5, 0x9c, 0xa8, 0xd5, 0x8d, 0x1f, 0x15, 0xc8, 0x87,
-	0x49, 0xda, 0xc1, 0x36, 0xb6, 0x88, 0x8b, 0x1e, 0x41, 0x31, 0x2c, 0x0b, 0x71, 0xa7, 0x0b, 0x86,
-	0xae, 0x45, 0x8c, 0x6f, 0x2f, 0xe6, 0xac, 0x0d, 0xa0, 0x06, 0x64, 0x1f, 0x10, 0x2e, 0x8f, 0x7d,
-	0x5c, 0x89, 0x94, 0x30, 0x14, 0x57, 0xd2, 0xe6, 0xad, 0x1f, 0x94, 0x57, 0x47, 0xa5, 0x0b, 0xaf,
-	0x8f, 0x4a, 0xca, 0x77, 0xa3, 0x92, 0xf2, 0xf3, 0xa8, 0xa4, 0xbc, 0x1c, 0x95, 0x94, 0xdf, 0x47,
-	0x25, 0xe5, 0xf5, 0xa8, 0xa4, 0x7c, 0xff, 0xa6, 0x74, 0x01, 0xca, 0x8e, 0x6b, 0x69, 0xbc, 0x47,
-	0xb8, 0x10, 0x56, 0x3b, 0x14, 0x56, 0xd1, 0xee, 0x21, 0xd5, 0x56, 0x2e, 0xdc, 0xe4, 0x6e, 0xb0,
-	0x9a, 0x5d, 0xe5, 0xdb, 0x6b, 0xef, 0xf6, 0x0d, 0xf6, 0x97, 0xb9, 0xab, 0x93, 0x5e, 0xad, 0xb9,
-	0xdb, 0xd6, 0x42, 0xb2, 0x6e, 0x46, 0x6c, 0xee, 0xce, 0xdf, 0x01, 0x00, 0x00, 0xff, 0xff, 0x10,
-	0x70, 0x6e, 0xec, 0xd2, 0x15, 0x00, 0x00,
+var fileDescriptor_broker_e5788470f79083a2 = []byte{
+	// 1434 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xec, 0x58, 0x4d, 0x6c, 0x13, 0x47,
+	0x14, 0xde, 0xc9, 0x8f, 0x83, 0x9f, 0xe3, 0xc4, 0x19, 0x48, 0xb2, 0x98, 0x6a, 0x9c, 0xba, 0x12,
+	0x0a, 0x02, 0xd6, 0x34, 0xa8, 0x45, 0x95, 0xaa, 0xa2, 0x24, 0x46, 0xd4, 0x95, 0xd2, 0x46, 0x9b,
+	0x50, 0x55, 0x15, 0x92, 0xb5, 0xf1, 0x0e, 0xce, 0x08, 0x7b, 0x77, 0xd9, 0x1d, 0x1b, 0x72, 0xe3,
+	0xc8, 0xb1, 0xc7, 0x1e, 0xdb, 0x9e, 0x50, 0x4f, 0x1c, 0xb9, 0x20, 0x71, 0xa8, 0x2a, 0x8e, 0x1c,
+	0x51, 0x0f, 0x11, 0x5e, 0x5f, 0x50, 0x2b, 0x55, 0x1c, 0x39, 0x56, 0x3b, 0x3b, 0xbb, 0x6b, 0x3b,
+	0x31, 0x41, 0x51, 0x5a, 0x21, 0x35, 0x17, 0x7b, 0xe6, 0xbd, 0xef, 0xbd, 0x99, 0x79, 0x3f, 0xdf,
+	0xce, 0x2e, 0x5c, 0xae, 0x33, 0xbe, 0xdd, 0xda, 0xd2, 0x6a, 0x76, 0xb3, 0xb4, 0xb9, 0x4d, 0x37,
+	0xb7, 0x99, 0x55, 0xf7, 0xbe, 0xa6, 0xfc, 0xae, 0xed, 0xde, 0x2e, 0x19, 0x0e, 0x2b, 0x6d, 0xb9,
+	0xf6, 0x6d, 0xea, 0xca, 0x3f, 0xcd, 0x71, 0x6d, 0x6e, 0xe3, 0x54, 0x38, 0xcb, 0x9f, 0xa9, 0xdb,
+	0x76, 0xbd, 0x41, 0x4b, 0x42, 0xba, 0xd5, 0xba, 0x55, 0xa2, 0x4d, 0x87, 0xef, 0x84, 0xa0, 0xfc,
+	0xc5, 0x1e, 0xcf, 0x75, 0xbb, 0x6e, 0x27, 0xa8, 0x60, 0x26, 0x26, 0x62, 0x24, 0xe1, 0xe7, 0x0e,
+	0xda, 0x88, 0xe1, 0x30, 0x09, 0xbd, 0x72, 0x10, 0x54, 0xc0, 0x6a, 0x76, 0x23, 0x1e, 0x48, 0xc3,
+	0x4f, 0x0e, 0x32, 0xac, 0x1b, 0x9c, 0xde, 0x35, 0x76, 0xa2, 0x7f, 0x69, 0xf6, 0xf1, 0x41, 0x66,
+	0xdc, 0x35, 0x6a, 0x34, 0xfc, 0x0d, 0x4d, 0x8a, 0x4f, 0x46, 0x60, 0xaa, 0x6c, 0xdf, 0xb5, 0x1a,
+	0xcc, 0xba, 0xfd, 0x8d, 0xc3, 0x99, 0x6d, 0x61, 0x02, 0xc0, 0x4c, 0x6a, 0x71, 0x76, 0x8b, 0x51,
+	0x57, 0x45, 0x0b, 0x68, 0x31, 0xad, 0xf7, 0x48, 0xf0, 0x05, 0x00, 0xb9, 0x6c, 0x95, 0x99, 0xea,
+	0x48, 0xa0, 0x5f, 0xc9, 0xfa, 0xbb, 0x85, 0xf4, 0xf5, 0x50, 0x5a, 0x29, 0xeb, 0x69, 0x09, 0xa8,
+	0x98, 0xf8, 0x14, 0x8c, 0x7b, 0x35, 0xdb, 0xa5, 0xea, 0xe8, 0x02, 0x5a, 0xcc, 0xea, 0xe1, 0x04,
+	0xe7, 0xe1, 0x84, 0x49, 0x0d, 0xb3, 0xc1, 0x2c, 0xaa, 0x8e, 0x2d, 0xa0, 0xc5, 0x51, 0x3d, 0x9e,
+	0xe3, 0x6f, 0x61, 0x2e, 0x0a, 0x47, 0xb5, 0x66, 0x5b, 0xb7, 0x58, 0xbd, 0xe5, 0x1a, 0xc1, 0xce,
+	0xd4, 0xf1, 0x05, 0xb4, 0x98, 0x59, 0x3a, 0xad, 0xc5, 0xd1, 0xda, 0xbc, 0xb7, 0xda, 0x0b, 0x58,
+	0x19, 0x7b, 0xb6, 0x5b, 0x50, 0xf4, 0xd9, 0x48, 0xdf, 0xa7, 0xc4, 0x1b, 0x30, 0x1b, 0xed, 0xbb,
+	0xdf, 0x6d, 0x4a, 0xb8, 0x55, 0xb5, 0x28, 0x98, 0xfb, 0x7b, 0x3d, 0x25, 0xd5, 0x7d, 0xba, 0xe2,
+	0x6f, 0x63, 0x90, 0xbd, 0xe1, 0x04, 0xd1, 0x5b, 0xa3, 0x9e, 0x67, 0xd4, 0x29, 0x56, 0x61, 0xc2,
+	0x31, 0x76, 0x1a, 0xb6, 0x61, 0x8a, 0xd8, 0x4d, 0xea, 0xd1, 0x14, 0x9f, 0x87, 0x89, 0x66, 0x08,
+	0x12, 0x51, 0xcb, 0x2c, 0xcd, 0x24, 0x27, 0x91, 0xd6, 0x7a, 0x84, 0xc0, 0xdf, 0xc1, 0x84, 0x49,
+	0xdb, 0x55, 0xda, 0x62, 0x6a, 0x26, 0x70, 0xb3, 0x72, 0xf5, 0x8f, 0xdd, 0xc2, 0x5b, 0x13, 0xcc,
+	0xb9, 0x55, 0x0a, 0x82, 0x5b, 0xe2, 0x3b, 0x0e, 0xf5, 0xb4, 0x32, 0x6d, 0x5f, 0xbb, 0x51, 0xf1,
+	0x77, 0x0b, 0xa9, 0x70, 0xa4, 0xa7, 0x4c, 0xda, 0xbe, 0xd6, 0x62, 0x81, 0x67, 0xc3, 0x71, 0x84,
+	0xe7, 0xc9, 0x43, 0x79, 0x5e, 0x76, 0x1c, 0xe9, 0x39, 0x1c, 0xe9, 0x29, 0xc3, 0x71, 0x02, 0xcf,
+	0x0b, 0x10, 0x8c, 0x82, 0xaa, 0xc8, 0x8a, 0xaa, 0x48, 0xfb, 0xbb, 0x85, 0xf1, 0x65, 0xc7, 0xa9,
+	0x94, 0xf5, 0x71, 0xc3, 0x71, 0x2a, 0x66, 0x80, 0x08, 0x4e, 0xc5, 0x4c, 0x75, 0x2a, 0x41, 0x94,
+	0x69, 0x3b, 0x40, 0x98, 0xb4, 0x5d, 0x31, 0xf1, 0x75, 0x98, 0x89, 0xb3, 0xdf, 0xa4, 0xdc, 0x30,
+	0x0d, 0x6e, 0xa8, 0xb3, 0x22, 0x5c, 0xa7, 0x92, 0x70, 0xe9, 0xf7, 0xd6, 0xa4, 0x4e, 0x66, 0x27,
+	0x17, 0xa9, 0x22, 0x39, 0x2e, 0x43, 0x2e, 0x4a, 0x77, 0xec, 0x67, 0x4e, 0xf8, 0x39, 0x19, 0x67,
+	0x7a, 0x8f, 0x9b, 0x69, 0xa9, 0x89, 0xbd, 0x2c, 0x43, 0xce, 0x94, 0xed, 0x51, 0xb5, 0x45, 0x7f,
+	0x78, 0x6a, 0x61, 0x61, 0x74, 0x31, 0xb3, 0x34, 0xa7, 0x49, 0xaa, 0xe9, 0x6f, 0x1f, 0x7d, 0xda,
+	0xec, 0x9b, 0x7b, 0xb8, 0x08, 0xe3, 0xa2, 0xe3, 0xd4, 0x73, 0x62, 0xf5, 0x49, 0x2d, 0xec, 0xbf,
+	0xcd, 0xe0, 0x57, 0x0f, 0x55, 0xc5, 0x27, 0xa3, 0x30, 0x1d, 0xf9, 0x39, 0xe2, 0x42, 0xba, 0x39,
+	0x58, 0x48, 0xab, 0xc1, 0x49, 0x8f, 0xaa, 0x98, 0x6e, 0x0e, 0x16, 0xd3, 0x61, 0xbc, 0xff, 0xab,
+	0x05, 0x75, 0x15, 0xa6, 0x07, 0x32, 0x28, 0xcb, 0x69, 0x58, 0x02, 0xa7, 0xfa, 0x13, 0x98, 0xe4,
+	0xaf, 0x30, 0x3c, 0x7f, 0xbf, 0x23, 0x50, 0xcb, 0xb4, 0xcd, 0x6a, 0x74, 0xb9, 0xc6, 0x59, 0x5b,
+	0x70, 0x83, 0x4e, 0x3d, 0xc7, 0xb6, 0xbc, 0x23, 0x4b, 0xe4, 0x3e, 0x07, 0xc9, 0x1c, 0xee, 0x20,
+	0xb3, 0xc3, 0x0f, 0xf2, 0xf7, 0x18, 0x9c, 0x2e, 0x53, 0xb3, 0xe5, 0x34, 0x58, 0xcd, 0xe0, 0xd4,
+	0x3c, 0xe6, 0xb6, 0xf7, 0x91, 0xdb, 0xbe, 0xd8, 0x97, 0xdb, 0x46, 0x87, 0x70, 0xdb, 0x5e, 0x56,
+	0x2b, 0x40, 0xc6, 0xa3, 0x6e, 0x9b, 0xba, 0x55, 0xce, 0x9a, 0x54, 0x9d, 0x17, 0x4f, 0x60, 0x08,
+	0x45, 0x9b, 0xac, 0x49, 0x71, 0x19, 0x66, 0x5c, 0x59, 0xbe, 0x55, 0x4e, 0x9b, 0x4e, 0xc3, 0xe0,
+	0x51, 0xfd, 0xcf, 0x0f, 0x56, 0x5b, 0x94, 0xde, 0x5c, 0x64, 0xb1, 0x29, 0x0d, 0xde, 0x89, 0xf9,
+	0x3a, 0x63, 0x30, 0xbf, 0xb7, 0x73, 0xee, 0xb4, 0xa8, 0xc7, 0x8f, 0x19, 0x90, 0xbd, 0x6f, 0x8f,
+	0xc3, 0x35, 0x38, 0x69, 0xc4, 0x69, 0x4a, 0x1c, 0xcd, 0x0b, 0x47, 0x1f, 0x24, 0x1b, 0x4a, 0x72,
+	0x19, 0x17, 0x21, 0x36, 0xf6, 0xc8, 0xfe, 0xab, 0xa7, 0xeb, 0x8b, 0x71, 0xf8, 0xa8, 0x97, 0xd4,
+	0x8e, 0xeb, 0xed, 0xff, 0x41, 0x73, 0x47, 0x5c, 0xad, 0x03, 0xac, 0xa9, 0xee, 0x61, 0xcd, 0xb5,
+	0xe1, 0xac, 0xb9, 0x10, 0xd7, 0xf3, 0x90, 0x5b, 0xc2, 0x21, 0xe9, 0xb3, 0x3b, 0x02, 0xf9, 0xc4,
+	0xd9, 0xea, 0xb6, 0xd1, 0x68, 0x50, 0xab, 0x4e, 0x8f, 0x2b, 0xfa, 0x28, 0x2b, 0xba, 0x68, 0xc2,
+	0x99, 0x7d, 0x83, 0x7c, 0xa4, 0x17, 0xbc, 0x22, 0x86, 0xdc, 0x46, 0x6b, 0xcb, 0xab, 0xb9, 0x6c,
+	0x2b, 0x4a, 0x60, 0x71, 0x1a, 0xb2, 0x1b, 0xdc, 0xe0, 0x2d, 0x2f, 0x12, 0xfc, 0x35, 0x0a, 0xa9,
+	0x50, 0x82, 0x35, 0x48, 0x79, 0x3b, 0x1e, 0xa7, 0x4d, 0xb1, 0x6a, 0x66, 0x29, 0xa7, 0x19, 0x0e,
+	0xd3, 0x36, 0x84, 0x28, 0x80, 0x78, 0xb2, 0xb1, 0x24, 0x0a, 0x5f, 0x81, 0x74, 0xcd, 0x6e, 0x3a,
+	0xb6, 0x45, 0x2d, 0x2e, 0xb7, 0x73, 0x52, 0x98, 0xac, 0x46, 0xd2, 0x5e, 0xab, 0x04, 0x8b, 0x8b,
+	0x90, 0x6a, 0x89, 0x7b, 0xa0, 0xbc, 0x70, 0x82, 0xb0, 0xd2, 0x0d, 0x4e, 0x3d, 0x5d, 0x6a, 0x70,
+	0x09, 0xb2, 0xe1, 0xa8, 0xda, 0xb2, 0xd8, 0x9d, 0x16, 0x15, 0xa9, 0xec, 0x87, 0x4e, 0x86, 0x80,
+	0x1b, 0x42, 0x8f, 0xcf, 0xc2, 0x89, 0x88, 0xcb, 0x45, 0x66, 0xfa, 0xb1, 0xb1, 0x0e, 0x5f, 0x80,
+	0x4c, 0xd2, 0x8b, 0x9e, 0x48, 0x51, 0x3f, 0xb4, 0x57, 0x8d, 0x3f, 0x83, 0x9e, 0xce, 0xf5, 0xa2,
+	0xbd, 0x4c, 0xef, 0x31, 0x9a, 0xe9, 0x41, 0xc9, 0x0d, 0x7d, 0x0a, 0x59, 0x33, 0x7e, 0x48, 0x04,
+	0xb7, 0xeb, 0x5c, 0x4f, 0x54, 0xd7, 0xa9, 0x5b, 0xa3, 0x16, 0x67, 0x0d, 0xea, 0xe9, 0xfd, 0x30,
+	0x7c, 0x1e, 0x66, 0x6a, 0xb6, 0x65, 0xd1, 0x1a, 0xa7, 0x66, 0xd5, 0xb5, 0x5b, 0x9c, 0xba, 0x9e,
+	0xa0, 0xbb, 0xac, 0x9e, 0x8b, 0x15, 0x7a, 0x28, 0xc7, 0x17, 0x01, 0x27, 0xe0, 0x6d, 0xc3, 0x32,
+	0x1b, 0x01, 0x7a, 0x4e, 0xa0, 0x13, 0x37, 0x5f, 0x4a, 0x45, 0xd1, 0x01, 0xb2, 0xec, 0xc4, 0x4b,
+	0x49, 0xb1, 0x4e, 0xeb, 0xcc, 0xe3, 0xf2, 0xab, 0x46, 0x52, 0xde, 0x68, 0x48, 0x79, 0x5f, 0x00,
+	0x90, 0x0b, 0x0d, 0x7c, 0xaf, 0x91, 0xee, 0x2a, 0x65, 0x3d, 0x2d, 0x01, 0x15, 0x73, 0xe9, 0x97,
+	0x11, 0x48, 0xad, 0x08, 0xaa, 0xc2, 0x57, 0x21, 0xbd, 0xec, 0x79, 0x76, 0x8d, 0x05, 0x64, 0x34,
+	0x1b, 0x11, 0x58, 0xdf, 0x1b, 0x41, 0x7e, 0xd8, 0x6d, 0x70, 0x11, 0x5d, 0x42, 0xf8, 0x2b, 0x48,
+	0xc7, 0x05, 0x8d, 0xd5, 0x08, 0x39, 0x58, 0xe3, 0xf9, 0x0f, 0x13, 0x6e, 0x1c, 0xf2, 0xe2, 0x71,
+	0x09, 0xe1, 0xcf, 0x61, 0x62, 0xbd, 0xb5, 0xd5, 0x60, 0xde, 0x36, 0x1e, 0xb6, 0x66, 0x7e, 0x4e,
+	0x0b, 0xbf, 0xf3, 0x69, 0xd1, 0x17, 0x3c, 0xed, 0x5a, 0xd3, 0xe1, 0x3b, 0x8b, 0x08, 0xaf, 0xc1,
+	0x09, 0xd9, 0xc0, 0x14, 0x17, 0x86, 0x53, 0x71, 0xb8, 0x9f, 0x03, 0xb9, 0x7a, 0xe9, 0x67, 0x04,
+	0xd9, 0x30, 0x48, 0x6b, 0x86, 0x65, 0xd4, 0xa9, 0x8b, 0x6f, 0x42, 0x3e, 0x4c, 0x0b, 0x75, 0xf7,
+	0x26, 0x0c, 0x9f, 0x8d, 0x3c, 0xbe, 0x3d, 0x99, 0xc3, 0x0e, 0x80, 0x97, 0x20, 0x7d, 0x9d, 0x72,
+	0xd9, 0xf6, 0x71, 0x26, 0xfa, 0x88, 0x21, 0x3f, 0xd5, 0x2f, 0x5e, 0xf9, 0x13, 0x3d, 0xeb, 0x10,
+	0xf4, 0xbc, 0x43, 0xd0, 0x8b, 0x0e, 0x51, 0x5e, 0x76, 0x88, 0xf2, 0xaa, 0x43, 0x94, 0xd7, 0x1d,
+	0xa2, 0xbc, 0xe9, 0x10, 0x74, 0xdf, 0x27, 0xe8, 0x81, 0x4f, 0x94, 0x87, 0x3e, 0x41, 0x8f, 0x7c,
+	0xa2, 0x3c, 0xf6, 0x89, 0xf2, 0xd4, 0x27, 0xca, 0x33, 0x9f, 0xa0, 0xe7, 0x3e, 0x41, 0x2f, 0x7c,
+	0xa2, 0xbc, 0xf4, 0x09, 0x7a, 0xe5, 0x13, 0xe5, 0xb5, 0x4f, 0xd0, 0x1b, 0x9f, 0x28, 0xf7, 0xbb,
+	0x44, 0x79, 0xd0, 0x25, 0xe8, 0x87, 0x2e, 0x51, 0x7e, 0xec, 0x12, 0xf4, 0x53, 0x97, 0x28, 0x0f,
+	0xbb, 0x44, 0x79, 0xd4, 0x25, 0xe8, 0x71, 0x97, 0xa0, 0xa7, 0x5d, 0x82, 0xa0, 0x60, 0xbb, 0x75,
+	0x8d, 0x6f, 0x53, 0x2e, 0xc8, 0xda, 0x0a, 0xc9, 0x5a, 0xb4, 0x50, 0xb8, 0xbd, 0x95, 0x4c, 0x18,
+	0xb8, 0xf5, 0xe0, 0x84, 0xeb, 0xe8, 0xfb, 0xb3, 0xef, 0xf6, 0x5d, 0xf7, 0xd7, 0x91, 0x33, 0x83,
+	0x5a, 0x6d, 0x79, 0xbd, 0xa2, 0x85, 0xce, 0xb6, 0x52, 0x22, 0x60, 0x97, 0xff, 0x09, 0x00, 0x00,
+	0xff, 0xff, 0x42, 0x0a, 0xa8, 0xc5, 0x26, 0x16, 0x00, 0x00,
 }

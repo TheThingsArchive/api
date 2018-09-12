@@ -22,19 +22,9 @@ class DLSettings extends \Google\Protobuf\Internal\Message
      */
     private $rx2_dr = 0;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type int $rx1_dr_offset
-     *     @type int $rx2_dr
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Protocol\Lorawan\Lorawan::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**

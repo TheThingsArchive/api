@@ -5,7 +5,7 @@
 namespace Lorawan;
 
 /**
- * Protobuf type <code>lorawan.MType</code>
+ * Protobuf enum <code>Lorawan\MType</code>
  */
 class MType
 {

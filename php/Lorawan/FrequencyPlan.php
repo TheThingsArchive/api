@@ -5,7 +5,7 @@
 namespace Lorawan;
 
 /**
- * Protobuf type <code>lorawan.FrequencyPlan</code>
+ * Protobuf enum <code>Lorawan\FrequencyPlan</code>
  */
 class FrequencyPlan
 {

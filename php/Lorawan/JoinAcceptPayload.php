@@ -42,24 +42,9 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
      */
     private $cf_list = null;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type string $encrypted
-     *     @type string $app_nonce
-     *     @type string $net_id
-     *     @type string $dev_addr
-     *     @type \Lorawan\DLSettings $dl_settings
-     *     @type int $rx_delay
-     *     @type \Lorawan\CFList $cf_list
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Protocol\Lorawan\Lorawan::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**

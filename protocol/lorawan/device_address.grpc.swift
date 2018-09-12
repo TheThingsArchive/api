@@ -78,34 +78,9 @@ internal final class Lorawan_DevAddrManagerServiceClient: ServiceClientBase, Lor
 }
 
 /// To build a server, implement a class that conforms to this protocol.
-/// If one of the methods returning `ServerStatus?` returns nil,
-/// it is expected that you have already returned a status to the client by means of `session.close`.
-internal protocol Lorawan_DevAddrManagerProvider: ServiceProvider {
+internal protocol Lorawan_DevAddrManagerProvider {
   func getPrefixes(request: Lorawan_PrefixesRequest, session: Lorawan_DevAddrManagerGetPrefixesSession) throws -> Lorawan_PrefixesResponse
   func getDevAddr(request: Lorawan_DevAddrRequest, session: Lorawan_DevAddrManagerGetDevAddrSession) throws -> Lorawan_DevAddrResponse
-}
-
-extension Lorawan_DevAddrManagerProvider {
-  internal var serviceName: String { return "lorawan.DevAddrManager" }
-
-  /// Determines and calls the appropriate request handler, depending on the request's method.
-  /// Throws `HandleMethodError.unknownMethod` for methods not handled by this service.
-  internal func handleMethod(_ method: String, handler: Handler) throws -> ServerStatus? {
-    switch method {
-    case "/lorawan.DevAddrManager/GetPrefixes":
-      return try Lorawan_DevAddrManagerGetPrefixesSessionBase(
-        handler: handler,
-        providerBlock: { try self.getPrefixes(request: $0, session: $1 as! Lorawan_DevAddrManagerGetPrefixesSessionBase) })
-          .run()
-    case "/lorawan.DevAddrManager/GetDevAddr":
-      return try Lorawan_DevAddrManagerGetDevAddrSessionBase(
-        handler: handler,
-        providerBlock: { try self.getDevAddr(request: $0, session: $1 as! Lorawan_DevAddrManagerGetDevAddrSessionBase) })
-          .run()
-    default:
-      throw HandleMethodError.unknownMethod
-    }
-  }
 }
 
 internal protocol Lorawan_DevAddrManagerGetPrefixesSession: ServerSessionUnary {}
@@ -115,4 +90,46 @@ fileprivate final class Lorawan_DevAddrManagerGetPrefixesSessionBase: ServerSess
 internal protocol Lorawan_DevAddrManagerGetDevAddrSession: ServerSessionUnary {}
 
 fileprivate final class Lorawan_DevAddrManagerGetDevAddrSessionBase: ServerSessionUnaryBase<Lorawan_DevAddrRequest, Lorawan_DevAddrResponse>, Lorawan_DevAddrManagerGetDevAddrSession {}
+
+
+/// Main server for generated service
+internal final class Lorawan_DevAddrManagerServer: ServiceServer {
+  private let provider: Lorawan_DevAddrManagerProvider
+
+  internal init(address: String, provider: Lorawan_DevAddrManagerProvider) {
+    self.provider = provider
+    super.init(address: address)
+  }
+
+  internal init?(address: String, certificateURL: URL, keyURL: URL, provider: Lorawan_DevAddrManagerProvider) {
+    self.provider = provider
+    super.init(address: address, certificateURL: certificateURL, keyURL: keyURL)
+  }
+
+  internal init?(address: String, certificateString: String, keyString: String, provider: Lorawan_DevAddrManagerProvider) {
+    self.provider = provider
+    super.init(address: address, certificateString: certificateString, keyString: keyString)
+  }
+
+  /// Start the server.
+  internal override func handleMethod(_ method: String, handler: Handler, queue: DispatchQueue) throws -> Bool {
+    let provider = self.provider
+    switch method {
+    case "/lorawan.DevAddrManager/GetPrefixes":
+      try Lorawan_DevAddrManagerGetPrefixesSessionBase(
+        handler: handler,
+        providerBlock: { try provider.getPrefixes(request: $0, session: $1 as! Lorawan_DevAddrManagerGetPrefixesSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/lorawan.DevAddrManager/GetDevAddr":
+      try Lorawan_DevAddrManagerGetDevAddrSessionBase(
+        handler: handler,
+        providerBlock: { try provider.getDevAddr(request: $0, session: $1 as! Lorawan_DevAddrManagerGetDevAddrSessionBase) })
+          .run(queue: queue)
+      return true
+    default:
+      return false
+    }
+  }
+}
 

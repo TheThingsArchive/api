@@ -4,13 +4,124 @@
 
 namespace Api;
 
-if (false) {
+use Google\Protobuf\Internal\GPBType;
+use Google\Protobuf\Internal\RepeatedField;
+use Google\Protobuf\Internal\GPBUtil;
+
+/**
+ * Generated from protobuf message <code>api.ComponentStats.MemoryStats</code>
+ */
+class ComponentStats_MemoryStats extends \Google\Protobuf\Internal\Message
+{
     /**
-     * This class is deprecated. Use Api\ComponentStats\MemoryStats instead.
-     * @deprecated
+     * Generated from protobuf field <code>uint64 memory = 1;</code>
      */
-    class ComponentStats_MemoryStats {}
+    private $memory = 0;
+    /**
+     * Generated from protobuf field <code>uint64 swap = 2;</code>
+     */
+    private $swap = 0;
+    /**
+     * Generated from protobuf field <code>uint64 heap = 10;</code>
+     */
+    private $heap = 0;
+    /**
+     * Generated from protobuf field <code>uint64 stack = 11;</code>
+     */
+    private $stack = 0;
+
+    public function __construct() {
+        \GPBMetadata\GithubCom\TheThingsNetwork\Api\Api::initOnce();
+        parent::__construct();
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 memory = 1;</code>
+     * @return int|string
+     */
+    public function getMemory()
+    {
+        return $this->memory;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 memory = 1;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setMemory($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->memory = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 swap = 2;</code>
+     * @return int|string
+     */
+    public function getSwap()
+    {
+        return $this->swap;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 swap = 2;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setSwap($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->swap = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 heap = 10;</code>
+     * @return int|string
+     */
+    public function getHeap()
+    {
+        return $this->heap;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 heap = 10;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setHeap($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->heap = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 stack = 11;</code>
+     * @return int|string
+     */
+    public function getStack()
+    {
+        return $this->stack;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 stack = 11;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setStack($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->stack = $var;
+
+        return $this;
+    }
+
 }
-class_exists(ComponentStats\MemoryStats::class);
-@trigger_error('Api\ComponentStats_MemoryStats is deprecated and will be removed in the next major release. Use Api\ComponentStats\MemoryStats instead', E_USER_DEPRECATED);
 

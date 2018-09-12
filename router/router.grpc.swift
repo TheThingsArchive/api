@@ -204,46 +204,11 @@ internal final class Router_RouterManagerServiceClient: ServiceClientBase, Route
 }
 
 /// To build a server, implement a class that conforms to this protocol.
-/// If one of the methods returning `ServerStatus?` returns nil,
-/// it is expected that you have already returned a status to the client by means of `session.close`.
-internal protocol Router_RouterProvider: ServiceProvider {
-  func gatewayStatus(session: Router_RouterGatewayStatusSession) throws -> SwiftProtobuf.Google_Protobuf_Empty?
-  func uplink(session: Router_RouterUplinkSession) throws -> SwiftProtobuf.Google_Protobuf_Empty?
-  func subscribe(request: Router_SubscribeRequest, session: Router_RouterSubscribeSession) throws -> ServerStatus?
+internal protocol Router_RouterProvider {
+  func gatewayStatus(session: Router_RouterGatewayStatusSession) throws
+  func uplink(session: Router_RouterUplinkSession) throws
+  func subscribe(request: Router_SubscribeRequest, session: Router_RouterSubscribeSession) throws
   func activate(request: Router_DeviceActivationRequest, session: Router_RouterActivateSession) throws -> Router_DeviceActivationResponse
-}
-
-extension Router_RouterProvider {
-  internal var serviceName: String { return "router.Router" }
-
-  /// Determines and calls the appropriate request handler, depending on the request's method.
-  /// Throws `HandleMethodError.unknownMethod` for methods not handled by this service.
-  internal func handleMethod(_ method: String, handler: Handler) throws -> ServerStatus? {
-    switch method {
-    case "/router.Router/GatewayStatus":
-      return try Router_RouterGatewayStatusSessionBase(
-        handler: handler,
-        providerBlock: { try self.gatewayStatus(session: $0 as! Router_RouterGatewayStatusSessionBase) })
-          .run()
-    case "/router.Router/Uplink":
-      return try Router_RouterUplinkSessionBase(
-        handler: handler,
-        providerBlock: { try self.uplink(session: $0 as! Router_RouterUplinkSessionBase) })
-          .run()
-    case "/router.Router/Subscribe":
-      return try Router_RouterSubscribeSessionBase(
-        handler: handler,
-        providerBlock: { try self.subscribe(request: $0, session: $1 as! Router_RouterSubscribeSessionBase) })
-          .run()
-    case "/router.Router/Activate":
-      return try Router_RouterActivateSessionBase(
-        handler: handler,
-        providerBlock: { try self.activate(request: $0, session: $1 as! Router_RouterActivateSessionBase) })
-          .run()
-    default:
-      throw HandleMethodError.unknownMethod
-    }
-  }
 }
 
 internal protocol Router_RouterGatewayStatusSession: ServerSessionClientStreaming {
@@ -252,8 +217,7 @@ internal protocol Router_RouterGatewayStatusSession: ServerSessionClientStreamin
   /// Call this to wait for a result. Nonblocking.
   func receive(completion: @escaping (ResultOrRPCError<Gateway_Status?>) -> Void) throws
 
-  /// Exactly one of these two methods should be called if and only if your request handler returns nil;
-  /// otherwise SwiftGRPC will take care of sending the response and status for you.
+  /// You MUST call one of these two methods once you are done processing the request.
   /// Close the connection and send a single result. Non-blocking.
   func sendAndClose(response: SwiftProtobuf.Google_Protobuf_Empty, status: ServerStatus, completion: (() -> Void)?) throws
   /// Close the connection and send an error. Non-blocking.
@@ -275,8 +239,7 @@ internal protocol Router_RouterUplinkSession: ServerSessionClientStreaming {
   /// Call this to wait for a result. Nonblocking.
   func receive(completion: @escaping (ResultOrRPCError<Router_UplinkMessage?>) -> Void) throws
 
-  /// Exactly one of these two methods should be called if and only if your request handler returns nil;
-  /// otherwise SwiftGRPC will take care of sending the response and status for you.
+  /// You MUST call one of these two methods once you are done processing the request.
   /// Close the connection and send a single result. Non-blocking.
   func sendAndClose(response: SwiftProtobuf.Google_Protobuf_Empty, status: ServerStatus, completion: (() -> Void)?) throws
   /// Close the connection and send an error. Non-blocking.
@@ -299,8 +262,7 @@ internal protocol Router_RouterSubscribeSession: ServerSessionServerStreaming {
   func _send(_ message: Router_DownlinkMessage, timeout: DispatchTime) throws
 
   /// Close the connection and send the status. Non-blocking.
-  /// This method should be called if and only if your request handler returns a nil value instead of a server status;
-  /// otherwise SwiftGRPC will take care of sending the status for you.
+  /// You MUST call this method once you are done processing the request.
   func close(withStatus status: ServerStatus, completion: (() -> Void)?) throws
 }
 
@@ -315,35 +277,64 @@ internal protocol Router_RouterActivateSession: ServerSessionUnary {}
 
 fileprivate final class Router_RouterActivateSessionBase: ServerSessionUnaryBase<Router_DeviceActivationRequest, Router_DeviceActivationResponse>, Router_RouterActivateSession {}
 
-/// To build a server, implement a class that conforms to this protocol.
-/// If one of the methods returning `ServerStatus?` returns nil,
-/// it is expected that you have already returned a status to the client by means of `session.close`.
-internal protocol Router_RouterManagerProvider: ServiceProvider {
-  func gatewayStatus(request: Router_GatewayStatusRequest, session: Router_RouterManagerGatewayStatusSession) throws -> Router_GatewayStatusResponse
-  func getStatus(request: Router_StatusRequest, session: Router_RouterManagerGetStatusSession) throws -> Router_Status
-}
 
-extension Router_RouterManagerProvider {
-  internal var serviceName: String { return "router.RouterManager" }
+/// Main server for generated service
+internal final class Router_RouterServer: ServiceServer {
+  private let provider: Router_RouterProvider
 
-  /// Determines and calls the appropriate request handler, depending on the request's method.
-  /// Throws `HandleMethodError.unknownMethod` for methods not handled by this service.
-  internal func handleMethod(_ method: String, handler: Handler) throws -> ServerStatus? {
+  internal init(address: String, provider: Router_RouterProvider) {
+    self.provider = provider
+    super.init(address: address)
+  }
+
+  internal init?(address: String, certificateURL: URL, keyURL: URL, provider: Router_RouterProvider) {
+    self.provider = provider
+    super.init(address: address, certificateURL: certificateURL, keyURL: keyURL)
+  }
+
+  internal init?(address: String, certificateString: String, keyString: String, provider: Router_RouterProvider) {
+    self.provider = provider
+    super.init(address: address, certificateString: certificateString, keyString: keyString)
+  }
+
+  /// Start the server.
+  internal override func handleMethod(_ method: String, handler: Handler, queue: DispatchQueue) throws -> Bool {
+    let provider = self.provider
     switch method {
-    case "/router.RouterManager/GatewayStatus":
-      return try Router_RouterManagerGatewayStatusSessionBase(
+    case "/router.Router/GatewayStatus":
+      try Router_RouterGatewayStatusSessionBase(
         handler: handler,
-        providerBlock: { try self.gatewayStatus(request: $0, session: $1 as! Router_RouterManagerGatewayStatusSessionBase) })
-          .run()
-    case "/router.RouterManager/GetStatus":
-      return try Router_RouterManagerGetStatusSessionBase(
+        providerBlock: { try provider.gatewayStatus(session: $0 as! Router_RouterGatewayStatusSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/router.Router/Uplink":
+      try Router_RouterUplinkSessionBase(
         handler: handler,
-        providerBlock: { try self.getStatus(request: $0, session: $1 as! Router_RouterManagerGetStatusSessionBase) })
-          .run()
+        providerBlock: { try provider.uplink(session: $0 as! Router_RouterUplinkSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/router.Router/Subscribe":
+      try Router_RouterSubscribeSessionBase(
+        handler: handler,
+        providerBlock: { try provider.subscribe(request: $0, session: $1 as! Router_RouterSubscribeSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/router.Router/Activate":
+      try Router_RouterActivateSessionBase(
+        handler: handler,
+        providerBlock: { try provider.activate(request: $0, session: $1 as! Router_RouterActivateSessionBase) })
+          .run(queue: queue)
+      return true
     default:
-      throw HandleMethodError.unknownMethod
+      return false
     }
   }
+}
+
+/// To build a server, implement a class that conforms to this protocol.
+internal protocol Router_RouterManagerProvider {
+  func gatewayStatus(request: Router_GatewayStatusRequest, session: Router_RouterManagerGatewayStatusSession) throws -> Router_GatewayStatusResponse
+  func getStatus(request: Router_StatusRequest, session: Router_RouterManagerGetStatusSession) throws -> Router_Status
 }
 
 internal protocol Router_RouterManagerGatewayStatusSession: ServerSessionUnary {}
@@ -353,4 +344,46 @@ fileprivate final class Router_RouterManagerGatewayStatusSessionBase: ServerSess
 internal protocol Router_RouterManagerGetStatusSession: ServerSessionUnary {}
 
 fileprivate final class Router_RouterManagerGetStatusSessionBase: ServerSessionUnaryBase<Router_StatusRequest, Router_Status>, Router_RouterManagerGetStatusSession {}
+
+
+/// Main server for generated service
+internal final class Router_RouterManagerServer: ServiceServer {
+  private let provider: Router_RouterManagerProvider
+
+  internal init(address: String, provider: Router_RouterManagerProvider) {
+    self.provider = provider
+    super.init(address: address)
+  }
+
+  internal init?(address: String, certificateURL: URL, keyURL: URL, provider: Router_RouterManagerProvider) {
+    self.provider = provider
+    super.init(address: address, certificateURL: certificateURL, keyURL: keyURL)
+  }
+
+  internal init?(address: String, certificateString: String, keyString: String, provider: Router_RouterManagerProvider) {
+    self.provider = provider
+    super.init(address: address, certificateString: certificateString, keyString: keyString)
+  }
+
+  /// Start the server.
+  internal override func handleMethod(_ method: String, handler: Handler, queue: DispatchQueue) throws -> Bool {
+    let provider = self.provider
+    switch method {
+    case "/router.RouterManager/GatewayStatus":
+      try Router_RouterManagerGatewayStatusSessionBase(
+        handler: handler,
+        providerBlock: { try provider.gatewayStatus(request: $0, session: $1 as! Router_RouterManagerGatewayStatusSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/router.RouterManager/GetStatus":
+      try Router_RouterManagerGetStatusSessionBase(
+        handler: handler,
+        providerBlock: { try provider.getStatus(request: $0, session: $1 as! Router_RouterManagerGetStatusSessionBase) })
+          .run(queue: queue)
+      return true
+    default:
+      return false
+    }
+  }
+}
 

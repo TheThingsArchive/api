@@ -160,63 +160,9 @@ class Status extends \Google\Protobuf\Internal\Message
      */
     private $messages;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type int $timestamp
-     *           Timestamp (uptime of gateway) in microseconds with rollover
-     *     @type int|string $time
-     *           Time in Unix nanoseconds
-     *     @type bool $gateway_trusted
-     *           Indicates whether the gateway is trusted. Components that are able to verify gateway trust MUST do so and set this value accordingly
-     *     @type int|string $boot_time
-     *           Boot time in Unix nanoseconds
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ip
-     *     @type string $platform
-     *     @type string $contact_email
-     *     @type string $description
-     *     @type string $frequency_plan
-     *           The gateway's frequency plan: one of EU_863_870, US_902_928, CN_779_787, EU_433, AU_915_928, CN_470_510, AS_923, AS_920_923, AS_923_925, KR_920_923
-     *     @type string $bridge
-     *           The value of Bridge is set by the Bridge
-     *     @type string $router
-     *           The value of Router is set by the Router
-     *     @type int $fpga
-     *           Version of Gateway FPGA
-     *     @type int $dsp
-     *           Version of Gateway DSP software
-     *     @type string $hal
-     *           Version of gateway driver (in X.X.X format)
-     *     @type \Gateway\LocationMetadata $location
-     *     @type int $rtt
-     *           Round-trip time to the server in milliseconds
-     *     @type int $rx_in
-     *           Total number of received uplink packets since boot
-     *     @type int $rx_ok
-     *           Total number of successful (correct) uplink packets since boot
-     *     @type int $tx_in
-     *           Total number of received downlink packets since boot
-     *     @type int $tx_ok
-     *           Total number of successfully sent downlink packets since boot
-     *     @type int $lm_ok
-     *           Total number of packets received from link testing mote, with CRC OK
-     *     @type int $lm_st
-     *           Sequence number of the first packet received from the link testing mote
-     *     @type int $lm_nw
-     *           Sequence number of the last packet received from the link testing mote
-     *     @type int $l_pps
-     *           Number of lost PPS pulses
-     *     @type \Gateway\Status\OSMetrics $os
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $messages
-     *           debug or warning messages from the gateway
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Gateway\Gateway::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
@@ -825,7 +771,7 @@ class Status extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
-     * @return \Gateway\Status\OSMetrics
+     * @return \Gateway\Status_OSMetrics
      */
     public function getOs()
     {
@@ -834,7 +780,7 @@ class Status extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
-     * @param \Gateway\Status\OSMetrics $var
+     * @param \Gateway\Status_OSMetrics $var
      * @return $this
      */
     public function setOs($var)

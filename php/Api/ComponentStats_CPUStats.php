@@ -4,13 +4,124 @@
 
 namespace Api;
 
-if (false) {
+use Google\Protobuf\Internal\GPBType;
+use Google\Protobuf\Internal\RepeatedField;
+use Google\Protobuf\Internal\GPBUtil;
+
+/**
+ * Generated from protobuf message <code>api.ComponentStats.CPUStats</code>
+ */
+class ComponentStats_CPUStats extends \Google\Protobuf\Internal\Message
+{
     /**
-     * This class is deprecated. Use Api\ComponentStats\CPUStats instead.
-     * @deprecated
+     * Generated from protobuf field <code>float user = 1;</code>
      */
-    class ComponentStats_CPUStats {}
+    private $user = 0.0;
+    /**
+     * Generated from protobuf field <code>float system = 2;</code>
+     */
+    private $system = 0.0;
+    /**
+     * Generated from protobuf field <code>float idle = 3;</code>
+     */
+    private $idle = 0.0;
+    /**
+     * Generated from protobuf field <code>float percentage = 4;</code>
+     */
+    private $percentage = 0.0;
+
+    public function __construct() {
+        \GPBMetadata\GithubCom\TheThingsNetwork\Api\Api::initOnce();
+        parent::__construct();
+    }
+
+    /**
+     * Generated from protobuf field <code>float user = 1;</code>
+     * @return float
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Generated from protobuf field <code>float user = 1;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setUser($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->user = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>float system = 2;</code>
+     * @return float
+     */
+    public function getSystem()
+    {
+        return $this->system;
+    }
+
+    /**
+     * Generated from protobuf field <code>float system = 2;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setSystem($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->system = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>float idle = 3;</code>
+     * @return float
+     */
+    public function getIdle()
+    {
+        return $this->idle;
+    }
+
+    /**
+     * Generated from protobuf field <code>float idle = 3;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setIdle($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->idle = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>float percentage = 4;</code>
+     * @return float
+     */
+    public function getPercentage()
+    {
+        return $this->percentage;
+    }
+
+    /**
+     * Generated from protobuf field <code>float percentage = 4;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setPercentage($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->percentage = $var;
+
+        return $this;
+    }
+
 }
-class_exists(ComponentStats\CPUStats::class);
-@trigger_error('Api\ComponentStats_CPUStats is deprecated and will be removed in the next major release. Use Api\ComponentStats\CPUStats instead', E_USER_DEPRECATED);
 

@@ -100,40 +100,10 @@ internal final class Lorawan_DeviceManagerServiceClient: ServiceClientBase, Lora
 }
 
 /// To build a server, implement a class that conforms to this protocol.
-/// If one of the methods returning `ServerStatus?` returns nil,
-/// it is expected that you have already returned a status to the client by means of `session.close`.
-internal protocol Lorawan_DeviceManagerProvider: ServiceProvider {
+internal protocol Lorawan_DeviceManagerProvider {
   func getDevice(request: Lorawan_DeviceIdentifier, session: Lorawan_DeviceManagerGetDeviceSession) throws -> Lorawan_Device
   func setDevice(request: Lorawan_Device, session: Lorawan_DeviceManagerSetDeviceSession) throws -> SwiftProtobuf.Google_Protobuf_Empty
   func deleteDevice(request: Lorawan_DeviceIdentifier, session: Lorawan_DeviceManagerDeleteDeviceSession) throws -> SwiftProtobuf.Google_Protobuf_Empty
-}
-
-extension Lorawan_DeviceManagerProvider {
-  internal var serviceName: String { return "lorawan.DeviceManager" }
-
-  /// Determines and calls the appropriate request handler, depending on the request's method.
-  /// Throws `HandleMethodError.unknownMethod` for methods not handled by this service.
-  internal func handleMethod(_ method: String, handler: Handler) throws -> ServerStatus? {
-    switch method {
-    case "/lorawan.DeviceManager/GetDevice":
-      return try Lorawan_DeviceManagerGetDeviceSessionBase(
-        handler: handler,
-        providerBlock: { try self.getDevice(request: $0, session: $1 as! Lorawan_DeviceManagerGetDeviceSessionBase) })
-          .run()
-    case "/lorawan.DeviceManager/SetDevice":
-      return try Lorawan_DeviceManagerSetDeviceSessionBase(
-        handler: handler,
-        providerBlock: { try self.setDevice(request: $0, session: $1 as! Lorawan_DeviceManagerSetDeviceSessionBase) })
-          .run()
-    case "/lorawan.DeviceManager/DeleteDevice":
-      return try Lorawan_DeviceManagerDeleteDeviceSessionBase(
-        handler: handler,
-        providerBlock: { try self.deleteDevice(request: $0, session: $1 as! Lorawan_DeviceManagerDeleteDeviceSessionBase) })
-          .run()
-    default:
-      throw HandleMethodError.unknownMethod
-    }
-  }
 }
 
 internal protocol Lorawan_DeviceManagerGetDeviceSession: ServerSessionUnary {}
@@ -147,4 +117,52 @@ fileprivate final class Lorawan_DeviceManagerSetDeviceSessionBase: ServerSession
 internal protocol Lorawan_DeviceManagerDeleteDeviceSession: ServerSessionUnary {}
 
 fileprivate final class Lorawan_DeviceManagerDeleteDeviceSessionBase: ServerSessionUnaryBase<Lorawan_DeviceIdentifier, SwiftProtobuf.Google_Protobuf_Empty>, Lorawan_DeviceManagerDeleteDeviceSession {}
+
+
+/// Main server for generated service
+internal final class Lorawan_DeviceManagerServer: ServiceServer {
+  private let provider: Lorawan_DeviceManagerProvider
+
+  internal init(address: String, provider: Lorawan_DeviceManagerProvider) {
+    self.provider = provider
+    super.init(address: address)
+  }
+
+  internal init?(address: String, certificateURL: URL, keyURL: URL, provider: Lorawan_DeviceManagerProvider) {
+    self.provider = provider
+    super.init(address: address, certificateURL: certificateURL, keyURL: keyURL)
+  }
+
+  internal init?(address: String, certificateString: String, keyString: String, provider: Lorawan_DeviceManagerProvider) {
+    self.provider = provider
+    super.init(address: address, certificateString: certificateString, keyString: keyString)
+  }
+
+  /// Start the server.
+  internal override func handleMethod(_ method: String, handler: Handler, queue: DispatchQueue) throws -> Bool {
+    let provider = self.provider
+    switch method {
+    case "/lorawan.DeviceManager/GetDevice":
+      try Lorawan_DeviceManagerGetDeviceSessionBase(
+        handler: handler,
+        providerBlock: { try provider.getDevice(request: $0, session: $1 as! Lorawan_DeviceManagerGetDeviceSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/lorawan.DeviceManager/SetDevice":
+      try Lorawan_DeviceManagerSetDeviceSessionBase(
+        handler: handler,
+        providerBlock: { try provider.setDevice(request: $0, session: $1 as! Lorawan_DeviceManagerSetDeviceSessionBase) })
+          .run(queue: queue)
+      return true
+    case "/lorawan.DeviceManager/DeleteDevice":
+      try Lorawan_DeviceManagerDeleteDeviceSessionBase(
+        handler: handler,
+        providerBlock: { try provider.deleteDevice(request: $0, session: $1 as! Lorawan_DeviceManagerDeleteDeviceSessionBase) })
+          .run(queue: queue)
+      return true
+    default:
+      return false
+    }
+  }
+}
 

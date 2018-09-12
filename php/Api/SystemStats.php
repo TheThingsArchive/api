@@ -26,25 +26,14 @@ class SystemStats extends \Google\Protobuf\Internal\Message
      */
     private $memory = null;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type \Api\SystemStats\Loadstats $load
-     *     @type \Api\SystemStats\CPUStats $cpu
-     *     @type \Api\SystemStats\MemoryStats $memory
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Api::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
      * Generated from protobuf field <code>.api.SystemStats.Loadstats load = 1;</code>
-     * @return \Api\SystemStats\Loadstats
+     * @return \Api\SystemStats_Loadstats
      */
     public function getLoad()
     {
@@ -53,7 +42,7 @@ class SystemStats extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.api.SystemStats.Loadstats load = 1;</code>
-     * @param \Api\SystemStats\Loadstats $var
+     * @param \Api\SystemStats_Loadstats $var
      * @return $this
      */
     public function setLoad($var)
@@ -66,7 +55,7 @@ class SystemStats extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.api.SystemStats.CPUStats cpu = 2;</code>
-     * @return \Api\SystemStats\CPUStats
+     * @return \Api\SystemStats_CPUStats
      */
     public function getCpu()
     {
@@ -75,7 +64,7 @@ class SystemStats extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.api.SystemStats.CPUStats cpu = 2;</code>
-     * @param \Api\SystemStats\CPUStats $var
+     * @param \Api\SystemStats_CPUStats $var
      * @return $this
      */
     public function setCpu($var)
@@ -88,7 +77,7 @@ class SystemStats extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.api.SystemStats.MemoryStats memory = 3;</code>
-     * @return \Api\SystemStats\MemoryStats
+     * @return \Api\SystemStats_MemoryStats
      */
     public function getMemory()
     {
@@ -97,7 +86,7 @@ class SystemStats extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.api.SystemStats.MemoryStats memory = 3;</code>
-     * @param \Api\SystemStats\MemoryStats $var
+     * @param \Api\SystemStats_MemoryStats $var
      * @return $this
      */
     public function setMemory($var)

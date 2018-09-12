@@ -22,19 +22,9 @@ class MHDR extends \Google\Protobuf\Internal\Message
      */
     private $major = 0;
 
-    /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     *     @type int $m_type
-     *     @type int $major
-     * }
-     */
-    public function __construct($data = NULL) {
+    public function __construct() {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Protocol\Lorawan\Lorawan::initOnce();
-        parent::__construct($data);
+        parent::__construct();
     }
 
     /**
