@@ -64,9 +64,29 @@ class DeduplicatedDeviceActivationRequest extends \Google\Protobuf\Internal\Mess
      */
     private $trace = null;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $payload
+     *     @type \Protocol\Message $message
+     *     @type string $dev_eui
+     *     @type string $app_eui
+     *     @type string $app_id
+     *     @type string $dev_id
+     *     @type \Protocol\RxMetadata $protocol_metadata
+     *     @type \Gateway\RxMetadata[]|\Google\Protobuf\Internal\RepeatedField $gateway_metadata
+     *     @type \Protocol\ActivationMetadata $activation_metadata
+     *     @type int|string $server_time
+     *     @type \Broker\DeviceActivationResponse $response_template
+     *     @type \Trace\Trace $trace
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Broker\Broker::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

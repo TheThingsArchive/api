@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -27,6 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/TheThingsNetwork/api/handler/handler.proto',
   package='handler',
   syntax='proto3',
+  serialized_options=_b('\n org.thethingsnetwork.api.handlerB\014HandlerProtoP\001Z\'github.com/TheThingsNetwork/api/handler\252\002\034TheThingsNetwork.API.Handler'),
   serialized_pb=_b('\n5github.com/TheThingsNetwork/api/handler/handler.proto\x12\x07handler\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a-github.com/gogo/protobuf/gogoproto/gogo.proto\x1a)github.com/TheThingsNetwork/api/api.proto\x1a\x33github.com/TheThingsNetwork/api/broker/broker.proto\x1a\x37github.com/TheThingsNetwork/api/protocol/protocol.proto\x1a=github.com/TheThingsNetwork/api/protocol/lorawan/device.proto\x1a\x31github.com/TheThingsNetwork/api/trace/trace.proto\"\xe4\x01\n\x18\x44\x65viceActivationResponse\x12\x0f\n\x07payload\x18\x01 \x01(\x0c\x12\"\n\x07message\x18\x02 \x01(\x0b\x32\x11.protocol.Message\x12\x35\n\x0f\x64ownlink_option\x18\x0b \x01(\x0b\x32\x16.broker.DownlinkOptionB\x04\xc8\xde\x1f\x00\x12?\n\x13\x61\x63tivation_metadata\x18\x17 \x01(\x0b\x32\x1c.protocol.ActivationMetadataB\x04\xc8\xde\x1f\x00\x12\x1b\n\x05trace\x18\x1f \x01(\x0b\x32\x0c.trace.Trace\"\x0f\n\rStatusRequest\"\xb9\x01\n\x06Status\x12&\n\x06system\x18\x01 \x01(\x0b\x32\x10.api.SystemStatsB\x04\xc8\xde\x1f\x00\x12,\n\tcomponent\x18\x02 \x01(\x0b\x32\x13.api.ComponentStatsB\x04\xc8\xde\x1f\x00\x12\x1a\n\x06uplink\x18\x0b \x01(\x0b\x32\n.api.Rates\x12\x1c\n\x08\x64ownlink\x18\x0c \x01(\x0b\x32\n.api.Rates\x12\x1f\n\x0b\x61\x63tivations\x18\r \x01(\x0b\x32\n.api.Rates\"2\n\x15\x41pplicationIdentifier\x12\x19\n\x06\x61pp_id\x18\x01 \x01(\tB\t\xe2\xde\x1f\x05\x41ppID\"\xad\x01\n\x0b\x41pplication\x12\x19\n\x06\x61pp_id\x18\x01 \x01(\tB\t\xe2\xde\x1f\x05\x41ppID\x12\x16\n\x0epayload_format\x18\x06 \x01(\t\x12\x0f\n\x07\x64\x65\x63oder\x18\x02 \x01(\t\x12\x11\n\tconverter\x18\x03 \x01(\t\x12\x11\n\tvalidator\x18\x04 \x01(\t\x12\x0f\n\x07\x65ncoder\x18\x05 \x01(\t\x12#\n\x1bregister_on_join_access_key\x18\x07 \x01(\t\"H\n\x10\x44\x65viceIdentifier\x12\x19\n\x06\x61pp_id\x18\x01 \x01(\tB\t\xe2\xde\x1f\x05\x41ppID\x12\x19\n\x06\x64\x65v_id\x18\x02 \x01(\tB\t\xe2\xde\x1f\x05\x44\x65vID\"\xba\x02\n\x06\x44\x65vice\x12\x19\n\x06\x61pp_id\x18\x01 \x01(\tB\t\xe2\xde\x1f\x05\x41ppID\x12\x19\n\x06\x64\x65v_id\x18\x02 \x01(\tB\t\xe2\xde\x1f\x05\x44\x65vID\x12<\n\x0elorawan_device\x18\x03 \x01(\x0b\x32\x0f.lorawan.DeviceB\x11\xe2\xde\x1f\rLoRaWANDeviceH\x00\x12\x10\n\x08latitude\x18\n \x01(\x02\x12\x11\n\tlongitude\x18\x0b \x01(\x02\x12\x10\n\x08\x61ltitude\x18\x0c \x01(\x05\x12\x33\n\nattributes\x18\r \x03(\x0b\x32\x1f.handler.Device.AttributesEntry\x12\x13\n\x0b\x64\x65scription\x18\x14 \x01(\t\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x08\n\x06\x64\x65vice\".\n\nDeviceList\x12 \n\x07\x64\x65vices\x18\x01 \x03(\x0b\x32\x0f.handler.Device\"l\n\x12\x44ryDownlinkMessage\x12\x0f\n\x07payload\x18\x01 \x01(\x0c\x12\x0e\n\x06\x66ields\x18\x02 \x01(\t\x12\'\n\x03\x61pp\x18\x03 \x01(\x0b\x32\x14.handler.ApplicationB\x04\xc8\xde\x1f\x00\x12\x0c\n\x04port\x18\x04 \x01(\r\"Z\n\x10\x44ryUplinkMessage\x12\x0f\n\x07payload\x18\x01 \x01(\x0c\x12\'\n\x03\x61pp\x18\x02 \x01(\x0b\x32\x14.handler.ApplicationB\x04\xc8\xde\x1f\x00\x12\x0c\n\x04port\x18\x03 \x01(\r\"m\n\x16SimulatedUplinkMessage\x12\x19\n\x06\x61pp_id\x18\x01 \x01(\tB\t\xe2\xde\x1f\x05\x41ppID\x12\x19\n\x06\x64\x65v_id\x18\x02 \x01(\tB\t\xe2\xde\x1f\x05\x44\x65vID\x12\x0f\n\x07payload\x18\x03 \x01(\x0c\x12\x0c\n\x04port\x18\x04 \x01(\r\",\n\x08LogEntry\x12\x10\n\x08\x66unction\x18\x01 \x01(\t\x12\x0e\n\x06\x66ields\x18\x02 \x03(\t\"b\n\x0f\x44ryUplinkResult\x12\x0f\n\x07payload\x18\x01 \x01(\x0c\x12\x0e\n\x06\x66ields\x18\x02 \x01(\t\x12\r\n\x05valid\x18\x03 \x01(\x08\x12\x1f\n\x04logs\x18\x04 \x03(\x0b\x32\x11.handler.LogEntry\"E\n\x11\x44ryDownlinkResult\x12\x0f\n\x07payload\x18\x01 \x01(\x0c\x12\x1f\n\x04logs\x18\x02 \x03(\x0b\x32\x11.handler.LogEntry2\xc5\x01\n\x07Handler\x12^\n\x13\x41\x63tivationChallenge\x12\".broker.ActivationChallengeRequest\x1a#.broker.ActivationChallengeResponse\x12Z\n\x08\x41\x63tivate\x12+.broker.DeduplicatedDeviceActivationRequest\x1a!.handler.DeviceActivationResponse2\xe3\t\n\x12\x41pplicationManager\x12g\n\x13RegisterApplication\x12\x1e.handler.ApplicationIdentifier\x1a\x16.google.protobuf.Empty\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/applications:\x01*\x12\x66\n\x0eGetApplication\x12\x1e.handler.ApplicationIdentifier\x1a\x14.handler.Application\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/applications/{app_id}\x12~\n\x0eSetApplication\x12\x14.handler.Application\x1a\x16.google.protobuf.Empty\">\x82\xd3\xe4\x93\x02\x38\"\x16/applications/{app_id}:\x01*Z\x1b\x1a\x16/applications/{app_id}:\x01*\x12k\n\x11\x44\x65leteApplication\x12\x1e.handler.ApplicationIdentifier\x1a\x16.google.protobuf.Empty\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/applications/{app_id}\x12h\n\tGetDevice\x12\x19.handler.DeviceIdentifier\x1a\x0f.handler.Device\"/\x82\xd3\xe4\x93\x02)\x12\'/applications/{app_id}/devices/{dev_id}\x12\xe2\x01\n\tSetDevice\x12\x0f.handler.Device\x1a\x16.google.protobuf.Empty\"\xab\x01\x82\xd3\xe4\x93\x02\xa4\x01\"\'/applications/{app_id}/devices/{dev_id}:\x01*Z,\x1a\'/applications/{app_id}/devices/{dev_id}:\x01*Z#\"\x1e/applications/{app_id}/devices:\x01*Z#\x1a\x1e/applications/{app_id}/devices:\x01*\x12r\n\x0c\x44\x65leteDevice\x12\x19.handler.DeviceIdentifier\x1a\x16.google.protobuf.Empty\"/\x82\xd3\xe4\x93\x02)*\'/applications/{app_id}/devices/{dev_id}\x12w\n\x18GetDevicesForApplication\x12\x1e.handler.ApplicationIdentifier\x1a\x13.handler.DeviceList\"&\x82\xd3\xe4\x93\x02 \x12\x1e/applications/{app_id}/devices\x12\x46\n\x0b\x44ryDownlink\x12\x1b.handler.DryDownlinkMessage\x1a\x1a.handler.DryDownlinkResult\x12@\n\tDryUplink\x12\x19.handler.DryUplinkMessage\x1a\x18.handler.DryUplinkResult\x12I\n\x0eSimulateUplink\x12\x1f.handler.SimulatedUplinkMessage\x1a\x16.google.protobuf.Empty2F\n\x0eHandlerManager\x12\x34\n\tGetStatus\x12\x16.handler.StatusRequest\x1a\x0f.handler.StatusBz\n org.thethingsnetwork.api.handlerB\x0cHandlerProtoP\x01Z\'github.com/TheThingsNetwork/api/handler\xaa\x02\x1cTheThingsNetwork.API.Handlerb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,github_dot_com_dot_TheThingsNetwork_dot_api_dot_api__pb2.DESCRIPTOR,github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DESCRIPTOR,github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_protocol__pb2.DESCRIPTOR,github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__pb2.DESCRIPTOR,github_dot_com_dot_TheThingsNetwork_dot_api_dot_trace_dot_trace__pb2.DESCRIPTOR,])
@@ -47,42 +47,42 @@ _DEVICEACTIVATIONRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='message', full_name='handler.DeviceActivationResponse.message', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='downlink_option', full_name='handler.DeviceActivationResponse.downlink_option', index=2,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\310\336\037\000')), file=DESCRIPTOR),
+      serialized_options=_b('\310\336\037\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='activation_metadata', full_name='handler.DeviceActivationResponse.activation_metadata', index=3,
       number=23, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\310\336\037\000')), file=DESCRIPTOR),
+      serialized_options=_b('\310\336\037\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='trace', full_name='handler.DeviceActivationResponse.trace', index=4,
       number=31, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -106,7 +106,7 @@ _STATUSREQUEST = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -130,42 +130,42 @@ _STATUS = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\310\336\037\000')), file=DESCRIPTOR),
+      serialized_options=_b('\310\336\037\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='component', full_name='handler.Status.component', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\310\336\037\000')), file=DESCRIPTOR),
+      serialized_options=_b('\310\336\037\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='uplink', full_name='handler.Status.uplink', index=2,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='downlink', full_name='handler.Status.downlink', index=3,
       number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='activations', full_name='handler.Status.activations', index=4,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -189,14 +189,14 @@ _APPLICATIONIDENTIFIER = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\342\336\037\005AppID')), file=DESCRIPTOR),
+      serialized_options=_b('\342\336\037\005AppID'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -220,56 +220,56 @@ _APPLICATION = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\342\336\037\005AppID')), file=DESCRIPTOR),
+      serialized_options=_b('\342\336\037\005AppID'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='payload_format', full_name='handler.Application.payload_format', index=1,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='decoder', full_name='handler.Application.decoder', index=2,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='converter', full_name='handler.Application.converter', index=3,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='validator', full_name='handler.Application.validator', index=4,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='encoder', full_name='handler.Application.encoder', index=5,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='register_on_join_access_key', full_name='handler.Application.register_on_join_access_key', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -293,21 +293,21 @@ _DEVICEIDENTIFIER = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\342\336\037\005AppID')), file=DESCRIPTOR),
+      serialized_options=_b('\342\336\037\005AppID'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dev_id', full_name='handler.DeviceIdentifier.dev_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\342\336\037\005DevID')), file=DESCRIPTOR),
+      serialized_options=_b('\342\336\037\005DevID'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -331,21 +331,21 @@ _DEVICE_ATTRIBUTESENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='handler.Device.AttributesEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -368,63 +368,63 @@ _DEVICE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\342\336\037\005AppID')), file=DESCRIPTOR),
+      serialized_options=_b('\342\336\037\005AppID'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dev_id', full_name='handler.Device.dev_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\342\336\037\005DevID')), file=DESCRIPTOR),
+      serialized_options=_b('\342\336\037\005DevID'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='lorawan_device', full_name='handler.Device.lorawan_device', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\342\336\037\rLoRaWANDevice')), file=DESCRIPTOR),
+      serialized_options=_b('\342\336\037\rLoRaWANDevice'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='latitude', full_name='handler.Device.latitude', index=3,
       number=10, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='longitude', full_name='handler.Device.longitude', index=4,
       number=11, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='altitude', full_name='handler.Device.altitude', index=5,
       number=12, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='attributes', full_name='handler.Device.attributes', index=6,
       number=13, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='handler.Device.description', index=7,
       number=20, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_DEVICE_ATTRIBUTESENTRY, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -451,14 +451,14 @@ _DEVICELIST = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -482,35 +482,35 @@ _DRYDOWNLINKMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='fields', full_name='handler.DryDownlinkMessage.fields', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app', full_name='handler.DryDownlinkMessage.app', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\310\336\037\000')), file=DESCRIPTOR),
+      serialized_options=_b('\310\336\037\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='handler.DryDownlinkMessage.port', index=3,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -534,28 +534,28 @@ _DRYUPLINKMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app', full_name='handler.DryUplinkMessage.app', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\310\336\037\000')), file=DESCRIPTOR),
+      serialized_options=_b('\310\336\037\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='handler.DryUplinkMessage.port', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -579,35 +579,35 @@ _SIMULATEDUPLINKMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\342\336\037\005AppID')), file=DESCRIPTOR),
+      serialized_options=_b('\342\336\037\005AppID'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dev_id', full_name='handler.SimulatedUplinkMessage.dev_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\342\336\037\005DevID')), file=DESCRIPTOR),
+      serialized_options=_b('\342\336\037\005DevID'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='payload', full_name='handler.SimulatedUplinkMessage.payload', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='handler.SimulatedUplinkMessage.port', index=3,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -631,21 +631,21 @@ _LOGENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='fields', full_name='handler.LogEntry.fields', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -669,35 +669,35 @@ _DRYUPLINKRESULT = _descriptor.Descriptor(
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='fields', full_name='handler.DryUplinkResult.fields', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='valid', full_name='handler.DryUplinkResult.valid', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='logs', full_name='handler.DryUplinkResult.logs', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -721,21 +721,21 @@ _DRYDOWNLINKRESULT = _descriptor.Descriptor(
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='logs', full_name='handler.DryDownlinkResult.logs', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -888,47 +888,30 @@ DryDownlinkResult = _reflection.GeneratedProtocolMessageType('DryDownlinkResult'
 _sym_db.RegisterMessage(DryDownlinkResult)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n org.thethingsnetwork.api.handlerB\014HandlerProtoP\001Z\'github.com/TheThingsNetwork/api/handler\252\002\034TheThingsNetwork.API.Handler'))
-_DEVICEACTIVATIONRESPONSE.fields_by_name['downlink_option'].has_options = True
-_DEVICEACTIVATIONRESPONSE.fields_by_name['downlink_option']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\310\336\037\000'))
-_DEVICEACTIVATIONRESPONSE.fields_by_name['activation_metadata'].has_options = True
-_DEVICEACTIVATIONRESPONSE.fields_by_name['activation_metadata']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\310\336\037\000'))
-_STATUS.fields_by_name['system'].has_options = True
-_STATUS.fields_by_name['system']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\310\336\037\000'))
-_STATUS.fields_by_name['component'].has_options = True
-_STATUS.fields_by_name['component']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\310\336\037\000'))
-_APPLICATIONIDENTIFIER.fields_by_name['app_id'].has_options = True
-_APPLICATIONIDENTIFIER.fields_by_name['app_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\342\336\037\005AppID'))
-_APPLICATION.fields_by_name['app_id'].has_options = True
-_APPLICATION.fields_by_name['app_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\342\336\037\005AppID'))
-_DEVICEIDENTIFIER.fields_by_name['app_id'].has_options = True
-_DEVICEIDENTIFIER.fields_by_name['app_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\342\336\037\005AppID'))
-_DEVICEIDENTIFIER.fields_by_name['dev_id'].has_options = True
-_DEVICEIDENTIFIER.fields_by_name['dev_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\342\336\037\005DevID'))
-_DEVICE_ATTRIBUTESENTRY.has_options = True
-_DEVICE_ATTRIBUTESENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_DEVICE.fields_by_name['app_id'].has_options = True
-_DEVICE.fields_by_name['app_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\342\336\037\005AppID'))
-_DEVICE.fields_by_name['dev_id'].has_options = True
-_DEVICE.fields_by_name['dev_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\342\336\037\005DevID'))
-_DEVICE.fields_by_name['lorawan_device'].has_options = True
-_DEVICE.fields_by_name['lorawan_device']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\342\336\037\rLoRaWANDevice'))
-_DRYDOWNLINKMESSAGE.fields_by_name['app'].has_options = True
-_DRYDOWNLINKMESSAGE.fields_by_name['app']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\310\336\037\000'))
-_DRYUPLINKMESSAGE.fields_by_name['app'].has_options = True
-_DRYUPLINKMESSAGE.fields_by_name['app']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\310\336\037\000'))
-_SIMULATEDUPLINKMESSAGE.fields_by_name['app_id'].has_options = True
-_SIMULATEDUPLINKMESSAGE.fields_by_name['app_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\342\336\037\005AppID'))
-_SIMULATEDUPLINKMESSAGE.fields_by_name['dev_id'].has_options = True
-_SIMULATEDUPLINKMESSAGE.fields_by_name['dev_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\342\336\037\005DevID'))
+DESCRIPTOR._options = None
+_DEVICEACTIVATIONRESPONSE.fields_by_name['downlink_option']._options = None
+_DEVICEACTIVATIONRESPONSE.fields_by_name['activation_metadata']._options = None
+_STATUS.fields_by_name['system']._options = None
+_STATUS.fields_by_name['component']._options = None
+_APPLICATIONIDENTIFIER.fields_by_name['app_id']._options = None
+_APPLICATION.fields_by_name['app_id']._options = None
+_DEVICEIDENTIFIER.fields_by_name['app_id']._options = None
+_DEVICEIDENTIFIER.fields_by_name['dev_id']._options = None
+_DEVICE_ATTRIBUTESENTRY._options = None
+_DEVICE.fields_by_name['app_id']._options = None
+_DEVICE.fields_by_name['dev_id']._options = None
+_DEVICE.fields_by_name['lorawan_device']._options = None
+_DRYDOWNLINKMESSAGE.fields_by_name['app']._options = None
+_DRYUPLINKMESSAGE.fields_by_name['app']._options = None
+_SIMULATEDUPLINKMESSAGE.fields_by_name['app_id']._options = None
+_SIMULATEDUPLINKMESSAGE.fields_by_name['dev_id']._options = None
 
 _HANDLER = _descriptor.ServiceDescriptor(
   name='Handler',
   full_name='handler.Handler',
   file=DESCRIPTOR,
   index=0,
-  options=None,
+  serialized_options=None,
   serialized_start=2073,
   serialized_end=2270,
   methods=[
@@ -939,7 +922,7 @@ _HANDLER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2._ACTIVATIONCHALLENGEREQUEST,
     output_type=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2._ACTIVATIONCHALLENGERESPONSE,
-    options=None,
+    serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='Activate',
@@ -948,7 +931,7 @@ _HANDLER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2._DEDUPLICATEDDEVICEACTIVATIONREQUEST,
     output_type=_DEVICEACTIVATIONRESPONSE,
-    options=None,
+    serialized_options=None,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_HANDLER)
@@ -961,7 +944,7 @@ _APPLICATIONMANAGER = _descriptor.ServiceDescriptor(
   full_name='handler.ApplicationManager',
   file=DESCRIPTOR,
   index=1,
-  options=None,
+  serialized_options=None,
   serialized_start=2273,
   serialized_end=3524,
   methods=[
@@ -972,7 +955,7 @@ _APPLICATIONMANAGER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_APPLICATIONIDENTIFIER,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\022\"\r/applications:\001*')),
+    serialized_options=_b('\202\323\344\223\002\022\"\r/applications:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='GetApplication',
@@ -981,7 +964,7 @@ _APPLICATIONMANAGER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_APPLICATIONIDENTIFIER,
     output_type=_APPLICATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\030\022\026/applications/{app_id}')),
+    serialized_options=_b('\202\323\344\223\002\030\022\026/applications/{app_id}'),
   ),
   _descriptor.MethodDescriptor(
     name='SetApplication',
@@ -990,7 +973,7 @@ _APPLICATIONMANAGER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_APPLICATION,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0028\"\026/applications/{app_id}:\001*Z\033\032\026/applications/{app_id}:\001*')),
+    serialized_options=_b('\202\323\344\223\0028\"\026/applications/{app_id}:\001*Z\033\032\026/applications/{app_id}:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='DeleteApplication',
@@ -999,7 +982,7 @@ _APPLICATIONMANAGER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_APPLICATIONIDENTIFIER,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\030*\026/applications/{app_id}')),
+    serialized_options=_b('\202\323\344\223\002\030*\026/applications/{app_id}'),
   ),
   _descriptor.MethodDescriptor(
     name='GetDevice',
@@ -1008,7 +991,7 @@ _APPLICATIONMANAGER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DEVICEIDENTIFIER,
     output_type=_DEVICE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002)\022\'/applications/{app_id}/devices/{dev_id}')),
+    serialized_options=_b('\202\323\344\223\002)\022\'/applications/{app_id}/devices/{dev_id}'),
   ),
   _descriptor.MethodDescriptor(
     name='SetDevice',
@@ -1017,7 +1000,7 @@ _APPLICATIONMANAGER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DEVICE,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\244\001\"\'/applications/{app_id}/devices/{dev_id}:\001*Z,\032\'/applications/{app_id}/devices/{dev_id}:\001*Z#\"\036/applications/{app_id}/devices:\001*Z#\032\036/applications/{app_id}/devices:\001*')),
+    serialized_options=_b('\202\323\344\223\002\244\001\"\'/applications/{app_id}/devices/{dev_id}:\001*Z,\032\'/applications/{app_id}/devices/{dev_id}:\001*Z#\"\036/applications/{app_id}/devices:\001*Z#\032\036/applications/{app_id}/devices:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='DeleteDevice',
@@ -1026,7 +1009,7 @@ _APPLICATIONMANAGER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DEVICEIDENTIFIER,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002)*\'/applications/{app_id}/devices/{dev_id}')),
+    serialized_options=_b('\202\323\344\223\002)*\'/applications/{app_id}/devices/{dev_id}'),
   ),
   _descriptor.MethodDescriptor(
     name='GetDevicesForApplication',
@@ -1035,7 +1018,7 @@ _APPLICATIONMANAGER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_APPLICATIONIDENTIFIER,
     output_type=_DEVICELIST,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002 \022\036/applications/{app_id}/devices')),
+    serialized_options=_b('\202\323\344\223\002 \022\036/applications/{app_id}/devices'),
   ),
   _descriptor.MethodDescriptor(
     name='DryDownlink',
@@ -1044,7 +1027,7 @@ _APPLICATIONMANAGER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DRYDOWNLINKMESSAGE,
     output_type=_DRYDOWNLINKRESULT,
-    options=None,
+    serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='DryUplink',
@@ -1053,7 +1036,7 @@ _APPLICATIONMANAGER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DRYUPLINKMESSAGE,
     output_type=_DRYUPLINKRESULT,
-    options=None,
+    serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='SimulateUplink',
@@ -1062,7 +1045,7 @@ _APPLICATIONMANAGER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_SIMULATEDUPLINKMESSAGE,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
-    options=None,
+    serialized_options=None,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_APPLICATIONMANAGER)
@@ -1075,7 +1058,7 @@ _HANDLERMANAGER = _descriptor.ServiceDescriptor(
   full_name='handler.HandlerManager',
   file=DESCRIPTOR,
   index=2,
-  options=None,
+  serialized_options=None,
   serialized_start=3526,
   serialized_end=3596,
   methods=[
@@ -1086,7 +1069,7 @@ _HANDLERMANAGER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_STATUSREQUEST,
     output_type=_STATUS,
-    options=None,
+    serialized_options=None,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_HANDLERMANAGER)

@@ -26,9 +26,21 @@ class DevicesRequest extends \Google\Protobuf\Internal\Message
      */
     private $f_cnt = 0;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $dev_addr
+     *           Device address from the uplink message
+     *     @type int $f_cnt
+     *           Frame counter from the uplink message
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Networkserver\Networkserver::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

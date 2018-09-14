@@ -4,84 +4,13 @@
 
 namespace Lorawan;
 
-use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
-use Google\Protobuf\Internal\GPBUtil;
-
-/**
- * Generated from protobuf message <code>lorawan.PrefixesResponse.PrefixMapping</code>
- */
-class PrefixesResponse_PrefixMapping extends \Google\Protobuf\Internal\Message
-{
+if (false) {
     /**
-     * The prefix that can be used
-     *
-     * Generated from protobuf field <code>string prefix = 1;</code>
+     * This class is deprecated. Use Lorawan\PrefixesResponse\PrefixMapping instead.
+     * @deprecated
      */
-    private $prefix = '';
-    /**
-     * Usage constraints of this prefix (see activation_constraints in device.proto)
-     *
-     * Generated from protobuf field <code>repeated string usage = 2;</code>
-     */
-    private $usage;
-
-    public function __construct() {
-        \GPBMetadata\GithubCom\TheThingsNetwork\Api\Protocol\Lorawan\DeviceAddress::initOnce();
-        parent::__construct();
-    }
-
-    /**
-     * The prefix that can be used
-     *
-     * Generated from protobuf field <code>string prefix = 1;</code>
-     * @return string
-     */
-    public function getPrefix()
-    {
-        return $this->prefix;
-    }
-
-    /**
-     * The prefix that can be used
-     *
-     * Generated from protobuf field <code>string prefix = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPrefix($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->prefix = $var;
-
-        return $this;
-    }
-
-    /**
-     * Usage constraints of this prefix (see activation_constraints in device.proto)
-     *
-     * Generated from protobuf field <code>repeated string usage = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getUsage()
-    {
-        return $this->usage;
-    }
-
-    /**
-     * Usage constraints of this prefix (see activation_constraints in device.proto)
-     *
-     * Generated from protobuf field <code>repeated string usage = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setUsage($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->usage = $arr;
-
-        return $this;
-    }
-
+    class PrefixesResponse_PrefixMapping {}
 }
+class_exists(PrefixesResponse\PrefixMapping::class);
+@trigger_error('Lorawan\PrefixesResponse_PrefixMapping is deprecated and will be removed in the next major release. Use Lorawan\PrefixesResponse\PrefixMapping instead', E_USER_DEPRECATED);
 

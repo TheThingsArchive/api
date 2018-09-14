@@ -40,9 +40,25 @@ class DryDownlinkMessage extends \Google\Protobuf\Internal\Message
      */
     private $port = 0;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $payload
+     *           The binary payload to use
+     *     @type string $fields
+     *           JSON-encoded object with fields to encode
+     *     @type \Handler\Application $app
+     *           The Application containing the payload functions that should be executed
+     *     @type int $port
+     *           The port number that should be passed to the payload function
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Handler\Handler::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

@@ -39,7 +39,7 @@ type PrefixesRequest struct {
 func (m *PrefixesRequest) Reset()      { *m = PrefixesRequest{} }
 func (*PrefixesRequest) ProtoMessage() {}
 func (*PrefixesRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_device_address_bdf08b3cf7cb4c3e, []int{0}
+	return fileDescriptor_device_address_7d1c4614889586dd, []int{0}
 }
 func (m *PrefixesRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -78,7 +78,7 @@ type PrefixesResponse struct {
 func (m *PrefixesResponse) Reset()      { *m = PrefixesResponse{} }
 func (*PrefixesResponse) ProtoMessage() {}
 func (*PrefixesResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_device_address_bdf08b3cf7cb4c3e, []int{1}
+	return fileDescriptor_device_address_7d1c4614889586dd, []int{1}
 }
 func (m *PrefixesResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -126,7 +126,7 @@ type PrefixesResponse_PrefixMapping struct {
 func (m *PrefixesResponse_PrefixMapping) Reset()      { *m = PrefixesResponse_PrefixMapping{} }
 func (*PrefixesResponse_PrefixMapping) ProtoMessage() {}
 func (*PrefixesResponse_PrefixMapping) Descriptor() ([]byte, []int) {
-	return fileDescriptor_device_address_bdf08b3cf7cb4c3e, []int{1, 0}
+	return fileDescriptor_device_address_7d1c4614889586dd, []int{1, 0}
 }
 func (m *PrefixesResponse_PrefixMapping) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -179,7 +179,7 @@ type DevAddrRequest struct {
 func (m *DevAddrRequest) Reset()      { *m = DevAddrRequest{} }
 func (*DevAddrRequest) ProtoMessage() {}
 func (*DevAddrRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_device_address_bdf08b3cf7cb4c3e, []int{2}
+	return fileDescriptor_device_address_7d1c4614889586dd, []int{2}
 }
 func (m *DevAddrRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -224,7 +224,7 @@ type DevAddrResponse struct {
 func (m *DevAddrResponse) Reset()      { *m = DevAddrResponse{} }
 func (*DevAddrResponse) ProtoMessage() {}
 func (*DevAddrResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_device_address_bdf08b3cf7cb4c3e, []int{3}
+	return fileDescriptor_device_address_7d1c4614889586dd, []int{3}
 }
 func (m *DevAddrResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1421,13 +1421,13 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/lorawan/device_address.proto", fileDescriptor_device_address_bdf08b3cf7cb4c3e)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/lorawan/device_address.proto", fileDescriptor_device_address_7d1c4614889586dd)
 }
 func init() {
-	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/lorawan/device_address.proto", fileDescriptor_device_address_bdf08b3cf7cb4c3e)
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/lorawan/device_address.proto", fileDescriptor_device_address_7d1c4614889586dd)
 }
 
-var fileDescriptor_device_address_bdf08b3cf7cb4c3e = []byte{
+var fileDescriptor_device_address_7d1c4614889586dd = []byte{
 	// 519 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x53, 0x3b, 0x6c, 0x13, 0x41,
 	0x10, 0xdd, 0x71, 0x44, 0x3e, 0x1b, 0x20, 0x70, 0x42, 0xe0, 0xb8, 0x98, 0x58, 0x16, 0x02, 0x53,

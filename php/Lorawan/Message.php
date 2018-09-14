@@ -23,9 +23,22 @@ class Message extends \Google\Protobuf\Internal\Message
     private $mic = '';
     protected $Payload;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Lorawan\MHDR $m_hdr
+     *     @type string $mic
+     *     @type \Lorawan\MACPayload $mac_payload
+     *     @type \Lorawan\JoinRequestPayload $join_request_payload
+     *     @type \Lorawan\JoinAcceptPayload $join_accept_payload
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Protocol\Lorawan\Lorawan::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

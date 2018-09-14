@@ -352,15 +352,15 @@ proto.networkserver.DevicesResponse.serializeBinaryToWriter = function(message, 
 
 /**
  * repeated lorawan.Device results = 1;
- * @return {!Array.<!proto.lorawan.Device>}
+ * @return {!Array<!proto.lorawan.Device>}
  */
 proto.networkserver.DevicesResponse.prototype.getResultsList = function() {
-  return /** @type{!Array.<!proto.lorawan.Device>} */ (
+  return /** @type{!Array<!proto.lorawan.Device>} */ (
     jspb.Message.getRepeatedWrapperField(this, ttn_protocol_lorawan_device_pb.Device, 1));
 };
 
 
-/** @param {!Array.<!proto.lorawan.Device>} value */
+/** @param {!Array<!proto.lorawan.Device>} value */
 proto.networkserver.DevicesResponse.prototype.setResultsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
 };

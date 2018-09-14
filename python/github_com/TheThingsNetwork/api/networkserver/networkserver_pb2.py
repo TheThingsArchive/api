@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -24,6 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/TheThingsNetwork/api/networkserver/networkserver.proto',
   package='networkserver',
   syntax='proto3',
+  serialized_options=_b('\n&org.thethingsnetwork.api.networkserverB\022NetworkServerProtoP\001Z-github.com/TheThingsNetwork/api/networkserver\252\002\034TheThingsNetwork.API.Monitor'),
   serialized_pb=_b('\nAgithub.com/TheThingsNetwork/api/networkserver/networkserver.proto\x12\rnetworkserver\x1a-github.com/gogo/protobuf/gogoproto/gogo.proto\x1a)github.com/TheThingsNetwork/api/api.proto\x1a=github.com/TheThingsNetwork/api/protocol/lorawan/device.proto\x1a\x33github.com/TheThingsNetwork/api/broker/broker.proto\x1a\x35github.com/TheThingsNetwork/api/handler/handler.proto\"m\n\x0e\x44\x65vicesRequest\x12L\n\x08\x64\x65v_addr\x18\x01 \x01(\x0c\x42:\xc8\xde\x1f\x00\xda\xde\x1f\x32github.com/TheThingsNetwork/ttn/core/types.DevAddr\x12\r\n\x05\x66_cnt\x18\x02 \x01(\r\"3\n\x0f\x44\x65vicesResponse\x12 \n\x07results\x18\x01 \x03(\x0b\x32\x0f.lorawan.Device\"\x0f\n\rStatusRequest\"\xe8\x01\n\x06Status\x12&\n\x06system\x18\x01 \x01(\x0b\x32\x10.api.SystemStatsB\x04\xc8\xde\x1f\x00\x12,\n\tcomponent\x18\x02 \x01(\x0b\x32\x13.api.ComponentStatsB\x04\xc8\xde\x1f\x00\x12\x1a\n\x06uplink\x18\x0b \x01(\x0b\x32\n.api.Rates\x12\x1c\n\x08\x64ownlink\x18\x0c \x01(\x0b\x32\n.api.Rates\x12\x1f\n\x0b\x61\x63tivations\x18\r \x01(\x0b\x32\n.api.Rates\x12-\n\x13\x64\x65vices_per_address\x18\x15 \x01(\x0b\x32\x10.api.Percentiles2\xab\x03\n\rNetworkServer\x12K\n\nGetDevices\x12\x1d.networkserver.DevicesRequest\x1a\x1e.networkserver.DevicesResponse\x12m\n\x11PrepareActivation\x12+.broker.DeduplicatedDeviceActivationRequest\x1a+.broker.DeduplicatedDeviceActivationRequest\x12P\n\x08\x41\x63tivate\x12!.handler.DeviceActivationResponse\x1a!.handler.DeviceActivationResponse\x12N\n\x06Uplink\x12!.broker.DeduplicatedUplinkMessage\x1a!.broker.DeduplicatedUplinkMessage\x12<\n\x08\x44ownlink\x12\x17.broker.DownlinkMessage\x1a\x17.broker.DownlinkMessage2X\n\x14NetworkServerManager\x12@\n\tGetStatus\x12\x1c.networkserver.StatusRequest\x1a\x15.networkserver.StatusB\x8c\x01\n&org.thethingsnetwork.api.networkserverB\x12NetworkServerProtoP\x01Z-github.com/TheThingsNetwork/api/networkserver\xaa\x02\x1cTheThingsNetwork.API.Monitorb\x06proto3')
   ,
   dependencies=[github_dot_com_dot_TheThingsNetwork_dot_api_dot_api__pb2.DESCRIPTOR,github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__pb2.DESCRIPTOR,github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DESCRIPTOR,github_dot_com_dot_TheThingsNetwork_dot_api_dot_handler_dot_handler__pb2.DESCRIPTOR,])
@@ -44,21 +44,21 @@ _DEVICESREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\310\336\037\000\332\336\0372github.com/TheThingsNetwork/ttn/core/types.DevAddr')), file=DESCRIPTOR),
+      serialized_options=_b('\310\336\037\000\332\336\0372github.com/TheThingsNetwork/ttn/core/types.DevAddr'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='f_cnt', full_name='networkserver.DevicesRequest.f_cnt', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -82,14 +82,14 @@ _DEVICESRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -113,7 +113,7 @@ _STATUSREQUEST = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -137,49 +137,49 @@ _STATUS = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\310\336\037\000')), file=DESCRIPTOR),
+      serialized_options=_b('\310\336\037\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='component', full_name='networkserver.Status.component', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\310\336\037\000')), file=DESCRIPTOR),
+      serialized_options=_b('\310\336\037\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='uplink', full_name='networkserver.Status.uplink', index=2,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='downlink', full_name='networkserver.Status.downlink', index=3,
       number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='activations', full_name='networkserver.Status.activations', index=4,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='devices_per_address', full_name='networkserver.Status.devices_per_address', index=5,
       number=21, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -231,21 +231,17 @@ Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,),
 _sym_db.RegisterMessage(Status)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('\n&org.thethingsnetwork.api.networkserverB\022NetworkServerProtoP\001Z-github.com/TheThingsNetwork/api/networkserver\252\002\034TheThingsNetwork.API.Monitor'))
-_DEVICESREQUEST.fields_by_name['dev_addr'].has_options = True
-_DEVICESREQUEST.fields_by_name['dev_addr']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\310\336\037\000\332\336\0372github.com/TheThingsNetwork/ttn/core/types.DevAddr'))
-_STATUS.fields_by_name['system'].has_options = True
-_STATUS.fields_by_name['system']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\310\336\037\000'))
-_STATUS.fields_by_name['component'].has_options = True
-_STATUS.fields_by_name['component']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\310\336\037\000'))
+DESCRIPTOR._options = None
+_DEVICESREQUEST.fields_by_name['dev_addr']._options = None
+_STATUS.fields_by_name['system']._options = None
+_STATUS.fields_by_name['component']._options = None
 
 _NETWORKSERVER = _descriptor.ServiceDescriptor(
   name='NetworkServer',
   full_name='networkserver.NetworkServer',
   file=DESCRIPTOR,
   index=0,
-  options=None,
+  serialized_options=None,
   serialized_start=762,
   serialized_end=1189,
   methods=[
@@ -256,7 +252,7 @@ _NETWORKSERVER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DEVICESREQUEST,
     output_type=_DEVICESRESPONSE,
-    options=None,
+    serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='PrepareActivation',
@@ -265,7 +261,7 @@ _NETWORKSERVER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2._DEDUPLICATEDDEVICEACTIVATIONREQUEST,
     output_type=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2._DEDUPLICATEDDEVICEACTIVATIONREQUEST,
-    options=None,
+    serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='Activate',
@@ -274,7 +270,7 @@ _NETWORKSERVER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=github_dot_com_dot_TheThingsNetwork_dot_api_dot_handler_dot_handler__pb2._DEVICEACTIVATIONRESPONSE,
     output_type=github_dot_com_dot_TheThingsNetwork_dot_api_dot_handler_dot_handler__pb2._DEVICEACTIVATIONRESPONSE,
-    options=None,
+    serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='Uplink',
@@ -283,7 +279,7 @@ _NETWORKSERVER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2._DEDUPLICATEDUPLINKMESSAGE,
     output_type=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2._DEDUPLICATEDUPLINKMESSAGE,
-    options=None,
+    serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='Downlink',
@@ -292,7 +288,7 @@ _NETWORKSERVER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2._DOWNLINKMESSAGE,
     output_type=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2._DOWNLINKMESSAGE,
-    options=None,
+    serialized_options=None,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_NETWORKSERVER)
@@ -305,7 +301,7 @@ _NETWORKSERVERMANAGER = _descriptor.ServiceDescriptor(
   full_name='networkserver.NetworkServerManager',
   file=DESCRIPTOR,
   index=1,
-  options=None,
+  serialized_options=None,
   serialized_start=1191,
   serialized_end=1279,
   methods=[
@@ -316,7 +312,7 @@ _NETWORKSERVERMANAGER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_STATUSREQUEST,
     output_type=_STATUS,
-    options=None,
+    serialized_options=None,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_NETWORKSERVERMANAGER)

@@ -54,7 +54,7 @@ type DeviceActivationResponse struct {
 func (m *DeviceActivationResponse) Reset()      { *m = DeviceActivationResponse{} }
 func (*DeviceActivationResponse) ProtoMessage() {}
 func (*DeviceActivationResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_handler_13aa965312ec615b, []int{0}
+	return fileDescriptor_handler_0d04551be3dcbbdf, []int{0}
 }
 func (m *DeviceActivationResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -127,7 +127,7 @@ type StatusRequest struct {
 func (m *StatusRequest) Reset()      { *m = StatusRequest{} }
 func (*StatusRequest) ProtoMessage() {}
 func (*StatusRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_handler_13aa965312ec615b, []int{1}
+	return fileDescriptor_handler_0d04551be3dcbbdf, []int{1}
 }
 func (m *StatusRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -170,7 +170,7 @@ type Status struct {
 func (m *Status) Reset()      { *m = Status{} }
 func (*Status) ProtoMessage() {}
 func (*Status) Descriptor() ([]byte, []int) {
-	return fileDescriptor_handler_13aa965312ec615b, []int{2}
+	return fileDescriptor_handler_0d04551be3dcbbdf, []int{2}
 }
 func (m *Status) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -243,7 +243,7 @@ type ApplicationIdentifier struct {
 func (m *ApplicationIdentifier) Reset()      { *m = ApplicationIdentifier{} }
 func (*ApplicationIdentifier) ProtoMessage() {}
 func (*ApplicationIdentifier) Descriptor() ([]byte, []int) {
-	return fileDescriptor_handler_13aa965312ec615b, []int{3}
+	return fileDescriptor_handler_0d04551be3dcbbdf, []int{3}
 }
 func (m *ApplicationIdentifier) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -307,7 +307,7 @@ type Application struct {
 func (m *Application) Reset()      { *m = Application{} }
 func (*Application) ProtoMessage() {}
 func (*Application) Descriptor() ([]byte, []int) {
-	return fileDescriptor_handler_13aa965312ec615b, []int{4}
+	return fileDescriptor_handler_0d04551be3dcbbdf, []int{4}
 }
 func (m *Application) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -395,7 +395,7 @@ type DeviceIdentifier struct {
 func (m *DeviceIdentifier) Reset()      { *m = DeviceIdentifier{} }
 func (*DeviceIdentifier) ProtoMessage() {}
 func (*DeviceIdentifier) Descriptor() ([]byte, []int) {
-	return fileDescriptor_handler_13aa965312ec615b, []int{5}
+	return fileDescriptor_handler_0d04551be3dcbbdf, []int{5}
 }
 func (m *DeviceIdentifier) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -459,7 +459,7 @@ type Device struct {
 func (m *Device) Reset()      { *m = Device{} }
 func (*Device) ProtoMessage() {}
 func (*Device) Descriptor() ([]byte, []int) {
-	return fileDescriptor_handler_13aa965312ec615b, []int{6}
+	return fileDescriptor_handler_0d04551be3dcbbdf, []int{6}
 }
 func (m *Device) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -628,7 +628,7 @@ type DeviceList struct {
 func (m *DeviceList) Reset()      { *m = DeviceList{} }
 func (*DeviceList) ProtoMessage() {}
 func (*DeviceList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_handler_13aa965312ec615b, []int{7}
+	return fileDescriptor_handler_0d04551be3dcbbdf, []int{7}
 }
 func (m *DeviceList) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -681,7 +681,7 @@ type DryDownlinkMessage struct {
 func (m *DryDownlinkMessage) Reset()      { *m = DryDownlinkMessage{} }
 func (*DryDownlinkMessage) ProtoMessage() {}
 func (*DryDownlinkMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_handler_13aa965312ec615b, []int{8}
+	return fileDescriptor_handler_0d04551be3dcbbdf, []int{8}
 }
 func (m *DryDownlinkMessage) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -753,7 +753,7 @@ type DryUplinkMessage struct {
 func (m *DryUplinkMessage) Reset()      { *m = DryUplinkMessage{} }
 func (*DryUplinkMessage) ProtoMessage() {}
 func (*DryUplinkMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_handler_13aa965312ec615b, []int{9}
+	return fileDescriptor_handler_0d04551be3dcbbdf, []int{9}
 }
 func (m *DryUplinkMessage) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -818,7 +818,7 @@ type SimulatedUplinkMessage struct {
 func (m *SimulatedUplinkMessage) Reset()      { *m = SimulatedUplinkMessage{} }
 func (*SimulatedUplinkMessage) ProtoMessage() {}
 func (*SimulatedUplinkMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_handler_13aa965312ec615b, []int{10}
+	return fileDescriptor_handler_0d04551be3dcbbdf, []int{10}
 }
 func (m *SimulatedUplinkMessage) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -887,7 +887,7 @@ type LogEntry struct {
 func (m *LogEntry) Reset()      { *m = LogEntry{} }
 func (*LogEntry) ProtoMessage() {}
 func (*LogEntry) Descriptor() ([]byte, []int) {
-	return fileDescriptor_handler_13aa965312ec615b, []int{11}
+	return fileDescriptor_handler_0d04551be3dcbbdf, []int{11}
 }
 func (m *LogEntry) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -947,7 +947,7 @@ type DryUplinkResult struct {
 func (m *DryUplinkResult) Reset()      { *m = DryUplinkResult{} }
 func (*DryUplinkResult) ProtoMessage() {}
 func (*DryUplinkResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_handler_13aa965312ec615b, []int{12}
+	return fileDescriptor_handler_0d04551be3dcbbdf, []int{12}
 }
 func (m *DryUplinkResult) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1017,7 +1017,7 @@ type DryDownlinkResult struct {
 func (m *DryDownlinkResult) Reset()      { *m = DryDownlinkResult{} }
 func (*DryDownlinkResult) ProtoMessage() {}
 func (*DryDownlinkResult) Descriptor() ([]byte, []int) {
-	return fileDescriptor_handler_13aa965312ec615b, []int{13}
+	return fileDescriptor_handler_0d04551be3dcbbdf, []int{13}
 }
 func (m *DryDownlinkResult) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -5856,13 +5856,13 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/handler/handler.proto", fileDescriptor_handler_13aa965312ec615b)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/handler/handler.proto", fileDescriptor_handler_0d04551be3dcbbdf)
 }
 func init() {
-	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/handler/handler.proto", fileDescriptor_handler_13aa965312ec615b)
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/handler/handler.proto", fileDescriptor_handler_0d04551be3dcbbdf)
 }
 
-var fileDescriptor_handler_13aa965312ec615b = []byte{
+var fileDescriptor_handler_0d04551be3dcbbdf = []byte{
 	// 1582 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x58, 0x4d, 0x6c, 0xdb, 0xc8,
 	0x15, 0xe6, 0x48, 0xb6, 0x6c, 0x8d, 0xfc, 0x3b, 0x4e, 0xbd, 0xac, 0x6c, 0x8c, 0x5d, 0x2e, 0x76,

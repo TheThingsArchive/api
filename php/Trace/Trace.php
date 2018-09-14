@@ -58,9 +58,31 @@ class Trace extends \Google\Protobuf\Internal\Message
      */
     private $parents;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $id
+     *           Generated ID
+     *     @type int|string $time
+     *           Time in Unix nanoseconds
+     *     @type string $service_id
+     *           The ID of the component
+     *     @type string $service_name
+     *           The name of the component (router/broker/handler)
+     *     @type string $event
+     *           Short event name
+     *     @type array|\Google\Protobuf\Internal\MapField $metadata
+     *           metadata for the event
+     *     @type \Trace\Trace[]|\Google\Protobuf\Internal\RepeatedField $parents
+     *           Parents of the event
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Trace\Trace::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

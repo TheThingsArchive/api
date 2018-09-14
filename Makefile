@@ -17,7 +17,7 @@ proto_files := $(shell find . -name '*.proto')
 DOCKER ?= docker
 
 PROTOC_API_PATH = /src/github.com/TheThingsNetwork/api
-PROTOC_DOCKER_IMAGE ?= thethingsindustries/protoc:3.0.9
+PROTOC_DOCKER_IMAGE ?= thethingsindustries/protoc:3.0.10
 PROTOC ?= $(DOCKER) run --user `id -u` --rm --mount type=bind,src=$(PWD),dst=$(PROTOC_API_PATH) -w $(PROTOC_API_PATH) $(PROTOC_DOCKER_IMAGE) -I/src
 
 protoc:
@@ -40,6 +40,8 @@ go_proto_conversions := $(subst $(space),$(comma),$(foreach type,$(go_proto_type
 
 go_subst = -pe 's!\.$(1)!.$(subst Eui,EUI,$(subst Id,ID,$(1)))!g;'
 go_gw_replace := $(foreach id,AppId AppEui DevId DevEui Id,$(call go_subst,$(id)))
+
+.PHONY: %.pb.go
 
 %.pb.go: %.proto
 	@$(PROTOC) --gogottn_out=plugins=grpc,$(go_proto_conversions):/src --grpc-gateway_out=/src $(PROTOC_API_PATH)/$<

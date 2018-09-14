@@ -806,13 +806,13 @@ var _Monitor_serviceDesc = grpc.ServiceDesc{
 }
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/monitor/monitor.proto", fileDescriptor_monitor_49381f41df73a59d)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/monitor/monitor.proto", fileDescriptor_monitor_da851b7b076bb6e1)
 }
 func init() {
-	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/monitor/monitor.proto", fileDescriptor_monitor_49381f41df73a59d)
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/monitor/monitor.proto", fileDescriptor_monitor_da851b7b076bb6e1)
 }
 
-var fileDescriptor_monitor_49381f41df73a59d = []byte{
+var fileDescriptor_monitor_da851b7b076bb6e1 = []byte{
 	// 514 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x94, 0x3f, 0x68, 0x14, 0x41,
 	0x14, 0xc6, 0x67, 0x04, 0x0d, 0x0c, 0x97, 0x1c, 0xac, 0x44, 0xe1, 0x94, 0x87, 0x56, 0x5a, 0xcd,

@@ -26,9 +26,20 @@ class JoinRequestPayload extends \Google\Protobuf\Internal\Message
      */
     private $dev_nonce = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $app_eui
+     *     @type string $dev_eui
+     *     @type string $dev_nonce
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Protocol\Lorawan\Lorawan::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

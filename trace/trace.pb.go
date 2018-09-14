@@ -50,7 +50,7 @@ type Trace struct {
 func (m *Trace) Reset()      { *m = Trace{} }
 func (*Trace) ProtoMessage() {}
 func (*Trace) Descriptor() ([]byte, []int) {
-	return fileDescriptor_trace_a11bf7904f151de9, []int{0}
+	return fileDescriptor_trace_1a0e1745152703b8, []int{0}
 }
 func (m *Trace) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -898,13 +898,13 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/trace/trace.proto", fileDescriptor_trace_a11bf7904f151de9)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/trace/trace.proto", fileDescriptor_trace_1a0e1745152703b8)
 }
 func init() {
-	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/trace/trace.proto", fileDescriptor_trace_a11bf7904f151de9)
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/trace/trace.proto", fileDescriptor_trace_1a0e1745152703b8)
 }
 
-var fileDescriptor_trace_a11bf7904f151de9 = []byte{
+var fileDescriptor_trace_1a0e1745152703b8 = []byte{
 	// 462 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x52, 0x3d, 0x6c, 0x13, 0x31,
 	0x18, 0xf5, 0x77, 0x69, 0x02, 0x71, 0x5a, 0x09, 0x59, 0x08, 0x9d, 0x32, 0x7c, 0x0d, 0x48, 0xa0,

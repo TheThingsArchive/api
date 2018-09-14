@@ -901,10 +901,10 @@ proto.lorawan.Device.prototype.getUsedDevNoncesList = function() {
 /**
  * repeated bytes used_dev_nonces = 14;
  * This is a type-conversion wrapper around `getUsedDevNoncesList()`
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.lorawan.Device.prototype.getUsedDevNoncesList_asB64 = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.bytesListAsB64(
+  return /** @type {!Array<string>} */ (jspb.Message.bytesListAsB64(
       this.getUsedDevNoncesList()));
 };
 
@@ -914,10 +914,10 @@ proto.lorawan.Device.prototype.getUsedDevNoncesList_asB64 = function() {
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getUsedDevNoncesList()`
- * @return {!Array.<!Uint8Array>}
+ * @return {!Array<!Uint8Array>}
  */
 proto.lorawan.Device.prototype.getUsedDevNoncesList_asU8 = function() {
-  return /** @type {!Array.<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
+  return /** @type {!Array<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
       this.getUsedDevNoncesList()));
 };
 
@@ -954,10 +954,10 @@ proto.lorawan.Device.prototype.getUsedAppNoncesList = function() {
 /**
  * repeated bytes used_app_nonces = 15;
  * This is a type-conversion wrapper around `getUsedAppNoncesList()`
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.lorawan.Device.prototype.getUsedAppNoncesList_asB64 = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.bytesListAsB64(
+  return /** @type {!Array<string>} */ (jspb.Message.bytesListAsB64(
       this.getUsedAppNoncesList()));
 };
 
@@ -967,10 +967,10 @@ proto.lorawan.Device.prototype.getUsedAppNoncesList_asB64 = function() {
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getUsedAppNoncesList()`
- * @return {!Array.<!Uint8Array>}
+ * @return {!Array<!Uint8Array>}
  */
 proto.lorawan.Device.prototype.getUsedAppNoncesList_asU8 = function() {
-  return /** @type {!Array.<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
+  return /** @type {!Array<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
       this.getUsedAppNoncesList()));
 };
 

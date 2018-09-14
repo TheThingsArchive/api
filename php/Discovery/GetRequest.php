@@ -28,9 +28,21 @@ class GetRequest extends \Google\Protobuf\Internal\Message
      */
     private $service_name = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $id
+     *           The ID of the service
+     *     @type string $service_name
+     *           The name of the service (router/broker/handler)
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Discovery\Discovery::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**
