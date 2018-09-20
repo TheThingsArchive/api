@@ -29,8 +29,9 @@ define language_template
 protos/$(1):
 	@echo Generating $(1) protos...
 	@$$(MAKE) -j 8 $(patsubst %.proto,%.pb.$(1),$(proto_files))
+	@$$(MAKE) postprocess/$(1)
 
-.PHONY: clean/$(1)
+.PHONY: clean/$(1) postprocess/$(1)
 endef
 
 $(foreach lang,$(languages),$(eval $(call language_template,$(lang))))
@@ -45,9 +46,9 @@ go_gw_replace := $(foreach id,AppId AppEui DevId DevEui Id,$(call go_subst,$(id)
 
 %.pb.go: %.proto
 	@$(PROTOC) --gogottn_out=plugins=grpc,$(go_proto_conversions):/src --grpc-gateway_out=/src $(PROTOC_API_PATH)/$<
-	@file=$(patsubst %.proto,%.pb.gw.go,$<); if [ -f $$file ]; then \
-		perl -i $(go_gw_replace) $$file; \
-	fi
+
+postprocess/go:
+	@find . -type f -name '*.pb.gw.go' -exec perl -i $(go_gw_replace) {} \;
 
 clean/go:
 	find . -name '*pb.go' -delete
@@ -57,6 +58,11 @@ clean/go:
 
 %.pb.java: %.proto
 	@$(PROTOC) --java_out=$(PROTOC_API_PATH)/java/src --grpc-java_out=$(PROTOC_API_PATH)/java/src $(PROTOC_API_PATH)/$<
+
+java_replace := -pe 's!.*google\.protobuf\.GoGoProtos.*\n!!;'
+
+postprocess/java:
+	@#nothing
 
 clean/java:
 	rm -rf java/src/org/thethingsnetwork/api
@@ -71,12 +77,9 @@ js_replace := -pe 's!../../../github.com/TheThingsNetwork/api/!!;' \
 
 %.pb.js: %.proto
 	@$(PROTOC) --js_out=import_style=commonjs,binary:/src --grpc-js_out=/src $(PROTOC_API_PATH)/$<
-	@file=$(patsubst %.proto,%_pb.js,$<); if [ -f $$file ]; then \
-		perl -i $(js_replace) $$file; \
-	fi
-	@file=$(patsubst %.proto,%_grpc_pb.js,$<); if [ -f $$file ]; then \
-		perl -i $(js_replace) $$file; \
-	fi
+
+postprocess/js:
+	@find . -type f -name '*_pb.js' -exec perl -i $(js_replace) {} \;
 
 clean/js:
 	find . -name '*_pb.js' -delete
@@ -85,6 +88,9 @@ clean/js:
 
 %.pb.php: %.proto
 	@$(PROTOC) --php_out=$(PROTOC_API_PATH)/php --grpc-php_out=$(PROTOC_API_PATH)/php $(PROTOC_API_PATH)/$<
+
+postprocess/php:
+	@#nothing
 
 clean/php:
 	rm -rf php/*
@@ -95,12 +101,9 @@ ruby_replace := -pe "s!require 'github.com/TheThingsNetwork/api/!require '!g;"
 
 %.pb.ruby: %.proto
 	@$(PROTOC) --ruby_out=/src --grpc-ruby_out=/src $(PROTOC_API_PATH)/$<
-	@file=$(patsubst %.proto,%_pb.rb,$<); if [ -f $$file ]; then \
-		perl -i $(ruby_replace) $$file; \
-	fi
-	@file=$(patsubst %.proto,%_services_pb.rb,$<); if [ -f $$file ]; then \
-		perl -i $(ruby_replace) $$file; \
-	fi
+
+postprocess/ruby:
+	@find . -type f -name '*_pb.rb' -exec perl -i $(ruby_replace) {} \;
 
 clean/ruby:
 	find . -name '*_pb.rb' -delete
@@ -119,14 +122,15 @@ python_replace := -pe 's!from github\.com!from github_com!g;' \
 		target=$(patsubst %.proto,python/github_com/TheThingsNetwork/api/%_pb2.py,$<); \
 		mkdir -p `dirname $$target`; \
 		mv $$file $$target; \
-		perl -i $(python_replace) $$target; \
 	fi
 	@file=$(patsubst %.proto,python/github.com/TheThingsNetwork/api/%_pb2_grpc.py,$<); if [ -f $$file ]; then \
 		target=$(patsubst %.proto,python/github_com/TheThingsNetwork/api/%_pb2_grpc.py,$<); \
 		mkdir -p `dirname $$target`; \
 		mv $$file $$target; \
-		perl -i $(python_replace) $$target; \
 	fi
+
+postprocess/python:
+	@find . -type f -name '*.py' -exec perl -i $(python_replace) {} \;
 
 clean/python:
 	find . -name '*_pb2.py' -delete
@@ -138,6 +142,9 @@ clean/python:
 %.pb.c: %.proto
 	@$(PROTOC) --c_out=$(PROTOC_API_PATH)/c $(PROTOC_API_PATH)/$<
 
+postprocess/c:
+	@#nothing
+
 clean/c:
 	rm -rf c/github.com/TheThingsNetwork
 
@@ -145,6 +152,9 @@ clean/c:
 
 %.pb.swift: %.proto
 	@$(PROTOC) --swift_out=/src --grpc-swift_out=/src $(PROTOC_API_PATH)/$<
+
+postprocess/swift:
+	@#nothing
 
 clean/swift:
 	find . -name '*.swift' -delete
