@@ -26,9 +26,20 @@ class Rates extends \Google\Protobuf\Internal\Message
      */
     private $rate15 = 0.0;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type float $rate1
+     *     @type float $rate5
+     *     @type float $rate15
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Api::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

@@ -38,9 +38,23 @@ class ActivationChallengeRequest extends \Google\Protobuf\Internal\Message
      */
     private $dev_id = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $payload
+     *     @type \Protocol\Message $message
+     *     @type string $dev_eui
+     *     @type string $app_eui
+     *     @type string $app_id
+     *     @type string $dev_id
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Broker\Broker::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

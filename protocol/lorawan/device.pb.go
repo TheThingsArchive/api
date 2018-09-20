@@ -44,7 +44,7 @@ type DeviceIdentifier struct {
 func (m *DeviceIdentifier) Reset()      { *m = DeviceIdentifier{} }
 func (*DeviceIdentifier) ProtoMessage() {}
 func (*DeviceIdentifier) Descriptor() ([]byte, []int) {
-	return fileDescriptor_device_a1fdf0ef9510198b, []int{0}
+	return fileDescriptor_device_1ae7a14320f0359e, []int{0}
 }
 func (m *DeviceIdentifier) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -116,7 +116,7 @@ type Device struct {
 func (m *Device) Reset()      { *m = Device{} }
 func (*Device) ProtoMessage() {}
 func (*Device) Descriptor() ([]byte, []int) {
-	return fileDescriptor_device_a1fdf0ef9510198b, []int{1}
+	return fileDescriptor_device_1ae7a14320f0359e, []int{1}
 }
 func (m *Device) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1619,13 +1619,13 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/lorawan/device.proto", fileDescriptor_device_a1fdf0ef9510198b)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/lorawan/device.proto", fileDescriptor_device_1ae7a14320f0359e)
 }
 func init() {
-	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/lorawan/device.proto", fileDescriptor_device_a1fdf0ef9510198b)
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/lorawan/device.proto", fileDescriptor_device_1ae7a14320f0359e)
 }
 
-var fileDescriptor_device_a1fdf0ef9510198b = []byte{
+var fileDescriptor_device_1ae7a14320f0359e = []byte{
 	// 824 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xd4, 0x55, 0x3d, 0x8c, 0x1b, 0x45,
 	0x14, 0xde, 0xb9, 0xe3, 0xfc, 0x33, 0xdc, 0x71, 0xa7, 0x45, 0x89, 0x96, 0x0b, 0x1a, 0x5b, 0x11,

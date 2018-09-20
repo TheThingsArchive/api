@@ -28,9 +28,21 @@ class DryDownlinkResult extends \Google\Protobuf\Internal\Message
      */
     private $logs;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $payload
+     *           The payload that was encoded
+     *     @type \Handler\LogEntry[]|\Google\Protobuf\Internal\RepeatedField $logs
+     *           Logs that have been generated while processing
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Handler\Handler::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

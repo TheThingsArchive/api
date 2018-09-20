@@ -56,7 +56,7 @@ type DownlinkOption struct {
 func (m *DownlinkOption) Reset()      { *m = DownlinkOption{} }
 func (*DownlinkOption) ProtoMessage() {}
 func (*DownlinkOption) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_e5788470f79083a2, []int{0}
+	return fileDescriptor_broker_8e35c67ec6a61fd9, []int{0}
 }
 func (m *DownlinkOption) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -146,7 +146,7 @@ type UplinkMessage struct {
 func (m *UplinkMessage) Reset()      { *m = UplinkMessage{} }
 func (*UplinkMessage) ProtoMessage() {}
 func (*UplinkMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_e5788470f79083a2, []int{1}
+	return fileDescriptor_broker_8e35c67ec6a61fd9, []int{1}
 }
 func (m *UplinkMessage) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -248,7 +248,7 @@ type DownlinkMessage struct {
 func (m *DownlinkMessage) Reset()      { *m = DownlinkMessage{} }
 func (*DownlinkMessage) ProtoMessage() {}
 func (*DownlinkMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_e5788470f79083a2, []int{2}
+	return fileDescriptor_broker_8e35c67ec6a61fd9, []int{2}
 }
 func (m *DownlinkMessage) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -332,7 +332,7 @@ type DeviceActivationResponse struct {
 func (m *DeviceActivationResponse) Reset()      { *m = DeviceActivationResponse{} }
 func (*DeviceActivationResponse) ProtoMessage() {}
 func (*DeviceActivationResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_e5788470f79083a2, []int{3}
+	return fileDescriptor_broker_8e35c67ec6a61fd9, []int{3}
 }
 func (m *DeviceActivationResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -409,7 +409,7 @@ type DeduplicatedUplinkMessage struct {
 func (m *DeduplicatedUplinkMessage) Reset()      { *m = DeduplicatedUplinkMessage{} }
 func (*DeduplicatedUplinkMessage) ProtoMessage() {}
 func (*DeduplicatedUplinkMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_e5788470f79083a2, []int{4}
+	return fileDescriptor_broker_8e35c67ec6a61fd9, []int{4}
 }
 func (m *DeduplicatedUplinkMessage) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -519,7 +519,7 @@ type DeviceActivationRequest struct {
 func (m *DeviceActivationRequest) Reset()      { *m = DeviceActivationRequest{} }
 func (*DeviceActivationRequest) ProtoMessage() {}
 func (*DeviceActivationRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_e5788470f79083a2, []int{5}
+	return fileDescriptor_broker_8e35c67ec6a61fd9, []int{5}
 }
 func (m *DeviceActivationRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -618,7 +618,7 @@ type DeduplicatedDeviceActivationRequest struct {
 func (m *DeduplicatedDeviceActivationRequest) Reset()      { *m = DeduplicatedDeviceActivationRequest{} }
 func (*DeduplicatedDeviceActivationRequest) ProtoMessage() {}
 func (*DeduplicatedDeviceActivationRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_e5788470f79083a2, []int{6}
+	return fileDescriptor_broker_8e35c67ec6a61fd9, []int{6}
 }
 func (m *DeduplicatedDeviceActivationRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -731,7 +731,7 @@ type ActivationChallengeRequest struct {
 func (m *ActivationChallengeRequest) Reset()      { *m = ActivationChallengeRequest{} }
 func (*ActivationChallengeRequest) ProtoMessage() {}
 func (*ActivationChallengeRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_e5788470f79083a2, []int{7}
+	return fileDescriptor_broker_8e35c67ec6a61fd9, []int{7}
 }
 func (m *ActivationChallengeRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -798,7 +798,7 @@ type ActivationChallengeResponse struct {
 func (m *ActivationChallengeResponse) Reset()      { *m = ActivationChallengeResponse{} }
 func (*ActivationChallengeResponse) ProtoMessage() {}
 func (*ActivationChallengeResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_e5788470f79083a2, []int{8}
+	return fileDescriptor_broker_8e35c67ec6a61fd9, []int{8}
 }
 func (m *ActivationChallengeResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -850,7 +850,7 @@ type SubscribeRequest struct {
 func (m *SubscribeRequest) Reset()      { *m = SubscribeRequest{} }
 func (*SubscribeRequest) ProtoMessage() {}
 func (*SubscribeRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_e5788470f79083a2, []int{9}
+	return fileDescriptor_broker_8e35c67ec6a61fd9, []int{9}
 }
 func (m *SubscribeRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -888,7 +888,7 @@ type StatusRequest struct {
 func (m *StatusRequest) Reset()      { *m = StatusRequest{} }
 func (*StatusRequest) ProtoMessage() {}
 func (*StatusRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_e5788470f79083a2, []int{10}
+	return fileDescriptor_broker_8e35c67ec6a61fd9, []int{10}
 }
 func (m *StatusRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -936,7 +936,7 @@ type Status struct {
 func (m *Status) Reset()      { *m = Status{} }
 func (*Status) ProtoMessage() {}
 func (*Status) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_e5788470f79083a2, []int{11}
+	return fileDescriptor_broker_8e35c67ec6a61fd9, []int{11}
 }
 func (m *Status) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1045,7 +1045,7 @@ type ApplicationHandlerRegistration struct {
 func (m *ApplicationHandlerRegistration) Reset()      { *m = ApplicationHandlerRegistration{} }
 func (*ApplicationHandlerRegistration) ProtoMessage() {}
 func (*ApplicationHandlerRegistration) Descriptor() ([]byte, []int) {
-	return fileDescriptor_broker_e5788470f79083a2, []int{12}
+	return fileDescriptor_broker_8e35c67ec6a61fd9, []int{12}
 }
 func (m *ApplicationHandlerRegistration) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -7125,13 +7125,13 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/broker/broker.proto", fileDescriptor_broker_e5788470f79083a2)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/broker/broker.proto", fileDescriptor_broker_8e35c67ec6a61fd9)
 }
 func init() {
-	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/broker/broker.proto", fileDescriptor_broker_e5788470f79083a2)
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/broker/broker.proto", fileDescriptor_broker_8e35c67ec6a61fd9)
 }
 
-var fileDescriptor_broker_e5788470f79083a2 = []byte{
+var fileDescriptor_broker_8e35c67ec6a61fd9 = []byte{
 	// 1434 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xec, 0x58, 0x4d, 0x6c, 0x13, 0x47,
 	0x14, 0xde, 0xc9, 0x8f, 0x83, 0x9f, 0xe3, 0xc4, 0x19, 0x48, 0xb2, 0x98, 0x6a, 0x9c, 0xba, 0x12,

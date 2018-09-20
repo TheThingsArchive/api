@@ -46,7 +46,7 @@ type SubscribeRequest struct {
 func (m *SubscribeRequest) Reset()      { *m = SubscribeRequest{} }
 func (*SubscribeRequest) ProtoMessage() {}
 func (*SubscribeRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_router_125a8ccbfb1e97ea, []int{0}
+	return fileDescriptor_router_aa2f64d6f96609d9, []int{0}
 }
 func (m *SubscribeRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -88,7 +88,7 @@ type UplinkMessage struct {
 func (m *UplinkMessage) Reset()      { *m = UplinkMessage{} }
 func (*UplinkMessage) ProtoMessage() {}
 func (*UplinkMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_router_125a8ccbfb1e97ea, []int{1}
+	return fileDescriptor_router_aa2f64d6f96609d9, []int{1}
 }
 func (m *UplinkMessage) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -165,7 +165,7 @@ type DownlinkMessage struct {
 func (m *DownlinkMessage) Reset()      { *m = DownlinkMessage{} }
 func (*DownlinkMessage) ProtoMessage() {}
 func (*DownlinkMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_router_125a8ccbfb1e97ea, []int{2}
+	return fileDescriptor_router_aa2f64d6f96609d9, []int{2}
 }
 func (m *DownlinkMessage) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -245,7 +245,7 @@ type DeviceActivationRequest struct {
 func (m *DeviceActivationRequest) Reset()      { *m = DeviceActivationRequest{} }
 func (*DeviceActivationRequest) ProtoMessage() {}
 func (*DeviceActivationRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_router_125a8ccbfb1e97ea, []int{3}
+	return fileDescriptor_router_aa2f64d6f96609d9, []int{3}
 }
 func (m *DeviceActivationRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -324,7 +324,7 @@ type DeviceActivationResponse struct {
 func (m *DeviceActivationResponse) Reset()      { *m = DeviceActivationResponse{} }
 func (*DeviceActivationResponse) ProtoMessage() {}
 func (*DeviceActivationResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_router_125a8ccbfb1e97ea, []int{4}
+	return fileDescriptor_router_aa2f64d6f96609d9, []int{4}
 }
 func (m *DeviceActivationResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -364,7 +364,7 @@ type GatewayStatusRequest struct {
 func (m *GatewayStatusRequest) Reset()      { *m = GatewayStatusRequest{} }
 func (*GatewayStatusRequest) ProtoMessage() {}
 func (*GatewayStatusRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_router_125a8ccbfb1e97ea, []int{5}
+	return fileDescriptor_router_aa2f64d6f96609d9, []int{5}
 }
 func (m *GatewayStatusRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -410,7 +410,7 @@ type GatewayStatusResponse struct {
 func (m *GatewayStatusResponse) Reset()      { *m = GatewayStatusResponse{} }
 func (*GatewayStatusResponse) ProtoMessage() {}
 func (*GatewayStatusResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_router_125a8ccbfb1e97ea, []int{6}
+	return fileDescriptor_router_aa2f64d6f96609d9, []int{6}
 }
 func (m *GatewayStatusResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -462,7 +462,7 @@ type StatusRequest struct {
 func (m *StatusRequest) Reset()      { *m = StatusRequest{} }
 func (*StatusRequest) ProtoMessage() {}
 func (*StatusRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_router_125a8ccbfb1e97ea, []int{7}
+	return fileDescriptor_router_aa2f64d6f96609d9, []int{7}
 }
 func (m *StatusRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -509,7 +509,7 @@ type Status struct {
 func (m *Status) Reset()      { *m = Status{} }
 func (*Status) ProtoMessage() {}
 func (*Status) Descriptor() ([]byte, []int) {
-	return fileDescriptor_router_125a8ccbfb1e97ea, []int{8}
+	return fileDescriptor_router_aa2f64d6f96609d9, []int{8}
 }
 func (m *Status) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3629,13 +3629,13 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/router/router.proto", fileDescriptor_router_125a8ccbfb1e97ea)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/router/router.proto", fileDescriptor_router_aa2f64d6f96609d9)
 }
 func init() {
-	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/router/router.proto", fileDescriptor_router_125a8ccbfb1e97ea)
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/router/router.proto", fileDescriptor_router_aa2f64d6f96609d9)
 }
 
-var fileDescriptor_router_125a8ccbfb1e97ea = []byte{
+var fileDescriptor_router_aa2f64d6f96609d9 = []byte{
 	// 1063 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x56, 0x3f, 0x6c, 0xdb, 0xc6,
 	0x17, 0xe6, 0xe9, 0x97, 0x1f, 0x6d, 0x9d, 0x2d, 0xff, 0x39, 0x5b, 0xb6, 0x2a, 0xa7, 0x27, 0x43,

@@ -44,7 +44,7 @@ type Percentiles struct {
 func (m *Percentiles) Reset()      { *m = Percentiles{} }
 func (*Percentiles) ProtoMessage() {}
 func (*Percentiles) Descriptor() ([]byte, []int) {
-	return fileDescriptor_api_fd27205e52c30c80, []int{0}
+	return fileDescriptor_api_c7689314e46c44b6, []int{0}
 }
 func (m *Percentiles) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -147,7 +147,7 @@ type Rates struct {
 func (m *Rates) Reset()      { *m = Rates{} }
 func (*Rates) ProtoMessage() {}
 func (*Rates) Descriptor() ([]byte, []int) {
-	return fileDescriptor_api_fd27205e52c30c80, []int{1}
+	return fileDescriptor_api_c7689314e46c44b6, []int{1}
 }
 func (m *Rates) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -208,7 +208,7 @@ type SystemStats struct {
 func (m *SystemStats) Reset()      { *m = SystemStats{} }
 func (*SystemStats) ProtoMessage() {}
 func (*SystemStats) Descriptor() ([]byte, []int) {
-	return fileDescriptor_api_fd27205e52c30c80, []int{2}
+	return fileDescriptor_api_c7689314e46c44b6, []int{2}
 }
 func (m *SystemStats) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -269,7 +269,7 @@ type SystemStats_Loadstats struct {
 func (m *SystemStats_Loadstats) Reset()      { *m = SystemStats_Loadstats{} }
 func (*SystemStats_Loadstats) ProtoMessage() {}
 func (*SystemStats_Loadstats) Descriptor() ([]byte, []int) {
-	return fileDescriptor_api_fd27205e52c30c80, []int{2, 0}
+	return fileDescriptor_api_c7689314e46c44b6, []int{2, 0}
 }
 func (m *SystemStats_Loadstats) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -331,7 +331,7 @@ type SystemStats_CPUStats struct {
 func (m *SystemStats_CPUStats) Reset()      { *m = SystemStats_CPUStats{} }
 func (*SystemStats_CPUStats) ProtoMessage() {}
 func (*SystemStats_CPUStats) Descriptor() ([]byte, []int) {
-	return fileDescriptor_api_fd27205e52c30c80, []int{2, 1}
+	return fileDescriptor_api_c7689314e46c44b6, []int{2, 1}
 }
 func (m *SystemStats_CPUStats) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -399,7 +399,7 @@ type SystemStats_MemoryStats struct {
 func (m *SystemStats_MemoryStats) Reset()      { *m = SystemStats_MemoryStats{} }
 func (*SystemStats_MemoryStats) ProtoMessage() {}
 func (*SystemStats_MemoryStats) Descriptor() ([]byte, []int) {
-	return fileDescriptor_api_fd27205e52c30c80, []int{2, 2}
+	return fileDescriptor_api_c7689314e46c44b6, []int{2, 2}
 }
 func (m *SystemStats_MemoryStats) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -462,7 +462,7 @@ type ComponentStats struct {
 func (m *ComponentStats) Reset()      { *m = ComponentStats{} }
 func (*ComponentStats) ProtoMessage() {}
 func (*ComponentStats) Descriptor() ([]byte, []int) {
-	return fileDescriptor_api_fd27205e52c30c80, []int{3}
+	return fileDescriptor_api_c7689314e46c44b6, []int{3}
 }
 func (m *ComponentStats) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -538,7 +538,7 @@ type ComponentStats_CPUStats struct {
 func (m *ComponentStats_CPUStats) Reset()      { *m = ComponentStats_CPUStats{} }
 func (*ComponentStats_CPUStats) ProtoMessage() {}
 func (*ComponentStats_CPUStats) Descriptor() ([]byte, []int) {
-	return fileDescriptor_api_fd27205e52c30c80, []int{3, 0}
+	return fileDescriptor_api_c7689314e46c44b6, []int{3, 0}
 }
 func (m *ComponentStats_CPUStats) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -607,7 +607,7 @@ type ComponentStats_MemoryStats struct {
 func (m *ComponentStats_MemoryStats) Reset()      { *m = ComponentStats_MemoryStats{} }
 func (*ComponentStats_MemoryStats) ProtoMessage() {}
 func (*ComponentStats_MemoryStats) Descriptor() ([]byte, []int) {
-	return fileDescriptor_api_fd27205e52c30c80, []int{3, 1}
+	return fileDescriptor_api_c7689314e46c44b6, []int{3, 1}
 }
 func (m *ComponentStats_MemoryStats) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3121,13 +3121,13 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/api.proto", fileDescriptor_api_fd27205e52c30c80)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/api.proto", fileDescriptor_api_c7689314e46c44b6)
 }
 func init() {
-	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/api.proto", fileDescriptor_api_fd27205e52c30c80)
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/api.proto", fileDescriptor_api_c7689314e46c44b6)
 }
 
-var fileDescriptor_api_fd27205e52c30c80 = []byte{
+var fileDescriptor_api_c7689314e46c44b6 = []byte{
 	// 703 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xbc, 0x54, 0x3f, 0x4c, 0xdb, 0x4e,
 	0x14, 0xbe, 0x4b, 0x4c, 0x7e, 0x70, 0xfe, 0xb5, 0x95, 0x4e, 0x08, 0xb9, 0x11, 0x7a, 0xa0, 0x0c,

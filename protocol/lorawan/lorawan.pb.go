@@ -49,7 +49,7 @@ var Modulation_value = map[string]int32{
 }
 
 func (Modulation) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_lorawan_c45788185eeff27c, []int{0}
+	return fileDescriptor_lorawan_4cc1b57e6e881401, []int{0}
 }
 
 type FrequencyPlan int32
@@ -99,7 +99,7 @@ var FrequencyPlan_value = map[string]int32{
 }
 
 func (FrequencyPlan) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_lorawan_c45788185eeff27c, []int{1}
+	return fileDescriptor_lorawan_4cc1b57e6e881401, []int{1}
 }
 
 type Major int32
@@ -116,7 +116,7 @@ var Major_value = map[string]int32{
 }
 
 func (Major) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_lorawan_c45788185eeff27c, []int{2}
+	return fileDescriptor_lorawan_4cc1b57e6e881401, []int{2}
 }
 
 type MType int32
@@ -148,7 +148,7 @@ var MType_value = map[string]int32{
 }
 
 func (MType) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_lorawan_c45788185eeff27c, []int{3}
+	return fileDescriptor_lorawan_4cc1b57e6e881401, []int{3}
 }
 
 type Metadata struct {
@@ -169,7 +169,7 @@ type Metadata struct {
 func (m *Metadata) Reset()      { *m = Metadata{} }
 func (*Metadata) ProtoMessage() {}
 func (*Metadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_lorawan_c45788185eeff27c, []int{0}
+	return fileDescriptor_lorawan_4cc1b57e6e881401, []int{0}
 }
 func (m *Metadata) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -257,7 +257,7 @@ type TxConfiguration struct {
 func (m *TxConfiguration) Reset()      { *m = TxConfiguration{} }
 func (*TxConfiguration) ProtoMessage() {}
 func (*TxConfiguration) Descriptor() ([]byte, []int) {
-	return fileDescriptor_lorawan_c45788185eeff27c, []int{1}
+	return fileDescriptor_lorawan_4cc1b57e6e881401, []int{1}
 }
 func (m *TxConfiguration) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -338,7 +338,7 @@ type ActivationMetadata struct {
 func (m *ActivationMetadata) Reset()      { *m = ActivationMetadata{} }
 func (*ActivationMetadata) ProtoMessage() {}
 func (*ActivationMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_lorawan_c45788185eeff27c, []int{2}
+	return fileDescriptor_lorawan_4cc1b57e6e881401, []int{2}
 }
 func (m *ActivationMetadata) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -417,7 +417,7 @@ type Message struct {
 func (m *Message) Reset()      { *m = Message{} }
 func (*Message) ProtoMessage() {}
 func (*Message) Descriptor() ([]byte, []int) {
-	return fileDescriptor_lorawan_c45788185eeff27c, []int{3}
+	return fileDescriptor_lorawan_4cc1b57e6e881401, []int{3}
 }
 func (m *Message) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -605,7 +605,7 @@ type MHDR struct {
 func (m *MHDR) Reset()      { *m = MHDR{} }
 func (*MHDR) ProtoMessage() {}
 func (*MHDR) Descriptor() ([]byte, []int) {
-	return fileDescriptor_lorawan_c45788185eeff27c, []int{4}
+	return fileDescriptor_lorawan_4cc1b57e6e881401, []int{4}
 }
 func (m *MHDR) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -659,7 +659,7 @@ type MACPayload struct {
 func (m *MACPayload) Reset()      { *m = MACPayload{} }
 func (*MACPayload) ProtoMessage() {}
 func (*MACPayload) Descriptor() ([]byte, []int) {
-	return fileDescriptor_lorawan_c45788185eeff27c, []int{5}
+	return fileDescriptor_lorawan_4cc1b57e6e881401, []int{5}
 }
 func (m *MACPayload) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -714,7 +714,7 @@ type FHDR struct {
 func (m *FHDR) Reset()      { *m = FHDR{} }
 func (*FHDR) ProtoMessage() {}
 func (*FHDR) Descriptor() ([]byte, []int) {
-	return fileDescriptor_lorawan_c45788185eeff27c, []int{6}
+	return fileDescriptor_lorawan_4cc1b57e6e881401, []int{6}
 }
 func (m *FHDR) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -769,7 +769,7 @@ type FCtrl struct {
 func (m *FCtrl) Reset()      { *m = FCtrl{} }
 func (*FCtrl) ProtoMessage() {}
 func (*FCtrl) Descriptor() ([]byte, []int) {
-	return fileDescriptor_lorawan_c45788185eeff27c, []int{7}
+	return fileDescriptor_lorawan_4cc1b57e6e881401, []int{7}
 }
 func (m *FCtrl) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -836,7 +836,7 @@ type MACCommand struct {
 func (m *MACCommand) Reset()      { *m = MACCommand{} }
 func (*MACCommand) ProtoMessage() {}
 func (*MACCommand) Descriptor() ([]byte, []int) {
-	return fileDescriptor_lorawan_c45788185eeff27c, []int{8}
+	return fileDescriptor_lorawan_4cc1b57e6e881401, []int{8}
 }
 func (m *MACCommand) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -890,7 +890,7 @@ type JoinRequestPayload struct {
 func (m *JoinRequestPayload) Reset()      { *m = JoinRequestPayload{} }
 func (*JoinRequestPayload) ProtoMessage() {}
 func (*JoinRequestPayload) Descriptor() ([]byte, []int) {
-	return fileDescriptor_lorawan_c45788185eeff27c, []int{9}
+	return fileDescriptor_lorawan_4cc1b57e6e881401, []int{9}
 }
 func (m *JoinRequestPayload) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -934,7 +934,7 @@ type JoinAcceptPayload struct {
 func (m *JoinAcceptPayload) Reset()      { *m = JoinAcceptPayload{} }
 func (*JoinAcceptPayload) ProtoMessage() {}
 func (*JoinAcceptPayload) Descriptor() ([]byte, []int) {
-	return fileDescriptor_lorawan_c45788185eeff27c, []int{10}
+	return fileDescriptor_lorawan_4cc1b57e6e881401, []int{10}
 }
 func (m *JoinAcceptPayload) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -994,7 +994,7 @@ type DLSettings struct {
 func (m *DLSettings) Reset()      { *m = DLSettings{} }
 func (*DLSettings) ProtoMessage() {}
 func (*DLSettings) Descriptor() ([]byte, []int) {
-	return fileDescriptor_lorawan_c45788185eeff27c, []int{11}
+	return fileDescriptor_lorawan_4cc1b57e6e881401, []int{11}
 }
 func (m *DLSettings) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1046,7 +1046,7 @@ type CFList struct {
 func (m *CFList) Reset()      { *m = CFList{} }
 func (*CFList) ProtoMessage() {}
 func (*CFList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_lorawan_c45788185eeff27c, []int{12}
+	return fileDescriptor_lorawan_4cc1b57e6e881401, []int{12}
 }
 func (m *CFList) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -5231,13 +5231,13 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/lorawan/lorawan.proto", fileDescriptor_lorawan_c45788185eeff27c)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/lorawan/lorawan.proto", fileDescriptor_lorawan_4cc1b57e6e881401)
 }
 func init() {
-	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/lorawan/lorawan.proto", fileDescriptor_lorawan_c45788185eeff27c)
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/lorawan/lorawan.proto", fileDescriptor_lorawan_4cc1b57e6e881401)
 }
 
-var fileDescriptor_lorawan_c45788185eeff27c = []byte{
+var fileDescriptor_lorawan_4cc1b57e6e881401 = []byte{
 	// 1586 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xd4, 0x57, 0x3d, 0x6c, 0x1b, 0xc9,
 	0x15, 0xde, 0x25, 0xb9, 0xfc, 0x79, 0x14, 0xa5, 0xbd, 0xf1, 0x25, 0x61, 0xee, 0x0e, 0x4b, 0x81,

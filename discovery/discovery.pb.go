@@ -49,7 +49,7 @@ type Metadata struct {
 func (m *Metadata) Reset()      { *m = Metadata{} }
 func (*Metadata) ProtoMessage() {}
 func (*Metadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_discovery_c3933d0f0d7f40c4, []int{0}
+	return fileDescriptor_discovery_c2367c6c771a4611, []int{0}
 }
 func (m *Metadata) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -287,7 +287,7 @@ type Announcement struct {
 func (m *Announcement) Reset()      { *m = Announcement{} }
 func (*Announcement) ProtoMessage() {}
 func (*Announcement) Descriptor() ([]byte, []int) {
-	return fileDescriptor_discovery_c3933d0f0d7f40c4, []int{1}
+	return fileDescriptor_discovery_c2367c6c771a4611, []int{1}
 }
 func (m *Announcement) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -417,7 +417,7 @@ type GetServiceRequest struct {
 func (m *GetServiceRequest) Reset()      { *m = GetServiceRequest{} }
 func (*GetServiceRequest) ProtoMessage() {}
 func (*GetServiceRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_discovery_c3933d0f0d7f40c4, []int{2}
+	return fileDescriptor_discovery_c2367c6c771a4611, []int{2}
 }
 func (m *GetServiceRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -466,7 +466,7 @@ type GetRequest struct {
 func (m *GetRequest) Reset()      { *m = GetRequest{} }
 func (*GetRequest) ProtoMessage() {}
 func (*GetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_discovery_c3933d0f0d7f40c4, []int{3}
+	return fileDescriptor_discovery_c2367c6c771a4611, []int{3}
 }
 func (m *GetRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -524,7 +524,7 @@ type MetadataRequest struct {
 func (m *MetadataRequest) Reset()      { *m = MetadataRequest{} }
 func (*MetadataRequest) ProtoMessage() {}
 func (*MetadataRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_discovery_c3933d0f0d7f40c4, []int{4}
+	return fileDescriptor_discovery_c2367c6c771a4611, []int{4}
 }
 func (m *MetadataRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -584,7 +584,7 @@ type AnnouncementsResponse struct {
 func (m *AnnouncementsResponse) Reset()      { *m = AnnouncementsResponse{} }
 func (*AnnouncementsResponse) ProtoMessage() {}
 func (*AnnouncementsResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_discovery_c3933d0f0d7f40c4, []int{5}
+	return fileDescriptor_discovery_c2367c6c771a4611, []int{5}
 }
 func (m *AnnouncementsResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -629,7 +629,7 @@ type GetByAppIDRequest struct {
 func (m *GetByAppIDRequest) Reset()      { *m = GetByAppIDRequest{} }
 func (*GetByAppIDRequest) ProtoMessage() {}
 func (*GetByAppIDRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_discovery_c3933d0f0d7f40c4, []int{6}
+	return fileDescriptor_discovery_c2367c6c771a4611, []int{6}
 }
 func (m *GetByAppIDRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -674,7 +674,7 @@ type GetByGatewayIDRequest struct {
 func (m *GetByGatewayIDRequest) Reset()      { *m = GetByGatewayIDRequest{} }
 func (*GetByGatewayIDRequest) ProtoMessage() {}
 func (*GetByGatewayIDRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_discovery_c3933d0f0d7f40c4, []int{7}
+	return fileDescriptor_discovery_c2367c6c771a4611, []int{7}
 }
 func (m *GetByGatewayIDRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -719,7 +719,7 @@ type GetByAppEUIRequest struct {
 func (m *GetByAppEUIRequest) Reset()      { *m = GetByAppEUIRequest{} }
 func (*GetByAppEUIRequest) ProtoMessage() {}
 func (*GetByAppEUIRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_discovery_c3933d0f0d7f40c4, []int{8}
+	return fileDescriptor_discovery_c2367c6c771a4611, []int{8}
 }
 func (m *GetByAppEUIRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3772,13 +3772,13 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/discovery/discovery.proto", fileDescriptor_discovery_c3933d0f0d7f40c4)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/discovery/discovery.proto", fileDescriptor_discovery_c2367c6c771a4611)
 }
 func init() {
-	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/discovery/discovery.proto", fileDescriptor_discovery_c3933d0f0d7f40c4)
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/discovery/discovery.proto", fileDescriptor_discovery_c2367c6c771a4611)
 }
 
-var fileDescriptor_discovery_c3933d0f0d7f40c4 = []byte{
+var fileDescriptor_discovery_c2367c6c771a4611 = []byte{
 	// 1032 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x56, 0x4d, 0x6c, 0x1b, 0x45,
 	0x14, 0xde, 0x71, 0x5a, 0x13, 0x3f, 0xa7, 0x49, 0x18, 0x48, 0x58, 0x85, 0x66, 0xec, 0xae, 0xa8,

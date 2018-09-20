@@ -38,7 +38,7 @@ type Message struct {
 func (m *Message) Reset()      { *m = Message{} }
 func (*Message) ProtoMessage() {}
 func (*Message) Descriptor() ([]byte, []int) {
-	return fileDescriptor_protocol_6b2961d47015f719, []int{0}
+	return fileDescriptor_protocol_544a8f06321354d7, []int{0}
 }
 func (m *Message) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -160,7 +160,7 @@ type RxMetadata struct {
 func (m *RxMetadata) Reset()      { *m = RxMetadata{} }
 func (*RxMetadata) ProtoMessage() {}
 func (*RxMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_protocol_6b2961d47015f719, []int{1}
+	return fileDescriptor_protocol_544a8f06321354d7, []int{1}
 }
 func (m *RxMetadata) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -282,7 +282,7 @@ type TxConfiguration struct {
 func (m *TxConfiguration) Reset()      { *m = TxConfiguration{} }
 func (*TxConfiguration) ProtoMessage() {}
 func (*TxConfiguration) Descriptor() ([]byte, []int) {
-	return fileDescriptor_protocol_6b2961d47015f719, []int{2}
+	return fileDescriptor_protocol_544a8f06321354d7, []int{2}
 }
 func (m *TxConfiguration) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -404,7 +404,7 @@ type ActivationMetadata struct {
 func (m *ActivationMetadata) Reset()      { *m = ActivationMetadata{} }
 func (*ActivationMetadata) ProtoMessage() {}
 func (*ActivationMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_protocol_6b2961d47015f719, []int{3}
+	return fileDescriptor_protocol_544a8f06321354d7, []int{3}
 }
 func (m *ActivationMetadata) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1655,13 +1655,13 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/protocol.proto", fileDescriptor_protocol_6b2961d47015f719)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/protocol.proto", fileDescriptor_protocol_544a8f06321354d7)
 }
 func init() {
-	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/protocol.proto", fileDescriptor_protocol_6b2961d47015f719)
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/protocol.proto", fileDescriptor_protocol_544a8f06321354d7)
 }
 
-var fileDescriptor_protocol_6b2961d47015f719 = []byte{
+var fileDescriptor_protocol_544a8f06321354d7 = []byte{
 	// 406 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x92, 0x31, 0x88, 0x13, 0x41,
 	0x14, 0x86, 0xdf, 0xb3, 0x30, 0x32, 0x87, 0xa8, 0x5b, 0x1d, 0x27, 0x3e, 0xf5, 0xaa, 0x6b, 0x9c,

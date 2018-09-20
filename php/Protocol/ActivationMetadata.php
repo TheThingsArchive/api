@@ -15,9 +15,18 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
 {
     protected $protocol;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Lorawan\ActivationMetadata $lorawan
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Protocol\Protocol::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

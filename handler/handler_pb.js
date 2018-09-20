@@ -1585,7 +1585,7 @@ proto.handler.Device.deserializeBinaryFromReader = function(msg, reader) {
     case 13:
       var value = msg.getAttributesMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
          });
       break;
     case 20:
@@ -1955,15 +1955,15 @@ proto.handler.DeviceList.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * repeated Device devices = 1;
- * @return {!Array.<!proto.handler.Device>}
+ * @return {!Array<!proto.handler.Device>}
  */
 proto.handler.DeviceList.prototype.getDevicesList = function() {
-  return /** @type{!Array.<!proto.handler.Device>} */ (
+  return /** @type{!Array<!proto.handler.Device>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.handler.Device, 1));
 };
 
 
-/** @param {!Array.<!proto.handler.Device>} value */
+/** @param {!Array<!proto.handler.Device>} value */
 proto.handler.DeviceList.prototype.setDevicesList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
@@ -2895,14 +2895,14 @@ proto.handler.LogEntry.prototype.setFunction = function(value) {
 
 /**
  * repeated string fields = 2;
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.handler.LogEntry.prototype.getFieldsList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getRepeatedField(this, 2));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
-/** @param {!Array.<string>} value */
+/** @param {!Array<string>} value */
 proto.handler.LogEntry.prototype.setFieldsList = function(value) {
   jspb.Message.setField(this, 2, value || []);
 };
@@ -3168,15 +3168,15 @@ proto.handler.DryUplinkResult.prototype.setValid = function(value) {
 
 /**
  * repeated LogEntry logs = 4;
- * @return {!Array.<!proto.handler.LogEntry>}
+ * @return {!Array<!proto.handler.LogEntry>}
  */
 proto.handler.DryUplinkResult.prototype.getLogsList = function() {
-  return /** @type{!Array.<!proto.handler.LogEntry>} */ (
+  return /** @type{!Array<!proto.handler.LogEntry>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.handler.LogEntry, 4));
 };
 
 
-/** @param {!Array.<!proto.handler.LogEntry>} value */
+/** @param {!Array<!proto.handler.LogEntry>} value */
 proto.handler.DryUplinkResult.prototype.setLogsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
@@ -3387,15 +3387,15 @@ proto.handler.DryDownlinkResult.prototype.setPayload = function(value) {
 
 /**
  * repeated LogEntry logs = 2;
- * @return {!Array.<!proto.handler.LogEntry>}
+ * @return {!Array<!proto.handler.LogEntry>}
  */
 proto.handler.DryDownlinkResult.prototype.getLogsList = function() {
-  return /** @type{!Array.<!proto.handler.LogEntry>} */ (
+  return /** @type{!Array<!proto.handler.LogEntry>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.handler.LogEntry, 2));
 };
 
 
-/** @param {!Array.<!proto.handler.LogEntry>} value */
+/** @param {!Array<!proto.handler.LogEntry>} value */
 proto.handler.DryDownlinkResult.prototype.setLogsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
 };

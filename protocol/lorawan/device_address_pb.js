@@ -433,14 +433,14 @@ proto.lorawan.PrefixesResponse.PrefixMapping.prototype.setPrefix = function(valu
 
 /**
  * repeated string usage = 2;
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.lorawan.PrefixesResponse.PrefixMapping.prototype.getUsageList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getRepeatedField(this, 2));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
-/** @param {!Array.<string>} value */
+/** @param {!Array<string>} value */
 proto.lorawan.PrefixesResponse.PrefixMapping.prototype.setUsageList = function(value) {
   jspb.Message.setField(this, 2, value || []);
 };
@@ -462,15 +462,15 @@ proto.lorawan.PrefixesResponse.PrefixMapping.prototype.clearUsageList = function
 
 /**
  * repeated PrefixMapping prefixes = 1;
- * @return {!Array.<!proto.lorawan.PrefixesResponse.PrefixMapping>}
+ * @return {!Array<!proto.lorawan.PrefixesResponse.PrefixMapping>}
  */
 proto.lorawan.PrefixesResponse.prototype.getPrefixesList = function() {
-  return /** @type{!Array.<!proto.lorawan.PrefixesResponse.PrefixMapping>} */ (
+  return /** @type{!Array<!proto.lorawan.PrefixesResponse.PrefixMapping>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.lorawan.PrefixesResponse.PrefixMapping, 1));
 };
 
 
-/** @param {!Array.<!proto.lorawan.PrefixesResponse.PrefixMapping>} value */
+/** @param {!Array<!proto.lorawan.PrefixesResponse.PrefixMapping>} value */
 proto.lorawan.PrefixesResponse.prototype.setPrefixesList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
@@ -627,14 +627,14 @@ proto.lorawan.DevAddrRequest.serializeBinaryToWriter = function(message, writer)
 
 /**
  * repeated string usage = 1;
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.lorawan.DevAddrRequest.prototype.getUsageList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getRepeatedField(this, 1));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
-/** @param {!Array.<string>} value */
+/** @param {!Array<string>} value */
 proto.lorawan.DevAddrRequest.prototype.setUsageList = function(value) {
   jspb.Message.setField(this, 1, value || []);
 };

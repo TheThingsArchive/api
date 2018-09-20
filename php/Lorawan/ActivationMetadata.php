@@ -50,9 +50,26 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
      */
     private $frequency_plan = 0;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $app_eui
+     *     @type string $dev_eui
+     *     @type string $dev_addr
+     *     @type string $nwk_s_key
+     *     @type int $rx1_dr_offset
+     *     @type int $rx2_dr
+     *     @type int $rx_delay
+     *     @type \Lorawan\CFList $cf_list
+     *     @type int $frequency_plan
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Protocol\Lorawan\Lorawan::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

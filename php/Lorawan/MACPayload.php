@@ -26,9 +26,20 @@ class MACPayload extends \Google\Protobuf\Internal\Message
      */
     private $frm_payload = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Lorawan\FHDR $f_hdr
+     *     @type int $f_port
+     *     @type string $frm_payload
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Protocol\Lorawan\Lorawan::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

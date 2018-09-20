@@ -47,7 +47,7 @@ type DevicesRequest struct {
 func (m *DevicesRequest) Reset()      { *m = DevicesRequest{} }
 func (*DevicesRequest) ProtoMessage() {}
 func (*DevicesRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_networkserver_b69090e745182e37, []int{0}
+	return fileDescriptor_networkserver_f664bff0dc7d561a, []int{0}
 }
 func (m *DevicesRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -92,7 +92,7 @@ type DevicesResponse struct {
 func (m *DevicesResponse) Reset()      { *m = DevicesResponse{} }
 func (*DevicesResponse) ProtoMessage() {}
 func (*DevicesResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_networkserver_b69090e745182e37, []int{1}
+	return fileDescriptor_networkserver_f664bff0dc7d561a, []int{1}
 }
 func (m *DevicesResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -137,7 +137,7 @@ type StatusRequest struct {
 func (m *StatusRequest) Reset()      { *m = StatusRequest{} }
 func (*StatusRequest) ProtoMessage() {}
 func (*StatusRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_networkserver_b69090e745182e37, []int{2}
+	return fileDescriptor_networkserver_f664bff0dc7d561a, []int{2}
 }
 func (m *StatusRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -181,7 +181,7 @@ type Status struct {
 func (m *Status) Reset()      { *m = Status{} }
 func (*Status) ProtoMessage() {}
 func (*Status) Descriptor() ([]byte, []int) {
-	return fileDescriptor_networkserver_b69090e745182e37, []int{3}
+	return fileDescriptor_networkserver_f664bff0dc7d561a, []int{3}
 }
 func (m *Status) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1646,13 +1646,13 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/networkserver/networkserver.proto", fileDescriptor_networkserver_b69090e745182e37)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/networkserver/networkserver.proto", fileDescriptor_networkserver_f664bff0dc7d561a)
 }
 func init() {
-	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/networkserver/networkserver.proto", fileDescriptor_networkserver_b69090e745182e37)
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/networkserver/networkserver.proto", fileDescriptor_networkserver_f664bff0dc7d561a)
 }
 
-var fileDescriptor_networkserver_b69090e745182e37 = []byte{
+var fileDescriptor_networkserver_f664bff0dc7d561a = []byte{
 	// 767 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x95, 0x4f, 0x68, 0x1b, 0x47,
 	0x14, 0xc6, 0x67, 0x94, 0x54, 0x51, 0x46, 0x51, 0xdd, 0x8c, 0x1b, 0x2a, 0x44, 0x3a, 0x71, 0x74,

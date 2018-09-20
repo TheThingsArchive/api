@@ -63,7 +63,7 @@ var LocationMetadata_LocationSource_value = map[string]int32{
 }
 
 func (LocationMetadata_LocationSource) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_gateway_72acc49efc98a2d8, []int{0, 0}
+	return fileDescriptor_gateway_cd729bb602de8f80, []int{0, 0}
 }
 
 type LocationMetadata struct {
@@ -85,7 +85,7 @@ type LocationMetadata struct {
 func (m *LocationMetadata) Reset()      { *m = LocationMetadata{} }
 func (*LocationMetadata) ProtoMessage() {}
 func (*LocationMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_gateway_72acc49efc98a2d8, []int{0}
+	return fileDescriptor_gateway_cd729bb602de8f80, []int{0}
 }
 func (m *LocationMetadata) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -183,7 +183,7 @@ type RxMetadata struct {
 func (m *RxMetadata) Reset()      { *m = RxMetadata{} }
 func (*RxMetadata) ProtoMessage() {}
 func (*RxMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_gateway_72acc49efc98a2d8, []int{1}
+	return fileDescriptor_gateway_cd729bb602de8f80, []int{1}
 }
 func (m *RxMetadata) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -320,7 +320,7 @@ type RxMetadata_Antenna struct {
 func (m *RxMetadata_Antenna) Reset()      { *m = RxMetadata_Antenna{} }
 func (*RxMetadata_Antenna) ProtoMessage() {}
 func (*RxMetadata_Antenna) Descriptor() ([]byte, []int) {
-	return fileDescriptor_gateway_72acc49efc98a2d8, []int{1, 0}
+	return fileDescriptor_gateway_cd729bb602de8f80, []int{1, 0}
 }
 func (m *RxMetadata_Antenna) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -431,7 +431,7 @@ type TxConfiguration struct {
 func (m *TxConfiguration) Reset()      { *m = TxConfiguration{} }
 func (*TxConfiguration) ProtoMessage() {}
 func (*TxConfiguration) Descriptor() ([]byte, []int) {
-	return fileDescriptor_gateway_72acc49efc98a2d8, []int{2}
+	return fileDescriptor_gateway_cd729bb602de8f80, []int{2}
 }
 func (m *TxConfiguration) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -557,7 +557,7 @@ type Status struct {
 func (m *Status) Reset()      { *m = Status{} }
 func (*Status) ProtoMessage() {}
 func (*Status) Descriptor() ([]byte, []int) {
-	return fileDescriptor_gateway_72acc49efc98a2d8, []int{3}
+	return fileDescriptor_gateway_cd729bb602de8f80, []int{3}
 }
 func (m *Status) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -783,7 +783,7 @@ type Status_OSMetrics struct {
 func (m *Status_OSMetrics) Reset()      { *m = Status_OSMetrics{} }
 func (*Status_OSMetrics) ProtoMessage() {}
 func (*Status_OSMetrics) Descriptor() ([]byte, []int) {
-	return fileDescriptor_gateway_72acc49efc98a2d8, []int{3, 0}
+	return fileDescriptor_gateway_cd729bb602de8f80, []int{3, 0}
 }
 func (m *Status_OSMetrics) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4177,13 +4177,13 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/gateway/gateway.proto", fileDescriptor_gateway_72acc49efc98a2d8)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/gateway/gateway.proto", fileDescriptor_gateway_cd729bb602de8f80)
 }
 func init() {
-	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/gateway/gateway.proto", fileDescriptor_gateway_72acc49efc98a2d8)
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/gateway/gateway.proto", fileDescriptor_gateway_cd729bb602de8f80)
 }
 
-var fileDescriptor_gateway_72acc49efc98a2d8 = []byte{
+var fileDescriptor_gateway_cd729bb602de8f80 = []byte{
 	// 1368 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x96, 0x3f, 0x6c, 0x1b, 0x37,
 	0x14, 0xc6, 0x8f, 0x27, 0x59, 0x7f, 0x28, 0xcb, 0x56, 0x98, 0xd8, 0x39, 0x3b, 0x29, 0xa5, 0xba,

@@ -18,9 +18,18 @@ class DevAddrResponse extends \Google\Protobuf\Internal\Message
      */
     private $dev_addr = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $dev_addr
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Protocol\Lorawan\DeviceAddress::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

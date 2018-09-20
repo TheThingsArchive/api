@@ -22,9 +22,19 @@ class DeviceIdentifier extends \Google\Protobuf\Internal\Message
      */
     private $dev_id = '';
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $app_id
+     *     @type string $dev_id
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Handler\Handler::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

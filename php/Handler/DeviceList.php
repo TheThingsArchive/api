@@ -18,9 +18,18 @@ class DeviceList extends \Google\Protobuf\Internal\Message
      */
     private $devices;
 
-    public function __construct() {
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type \Handler\Device[]|\Google\Protobuf\Internal\RepeatedField $devices
+     * }
+     */
+    public function __construct($data = NULL) {
         \GPBMetadata\GithubCom\TheThingsNetwork\Api\Handler\Handler::initOnce();
-        parent::__construct();
+        parent::__construct($data);
     }
 
     /**

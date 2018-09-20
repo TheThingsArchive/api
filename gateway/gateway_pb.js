@@ -1093,15 +1093,15 @@ proto.gateway.RxMetadata.prototype.setChannel = function(value) {
 
 /**
  * repeated Antenna antennas = 30;
- * @return {!Array.<!proto.gateway.RxMetadata.Antenna>}
+ * @return {!Array<!proto.gateway.RxMetadata.Antenna>}
  */
 proto.gateway.RxMetadata.prototype.getAntennasList = function() {
-  return /** @type{!Array.<!proto.gateway.RxMetadata.Antenna>} */ (
+  return /** @type{!Array<!proto.gateway.RxMetadata.Antenna>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.gateway.RxMetadata.Antenna, 30));
 };
 
 
-/** @param {!Array.<!proto.gateway.RxMetadata.Antenna>} value */
+/** @param {!Array<!proto.gateway.RxMetadata.Antenna>} value */
 proto.gateway.RxMetadata.prototype.setAntennasList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 30, value);
 };
@@ -2255,14 +2255,14 @@ proto.gateway.Status.prototype.setBootTime = function(value) {
 
 /**
  * repeated string ip = 11;
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.gateway.Status.prototype.getIpList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getRepeatedField(this, 11));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 11));
 };
 
 
-/** @param {!Array.<string>} value */
+/** @param {!Array<string>} value */
 proto.gateway.Status.prototype.setIpList = function(value) {
   jspb.Message.setField(this, 11, value || []);
 };
@@ -2614,14 +2614,14 @@ proto.gateway.Status.prototype.hasOs = function() {
 
 /**
  * repeated string messages = 52;
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.gateway.Status.prototype.getMessagesList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getRepeatedField(this, 52));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 52));
 };
 
 
-/** @param {!Array.<string>} value */
+/** @param {!Array<string>} value */
 proto.gateway.Status.prototype.setMessagesList = function(value) {
   jspb.Message.setField(this, 52, value || []);
 };

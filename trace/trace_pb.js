@@ -134,7 +134,7 @@ proto.trace.Trace.deserializeBinaryFromReader = function(msg, reader) {
     case 6:
       var value = msg.getMetadataMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
          });
       break;
     case 11:
@@ -316,15 +316,15 @@ proto.trace.Trace.prototype.clearMetadataMap = function() {
 
 /**
  * repeated Trace parents = 11;
- * @return {!Array.<!proto.trace.Trace>}
+ * @return {!Array<!proto.trace.Trace>}
  */
 proto.trace.Trace.prototype.getParentsList = function() {
-  return /** @type{!Array.<!proto.trace.Trace>} */ (
+  return /** @type{!Array<!proto.trace.Trace>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.trace.Trace, 11));
 };
 
 
-/** @param {!Array.<!proto.trace.Trace>} value */
+/** @param {!Array<!proto.trace.Trace>} value */
 proto.trace.Trace.prototype.setParentsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 11, value);
 };
