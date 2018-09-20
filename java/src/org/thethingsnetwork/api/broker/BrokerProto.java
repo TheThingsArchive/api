@@ -218,7 +218,6 @@ public final class BrokerProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.protobuf.GoGoProtos.getDescriptor(),
           org.thethingsnetwork.api.APIProto.getDescriptor(),
           org.thethingsnetwork.api.protocol.ProtocolProto.getDescriptor(),
           org.thethingsnetwork.api.gateway.GatewayProto.getDescriptor(),
@@ -304,13 +303,9 @@ public final class BrokerProto {
         new java.lang.String[] { "AppId", "HandlerId", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.customname);
-    registry.add(com.google.protobuf.GoGoProtos.customtype);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf.EmptyProto.getDescriptor();
-    com.google.protobuf.GoGoProtos.getDescriptor();
     org.thethingsnetwork.api.APIProto.getDescriptor();
     org.thethingsnetwork.api.protocol.ProtocolProto.getDescriptor();
     org.thethingsnetwork.api.gateway.GatewayProto.getDescriptor();

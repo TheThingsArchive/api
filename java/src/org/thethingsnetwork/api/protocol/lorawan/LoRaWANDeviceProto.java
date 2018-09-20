@@ -85,7 +85,6 @@ public final class LoRaWANDeviceProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.protobuf.GoGoProtos.getDescriptor(),
         }, assigner);
     internal_static_lorawan_DeviceIdentifier_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -101,13 +100,9 @@ public final class LoRaWANDeviceProto {
         new java.lang.String[] { "AppEui", "DevEui", "AppId", "DevId", "DevAddr", "NwkSKey", "AppSKey", "AppKey", "FCntUp", "FCntDown", "DisableFCntCheck", "Uses32BitFCnt", "ActivationConstraints", "UsedDevNonces", "UsedAppNonces", "LastSeen", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.customname);
-    registry.add(com.google.protobuf.GoGoProtos.customtype);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf.EmptyProto.getDescriptor();
-    com.google.protobuf.GoGoProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

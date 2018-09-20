@@ -72,7 +72,6 @@ public final class ProtocolProto {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
           org.thethingsnetwork.api.protocol.lorawan.LoRaWANProto.getDescriptor(),
         }, assigner);
     internal_static_protocol_Message_descriptor =
@@ -101,10 +100,8 @@ public final class ProtocolProto {
         new java.lang.String[] { "Lorawan", "Protocol", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.customname);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
     org.thethingsnetwork.api.protocol.lorawan.LoRaWANProto.getDescriptor();
   }
 

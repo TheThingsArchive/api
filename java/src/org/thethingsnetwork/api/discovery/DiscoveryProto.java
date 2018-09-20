@@ -129,8 +129,6 @@ public final class DiscoveryProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.protobuf.GoGoProtos.getDescriptor(),
         }, assigner);
     internal_static_discovery_Metadata_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -188,15 +186,9 @@ public final class DiscoveryProto {
         new java.lang.String[] { "AppEui", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.customname);
-    registry.add(com.google.protobuf.GoGoProtos.customtype);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
-    registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf.EmptyProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
-    com.google.protobuf.GoGoProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

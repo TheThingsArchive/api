@@ -138,7 +138,6 @@ public final class RouterProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.protobuf.GoGoProtos.getDescriptor(),
           org.thethingsnetwork.api.APIProto.getDescriptor(),
           org.thethingsnetwork.api.protocol.ProtocolProto.getDescriptor(),
           org.thethingsnetwork.api.gateway.GatewayProto.getDescriptor(),
@@ -200,13 +199,9 @@ public final class RouterProto {
         new java.lang.String[] { "System", "Component", "GatewayStatus", "Uplink", "Downlink", "Activations", "ConnectedGateways", "ConnectedBrokers", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.customname);
-    registry.add(com.google.protobuf.GoGoProtos.customtype);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf.EmptyProto.getDescriptor();
-    com.google.protobuf.GoGoProtos.getDescriptor();
     org.thethingsnetwork.api.APIProto.getDescriptor();
     org.thethingsnetwork.api.protocol.ProtocolProto.getDescriptor();
     org.thethingsnetwork.api.gateway.GatewayProto.getDescriptor();

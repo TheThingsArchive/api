@@ -59,10 +59,11 @@ clean/go:
 %.pb.java: %.proto
 	@$(PROTOC) --java_out=$(PROTOC_API_PATH)/java/src --grpc-java_out=$(PROTOC_API_PATH)/java/src $(PROTOC_API_PATH)/$<
 
-java_replace := -pe 's!.*google\.protobuf\.GoGoProtos.*\n!!;'
+java_replace := -pe 's!.*google\.protobuf\.GoGoProtos.*\n!!;' \
+                -pe 's!.*google\.api\.AnnotationsProto.*\n!!;'
 
 postprocess/java:
-	@#nothing
+	@find . -type f -name '*.java' -exec perl -i $(java_replace) {} \;
 
 clean/java:
 	rm -rf java/src/org/thethingsnetwork/api

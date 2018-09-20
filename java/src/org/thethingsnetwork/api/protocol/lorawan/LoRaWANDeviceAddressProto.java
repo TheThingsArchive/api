@@ -79,7 +79,6 @@ public final class LoRaWANDeviceAddressProto {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
         }, assigner);
     internal_static_lorawan_PrefixesRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -113,11 +112,8 @@ public final class LoRaWANDeviceAddressProto {
         new java.lang.String[] { "DevAddr", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.customtype);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

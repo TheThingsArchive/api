@@ -114,7 +114,6 @@ public final class GatewayProto {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
         }, assigner);
     internal_static_gateway_LocationMetadata_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -154,10 +153,8 @@ public final class GatewayProto {
         new java.lang.String[] { "Load1", "Load5", "Load15", "CpuPercentage", "MemoryPercentage", "Temperature", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.customname);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

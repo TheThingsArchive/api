@@ -91,7 +91,6 @@ public final class NetworkServerProto {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
           org.thethingsnetwork.api.APIProto.getDescriptor(),
           org.thethingsnetwork.api.protocol.lorawan.LoRaWANDeviceProto.getDescriptor(),
           org.thethingsnetwork.api.broker.BrokerProto.getDescriptor(),
@@ -123,11 +122,8 @@ public final class NetworkServerProto {
         new java.lang.String[] { "System", "Component", "Uplink", "Downlink", "Activations", "DevicesPerAddress", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.customtype);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
     org.thethingsnetwork.api.APIProto.getDescriptor();
     org.thethingsnetwork.api.protocol.lorawan.LoRaWANDeviceProto.getDescriptor();
     org.thethingsnetwork.api.broker.BrokerProto.getDescriptor();

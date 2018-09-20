@@ -205,8 +205,6 @@ public final class HandlerProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.EmptyProto.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.protobuf.GoGoProtos.getDescriptor(),
           org.thethingsnetwork.api.APIProto.getDescriptor(),
           org.thethingsnetwork.api.broker.BrokerProto.getDescriptor(),
           org.thethingsnetwork.api.protocol.ProtocolProto.getDescriptor(),
@@ -305,14 +303,9 @@ public final class HandlerProto {
         new java.lang.String[] { "Payload", "Logs", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.customname);
-    registry.add(com.google.protobuf.GoGoProtos.nullable);
-    registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf.EmptyProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
-    com.google.protobuf.GoGoProtos.getDescriptor();
     org.thethingsnetwork.api.APIProto.getDescriptor();
     org.thethingsnetwork.api.broker.BrokerProto.getDescriptor();
     org.thethingsnetwork.api.protocol.ProtocolProto.getDescriptor();
