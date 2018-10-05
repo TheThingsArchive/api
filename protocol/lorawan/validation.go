@@ -11,23 +11,11 @@ import (
 
 // Validate implements the api.Validator interface
 func (m *DeviceIdentifier) Validate() error {
-	if  m.AppEUI.IsEmpty() {
-		return errors.NewErrInvalidArgument("AppEUI", "can not be empty")
-	}
-	if m.DevEUI.IsEmpty() {
-		return errors.NewErrInvalidArgument("DevEUI", "can not be empty")
-	}
 	return nil
 }
 
 // Validate implements the api.Validator interface
 func (m *Device) Validate() error {
-	if  m.AppEUI.IsEmpty() {
-		return errors.NewErrInvalidArgument("AppEUI", "can not be empty")
-	}
-	if m.DevEUI.IsEmpty() {
-		return errors.NewErrInvalidArgument("DevEUI", "can not be empty")
-	}
 	if err := api.NotEmptyAndValidID(m.AppID, "AppID"); err != nil {
 		return err
 	}
@@ -81,15 +69,6 @@ func (m *TxConfiguration) Validate() error {
 
 // Validate implements the api.Validator interface
 func (m *ActivationMetadata) Validate() error {
-	if  m.AppEUI.IsEmpty() {
-		return errors.NewErrInvalidArgument("AppEUI", "can not be empty")
-	}
-	if  m.DevEUI.IsEmpty() {
-		return errors.NewErrInvalidArgument("DevEUI", "can not be empty")
-	}
-	if m.DevAddr != nil && m.DevAddr.IsEmpty() {
-		return errors.NewErrInvalidArgument("DevAddr", "can not be empty")
-	}
 	if m.NwkSKey != nil && m.NwkSKey.IsEmpty() {
 		return errors.NewErrInvalidArgument("NwkSKey", "can not be empty")
 	}
@@ -132,13 +111,6 @@ func (m *Message) Validate() error {
 
 // Validate implements the api.Validator interface
 func (m *JoinRequestPayload) Validate() error {
-	if m.AppEUI.IsEmpty() {
-		return errors.NewErrInvalidArgument("AppEUI", "can not be empty")
-	}
-	if m.DevEUI.IsEmpty() {
-		return errors.NewErrInvalidArgument("DevEUI", "can not be empty")
-	}
-
 	return nil
 }
 
@@ -152,9 +124,6 @@ func (m *JoinAcceptPayload) Validate() error {
 		return errors.NewErrInvalidArgument("CfList.Freq", "length must be 5")
 	}
 
-	if m.DevAddr.IsEmpty() {
-		return errors.NewErrInvalidArgument("DevAddr", "can not be empty")
-	}
 	if m.NetID.IsEmpty() {
 		return errors.NewErrInvalidArgument("NetID", "can not be empty")
 	}
@@ -164,8 +133,5 @@ func (m *JoinAcceptPayload) Validate() error {
 
 // Validate implements the api.Validator interface
 func (m *MACPayload) Validate() error {
-	if m.DevAddr.IsEmpty() {
-		return errors.NewErrInvalidArgument("DevAddr", "can not be empty")
-	}
 	return nil
 }
