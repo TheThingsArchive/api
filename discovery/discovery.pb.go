@@ -49,7 +49,7 @@ type Metadata struct {
 func (m *Metadata) Reset()      { *m = Metadata{} }
 func (*Metadata) ProtoMessage() {}
 func (*Metadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_discovery_c2367c6c771a4611, []int{0}
+	return fileDescriptor_discovery_e7d76f90be85b584, []int{0}
 }
 func (m *Metadata) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -287,7 +287,7 @@ type Announcement struct {
 func (m *Announcement) Reset()      { *m = Announcement{} }
 func (*Announcement) ProtoMessage() {}
 func (*Announcement) Descriptor() ([]byte, []int) {
-	return fileDescriptor_discovery_c2367c6c771a4611, []int{1}
+	return fileDescriptor_discovery_e7d76f90be85b584, []int{1}
 }
 func (m *Announcement) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -417,7 +417,7 @@ type GetServiceRequest struct {
 func (m *GetServiceRequest) Reset()      { *m = GetServiceRequest{} }
 func (*GetServiceRequest) ProtoMessage() {}
 func (*GetServiceRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_discovery_c2367c6c771a4611, []int{2}
+	return fileDescriptor_discovery_e7d76f90be85b584, []int{2}
 }
 func (m *GetServiceRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -466,7 +466,7 @@ type GetRequest struct {
 func (m *GetRequest) Reset()      { *m = GetRequest{} }
 func (*GetRequest) ProtoMessage() {}
 func (*GetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_discovery_c2367c6c771a4611, []int{3}
+	return fileDescriptor_discovery_e7d76f90be85b584, []int{3}
 }
 func (m *GetRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -524,7 +524,7 @@ type MetadataRequest struct {
 func (m *MetadataRequest) Reset()      { *m = MetadataRequest{} }
 func (*MetadataRequest) ProtoMessage() {}
 func (*MetadataRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_discovery_c2367c6c771a4611, []int{4}
+	return fileDescriptor_discovery_e7d76f90be85b584, []int{4}
 }
 func (m *MetadataRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -584,7 +584,7 @@ type AnnouncementsResponse struct {
 func (m *AnnouncementsResponse) Reset()      { *m = AnnouncementsResponse{} }
 func (*AnnouncementsResponse) ProtoMessage() {}
 func (*AnnouncementsResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_discovery_c2367c6c771a4611, []int{5}
+	return fileDescriptor_discovery_e7d76f90be85b584, []int{5}
 }
 func (m *AnnouncementsResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -629,7 +629,7 @@ type GetByAppIDRequest struct {
 func (m *GetByAppIDRequest) Reset()      { *m = GetByAppIDRequest{} }
 func (*GetByAppIDRequest) ProtoMessage() {}
 func (*GetByAppIDRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_discovery_c2367c6c771a4611, []int{6}
+	return fileDescriptor_discovery_e7d76f90be85b584, []int{6}
 }
 func (m *GetByAppIDRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -674,7 +674,7 @@ type GetByGatewayIDRequest struct {
 func (m *GetByGatewayIDRequest) Reset()      { *m = GetByGatewayIDRequest{} }
 func (*GetByGatewayIDRequest) ProtoMessage() {}
 func (*GetByGatewayIDRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_discovery_c2367c6c771a4611, []int{7}
+	return fileDescriptor_discovery_e7d76f90be85b584, []int{7}
 }
 func (m *GetByGatewayIDRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -719,7 +719,7 @@ type GetByAppEUIRequest struct {
 func (m *GetByAppEUIRequest) Reset()      { *m = GetByAppEUIRequest{} }
 func (*GetByAppEUIRequest) ProtoMessage() {}
 func (*GetByAppEUIRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_discovery_c2367c6c771a4611, []int{8}
+	return fileDescriptor_discovery_e7d76f90be85b584, []int{8}
 }
 func (m *GetByAppEUIRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1876,217 +1876,6 @@ func encodeVarintDiscovery(dAtA []byte, offset int, v uint64) int {
 	}
 	dAtA[offset] = uint8(v)
 	return offset + 1
-}
-func NewPopulatedMetadata(r randyDiscovery, easy bool) *Metadata {
-	this := &Metadata{}
-	oneofNumber_Metadata := []int32{10, 20, 30, 31}[r.Intn(4)]
-	switch oneofNumber_Metadata {
-	case 10:
-		this.Metadata = NewPopulatedMetadata_GatewayID(r, easy)
-	case 20:
-		this.Metadata = NewPopulatedMetadata_DevAddrPrefix(r, easy)
-	case 30:
-		this.Metadata = NewPopulatedMetadata_AppID(r, easy)
-	case 31:
-		this.Metadata = NewPopulatedMetadata_AppEUI(r, easy)
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedMetadata_GatewayID(r randyDiscovery, easy bool) *Metadata_GatewayID {
-	this := &Metadata_GatewayID{}
-	this.GatewayID = string(randStringDiscovery(r))
-	return this
-}
-func NewPopulatedMetadata_DevAddrPrefix(r randyDiscovery, easy bool) *Metadata_DevAddrPrefix {
-	this := &Metadata_DevAddrPrefix{}
-	v1 := r.Intn(100)
-	this.DevAddrPrefix = make([]byte, v1)
-	for i := 0; i < v1; i++ {
-		this.DevAddrPrefix[i] = byte(r.Intn(256))
-	}
-	return this
-}
-func NewPopulatedMetadata_AppID(r randyDiscovery, easy bool) *Metadata_AppID {
-	this := &Metadata_AppID{}
-	this.AppID = string(randStringDiscovery(r))
-	return this
-}
-func NewPopulatedMetadata_AppEUI(r randyDiscovery, easy bool) *Metadata_AppEUI {
-	this := &Metadata_AppEUI{}
-	v2 := r.Intn(100)
-	this.AppEUI = make([]byte, v2)
-	for i := 0; i < v2; i++ {
-		this.AppEUI[i] = byte(r.Intn(256))
-	}
-	return this
-}
-func NewPopulatedAnnouncement(r randyDiscovery, easy bool) *Announcement {
-	this := &Announcement{}
-	this.ID = string(randStringDiscovery(r))
-	this.ServiceName = string(randStringDiscovery(r))
-	this.ServiceVersion = string(randStringDiscovery(r))
-	this.Description = string(randStringDiscovery(r))
-	this.Url = string(randStringDiscovery(r))
-	this.Public = bool(bool(r.Intn(2) == 0))
-	this.NetAddress = string(randStringDiscovery(r))
-	this.PublicKey = string(randStringDiscovery(r))
-	this.Certificate = string(randStringDiscovery(r))
-	this.ApiAddress = string(randStringDiscovery(r))
-	this.MqttAddress = string(randStringDiscovery(r))
-	this.AmqpAddress = string(randStringDiscovery(r))
-	if r.Intn(10) != 0 {
-		v3 := r.Intn(5)
-		this.Metadata = make([]*Metadata, v3)
-		for i := 0; i < v3; i++ {
-			this.Metadata[i] = NewPopulatedMetadata(r, easy)
-		}
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedGetServiceRequest(r randyDiscovery, easy bool) *GetServiceRequest {
-	this := &GetServiceRequest{}
-	this.ServiceName = string(randStringDiscovery(r))
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedGetRequest(r randyDiscovery, easy bool) *GetRequest {
-	this := &GetRequest{}
-	this.ID = string(randStringDiscovery(r))
-	this.ServiceName = string(randStringDiscovery(r))
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedMetadataRequest(r randyDiscovery, easy bool) *MetadataRequest {
-	this := &MetadataRequest{}
-	this.ID = string(randStringDiscovery(r))
-	this.ServiceName = string(randStringDiscovery(r))
-	v4 := NewPopulatedMetadata(r, easy)
-	this.Metadata = *v4
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedAnnouncementsResponse(r randyDiscovery, easy bool) *AnnouncementsResponse {
-	this := &AnnouncementsResponse{}
-	if r.Intn(10) != 0 {
-		v5 := r.Intn(5)
-		this.Services = make([]*Announcement, v5)
-		for i := 0; i < v5; i++ {
-			this.Services[i] = NewPopulatedAnnouncement(r, easy)
-		}
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedGetByAppIDRequest(r randyDiscovery, easy bool) *GetByAppIDRequest {
-	this := &GetByAppIDRequest{}
-	this.AppID = string(randStringDiscovery(r))
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedGetByGatewayIDRequest(r randyDiscovery, easy bool) *GetByGatewayIDRequest {
-	this := &GetByGatewayIDRequest{}
-	this.GatewayID = string(randStringDiscovery(r))
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedGetByAppEUIRequest(r randyDiscovery, easy bool) *GetByAppEUIRequest {
-	this := &GetByAppEUIRequest{}
-	v6 := github_com_TheThingsNetwork_ttn_core_types.NewPopulatedAppEUI(r)
-	this.AppEUI = *v6
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-type randyDiscovery interface {
-	Float32() float32
-	Float64() float64
-	Int63() int64
-	Int31() int32
-	Uint32() uint32
-	Intn(n int) int
-}
-
-func randUTF8RuneDiscovery(r randyDiscovery) rune {
-	ru := r.Intn(62)
-	if ru < 10 {
-		return rune(ru + 48)
-	} else if ru < 36 {
-		return rune(ru + 55)
-	}
-	return rune(ru + 61)
-}
-func randStringDiscovery(r randyDiscovery) string {
-	v7 := r.Intn(100)
-	tmps := make([]rune, v7)
-	for i := 0; i < v7; i++ {
-		tmps[i] = randUTF8RuneDiscovery(r)
-	}
-	return string(tmps)
-}
-func randUnrecognizedDiscovery(r randyDiscovery, maxFieldNumber int) (dAtA []byte) {
-	l := r.Intn(5)
-	for i := 0; i < l; i++ {
-		wire := r.Intn(4)
-		if wire == 3 {
-			wire = 5
-		}
-		fieldNumber := maxFieldNumber + r.Intn(100)
-		dAtA = randFieldDiscovery(dAtA, r, fieldNumber, wire)
-	}
-	return dAtA
-}
-func randFieldDiscovery(dAtA []byte, r randyDiscovery, fieldNumber int, wire int) []byte {
-	key := uint32(fieldNumber)<<3 | uint32(wire)
-	switch wire {
-	case 0:
-		dAtA = encodeVarintPopulateDiscovery(dAtA, uint64(key))
-		v8 := r.Int63()
-		if r.Intn(2) == 0 {
-			v8 *= -1
-		}
-		dAtA = encodeVarintPopulateDiscovery(dAtA, uint64(v8))
-	case 1:
-		dAtA = encodeVarintPopulateDiscovery(dAtA, uint64(key))
-		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
-	case 2:
-		dAtA = encodeVarintPopulateDiscovery(dAtA, uint64(key))
-		ll := r.Intn(100)
-		dAtA = encodeVarintPopulateDiscovery(dAtA, uint64(ll))
-		for j := 0; j < ll; j++ {
-			dAtA = append(dAtA, byte(r.Intn(256)))
-		}
-	default:
-		dAtA = encodeVarintPopulateDiscovery(dAtA, uint64(key))
-		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
-	}
-	return dAtA
-}
-func encodeVarintPopulateDiscovery(dAtA []byte, v uint64) []byte {
-	for v >= 1<<7 {
-		dAtA = append(dAtA, uint8(uint64(v)&0x7f|0x80))
-		v >>= 7
-	}
-	dAtA = append(dAtA, uint8(v))
-	return dAtA
 }
 func (m *Metadata) Size() (n int) {
 	var l int
@@ -3772,13 +3561,13 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/discovery/discovery.proto", fileDescriptor_discovery_c2367c6c771a4611)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/discovery/discovery.proto", fileDescriptor_discovery_e7d76f90be85b584)
 }
 func init() {
-	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/discovery/discovery.proto", fileDescriptor_discovery_c2367c6c771a4611)
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/discovery/discovery.proto", fileDescriptor_discovery_e7d76f90be85b584)
 }
 
-var fileDescriptor_discovery_c2367c6c771a4611 = []byte{
+var fileDescriptor_discovery_e7d76f90be85b584 = []byte{
 	// 1032 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x56, 0x4d, 0x6c, 0x1b, 0x45,
 	0x14, 0xde, 0x71, 0x5a, 0x13, 0x3f, 0xa7, 0x49, 0x18, 0x48, 0x58, 0x85, 0x66, 0xec, 0xae, 0xa8,
@@ -3836,13 +3625,13 @@ var fileDescriptor_discovery_c2367c6c771a4611 = []byte{
 	0x27, 0xab, 0x43, 0x31, 0xe3, 0x56, 0xba, 0x7a, 0x46, 0x49, 0x13, 0x17, 0x4f, 0xa5, 0x59, 0xa7,
 	0xb0, 0x98, 0xfa, 0xef, 0x06, 0xb7, 0x79, 0x07, 0xbd, 0xda, 0xdf, 0xe4, 0x68, 0xc4, 0xc8, 0xd3,
 	0x11, 0x23, 0xcf, 0x46, 0x4c, 0x7b, 0x3e, 0x62, 0xda, 0x8b, 0x11, 0xd3, 0x5e, 0x8e, 0x98, 0xf6,
-	0x6a, 0xc4, 0xc8, 0x83, 0x80, 0x91, 0x87, 0x01, 0xd3, 0x1e, 0x05, 0x8c, 0x3c, 0x0e, 0x98, 0x76,
-	0x18, 0x30, 0xed, 0x49, 0xc0, 0xb4, 0xa3, 0x80, 0x91, 0xa7, 0x01, 0x23, 0xcf, 0x02, 0xa6, 0x3d,
-	0x0f, 0x18, 0x79, 0x11, 0x30, 0xed, 0x65, 0xc0, 0xc8, 0xab, 0x80, 0x69, 0x0f, 0xc6, 0x4c, 0x7b,
-	0x38, 0x66, 0xe4, 0xa7, 0x31, 0xd3, 0x7e, 0x19, 0x33, 0xf2, 0xeb, 0x98, 0x69, 0x8f, 0xc6, 0x4c,
-	0x7b, 0x3c, 0x66, 0xe4, 0x70, 0xcc, 0xc8, 0x93, 0x31, 0x23, 0x60, 0x38, 0x5e, 0xc7, 0x94, 0x7b,
-	0x28, 0xd5, 0x24, 0xd9, 0xd1, 0x24, 0x99, 0xdc, 0x15, 0x93, 0xda, 0x6b, 0xf3, 0x69, 0xb1, 0x5b,
-	0x61, 0x83, 0xb6, 0xc8, 0xb7, 0x1f, 0xfd, 0xe7, 0x7f, 0x2c, 0xbf, 0xe5, 0xd8, 0x49, 0x80, 0x59,
-	0xdd, 0x6a, 0x9a, 0x29, 0xe5, 0x4e, 0x5e, 0x75, 0xfd, 0xca, 0xbf, 0x01, 0x00, 0x00, 0xff, 0xff,
-	0x8f, 0x90, 0x23, 0xf8, 0x06, 0x09, 0x00, 0x00,
+	0x6a, 0xc4, 0xb4, 0x07, 0x01, 0x23, 0x0f, 0x03, 0xa6, 0x3d, 0x0a, 0x18, 0x79, 0x1c, 0x30, 0xed,
+	0x30, 0x60, 0xda, 0x93, 0x80, 0x69, 0x47, 0x01, 0x23, 0x4f, 0x03, 0x46, 0x9e, 0x05, 0x4c, 0x7b,
+	0x1e, 0x30, 0xf2, 0x22, 0x60, 0xda, 0xcb, 0x80, 0x91, 0x57, 0x01, 0xd3, 0x1e, 0x8c, 0x99, 0xf6,
+	0x70, 0xcc, 0xc8, 0x4f, 0x63, 0xa6, 0xfd, 0x32, 0x66, 0xe4, 0xd7, 0x31, 0xd3, 0x1e, 0x8d, 0x99,
+	0xf6, 0x78, 0xcc, 0xc8, 0xe1, 0x98, 0x91, 0x27, 0x63, 0x46, 0xc0, 0x70, 0xbc, 0x8e, 0x29, 0xf7,
+	0x50, 0xaa, 0x49, 0xb2, 0xa3, 0x49, 0x32, 0xb9, 0x2b, 0x26, 0xb5, 0xd7, 0xe6, 0xd3, 0x62, 0xb7,
+	0xc2, 0x06, 0x6d, 0x91, 0x6f, 0x3f, 0xfa, 0xcf, 0xff, 0x58, 0x7e, 0xcb, 0xb1, 0x93, 0x00, 0xb3,
+	0xba, 0xd5, 0x34, 0x53, 0xca, 0x9d, 0xbc, 0xea, 0xfa, 0x95, 0x7f, 0x03, 0x00, 0x00, 0xff, 0xff,
+	0x53, 0xdb, 0x21, 0xee, 0x06, 0x09, 0x00, 0x00,
 }

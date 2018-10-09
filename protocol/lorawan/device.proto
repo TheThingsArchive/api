@@ -15,6 +15,8 @@ option java_package = "org.thethingsnetwork.api.protocol.lorawan";
 option java_outer_classname = "LoRaWANDeviceProto";
 option java_multiple_files = true;
 
+option (gogoproto.populate_all) = false;
+
 message DeviceIdentifier {
   // The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
   bytes  app_eui  = 1 [(gogoproto.customname) = "AppEUI", (gogoproto.nullable) = false, (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];

@@ -13,6 +13,8 @@ option java_package = "org.thethingsnetwork.api.protocol.lorawan";
 option java_outer_classname = "LoRaWANProto";
 option java_multiple_files = true;
 
+option (gogoproto.populate_all) = false;
+
 enum Modulation {
   LORA = 0;
   FSK  = 1;
@@ -79,7 +81,7 @@ enum FrequencyPlan {
   KR_920_923 = 7;
 
   IN_865_867 = 8;
-  
+
   RU_864_870 = 9;
 }
 

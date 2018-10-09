@@ -201,10 +201,10 @@ public final class BrokerProto {
       "cationHandler\022&.broker.ApplicationHandle" +
       "rRegistration\032\026.google.protobuf.Empty\0222\n" +
       "\tGetStatus\022\025.broker.StatusRequest\032\016.brok" +
-      "er.StatusBv\n\037org.thethingsnetwork.api.br" +
+      "er.StatusBz\n\037org.thethingsnetwork.api.br" +
       "okerB\013BrokerProtoP\001Z&github.com/TheThing" +
       "sNetwork/api/broker\252\002\033TheThingsNetwork.A" +
-      "PI.Brokerb\006proto3"
+      "PI.Broker\370\341\036\000b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -307,6 +307,7 @@ public final class BrokerProto {
     registry.add(com.google.protobuf.GoGoProtos.customname);
     registry.add(com.google.protobuf.GoGoProtos.customtype);
     registry.add(com.google.protobuf.GoGoProtos.nullable);
+    registry.add(com.google.protobuf.GoGoProtos.populateAll);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf.EmptyProto.getDescriptor();

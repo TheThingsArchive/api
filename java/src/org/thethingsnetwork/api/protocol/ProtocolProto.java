@@ -55,11 +55,11 @@ public final class ProtocolProto {
       " \001(\0132\030.lorawan.TxConfigurationB\013\342\336\037\007LoRa" +
       "WANH\000B\n\n\010protocol\"]\n\022ActivationMetadata\022" +
       ";\n\007lorawan\030\001 \001(\0132\033.lorawan.ActivationMet" +
-      "adataB\013\342\336\037\007LoRaWANH\000B\n\n\010protocolB~\n!org." +
-      "thethingsnetwork.api.protocolB\rProtocolP" +
-      "rotoP\001Z(github.com/TheThingsNetwork/api/" +
-      "protocol\252\002\035TheThingsNetwork.API.Protocol" +
-      "b\006proto3"
+      "adataB\013\342\336\037\007LoRaWANH\000B\n\n\010protocolB\202\001\n!org" +
+      ".thethingsnetwork.api.protocolB\rProtocol" +
+      "ProtoP\001Z(github.com/TheThingsNetwork/api" +
+      "/protocol\252\002\035TheThingsNetwork.API.Protoco" +
+      "l\370\341\036\000b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -102,6 +102,7 @@ public final class ProtocolProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.protobuf.GoGoProtos.customname);
+    registry.add(com.google.protobuf.GoGoProtos.populateAll);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf.GoGoProtos.getDescriptor();

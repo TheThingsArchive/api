@@ -98,10 +98,10 @@ public final class GatewayProto {
       "\001 \001(\002\022\016\n\006load_5\030\002 \001(\002\022\017\n\007load_15\030\003 \001(\002\022)" +
       "\n\016cpu_percentage\030\013 \001(\002B\021\342\336\037\rCPUPercentag" +
       "e\022\031\n\021memory_percentage\030\025 \001(\002\022\023\n\013temperat" +
-      "ure\030\037 \001(\002Bz\n org.thethingsnetwork.api.ga" +
+      "ure\030\037 \001(\002B~\n org.thethingsnetwork.api.ga" +
       "tewayB\014GatewayProtoP\001Z\'github.com/TheThi" +
       "ngsNetwork/api/gateway\252\002\034TheThingsNetwor" +
-      "k.API.Gatewayb\006proto3"
+      "k.API.Gateway\370\341\036\000b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -155,6 +155,7 @@ public final class GatewayProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.protobuf.GoGoProtos.customname);
+    registry.add(com.google.protobuf.GoGoProtos.populateAll);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf.GoGoProtos.getDescriptor();

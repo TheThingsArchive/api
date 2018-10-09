@@ -46,7 +46,7 @@ type SubscribeRequest struct {
 func (m *SubscribeRequest) Reset()      { *m = SubscribeRequest{} }
 func (*SubscribeRequest) ProtoMessage() {}
 func (*SubscribeRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_router_aa2f64d6f96609d9, []int{0}
+	return fileDescriptor_router_c8a630b5070ecfc0, []int{0}
 }
 func (m *SubscribeRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -88,7 +88,7 @@ type UplinkMessage struct {
 func (m *UplinkMessage) Reset()      { *m = UplinkMessage{} }
 func (*UplinkMessage) ProtoMessage() {}
 func (*UplinkMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_router_aa2f64d6f96609d9, []int{1}
+	return fileDescriptor_router_c8a630b5070ecfc0, []int{1}
 }
 func (m *UplinkMessage) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -165,7 +165,7 @@ type DownlinkMessage struct {
 func (m *DownlinkMessage) Reset()      { *m = DownlinkMessage{} }
 func (*DownlinkMessage) ProtoMessage() {}
 func (*DownlinkMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_router_aa2f64d6f96609d9, []int{2}
+	return fileDescriptor_router_c8a630b5070ecfc0, []int{2}
 }
 func (m *DownlinkMessage) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -245,7 +245,7 @@ type DeviceActivationRequest struct {
 func (m *DeviceActivationRequest) Reset()      { *m = DeviceActivationRequest{} }
 func (*DeviceActivationRequest) ProtoMessage() {}
 func (*DeviceActivationRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_router_aa2f64d6f96609d9, []int{3}
+	return fileDescriptor_router_c8a630b5070ecfc0, []int{3}
 }
 func (m *DeviceActivationRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -324,7 +324,7 @@ type DeviceActivationResponse struct {
 func (m *DeviceActivationResponse) Reset()      { *m = DeviceActivationResponse{} }
 func (*DeviceActivationResponse) ProtoMessage() {}
 func (*DeviceActivationResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_router_aa2f64d6f96609d9, []int{4}
+	return fileDescriptor_router_c8a630b5070ecfc0, []int{4}
 }
 func (m *DeviceActivationResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -364,7 +364,7 @@ type GatewayStatusRequest struct {
 func (m *GatewayStatusRequest) Reset()      { *m = GatewayStatusRequest{} }
 func (*GatewayStatusRequest) ProtoMessage() {}
 func (*GatewayStatusRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_router_aa2f64d6f96609d9, []int{5}
+	return fileDescriptor_router_c8a630b5070ecfc0, []int{5}
 }
 func (m *GatewayStatusRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -410,7 +410,7 @@ type GatewayStatusResponse struct {
 func (m *GatewayStatusResponse) Reset()      { *m = GatewayStatusResponse{} }
 func (*GatewayStatusResponse) ProtoMessage() {}
 func (*GatewayStatusResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_router_aa2f64d6f96609d9, []int{6}
+	return fileDescriptor_router_c8a630b5070ecfc0, []int{6}
 }
 func (m *GatewayStatusResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -462,7 +462,7 @@ type StatusRequest struct {
 func (m *StatusRequest) Reset()      { *m = StatusRequest{} }
 func (*StatusRequest) ProtoMessage() {}
 func (*StatusRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_router_aa2f64d6f96609d9, []int{7}
+	return fileDescriptor_router_c8a630b5070ecfc0, []int{7}
 }
 func (m *StatusRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -509,7 +509,7 @@ type Status struct {
 func (m *Status) Reset()      { *m = Status{} }
 func (*Status) ProtoMessage() {}
 func (*Status) Descriptor() ([]byte, []int) {
-	return fileDescriptor_router_aa2f64d6f96609d9, []int{8}
+	return fileDescriptor_router_c8a630b5070ecfc0, []int{8}
 }
 func (m *Status) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1700,220 +1700,6 @@ func encodeVarintRouter(dAtA []byte, offset int, v uint64) int {
 	}
 	dAtA[offset] = uint8(v)
 	return offset + 1
-}
-func NewPopulatedSubscribeRequest(r randyRouter, easy bool) *SubscribeRequest {
-	this := &SubscribeRequest{}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedUplinkMessage(r randyRouter, easy bool) *UplinkMessage {
-	this := &UplinkMessage{}
-	v1 := r.Intn(100)
-	this.Payload = make([]byte, v1)
-	for i := 0; i < v1; i++ {
-		this.Payload[i] = byte(r.Intn(256))
-	}
-	if r.Intn(10) != 0 {
-		this.Message = protocol.NewPopulatedMessage(r, easy)
-	}
-	v2 := protocol.NewPopulatedRxMetadata(r, easy)
-	this.ProtocolMetadata = *v2
-	v3 := gateway.NewPopulatedRxMetadata(r, easy)
-	this.GatewayMetadata = *v3
-	if r.Intn(10) != 0 {
-		this.Trace = trace.NewPopulatedTrace(r, easy)
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedDownlinkMessage(r randyRouter, easy bool) *DownlinkMessage {
-	this := &DownlinkMessage{}
-	v4 := r.Intn(100)
-	this.Payload = make([]byte, v4)
-	for i := 0; i < v4; i++ {
-		this.Payload[i] = byte(r.Intn(256))
-	}
-	if r.Intn(10) != 0 {
-		this.Message = protocol.NewPopulatedMessage(r, easy)
-	}
-	v5 := protocol.NewPopulatedTxConfiguration(r, easy)
-	this.ProtocolConfiguration = *v5
-	v6 := gateway.NewPopulatedTxConfiguration(r, easy)
-	this.GatewayConfiguration = *v6
-	if r.Intn(10) != 0 {
-		this.Trace = trace.NewPopulatedTrace(r, easy)
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedDeviceActivationRequest(r randyRouter, easy bool) *DeviceActivationRequest {
-	this := &DeviceActivationRequest{}
-	v7 := r.Intn(100)
-	this.Payload = make([]byte, v7)
-	for i := 0; i < v7; i++ {
-		this.Payload[i] = byte(r.Intn(256))
-	}
-	if r.Intn(10) != 0 {
-		this.Message = protocol.NewPopulatedMessage(r, easy)
-	}
-	v8 := github_com_TheThingsNetwork_ttn_core_types.NewPopulatedDevEUI(r)
-	this.DevEUI = *v8
-	v9 := github_com_TheThingsNetwork_ttn_core_types.NewPopulatedAppEUI(r)
-	this.AppEUI = *v9
-	v10 := protocol.NewPopulatedRxMetadata(r, easy)
-	this.ProtocolMetadata = *v10
-	v11 := gateway.NewPopulatedRxMetadata(r, easy)
-	this.GatewayMetadata = *v11
-	if r.Intn(10) != 0 {
-		this.ActivationMetadata = protocol.NewPopulatedActivationMetadata(r, easy)
-	}
-	if r.Intn(10) != 0 {
-		this.Trace = trace.NewPopulatedTrace(r, easy)
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedDeviceActivationResponse(r randyRouter, easy bool) *DeviceActivationResponse {
-	this := &DeviceActivationResponse{}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedGatewayStatusRequest(r randyRouter, easy bool) *GatewayStatusRequest {
-	this := &GatewayStatusRequest{}
-	this.GatewayID = string(randStringRouter(r))
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedGatewayStatusResponse(r randyRouter, easy bool) *GatewayStatusResponse {
-	this := &GatewayStatusResponse{}
-	this.LastSeen = int64(r.Int63())
-	if r.Intn(2) == 0 {
-		this.LastSeen *= -1
-	}
-	v12 := gateway.NewPopulatedStatus(r, easy)
-	this.Status = *v12
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedStatusRequest(r randyRouter, easy bool) *StatusRequest {
-	this := &StatusRequest{}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedStatus(r randyRouter, easy bool) *Status {
-	this := &Status{}
-	if r.Intn(10) != 0 {
-		this.System = api.NewPopulatedSystemStats(r, easy)
-	}
-	if r.Intn(10) != 0 {
-		this.Component = api.NewPopulatedComponentStats(r, easy)
-	}
-	if r.Intn(10) != 0 {
-		this.GatewayStatus = api.NewPopulatedRates(r, easy)
-	}
-	if r.Intn(10) != 0 {
-		this.Uplink = api.NewPopulatedRates(r, easy)
-	}
-	if r.Intn(10) != 0 {
-		this.Downlink = api.NewPopulatedRates(r, easy)
-	}
-	if r.Intn(10) != 0 {
-		this.Activations = api.NewPopulatedRates(r, easy)
-	}
-	this.ConnectedGateways = uint32(r.Uint32())
-	this.ConnectedBrokers = uint32(r.Uint32())
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-type randyRouter interface {
-	Float32() float32
-	Float64() float64
-	Int63() int64
-	Int31() int32
-	Uint32() uint32
-	Intn(n int) int
-}
-
-func randUTF8RuneRouter(r randyRouter) rune {
-	ru := r.Intn(62)
-	if ru < 10 {
-		return rune(ru + 48)
-	} else if ru < 36 {
-		return rune(ru + 55)
-	}
-	return rune(ru + 61)
-}
-func randStringRouter(r randyRouter) string {
-	v13 := r.Intn(100)
-	tmps := make([]rune, v13)
-	for i := 0; i < v13; i++ {
-		tmps[i] = randUTF8RuneRouter(r)
-	}
-	return string(tmps)
-}
-func randUnrecognizedRouter(r randyRouter, maxFieldNumber int) (dAtA []byte) {
-	l := r.Intn(5)
-	for i := 0; i < l; i++ {
-		wire := r.Intn(4)
-		if wire == 3 {
-			wire = 5
-		}
-		fieldNumber := maxFieldNumber + r.Intn(100)
-		dAtA = randFieldRouter(dAtA, r, fieldNumber, wire)
-	}
-	return dAtA
-}
-func randFieldRouter(dAtA []byte, r randyRouter, fieldNumber int, wire int) []byte {
-	key := uint32(fieldNumber)<<3 | uint32(wire)
-	switch wire {
-	case 0:
-		dAtA = encodeVarintPopulateRouter(dAtA, uint64(key))
-		v14 := r.Int63()
-		if r.Intn(2) == 0 {
-			v14 *= -1
-		}
-		dAtA = encodeVarintPopulateRouter(dAtA, uint64(v14))
-	case 1:
-		dAtA = encodeVarintPopulateRouter(dAtA, uint64(key))
-		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
-	case 2:
-		dAtA = encodeVarintPopulateRouter(dAtA, uint64(key))
-		ll := r.Intn(100)
-		dAtA = encodeVarintPopulateRouter(dAtA, uint64(ll))
-		for j := 0; j < ll; j++ {
-			dAtA = append(dAtA, byte(r.Intn(256)))
-		}
-	default:
-		dAtA = encodeVarintPopulateRouter(dAtA, uint64(key))
-		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
-	}
-	return dAtA
-}
-func encodeVarintPopulateRouter(dAtA []byte, v uint64) []byte {
-	for v >= 1<<7 {
-		dAtA = append(dAtA, uint8(uint64(v)&0x7f|0x80))
-		v >>= 7
-	}
-	dAtA = append(dAtA, uint8(v))
-	return dAtA
 }
 func (m *SubscribeRequest) Size() (n int) {
 	var l int
@@ -3629,13 +3415,13 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/router/router.proto", fileDescriptor_router_aa2f64d6f96609d9)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/router/router.proto", fileDescriptor_router_c8a630b5070ecfc0)
 }
 func init() {
-	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/router/router.proto", fileDescriptor_router_aa2f64d6f96609d9)
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/router/router.proto", fileDescriptor_router_c8a630b5070ecfc0)
 }
 
-var fileDescriptor_router_aa2f64d6f96609d9 = []byte{
+var fileDescriptor_router_c8a630b5070ecfc0 = []byte{
 	// 1063 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x56, 0x3f, 0x6c, 0xdb, 0xc6,
 	0x17, 0xe6, 0xe9, 0x97, 0x1f, 0x6d, 0x9d, 0x2d, 0xff, 0x39, 0x5b, 0xb6, 0x2a, 0xa7, 0x27, 0x43,
@@ -3695,13 +3481,13 @@ var fileDescriptor_router_aa2f64d6f96609d9 = []byte{
 	0x4c, 0x44, 0x2e, 0x3b, 0x68, 0xe5, 0x8f, 0xaf, 0x40, 0xf5, 0x01, 0x5a, 0x85, 0xf9, 0x4d, 0x2a,
 	0xb4, 0x52, 0x6a, 0x57, 0xbf, 0xc4, 0x44, 0x7f, 0xb8, 0xfe, 0x27, 0x38, 0xeb, 0x62, 0xf0, 0xa2,
 	0x8b, 0xc1, 0xcb, 0x2e, 0x36, 0x5e, 0x75, 0xb1, 0xf1, 0xba, 0x8b, 0x8d, 0x37, 0x5d, 0x6c, 0xbc,
-	0xed, 0x62, 0xf0, 0x30, 0xc2, 0xe0, 0x51, 0x84, 0x8d, 0x27, 0x11, 0x06, 0x4f, 0x23, 0x6c, 0x3c,
-	0x8b, 0xb0, 0xf1, 0x3c, 0xc2, 0xc6, 0x59, 0x84, 0xc1, 0x8b, 0x08, 0x83, 0x97, 0x11, 0x36, 0x5e,
-	0x45, 0x18, 0xbc, 0x8e, 0xb0, 0xf1, 0x26, 0xc2, 0xe0, 0x6d, 0x84, 0x8d, 0x87, 0x3d, 0x6c, 0x3c,
-	0xea, 0x61, 0xf0, 0xb8, 0x87, 0x8d, 0x9f, 0x7b, 0x18, 0xfc, 0xda, 0xc3, 0xc6, 0x93, 0x1e, 0x36,
-	0x9e, 0xf6, 0x30, 0x78, 0xd6, 0xc3, 0xe0, 0x79, 0x0f, 0x03, 0x58, 0x61, 0xa1, 0x6b, 0x89, 0x03,
-	0x2a, 0xe4, 0x35, 0xed, 0xab, 0x6b, 0x5a, 0xb6, 0xa9, 0x2a, 0xaf, 0x3e, 0xa6, 0x8c, 0xda, 0x89,
-	0x37, 0x75, 0x07, 0x7c, 0x77, 0xeb, 0xfd, 0xfe, 0x5a, 0xfe, 0x9e, 0x5b, 0x18, 0x44, 0xad, 0xb5,
-	0x9d, 0x2d, 0x4b, 0x89, 0x35, 0x4d, 0xd9, 0x23, 0x77, 0xff, 0x0e, 0x00, 0x00, 0xff, 0xff, 0x43,
-	0x98, 0x69, 0x1c, 0xa9, 0x0a, 0x00, 0x00,
+	0xed, 0x62, 0xe3, 0x61, 0x84, 0xc1, 0xa3, 0x08, 0x1b, 0x4f, 0x22, 0x0c, 0x9e, 0x46, 0xd8, 0x78,
+	0x16, 0x61, 0xe3, 0x79, 0x84, 0x8d, 0xb3, 0x08, 0x83, 0x17, 0x11, 0x06, 0x2f, 0x23, 0x6c, 0xbc,
+	0x8a, 0x30, 0x78, 0x1d, 0x61, 0xe3, 0x4d, 0x84, 0xc1, 0xdb, 0x08, 0x1b, 0x0f, 0x7b, 0xd8, 0x78,
+	0xd4, 0xc3, 0xe0, 0x71, 0x0f, 0x1b, 0x3f, 0xf7, 0x30, 0xf8, 0xb5, 0x87, 0x8d, 0x27, 0x3d, 0x6c,
+	0x3c, 0xed, 0x61, 0xf0, 0xac, 0x87, 0xc1, 0xf3, 0x1e, 0x06, 0xb0, 0xc2, 0x42, 0xd7, 0x12, 0x07,
+	0x54, 0xc8, 0x6b, 0xda, 0x57, 0xd7, 0xb4, 0x6c, 0x53, 0x55, 0x5e, 0x7d, 0x4c, 0x19, 0xb5, 0x13,
+	0x6f, 0xea, 0x0e, 0xf8, 0xee, 0xd6, 0xfb, 0xfd, 0xb5, 0xfc, 0x3d, 0xb7, 0x30, 0x88, 0x5a, 0x6b,
+	0x3b, 0x5b, 0x96, 0x12, 0x6b, 0x9a, 0xb2, 0x47, 0xee, 0xfe, 0x1d, 0x00, 0x00, 0xff, 0xff, 0xdb,
+	0x53, 0x09, 0x48, 0xa9, 0x0a, 0x00, 0x00,
 }

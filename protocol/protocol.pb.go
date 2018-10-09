@@ -38,7 +38,7 @@ type Message struct {
 func (m *Message) Reset()      { *m = Message{} }
 func (*Message) ProtoMessage() {}
 func (*Message) Descriptor() ([]byte, []int) {
-	return fileDescriptor_protocol_544a8f06321354d7, []int{0}
+	return fileDescriptor_protocol_96904bc6677b63c0, []int{0}
 }
 func (m *Message) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -160,7 +160,7 @@ type RxMetadata struct {
 func (m *RxMetadata) Reset()      { *m = RxMetadata{} }
 func (*RxMetadata) ProtoMessage() {}
 func (*RxMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_protocol_544a8f06321354d7, []int{1}
+	return fileDescriptor_protocol_96904bc6677b63c0, []int{1}
 }
 func (m *RxMetadata) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -282,7 +282,7 @@ type TxConfiguration struct {
 func (m *TxConfiguration) Reset()      { *m = TxConfiguration{} }
 func (*TxConfiguration) ProtoMessage() {}
 func (*TxConfiguration) Descriptor() ([]byte, []int) {
-	return fileDescriptor_protocol_544a8f06321354d7, []int{2}
+	return fileDescriptor_protocol_96904bc6677b63c0, []int{2}
 }
 func (m *TxConfiguration) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -404,7 +404,7 @@ type ActivationMetadata struct {
 func (m *ActivationMetadata) Reset()      { *m = ActivationMetadata{} }
 func (*ActivationMetadata) ProtoMessage() {}
 func (*ActivationMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_protocol_544a8f06321354d7, []int{3}
+	return fileDescriptor_protocol_96904bc6677b63c0, []int{3}
 }
 func (m *ActivationMetadata) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -905,147 +905,6 @@ func encodeVarintProtocol(dAtA []byte, offset int, v uint64) int {
 	}
 	dAtA[offset] = uint8(v)
 	return offset + 1
-}
-func NewPopulatedMessage(r randyProtocol, easy bool) *Message {
-	this := &Message{}
-	oneofNumber_Protocol := []int32{1}[r.Intn(1)]
-	switch oneofNumber_Protocol {
-	case 1:
-		this.Protocol = NewPopulatedMessage_LoRaWAN(r, easy)
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedMessage_LoRaWAN(r randyProtocol, easy bool) *Message_LoRaWAN {
-	this := &Message_LoRaWAN{}
-	this.LoRaWAN = lorawan.NewPopulatedMessage(r, easy)
-	return this
-}
-func NewPopulatedRxMetadata(r randyProtocol, easy bool) *RxMetadata {
-	this := &RxMetadata{}
-	oneofNumber_Protocol := []int32{1}[r.Intn(1)]
-	switch oneofNumber_Protocol {
-	case 1:
-		this.Protocol = NewPopulatedRxMetadata_LoRaWAN(r, easy)
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedRxMetadata_LoRaWAN(r randyProtocol, easy bool) *RxMetadata_LoRaWAN {
-	this := &RxMetadata_LoRaWAN{}
-	this.LoRaWAN = lorawan.NewPopulatedMetadata(r, easy)
-	return this
-}
-func NewPopulatedTxConfiguration(r randyProtocol, easy bool) *TxConfiguration {
-	this := &TxConfiguration{}
-	oneofNumber_Protocol := []int32{1}[r.Intn(1)]
-	switch oneofNumber_Protocol {
-	case 1:
-		this.Protocol = NewPopulatedTxConfiguration_LoRaWAN(r, easy)
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedTxConfiguration_LoRaWAN(r randyProtocol, easy bool) *TxConfiguration_LoRaWAN {
-	this := &TxConfiguration_LoRaWAN{}
-	this.LoRaWAN = lorawan.NewPopulatedTxConfiguration(r, easy)
-	return this
-}
-func NewPopulatedActivationMetadata(r randyProtocol, easy bool) *ActivationMetadata {
-	this := &ActivationMetadata{}
-	oneofNumber_Protocol := []int32{1}[r.Intn(1)]
-	switch oneofNumber_Protocol {
-	case 1:
-		this.Protocol = NewPopulatedActivationMetadata_LoRaWAN(r, easy)
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedActivationMetadata_LoRaWAN(r randyProtocol, easy bool) *ActivationMetadata_LoRaWAN {
-	this := &ActivationMetadata_LoRaWAN{}
-	this.LoRaWAN = lorawan.NewPopulatedActivationMetadata(r, easy)
-	return this
-}
-
-type randyProtocol interface {
-	Float32() float32
-	Float64() float64
-	Int63() int64
-	Int31() int32
-	Uint32() uint32
-	Intn(n int) int
-}
-
-func randUTF8RuneProtocol(r randyProtocol) rune {
-	ru := r.Intn(62)
-	if ru < 10 {
-		return rune(ru + 48)
-	} else if ru < 36 {
-		return rune(ru + 55)
-	}
-	return rune(ru + 61)
-}
-func randStringProtocol(r randyProtocol) string {
-	v1 := r.Intn(100)
-	tmps := make([]rune, v1)
-	for i := 0; i < v1; i++ {
-		tmps[i] = randUTF8RuneProtocol(r)
-	}
-	return string(tmps)
-}
-func randUnrecognizedProtocol(r randyProtocol, maxFieldNumber int) (dAtA []byte) {
-	l := r.Intn(5)
-	for i := 0; i < l; i++ {
-		wire := r.Intn(4)
-		if wire == 3 {
-			wire = 5
-		}
-		fieldNumber := maxFieldNumber + r.Intn(100)
-		dAtA = randFieldProtocol(dAtA, r, fieldNumber, wire)
-	}
-	return dAtA
-}
-func randFieldProtocol(dAtA []byte, r randyProtocol, fieldNumber int, wire int) []byte {
-	key := uint32(fieldNumber)<<3 | uint32(wire)
-	switch wire {
-	case 0:
-		dAtA = encodeVarintPopulateProtocol(dAtA, uint64(key))
-		v2 := r.Int63()
-		if r.Intn(2) == 0 {
-			v2 *= -1
-		}
-		dAtA = encodeVarintPopulateProtocol(dAtA, uint64(v2))
-	case 1:
-		dAtA = encodeVarintPopulateProtocol(dAtA, uint64(key))
-		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
-	case 2:
-		dAtA = encodeVarintPopulateProtocol(dAtA, uint64(key))
-		ll := r.Intn(100)
-		dAtA = encodeVarintPopulateProtocol(dAtA, uint64(ll))
-		for j := 0; j < ll; j++ {
-			dAtA = append(dAtA, byte(r.Intn(256)))
-		}
-	default:
-		dAtA = encodeVarintPopulateProtocol(dAtA, uint64(key))
-		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
-	}
-	return dAtA
-}
-func encodeVarintPopulateProtocol(dAtA []byte, v uint64) []byte {
-	for v >= 1<<7 {
-		dAtA = append(dAtA, uint8(uint64(v)&0x7f|0x80))
-		v >>= 7
-	}
-	dAtA = append(dAtA, uint8(v))
-	return dAtA
 }
 func (m *Message) Size() (n int) {
 	var l int
@@ -1655,13 +1514,13 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/protocol.proto", fileDescriptor_protocol_544a8f06321354d7)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/protocol.proto", fileDescriptor_protocol_96904bc6677b63c0)
 }
 func init() {
-	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/protocol.proto", fileDescriptor_protocol_544a8f06321354d7)
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/protocol.proto", fileDescriptor_protocol_96904bc6677b63c0)
 }
 
-var fileDescriptor_protocol_544a8f06321354d7 = []byte{
+var fileDescriptor_protocol_96904bc6677b63c0 = []byte{
 	// 406 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x92, 0x31, 0x88, 0x13, 0x41,
 	0x14, 0x86, 0xdf, 0xb3, 0x30, 0x32, 0x87, 0xa8, 0x5b, 0x1d, 0x27, 0x3e, 0xf5, 0xaa, 0x6b, 0x9c,
@@ -1681,12 +1540,12 @@ var fileDescriptor_protocol_544a8f06321354d7 = []byte{
 	0x58, 0x26, 0x8e, 0x5b, 0xb5, 0x3e, 0x2e, 0xad, 0x2b, 0x68, 0xad, 0x84, 0x1e, 0x73, 0xdc, 0xae,
 	0x8a, 0x7f, 0xd8, 0x89, 0x72, 0xff, 0x77, 0xd5, 0x90, 0x87, 0x65, 0xc8, 0x4d, 0xba, 0x4e, 0x4e,
 	0xeb, 0x1f, 0x2e, 0x32, 0xc2, 0x65, 0x46, 0xb8, 0xca, 0x08, 0xd6, 0x19, 0xc1, 0x26, 0x23, 0xd8,
-	0x66, 0x04, 0xbb, 0x8c, 0x70, 0xa4, 0x09, 0xc7, 0x9a, 0x60, 0xa2, 0x09, 0xa7, 0x9a, 0x60, 0xa6,
+	0x66, 0x04, 0xbb, 0x8c, 0x60, 0xa4, 0x09, 0xc7, 0x9a, 0x60, 0xa2, 0x09, 0xa7, 0x9a, 0x60, 0xa6,
 	0x09, 0xe6, 0x9a, 0x60, 0xa1, 0x09, 0x97, 0x9a, 0x70, 0xa5, 0x09, 0xd6, 0x9a, 0x70, 0xa3, 0x09,
 	0xb6, 0x9a, 0x70, 0xa7, 0x09, 0x46, 0x86, 0x60, 0x6c, 0x08, 0x7f, 0x1a, 0x82, 0x5f, 0x86, 0xf0,
 	0xb7, 0x21, 0x98, 0x18, 0x82, 0xa9, 0x21, 0x9c, 0x19, 0xc2, 0xb9, 0x21, 0x64, 0x4f, 0x65, 0x1a,
 	0x72, 0x15, 0x05, 0xca, 0x5e, 0x48, 0x92, 0x5f, 0x08, 0x17, 0xfd, 0x98, 0x97, 0x9b, 0xdd, 0xf5,
 	0xf6, 0xca, 0xbe, 0x1e, 0x7e, 0x3e, 0xab, 0x7b, 0x5c, 0x7f, 0x6e, 0x3d, 0xaa, 0xf6, 0xb9, 0xeb,
-	0x7d, 0xe0, 0x85, 0x61, 0xe7, 0xb6, 0x25, 0x5f, 0xfc, 0x0f, 0x00, 0x00, 0xff, 0xff, 0xba, 0xfe,
-	0x65, 0xe7, 0x21, 0x03, 0x00, 0x00,
+	0x7d, 0xe0, 0x85, 0x61, 0xe7, 0xb6, 0x25, 0x5f, 0xfc, 0x0f, 0x00, 0x00, 0xff, 0xff, 0xde, 0xfc,
+	0x7d, 0x10, 0x21, 0x03, 0x00, 0x00,
 }

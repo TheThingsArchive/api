@@ -121,10 +121,10 @@ public final class RouterProto {
       "\rGatewayStatus\022\034.router.GatewayStatusReq" +
       "uest\032\035.router.GatewayStatusResponse\0222\n\tG" +
       "etStatus\022\025.router.StatusRequest\032\016.router" +
-      ".StatusBv\n\037org.thethingsnetwork.api.rout" +
+      ".StatusBz\n\037org.thethingsnetwork.api.rout" +
       "erB\013RouterProtoP\001Z&github.com/TheThingsN" +
       "etwork/api/router\252\002\033TheThingsNetwork.API" +
-      ".Routerb\006proto3"
+      ".Router\370\341\036\000b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -203,6 +203,7 @@ public final class RouterProto {
     registry.add(com.google.protobuf.GoGoProtos.customname);
     registry.add(com.google.protobuf.GoGoProtos.customtype);
     registry.add(com.google.protobuf.GoGoProtos.nullable);
+    registry.add(com.google.protobuf.GoGoProtos.populateAll);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf.EmptyProto.getDescriptor();

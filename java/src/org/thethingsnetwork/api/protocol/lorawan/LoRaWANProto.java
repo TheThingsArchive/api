@@ -160,11 +160,11 @@ public final class LoRaWANProto {
       "LORAWAN_R1\020\000*z\n\005MType\022\020\n\014JOIN_REQUEST\020\000\022" +
       "\017\n\013JOIN_ACCEPT\020\001\022\022\n\016UNCONFIRMED_UP\020\002\022\024\n\020" +
       "UNCONFIRMED_DOWN\020\003\022\020\n\014CONFIRMED_UP\020\004\022\022\n\016" +
-      "CONFIRMED_DOWN\020\005B\224\001\n)org.thethingsnetwor" +
+      "CONFIRMED_DOWN\020\005B\230\001\n)org.thethingsnetwor" +
       "k.api.protocol.lorawanB\014LoRaWANProtoP\001Z0" +
       "github.com/TheThingsNetwork/api/protocol" +
       "/lorawan\252\002$TheThingsNetwork.API.LoRaWANP" +
-      "rotocolb\006proto3"
+      "rotocol\370\341\036\000b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -263,6 +263,7 @@ public final class LoRaWANProto {
     registry.add(com.google.protobuf.GoGoProtos.customtype);
     registry.add(com.google.protobuf.GoGoProtos.embed);
     registry.add(com.google.protobuf.GoGoProtos.nullable);
+    registry.add(com.google.protobuf.GoGoProtos.populateAll);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf.GoGoProtos.getDescriptor();

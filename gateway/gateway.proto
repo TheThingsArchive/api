@@ -13,6 +13,8 @@ option java_package = "org.thethingsnetwork.api.gateway";
 option java_outer_classname = "GatewayProto";
 option java_multiple_files = true;
 
+option (gogoproto.populate_all) = false;
+
 message LocationMetadata {
   // Time (unix nanoseconds)
   int64   time       = 1;

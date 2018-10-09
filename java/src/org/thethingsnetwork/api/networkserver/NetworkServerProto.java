@@ -75,10 +75,10 @@ public final class NetworkServerProto {
       "sage\032\027.broker.DownlinkMessage2X\n\024Network" +
       "ServerManager\022@\n\tGetStatus\022\034.networkserv" +
       "er.StatusRequest\032\025.networkserver.StatusB" +
-      "\214\001\n&org.thethingsnetwork.api.networkserv" +
+      "\220\001\n&org.thethingsnetwork.api.networkserv" +
       "erB\022NetworkServerProtoP\001Z-github.com/The" +
       "ThingsNetwork/api/networkserver\252\002\034TheThi" +
-      "ngsNetwork.API.Monitorb\006proto3"
+      "ngsNetwork.API.Monitor\370\341\036\000b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -125,6 +125,7 @@ public final class NetworkServerProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.protobuf.GoGoProtos.customtype);
     registry.add(com.google.protobuf.GoGoProtos.nullable);
+    registry.add(com.google.protobuf.GoGoProtos.populateAll);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf.GoGoProtos.getDescriptor();

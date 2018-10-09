@@ -18,6 +18,8 @@ option java_package = "org.thethingsnetwork.api.networkserver";
 option java_outer_classname = "NetworkServerProto";
 option java_multiple_files = true;
 
+option (gogoproto.populate_all) = false;
+
 message DevicesRequest {
   // Device address from the uplink message
   bytes  dev_addr = 1 [(gogoproto.nullable) = false, (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];

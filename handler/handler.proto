@@ -22,6 +22,8 @@ option java_package = "org.thethingsnetwork.api.handler";
 option java_outer_classname = "HandlerProto";
 option java_multiple_files = true;
 
+option (gogoproto.populate_all) = false;
+
 message DeviceActivationResponse {
   bytes                        payload              = 1;
   protocol.Message             message              = 2;

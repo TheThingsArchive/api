@@ -187,11 +187,11 @@ public final class HandlerProto {
       "inkResult\022I\n\016SimulateUplink\022\037.handler.Si" +
       "mulatedUplinkMessage\032\026.google.protobuf.E" +
       "mpty2F\n\016HandlerManager\0224\n\tGetStatus\022\026.ha" +
-      "ndler.StatusRequest\032\017.handler.StatusBz\n " +
+      "ndler.StatusRequest\032\017.handler.StatusB~\n " +
       "org.thethingsnetwork.api.handlerB\014Handle" +
       "rProtoP\001Z\'github.com/TheThingsNetwork/ap" +
       "i/handler\252\002\034TheThingsNetwork.API.Handler" +
-      "b\006proto3"
+      "\370\341\036\000b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -307,6 +307,7 @@ public final class HandlerProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.protobuf.GoGoProtos.customname);
     registry.add(com.google.protobuf.GoGoProtos.nullable);
+    registry.add(com.google.protobuf.GoGoProtos.populateAll);
     registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);

@@ -112,10 +112,10 @@ public final class DiscoveryProto {
       "tByGatewayIDRequest\032\027.discovery.Announce" +
       "ment\022E\n\013GetByAppEUI\022\035.discovery.GetByApp" +
       "EUIRequest\032\027.discovery.Announcement2\022\n\020D" +
-      "iscoveryManagerB\202\001\n\"org.thethingsnetwork" +
+      "iscoveryManagerB\206\001\n\"org.thethingsnetwork" +
       ".api.discoveryB\016DiscoveryProtoP\001Z)github" +
       ".com/TheThingsNetwork/api/discovery\252\002\036Th" +
-      "eThingsNetwork.API.Discoveryb\006proto3"
+      "eThingsNetwork.API.Discovery\370\341\036\000b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -191,6 +191,7 @@ public final class DiscoveryProto {
     registry.add(com.google.protobuf.GoGoProtos.customname);
     registry.add(com.google.protobuf.GoGoProtos.customtype);
     registry.add(com.google.protobuf.GoGoProtos.nullable);
+    registry.add(com.google.protobuf.GoGoProtos.populateAll);
     registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);

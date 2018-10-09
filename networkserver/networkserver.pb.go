@@ -47,7 +47,7 @@ type DevicesRequest struct {
 func (m *DevicesRequest) Reset()      { *m = DevicesRequest{} }
 func (*DevicesRequest) ProtoMessage() {}
 func (*DevicesRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_networkserver_f664bff0dc7d561a, []int{0}
+	return fileDescriptor_networkserver_9e7133d216a0acf2, []int{0}
 }
 func (m *DevicesRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -92,7 +92,7 @@ type DevicesResponse struct {
 func (m *DevicesResponse) Reset()      { *m = DevicesResponse{} }
 func (*DevicesResponse) ProtoMessage() {}
 func (*DevicesResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_networkserver_f664bff0dc7d561a, []int{1}
+	return fileDescriptor_networkserver_9e7133d216a0acf2, []int{1}
 }
 func (m *DevicesResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -137,7 +137,7 @@ type StatusRequest struct {
 func (m *StatusRequest) Reset()      { *m = StatusRequest{} }
 func (*StatusRequest) ProtoMessage() {}
 func (*StatusRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_networkserver_f664bff0dc7d561a, []int{2}
+	return fileDescriptor_networkserver_9e7133d216a0acf2, []int{2}
 }
 func (m *StatusRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -181,7 +181,7 @@ type Status struct {
 func (m *Status) Reset()      { *m = Status{} }
 func (*Status) ProtoMessage() {}
 func (*Status) Descriptor() ([]byte, []int) {
-	return fileDescriptor_networkserver_f664bff0dc7d561a, []int{3}
+	return fileDescriptor_networkserver_9e7133d216a0acf2, []int{3}
 }
 func (m *Status) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -820,132 +820,6 @@ func encodeVarintNetworkserver(dAtA []byte, offset int, v uint64) int {
 	}
 	dAtA[offset] = uint8(v)
 	return offset + 1
-}
-func NewPopulatedDevicesRequest(r randyNetworkserver, easy bool) *DevicesRequest {
-	this := &DevicesRequest{}
-	v1 := github_com_TheThingsNetwork_ttn_core_types.NewPopulatedDevAddr(r)
-	this.DevAddr = *v1
-	this.FCnt = uint32(r.Uint32())
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedDevicesResponse(r randyNetworkserver, easy bool) *DevicesResponse {
-	this := &DevicesResponse{}
-	if r.Intn(10) != 0 {
-		v2 := r.Intn(5)
-		this.Results = make([]*lorawan.Device, v2)
-		for i := 0; i < v2; i++ {
-			this.Results[i] = lorawan.NewPopulatedDevice(r, easy)
-		}
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedStatusRequest(r randyNetworkserver, easy bool) *StatusRequest {
-	this := &StatusRequest{}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedStatus(r randyNetworkserver, easy bool) *Status {
-	this := &Status{}
-	v3 := api.NewPopulatedSystemStats(r, easy)
-	this.System = *v3
-	v4 := api.NewPopulatedComponentStats(r, easy)
-	this.Component = *v4
-	if r.Intn(10) != 0 {
-		this.Uplink = api.NewPopulatedRates(r, easy)
-	}
-	if r.Intn(10) != 0 {
-		this.Downlink = api.NewPopulatedRates(r, easy)
-	}
-	if r.Intn(10) != 0 {
-		this.Activations = api.NewPopulatedRates(r, easy)
-	}
-	if r.Intn(10) != 0 {
-		this.DevicesPerAddress = api.NewPopulatedPercentiles(r, easy)
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-type randyNetworkserver interface {
-	Float32() float32
-	Float64() float64
-	Int63() int64
-	Int31() int32
-	Uint32() uint32
-	Intn(n int) int
-}
-
-func randUTF8RuneNetworkserver(r randyNetworkserver) rune {
-	ru := r.Intn(62)
-	if ru < 10 {
-		return rune(ru + 48)
-	} else if ru < 36 {
-		return rune(ru + 55)
-	}
-	return rune(ru + 61)
-}
-func randStringNetworkserver(r randyNetworkserver) string {
-	v5 := r.Intn(100)
-	tmps := make([]rune, v5)
-	for i := 0; i < v5; i++ {
-		tmps[i] = randUTF8RuneNetworkserver(r)
-	}
-	return string(tmps)
-}
-func randUnrecognizedNetworkserver(r randyNetworkserver, maxFieldNumber int) (dAtA []byte) {
-	l := r.Intn(5)
-	for i := 0; i < l; i++ {
-		wire := r.Intn(4)
-		if wire == 3 {
-			wire = 5
-		}
-		fieldNumber := maxFieldNumber + r.Intn(100)
-		dAtA = randFieldNetworkserver(dAtA, r, fieldNumber, wire)
-	}
-	return dAtA
-}
-func randFieldNetworkserver(dAtA []byte, r randyNetworkserver, fieldNumber int, wire int) []byte {
-	key := uint32(fieldNumber)<<3 | uint32(wire)
-	switch wire {
-	case 0:
-		dAtA = encodeVarintPopulateNetworkserver(dAtA, uint64(key))
-		v6 := r.Int63()
-		if r.Intn(2) == 0 {
-			v6 *= -1
-		}
-		dAtA = encodeVarintPopulateNetworkserver(dAtA, uint64(v6))
-	case 1:
-		dAtA = encodeVarintPopulateNetworkserver(dAtA, uint64(key))
-		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
-	case 2:
-		dAtA = encodeVarintPopulateNetworkserver(dAtA, uint64(key))
-		ll := r.Intn(100)
-		dAtA = encodeVarintPopulateNetworkserver(dAtA, uint64(ll))
-		for j := 0; j < ll; j++ {
-			dAtA = append(dAtA, byte(r.Intn(256)))
-		}
-	default:
-		dAtA = encodeVarintPopulateNetworkserver(dAtA, uint64(key))
-		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
-	}
-	return dAtA
-}
-func encodeVarintPopulateNetworkserver(dAtA []byte, v uint64) []byte {
-	for v >= 1<<7 {
-		dAtA = append(dAtA, uint8(uint64(v)&0x7f|0x80))
-		v >>= 7
-	}
-	dAtA = append(dAtA, uint8(v))
-	return dAtA
 }
 func (m *DevicesRequest) Size() (n int) {
 	var l int
@@ -1646,13 +1520,13 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/networkserver/networkserver.proto", fileDescriptor_networkserver_f664bff0dc7d561a)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/networkserver/networkserver.proto", fileDescriptor_networkserver_9e7133d216a0acf2)
 }
 func init() {
-	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/networkserver/networkserver.proto", fileDescriptor_networkserver_f664bff0dc7d561a)
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/networkserver/networkserver.proto", fileDescriptor_networkserver_9e7133d216a0acf2)
 }
 
-var fileDescriptor_networkserver_f664bff0dc7d561a = []byte{
+var fileDescriptor_networkserver_9e7133d216a0acf2 = []byte{
 	// 767 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x95, 0x4f, 0x68, 0x1b, 0x47,
 	0x14, 0xc6, 0x67, 0x94, 0x54, 0x51, 0x46, 0x51, 0xdd, 0x8c, 0x1b, 0x2a, 0x44, 0x3a, 0x71, 0x74,
@@ -1693,7 +1567,7 @@ var fileDescriptor_networkserver_f664bff0dc7d561a = []byte{
 	0x24, 0x5b, 0xe7, 0xaa, 0x44, 0xe3, 0x17, 0xf2, 0x65, 0xce, 0xac, 0x35, 0x37, 0x74, 0x7b, 0x20,
 	0xe8, 0x73, 0x72, 0xfb, 0x25, 0x28, 0xd3, 0xf7, 0xf7, 0xcf, 0x79, 0x92, 0xbb, 0x20, 0xb5, 0x7b,
 	0x97, 0x66, 0x5b, 0x3b, 0x85, 0xbd, 0x09, 0xc3, 0xfb, 0x13, 0x86, 0x0f, 0x26, 0x0c, 0x1d, 0x4d,
-	0x18, 0x3a, 0x9e, 0x30, 0x74, 0x32, 0x61, 0xe8, 0x74, 0xc2, 0xf0, 0x4e, 0xcc, 0xf0, 0xbb, 0x98,
+	0x18, 0x3a, 0x9e, 0x30, 0x74, 0x32, 0x61, 0xe8, 0x74, 0xc2, 0xd0, 0x4e, 0xcc, 0xf0, 0xbb, 0x98,
 	0xa1, 0xf7, 0x31, 0xc3, 0x1f, 0x62, 0x86, 0x3e, 0xc6, 0x0c, 0xed, 0xc6, 0x0c, 0xed, 0xc5, 0x0c,
 	0xef, 0xc7, 0x0c, 0x1f, 0xc4, 0x0c, 0x1d, 0xc5, 0x0c, 0x1f, 0xc7, 0x0c, 0x9d, 0xc4, 0x0c, 0x9f,
 	0xc6, 0x0c, 0xed, 0x24, 0x0c, 0xbd, 0x4b, 0x18, 0xfe, 0x23, 0x61, 0xe8, 0xcf, 0x84, 0xe1, 0xbf,
@@ -1701,5 +1575,5 @@ var fileDescriptor_networkserver_f664bff0dc7d561a = []byte{
 	0x71, 0xd1, 0xb3, 0x54, 0x1f, 0x94, 0x7e, 0x48, 0x4c, 0x65, 0xba, 0x6f, 0x73, 0x55, 0xb6, 0x68,
 	0xee, 0xd8, 0x9d, 0xe9, 0xbb, 0xd5, 0xc1, 0xbf, 0x3e, 0xb9, 0xd6, 0x1f, 0xc2, 0xdf, 0x85, 0xfb,
 	0xe7, 0x21, 0xab, 0xd9, 0xf9, 0xc9, 0x5a, 0xe3, 0x61, 0xa0, 0xb8, 0xe8, 0x16, 0xf5, 0x73, 0xf8,
-	0xf4, 0xff, 0x00, 0x00, 0x00, 0xff, 0xff, 0xfb, 0xc0, 0xc6, 0x4b, 0x67, 0x06, 0x00, 0x00,
+	0xf4, 0xff, 0x00, 0x00, 0x00, 0xff, 0xff, 0x6f, 0x9c, 0x07, 0x14, 0x67, 0x06, 0x00, 0x00,
 }

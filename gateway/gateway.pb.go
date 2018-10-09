@@ -63,7 +63,7 @@ var LocationMetadata_LocationSource_value = map[string]int32{
 }
 
 func (LocationMetadata_LocationSource) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_gateway_cd729bb602de8f80, []int{0, 0}
+	return fileDescriptor_gateway_b15ba008e7fc7f89, []int{0, 0}
 }
 
 type LocationMetadata struct {
@@ -85,7 +85,7 @@ type LocationMetadata struct {
 func (m *LocationMetadata) Reset()      { *m = LocationMetadata{} }
 func (*LocationMetadata) ProtoMessage() {}
 func (*LocationMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_gateway_cd729bb602de8f80, []int{0}
+	return fileDescriptor_gateway_b15ba008e7fc7f89, []int{0}
 }
 func (m *LocationMetadata) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -183,7 +183,7 @@ type RxMetadata struct {
 func (m *RxMetadata) Reset()      { *m = RxMetadata{} }
 func (*RxMetadata) ProtoMessage() {}
 func (*RxMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_gateway_cd729bb602de8f80, []int{1}
+	return fileDescriptor_gateway_b15ba008e7fc7f89, []int{1}
 }
 func (m *RxMetadata) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -320,7 +320,7 @@ type RxMetadata_Antenna struct {
 func (m *RxMetadata_Antenna) Reset()      { *m = RxMetadata_Antenna{} }
 func (*RxMetadata_Antenna) ProtoMessage() {}
 func (*RxMetadata_Antenna) Descriptor() ([]byte, []int) {
-	return fileDescriptor_gateway_cd729bb602de8f80, []int{1, 0}
+	return fileDescriptor_gateway_b15ba008e7fc7f89, []int{1, 0}
 }
 func (m *RxMetadata_Antenna) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -431,7 +431,7 @@ type TxConfiguration struct {
 func (m *TxConfiguration) Reset()      { *m = TxConfiguration{} }
 func (*TxConfiguration) ProtoMessage() {}
 func (*TxConfiguration) Descriptor() ([]byte, []int) {
-	return fileDescriptor_gateway_cd729bb602de8f80, []int{2}
+	return fileDescriptor_gateway_b15ba008e7fc7f89, []int{2}
 }
 func (m *TxConfiguration) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -557,7 +557,7 @@ type Status struct {
 func (m *Status) Reset()      { *m = Status{} }
 func (*Status) ProtoMessage() {}
 func (*Status) Descriptor() ([]byte, []int) {
-	return fileDescriptor_gateway_cd729bb602de8f80, []int{3}
+	return fileDescriptor_gateway_b15ba008e7fc7f89, []int{3}
 }
 func (m *Status) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -783,7 +783,7 @@ type Status_OSMetrics struct {
 func (m *Status_OSMetrics) Reset()      { *m = Status_OSMetrics{} }
 func (*Status_OSMetrics) ProtoMessage() {}
 func (*Status_OSMetrics) Descriptor() ([]byte, []int) {
-	return fileDescriptor_gateway_cd729bb602de8f80, []int{3, 0}
+	return fileDescriptor_gateway_b15ba008e7fc7f89, []int{3, 0}
 }
 func (m *Status_OSMetrics) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1797,282 +1797,6 @@ func encodeVarintGateway(dAtA []byte, offset int, v uint64) int {
 	}
 	dAtA[offset] = uint8(v)
 	return offset + 1
-}
-func NewPopulatedLocationMetadata(r randyGateway, easy bool) *LocationMetadata {
-	this := &LocationMetadata{}
-	this.Time = int64(r.Int63())
-	if r.Intn(2) == 0 {
-		this.Time *= -1
-	}
-	this.Latitude = float32(r.Float32())
-	if r.Intn(2) == 0 {
-		this.Latitude *= -1
-	}
-	this.Longitude = float32(r.Float32())
-	if r.Intn(2) == 0 {
-		this.Longitude *= -1
-	}
-	this.Altitude = int32(r.Int31())
-	if r.Intn(2) == 0 {
-		this.Altitude *= -1
-	}
-	this.Accuracy = int32(r.Int31())
-	if r.Intn(2) == 0 {
-		this.Accuracy *= -1
-	}
-	this.Source = LocationMetadata_LocationSource([]int32{0, 1, 2, 3, 4}[r.Intn(5)])
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedRxMetadata(r randyGateway, easy bool) *RxMetadata {
-	this := &RxMetadata{}
-	this.GatewayID = string(randStringGateway(r))
-	this.GatewayTrusted = bool(bool(r.Intn(2) == 0))
-	this.Timestamp = uint32(r.Uint32())
-	this.Time = int64(r.Int63())
-	if r.Intn(2) == 0 {
-		this.Time *= -1
-	}
-	v1 := r.Intn(100)
-	this.EncryptedTime = make([]byte, v1)
-	for i := 0; i < v1; i++ {
-		this.EncryptedTime[i] = byte(r.Intn(256))
-	}
-	this.RfChain = uint32(r.Uint32())
-	this.Channel = uint32(r.Uint32())
-	if r.Intn(10) != 0 {
-		v2 := r.Intn(5)
-		this.Antennas = make([]*RxMetadata_Antenna, v2)
-		for i := 0; i < v2; i++ {
-			this.Antennas[i] = NewPopulatedRxMetadata_Antenna(r, easy)
-		}
-	}
-	this.Frequency = uint64(uint64(r.Uint32()))
-	this.RSSI = float32(r.Float32())
-	if r.Intn(2) == 0 {
-		this.RSSI *= -1
-	}
-	this.SNR = float32(r.Float32())
-	if r.Intn(2) == 0 {
-		this.SNR *= -1
-	}
-	if r.Intn(10) != 0 {
-		this.Location = NewPopulatedLocationMetadata(r, easy)
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedRxMetadata_Antenna(r randyGateway, easy bool) *RxMetadata_Antenna {
-	this := &RxMetadata_Antenna{}
-	this.Antenna = uint32(r.Uint32())
-	this.Channel = uint32(r.Uint32())
-	this.RSSI = float32(r.Float32())
-	if r.Intn(2) == 0 {
-		this.RSSI *= -1
-	}
-	this.SNR = float32(r.Float32())
-	if r.Intn(2) == 0 {
-		this.SNR *= -1
-	}
-	this.ChannelRSSI = float32(r.Float32())
-	if r.Intn(2) == 0 {
-		this.ChannelRSSI *= -1
-	}
-	this.RSSIStandardDeviation = float32(r.Float32())
-	if r.Intn(2) == 0 {
-		this.RSSIStandardDeviation *= -1
-	}
-	this.FrequencyOffset = int64(r.Int63())
-	if r.Intn(2) == 0 {
-		this.FrequencyOffset *= -1
-	}
-	v3 := r.Intn(100)
-	this.EncryptedTime = make([]byte, v3)
-	for i := 0; i < v3; i++ {
-		this.EncryptedTime[i] = byte(r.Intn(256))
-	}
-	this.FineTime = int64(r.Int63())
-	if r.Intn(2) == 0 {
-		this.FineTime *= -1
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedTxConfiguration(r randyGateway, easy bool) *TxConfiguration {
-	this := &TxConfiguration{}
-	this.Timestamp = uint32(r.Uint32())
-	this.RfChain = uint32(r.Uint32())
-	this.Frequency = uint64(uint64(r.Uint32()))
-	this.Power = int32(r.Int31())
-	if r.Intn(2) == 0 {
-		this.Power *= -1
-	}
-	this.PolarizationInversion = bool(bool(r.Intn(2) == 0))
-	this.FrequencyDeviation = uint32(r.Uint32())
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedStatus(r randyGateway, easy bool) *Status {
-	this := &Status{}
-	this.Timestamp = uint32(r.Uint32())
-	this.Time = int64(r.Int63())
-	if r.Intn(2) == 0 {
-		this.Time *= -1
-	}
-	this.GatewayTrusted = bool(bool(r.Intn(2) == 0))
-	this.BootTime = int64(r.Int63())
-	if r.Intn(2) == 0 {
-		this.BootTime *= -1
-	}
-	v4 := r.Intn(10)
-	this.IP = make([]string, v4)
-	for i := 0; i < v4; i++ {
-		this.IP[i] = string(randStringGateway(r))
-	}
-	this.Platform = string(randStringGateway(r))
-	this.ContactEmail = string(randStringGateway(r))
-	this.Description = string(randStringGateway(r))
-	this.FrequencyPlan = string(randStringGateway(r))
-	this.Bridge = string(randStringGateway(r))
-	this.Router = string(randStringGateway(r))
-	this.FPGA = uint32(r.Uint32())
-	this.DSP = uint32(r.Uint32())
-	this.HAL = string(randStringGateway(r))
-	if r.Intn(10) != 0 {
-		this.Location = NewPopulatedLocationMetadata(r, easy)
-	}
-	this.RTT = uint32(r.Uint32())
-	this.RxIn = uint32(r.Uint32())
-	this.RxOk = uint32(r.Uint32())
-	this.TxIn = uint32(r.Uint32())
-	this.TxOk = uint32(r.Uint32())
-	this.LmOk = uint32(r.Uint32())
-	this.LmSt = uint32(r.Uint32())
-	this.LmNw = uint32(r.Uint32())
-	this.LPPS = uint32(r.Uint32())
-	if r.Intn(10) != 0 {
-		this.OS = NewPopulatedStatus_OSMetrics(r, easy)
-	}
-	v5 := r.Intn(10)
-	this.Messages = make([]string, v5)
-	for i := 0; i < v5; i++ {
-		this.Messages[i] = string(randStringGateway(r))
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedStatus_OSMetrics(r randyGateway, easy bool) *Status_OSMetrics {
-	this := &Status_OSMetrics{}
-	this.Load_1 = float32(r.Float32())
-	if r.Intn(2) == 0 {
-		this.Load_1 *= -1
-	}
-	this.Load_5 = float32(r.Float32())
-	if r.Intn(2) == 0 {
-		this.Load_5 *= -1
-	}
-	this.Load_15 = float32(r.Float32())
-	if r.Intn(2) == 0 {
-		this.Load_15 *= -1
-	}
-	this.CPUPercentage = float32(r.Float32())
-	if r.Intn(2) == 0 {
-		this.CPUPercentage *= -1
-	}
-	this.MemoryPercentage = float32(r.Float32())
-	if r.Intn(2) == 0 {
-		this.MemoryPercentage *= -1
-	}
-	this.Temperature = float32(r.Float32())
-	if r.Intn(2) == 0 {
-		this.Temperature *= -1
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-type randyGateway interface {
-	Float32() float32
-	Float64() float64
-	Int63() int64
-	Int31() int32
-	Uint32() uint32
-	Intn(n int) int
-}
-
-func randUTF8RuneGateway(r randyGateway) rune {
-	ru := r.Intn(62)
-	if ru < 10 {
-		return rune(ru + 48)
-	} else if ru < 36 {
-		return rune(ru + 55)
-	}
-	return rune(ru + 61)
-}
-func randStringGateway(r randyGateway) string {
-	v6 := r.Intn(100)
-	tmps := make([]rune, v6)
-	for i := 0; i < v6; i++ {
-		tmps[i] = randUTF8RuneGateway(r)
-	}
-	return string(tmps)
-}
-func randUnrecognizedGateway(r randyGateway, maxFieldNumber int) (dAtA []byte) {
-	l := r.Intn(5)
-	for i := 0; i < l; i++ {
-		wire := r.Intn(4)
-		if wire == 3 {
-			wire = 5
-		}
-		fieldNumber := maxFieldNumber + r.Intn(100)
-		dAtA = randFieldGateway(dAtA, r, fieldNumber, wire)
-	}
-	return dAtA
-}
-func randFieldGateway(dAtA []byte, r randyGateway, fieldNumber int, wire int) []byte {
-	key := uint32(fieldNumber)<<3 | uint32(wire)
-	switch wire {
-	case 0:
-		dAtA = encodeVarintPopulateGateway(dAtA, uint64(key))
-		v7 := r.Int63()
-		if r.Intn(2) == 0 {
-			v7 *= -1
-		}
-		dAtA = encodeVarintPopulateGateway(dAtA, uint64(v7))
-	case 1:
-		dAtA = encodeVarintPopulateGateway(dAtA, uint64(key))
-		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
-	case 2:
-		dAtA = encodeVarintPopulateGateway(dAtA, uint64(key))
-		ll := r.Intn(100)
-		dAtA = encodeVarintPopulateGateway(dAtA, uint64(ll))
-		for j := 0; j < ll; j++ {
-			dAtA = append(dAtA, byte(r.Intn(256)))
-		}
-	default:
-		dAtA = encodeVarintPopulateGateway(dAtA, uint64(key))
-		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
-	}
-	return dAtA
-}
-func encodeVarintPopulateGateway(dAtA []byte, v uint64) []byte {
-	for v >= 1<<7 {
-		dAtA = append(dAtA, uint8(uint64(v)&0x7f|0x80))
-		v >>= 7
-	}
-	dAtA = append(dAtA, uint8(v))
-	return dAtA
 }
 func (m *LocationMetadata) Size() (n int) {
 	var l int
@@ -4177,13 +3901,13 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/gateway/gateway.proto", fileDescriptor_gateway_cd729bb602de8f80)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/gateway/gateway.proto", fileDescriptor_gateway_b15ba008e7fc7f89)
 }
 func init() {
-	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/gateway/gateway.proto", fileDescriptor_gateway_cd729bb602de8f80)
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/gateway/gateway.proto", fileDescriptor_gateway_b15ba008e7fc7f89)
 }
 
-var fileDescriptor_gateway_cd729bb602de8f80 = []byte{
+var fileDescriptor_gateway_b15ba008e7fc7f89 = []byte{
 	// 1368 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x96, 0x3f, 0x6c, 0x1b, 0x37,
 	0x14, 0xc6, 0x8f, 0x27, 0x59, 0x7f, 0x28, 0xcb, 0x56, 0x98, 0xd8, 0x39, 0x3b, 0x29, 0xa5, 0xba,
@@ -4261,14 +3985,14 @@ var fileDescriptor_gateway_cd729bb602de8f80 = []byte{
 	0xa6, 0x37, 0x98, 0x84, 0xe8, 0x1a, 0x3c, 0xd7, 0x67, 0x7d, 0x97, 0x1f, 0x4d, 0x0f, 0x5e, 0x50,
 	0x93, 0x17, 0xc2, 0xc4, 0x94, 0xb8, 0x04, 0x73, 0x82, 0xf5, 0x3d, 0xc6, 0xa9, 0x18, 0x70, 0xa6,
 	0xce, 0x57, 0x27, 0xd3, 0x68, 0xeb, 0x5f, 0xf0, 0x7c, 0x88, 0xc1, 0x8b, 0x21, 0x06, 0x2f, 0x87,
-	0x58, 0x7b, 0x35, 0xc4, 0xda, 0xeb, 0x21, 0xd6, 0xde, 0x0c, 0xb1, 0xf6, 0x76, 0x88, 0xc1, 0xc3,
-	0x00, 0x83, 0x47, 0x01, 0xd6, 0x1e, 0x07, 0x18, 0x3c, 0x09, 0xb0, 0xf6, 0x34, 0xc0, 0xda, 0xb3,
-	0x00, 0x6b, 0xcf, 0x03, 0x0c, 0x5e, 0x04, 0x18, 0xbc, 0x0c, 0xb0, 0xf6, 0x2a, 0xc0, 0xe0, 0x75,
-	0x80, 0xb5, 0x37, 0x01, 0x06, 0x6f, 0x03, 0xac, 0x3d, 0x1c, 0x61, 0xed, 0xd1, 0x08, 0x83, 0x5f,
-	0x46, 0x58, 0xfb, 0x75, 0x84, 0xc1, 0x6f, 0x23, 0xac, 0x3d, 0x1e, 0x61, 0xed, 0xc9, 0x08, 0x83,
-	0xa7, 0x23, 0x0c, 0x9e, 0x8d, 0x30, 0x80, 0x25, 0x97, 0xf7, 0x2a, 0x62, 0x9f, 0x09, 0xf5, 0xfc,
-	0x73, 0xc2, 0xe7, 0x5f, 0x85, 0x7a, 0xd6, 0xf8, 0xbc, 0xb6, 0x66, 0xa3, 0xe7, 0x45, 0x43, 0x3e,
-	0xe3, 0x1a, 0xe0, 0xc7, 0x2b, 0x1f, 0xf8, 0x6e, 0xfc, 0x43, 0xbf, 0x7c, 0x3a, 0x5d, 0xd9, 0x6c,
-	0x54, 0x2b, 0xd1, 0x74, 0x7b, 0x29, 0xf5, 0x2e, 0xbc, 0xf9, 0x5f, 0x00, 0x00, 0x00, 0xff, 0xff,
-	0x47, 0x5a, 0xd4, 0x01, 0x88, 0x0a, 0x00, 0x00,
+	0x58, 0x7b, 0x35, 0xc4, 0xda, 0xeb, 0x21, 0xd6, 0xde, 0x0c, 0xb1, 0xf6, 0x76, 0x88, 0xb5, 0x87,
+	0x01, 0x06, 0x8f, 0x02, 0xac, 0x3d, 0x0e, 0x30, 0x78, 0x12, 0x60, 0xed, 0x69, 0x80, 0xb5, 0x67,
+	0x01, 0xd6, 0x9e, 0x07, 0x18, 0xbc, 0x08, 0x30, 0x78, 0x19, 0x60, 0xed, 0x55, 0x80, 0xc1, 0xeb,
+	0x00, 0x6b, 0x6f, 0x02, 0x0c, 0xde, 0x06, 0x58, 0x7b, 0x38, 0xc2, 0xda, 0xa3, 0x11, 0x06, 0xbf,
+	0x8c, 0xb0, 0xf6, 0xeb, 0x08, 0x83, 0xdf, 0x46, 0x58, 0x7b, 0x3c, 0xc2, 0xda, 0x93, 0x11, 0x06,
+	0x4f, 0x47, 0x18, 0x3c, 0x1b, 0x61, 0x00, 0x4b, 0x2e, 0xef, 0x55, 0xc4, 0x3e, 0x13, 0xea, 0xf9,
+	0xe7, 0x84, 0xcf, 0xbf, 0x0a, 0xf5, 0xac, 0xf1, 0x79, 0x6d, 0xcd, 0x46, 0xcf, 0x8b, 0x86, 0x7c,
+	0xc6, 0x35, 0xc0, 0x8f, 0x57, 0x3e, 0xf0, 0xdd, 0xf8, 0x87, 0x7e, 0xf9, 0x74, 0xba, 0xb2, 0xd9,
+	0xa8, 0x56, 0xa2, 0xe9, 0xf6, 0x52, 0xea, 0x5d, 0x78, 0xf3, 0xbf, 0x00, 0x00, 0x00, 0xff, 0xff,
+	0xe7, 0x14, 0x21, 0xed, 0x88, 0x0a, 0x00, 0x00,
 }

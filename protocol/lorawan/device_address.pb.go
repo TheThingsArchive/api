@@ -39,7 +39,7 @@ type PrefixesRequest struct {
 func (m *PrefixesRequest) Reset()      { *m = PrefixesRequest{} }
 func (*PrefixesRequest) ProtoMessage() {}
 func (*PrefixesRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_device_address_7d1c4614889586dd, []int{0}
+	return fileDescriptor_device_address_d53db1848c7a591e, []int{0}
 }
 func (m *PrefixesRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -78,7 +78,7 @@ type PrefixesResponse struct {
 func (m *PrefixesResponse) Reset()      { *m = PrefixesResponse{} }
 func (*PrefixesResponse) ProtoMessage() {}
 func (*PrefixesResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_device_address_7d1c4614889586dd, []int{1}
+	return fileDescriptor_device_address_d53db1848c7a591e, []int{1}
 }
 func (m *PrefixesResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -126,7 +126,7 @@ type PrefixesResponse_PrefixMapping struct {
 func (m *PrefixesResponse_PrefixMapping) Reset()      { *m = PrefixesResponse_PrefixMapping{} }
 func (*PrefixesResponse_PrefixMapping) ProtoMessage() {}
 func (*PrefixesResponse_PrefixMapping) Descriptor() ([]byte, []int) {
-	return fileDescriptor_device_address_7d1c4614889586dd, []int{1, 0}
+	return fileDescriptor_device_address_d53db1848c7a591e, []int{1, 0}
 }
 func (m *PrefixesResponse_PrefixMapping) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -179,7 +179,7 @@ type DevAddrRequest struct {
 func (m *DevAddrRequest) Reset()      { *m = DevAddrRequest{} }
 func (*DevAddrRequest) ProtoMessage() {}
 func (*DevAddrRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_device_address_7d1c4614889586dd, []int{2}
+	return fileDescriptor_device_address_d53db1848c7a591e, []int{2}
 }
 func (m *DevAddrRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -224,7 +224,7 @@ type DevAddrResponse struct {
 func (m *DevAddrResponse) Reset()      { *m = DevAddrResponse{} }
 func (*DevAddrResponse) ProtoMessage() {}
 func (*DevAddrResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_device_address_7d1c4614889586dd, []int{3}
+	return fileDescriptor_device_address_d53db1848c7a591e, []int{3}
 }
 func (m *DevAddrResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -664,133 +664,6 @@ func encodeVarintDeviceAddress(dAtA []byte, offset int, v uint64) int {
 	}
 	dAtA[offset] = uint8(v)
 	return offset + 1
-}
-func NewPopulatedPrefixesRequest(r randyDeviceAddress, easy bool) *PrefixesRequest {
-	this := &PrefixesRequest{}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedPrefixesResponse(r randyDeviceAddress, easy bool) *PrefixesResponse {
-	this := &PrefixesResponse{}
-	if r.Intn(10) != 0 {
-		v1 := r.Intn(5)
-		this.Prefixes = make([]*PrefixesResponse_PrefixMapping, v1)
-		for i := 0; i < v1; i++ {
-			this.Prefixes[i] = NewPopulatedPrefixesResponse_PrefixMapping(r, easy)
-		}
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedPrefixesResponse_PrefixMapping(r randyDeviceAddress, easy bool) *PrefixesResponse_PrefixMapping {
-	this := &PrefixesResponse_PrefixMapping{}
-	this.Prefix = string(randStringDeviceAddress(r))
-	v2 := r.Intn(10)
-	this.Usage = make([]string, v2)
-	for i := 0; i < v2; i++ {
-		this.Usage[i] = string(randStringDeviceAddress(r))
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedDevAddrRequest(r randyDeviceAddress, easy bool) *DevAddrRequest {
-	this := &DevAddrRequest{}
-	v3 := r.Intn(10)
-	this.Usage = make([]string, v3)
-	for i := 0; i < v3; i++ {
-		this.Usage[i] = string(randStringDeviceAddress(r))
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-func NewPopulatedDevAddrResponse(r randyDeviceAddress, easy bool) *DevAddrResponse {
-	this := &DevAddrResponse{}
-	v4 := github_com_TheThingsNetwork_ttn_core_types.NewPopulatedDevAddr(r)
-	this.DevAddr = *v4
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
-
-type randyDeviceAddress interface {
-	Float32() float32
-	Float64() float64
-	Int63() int64
-	Int31() int32
-	Uint32() uint32
-	Intn(n int) int
-}
-
-func randUTF8RuneDeviceAddress(r randyDeviceAddress) rune {
-	ru := r.Intn(62)
-	if ru < 10 {
-		return rune(ru + 48)
-	} else if ru < 36 {
-		return rune(ru + 55)
-	}
-	return rune(ru + 61)
-}
-func randStringDeviceAddress(r randyDeviceAddress) string {
-	v5 := r.Intn(100)
-	tmps := make([]rune, v5)
-	for i := 0; i < v5; i++ {
-		tmps[i] = randUTF8RuneDeviceAddress(r)
-	}
-	return string(tmps)
-}
-func randUnrecognizedDeviceAddress(r randyDeviceAddress, maxFieldNumber int) (dAtA []byte) {
-	l := r.Intn(5)
-	for i := 0; i < l; i++ {
-		wire := r.Intn(4)
-		if wire == 3 {
-			wire = 5
-		}
-		fieldNumber := maxFieldNumber + r.Intn(100)
-		dAtA = randFieldDeviceAddress(dAtA, r, fieldNumber, wire)
-	}
-	return dAtA
-}
-func randFieldDeviceAddress(dAtA []byte, r randyDeviceAddress, fieldNumber int, wire int) []byte {
-	key := uint32(fieldNumber)<<3 | uint32(wire)
-	switch wire {
-	case 0:
-		dAtA = encodeVarintPopulateDeviceAddress(dAtA, uint64(key))
-		v6 := r.Int63()
-		if r.Intn(2) == 0 {
-			v6 *= -1
-		}
-		dAtA = encodeVarintPopulateDeviceAddress(dAtA, uint64(v6))
-	case 1:
-		dAtA = encodeVarintPopulateDeviceAddress(dAtA, uint64(key))
-		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
-	case 2:
-		dAtA = encodeVarintPopulateDeviceAddress(dAtA, uint64(key))
-		ll := r.Intn(100)
-		dAtA = encodeVarintPopulateDeviceAddress(dAtA, uint64(ll))
-		for j := 0; j < ll; j++ {
-			dAtA = append(dAtA, byte(r.Intn(256)))
-		}
-	default:
-		dAtA = encodeVarintPopulateDeviceAddress(dAtA, uint64(key))
-		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
-	}
-	return dAtA
-}
-func encodeVarintPopulateDeviceAddress(dAtA []byte, v uint64) []byte {
-	for v >= 1<<7 {
-		dAtA = append(dAtA, uint8(uint64(v)&0x7f|0x80))
-		v >>= 7
-	}
-	dAtA = append(dAtA, uint8(v))
-	return dAtA
 }
 func (m *PrefixesRequest) Size() (n int) {
 	var l int
@@ -1421,14 +1294,14 @@ var (
 )
 
 func init() {
-	proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/lorawan/device_address.proto", fileDescriptor_device_address_7d1c4614889586dd)
+	proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/lorawan/device_address.proto", fileDescriptor_device_address_d53db1848c7a591e)
 }
 func init() {
-	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/lorawan/device_address.proto", fileDescriptor_device_address_7d1c4614889586dd)
+	golang_proto.RegisterFile("github.com/TheThingsNetwork/api/protocol/lorawan/device_address.proto", fileDescriptor_device_address_d53db1848c7a591e)
 }
 
-var fileDescriptor_device_address_7d1c4614889586dd = []byte{
-	// 519 bytes of a gzipped FileDescriptorProto
+var fileDescriptor_device_address_d53db1848c7a591e = []byte{
+	// 520 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x53, 0x3b, 0x6c, 0x13, 0x41,
 	0x10, 0xdd, 0x71, 0x44, 0x3e, 0x1b, 0x20, 0x70, 0x42, 0xe0, 0xb8, 0x98, 0x58, 0x16, 0x02, 0x53,
 	0xb0, 0x87, 0x4c, 0x87, 0x84, 0x90, 0x4d, 0x50, 0x84, 0x44, 0x22, 0xcb, 0x0a, 0x42, 0xa2, 0x41,
@@ -1452,14 +1325,14 @@ var fileDescriptor_device_address_7d1c4614889586dd = []byte{
 	0x3c, 0xe4, 0xbe, 0x88, 0x9d, 0x06, 0x9d, 0x5e, 0x10, 0x6a, 0x18, 0x89, 0x53, 0xfc, 0x4b, 0x4a,
 	0xc6, 0x7b, 0x69, 0xf6, 0x9f, 0xf9, 0x39, 0xcf, 0x28, 0x5d, 0x10, 0xca, 0x0a, 0x3b, 0x77, 0x46,
 	0xc4, 0xf3, 0x5f, 0x5f, 0x2a, 0xfe, 0x09, 0xe4, 0x02, 0x8d, 0xcd, 0xc2, 0x20, 0x45, 0xd8, 0x4b,
-	0x11, 0xf6, 0x53, 0x24, 0x87, 0x29, 0x92, 0xa3, 0x14, 0xc9, 0x71, 0x8a, 0xe4, 0x24, 0x45, 0x58,
-	0xd7, 0x08, 0x1b, 0x1a, 0xc9, 0x96, 0x46, 0xd8, 0xd6, 0x48, 0x76, 0x34, 0x92, 0x5d, 0x8d, 0x64,
-	0xa0, 0x11, 0xf6, 0x34, 0xc2, 0xbe, 0x46, 0x72, 0xa8, 0x11, 0x8e, 0x34, 0x92, 0x63, 0x8d, 0x70,
-	0xa2, 0x91, 0xac, 0x67, 0x48, 0x36, 0x32, 0x84, 0x2f, 0x19, 0x92, 0x6f, 0x19, 0xc2, 0xf7, 0x0c,
-	0xc9, 0x56, 0x86, 0x64, 0x3b, 0x43, 0xd8, 0xc9, 0x10, 0x76, 0x33, 0x04, 0xfa, 0x40, 0xc6, 0x3e,
-	0x53, 0x5d, 0xa1, 0x4c, 0x88, 0x61, 0x1e, 0x22, 0xe3, 0x51, 0xc0, 0x86, 0x47, 0x3c, 0x74, 0xdc,
-	0x98, 0x7d, 0x25, 0x5b, 0xfc, 0x4d, 0x7d, 0x69, 0xde, 0x1c, 0x73, 0x3d, 0xbf, 0xe5, 0xe6, 0x6f,
-	0x56, 0x13, 0xde, 0x3e, 0xba, 0xec, 0x3f, 0xf1, 0xa3, 0x70, 0xf7, 0x22, 0x8f, 0xd5, 0x9b, 0x2f,
-	0x99, 0x5d, 0xd2, 0xb4, 0xf4, 0xf6, 0xb8, 0x19, 0x7c, 0xfc, 0x2b, 0x00, 0x00, 0xff, 0xff, 0xbc,
-	0x60, 0x32, 0xd5, 0x75, 0x03, 0x00, 0x00,
+	0x11, 0xf6, 0x53, 0x24, 0x87, 0x29, 0x92, 0xa3, 0x14, 0xc9, 0x71, 0x8a, 0xe4, 0x24, 0x45, 0xb2,
+	0xae, 0x11, 0x36, 0x34, 0x92, 0x2d, 0x8d, 0xb0, 0xad, 0x91, 0xec, 0x68, 0x24, 0xbb, 0x1a, 0xc9,
+	0x40, 0x23, 0xec, 0x69, 0x84, 0x7d, 0x8d, 0xe4, 0x50, 0x23, 0x1c, 0x69, 0x24, 0xc7, 0x1a, 0xe1,
+	0x44, 0x23, 0x59, 0xcf, 0x90, 0x6c, 0x64, 0x08, 0x5f, 0x32, 0x24, 0xdf, 0x32, 0x84, 0xef, 0x19,
+	0x92, 0xad, 0x0c, 0xc9, 0x76, 0x86, 0xb0, 0x93, 0x21, 0xec, 0x66, 0x08, 0xf4, 0x81, 0x8c, 0x7d,
+	0xa6, 0xba, 0x42, 0x99, 0x10, 0xc3, 0x3c, 0x44, 0xc6, 0xa3, 0x80, 0x0d, 0x8f, 0x78, 0xe8, 0xb8,
+	0x31, 0xfb, 0x4a, 0xb6, 0xf8, 0x9b, 0xfa, 0xd2, 0xbc, 0x39, 0xe6, 0x7a, 0x7e, 0xcb, 0xcd, 0xdf,
+	0xac, 0x26, 0xbc, 0x7d, 0x74, 0xd9, 0x7f, 0xe2, 0x47, 0xe1, 0xee, 0x45, 0x1e, 0xab, 0x37, 0x5f,
+	0x32, 0xbb, 0xa4, 0x69, 0xe9, 0xed, 0x71, 0x33, 0xf8, 0xf8, 0x57, 0x00, 0x00, 0x00, 0xff, 0xff,
+	0xa0, 0xe1, 0x3e, 0xda, 0x75, 0x03, 0x00, 0x00,
 }

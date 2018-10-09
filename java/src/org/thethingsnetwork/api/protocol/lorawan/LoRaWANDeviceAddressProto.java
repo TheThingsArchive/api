@@ -61,12 +61,12 @@ public final class LoRaWANDeviceAddressProto {
       "ddr2\225\001\n\016DevAddrManager\022B\n\013GetPrefixes\022\030." +
       "lorawan.PrefixesRequest\032\031.lorawan.Prefix" +
       "esResponse\022?\n\nGetDevAddr\022\027.lorawan.DevAd" +
-      "drRequest\032\030.lorawan.DevAddrResponseB\241\001\n)" +
+      "drRequest\032\030.lorawan.DevAddrResponseB\245\001\n)" +
       "org.thethingsnetwork.api.protocol.lorawa" +
       "nB\031LoRaWANDeviceAddressProtoP\001Z0github.c" +
       "om/TheThingsNetwork/api/protocol/lorawan" +
-      "\252\002$TheThingsNetwork.API.LoRaWANProtocolb" +
-      "\006proto3"
+      "\252\002$TheThingsNetwork.API.LoRaWANProtocol\370" +
+      "\341\036\000b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -115,6 +115,7 @@ public final class LoRaWANDeviceAddressProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.protobuf.GoGoProtos.customtype);
     registry.add(com.google.protobuf.GoGoProtos.nullable);
+    registry.add(com.google.protobuf.GoGoProtos.populateAll);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf.GoGoProtos.getDescriptor();

@@ -67,11 +67,11 @@ public final class LoRaWANDeviceProto {
       "\032\017.lorawan.Device\0224\n\tSetDevice\022\017.lorawan" +
       ".Device\032\026.google.protobuf.Empty\022A\n\014Delet" +
       "eDevice\022\031.lorawan.DeviceIdentifier\032\026.goo" +
-      "gle.protobuf.EmptyB\232\001\n)org.thethingsnetw" +
+      "gle.protobuf.EmptyB\236\001\n)org.thethingsnetw" +
       "ork.api.protocol.lorawanB\022LoRaWANDeviceP" +
       "rotoP\001Z0github.com/TheThingsNetwork/api/" +
       "protocol/lorawan\252\002$TheThingsNetwork.API." +
-      "LoRaWANProtocolb\006proto3"
+      "LoRaWANProtocol\370\341\036\000b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -104,6 +104,7 @@ public final class LoRaWANDeviceProto {
     registry.add(com.google.protobuf.GoGoProtos.customname);
     registry.add(com.google.protobuf.GoGoProtos.customtype);
     registry.add(com.google.protobuf.GoGoProtos.nullable);
+    registry.add(com.google.protobuf.GoGoProtos.populateAll);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.protobuf.EmptyProto.getDescriptor();
