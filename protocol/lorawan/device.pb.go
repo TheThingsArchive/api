@@ -12,8 +12,10 @@ import types "github.com/gogo/protobuf/types"
 
 import github_com_TheThingsNetwork_ttn_core_types "github.com/TheThingsNetwork/ttn/core/types"
 
-import context "golang.org/x/net/context"
-import grpc "google.golang.org/grpc"
+import (
+	context "golang.org/x/net/context"
+	grpc "google.golang.org/grpc"
+)
 
 import strings "strings"
 import reflect "reflect"
@@ -104,9 +106,9 @@ type Device struct {
 	// There are different prefixes for `otaa`, `abp`, `world`, `local`, `private`, `testing`.
 	ActivationConstraints string `protobuf:"bytes,13,opt,name=activation_constraints,json=activationConstraints,proto3" json:"activation_constraints,omitempty"`
 	// The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
-	UsedDevNonces []github_com_TheThingsNetwork_ttn_core_types.DevNonce `protobuf:"bytes,14,rep,name=used_dev_nonces,json=usedDevNonces,customtype=github.com/TheThingsNetwork/ttn/core/types.DevNonce" json:"used_dev_nonces,omitempty"`
+	UsedDevNonces []github_com_TheThingsNetwork_ttn_core_types.DevNonce `protobuf:"bytes,14,rep,name=used_dev_nonces,json=usedDevNonces,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevNonce" json:"used_dev_nonces,omitempty"`
 	// The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
-	UsedAppNonces []github_com_TheThingsNetwork_ttn_core_types.AppNonce `protobuf:"bytes,15,rep,name=used_app_nonces,json=usedAppNonces,customtype=github.com/TheThingsNetwork/ttn/core/types.AppNonce" json:"used_app_nonces,omitempty"`
+	UsedAppNonces []github_com_TheThingsNetwork_ttn_core_types.AppNonce `protobuf:"bytes,15,rep,name=used_app_nonces,json=usedAppNonces,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppNonce" json:"used_app_nonces,omitempty"`
 	// When the device was last seen (Unix nanoseconds)
 	LastSeen             int64    `protobuf:"varint,21,opt,name=last_seen,json=lastSeen,proto3" json:"last_seen,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -338,8 +340,9 @@ var _ grpc.ClientConn
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion4
 
-// Client API for DeviceManager service
-
+// DeviceManagerClient is the client API for DeviceManager service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type DeviceManagerClient interface {
 	GetDevice(ctx context.Context, in *DeviceIdentifier, opts ...grpc.CallOption) (*Device, error)
 	SetDevice(ctx context.Context, in *Device, opts ...grpc.CallOption) (*types.Empty, error)
@@ -381,8 +384,7 @@ func (c *deviceManagerClient) DeleteDevice(ctx context.Context, in *DeviceIdenti
 	return out, nil
 }
 
-// Server API for DeviceManager service
-
+// DeviceManagerServer is the server API for DeviceManager service.
 type DeviceManagerServer interface {
 	GetDevice(context.Context, *DeviceIdentifier) (*Device, error)
 	SetDevice(context.Context, *Device) (*types.Empty, error)
@@ -786,6 +788,9 @@ func encodeVarintPopulateDevice(dAtA []byte, v uint64) []byte {
 	return dAtA
 }
 func (m *DeviceIdentifier) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = m.AppEUI.Size()
@@ -796,6 +801,9 @@ func (m *DeviceIdentifier) Size() (n int) {
 }
 
 func (m *Device) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = m.AppEUI.Size()

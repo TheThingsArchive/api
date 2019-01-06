@@ -11,8 +11,10 @@ import _ "github.com/gogo/protobuf/gogoproto"
 
 import github_com_TheThingsNetwork_ttn_core_types "github.com/TheThingsNetwork/ttn/core/types"
 
-import context "golang.org/x/net/context"
-import grpc "google.golang.org/grpc"
+import (
+	context "golang.org/x/net/context"
+	grpc "google.golang.org/grpc"
+)
 
 import strings "strings"
 import reflect "reflect"
@@ -70,7 +72,7 @@ var xxx_messageInfo_PrefixesRequest proto.InternalMessageInfo
 
 type PrefixesResponse struct {
 	// The prefixes that are in use or available
-	Prefixes             []*PrefixesResponse_PrefixMapping `protobuf:"bytes,1,rep,name=prefixes" json:"prefixes,omitempty"`
+	Prefixes             []*PrefixesResponse_PrefixMapping `protobuf:"bytes,1,rep,name=prefixes,proto3" json:"prefixes,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                          `json:"-"`
 	XXX_sizecache        int32                             `json:"-"`
 }
@@ -118,7 +120,7 @@ type PrefixesResponse_PrefixMapping struct {
 	// The prefix that can be used
 	Prefix string `protobuf:"bytes,1,opt,name=prefix,proto3" json:"prefix,omitempty"`
 	// Usage constraints of this prefix (see activation_constraints in device.proto)
-	Usage                []string `protobuf:"bytes,2,rep,name=usage" json:"usage,omitempty"`
+	Usage                []string `protobuf:"bytes,2,rep,name=usage,proto3" json:"usage,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
@@ -171,7 +173,7 @@ func (m *PrefixesResponse_PrefixMapping) GetUsage() []string {
 
 type DevAddrRequest struct {
 	// The usage constraints (see activation_constraints in device.proto)
-	Usage                []string `protobuf:"bytes,1,rep,name=usage" json:"usage,omitempty"`
+	Usage                []string `protobuf:"bytes,1,rep,name=usage,proto3" json:"usage,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
@@ -409,8 +411,9 @@ var _ grpc.ClientConn
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion4
 
-// Client API for DevAddrManager service
-
+// DevAddrManagerClient is the client API for DevAddrManager service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type DevAddrManagerClient interface {
 	// Get all prefixes that are in use or available
 	GetPrefixes(ctx context.Context, in *PrefixesRequest, opts ...grpc.CallOption) (*PrefixesResponse, error)
@@ -444,8 +447,7 @@ func (c *devAddrManagerClient) GetDevAddr(ctx context.Context, in *DevAddrReques
 	return out, nil
 }
 
-// Server API for DevAddrManager service
-
+// DevAddrManagerServer is the server API for DevAddrManager service.
 type DevAddrManagerServer interface {
 	// Get all prefixes that are in use or available
 	GetPrefixes(context.Context, *PrefixesRequest) (*PrefixesResponse, error)
@@ -793,12 +795,18 @@ func encodeVarintPopulateDeviceAddress(dAtA []byte, v uint64) []byte {
 	return dAtA
 }
 func (m *PrefixesRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	return n
 }
 
 func (m *PrefixesResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if len(m.Prefixes) > 0 {
@@ -811,6 +819,9 @@ func (m *PrefixesResponse) Size() (n int) {
 }
 
 func (m *PrefixesResponse_PrefixMapping) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.Prefix)
@@ -827,6 +838,9 @@ func (m *PrefixesResponse_PrefixMapping) Size() (n int) {
 }
 
 func (m *DevAddrRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if len(m.Usage) > 0 {
@@ -839,6 +853,9 @@ func (m *DevAddrRequest) Size() (n int) {
 }
 
 func (m *DevAddrResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = m.DevAddr.Size()

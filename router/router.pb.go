@@ -18,8 +18,10 @@ import github_com_TheThingsNetwork_ttn_core_types "github.com/TheThingsNetwork/t
 
 import bytes "bytes"
 
-import context "golang.org/x/net/context"
-import grpc "google.golang.org/grpc"
+import (
+	context "golang.org/x/net/context"
+	grpc "google.golang.org/grpc"
+)
 
 import strings "strings"
 import reflect "reflect"
@@ -77,10 +79,10 @@ var xxx_messageInfo_SubscribeRequest proto.InternalMessageInfo
 
 type UplinkMessage struct {
 	Payload              []byte              `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
-	Message              *protocol.Message   `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
-	ProtocolMetadata     protocol.RxMetadata `protobuf:"bytes,11,opt,name=protocol_metadata,json=protocolMetadata" json:"protocol_metadata"`
-	GatewayMetadata      gateway.RxMetadata  `protobuf:"bytes,12,opt,name=gateway_metadata,json=gatewayMetadata" json:"gateway_metadata"`
-	Trace                *trace.Trace        `protobuf:"bytes,21,opt,name=trace" json:"trace,omitempty"`
+	Message              *protocol.Message   `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+	ProtocolMetadata     protocol.RxMetadata `protobuf:"bytes,11,opt,name=protocol_metadata,json=protocolMetadata,proto3" json:"protocol_metadata"`
+	GatewayMetadata      gateway.RxMetadata  `protobuf:"bytes,12,opt,name=gateway_metadata,json=gatewayMetadata,proto3" json:"gateway_metadata"`
+	Trace                *trace.Trace        `protobuf:"bytes,21,opt,name=trace,proto3" json:"trace,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}            `json:"-"`
 	XXX_sizecache        int32               `json:"-"`
 }
@@ -154,10 +156,10 @@ func (m *UplinkMessage) GetTrace() *trace.Trace {
 
 type DownlinkMessage struct {
 	Payload               []byte                   `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
-	Message               *protocol.Message        `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
-	ProtocolConfiguration protocol.TxConfiguration `protobuf:"bytes,11,opt,name=protocol_configuration,json=protocolConfiguration" json:"protocol_configuration"`
-	GatewayConfiguration  gateway.TxConfiguration  `protobuf:"bytes,12,opt,name=gateway_configuration,json=gatewayConfiguration" json:"gateway_configuration"`
-	Trace                 *trace.Trace             `protobuf:"bytes,21,opt,name=trace" json:"trace,omitempty"`
+	Message               *protocol.Message        `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+	ProtocolConfiguration protocol.TxConfiguration `protobuf:"bytes,11,opt,name=protocol_configuration,json=protocolConfiguration,proto3" json:"protocol_configuration"`
+	GatewayConfiguration  gateway.TxConfiguration  `protobuf:"bytes,12,opt,name=gateway_configuration,json=gatewayConfiguration,proto3" json:"gateway_configuration"`
+	Trace                 *trace.Trace             `protobuf:"bytes,21,opt,name=trace,proto3" json:"trace,omitempty"`
 	XXX_NoUnkeyedLiteral  struct{}                 `json:"-"`
 	XXX_sizecache         int32                    `json:"-"`
 }
@@ -231,13 +233,13 @@ func (m *DownlinkMessage) GetTrace() *trace.Trace {
 
 type DeviceActivationRequest struct {
 	Payload              []byte                                            `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
-	Message              *protocol.Message                                 `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
+	Message              *protocol.Message                                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
 	DevEUI               github_com_TheThingsNetwork_ttn_core_types.DevEUI `protobuf:"bytes,11,opt,name=dev_eui,json=devEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevEUI" json:"dev_eui"`
 	AppEUI               github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,12,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui"`
-	ProtocolMetadata     protocol.RxMetadata                               `protobuf:"bytes,21,opt,name=protocol_metadata,json=protocolMetadata" json:"protocol_metadata"`
-	GatewayMetadata      gateway.RxMetadata                                `protobuf:"bytes,22,opt,name=gateway_metadata,json=gatewayMetadata" json:"gateway_metadata"`
-	ActivationMetadata   *protocol.ActivationMetadata                      `protobuf:"bytes,23,opt,name=activation_metadata,json=activationMetadata" json:"activation_metadata,omitempty"`
-	Trace                *trace.Trace                                      `protobuf:"bytes,31,opt,name=trace" json:"trace,omitempty"`
+	ProtocolMetadata     protocol.RxMetadata                               `protobuf:"bytes,21,opt,name=protocol_metadata,json=protocolMetadata,proto3" json:"protocol_metadata"`
+	GatewayMetadata      gateway.RxMetadata                                `protobuf:"bytes,22,opt,name=gateway_metadata,json=gatewayMetadata,proto3" json:"gateway_metadata"`
+	ActivationMetadata   *protocol.ActivationMetadata                      `protobuf:"bytes,23,opt,name=activation_metadata,json=activationMetadata,proto3" json:"activation_metadata,omitempty"`
+	Trace                *trace.Trace                                      `protobuf:"bytes,31,opt,name=trace,proto3" json:"trace,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                          `json:"-"`
 	XXX_sizecache        int32                                             `json:"-"`
 }
@@ -402,7 +404,7 @@ func (m *GatewayStatusRequest) GetGatewayID() string {
 
 type GatewayStatusResponse struct {
 	LastSeen             int64          `protobuf:"varint,1,opt,name=last_seen,json=lastSeen,proto3" json:"last_seen,omitempty"`
-	Status               gateway.Status `protobuf:"bytes,2,opt,name=status" json:"status"`
+	Status               gateway.Status `protobuf:"bytes,2,opt,name=status,proto3" json:"status"`
 	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
 	XXX_sizecache        int32          `json:"-"`
 }
@@ -493,12 +495,12 @@ var xxx_messageInfo_StatusRequest proto.InternalMessageInfo
 
 // message Status is the response to the StatusRequest
 type Status struct {
-	System        *api.SystemStats    `protobuf:"bytes,1,opt,name=system" json:"system,omitempty"`
-	Component     *api.ComponentStats `protobuf:"bytes,2,opt,name=component" json:"component,omitempty"`
-	GatewayStatus *api.Rates          `protobuf:"bytes,11,opt,name=gateway_status,json=gatewayStatus" json:"gateway_status,omitempty"`
-	Uplink        *api.Rates          `protobuf:"bytes,12,opt,name=uplink" json:"uplink,omitempty"`
-	Downlink      *api.Rates          `protobuf:"bytes,13,opt,name=downlink" json:"downlink,omitempty"`
-	Activations   *api.Rates          `protobuf:"bytes,14,opt,name=activations" json:"activations,omitempty"`
+	System        *api.SystemStats    `protobuf:"bytes,1,opt,name=system,proto3" json:"system,omitempty"`
+	Component     *api.ComponentStats `protobuf:"bytes,2,opt,name=component,proto3" json:"component,omitempty"`
+	GatewayStatus *api.Rates          `protobuf:"bytes,11,opt,name=gateway_status,json=gatewayStatus,proto3" json:"gateway_status,omitempty"`
+	Uplink        *api.Rates          `protobuf:"bytes,12,opt,name=uplink,proto3" json:"uplink,omitempty"`
+	Downlink      *api.Rates          `protobuf:"bytes,13,opt,name=downlink,proto3" json:"downlink,omitempty"`
+	Activations   *api.Rates          `protobuf:"bytes,14,opt,name=activations,proto3" json:"activations,omitempty"`
 	// Connections
 	ConnectedGateways    uint32   `protobuf:"varint,21,opt,name=connected_gateways,json=connectedGateways,proto3" json:"connected_gateways,omitempty"`
 	ConnectedBrokers     uint32   `protobuf:"varint,22,opt,name=connected_brokers,json=connectedBrokers,proto3" json:"connected_brokers,omitempty"`
@@ -899,8 +901,9 @@ var _ grpc.ClientConn
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion4
 
-// Client API for Router service
-
+// RouterClient is the client API for Router service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type RouterClient interface {
 	// Gateway streams status messages to Router
 	GatewayStatus(ctx context.Context, opts ...grpc.CallOption) (Router_GatewayStatusClient, error)
@@ -1031,8 +1034,7 @@ func (c *routerClient) Activate(ctx context.Context, in *DeviceActivationRequest
 	return out, nil
 }
 
-// Server API for Router service
-
+// RouterServer is the server API for Router service.
 type RouterServer interface {
 	// Gateway streams status messages to Router
 	GatewayStatus(Router_GatewayStatusServer) error
@@ -1170,8 +1172,9 @@ var _Router_serviceDesc = grpc.ServiceDesc{
 	Metadata: "github.com/TheThingsNetwork/api/router/router.proto",
 }
 
-// Client API for RouterManager service
-
+// RouterManagerClient is the client API for RouterManager service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type RouterManagerClient interface {
 	// Gateway owner or network operator requests Gateway status from Router Manager
 	// Deprecated: Use monitor API (NOC) instead of this
@@ -1206,8 +1209,7 @@ func (c *routerManagerClient) GetStatus(ctx context.Context, in *StatusRequest, 
 	return out, nil
 }
 
-// Server API for RouterManager service
-
+// RouterManagerServer is the server API for RouterManager service.
 type RouterManagerServer interface {
 	// Gateway owner or network operator requests Gateway status from Router Manager
 	// Deprecated: Use monitor API (NOC) instead of this
@@ -1916,12 +1918,18 @@ func encodeVarintPopulateRouter(dAtA []byte, v uint64) []byte {
 	return dAtA
 }
 func (m *SubscribeRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	return n
 }
 
 func (m *UplinkMessage) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.Payload)
@@ -1944,6 +1952,9 @@ func (m *UplinkMessage) Size() (n int) {
 }
 
 func (m *DownlinkMessage) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.Payload)
@@ -1966,6 +1977,9 @@ func (m *DownlinkMessage) Size() (n int) {
 }
 
 func (m *DeviceActivationRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.Payload)
@@ -1996,12 +2010,18 @@ func (m *DeviceActivationRequest) Size() (n int) {
 }
 
 func (m *DeviceActivationResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	return n
 }
 
 func (m *GatewayStatusRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.GatewayID)
@@ -2012,6 +2032,9 @@ func (m *GatewayStatusRequest) Size() (n int) {
 }
 
 func (m *GatewayStatusResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.LastSeen != 0 {
@@ -2023,12 +2046,18 @@ func (m *GatewayStatusResponse) Size() (n int) {
 }
 
 func (m *StatusRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	return n
 }
 
 func (m *Status) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.System != nil {

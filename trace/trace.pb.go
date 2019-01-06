@@ -40,9 +40,9 @@ type Trace struct {
 	// Short event name
 	Event string `protobuf:"bytes,5,opt,name=event,proto3" json:"event,omitempty"`
 	// metadata for the event
-	Metadata map[string]string `protobuf:"bytes,6,rep,name=metadata" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Metadata map[string]string `protobuf:"bytes,6,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	// Parents of the event
-	Parents              []*Trace `protobuf:"bytes,11,rep,name=parents" json:"parents,omitempty"`
+	Parents              []*Trace `protobuf:"bytes,11,rep,name=parents,proto3" json:"parents,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
@@ -373,6 +373,9 @@ func encodeVarintPopulateTrace(dAtA []byte, v uint64) []byte {
 	return dAtA
 }
 func (m *Trace) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.ID)

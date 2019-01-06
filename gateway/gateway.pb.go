@@ -168,14 +168,14 @@ type RxMetadata struct {
 	EncryptedTime []byte                `protobuf:"bytes,13,opt,name=encrypted_time,json=encryptedTime,proto3" json:"encrypted_time,omitempty"`
 	RfChain       uint32                `protobuf:"varint,21,opt,name=rf_chain,json=rfChain,proto3" json:"rf_chain,omitempty"`
 	Channel       uint32                `protobuf:"varint,22,opt,name=channel,proto3" json:"channel,omitempty"`
-	Antennas      []*RxMetadata_Antenna `protobuf:"bytes,30,rep,name=antennas" json:"antennas,omitempty"`
+	Antennas      []*RxMetadata_Antenna `protobuf:"bytes,30,rep,name=antennas,proto3" json:"antennas,omitempty"`
 	// Frequency in Hz
 	Frequency uint64 `protobuf:"varint,31,opt,name=frequency,proto3" json:"frequency,omitempty"`
 	// Received signal strength in dBm
 	RSSI float32 `protobuf:"fixed32,32,opt,name=rssi,proto3" json:"rssi,omitempty"`
 	// Signal-to-noise-ratio in dB
 	SNR                  float32           `protobuf:"fixed32,33,opt,name=snr,proto3" json:"snr,omitempty"`
-	Location             *LocationMetadata `protobuf:"bytes,41,opt,name=location" json:"location,omitempty"`
+	Location             *LocationMetadata `protobuf:"bytes,41,opt,name=location,proto3" json:"location,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
 	XXX_sizecache        int32             `json:"-"`
 }
@@ -512,7 +512,7 @@ type Status struct {
 	GatewayTrusted bool `protobuf:"varint,3,opt,name=gateway_trusted,json=gatewayTrusted,proto3" json:"gateway_trusted,omitempty"`
 	// Boot time in Unix nanoseconds
 	BootTime     int64    `protobuf:"varint,4,opt,name=boot_time,json=bootTime,proto3" json:"boot_time,omitempty"`
-	IP           []string `protobuf:"bytes,11,rep,name=ip" json:"ip,omitempty"`
+	IP           []string `protobuf:"bytes,11,rep,name=ip,proto3" json:"ip,omitempty"`
 	Platform     string   `protobuf:"bytes,12,opt,name=platform,proto3" json:"platform,omitempty"`
 	ContactEmail string   `protobuf:"bytes,13,opt,name=contact_email,json=contactEmail,proto3" json:"contact_email,omitempty"`
 	Description  string   `protobuf:"bytes,14,opt,name=description,proto3" json:"description,omitempty"`
@@ -528,7 +528,7 @@ type Status struct {
 	DSP uint32 `protobuf:"varint,19,opt,name=dsp,proto3" json:"dsp,omitempty"`
 	// Version of gateway driver (in X.X.X format)
 	HAL      string            `protobuf:"bytes,20,opt,name=hal,proto3" json:"hal,omitempty"`
-	Location *LocationMetadata `protobuf:"bytes,21,opt,name=location" json:"location,omitempty"`
+	Location *LocationMetadata `protobuf:"bytes,21,opt,name=location,proto3" json:"location,omitempty"`
 	// Round-trip time to the server in milliseconds
 	RTT uint32 `protobuf:"varint,31,opt,name=rtt,proto3" json:"rtt,omitempty"`
 	// Total number of received uplink packets since boot
@@ -547,9 +547,9 @@ type Status struct {
 	LmNw uint32 `protobuf:"varint,47,opt,name=lm_nw,json=lmNw,proto3" json:"lm_nw,omitempty"`
 	// Number of lost PPS pulses
 	LPPS uint32            `protobuf:"varint,48,opt,name=l_pps,json=lPps,proto3" json:"l_pps,omitempty"`
-	OS   *Status_OSMetrics `protobuf:"bytes,51,opt,name=os" json:"os,omitempty"`
+	OS   *Status_OSMetrics `protobuf:"bytes,51,opt,name=os,proto3" json:"os,omitempty"`
 	// debug or warning messages from the gateway
-	Messages             []string `protobuf:"bytes,52,rep,name=messages" json:"messages,omitempty"`
+	Messages             []string `protobuf:"bytes,52,rep,name=messages,proto3" json:"messages,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
@@ -2075,6 +2075,9 @@ func encodeVarintPopulateGateway(dAtA []byte, v uint64) []byte {
 	return dAtA
 }
 func (m *LocationMetadata) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.Time != 0 {
@@ -2099,6 +2102,9 @@ func (m *LocationMetadata) Size() (n int) {
 }
 
 func (m *RxMetadata) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.GatewayID)
@@ -2147,6 +2153,9 @@ func (m *RxMetadata) Size() (n int) {
 }
 
 func (m *RxMetadata_Antenna) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.Antenna != 0 {
@@ -2181,6 +2190,9 @@ func (m *RxMetadata_Antenna) Size() (n int) {
 }
 
 func (m *TxConfiguration) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.Timestamp != 0 {
@@ -2205,6 +2217,9 @@ func (m *TxConfiguration) Size() (n int) {
 }
 
 func (m *Status) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.Timestamp != 0 {
@@ -2304,6 +2319,9 @@ func (m *Status) Size() (n int) {
 }
 
 func (m *Status_OSMetrics) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.Load_1 != 0 {

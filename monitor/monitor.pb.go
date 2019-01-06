@@ -14,8 +14,10 @@ import networkserver "github.com/TheThingsNetwork/api/networkserver"
 import router "github.com/TheThingsNetwork/api/router"
 import types "github.com/gogo/protobuf/types"
 
-import context "golang.org/x/net/context"
-import grpc "google.golang.org/grpc"
+import (
+	context "golang.org/x/net/context"
+	grpc "google.golang.org/grpc"
+)
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
@@ -37,8 +39,9 @@ var _ grpc.ClientConn
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion4
 
-// Client API for Monitor service
-
+// MonitorClient is the client API for Monitor service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type MonitorClient interface {
 	RouterStatus(ctx context.Context, opts ...grpc.CallOption) (Monitor_RouterStatusClient, error)
 	GatewayStatus(ctx context.Context, opts ...grpc.CallOption) (Monitor_GatewayStatusClient, error)
@@ -435,8 +438,7 @@ func (x *monitorNetworkServerStatusClient) CloseAndRecv() (*types.Empty, error) 
 	return m, nil
 }
 
-// Server API for Monitor service
-
+// MonitorServer is the server API for Monitor service.
 type MonitorServer interface {
 	RouterStatus(Monitor_RouterStatusServer) error
 	GatewayStatus(Monitor_GatewayStatusServer) error

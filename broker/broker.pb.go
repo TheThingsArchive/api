@@ -18,8 +18,10 @@ import github_com_TheThingsNetwork_ttn_core_types "github.com/TheThingsNetwork/t
 
 import bytes "bytes"
 
-import context "golang.org/x/net/context"
-import grpc "google.golang.org/grpc"
+import (
+	context "golang.org/x/net/context"
+	grpc "google.golang.org/grpc"
+)
 
 import strings "strings"
 import reflect "reflect"
@@ -47,8 +49,8 @@ type DownlinkOption struct {
 	Score uint32 `protobuf:"varint,3,opt,name=score,proto3" json:"score,omitempty"`
 	// deadline time at server represented as Unix nanoseconds
 	Deadline              int64                    `protobuf:"varint,4,opt,name=deadline,proto3" json:"deadline,omitempty"`
-	ProtocolConfiguration protocol.TxConfiguration `protobuf:"bytes,5,opt,name=protocol_configuration,json=protocolConfiguration" json:"protocol_configuration"`
-	GatewayConfiguration  gateway.TxConfiguration  `protobuf:"bytes,6,opt,name=gateway_configuration,json=gatewayConfiguration" json:"gateway_configuration"`
+	ProtocolConfiguration protocol.TxConfiguration `protobuf:"bytes,5,opt,name=protocol_configuration,json=protocolConfiguration,proto3" json:"protocol_configuration"`
+	GatewayConfiguration  gateway.TxConfiguration  `protobuf:"bytes,6,opt,name=gateway_configuration,json=gatewayConfiguration,proto3" json:"gateway_configuration"`
 	XXX_NoUnkeyedLiteral  struct{}                 `json:"-"`
 	XXX_sizecache         int32                    `json:"-"`
 }
@@ -130,15 +132,15 @@ func (m *DownlinkOption) GetGatewayConfiguration() gateway.TxConfiguration {
 // received from the Router
 type UplinkMessage struct {
 	Payload              []byte                                             `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
-	Message              *protocol.Message                                  `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
+	Message              *protocol.Message                                  `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
 	DevEUI               *github_com_TheThingsNetwork_ttn_core_types.DevEUI `protobuf:"bytes,11,opt,name=dev_eui,json=devEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevEUI" json:"dev_eui,omitempty"`
 	AppEUI               *github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,12,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui,omitempty"`
 	AppID                string                                             `protobuf:"bytes,13,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
 	DevID                string                                             `protobuf:"bytes,14,opt,name=dev_id,json=devId,proto3" json:"dev_id,omitempty"`
-	ProtocolMetadata     protocol.RxMetadata                                `protobuf:"bytes,21,opt,name=protocol_metadata,json=protocolMetadata" json:"protocol_metadata"`
-	GatewayMetadata      gateway.RxMetadata                                 `protobuf:"bytes,22,opt,name=gateway_metadata,json=gatewayMetadata" json:"gateway_metadata"`
-	DownlinkOptions      []*DownlinkOption                                  `protobuf:"bytes,31,rep,name=downlink_options,json=downlinkOptions" json:"downlink_options,omitempty"`
-	Trace                *trace.Trace                                       `protobuf:"bytes,41,opt,name=trace" json:"trace,omitempty"`
+	ProtocolMetadata     protocol.RxMetadata                                `protobuf:"bytes,21,opt,name=protocol_metadata,json=protocolMetadata,proto3" json:"protocol_metadata"`
+	GatewayMetadata      gateway.RxMetadata                                 `protobuf:"bytes,22,opt,name=gateway_metadata,json=gatewayMetadata,proto3" json:"gateway_metadata"`
+	DownlinkOptions      []*DownlinkOption                                  `protobuf:"bytes,31,rep,name=downlink_options,json=downlinkOptions,proto3" json:"downlink_options,omitempty"`
+	Trace                *trace.Trace                                       `protobuf:"bytes,41,opt,name=trace,proto3" json:"trace,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                           `json:"-"`
 	XXX_sizecache        int32                                              `json:"-"`
 }
@@ -234,13 +236,13 @@ func (m *UplinkMessage) GetTrace() *trace.Trace {
 // received from the Handler, sent to the Router, used as Template
 type DownlinkMessage struct {
 	Payload              []byte                                            `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
-	Message              *protocol.Message                                 `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
+	Message              *protocol.Message                                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
 	DevEUI               github_com_TheThingsNetwork_ttn_core_types.DevEUI `protobuf:"bytes,11,opt,name=dev_eui,json=devEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevEUI" json:"dev_eui"`
 	AppEUI               github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,12,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui"`
 	AppID                string                                            `protobuf:"bytes,13,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
 	DevID                string                                            `protobuf:"bytes,14,opt,name=dev_id,json=devId,proto3" json:"dev_id,omitempty"`
-	DownlinkOption       *DownlinkOption                                   `protobuf:"bytes,21,opt,name=downlink_option,json=downlinkOption" json:"downlink_option,omitempty"`
-	Trace                *trace.Trace                                      `protobuf:"bytes,31,opt,name=trace" json:"trace,omitempty"`
+	DownlinkOption       *DownlinkOption                                   `protobuf:"bytes,21,opt,name=downlink_option,json=downlinkOption,proto3" json:"downlink_option,omitempty"`
+	Trace                *trace.Trace                                      `protobuf:"bytes,31,opt,name=trace,proto3" json:"trace,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                          `json:"-"`
 	XXX_sizecache        int32                                             `json:"-"`
 }
@@ -322,9 +324,9 @@ func (m *DownlinkMessage) GetTrace() *trace.Trace {
 // sent to the Router, used as Template
 type DeviceActivationResponse struct {
 	Payload              []byte            `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
-	Message              *protocol.Message `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
-	DownlinkOption       *DownlinkOption   `protobuf:"bytes,11,opt,name=downlink_option,json=downlinkOption" json:"downlink_option,omitempty"`
-	Trace                *trace.Trace      `protobuf:"bytes,21,opt,name=trace" json:"trace,omitempty"`
+	Message              *protocol.Message `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+	DownlinkOption       *DownlinkOption   `protobuf:"bytes,11,opt,name=downlink_option,json=downlinkOption,proto3" json:"downlink_option,omitempty"`
+	Trace                *trace.Trace      `protobuf:"bytes,21,opt,name=trace,proto3" json:"trace,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
 	XXX_sizecache        int32             `json:"-"`
 }
@@ -392,16 +394,16 @@ func (m *DeviceActivationResponse) GetTrace() *trace.Trace {
 // sent to the Handler
 type DeduplicatedUplinkMessage struct {
 	Payload              []byte                                             `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
-	Message              *protocol.Message                                  `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
+	Message              *protocol.Message                                  `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
 	DevEUI               *github_com_TheThingsNetwork_ttn_core_types.DevEUI `protobuf:"bytes,11,opt,name=dev_eui,json=devEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevEUI" json:"dev_eui,omitempty"`
 	AppEUI               *github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,12,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui,omitempty"`
 	AppID                string                                             `protobuf:"bytes,13,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
 	DevID                string                                             `protobuf:"bytes,14,opt,name=dev_id,json=devId,proto3" json:"dev_id,omitempty"`
-	ProtocolMetadata     protocol.RxMetadata                                `protobuf:"bytes,21,opt,name=protocol_metadata,json=protocolMetadata" json:"protocol_metadata"`
-	GatewayMetadata      []*gateway.RxMetadata                              `protobuf:"bytes,22,rep,name=gateway_metadata,json=gatewayMetadata" json:"gateway_metadata,omitempty"`
+	ProtocolMetadata     protocol.RxMetadata                                `protobuf:"bytes,21,opt,name=protocol_metadata,json=protocolMetadata,proto3" json:"protocol_metadata"`
+	GatewayMetadata      []*gateway.RxMetadata                              `protobuf:"bytes,22,rep,name=gateway_metadata,json=gatewayMetadata,proto3" json:"gateway_metadata,omitempty"`
 	ServerTime           int64                                              `protobuf:"varint,23,opt,name=server_time,json=serverTime,proto3" json:"server_time,omitempty"`
-	ResponseTemplate     *DownlinkMessage                                   `protobuf:"bytes,31,opt,name=response_template,json=responseTemplate" json:"response_template,omitempty"`
-	Trace                *trace.Trace                                       `protobuf:"bytes,41,opt,name=trace" json:"trace,omitempty"`
+	ResponseTemplate     *DownlinkMessage                                   `protobuf:"bytes,31,opt,name=response_template,json=responseTemplate,proto3" json:"response_template,omitempty"`
+	Trace                *trace.Trace                                       `protobuf:"bytes,41,opt,name=trace,proto3" json:"trace,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                           `json:"-"`
 	XXX_sizecache        int32                                              `json:"-"`
 }
@@ -504,14 +506,14 @@ func (m *DeduplicatedUplinkMessage) GetTrace() *trace.Trace {
 // received from the Router
 type DeviceActivationRequest struct {
 	Payload              []byte                                            `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
-	Message              *protocol.Message                                 `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
+	Message              *protocol.Message                                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
 	DevEUI               github_com_TheThingsNetwork_ttn_core_types.DevEUI `protobuf:"bytes,11,opt,name=dev_eui,json=devEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevEUI" json:"dev_eui"`
 	AppEUI               github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,12,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui"`
-	ProtocolMetadata     protocol.RxMetadata                               `protobuf:"bytes,21,opt,name=protocol_metadata,json=protocolMetadata" json:"protocol_metadata"`
-	GatewayMetadata      gateway.RxMetadata                                `protobuf:"bytes,22,opt,name=gateway_metadata,json=gatewayMetadata" json:"gateway_metadata"`
-	ActivationMetadata   *protocol.ActivationMetadata                      `protobuf:"bytes,23,opt,name=activation_metadata,json=activationMetadata" json:"activation_metadata,omitempty"`
-	DownlinkOptions      []*DownlinkOption                                 `protobuf:"bytes,31,rep,name=downlink_options,json=downlinkOptions" json:"downlink_options,omitempty"`
-	Trace                *trace.Trace                                      `protobuf:"bytes,41,opt,name=trace" json:"trace,omitempty"`
+	ProtocolMetadata     protocol.RxMetadata                               `protobuf:"bytes,21,opt,name=protocol_metadata,json=protocolMetadata,proto3" json:"protocol_metadata"`
+	GatewayMetadata      gateway.RxMetadata                                `protobuf:"bytes,22,opt,name=gateway_metadata,json=gatewayMetadata,proto3" json:"gateway_metadata"`
+	ActivationMetadata   *protocol.ActivationMetadata                      `protobuf:"bytes,23,opt,name=activation_metadata,json=activationMetadata,proto3" json:"activation_metadata,omitempty"`
+	DownlinkOptions      []*DownlinkOption                                 `protobuf:"bytes,31,rep,name=downlink_options,json=downlinkOptions,proto3" json:"downlink_options,omitempty"`
+	Trace                *trace.Trace                                      `protobuf:"bytes,41,opt,name=trace,proto3" json:"trace,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                          `json:"-"`
 	XXX_sizecache        int32                                             `json:"-"`
 }
@@ -600,17 +602,17 @@ func (m *DeviceActivationRequest) GetTrace() *trace.Trace {
 // sent to the Handler
 type DeduplicatedDeviceActivationRequest struct {
 	Payload              []byte                                            `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
-	Message              *protocol.Message                                 `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
+	Message              *protocol.Message                                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
 	DevEUI               github_com_TheThingsNetwork_ttn_core_types.DevEUI `protobuf:"bytes,11,opt,name=dev_eui,json=devEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevEUI" json:"dev_eui"`
 	AppEUI               github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,12,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui"`
 	AppID                string                                            `protobuf:"bytes,13,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
 	DevID                string                                            `protobuf:"bytes,14,opt,name=dev_id,json=devId,proto3" json:"dev_id,omitempty"`
-	ProtocolMetadata     protocol.RxMetadata                               `protobuf:"bytes,21,opt,name=protocol_metadata,json=protocolMetadata" json:"protocol_metadata"`
-	GatewayMetadata      []*gateway.RxMetadata                             `protobuf:"bytes,22,rep,name=gateway_metadata,json=gatewayMetadata" json:"gateway_metadata,omitempty"`
-	ActivationMetadata   *protocol.ActivationMetadata                      `protobuf:"bytes,23,opt,name=activation_metadata,json=activationMetadata" json:"activation_metadata,omitempty"`
+	ProtocolMetadata     protocol.RxMetadata                               `protobuf:"bytes,21,opt,name=protocol_metadata,json=protocolMetadata,proto3" json:"protocol_metadata"`
+	GatewayMetadata      []*gateway.RxMetadata                             `protobuf:"bytes,22,rep,name=gateway_metadata,json=gatewayMetadata,proto3" json:"gateway_metadata,omitempty"`
+	ActivationMetadata   *protocol.ActivationMetadata                      `protobuf:"bytes,23,opt,name=activation_metadata,json=activationMetadata,proto3" json:"activation_metadata,omitempty"`
 	ServerTime           int64                                             `protobuf:"varint,24,opt,name=server_time,json=serverTime,proto3" json:"server_time,omitempty"`
-	ResponseTemplate     *DeviceActivationResponse                         `protobuf:"bytes,31,opt,name=response_template,json=responseTemplate" json:"response_template,omitempty"`
-	Trace                *trace.Trace                                      `protobuf:"bytes,41,opt,name=trace" json:"trace,omitempty"`
+	ResponseTemplate     *DeviceActivationResponse                         `protobuf:"bytes,31,opt,name=response_template,json=responseTemplate,proto3" json:"response_template,omitempty"`
+	Trace                *trace.Trace                                      `protobuf:"bytes,41,opt,name=trace,proto3" json:"trace,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                          `json:"-"`
 	XXX_sizecache        int32                                             `json:"-"`
 }
@@ -719,7 +721,7 @@ func (m *DeduplicatedDeviceActivationRequest) GetTrace() *trace.Trace {
 
 type ActivationChallengeRequest struct {
 	Payload              []byte                                            `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
-	Message              *protocol.Message                                 `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
+	Message              *protocol.Message                                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
 	DevEUI               github_com_TheThingsNetwork_ttn_core_types.DevEUI `protobuf:"bytes,11,opt,name=dev_eui,json=devEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevEUI" json:"dev_eui"`
 	AppEUI               github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,12,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui"`
 	AppID                string                                            `protobuf:"bytes,13,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
@@ -790,7 +792,7 @@ func (m *ActivationChallengeRequest) GetDevID() string {
 
 type ActivationChallengeResponse struct {
 	Payload              []byte            `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
-	Message              *protocol.Message `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
+	Message              *protocol.Message `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
 	XXX_sizecache        int32             `json:"-"`
 }
@@ -918,14 +920,14 @@ func (m *StatusRequest) XXX_DiscardUnknown() {
 var xxx_messageInfo_StatusRequest proto.InternalMessageInfo
 
 type Status struct {
-	System            api.SystemStats    `protobuf:"bytes,1,opt,name=system" json:"system"`
-	Component         api.ComponentStats `protobuf:"bytes,2,opt,name=component" json:"component"`
-	Uplink            *api.Rates         `protobuf:"bytes,11,opt,name=uplink" json:"uplink,omitempty"`
-	UplinkUnique      *api.Rates         `protobuf:"bytes,12,opt,name=uplink_unique,json=uplinkUnique" json:"uplink_unique,omitempty"`
-	Downlink          *api.Rates         `protobuf:"bytes,13,opt,name=downlink" json:"downlink,omitempty"`
-	Activations       *api.Rates         `protobuf:"bytes,14,opt,name=activations" json:"activations,omitempty"`
-	ActivationsUnique *api.Rates         `protobuf:"bytes,15,opt,name=activations_unique,json=activationsUnique" json:"activations_unique,omitempty"`
-	Deduplication     *api.Percentiles   `protobuf:"bytes,16,opt,name=deduplication" json:"deduplication,omitempty"`
+	System            api.SystemStats    `protobuf:"bytes,1,opt,name=system,proto3" json:"system"`
+	Component         api.ComponentStats `protobuf:"bytes,2,opt,name=component,proto3" json:"component"`
+	Uplink            *api.Rates         `protobuf:"bytes,11,opt,name=uplink,proto3" json:"uplink,omitempty"`
+	UplinkUnique      *api.Rates         `protobuf:"bytes,12,opt,name=uplink_unique,json=uplinkUnique,proto3" json:"uplink_unique,omitempty"`
+	Downlink          *api.Rates         `protobuf:"bytes,13,opt,name=downlink,proto3" json:"downlink,omitempty"`
+	Activations       *api.Rates         `protobuf:"bytes,14,opt,name=activations,proto3" json:"activations,omitempty"`
+	ActivationsUnique *api.Rates         `protobuf:"bytes,15,opt,name=activations_unique,json=activationsUnique,proto3" json:"activations_unique,omitempty"`
+	Deduplication     *api.Percentiles   `protobuf:"bytes,16,opt,name=deduplication,proto3" json:"deduplication,omitempty"`
 	// Connections
 	ConnectedRouters     uint32   `protobuf:"varint,21,opt,name=connected_routers,json=connectedRouters,proto3" json:"connected_routers,omitempty"`
 	ConnectedHandlers    uint32   `protobuf:"varint,22,opt,name=connected_handlers,json=connectedHandlers,proto3" json:"connected_handlers,omitempty"`
@@ -1674,8 +1676,9 @@ var _ grpc.ClientConn
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion4
 
-// Client API for Broker service
-
+// BrokerClient is the client API for Broker service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type BrokerClient interface {
 	// Router initiates an Association with the Broker.
 	Associate(ctx context.Context, opts ...grpc.CallOption) (Broker_AssociateClient, error)
@@ -1801,8 +1804,7 @@ func (c *brokerClient) Activate(ctx context.Context, in *DeviceActivationRequest
 	return out, nil
 }
 
-// Server API for Broker service
-
+// BrokerServer is the server API for Broker service.
 type BrokerServer interface {
 	// Router initiates an Association with the Broker.
 	Associate(Broker_AssociateServer) error
@@ -1939,8 +1941,9 @@ var _Broker_serviceDesc = grpc.ServiceDesc{
 	Metadata: "github.com/TheThingsNetwork/api/broker/broker.proto",
 }
 
-// Client API for BrokerManager service
-
+// BrokerManagerClient is the client API for BrokerManager service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type BrokerManagerClient interface {
 	// Handler announces a new application to Broker. This is a temporary method that will be removed
 	// when we can push updates from the Discovery service to the routing services.
@@ -1975,8 +1978,7 @@ func (c *brokerManagerClient) GetStatus(ctx context.Context, in *StatusRequest, 
 	return out, nil
 }
 
-// Server API for BrokerManager service
-
+// BrokerManagerServer is the server API for BrokerManager service.
 type BrokerManagerServer interface {
 	// Handler announces a new application to Broker. This is a temporary method that will be removed
 	// when we can push updates from the Discovery service to the routing services.
@@ -3370,6 +3372,9 @@ func encodeVarintPopulateBroker(dAtA []byte, v uint64) []byte {
 	return dAtA
 }
 func (m *DownlinkOption) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.Identifier)
@@ -3394,6 +3399,9 @@ func (m *DownlinkOption) Size() (n int) {
 }
 
 func (m *UplinkMessage) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.Payload)
@@ -3438,6 +3446,9 @@ func (m *UplinkMessage) Size() (n int) {
 }
 
 func (m *DownlinkMessage) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.Payload)
@@ -3472,6 +3483,9 @@ func (m *DownlinkMessage) Size() (n int) {
 }
 
 func (m *DeviceActivationResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.Payload)
@@ -3494,6 +3508,9 @@ func (m *DeviceActivationResponse) Size() (n int) {
 }
 
 func (m *DeduplicatedUplinkMessage) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.Payload)
@@ -3543,6 +3560,9 @@ func (m *DeduplicatedUplinkMessage) Size() (n int) {
 }
 
 func (m *DeviceActivationRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.Payload)
@@ -3579,6 +3599,9 @@ func (m *DeviceActivationRequest) Size() (n int) {
 }
 
 func (m *DeduplicatedDeviceActivationRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.Payload)
@@ -3628,6 +3651,9 @@ func (m *DeduplicatedDeviceActivationRequest) Size() (n int) {
 }
 
 func (m *ActivationChallengeRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.Payload)
@@ -3654,6 +3680,9 @@ func (m *ActivationChallengeRequest) Size() (n int) {
 }
 
 func (m *ActivationChallengeResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.Payload)
@@ -3668,18 +3697,27 @@ func (m *ActivationChallengeResponse) Size() (n int) {
 }
 
 func (m *SubscribeRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	return n
 }
 
 func (m *StatusRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	return n
 }
 
 func (m *Status) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = m.System.Size()
@@ -3720,6 +3758,9 @@ func (m *Status) Size() (n int) {
 }
 
 func (m *ApplicationHandlerRegistration) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.AppID)

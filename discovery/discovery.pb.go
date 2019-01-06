@@ -15,8 +15,10 @@ import github_com_TheThingsNetwork_ttn_core_types "github.com/TheThingsNetwork/t
 
 import bytes "bytes"
 
-import context "golang.org/x/net/context"
-import grpc "google.golang.org/grpc"
+import (
+	context "golang.org/x/net/context"
+	grpc "google.golang.org/grpc"
+)
 
 import strings "strings"
 import reflect "reflect"
@@ -279,7 +281,7 @@ type Announcement struct {
 	// if `amqps://host` then `amqp://host:5672` and `amqps://host:5671`
 	AmqpAddress string `protobuf:"bytes,16,opt,name=amqp_address,json=amqpAddress,proto3" json:"amqp_address,omitempty"`
 	// Metadata for this component
-	Metadata             []*Metadata `protobuf:"bytes,22,rep,name=metadata" json:"metadata,omitempty"`
+	Metadata             []*Metadata `protobuf:"bytes,22,rep,name=metadata,proto3" json:"metadata,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
 	XXX_sizecache        int32       `json:"-"`
 }
@@ -516,7 +518,7 @@ type MetadataRequest struct {
 	// The name of the service (router/broker/handler) that should be modified
 	ServiceName string `protobuf:"bytes,2,opt,name=service_name,json=serviceName,proto3" json:"service_name,omitempty"`
 	// Metadata to add or remove
-	Metadata             Metadata `protobuf:"bytes,12,opt,name=metadata" json:"metadata"`
+	Metadata             Metadata `protobuf:"bytes,12,opt,name=metadata,proto3" json:"metadata"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
@@ -576,7 +578,7 @@ func (m *MetadataRequest) GetMetadata() Metadata {
 
 // A list of announcements
 type AnnouncementsResponse struct {
-	Services             []*Announcement `protobuf:"bytes,1,rep,name=services" json:"services,omitempty"`
+	Services             []*Announcement `protobuf:"bytes,1,rep,name=services,proto3" json:"services,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
 	XXX_sizecache        int32           `json:"-"`
 }
@@ -1150,8 +1152,9 @@ var _ grpc.ClientConn
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion4
 
-// Client API for Discovery service
-
+// DiscoveryClient is the client API for Discovery service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type DiscoveryClient interface {
 	// Announce a component to the Discovery server.
 	// A call to `Announce` does not processes the `metadata` field, so you can safely leave this field empty.
@@ -1250,8 +1253,7 @@ func (c *discoveryClient) GetByAppEUI(ctx context.Context, in *GetByAppEUIReques
 	return out, nil
 }
 
-// Server API for Discovery service
-
+// DiscoveryServer is the server API for Discovery service.
 type DiscoveryServer interface {
 	// Announce a component to the Discovery server.
 	// A call to `Announce` does not processes the `metadata` field, so you can safely leave this field empty.
@@ -1459,8 +1461,9 @@ var _Discovery_serviceDesc = grpc.ServiceDesc{
 	Metadata: "github.com/TheThingsNetwork/api/discovery/discovery.proto",
 }
 
-// Client API for DiscoveryManager service
-
+// DiscoveryManagerClient is the client API for DiscoveryManager service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type DiscoveryManagerClient interface {
 }
 
@@ -1472,8 +1475,7 @@ func NewDiscoveryManagerClient(cc *grpc.ClientConn) DiscoveryManagerClient {
 	return &discoveryManagerClient{cc}
 }
 
-// Server API for DiscoveryManager service
-
+// DiscoveryManagerServer is the server API for DiscoveryManager service.
 type DiscoveryManagerServer interface {
 }
 
@@ -2089,6 +2091,9 @@ func encodeVarintPopulateDiscovery(dAtA []byte, v uint64) []byte {
 	return dAtA
 }
 func (m *Metadata) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.Metadata != nil {
@@ -2098,6 +2103,9 @@ func (m *Metadata) Size() (n int) {
 }
 
 func (m *Metadata_GatewayID) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.GatewayID)
@@ -2105,6 +2113,9 @@ func (m *Metadata_GatewayID) Size() (n int) {
 	return n
 }
 func (m *Metadata_DevAddrPrefix) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.DevAddrPrefix != nil {
@@ -2114,6 +2125,9 @@ func (m *Metadata_DevAddrPrefix) Size() (n int) {
 	return n
 }
 func (m *Metadata_AppID) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.AppID)
@@ -2121,6 +2135,9 @@ func (m *Metadata_AppID) Size() (n int) {
 	return n
 }
 func (m *Metadata_AppEUI) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.AppEUI != nil {
@@ -2130,6 +2147,9 @@ func (m *Metadata_AppEUI) Size() (n int) {
 	return n
 }
 func (m *Announcement) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.ID)
@@ -2189,6 +2209,9 @@ func (m *Announcement) Size() (n int) {
 }
 
 func (m *GetServiceRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.ServiceName)
@@ -2199,6 +2222,9 @@ func (m *GetServiceRequest) Size() (n int) {
 }
 
 func (m *GetRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.ID)
@@ -2213,6 +2239,9 @@ func (m *GetRequest) Size() (n int) {
 }
 
 func (m *MetadataRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.ID)
@@ -2229,6 +2258,9 @@ func (m *MetadataRequest) Size() (n int) {
 }
 
 func (m *AnnouncementsResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if len(m.Services) > 0 {
@@ -2241,6 +2273,9 @@ func (m *AnnouncementsResponse) Size() (n int) {
 }
 
 func (m *GetByAppIDRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.AppID)
@@ -2251,6 +2286,9 @@ func (m *GetByAppIDRequest) Size() (n int) {
 }
 
 func (m *GetByGatewayIDRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.GatewayID)
@@ -2261,6 +2299,9 @@ func (m *GetByGatewayIDRequest) Size() (n int) {
 }
 
 func (m *GetByAppEUIRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = m.AppEUI.Size()

@@ -173,12 +173,52 @@ internal final class Networkserver_NetworkServerManagerServiceClient: ServiceCli
 }
 
 /// To build a server, implement a class that conforms to this protocol.
-internal protocol Networkserver_NetworkServerProvider {
+/// If one of the methods returning `ServerStatus?` returns nil,
+/// it is expected that you have already returned a status to the client by means of `session.close`.
+internal protocol Networkserver_NetworkServerProvider: ServiceProvider {
   func getDevices(request: Networkserver_DevicesRequest, session: Networkserver_NetworkServerGetDevicesSession) throws -> Networkserver_DevicesResponse
   func prepareActivation(request: Broker_DeduplicatedDeviceActivationRequest, session: Networkserver_NetworkServerPrepareActivationSession) throws -> Broker_DeduplicatedDeviceActivationRequest
   func activate(request: Handler_DeviceActivationResponse, session: Networkserver_NetworkServerActivateSession) throws -> Handler_DeviceActivationResponse
   func uplink(request: Broker_DeduplicatedUplinkMessage, session: Networkserver_NetworkServerUplinkSession) throws -> Broker_DeduplicatedUplinkMessage
   func downlink(request: Broker_DownlinkMessage, session: Networkserver_NetworkServerDownlinkSession) throws -> Broker_DownlinkMessage
+}
+
+extension Networkserver_NetworkServerProvider {
+  internal var serviceName: String { return "networkserver.NetworkServer" }
+
+  /// Determines and calls the appropriate request handler, depending on the request's method.
+  /// Throws `HandleMethodError.unknownMethod` for methods not handled by this service.
+  internal func handleMethod(_ method: String, handler: Handler) throws -> ServerStatus? {
+    switch method {
+    case "/networkserver.NetworkServer/GetDevices":
+      return try Networkserver_NetworkServerGetDevicesSessionBase(
+        handler: handler,
+        providerBlock: { try self.getDevices(request: $0, session: $1 as! Networkserver_NetworkServerGetDevicesSessionBase) })
+          .run()
+    case "/networkserver.NetworkServer/PrepareActivation":
+      return try Networkserver_NetworkServerPrepareActivationSessionBase(
+        handler: handler,
+        providerBlock: { try self.prepareActivation(request: $0, session: $1 as! Networkserver_NetworkServerPrepareActivationSessionBase) })
+          .run()
+    case "/networkserver.NetworkServer/Activate":
+      return try Networkserver_NetworkServerActivateSessionBase(
+        handler: handler,
+        providerBlock: { try self.activate(request: $0, session: $1 as! Networkserver_NetworkServerActivateSessionBase) })
+          .run()
+    case "/networkserver.NetworkServer/Uplink":
+      return try Networkserver_NetworkServerUplinkSessionBase(
+        handler: handler,
+        providerBlock: { try self.uplink(request: $0, session: $1 as! Networkserver_NetworkServerUplinkSessionBase) })
+          .run()
+    case "/networkserver.NetworkServer/Downlink":
+      return try Networkserver_NetworkServerDownlinkSessionBase(
+        handler: handler,
+        providerBlock: { try self.downlink(request: $0, session: $1 as! Networkserver_NetworkServerDownlinkSessionBase) })
+          .run()
+    default:
+      throw HandleMethodError.unknownMethod
+    }
+  }
 }
 
 internal protocol Networkserver_NetworkServerGetDevicesSession: ServerSessionUnary {}
@@ -201,108 +241,32 @@ internal protocol Networkserver_NetworkServerDownlinkSession: ServerSessionUnary
 
 fileprivate final class Networkserver_NetworkServerDownlinkSessionBase: ServerSessionUnaryBase<Broker_DownlinkMessage, Broker_DownlinkMessage>, Networkserver_NetworkServerDownlinkSession {}
 
-
-/// Main server for generated service
-internal final class Networkserver_NetworkServerServer: ServiceServer {
-  private let provider: Networkserver_NetworkServerProvider
-
-  internal init(address: String, provider: Networkserver_NetworkServerProvider) {
-    self.provider = provider
-    super.init(address: address)
-  }
-
-  internal init?(address: String, certificateURL: URL, keyURL: URL, provider: Networkserver_NetworkServerProvider) {
-    self.provider = provider
-    super.init(address: address, certificateURL: certificateURL, keyURL: keyURL)
-  }
-
-  internal init?(address: String, certificateString: String, keyString: String, provider: Networkserver_NetworkServerProvider) {
-    self.provider = provider
-    super.init(address: address, certificateString: certificateString, keyString: keyString)
-  }
-
-  /// Start the server.
-  internal override func handleMethod(_ method: String, handler: Handler, queue: DispatchQueue) throws -> Bool {
-    let provider = self.provider
-    switch method {
-    case "/networkserver.NetworkServer/GetDevices":
-      try Networkserver_NetworkServerGetDevicesSessionBase(
-        handler: handler,
-        providerBlock: { try provider.getDevices(request: $0, session: $1 as! Networkserver_NetworkServerGetDevicesSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/networkserver.NetworkServer/PrepareActivation":
-      try Networkserver_NetworkServerPrepareActivationSessionBase(
-        handler: handler,
-        providerBlock: { try provider.prepareActivation(request: $0, session: $1 as! Networkserver_NetworkServerPrepareActivationSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/networkserver.NetworkServer/Activate":
-      try Networkserver_NetworkServerActivateSessionBase(
-        handler: handler,
-        providerBlock: { try provider.activate(request: $0, session: $1 as! Networkserver_NetworkServerActivateSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/networkserver.NetworkServer/Uplink":
-      try Networkserver_NetworkServerUplinkSessionBase(
-        handler: handler,
-        providerBlock: { try provider.uplink(request: $0, session: $1 as! Networkserver_NetworkServerUplinkSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/networkserver.NetworkServer/Downlink":
-      try Networkserver_NetworkServerDownlinkSessionBase(
-        handler: handler,
-        providerBlock: { try provider.downlink(request: $0, session: $1 as! Networkserver_NetworkServerDownlinkSessionBase) })
-          .run(queue: queue)
-      return true
-    default:
-      return false
-    }
-  }
+/// To build a server, implement a class that conforms to this protocol.
+/// If one of the methods returning `ServerStatus?` returns nil,
+/// it is expected that you have already returned a status to the client by means of `session.close`.
+internal protocol Networkserver_NetworkServerManagerProvider: ServiceProvider {
+  func getStatus(request: Networkserver_StatusRequest, session: Networkserver_NetworkServerManagerGetStatusSession) throws -> Networkserver_Status
 }
 
-/// To build a server, implement a class that conforms to this protocol.
-internal protocol Networkserver_NetworkServerManagerProvider {
-  func getStatus(request: Networkserver_StatusRequest, session: Networkserver_NetworkServerManagerGetStatusSession) throws -> Networkserver_Status
+extension Networkserver_NetworkServerManagerProvider {
+  internal var serviceName: String { return "networkserver.NetworkServerManager" }
+
+  /// Determines and calls the appropriate request handler, depending on the request's method.
+  /// Throws `HandleMethodError.unknownMethod` for methods not handled by this service.
+  internal func handleMethod(_ method: String, handler: Handler) throws -> ServerStatus? {
+    switch method {
+    case "/networkserver.NetworkServerManager/GetStatus":
+      return try Networkserver_NetworkServerManagerGetStatusSessionBase(
+        handler: handler,
+        providerBlock: { try self.getStatus(request: $0, session: $1 as! Networkserver_NetworkServerManagerGetStatusSessionBase) })
+          .run()
+    default:
+      throw HandleMethodError.unknownMethod
+    }
+  }
 }
 
 internal protocol Networkserver_NetworkServerManagerGetStatusSession: ServerSessionUnary {}
 
 fileprivate final class Networkserver_NetworkServerManagerGetStatusSessionBase: ServerSessionUnaryBase<Networkserver_StatusRequest, Networkserver_Status>, Networkserver_NetworkServerManagerGetStatusSession {}
-
-
-/// Main server for generated service
-internal final class Networkserver_NetworkServerManagerServer: ServiceServer {
-  private let provider: Networkserver_NetworkServerManagerProvider
-
-  internal init(address: String, provider: Networkserver_NetworkServerManagerProvider) {
-    self.provider = provider
-    super.init(address: address)
-  }
-
-  internal init?(address: String, certificateURL: URL, keyURL: URL, provider: Networkserver_NetworkServerManagerProvider) {
-    self.provider = provider
-    super.init(address: address, certificateURL: certificateURL, keyURL: keyURL)
-  }
-
-  internal init?(address: String, certificateString: String, keyString: String, provider: Networkserver_NetworkServerManagerProvider) {
-    self.provider = provider
-    super.init(address: address, certificateString: certificateString, keyString: keyString)
-  }
-
-  /// Start the server.
-  internal override func handleMethod(_ method: String, handler: Handler, queue: DispatchQueue) throws -> Bool {
-    let provider = self.provider
-    switch method {
-    case "/networkserver.NetworkServerManager/GetStatus":
-      try Networkserver_NetworkServerManagerGetStatusSessionBase(
-        handler: handler,
-        providerBlock: { try provider.getStatus(request: $0, session: $1 as! Networkserver_NetworkServerManagerGetStatusSessionBase) })
-          .run(queue: queue)
-      return true
-    default:
-      return false
-    }
-  }
-}
 

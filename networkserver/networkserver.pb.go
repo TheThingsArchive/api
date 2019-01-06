@@ -15,8 +15,10 @@ import _ "github.com/gogo/protobuf/gogoproto"
 
 import github_com_TheThingsNetwork_ttn_core_types "github.com/TheThingsNetwork/ttn/core/types"
 
-import context "golang.org/x/net/context"
-import grpc "google.golang.org/grpc"
+import (
+	context "golang.org/x/net/context"
+	grpc "google.golang.org/grpc"
+)
 
 import strings "strings"
 import reflect "reflect"
@@ -84,7 +86,7 @@ func (m *DevicesRequest) GetFCnt() uint32 {
 }
 
 type DevicesResponse struct {
-	Results              []*lorawan.Device `protobuf:"bytes,1,rep,name=results" json:"results,omitempty"`
+	Results              []*lorawan.Device `protobuf:"bytes,1,rep,name=results,proto3" json:"results,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
 	XXX_sizecache        int32             `json:"-"`
 }
@@ -168,12 +170,12 @@ var xxx_messageInfo_StatusRequest proto.InternalMessageInfo
 
 // message Status is the response to the StatusRequest
 type Status struct {
-	System               api.SystemStats    `protobuf:"bytes,1,opt,name=system" json:"system"`
-	Component            api.ComponentStats `protobuf:"bytes,2,opt,name=component" json:"component"`
-	Uplink               *api.Rates         `protobuf:"bytes,11,opt,name=uplink" json:"uplink,omitempty"`
-	Downlink             *api.Rates         `protobuf:"bytes,12,opt,name=downlink" json:"downlink,omitempty"`
-	Activations          *api.Rates         `protobuf:"bytes,13,opt,name=activations" json:"activations,omitempty"`
-	DevicesPerAddress    *api.Percentiles   `protobuf:"bytes,21,opt,name=devices_per_address,json=devicesPerAddress" json:"devices_per_address,omitempty"`
+	System               api.SystemStats    `protobuf:"bytes,1,opt,name=system,proto3" json:"system"`
+	Component            api.ComponentStats `protobuf:"bytes,2,opt,name=component,proto3" json:"component"`
+	Uplink               *api.Rates         `protobuf:"bytes,11,opt,name=uplink,proto3" json:"uplink,omitempty"`
+	Downlink             *api.Rates         `protobuf:"bytes,12,opt,name=downlink,proto3" json:"downlink,omitempty"`
+	Activations          *api.Rates         `protobuf:"bytes,13,opt,name=activations,proto3" json:"activations,omitempty"`
+	DevicesPerAddress    *api.Percentiles   `protobuf:"bytes,21,opt,name=devices_per_address,json=devicesPerAddress,proto3" json:"devices_per_address,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
 	XXX_sizecache        int32              `json:"-"`
 }
@@ -387,8 +389,9 @@ var _ grpc.ClientConn
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion4
 
-// Client API for NetworkServer service
-
+// NetworkServerClient is the client API for NetworkServer service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type NetworkServerClient interface {
 	// Broker requests devices with DevAddr and matching FCnt (or disabled FCnt check)
 	GetDevices(ctx context.Context, in *DevicesRequest, opts ...grpc.CallOption) (*DevicesResponse, error)
@@ -455,8 +458,7 @@ func (c *networkServerClient) Downlink(ctx context.Context, in *broker.DownlinkM
 	return out, nil
 }
 
-// Server API for NetworkServer service
-
+// NetworkServerServer is the server API for NetworkServer service.
 type NetworkServerServer interface {
 	// Broker requests devices with DevAddr and matching FCnt (or disabled FCnt check)
 	GetDevices(context.Context, *DevicesRequest) (*DevicesResponse, error)
@@ -593,8 +595,9 @@ var _NetworkServer_serviceDesc = grpc.ServiceDesc{
 	Metadata: "github.com/TheThingsNetwork/api/networkserver/networkserver.proto",
 }
 
-// Client API for NetworkServerManager service
-
+// NetworkServerManagerClient is the client API for NetworkServerManager service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type NetworkServerManagerClient interface {
 	GetStatus(ctx context.Context, in *StatusRequest, opts ...grpc.CallOption) (*Status, error)
 }
@@ -616,8 +619,7 @@ func (c *networkServerManagerClient) GetStatus(ctx context.Context, in *StatusRe
 	return out, nil
 }
 
-// Server API for NetworkServerManager service
-
+// NetworkServerManagerServer is the server API for NetworkServerManager service.
 type NetworkServerManagerServer interface {
 	GetStatus(context.Context, *StatusRequest) (*Status, error)
 }
@@ -948,6 +950,9 @@ func encodeVarintPopulateNetworkserver(dAtA []byte, v uint64) []byte {
 	return dAtA
 }
 func (m *DevicesRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = m.DevAddr.Size()
@@ -959,6 +964,9 @@ func (m *DevicesRequest) Size() (n int) {
 }
 
 func (m *DevicesResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if len(m.Results) > 0 {
@@ -971,12 +979,18 @@ func (m *DevicesResponse) Size() (n int) {
 }
 
 func (m *StatusRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	return n
 }
 
 func (m *Status) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = m.System.Size()

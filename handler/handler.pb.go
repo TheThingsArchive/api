@@ -18,8 +18,10 @@ import _ "google.golang.org/genproto/googleapis/api/annotations"
 
 import bytes "bytes"
 
-import context "golang.org/x/net/context"
-import grpc "google.golang.org/grpc"
+import (
+	context "golang.org/x/net/context"
+	grpc "google.golang.org/grpc"
+)
 
 import encoding_binary "encoding/binary"
 
@@ -43,10 +45,10 @@ const _ = proto.GoGoProtoPackageIsVersion2 // please upgrade the proto package
 
 type DeviceActivationResponse struct {
 	Payload              []byte                      `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
-	Message              *protocol.Message           `protobuf:"bytes,2,opt,name=message" json:"message,omitempty"`
-	DownlinkOption       broker.DownlinkOption       `protobuf:"bytes,11,opt,name=downlink_option,json=downlinkOption" json:"downlink_option"`
-	ActivationMetadata   protocol.ActivationMetadata `protobuf:"bytes,23,opt,name=activation_metadata,json=activationMetadata" json:"activation_metadata"`
-	Trace                *trace.Trace                `protobuf:"bytes,31,opt,name=trace" json:"trace,omitempty"`
+	Message              *protocol.Message           `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+	DownlinkOption       broker.DownlinkOption       `protobuf:"bytes,11,opt,name=downlink_option,json=downlinkOption,proto3" json:"downlink_option"`
+	ActivationMetadata   protocol.ActivationMetadata `protobuf:"bytes,23,opt,name=activation_metadata,json=activationMetadata,proto3" json:"activation_metadata"`
+	Trace                *trace.Trace                `protobuf:"bytes,31,opt,name=trace,proto3" json:"trace,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                    `json:"-"`
 	XXX_sizecache        int32                       `json:"-"`
 }
@@ -158,11 +160,11 @@ var xxx_messageInfo_StatusRequest proto.InternalMessageInfo
 
 // message Status is the response to the StatusRequest
 type Status struct {
-	System               api.SystemStats    `protobuf:"bytes,1,opt,name=system" json:"system"`
-	Component            api.ComponentStats `protobuf:"bytes,2,opt,name=component" json:"component"`
-	Uplink               *api.Rates         `protobuf:"bytes,11,opt,name=uplink" json:"uplink,omitempty"`
-	Downlink             *api.Rates         `protobuf:"bytes,12,opt,name=downlink" json:"downlink,omitempty"`
-	Activations          *api.Rates         `protobuf:"bytes,13,opt,name=activations" json:"activations,omitempty"`
+	System               api.SystemStats    `protobuf:"bytes,1,opt,name=system,proto3" json:"system"`
+	Component            api.ComponentStats `protobuf:"bytes,2,opt,name=component,proto3" json:"component"`
+	Uplink               *api.Rates         `protobuf:"bytes,11,opt,name=uplink,proto3" json:"uplink,omitempty"`
+	Downlink             *api.Rates         `protobuf:"bytes,12,opt,name=downlink,proto3" json:"downlink,omitempty"`
+	Activations          *api.Rates         `protobuf:"bytes,13,opt,name=activations,proto3" json:"activations,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
 	XXX_sizecache        int32              `json:"-"`
 }
@@ -450,7 +452,7 @@ type Device struct {
 	Latitude             float32           `protobuf:"fixed32,10,opt,name=latitude,proto3" json:"latitude,omitempty"`
 	Longitude            float32           `protobuf:"fixed32,11,opt,name=longitude,proto3" json:"longitude,omitempty"`
 	Altitude             int32             `protobuf:"varint,12,opt,name=altitude,proto3" json:"altitude,omitempty"`
-	Attributes           map[string]string `protobuf:"bytes,13,rep,name=attributes" json:"attributes,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Attributes           map[string]string `protobuf:"bytes,13,rep,name=attributes,proto3" json:"attributes,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	Description          string            `protobuf:"bytes,20,opt,name=description,proto3" json:"description,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
 	XXX_sizecache        int32             `json:"-"`
@@ -496,7 +498,7 @@ type isDevice_Device interface {
 }
 
 type Device_LoRaWANDevice struct {
-	LoRaWANDevice *lorawan.Device `protobuf:"bytes,3,opt,name=lorawan_device,json=lorawanDevice,oneof"`
+	LoRaWANDevice *lorawan.Device `protobuf:"bytes,3,opt,name=lorawan_device,json=lorawanDevice,proto3,oneof"`
 }
 
 func (*Device_LoRaWANDevice) isDevice_Device() {}
@@ -620,7 +622,7 @@ func _Device_OneofSizer(msg proto.Message) (n int) {
 }
 
 type DeviceList struct {
-	Devices              []*Device `protobuf:"bytes,1,rep,name=devices" json:"devices,omitempty"`
+	Devices              []*Device `protobuf:"bytes,1,rep,name=devices,proto3" json:"devices,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
 	XXX_sizecache        int32     `json:"-"`
 }
@@ -671,7 +673,7 @@ type DryDownlinkMessage struct {
 	// JSON-encoded object with fields to encode
 	Fields string `protobuf:"bytes,2,opt,name=fields,proto3" json:"fields,omitempty"`
 	// The Application containing the payload functions that should be executed
-	App Application `protobuf:"bytes,3,opt,name=app" json:"app"`
+	App Application `protobuf:"bytes,3,opt,name=app,proto3" json:"app"`
 	// The port number that should be passed to the payload function
 	Port                 uint32   `protobuf:"varint,4,opt,name=port,proto3" json:"port,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -743,7 +745,7 @@ type DryUplinkMessage struct {
 	// The binary payload to use
 	Payload []byte `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
 	// The Application containing the payload functions that should be executed
-	App Application `protobuf:"bytes,2,opt,name=app" json:"app"`
+	App Application `protobuf:"bytes,2,opt,name=app,proto3" json:"app"`
 	// The port number that should be passed to the payload function
 	Port                 uint32   `protobuf:"varint,3,opt,name=port,proto3" json:"port,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -879,7 +881,7 @@ type LogEntry struct {
 	// The location where the log was created (what payload function)
 	Function string `protobuf:"bytes,1,opt,name=function,proto3" json:"function,omitempty"`
 	// A list of JSON-encoded fields that were logged
-	Fields               []string `protobuf:"bytes,2,rep,name=fields" json:"fields,omitempty"`
+	Fields               []string `protobuf:"bytes,2,rep,name=fields,proto3" json:"fields,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
@@ -939,7 +941,7 @@ type DryUplinkResult struct {
 	// Was validation of the message successful
 	Valid bool `protobuf:"varint,3,opt,name=valid,proto3" json:"valid,omitempty"`
 	// Logs that have been generated while processing
-	Logs                 []*LogEntry `protobuf:"bytes,4,rep,name=logs" json:"logs,omitempty"`
+	Logs                 []*LogEntry `protobuf:"bytes,4,rep,name=logs,proto3" json:"logs,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
 	XXX_sizecache        int32       `json:"-"`
 }
@@ -1009,7 +1011,7 @@ type DryDownlinkResult struct {
 	// The payload that was encoded
 	Payload []byte `protobuf:"bytes,1,opt,name=payload,proto3" json:"payload,omitempty"`
 	// Logs that have been generated while processing
-	Logs                 []*LogEntry `protobuf:"bytes,2,rep,name=logs" json:"logs,omitempty"`
+	Logs                 []*LogEntry `protobuf:"bytes,2,rep,name=logs,proto3" json:"logs,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
 	XXX_sizecache        int32       `json:"-"`
 }
@@ -1594,8 +1596,9 @@ var _ grpc.ClientConn
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion4
 
-// Client API for Handler service
-
+// HandlerClient is the client API for Handler service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type HandlerClient interface {
 	ActivationChallenge(ctx context.Context, in *broker.ActivationChallengeRequest, opts ...grpc.CallOption) (*broker.ActivationChallengeResponse, error)
 	Activate(ctx context.Context, in *broker.DeduplicatedDeviceActivationRequest, opts ...grpc.CallOption) (*DeviceActivationResponse, error)
@@ -1627,8 +1630,7 @@ func (c *handlerClient) Activate(ctx context.Context, in *broker.DeduplicatedDev
 	return out, nil
 }
 
-// Server API for Handler service
-
+// HandlerServer is the server API for Handler service.
 type HandlerServer interface {
 	ActivationChallenge(context.Context, *broker.ActivationChallengeRequest) (*broker.ActivationChallengeResponse, error)
 	Activate(context.Context, *broker.DeduplicatedDeviceActivationRequest) (*DeviceActivationResponse, error)
@@ -1691,8 +1693,9 @@ var _Handler_serviceDesc = grpc.ServiceDesc{
 	Metadata: "github.com/TheThingsNetwork/api/handler/handler.proto",
 }
 
-// Client API for ApplicationManager service
-
+// ApplicationManagerClient is the client API for ApplicationManager service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type ApplicationManagerClient interface {
 	// Applications should first be registered to the Handler with the `RegisterApplication` method
 	RegisterApplication(ctx context.Context, in *ApplicationIdentifier, opts ...grpc.CallOption) (*types.Empty, error)
@@ -1825,8 +1828,7 @@ func (c *applicationManagerClient) SimulateUplink(ctx context.Context, in *Simul
 	return out, nil
 }
 
-// Server API for ApplicationManager service
-
+// ApplicationManagerServer is the server API for ApplicationManager service.
 type ApplicationManagerServer interface {
 	// Applications should first be registered to the Handler with the `RegisterApplication` method
 	RegisterApplication(context.Context, *ApplicationIdentifier) (*types.Empty, error)
@@ -2107,8 +2109,9 @@ var _ApplicationManager_serviceDesc = grpc.ServiceDesc{
 	Metadata: "github.com/TheThingsNetwork/api/handler/handler.proto",
 }
 
-// Client API for HandlerManager service
-
+// HandlerManagerClient is the client API for HandlerManager service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type HandlerManagerClient interface {
 	GetStatus(ctx context.Context, in *StatusRequest, opts ...grpc.CallOption) (*Status, error)
 }
@@ -2130,8 +2133,7 @@ func (c *handlerManagerClient) GetStatus(ctx context.Context, in *StatusRequest,
 	return out, nil
 }
 
-// Server API for HandlerManager service
-
+// HandlerManagerServer is the server API for HandlerManager service.
 type HandlerManagerServer interface {
 	GetStatus(context.Context, *StatusRequest) (*Status, error)
 }
@@ -3116,6 +3118,9 @@ func encodeVarintPopulateHandler(dAtA []byte, v uint64) []byte {
 	return dAtA
 }
 func (m *DeviceActivationResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.Payload)
@@ -3138,12 +3143,18 @@ func (m *DeviceActivationResponse) Size() (n int) {
 }
 
 func (m *StatusRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	return n
 }
 
 func (m *Status) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = m.System.Size()
@@ -3166,6 +3177,9 @@ func (m *Status) Size() (n int) {
 }
 
 func (m *ApplicationIdentifier) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.AppID)
@@ -3176,6 +3190,9 @@ func (m *ApplicationIdentifier) Size() (n int) {
 }
 
 func (m *Application) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.AppID)
@@ -3210,6 +3227,9 @@ func (m *Application) Size() (n int) {
 }
 
 func (m *DeviceIdentifier) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.AppID)
@@ -3224,6 +3244,9 @@ func (m *DeviceIdentifier) Size() (n int) {
 }
 
 func (m *Device) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.AppID)
@@ -3262,6 +3285,9 @@ func (m *Device) Size() (n int) {
 }
 
 func (m *Device_LoRaWANDevice) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.LoRaWANDevice != nil {
@@ -3271,6 +3297,9 @@ func (m *Device_LoRaWANDevice) Size() (n int) {
 	return n
 }
 func (m *DeviceList) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if len(m.Devices) > 0 {
@@ -3283,6 +3312,9 @@ func (m *DeviceList) Size() (n int) {
 }
 
 func (m *DryDownlinkMessage) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.Payload)
@@ -3302,6 +3334,9 @@ func (m *DryDownlinkMessage) Size() (n int) {
 }
 
 func (m *DryUplinkMessage) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.Payload)
@@ -3317,6 +3352,9 @@ func (m *DryUplinkMessage) Size() (n int) {
 }
 
 func (m *SimulatedUplinkMessage) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.AppID)
@@ -3338,6 +3376,9 @@ func (m *SimulatedUplinkMessage) Size() (n int) {
 }
 
 func (m *LogEntry) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.Function)
@@ -3354,6 +3395,9 @@ func (m *LogEntry) Size() (n int) {
 }
 
 func (m *DryUplinkResult) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.Payload)
@@ -3377,6 +3421,9 @@ func (m *DryUplinkResult) Size() (n int) {
 }
 
 func (m *DryDownlinkResult) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.Payload)

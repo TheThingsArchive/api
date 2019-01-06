@@ -198,9 +198,9 @@ func (m *Rates) GetRate15() float32 {
 }
 
 type SystemStats struct {
-	Load                 *SystemStats_Loadstats   `protobuf:"bytes,1,opt,name=load" json:"load,omitempty"`
-	Cpu                  *SystemStats_CPUStats    `protobuf:"bytes,2,opt,name=cpu" json:"cpu,omitempty"`
-	Memory               *SystemStats_MemoryStats `protobuf:"bytes,3,opt,name=memory" json:"memory,omitempty"`
+	Load                 *SystemStats_Loadstats   `protobuf:"bytes,1,opt,name=load,proto3" json:"load,omitempty"`
+	Cpu                  *SystemStats_CPUStats    `protobuf:"bytes,2,opt,name=cpu,proto3" json:"cpu,omitempty"`
+	Memory               *SystemStats_MemoryStats `protobuf:"bytes,3,opt,name=memory,proto3" json:"memory,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                 `json:"-"`
 	XXX_sizecache        int32                    `json:"-"`
 }
@@ -451,8 +451,8 @@ func (m *SystemStats_MemoryStats) GetUsed() uint64 {
 
 type ComponentStats struct {
 	Uptime               uint64                      `protobuf:"varint,1,opt,name=uptime,proto3" json:"uptime,omitempty"`
-	Cpu                  *ComponentStats_CPUStats    `protobuf:"bytes,2,opt,name=cpu" json:"cpu,omitempty"`
-	Memory               *ComponentStats_MemoryStats `protobuf:"bytes,3,opt,name=memory" json:"memory,omitempty"`
+	Cpu                  *ComponentStats_CPUStats    `protobuf:"bytes,2,opt,name=cpu,proto3" json:"cpu,omitempty"`
+	Memory               *ComponentStats_MemoryStats `protobuf:"bytes,3,opt,name=memory,proto3" json:"memory,omitempty"`
 	Goroutines           uint64                      `protobuf:"varint,4,opt,name=goroutines,proto3" json:"goroutines,omitempty"`
 	GcCpuFraction        float32                     `protobuf:"fixed32,5,opt,name=gc_cpu_fraction,json=gcCpuFraction,proto3" json:"gc_cpu_fraction,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                    `json:"-"`
@@ -1653,6 +1653,9 @@ func encodeVarintPopulateApi(dAtA []byte, v uint64) []byte {
 	return dAtA
 }
 func (m *Percentiles) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.Percentile1 != 0 {
@@ -1686,6 +1689,9 @@ func (m *Percentiles) Size() (n int) {
 }
 
 func (m *Rates) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.Rate1 != 0 {
@@ -1701,6 +1707,9 @@ func (m *Rates) Size() (n int) {
 }
 
 func (m *SystemStats) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.Load != nil {
@@ -1719,6 +1728,9 @@ func (m *SystemStats) Size() (n int) {
 }
 
 func (m *SystemStats_Loadstats) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.Load1 != 0 {
@@ -1734,6 +1746,9 @@ func (m *SystemStats_Loadstats) Size() (n int) {
 }
 
 func (m *SystemStats_CPUStats) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.User != 0 {
@@ -1752,6 +1767,9 @@ func (m *SystemStats_CPUStats) Size() (n int) {
 }
 
 func (m *SystemStats_MemoryStats) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.Total != 0 {
@@ -1767,6 +1785,9 @@ func (m *SystemStats_MemoryStats) Size() (n int) {
 }
 
 func (m *ComponentStats) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.Uptime != 0 {
@@ -1790,6 +1811,9 @@ func (m *ComponentStats) Size() (n int) {
 }
 
 func (m *ComponentStats_CPUStats) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.User != 0 {
@@ -1808,6 +1832,9 @@ func (m *ComponentStats_CPUStats) Size() (n int) {
 }
 
 func (m *ComponentStats_MemoryStats) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.Memory != 0 {

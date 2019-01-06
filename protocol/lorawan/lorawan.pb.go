@@ -329,7 +329,7 @@ type ActivationMetadata struct {
 	Rx1DROffset          uint32                                              `protobuf:"varint,11,opt,name=rx1_dr_offset,json=rx1DrOffset,proto3" json:"rx1_dr_offset,omitempty"`
 	Rx2DR                uint32                                              `protobuf:"varint,12,opt,name=rx2_dr,json=rx2Dr,proto3" json:"rx2_dr,omitempty"`
 	RxDelay              uint32                                              `protobuf:"varint,13,opt,name=rx_delay,json=rxDelay,proto3" json:"rx_delay,omitempty"`
-	CFList               *CFList                                             `protobuf:"bytes,14,opt,name=cf_list,json=cfList" json:"cf_list,omitempty"`
+	CFList               *CFList                                             `protobuf:"bytes,14,opt,name=cf_list,json=cfList,proto3" json:"cf_list,omitempty"`
 	FrequencyPlan        FrequencyPlan                                       `protobuf:"varint,15,opt,name=frequency_plan,json=frequencyPlan,proto3,enum=lorawan.FrequencyPlan" json:"frequency_plan,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                            `json:"-"`
 	XXX_sizecache        int32                                               `json:"-"`
@@ -403,7 +403,7 @@ func (m *ActivationMetadata) GetFrequencyPlan() FrequencyPlan {
 }
 
 type Message struct {
-	MHDR `protobuf:"bytes,1,opt,name=m_hdr,json=mHdr,embedded=m_hdr" json:"m_hdr"`
+	MHDR `protobuf:"bytes,1,opt,name=m_hdr,json=mHdr,proto3,embedded=m_hdr" json:"m_hdr"`
 	MIC  []byte `protobuf:"bytes,2,opt,name=mic,proto3" json:"mic,omitempty"`
 	// Types that are valid to be assigned to Payload:
 	//	*Message_MACPayload
@@ -454,13 +454,13 @@ type isMessage_Payload interface {
 }
 
 type Message_MACPayload struct {
-	MACPayload *MACPayload `protobuf:"bytes,3,opt,name=mac_payload,json=macPayload,oneof"`
+	MACPayload *MACPayload `protobuf:"bytes,3,opt,name=mac_payload,json=macPayload,proto3,oneof"`
 }
 type Message_JoinRequestPayload struct {
-	JoinRequestPayload *JoinRequestPayload `protobuf:"bytes,4,opt,name=join_request_payload,json=joinRequestPayload,oneof"`
+	JoinRequestPayload *JoinRequestPayload `protobuf:"bytes,4,opt,name=join_request_payload,json=joinRequestPayload,proto3,oneof"`
 }
 type Message_JoinAcceptPayload struct {
-	JoinAcceptPayload *JoinAcceptPayload `protobuf:"bytes,5,opt,name=join_accept_payload,json=joinAcceptPayload,oneof"`
+	JoinAcceptPayload *JoinAcceptPayload `protobuf:"bytes,5,opt,name=join_accept_payload,json=joinAcceptPayload,proto3,oneof"`
 }
 
 func (*Message_MACPayload) isMessage_Payload()         {}
@@ -649,7 +649,7 @@ func (m *MHDR) GetMajor() Major {
 }
 
 type MACPayload struct {
-	FHDR                 `protobuf:"bytes,1,opt,name=f_hdr,json=fHdr,embedded=f_hdr" json:"f_hdr"`
+	FHDR                 `protobuf:"bytes,1,opt,name=f_hdr,json=fHdr,proto3,embedded=f_hdr" json:"f_hdr"`
 	FPort                int32    `protobuf:"varint,2,opt,name=f_port,json=fPort,proto3" json:"f_port,omitempty"`
 	FRMPayload           []byte   `protobuf:"bytes,3,opt,name=frm_payload,json=frmPayload,proto3" json:"frm_payload,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -704,9 +704,9 @@ func (m *MACPayload) GetFRMPayload() []byte {
 
 type FHDR struct {
 	DevAddr              github_com_TheThingsNetwork_ttn_core_types.DevAddr `protobuf:"bytes,1,opt,name=dev_addr,json=devAddr,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevAddr" json:"dev_addr"`
-	FCtrl                `protobuf:"bytes,2,opt,name=f_ctrl,json=fCtrl,embedded=f_ctrl" json:"f_ctrl"`
+	FCtrl                `protobuf:"bytes,2,opt,name=f_ctrl,json=fCtrl,proto3,embedded=f_ctrl" json:"f_ctrl"`
 	FCnt                 uint32       `protobuf:"varint,3,opt,name=f_cnt,json=fCnt,proto3" json:"f_cnt,omitempty"`
-	FOpts                []MACCommand `protobuf:"bytes,4,rep,name=f_opts,json=fOpts" json:"f_opts"`
+	FOpts                []MACCommand `protobuf:"bytes,4,rep,name=f_opts,json=fOpts,proto3" json:"f_opts"`
 	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
 	XXX_sizecache        int32        `json:"-"`
 }
@@ -924,9 +924,9 @@ type JoinAcceptPayload struct {
 	AppNonce             github_com_TheThingsNetwork_ttn_core_types.AppNonce `protobuf:"bytes,2,opt,name=app_nonce,json=appNonce,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppNonce" json:"app_nonce"`
 	NetID                github_com_TheThingsNetwork_ttn_core_types.NetID    `protobuf:"bytes,3,opt,name=net_id,json=netId,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.NetID" json:"net_id"`
 	DevAddr              github_com_TheThingsNetwork_ttn_core_types.DevAddr  `protobuf:"bytes,4,opt,name=dev_addr,json=devAddr,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.DevAddr" json:"dev_addr"`
-	DLSettings           `protobuf:"bytes,5,opt,name=dl_settings,json=dlSettings,embedded=dl_settings" json:"dl_settings"`
+	DLSettings           `protobuf:"bytes,5,opt,name=dl_settings,json=dlSettings,proto3,embedded=dl_settings" json:"dl_settings"`
 	RxDelay              uint32   `protobuf:"varint,6,opt,name=rx_delay,json=rxDelay,proto3" json:"rx_delay,omitempty"`
-	CFList               *CFList  `protobuf:"bytes,7,opt,name=cf_list,json=cfList" json:"cf_list,omitempty"`
+	CFList               *CFList  `protobuf:"bytes,7,opt,name=cf_list,json=cfList,proto3" json:"cf_list,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
@@ -1038,7 +1038,7 @@ func (m *DLSettings) GetRx2DR() uint32 {
 }
 
 type CFList struct {
-	Freq                 []uint32 `protobuf:"varint,1,rep,packed,name=freq" json:"freq,omitempty"`
+	Freq                 []uint32 `protobuf:"varint,1,rep,packed,name=freq,proto3" json:"freq,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
@@ -2603,6 +2603,9 @@ func encodeVarintPopulateLorawan(dAtA []byte, v uint64) []byte {
 	return dAtA
 }
 func (m *Metadata) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.Modulation != 0 {
@@ -2629,6 +2632,9 @@ func (m *Metadata) Size() (n int) {
 }
 
 func (m *TxConfiguration) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.Modulation != 0 {
@@ -2652,6 +2658,9 @@ func (m *TxConfiguration) Size() (n int) {
 }
 
 func (m *ActivationMetadata) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = m.AppEUI.Size()
@@ -2686,6 +2695,9 @@ func (m *ActivationMetadata) Size() (n int) {
 }
 
 func (m *Message) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = m.MHDR.Size()
@@ -2701,6 +2713,9 @@ func (m *Message) Size() (n int) {
 }
 
 func (m *Message_MACPayload) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.MACPayload != nil {
@@ -2710,6 +2725,9 @@ func (m *Message_MACPayload) Size() (n int) {
 	return n
 }
 func (m *Message_JoinRequestPayload) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.JoinRequestPayload != nil {
@@ -2719,6 +2737,9 @@ func (m *Message_JoinRequestPayload) Size() (n int) {
 	return n
 }
 func (m *Message_JoinAcceptPayload) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.JoinAcceptPayload != nil {
@@ -2728,6 +2749,9 @@ func (m *Message_JoinAcceptPayload) Size() (n int) {
 	return n
 }
 func (m *MHDR) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.MType != 0 {
@@ -2740,6 +2764,9 @@ func (m *MHDR) Size() (n int) {
 }
 
 func (m *MACPayload) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = m.FHDR.Size()
@@ -2755,6 +2782,9 @@ func (m *MACPayload) Size() (n int) {
 }
 
 func (m *FHDR) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = m.DevAddr.Size()
@@ -2774,6 +2804,9 @@ func (m *FHDR) Size() (n int) {
 }
 
 func (m *FCtrl) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.ADR {
@@ -2792,6 +2825,9 @@ func (m *FCtrl) Size() (n int) {
 }
 
 func (m *MACCommand) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.CID != 0 {
@@ -2805,6 +2841,9 @@ func (m *MACCommand) Size() (n int) {
 }
 
 func (m *JoinRequestPayload) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = m.AppEUI.Size()
@@ -2817,6 +2856,9 @@ func (m *JoinRequestPayload) Size() (n int) {
 }
 
 func (m *JoinAcceptPayload) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	l = len(m.Encrypted)
@@ -2842,6 +2884,9 @@ func (m *JoinAcceptPayload) Size() (n int) {
 }
 
 func (m *DLSettings) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.Rx1DROffset != 0 {
@@ -2854,6 +2899,9 @@ func (m *DLSettings) Size() (n int) {
 }
 
 func (m *CFList) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if len(m.Freq) > 0 {
@@ -5082,6 +5130,17 @@ func (m *CFList) Unmarshal(dAtA []byte) error {
 				postIndex := iNdEx + packedLen
 				if postIndex > l {
 					return io.ErrUnexpectedEOF
+				}
+				var elementCount int
+				var count int
+				for _, integer := range dAtA {
+					if integer < 128 {
+						count++
+					}
+				}
+				elementCount = count
+				if elementCount != 0 && len(m.Freq) == 0 {
+					m.Freq = make([]uint32, 0, elementCount)
 				}
 				for iNdEx < postIndex {
 					var v uint32

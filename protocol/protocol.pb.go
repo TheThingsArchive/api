@@ -75,7 +75,7 @@ type isMessage_Protocol interface {
 }
 
 type Message_LoRaWAN struct {
-	LoRaWAN *lorawan.Message `protobuf:"bytes,1,opt,name=lorawan,oneof"`
+	LoRaWAN *lorawan.Message `protobuf:"bytes,1,opt,name=lorawan,proto3,oneof"`
 }
 
 func (*Message_LoRaWAN) isMessage_Protocol() {}
@@ -197,7 +197,7 @@ type isRxMetadata_Protocol interface {
 }
 
 type RxMetadata_LoRaWAN struct {
-	LoRaWAN *lorawan.Metadata `protobuf:"bytes,1,opt,name=lorawan,oneof"`
+	LoRaWAN *lorawan.Metadata `protobuf:"bytes,1,opt,name=lorawan,proto3,oneof"`
 }
 
 func (*RxMetadata_LoRaWAN) isRxMetadata_Protocol() {}
@@ -319,7 +319,7 @@ type isTxConfiguration_Protocol interface {
 }
 
 type TxConfiguration_LoRaWAN struct {
-	LoRaWAN *lorawan.TxConfiguration `protobuf:"bytes,1,opt,name=lorawan,oneof"`
+	LoRaWAN *lorawan.TxConfiguration `protobuf:"bytes,1,opt,name=lorawan,proto3,oneof"`
 }
 
 func (*TxConfiguration_LoRaWAN) isTxConfiguration_Protocol() {}
@@ -441,7 +441,7 @@ type isActivationMetadata_Protocol interface {
 }
 
 type ActivationMetadata_LoRaWAN struct {
-	LoRaWAN *lorawan.ActivationMetadata `protobuf:"bytes,1,opt,name=lorawan,oneof"`
+	LoRaWAN *lorawan.ActivationMetadata `protobuf:"bytes,1,opt,name=lorawan,proto3,oneof"`
 }
 
 func (*ActivationMetadata_LoRaWAN) isActivationMetadata_Protocol() {}
@@ -1048,6 +1048,9 @@ func encodeVarintPopulateProtocol(dAtA []byte, v uint64) []byte {
 	return dAtA
 }
 func (m *Message) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.Protocol != nil {
@@ -1057,6 +1060,9 @@ func (m *Message) Size() (n int) {
 }
 
 func (m *Message_LoRaWAN) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.LoRaWAN != nil {
@@ -1066,6 +1072,9 @@ func (m *Message_LoRaWAN) Size() (n int) {
 	return n
 }
 func (m *RxMetadata) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.Protocol != nil {
@@ -1075,6 +1084,9 @@ func (m *RxMetadata) Size() (n int) {
 }
 
 func (m *RxMetadata_LoRaWAN) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.LoRaWAN != nil {
@@ -1084,6 +1096,9 @@ func (m *RxMetadata_LoRaWAN) Size() (n int) {
 	return n
 }
 func (m *TxConfiguration) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.Protocol != nil {
@@ -1093,6 +1108,9 @@ func (m *TxConfiguration) Size() (n int) {
 }
 
 func (m *TxConfiguration_LoRaWAN) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.LoRaWAN != nil {
@@ -1102,6 +1120,9 @@ func (m *TxConfiguration_LoRaWAN) Size() (n int) {
 	return n
 }
 func (m *ActivationMetadata) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.Protocol != nil {
@@ -1111,6 +1132,9 @@ func (m *ActivationMetadata) Size() (n int) {
 }
 
 func (m *ActivationMetadata_LoRaWAN) Size() (n int) {
+	if m == nil {
+		return 0
+	}
 	var l int
 	_ = l
 	if m.LoRaWAN != nil {
