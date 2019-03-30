@@ -19,7 +19,7 @@ import (
 	"github.com/TheThingsNetwork/go-utils/grpc/auth"
 	"github.com/TheThingsNetwork/go-utils/grpc/ttnctx"
 	"github.com/TheThingsNetwork/go-utils/log"
-	"github.com/htdvisser/grpc-testing/test"
+	"github.com/TheThingsNetwork/go-utils/log/test"
 	. "github.com/smartystreets/assertions"
 	"google.golang.org/grpc"
 )

@@ -11,8 +11,8 @@ import (
 	. "github.com/TheThingsNetwork/api/broker"
 	. "github.com/TheThingsNetwork/api/reference/broker"
 	"github.com/TheThingsNetwork/go-utils/log"
+	"github.com/TheThingsNetwork/go-utils/log/test"
 	"github.com/TheThingsNetwork/ttn/api/pool"
-	"github.com/htdvisser/grpc-testing/test"
 	. "github.com/smartystreets/assertions"
 	"google.golang.org/grpc"
 )

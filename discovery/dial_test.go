@@ -12,9 +12,9 @@ import (
 	"testing"
 
 	"github.com/TheThingsNetwork/go-utils/log"
+	"github.com/TheThingsNetwork/go-utils/log/test"
 	"github.com/TheThingsNetwork/ttn/api/health"
 	"github.com/TheThingsNetwork/ttn/utils/security"
-	"github.com/htdvisser/grpc-testing/test"
 	. "github.com/smartystreets/assertions"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
