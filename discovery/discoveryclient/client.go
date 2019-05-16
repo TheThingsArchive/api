@@ -12,16 +12,14 @@ import (
 	"github.com/TheThingsNetwork/go-utils/grpc/ttnctx"
 	ttnapi "github.com/TheThingsNetwork/ttn/api"
 	"github.com/TheThingsNetwork/ttn/core/types"
-	"github.com/bluele/gcache"
 	"golang.org/x/net/context" // See https://github.com/grpc/grpc-go/issues/711
+	"golang.org/x/sync/singleflight"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/codes"
 )
 
-// CacheSize indicates the number of components that are cached
-var CacheSize = 1000
-
 // CacheExpiration indicates the time a cached item is valid
-var CacheExpiration = 5 * time.Minute
+var CacheExpiration = time.Minute
 
 // Client is used as the main client to the Discovery server
 type Client interface {
@@ -47,43 +45,108 @@ func NewClient(server string, announcement *discovery.Announcement, tokenFunc fu
 		return nil, err
 	}
 	client := &DefaultClient{
-		lists:        make(map[string][]*discovery.Announcement),
-		listsUpdated: make(map[string]time.Time),
-		self:         announcement,
-		tokenFunc:    tokenFunc,
-		conn:         conn,
-		client:       discovery.NewDiscoveryClient(conn),
+		self:      announcement,
+		conn:      conn,
+		client:    discovery.NewDiscoveryClient(conn),
+		tokenFunc: tokenFunc,
 	}
-	client.cache = gcache.
-		New(CacheSize).
-		Expiration(CacheExpiration).
-		LRU().
-		LoaderFunc(func(k interface{}) (interface{}, error) {
-			key, ok := k.(cacheKey)
-			if !ok {
-				return nil, fmt.Errorf("wrong type for cacheKey: %T", k)
-			}
-			return client.get(key.serviceName, key.id)
-		}).
-		Build()
 	return client, nil
+}
+
+func buildAnnouncements(all []*discovery.Announcement) *announcements {
+	a := announcements{
+		all:               all,
+		announcementsByID: make(map[string]*discovery.Announcement, len(all)),
+		updatedAt:         time.Now(),
+	}
+	for _, announcement := range all {
+		a.announcementsByID[announcement.ID] = announcement
+	}
+	return &a
+}
+
+type announcements struct {
+	all               []*discovery.Announcement
+	announcementsByID map[string]*discovery.Announcement
+	updatedAt         time.Time
+}
+
+func (a *announcements) routerAnnouncements() *routerAnnouncements {
+	r := routerAnnouncements{
+		announcements:            a,
+		announcementsByGatewayID: make(map[string][]*discovery.Announcement),
+	}
+	for _, announcement := range a.announcementsByID {
+		for _, gatewayID := range announcement.GatewayIDs() {
+			r.announcementsByGatewayID[gatewayID] = append(r.announcementsByGatewayID[gatewayID], announcement)
+		}
+	}
+	return &r
+}
+
+type routerAnnouncements struct {
+	*announcements
+	announcementsByGatewayID map[string][]*discovery.Announcement
+}
+
+func (a *announcements) brokerAnnouncements() *brokerAnnouncements {
+	r := brokerAnnouncements{
+		announcements:                a,
+		announcementsByDevAddrPrefix: make(map[types.DevAddrPrefix][]*discovery.Announcement),
+	}
+	for _, announcement := range a.announcementsByID {
+		for _, devAddrPrefix := range announcement.DevAddrPrefixes() {
+			r.announcementsByDevAddrPrefix[devAddrPrefix] = append(r.announcementsByDevAddrPrefix[devAddrPrefix], announcement)
+		}
+	}
+	return &r
+}
+
+type brokerAnnouncements struct {
+	*announcements
+	announcementsByDevAddrPrefix map[types.DevAddrPrefix][]*discovery.Announcement
+}
+
+func (a *announcements) handlerAnnouncements() *handlerAnnouncements {
+	r := handlerAnnouncements{
+		announcements:         a,
+		announcementsByAppID:  make(map[string][]*discovery.Announcement),
+		announcementsByAppEUI: make(map[types.AppEUI][]*discovery.Announcement),
+	}
+	for _, announcement := range a.announcementsByID {
+		for _, appID := range announcement.AppIDs() {
+			r.announcementsByAppID[appID] = append(r.announcementsByAppID[appID], announcement)
+		}
+		for _, appEUI := range announcement.AppEUIs() {
+			r.announcementsByAppEUI[appEUI] = append(r.announcementsByAppEUI[appEUI], announcement)
+		}
+	}
+	return &r
+}
+
+type handlerAnnouncements struct {
+	*announcements
+	announcementsByAppID  map[string][]*discovery.Announcement
+	announcementsByAppEUI map[types.AppEUI][]*discovery.Announcement
 }
 
 // DefaultClient is a wrapper around DiscoveryClient
 type DefaultClient struct {
-	sync.Mutex
-	cache        gcache.Cache
-	listsUpdated map[string]time.Time
-	lists        map[string][]*discovery.Announcement
-	self         *discovery.Announcement
-	tokenFunc    func() string
-	conn         *grpc.ClientConn
-	client       discovery.DiscoveryClient
-}
+	self      *discovery.Announcement
+	conn      *grpc.ClientConn
+	client    discovery.DiscoveryClient
+	tokenFunc func() string
 
-type cacheKey struct {
-	serviceName string
-	id          string
+	sync.Mutex
+
+	fetch singleflight.Group
+
+	router          *routerAnnouncements
+	routerFetching  bool
+	broker          *brokerAnnouncements
+	brokerFetching  bool
+	handler         *handlerAnnouncements
+	handlerFetching bool
 }
 
 func (c *DefaultClient) getContext(token string) context.Context {
@@ -97,28 +160,95 @@ func (c *DefaultClient) getContext(token string) context.Context {
 	return ctx
 }
 
-func (c *DefaultClient) get(serviceName, id string) (*discovery.Announcement, error) {
-	res, err := c.client.Get(c.getContext(""), &discovery.GetRequest{
-		ServiceName: serviceName,
-		ID:          id,
-	})
-	if err != nil {
-		return nil, err
+func (c *DefaultClient) getRouter() (*routerAnnouncements, error) {
+	c.Lock()
+	defer c.Unlock()
+	if c.router == nil {
+		announcements, err := c.fetchAndProcess("router")
+		if err != nil {
+			return nil, err
+		}
+		c.router = announcements.(*routerAnnouncements)
 	}
-	return res, nil
+	if time.Since(c.router.updatedAt) > CacheExpiration && !c.routerFetching {
+		c.routerFetching = true
+		go func() {
+			announcements, err := c.fetchAndProcess("router")
+			c.Lock()
+			if err == nil {
+				c.router = announcements.(*routerAnnouncements)
+			}
+			c.routerFetching = false
+			c.Unlock()
+		}()
+	}
+	return c.router, nil
 }
 
-func (c *DefaultClient) getAll(serviceName string) ([]*discovery.Announcement, error) {
+func (c *DefaultClient) getBroker() (*brokerAnnouncements, error) {
+	c.Lock()
+	defer c.Unlock()
+	if c.broker == nil {
+		announcements, err := c.fetchAndProcess("broker")
+		if err != nil {
+			return nil, err
+		}
+		c.broker = announcements.(*brokerAnnouncements)
+	}
+	if time.Since(c.broker.updatedAt) > CacheExpiration && !c.brokerFetching {
+		c.brokerFetching = true
+		go func() {
+			announcements, err := c.fetchAndProcess("broker")
+			c.Lock()
+			if err == nil {
+				c.broker = announcements.(*brokerAnnouncements)
+			}
+			c.brokerFetching = false
+			c.Unlock()
+		}()
+	}
+	return c.broker, nil
+}
+
+func (c *DefaultClient) getHandler() (*handlerAnnouncements, error) {
+	c.Lock()
+	defer c.Unlock()
+	if c.handler == nil {
+		announcements, err := c.fetchAndProcess("handler")
+		if err != nil {
+			return nil, err
+		}
+		c.handler = announcements.(*handlerAnnouncements)
+	}
+	if time.Since(c.handler.updatedAt) > CacheExpiration && !c.handlerFetching {
+		c.handlerFetching = true
+		go func() {
+			announcements, err := c.fetchAndProcess("handler")
+			c.Lock()
+			if err == nil {
+				c.handler = announcements.(*handlerAnnouncements)
+			}
+			c.handlerFetching = false
+			c.Unlock()
+		}()
+	}
+	return c.handler, nil
+}
+
+func (c *DefaultClient) fetchAndProcess(serviceName string) (interface{}, error) {
 	res, err := c.client.GetAll(c.getContext(""), &discovery.GetServiceRequest{ServiceName: serviceName})
 	if err != nil {
 		return nil, err
 	}
-	c.lists[serviceName] = res.Services
-	c.listsUpdated[serviceName] = time.Now()
-	for _, announcement := range res.Services {
-		c.cache.Set(&cacheKey{serviceName: announcement.ServiceName, id: announcement.ID}, announcement)
+	switch serviceName {
+	case "router":
+		return buildAnnouncements(res.Services).routerAnnouncements(), nil
+	case "broker":
+		return buildAnnouncements(res.Services).brokerAnnouncements(), nil
+	case "handler":
+		return buildAnnouncements(res.Services).handlerAnnouncements(), nil
 	}
-	return res.Services, nil
+	panic(fmt.Errorf("unknown service name: %s", serviceName))
 }
 
 // Announce announces the configured announcement to the discovery server
@@ -129,33 +259,58 @@ func (c *DefaultClient) Announce(token string) error {
 
 // GetAll returns all services of the given service type
 func (c *DefaultClient) GetAll(serviceName string) ([]*discovery.Announcement, error) {
-	c.Lock()
-	defer c.Unlock()
-
-	// If list initialized, return cached version
-	if list, ok := c.lists[serviceName]; ok && len(list) > 0 {
-		// And update if expired
-		if c.listsUpdated[serviceName].Add(CacheExpiration).Before(time.Now()) {
-			go func() {
-				c.Lock()
-				defer c.Unlock()
-				c.getAll(serviceName)
-			}()
+	switch serviceName {
+	case "router":
+		all, err := c.getRouter()
+		if err != nil {
+			return nil, err
 		}
-		return list, nil
+		return all.all, nil
+	case "broker":
+		all, err := c.getBroker()
+		if err != nil {
+			return nil, err
+		}
+		return all.all, nil
+	case "handler":
+		all, err := c.getHandler()
+		if err != nil {
+			return nil, err
+		}
+		return all.all, nil
 	}
-
-	// If list not initialized, do request
-	return c.getAll(serviceName)
+	return nil, grpc.Errorf(codes.NotFound, "announcement not found")
 }
 
 // Get returns the (cached) service annoucement for the given service type and id
 func (c *DefaultClient) Get(serviceName, id string) (*discovery.Announcement, error) {
-	res, err := c.cache.Get(cacheKey{serviceName, id})
-	if err != nil {
-		return nil, err
+	switch serviceName {
+	case "router":
+		all, err := c.getRouter()
+		if err != nil {
+			return nil, err
+		}
+		if announcement, ok := all.announcementsByID[id]; ok {
+			return announcement, nil
+		}
+	case "broker":
+		all, err := c.getBroker()
+		if err != nil {
+			return nil, err
+		}
+		if announcement, ok := all.announcementsByID[id]; ok {
+			return announcement, nil
+		}
+	case "handler":
+		all, err := c.getHandler()
+		if err != nil {
+			return nil, err
+		}
+		if announcement, ok := all.announcementsByID[id]; ok {
+			return announcement, nil
+		}
 	}
-	return res.(*discovery.Announcement), nil
+	return nil, grpc.Errorf(codes.NotFound, "announcement not found")
 }
 
 // AddDevAddrPrefix adds a DevAddrPrefix to the current component
@@ -232,16 +387,19 @@ func (c *DefaultClient) RemoveGatewayID(gatewayID string, token string) error {
 
 // GetAllBrokersForDevAddr returns all brokers that can handle the given DevAddr
 func (c *DefaultClient) GetAllBrokersForDevAddr(devAddr types.DevAddr) (announcements []*discovery.Announcement, err error) {
-	brokers, err := c.GetAll("broker")
+	all, err := c.getBroker()
 	if err != nil {
 		return nil, err
 	}
-next:
-	for _, broker := range brokers {
-		for _, prefix := range broker.DevAddrPrefixes() {
-			if devAddr.HasPrefix(prefix) {
+	seen := make(map[*discovery.Announcement]struct{})
+	for prefix, brokers := range all.announcementsByDevAddrPrefix {
+		if devAddr.HasPrefix(prefix) {
+			for _, broker := range brokers {
+				if _, seen := seen[broker]; seen {
+					continue
+				}
 				announcements = append(announcements, broker)
-				continue next
+				seen[broker] = struct{}{}
 			}
 		}
 	}
@@ -250,16 +408,19 @@ next:
 
 // GetAllHandlersForAppID returns all handlers that can handle the given AppID
 func (c *DefaultClient) GetAllHandlersForAppID(appID string) (announcements []*discovery.Announcement, err error) {
-	handlers, err := c.GetAll("handler")
+	all, err := c.getHandler()
 	if err != nil {
 		return nil, err
 	}
-next:
-	for _, handler := range handlers {
-		for _, handlerAppID := range handler.AppIDs() {
-			if handlerAppID == appID {
+	seen := make(map[*discovery.Announcement]struct{})
+	for announced, handlers := range all.announcementsByAppID {
+		if appID == announced {
+			for _, handler := range handlers {
+				if _, seen := seen[handler]; seen {
+					continue
+				}
 				announcements = append(announcements, handler)
-				continue next
+				seen[handler] = struct{}{}
 			}
 		}
 	}
@@ -268,16 +429,19 @@ next:
 
 // GetAllRoutersForGatewayID returns all routers that can handle the given GatewayID
 func (c *DefaultClient) GetAllRoutersForGatewayID(gatewayID string) (announcements []*discovery.Announcement, err error) {
-	routers, err := c.GetAll("router")
+	all, err := c.getRouter()
 	if err != nil {
 		return nil, err
 	}
-next:
-	for _, router := range routers {
-		for _, routerGatewayID := range router.GatewayIDs() {
-			if routerGatewayID == gatewayID {
+	seen := make(map[*discovery.Announcement]struct{})
+	for announced, routers := range all.announcementsByGatewayID {
+		if gatewayID == announced {
+			for _, router := range routers {
+				if _, seen := seen[router]; seen {
+					continue
+				}
 				announcements = append(announcements, router)
-				continue next
+				seen[router] = struct{}{}
 			}
 		}
 	}
@@ -286,6 +450,5 @@ next:
 
 // Close purges the cache and closes the connection with the Discovery server
 func (c *DefaultClient) Close() error {
-	c.cache.Purge()
 	return c.conn.Close()
 }
