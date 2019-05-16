@@ -9,6 +9,7 @@ import (
 
 // AppIDs that are handled by this component
 func (a *Announcement) AppIDs() (appIDs []string) {
+	appIDs = make([]string, 0, len(a.Metadata))
 	for _, meta := range a.Metadata {
 		if appID := meta.GetAppID(); appID != "" {
 			appIDs = append(appIDs, appID)
@@ -19,6 +20,7 @@ func (a *Announcement) AppIDs() (appIDs []string) {
 
 // GatewayIDs that are handled by this component
 func (a *Announcement) GatewayIDs() (gatewayIDs []string) {
+	gatewayIDs = make([]string, 0, len(a.Metadata))
 	for _, meta := range a.Metadata {
 		if gatewayID := meta.GetGatewayID(); gatewayID != "" {
 			gatewayIDs = append(gatewayIDs, gatewayID)
@@ -29,13 +31,14 @@ func (a *Announcement) GatewayIDs() (gatewayIDs []string) {
 
 // DevAddrPrefixes that are handled by this component
 func (a *Announcement) DevAddrPrefixes() (prefixes []types.DevAddrPrefix) {
+	prefixes = make([]types.DevAddrPrefix, 0, len(a.Metadata))
 	for _, meta := range a.Metadata {
 		if prefixBytes := meta.GetDevAddrPrefix(); prefixBytes != nil {
-			prefix := new(types.DevAddrPrefix)
+			var prefix types.DevAddrPrefix
 			if err := prefix.Unmarshal(prefixBytes); err != nil {
 				continue
 			}
-			prefixes = append(prefixes, *prefix)
+			prefixes = append(prefixes, prefix)
 		}
 	}
 	return
@@ -43,13 +46,14 @@ func (a *Announcement) DevAddrPrefixes() (prefixes []types.DevAddrPrefix) {
 
 // AppEUIs that are handled by this component
 func (a *Announcement) AppEUIs() (euis []types.AppEUI) {
+	euis = make([]types.AppEUI, 0, len(a.Metadata))
 	for _, meta := range a.Metadata {
 		if euiBytes := meta.GetAppEUI(); euiBytes != nil {
-			eui := new(types.AppEUI)
+			var eui types.AppEUI
 			if err := eui.Unmarshal(euiBytes); err != nil {
 				continue
 			}
-			euis = append(euis, *eui)
+			euis = append(euis, eui)
 		}
 	}
 	return
