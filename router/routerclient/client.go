@@ -11,11 +11,11 @@ import (
 
 	"github.com/TheThingsNetwork/api/gateway"
 	. "github.com/TheThingsNetwork/api/router"
+	"github.com/TheThingsNetwork/api/utils"
 	"github.com/TheThingsNetwork/go-utils/grpc/restartstream"
 	"github.com/TheThingsNetwork/go-utils/grpc/ttnctx"
 	"github.com/TheThingsNetwork/go-utils/log"
 	ttnapi "github.com/TheThingsNetwork/ttn/api"
-	"github.com/TheThingsNetwork/ttn/utils"
 	"github.com/golang/protobuf/ptypes/empty"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"

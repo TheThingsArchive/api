@@ -9,11 +9,11 @@ import (
 	"sync"
 
 	. "github.com/TheThingsNetwork/api/broker"
+	"github.com/TheThingsNetwork/api/utils"
 	"github.com/TheThingsNetwork/go-utils/grpc/restartstream"
 	"github.com/TheThingsNetwork/go-utils/grpc/ttnctx"
 	"github.com/TheThingsNetwork/go-utils/log"
 	ttnapi "github.com/TheThingsNetwork/ttn/api"
-	"github.com/TheThingsNetwork/ttn/utils"
 	"github.com/gogo/protobuf/types"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
