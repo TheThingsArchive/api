@@ -6,9 +6,9 @@ languages := go java js php ruby python c swift
 
 .PHONY: all
 
-all: docker $(patsubst %,protos/%,$(languages)) mocks
+all: docker $(patsubst %,protos/%,$(languages))
 
-clean: $(patsubst %,clean/%,$(languages)) clean/mocks
+clean: $(patsubst %,clean/%,$(languages))
 
 proto_files := $(shell find . -name '*.proto')
 
@@ -158,18 +158,3 @@ postprocess/swift:
 
 clean/swift:
 	find . -name '*.swift' -delete
-
-.PHONY: mockgen
-
-mockgen:
-	@command -v mockgen > /dev/null || go get github.com/golang/mock/mockgen
-
-.PHONY: mocks
-
-mocks: mockgen
-	mockgen -source=./protocol/lorawan/device.pb.go -package lorawan DeviceManagerClient > protocol/lorawan/device_mock.go
-	mockgen -source=./discovery/discoveryclient/client.go -package discoveryclient Client > discovery/discoveryclient/client_mock.go
-	mockgen -source=./networkserver/networkserver.pb.go -package networkserver NetworkServerClient > networkserver/networkserver_mock.go
-
-clean/mocks:
-	find . -name '*_mock.go' -delete
