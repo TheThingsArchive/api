@@ -42,6 +42,9 @@ func (s *RouterStreamServer) Uplink(stream Router_UplinkServer) (err error) {
 	if err != nil {
 		return err
 	}
+	if err = stream.SendHeader(metadata.MD{}); err != nil {
+		return err
+	}
 	defer func() {
 		ctx := s.ctx
 		if err != nil {
@@ -76,6 +79,9 @@ func (s *RouterStreamServer) Subscribe(req *SubscribeRequest, stream Router_Subs
 	if err != nil {
 		return err
 	}
+	if err = stream.SendHeader(metadata.MD{}); err != nil {
+		return err
+	}
 	go func() {
 		<-stream.Context().Done()
 		err = stream.Context().Err()
@@ -94,6 +100,9 @@ func (s *RouterStreamServer) GatewayStatus(stream Router_GatewayStatusServer) er
 	md := ttnctx.MetadataFromIncomingContext(stream.Context())
 	ch, err := s.GatewayStatusChanFunc(md)
 	if err != nil {
+		return err
+	}
+	if err = stream.SendHeader(metadata.MD{}); err != nil {
 		return err
 	}
 	defer func() {

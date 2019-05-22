@@ -40,6 +40,9 @@ func (s *BrokerStreamServer) Associate(stream Broker_AssociateServer) (err error
 	if err != nil {
 		return err
 	}
+	if err = stream.SendHeader(metadata.MD{}); err != nil {
+		return err
+	}
 	defer func() {
 		ctx := s.ctx
 		if err != nil {
@@ -104,6 +107,9 @@ func (s *BrokerStreamServer) Subscribe(req *SubscribeRequest, stream Broker_Subs
 	if err != nil {
 		return err
 	}
+	if err = stream.SendHeader(metadata.MD{}); err != nil {
+		return err
+	}
 	go func() {
 		<-stream.Context().Done()
 		err = stream.Context().Err()
@@ -122,6 +128,9 @@ func (s *BrokerStreamServer) Publish(stream Broker_PublishServer) error {
 	md := ttnctx.MetadataFromIncomingContext(stream.Context())
 	ch, err := s.HandlerPublishChanFunc(md)
 	if err != nil {
+		return err
+	}
+	if err = stream.SendHeader(metadata.MD{}); err != nil {
 		return err
 	}
 	defer func() {
