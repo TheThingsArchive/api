@@ -42,9 +42,6 @@ func (s *RouterStreamServer) Uplink(stream Router_UplinkServer) (err error) {
 	if err != nil {
 		return err
 	}
-	if err = stream.SendHeader(metadata.MD{}); err != nil {
-		return err
-	}
 	defer func() {
 		ctx := s.ctx
 		if err != nil {
@@ -53,6 +50,9 @@ func (s *RouterStreamServer) Uplink(stream Router_UplinkServer) (err error) {
 		close(ch)
 		ctx.Debug("Closed Uplink stream")
 	}()
+	if err = stream.SendHeader(metadata.MD{}); err != nil {
+		return err
+	}
 	for {
 		uplink, err := stream.Recv()
 		if err == io.EOF {
@@ -80,6 +80,7 @@ func (s *RouterStreamServer) Subscribe(req *SubscribeRequest, stream Router_Subs
 		return err
 	}
 	if err = stream.SendHeader(metadata.MD{}); err != nil {
+		cancel()
 		return err
 	}
 	go func() {
@@ -102,12 +103,12 @@ func (s *RouterStreamServer) GatewayStatus(stream Router_GatewayStatusServer) er
 	if err != nil {
 		return err
 	}
-	if err = stream.SendHeader(metadata.MD{}); err != nil {
-		return err
-	}
 	defer func() {
 		close(ch)
 	}()
+	if err = stream.SendHeader(metadata.MD{}); err != nil {
+		return err
+	}
 	for {
 		status, err := stream.Recv()
 		if err == io.EOF {

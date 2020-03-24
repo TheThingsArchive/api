@@ -41,6 +41,7 @@ func (s *BrokerStreamServer) Associate(stream Broker_AssociateServer) (err error
 		return err
 	}
 	if err = stream.SendHeader(metadata.MD{}); err != nil {
+		downCancel()
 		return err
 	}
 	defer func() {
@@ -108,6 +109,7 @@ func (s *BrokerStreamServer) Subscribe(req *SubscribeRequest, stream Broker_Subs
 		return err
 	}
 	if err = stream.SendHeader(metadata.MD{}); err != nil {
+		cancel()
 		return err
 	}
 	go func() {
@@ -130,12 +132,12 @@ func (s *BrokerStreamServer) Publish(stream Broker_PublishServer) error {
 	if err != nil {
 		return err
 	}
-	if err = stream.SendHeader(metadata.MD{}); err != nil {
-		return err
-	}
 	defer func() {
 		close(ch)
 	}()
+	if err = stream.SendHeader(metadata.MD{}); err != nil {
+		return err
+	}
 	for {
 		downlink, err := stream.Recv()
 		if err == io.EOF {
