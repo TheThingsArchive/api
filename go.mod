@@ -1,6 +1,6 @@
 module github.com/TheThingsNetwork/api
 
-go 1.11
+go 1.14
 
 replace github.com/brocaar/lorawan => github.com/ThethingsIndustries/legacy-lorawan-lib v0.0.0-20190212122748-b905ab327304
 
@@ -11,31 +11,31 @@ require (
 	github.com/TheThingsNetwork/ttn/utils/errors v0.0.0-20190516081709-034d40b328bd
 	github.com/TheThingsNetwork/ttn/utils/random v0.0.0-20190516081709-034d40b328bd
 	github.com/TheThingsNetwork/ttn/utils/security v0.0.0-20190516081709-034d40b328bd
-	github.com/beorn7/perks v1.0.0 // indirect
-	github.com/bluele/gcache v0.0.0-20190301044115-79ae3b2d8680
+	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/brocaar/lorawan v0.0.0-20170626123636-a64aca28516d
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
-	github.com/gogo/protobuf v1.2.1
-	github.com/golang/mock v1.3.1
-	github.com/golang/protobuf v1.3.1
-	github.com/gopherjs/gopherjs v0.0.0-20190430165422-3e4dfb77656c // indirect
+	github.com/gogo/protobuf v1.3.1
+	github.com/golang/mock v1.4.3
+	github.com/golang/protobuf v1.3.5
+	github.com/gopherjs/gopherjs v0.0.0-20200217142428-fce0ec30dd00 // indirect
+	github.com/grpc-ecosystem/go-grpc-middleware v1.2.0
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0 // indirect
-	github.com/grpc-ecosystem/grpc-gateway v1.9.0
+	github.com/grpc-ecosystem/grpc-gateway v1.14.3
 	github.com/jacobsa/crypto v0.0.0-20190317225127-9f44e2d11115 // indirect
 	github.com/jacobsa/oglematchers v0.0.0-20150720000706-141901ea67cd // indirect
 	github.com/jacobsa/oglemock v0.0.0-20150831005832-e94d794d06ff // indirect
 	github.com/jacobsa/ogletest v0.0.0-20170503003838-80d50a735a11 // indirect
 	github.com/jacobsa/reqtrace v0.0.0-20150505043853-245c9e0234cb // indirect
-	github.com/mwitkow/go-grpc-middleware v1.0.0
-	github.com/prometheus/common v0.4.0 // indirect
-	github.com/prometheus/procfs v0.0.0-20190507164030-5867b95ac084 // indirect
-	github.com/smartystreets/assertions v0.0.0-20190401211740-f487f9de1cd3
-	github.com/stretchr/testify v1.3.0 // indirect
-	golang.org/x/net v0.0.0-20190514140710-3ec191127204
-	golang.org/x/sync v0.0.0-20190423024810-112230192c58
-	golang.org/x/sys v0.0.0-20190516110030-61b9204099cb // indirect
+	github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e // indirect
+	github.com/prometheus/common v0.9.1 // indirect
+	github.com/prometheus/procfs v0.0.11 // indirect
+	github.com/smartystreets/assertions v1.0.1
+	github.com/stretchr/testify v1.5.1 // indirect
+	golang.org/x/net v0.0.0-20200320220750-118fecf932d8
+	golang.org/x/sync v0.0.0-20200317015054-43a5402ce75a
+	golang.org/x/sys v0.0.0-20200323222414-85ca7c5b95cd // indirect
 	golang.org/x/text v0.3.2 // indirect
-	google.golang.org/appengine v1.4.0 // indirect
-	google.golang.org/genproto v0.0.0-20190515210553-995ef27e003f
-	google.golang.org/grpc v1.20.1
+	google.golang.org/genproto v0.0.0-20200323114720-3f67cca34472
+	google.golang.org/grpc v1.28.0
+	gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f // indirect
 )

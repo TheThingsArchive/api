@@ -23,7 +23,7 @@ import (
 	"github.com/TheThingsNetwork/go-utils/grpc/streambuffer"
 	"github.com/TheThingsNetwork/go-utils/log"
 	"github.com/TheThingsNetwork/ttn/api/pool"
-	"github.com/mwitkow/go-grpc-middleware"
+	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials"
