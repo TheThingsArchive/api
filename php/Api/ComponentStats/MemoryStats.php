@@ -16,19 +16,19 @@ class MemoryStats extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>uint64 memory = 1;</code>
      */
-    private $memory = 0;
+    protected $memory = 0;
     /**
      * Generated from protobuf field <code>uint64 swap = 2;</code>
      */
-    private $swap = 0;
+    protected $swap = 0;
     /**
      * Generated from protobuf field <code>uint64 heap = 10;</code>
      */
-    private $heap = 0;
+    protected $heap = 0;
     /**
      * Generated from protobuf field <code>uint64 stack = 11;</code>
      */
-    private $stack = 0;
+    protected $stack = 0;
 
     /**
      * Constructor.

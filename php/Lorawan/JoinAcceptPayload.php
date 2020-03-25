@@ -16,31 +16,31 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes encrypted = 1;</code>
      */
-    private $encrypted = '';
+    protected $encrypted = '';
     /**
      * Generated from protobuf field <code>bytes app_nonce = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
      */
-    private $app_nonce = '';
+    protected $app_nonce = '';
     /**
      * Generated from protobuf field <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
      */
-    private $net_id = '';
+    protected $net_id = '';
     /**
      * Generated from protobuf field <code>bytes dev_addr = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
-    private $dev_addr = '';
+    protected $dev_addr = '';
     /**
      * Generated from protobuf field <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
-    private $dl_settings = null;
+    protected $dl_settings = null;
     /**
      * Generated from protobuf field <code>uint32 rx_delay = 6;</code>
      */
-    private $rx_delay = 0;
+    protected $rx_delay = 0;
     /**
      * Generated from protobuf field <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
      */
-    private $cf_list = null;
+    protected $cf_list = null;
 
     /**
      * Constructor.

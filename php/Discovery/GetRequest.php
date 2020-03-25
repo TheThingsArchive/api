@@ -20,13 +20,13 @@ class GetRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
-    private $id = '';
+    protected $id = '';
     /**
      * The name of the service (router/broker/handler)
      *
      * Generated from protobuf field <code>string service_name = 2;</code>
      */
-    private $service_name = '';
+    protected $service_name = '';
 
     /**
      * Constructor.

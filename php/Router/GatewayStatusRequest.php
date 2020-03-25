@@ -19,7 +19,7 @@ class GatewayStatusRequest extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
      */
-    private $gateway_id = '';
+    protected $gateway_id = '';
 
     /**
      * Constructor.

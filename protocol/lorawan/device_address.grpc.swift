@@ -20,8 +20,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-import Foundation
 import Dispatch
+import Foundation
 import SwiftGRPC
 import SwiftProtobuf
 
@@ -41,46 +41,98 @@ fileprivate final class Lorawan_DevAddrManagerGetDevAddrCallBase: ClientCallUnar
 /// Instantiate Lorawan_DevAddrManagerServiceClient, then call methods of this protocol to make API calls.
 internal protocol Lorawan_DevAddrManagerService: ServiceClient {
   /// Synchronous. Unary.
-  func getPrefixes(_ request: Lorawan_PrefixesRequest) throws -> Lorawan_PrefixesResponse
+  func getPrefixes(_ request: Lorawan_PrefixesRequest, metadata customMetadata: Metadata) throws -> Lorawan_PrefixesResponse
   /// Asynchronous. Unary.
-  func getPrefixes(_ request: Lorawan_PrefixesRequest, completion: @escaping (Lorawan_PrefixesResponse?, CallResult) -> Void) throws -> Lorawan_DevAddrManagerGetPrefixesCall
+  @discardableResult
+  func getPrefixes(_ request: Lorawan_PrefixesRequest, metadata customMetadata: Metadata, completion: @escaping (Lorawan_PrefixesResponse?, CallResult) -> Void) throws -> Lorawan_DevAddrManagerGetPrefixesCall
 
   /// Synchronous. Unary.
-  func getDevAddr(_ request: Lorawan_DevAddrRequest) throws -> Lorawan_DevAddrResponse
+  func getDevAddr(_ request: Lorawan_DevAddrRequest, metadata customMetadata: Metadata) throws -> Lorawan_DevAddrResponse
   /// Asynchronous. Unary.
-  func getDevAddr(_ request: Lorawan_DevAddrRequest, completion: @escaping (Lorawan_DevAddrResponse?, CallResult) -> Void) throws -> Lorawan_DevAddrManagerGetDevAddrCall
+  @discardableResult
+  func getDevAddr(_ request: Lorawan_DevAddrRequest, metadata customMetadata: Metadata, completion: @escaping (Lorawan_DevAddrResponse?, CallResult) -> Void) throws -> Lorawan_DevAddrManagerGetDevAddrCall
+
+}
+
+internal extension Lorawan_DevAddrManagerService {
+  /// Synchronous. Unary.
+  func getPrefixes(_ request: Lorawan_PrefixesRequest) throws -> Lorawan_PrefixesResponse {
+    return try self.getPrefixes(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getPrefixes(_ request: Lorawan_PrefixesRequest, completion: @escaping (Lorawan_PrefixesResponse?, CallResult) -> Void) throws -> Lorawan_DevAddrManagerGetPrefixesCall {
+    return try self.getPrefixes(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func getDevAddr(_ request: Lorawan_DevAddrRequest) throws -> Lorawan_DevAddrResponse {
+    return try self.getDevAddr(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getDevAddr(_ request: Lorawan_DevAddrRequest, completion: @escaping (Lorawan_DevAddrResponse?, CallResult) -> Void) throws -> Lorawan_DevAddrManagerGetDevAddrCall {
+    return try self.getDevAddr(request, metadata: self.metadata, completion: completion)
+  }
 
 }
 
 internal final class Lorawan_DevAddrManagerServiceClient: ServiceClientBase, Lorawan_DevAddrManagerService {
   /// Synchronous. Unary.
-  internal func getPrefixes(_ request: Lorawan_PrefixesRequest) throws -> Lorawan_PrefixesResponse {
+  internal func getPrefixes(_ request: Lorawan_PrefixesRequest, metadata customMetadata: Metadata) throws -> Lorawan_PrefixesResponse {
     return try Lorawan_DevAddrManagerGetPrefixesCallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func getPrefixes(_ request: Lorawan_PrefixesRequest, completion: @escaping (Lorawan_PrefixesResponse?, CallResult) -> Void) throws -> Lorawan_DevAddrManagerGetPrefixesCall {
+  @discardableResult
+  internal func getPrefixes(_ request: Lorawan_PrefixesRequest, metadata customMetadata: Metadata, completion: @escaping (Lorawan_PrefixesResponse?, CallResult) -> Void) throws -> Lorawan_DevAddrManagerGetPrefixesCall {
     return try Lorawan_DevAddrManagerGetPrefixesCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func getDevAddr(_ request: Lorawan_DevAddrRequest) throws -> Lorawan_DevAddrResponse {
+  internal func getDevAddr(_ request: Lorawan_DevAddrRequest, metadata customMetadata: Metadata) throws -> Lorawan_DevAddrResponse {
     return try Lorawan_DevAddrManagerGetDevAddrCallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func getDevAddr(_ request: Lorawan_DevAddrRequest, completion: @escaping (Lorawan_DevAddrResponse?, CallResult) -> Void) throws -> Lorawan_DevAddrManagerGetDevAddrCall {
+  @discardableResult
+  internal func getDevAddr(_ request: Lorawan_DevAddrRequest, metadata customMetadata: Metadata, completion: @escaping (Lorawan_DevAddrResponse?, CallResult) -> Void) throws -> Lorawan_DevAddrManagerGetDevAddrCall {
     return try Lorawan_DevAddrManagerGetDevAddrCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
 }
 
 /// To build a server, implement a class that conforms to this protocol.
-internal protocol Lorawan_DevAddrManagerProvider {
+/// If one of the methods returning `ServerStatus?` returns nil,
+/// it is expected that you have already returned a status to the client by means of `session.close`.
+internal protocol Lorawan_DevAddrManagerProvider: ServiceProvider {
   func getPrefixes(request: Lorawan_PrefixesRequest, session: Lorawan_DevAddrManagerGetPrefixesSession) throws -> Lorawan_PrefixesResponse
   func getDevAddr(request: Lorawan_DevAddrRequest, session: Lorawan_DevAddrManagerGetDevAddrSession) throws -> Lorawan_DevAddrResponse
+}
+
+extension Lorawan_DevAddrManagerProvider {
+  internal var serviceName: String { return "lorawan.DevAddrManager" }
+
+  /// Determines and calls the appropriate request handler, depending on the request's method.
+  /// Throws `HandleMethodError.unknownMethod` for methods not handled by this service.
+  internal func handleMethod(_ method: String, handler: Handler) throws -> ServerStatus? {
+    switch method {
+    case "/lorawan.DevAddrManager/GetPrefixes":
+      return try Lorawan_DevAddrManagerGetPrefixesSessionBase(
+        handler: handler,
+        providerBlock: { try self.getPrefixes(request: $0, session: $1 as! Lorawan_DevAddrManagerGetPrefixesSessionBase) })
+          .run()
+    case "/lorawan.DevAddrManager/GetDevAddr":
+      return try Lorawan_DevAddrManagerGetDevAddrSessionBase(
+        handler: handler,
+        providerBlock: { try self.getDevAddr(request: $0, session: $1 as! Lorawan_DevAddrManagerGetDevAddrSessionBase) })
+          .run()
+    default:
+      throw HandleMethodError.unknownMethod
+    }
+  }
 }
 
 internal protocol Lorawan_DevAddrManagerGetPrefixesSession: ServerSessionUnary {}
@@ -90,46 +142,4 @@ fileprivate final class Lorawan_DevAddrManagerGetPrefixesSessionBase: ServerSess
 internal protocol Lorawan_DevAddrManagerGetDevAddrSession: ServerSessionUnary {}
 
 fileprivate final class Lorawan_DevAddrManagerGetDevAddrSessionBase: ServerSessionUnaryBase<Lorawan_DevAddrRequest, Lorawan_DevAddrResponse>, Lorawan_DevAddrManagerGetDevAddrSession {}
-
-
-/// Main server for generated service
-internal final class Lorawan_DevAddrManagerServer: ServiceServer {
-  private let provider: Lorawan_DevAddrManagerProvider
-
-  internal init(address: String, provider: Lorawan_DevAddrManagerProvider) {
-    self.provider = provider
-    super.init(address: address)
-  }
-
-  internal init?(address: String, certificateURL: URL, keyURL: URL, provider: Lorawan_DevAddrManagerProvider) {
-    self.provider = provider
-    super.init(address: address, certificateURL: certificateURL, keyURL: keyURL)
-  }
-
-  internal init?(address: String, certificateString: String, keyString: String, provider: Lorawan_DevAddrManagerProvider) {
-    self.provider = provider
-    super.init(address: address, certificateString: certificateString, keyString: keyString)
-  }
-
-  /// Start the server.
-  internal override func handleMethod(_ method: String, handler: Handler, queue: DispatchQueue) throws -> Bool {
-    let provider = self.provider
-    switch method {
-    case "/lorawan.DevAddrManager/GetPrefixes":
-      try Lorawan_DevAddrManagerGetPrefixesSessionBase(
-        handler: handler,
-        providerBlock: { try provider.getPrefixes(request: $0, session: $1 as! Lorawan_DevAddrManagerGetPrefixesSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/lorawan.DevAddrManager/GetDevAddr":
-      try Lorawan_DevAddrManagerGetDevAddrSessionBase(
-        handler: handler,
-        providerBlock: { try provider.getDevAddr(request: $0, session: $1 as! Lorawan_DevAddrManagerGetDevAddrSessionBase) })
-          .run(queue: queue)
-      return true
-    default:
-      return false
-    }
-  }
-}
 

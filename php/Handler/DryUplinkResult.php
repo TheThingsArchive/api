@@ -20,19 +20,19 @@ class DryUplinkResult extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bytes payload = 1;</code>
      */
-    private $payload = '';
+    protected $payload = '';
     /**
      * The decoded fields
      *
      * Generated from protobuf field <code>string fields = 2;</code>
      */
-    private $fields = '';
+    protected $fields = '';
     /**
      * Was validation of the message successful
      *
      * Generated from protobuf field <code>bool valid = 3;</code>
      */
-    private $valid = false;
+    protected $valid = false;
     /**
      * Logs that have been generated while processing
      *

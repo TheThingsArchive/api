@@ -9,10 +9,12 @@ public interface MetadataOrBuilder extends
 
   /**
    * <code>.lorawan.Modulation modulation = 11;</code>
+   * @return The enum numeric value on the wire for modulation.
    */
   int getModulationValue();
   /**
    * <code>.lorawan.Modulation modulation = 11;</code>
+   * @return The modulation.
    */
   org.thethingsnetwork.api.protocol.lorawan.Modulation getModulation();
 
@@ -22,6 +24,7 @@ public interface MetadataOrBuilder extends
    * </pre>
    *
    * <code>string data_rate = 12;</code>
+   * @return The dataRate.
    */
   java.lang.String getDataRate();
   /**
@@ -30,6 +33,7 @@ public interface MetadataOrBuilder extends
    * </pre>
    *
    * <code>string data_rate = 12;</code>
+   * @return The bytes for dataRate.
    */
   com.google.protobuf.ByteString
       getDataRateBytes();
@@ -40,6 +44,7 @@ public interface MetadataOrBuilder extends
    * </pre>
    *
    * <code>uint32 bit_rate = 13;</code>
+   * @return The bitRate.
    */
   int getBitRate();
 
@@ -49,6 +54,7 @@ public interface MetadataOrBuilder extends
    * </pre>
    *
    * <code>string coding_rate = 14;</code>
+   * @return The codingRate.
    */
   java.lang.String getCodingRate();
   /**
@@ -57,6 +63,7 @@ public interface MetadataOrBuilder extends
    * </pre>
    *
    * <code>string coding_rate = 14;</code>
+   * @return The bytes for codingRate.
    */
   com.google.protobuf.ByteString
       getCodingRateBytes();
@@ -67,15 +74,18 @@ public interface MetadataOrBuilder extends
    * </pre>
    *
    * <code>uint32 f_cnt = 15;</code>
+   * @return The fCnt.
    */
   int getFCnt();
 
   /**
    * <code>.lorawan.FrequencyPlan frequency_plan = 16;</code>
+   * @return The enum numeric value on the wire for frequencyPlan.
    */
   int getFrequencyPlanValue();
   /**
    * <code>.lorawan.FrequencyPlan frequency_plan = 16;</code>
+   * @return The frequencyPlan.
    */
   org.thethingsnetwork.api.protocol.lorawan.FrequencyPlan getFrequencyPlan();
 }

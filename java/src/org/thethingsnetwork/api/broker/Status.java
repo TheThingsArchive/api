@@ -16,8 +16,13 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Status() {
-    connectedRouters_ = 0;
-    connectedHandlers_ = 0;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Status();
   }
 
   @java.lang.Override
@@ -33,7 +38,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -159,7 +163,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -194,12 +198,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.SystemStats system_;
   /**
    * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
+   * @return Whether the system field is set.
    */
   public boolean hasSystem() {
     return system_ != null;
   }
   /**
    * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
+   * @return The system.
    */
   public org.thethingsnetwork.api.SystemStats getSystem() {
     return system_ == null ? org.thethingsnetwork.api.SystemStats.getDefaultInstance() : system_;
@@ -215,12 +221,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.ComponentStats component_;
   /**
    * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
+   * @return Whether the component field is set.
    */
   public boolean hasComponent() {
     return component_ != null;
   }
   /**
    * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
+   * @return The component.
    */
   public org.thethingsnetwork.api.ComponentStats getComponent() {
     return component_ == null ? org.thethingsnetwork.api.ComponentStats.getDefaultInstance() : component_;
@@ -236,12 +244,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.Rates uplink_;
   /**
    * <code>.api.Rates uplink = 11;</code>
+   * @return Whether the uplink field is set.
    */
   public boolean hasUplink() {
     return uplink_ != null;
   }
   /**
    * <code>.api.Rates uplink = 11;</code>
+   * @return The uplink.
    */
   public org.thethingsnetwork.api.Rates getUplink() {
     return uplink_ == null ? org.thethingsnetwork.api.Rates.getDefaultInstance() : uplink_;
@@ -257,12 +267,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.Rates uplinkUnique_;
   /**
    * <code>.api.Rates uplink_unique = 12;</code>
+   * @return Whether the uplinkUnique field is set.
    */
   public boolean hasUplinkUnique() {
     return uplinkUnique_ != null;
   }
   /**
    * <code>.api.Rates uplink_unique = 12;</code>
+   * @return The uplinkUnique.
    */
   public org.thethingsnetwork.api.Rates getUplinkUnique() {
     return uplinkUnique_ == null ? org.thethingsnetwork.api.Rates.getDefaultInstance() : uplinkUnique_;
@@ -278,12 +290,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.Rates downlink_;
   /**
    * <code>.api.Rates downlink = 13;</code>
+   * @return Whether the downlink field is set.
    */
   public boolean hasDownlink() {
     return downlink_ != null;
   }
   /**
    * <code>.api.Rates downlink = 13;</code>
+   * @return The downlink.
    */
   public org.thethingsnetwork.api.Rates getDownlink() {
     return downlink_ == null ? org.thethingsnetwork.api.Rates.getDefaultInstance() : downlink_;
@@ -299,12 +313,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.Rates activations_;
   /**
    * <code>.api.Rates activations = 14;</code>
+   * @return Whether the activations field is set.
    */
   public boolean hasActivations() {
     return activations_ != null;
   }
   /**
    * <code>.api.Rates activations = 14;</code>
+   * @return The activations.
    */
   public org.thethingsnetwork.api.Rates getActivations() {
     return activations_ == null ? org.thethingsnetwork.api.Rates.getDefaultInstance() : activations_;
@@ -320,12 +336,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.Rates activationsUnique_;
   /**
    * <code>.api.Rates activations_unique = 15;</code>
+   * @return Whether the activationsUnique field is set.
    */
   public boolean hasActivationsUnique() {
     return activationsUnique_ != null;
   }
   /**
    * <code>.api.Rates activations_unique = 15;</code>
+   * @return The activationsUnique.
    */
   public org.thethingsnetwork.api.Rates getActivationsUnique() {
     return activationsUnique_ == null ? org.thethingsnetwork.api.Rates.getDefaultInstance() : activationsUnique_;
@@ -341,12 +359,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.Percentiles deduplication_;
   /**
    * <code>.api.Percentiles deduplication = 16;</code>
+   * @return Whether the deduplication field is set.
    */
   public boolean hasDeduplication() {
     return deduplication_ != null;
   }
   /**
    * <code>.api.Percentiles deduplication = 16;</code>
+   * @return The deduplication.
    */
   public org.thethingsnetwork.api.Percentiles getDeduplication() {
     return deduplication_ == null ? org.thethingsnetwork.api.Percentiles.getDefaultInstance() : deduplication_;
@@ -366,6 +386,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 connected_routers = 21;</code>
+   * @return The connectedRouters.
    */
   public int getConnectedRouters() {
     return connectedRouters_;
@@ -375,6 +396,7 @@ private static final long serialVersionUID = 0L;
   private int connectedHandlers_;
   /**
    * <code>uint32 connected_handlers = 22;</code>
+   * @return The connectedHandlers.
    */
   public int getConnectedHandlers() {
     return connectedHandlers_;
@@ -488,53 +510,52 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.broker.Status other = (org.thethingsnetwork.api.broker.Status) obj;
 
-    boolean result = true;
-    result = result && (hasSystem() == other.hasSystem());
+    if (hasSystem() != other.hasSystem()) return false;
     if (hasSystem()) {
-      result = result && getSystem()
-          .equals(other.getSystem());
+      if (!getSystem()
+          .equals(other.getSystem())) return false;
     }
-    result = result && (hasComponent() == other.hasComponent());
+    if (hasComponent() != other.hasComponent()) return false;
     if (hasComponent()) {
-      result = result && getComponent()
-          .equals(other.getComponent());
+      if (!getComponent()
+          .equals(other.getComponent())) return false;
     }
-    result = result && (hasUplink() == other.hasUplink());
+    if (hasUplink() != other.hasUplink()) return false;
     if (hasUplink()) {
-      result = result && getUplink()
-          .equals(other.getUplink());
+      if (!getUplink()
+          .equals(other.getUplink())) return false;
     }
-    result = result && (hasUplinkUnique() == other.hasUplinkUnique());
+    if (hasUplinkUnique() != other.hasUplinkUnique()) return false;
     if (hasUplinkUnique()) {
-      result = result && getUplinkUnique()
-          .equals(other.getUplinkUnique());
+      if (!getUplinkUnique()
+          .equals(other.getUplinkUnique())) return false;
     }
-    result = result && (hasDownlink() == other.hasDownlink());
+    if (hasDownlink() != other.hasDownlink()) return false;
     if (hasDownlink()) {
-      result = result && getDownlink()
-          .equals(other.getDownlink());
+      if (!getDownlink()
+          .equals(other.getDownlink())) return false;
     }
-    result = result && (hasActivations() == other.hasActivations());
+    if (hasActivations() != other.hasActivations()) return false;
     if (hasActivations()) {
-      result = result && getActivations()
-          .equals(other.getActivations());
+      if (!getActivations()
+          .equals(other.getActivations())) return false;
     }
-    result = result && (hasActivationsUnique() == other.hasActivationsUnique());
+    if (hasActivationsUnique() != other.hasActivationsUnique()) return false;
     if (hasActivationsUnique()) {
-      result = result && getActivationsUnique()
-          .equals(other.getActivationsUnique());
+      if (!getActivationsUnique()
+          .equals(other.getActivationsUnique())) return false;
     }
-    result = result && (hasDeduplication() == other.hasDeduplication());
+    if (hasDeduplication() != other.hasDeduplication()) return false;
     if (hasDeduplication()) {
-      result = result && getDeduplication()
-          .equals(other.getDeduplication());
+      if (!getDeduplication()
+          .equals(other.getDeduplication())) return false;
     }
-    result = result && (getConnectedRouters()
-        == other.getConnectedRouters());
-    result = result && (getConnectedHandlers()
-        == other.getConnectedHandlers());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getConnectedRouters()
+        != other.getConnectedRouters()) return false;
+    if (getConnectedHandlers()
+        != other.getConnectedHandlers()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -839,35 +860,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -940,17 +961,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private org.thethingsnetwork.api.SystemStats system_ = null;
+    private org.thethingsnetwork.api.SystemStats system_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.SystemStats, org.thethingsnetwork.api.SystemStats.Builder, org.thethingsnetwork.api.SystemStatsOrBuilder> systemBuilder_;
     /**
      * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the system field is set.
      */
     public boolean hasSystem() {
       return systemBuilder_ != null || system_ != null;
     }
     /**
      * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
+     * @return The system.
      */
     public org.thethingsnetwork.api.SystemStats getSystem() {
       if (systemBuilder_ == null) {
@@ -1057,17 +1080,19 @@ private static final long serialVersionUID = 0L;
       return systemBuilder_;
     }
 
-    private org.thethingsnetwork.api.ComponentStats component_ = null;
+    private org.thethingsnetwork.api.ComponentStats component_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.ComponentStats, org.thethingsnetwork.api.ComponentStats.Builder, org.thethingsnetwork.api.ComponentStatsOrBuilder> componentBuilder_;
     /**
      * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the component field is set.
      */
     public boolean hasComponent() {
       return componentBuilder_ != null || component_ != null;
     }
     /**
      * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
+     * @return The component.
      */
     public org.thethingsnetwork.api.ComponentStats getComponent() {
       if (componentBuilder_ == null) {
@@ -1174,17 +1199,19 @@ private static final long serialVersionUID = 0L;
       return componentBuilder_;
     }
 
-    private org.thethingsnetwork.api.Rates uplink_ = null;
+    private org.thethingsnetwork.api.Rates uplink_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.Rates, org.thethingsnetwork.api.Rates.Builder, org.thethingsnetwork.api.RatesOrBuilder> uplinkBuilder_;
     /**
      * <code>.api.Rates uplink = 11;</code>
+     * @return Whether the uplink field is set.
      */
     public boolean hasUplink() {
       return uplinkBuilder_ != null || uplink_ != null;
     }
     /**
      * <code>.api.Rates uplink = 11;</code>
+     * @return The uplink.
      */
     public org.thethingsnetwork.api.Rates getUplink() {
       if (uplinkBuilder_ == null) {
@@ -1291,17 +1318,19 @@ private static final long serialVersionUID = 0L;
       return uplinkBuilder_;
     }
 
-    private org.thethingsnetwork.api.Rates uplinkUnique_ = null;
+    private org.thethingsnetwork.api.Rates uplinkUnique_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.Rates, org.thethingsnetwork.api.Rates.Builder, org.thethingsnetwork.api.RatesOrBuilder> uplinkUniqueBuilder_;
     /**
      * <code>.api.Rates uplink_unique = 12;</code>
+     * @return Whether the uplinkUnique field is set.
      */
     public boolean hasUplinkUnique() {
       return uplinkUniqueBuilder_ != null || uplinkUnique_ != null;
     }
     /**
      * <code>.api.Rates uplink_unique = 12;</code>
+     * @return The uplinkUnique.
      */
     public org.thethingsnetwork.api.Rates getUplinkUnique() {
       if (uplinkUniqueBuilder_ == null) {
@@ -1408,17 +1437,19 @@ private static final long serialVersionUID = 0L;
       return uplinkUniqueBuilder_;
     }
 
-    private org.thethingsnetwork.api.Rates downlink_ = null;
+    private org.thethingsnetwork.api.Rates downlink_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.Rates, org.thethingsnetwork.api.Rates.Builder, org.thethingsnetwork.api.RatesOrBuilder> downlinkBuilder_;
     /**
      * <code>.api.Rates downlink = 13;</code>
+     * @return Whether the downlink field is set.
      */
     public boolean hasDownlink() {
       return downlinkBuilder_ != null || downlink_ != null;
     }
     /**
      * <code>.api.Rates downlink = 13;</code>
+     * @return The downlink.
      */
     public org.thethingsnetwork.api.Rates getDownlink() {
       if (downlinkBuilder_ == null) {
@@ -1525,17 +1556,19 @@ private static final long serialVersionUID = 0L;
       return downlinkBuilder_;
     }
 
-    private org.thethingsnetwork.api.Rates activations_ = null;
+    private org.thethingsnetwork.api.Rates activations_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.Rates, org.thethingsnetwork.api.Rates.Builder, org.thethingsnetwork.api.RatesOrBuilder> activationsBuilder_;
     /**
      * <code>.api.Rates activations = 14;</code>
+     * @return Whether the activations field is set.
      */
     public boolean hasActivations() {
       return activationsBuilder_ != null || activations_ != null;
     }
     /**
      * <code>.api.Rates activations = 14;</code>
+     * @return The activations.
      */
     public org.thethingsnetwork.api.Rates getActivations() {
       if (activationsBuilder_ == null) {
@@ -1642,17 +1675,19 @@ private static final long serialVersionUID = 0L;
       return activationsBuilder_;
     }
 
-    private org.thethingsnetwork.api.Rates activationsUnique_ = null;
+    private org.thethingsnetwork.api.Rates activationsUnique_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.Rates, org.thethingsnetwork.api.Rates.Builder, org.thethingsnetwork.api.RatesOrBuilder> activationsUniqueBuilder_;
     /**
      * <code>.api.Rates activations_unique = 15;</code>
+     * @return Whether the activationsUnique field is set.
      */
     public boolean hasActivationsUnique() {
       return activationsUniqueBuilder_ != null || activationsUnique_ != null;
     }
     /**
      * <code>.api.Rates activations_unique = 15;</code>
+     * @return The activationsUnique.
      */
     public org.thethingsnetwork.api.Rates getActivationsUnique() {
       if (activationsUniqueBuilder_ == null) {
@@ -1759,17 +1794,19 @@ private static final long serialVersionUID = 0L;
       return activationsUniqueBuilder_;
     }
 
-    private org.thethingsnetwork.api.Percentiles deduplication_ = null;
+    private org.thethingsnetwork.api.Percentiles deduplication_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.Percentiles, org.thethingsnetwork.api.Percentiles.Builder, org.thethingsnetwork.api.PercentilesOrBuilder> deduplicationBuilder_;
     /**
      * <code>.api.Percentiles deduplication = 16;</code>
+     * @return Whether the deduplication field is set.
      */
     public boolean hasDeduplication() {
       return deduplicationBuilder_ != null || deduplication_ != null;
     }
     /**
      * <code>.api.Percentiles deduplication = 16;</code>
+     * @return The deduplication.
      */
     public org.thethingsnetwork.api.Percentiles getDeduplication() {
       if (deduplicationBuilder_ == null) {
@@ -1883,6 +1920,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 connected_routers = 21;</code>
+     * @return The connectedRouters.
      */
     public int getConnectedRouters() {
       return connectedRouters_;
@@ -1893,6 +1931,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 connected_routers = 21;</code>
+     * @param value The connectedRouters to set.
+     * @return This builder for chaining.
      */
     public Builder setConnectedRouters(int value) {
       
@@ -1906,6 +1946,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 connected_routers = 21;</code>
+     * @return This builder for chaining.
      */
     public Builder clearConnectedRouters() {
       
@@ -1917,12 +1958,15 @@ private static final long serialVersionUID = 0L;
     private int connectedHandlers_ ;
     /**
      * <code>uint32 connected_handlers = 22;</code>
+     * @return The connectedHandlers.
      */
     public int getConnectedHandlers() {
       return connectedHandlers_;
     }
     /**
      * <code>uint32 connected_handlers = 22;</code>
+     * @param value The connectedHandlers to set.
+     * @return This builder for chaining.
      */
     public Builder setConnectedHandlers(int value) {
       
@@ -1932,6 +1976,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 connected_handlers = 22;</code>
+     * @return This builder for chaining.
      */
     public Builder clearConnectedHandlers() {
       
@@ -1942,7 +1987,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

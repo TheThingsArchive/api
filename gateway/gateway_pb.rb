@@ -4,98 +4,100 @@
 require 'google/protobuf'
 
 Google::Protobuf::DescriptorPool.generated_pool.build do
-  add_message "gateway.LocationMetadata" do
-    optional :time, :int64, 1
-    optional :latitude, :float, 2
-    optional :longitude, :float, 3
-    optional :altitude, :int32, 4
-    optional :accuracy, :int32, 5
-    optional :source, :enum, 6, "gateway.LocationMetadata.LocationSource"
-  end
-  add_enum "gateway.LocationMetadata.LocationSource" do
-    value :UNKNOWN, 0
-    value :GPS, 1
-    value :CONFIG, 2
-    value :REGISTRY, 3
-    value :IP_GEOLOCATION, 4
-  end
-  add_message "gateway.RxMetadata" do
-    optional :gateway_id, :string, 1
-    optional :gateway_trusted, :bool, 2
-    optional :timestamp, :uint32, 11
-    optional :time, :int64, 12
-    optional :encrypted_time, :bytes, 13
-    optional :rf_chain, :uint32, 21
-    optional :channel, :uint32, 22
-    repeated :antennas, :message, 30, "gateway.RxMetadata.Antenna"
-    optional :frequency, :uint64, 31
-    optional :rssi, :float, 32
-    optional :snr, :float, 33
-    optional :location, :message, 41, "gateway.LocationMetadata"
-  end
-  add_message "gateway.RxMetadata.Antenna" do
-    optional :antenna, :uint32, 1
-    optional :channel, :uint32, 2
-    optional :rssi, :float, 3
-    optional :channel_rssi, :float, 5
-    optional :rssi_standard_deviation, :float, 6
-    optional :frequency_offset, :int64, 7
-    optional :snr, :float, 4
-    optional :encrypted_time, :bytes, 10
-    optional :fine_time, :int64, 11
-  end
-  add_message "gateway.TxConfiguration" do
-    optional :timestamp, :uint32, 11
-    optional :rf_chain, :uint32, 21
-    optional :frequency, :uint64, 22
-    optional :power, :int32, 23
-    optional :polarization_inversion, :bool, 31
-    optional :frequency_deviation, :uint32, 32
-  end
-  add_message "gateway.Status" do
-    optional :timestamp, :uint32, 1
-    optional :time, :int64, 2
-    optional :gateway_trusted, :bool, 3
-    optional :boot_time, :int64, 4
-    repeated :ip, :string, 11
-    optional :platform, :string, 12
-    optional :contact_email, :string, 13
-    optional :description, :string, 14
-    optional :frequency_plan, :string, 15
-    optional :bridge, :string, 16
-    optional :router, :string, 17
-    optional :fpga, :uint32, 18
-    optional :dsp, :uint32, 19
-    optional :hal, :string, 20
-    optional :location, :message, 21, "gateway.LocationMetadata"
-    optional :rtt, :uint32, 31
-    optional :rx_in, :uint32, 41
-    optional :rx_ok, :uint32, 42
-    optional :tx_in, :uint32, 43
-    optional :tx_ok, :uint32, 44
-    optional :lm_ok, :uint32, 45
-    optional :lm_st, :uint32, 46
-    optional :lm_nw, :uint32, 47
-    optional :l_pps, :uint32, 48
-    optional :os, :message, 51, "gateway.Status.OSMetrics"
-    repeated :messages, :string, 52
-  end
-  add_message "gateway.Status.OSMetrics" do
-    optional :load_1, :float, 1
-    optional :load_5, :float, 2
-    optional :load_15, :float, 3
-    optional :cpu_percentage, :float, 11
-    optional :memory_percentage, :float, 21
-    optional :temperature, :float, 31
+  add_file("github.com/TheThingsNetwork/api/gateway/gateway.proto", :syntax => :proto3) do
+    add_message "gateway.LocationMetadata" do
+      optional :time, :int64, 1
+      optional :latitude, :float, 2
+      optional :longitude, :float, 3
+      optional :altitude, :int32, 4
+      optional :accuracy, :int32, 5
+      optional :source, :enum, 6, "gateway.LocationMetadata.LocationSource"
+    end
+    add_enum "gateway.LocationMetadata.LocationSource" do
+      value :UNKNOWN, 0
+      value :GPS, 1
+      value :CONFIG, 2
+      value :REGISTRY, 3
+      value :IP_GEOLOCATION, 4
+    end
+    add_message "gateway.RxMetadata" do
+      optional :gateway_id, :string, 1
+      optional :gateway_trusted, :bool, 2
+      optional :timestamp, :uint32, 11
+      optional :time, :int64, 12
+      optional :encrypted_time, :bytes, 13
+      optional :rf_chain, :uint32, 21
+      optional :channel, :uint32, 22
+      repeated :antennas, :message, 30, "gateway.RxMetadata.Antenna"
+      optional :frequency, :uint64, 31
+      optional :rssi, :float, 32
+      optional :snr, :float, 33
+      optional :location, :message, 41, "gateway.LocationMetadata"
+    end
+    add_message "gateway.RxMetadata.Antenna" do
+      optional :antenna, :uint32, 1
+      optional :channel, :uint32, 2
+      optional :rssi, :float, 3
+      optional :channel_rssi, :float, 5
+      optional :rssi_standard_deviation, :float, 6
+      optional :frequency_offset, :int64, 7
+      optional :snr, :float, 4
+      optional :encrypted_time, :bytes, 10
+      optional :fine_time, :int64, 11
+    end
+    add_message "gateway.TxConfiguration" do
+      optional :timestamp, :uint32, 11
+      optional :rf_chain, :uint32, 21
+      optional :frequency, :uint64, 22
+      optional :power, :int32, 23
+      optional :polarization_inversion, :bool, 31
+      optional :frequency_deviation, :uint32, 32
+    end
+    add_message "gateway.Status" do
+      optional :timestamp, :uint32, 1
+      optional :time, :int64, 2
+      optional :gateway_trusted, :bool, 3
+      optional :boot_time, :int64, 4
+      repeated :ip, :string, 11
+      optional :platform, :string, 12
+      optional :contact_email, :string, 13
+      optional :description, :string, 14
+      optional :frequency_plan, :string, 15
+      optional :bridge, :string, 16
+      optional :router, :string, 17
+      optional :fpga, :uint32, 18
+      optional :dsp, :uint32, 19
+      optional :hal, :string, 20
+      optional :location, :message, 21, "gateway.LocationMetadata"
+      optional :rtt, :uint32, 31
+      optional :rx_in, :uint32, 41
+      optional :rx_ok, :uint32, 42
+      optional :tx_in, :uint32, 43
+      optional :tx_ok, :uint32, 44
+      optional :lm_ok, :uint32, 45
+      optional :lm_st, :uint32, 46
+      optional :lm_nw, :uint32, 47
+      optional :l_pps, :uint32, 48
+      optional :os, :message, 51, "gateway.Status.OSMetrics"
+      repeated :messages, :string, 52
+    end
+    add_message "gateway.Status.OSMetrics" do
+      optional :load_1, :float, 1
+      optional :load_5, :float, 2
+      optional :load_15, :float, 3
+      optional :cpu_percentage, :float, 11
+      optional :memory_percentage, :float, 21
+      optional :temperature, :float, 31
+    end
   end
 end
 
 module Gateway
-  LocationMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("gateway.LocationMetadata").msgclass
-  LocationMetadata::LocationSource = Google::Protobuf::DescriptorPool.generated_pool.lookup("gateway.LocationMetadata.LocationSource").enummodule
-  RxMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("gateway.RxMetadata").msgclass
-  RxMetadata::Antenna = Google::Protobuf::DescriptorPool.generated_pool.lookup("gateway.RxMetadata.Antenna").msgclass
-  TxConfiguration = Google::Protobuf::DescriptorPool.generated_pool.lookup("gateway.TxConfiguration").msgclass
-  Status = Google::Protobuf::DescriptorPool.generated_pool.lookup("gateway.Status").msgclass
-  Status::OSMetrics = Google::Protobuf::DescriptorPool.generated_pool.lookup("gateway.Status.OSMetrics").msgclass
+  LocationMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("gateway.LocationMetadata").msgclass
+  LocationMetadata::LocationSource = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("gateway.LocationMetadata.LocationSource").enummodule
+  RxMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("gateway.RxMetadata").msgclass
+  RxMetadata::Antenna = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("gateway.RxMetadata.Antenna").msgclass
+  TxConfiguration = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("gateway.TxConfiguration").msgclass
+  Status = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("gateway.Status").msgclass
+  Status::OSMetrics = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("gateway.Status.OSMetrics").msgclass
 end

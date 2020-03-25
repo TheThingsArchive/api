@@ -9,15 +9,18 @@ public interface FHDROrBuilder extends
 
   /**
    * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+   * @return The devAddr.
    */
   com.google.protobuf.ByteString getDevAddr();
 
   /**
    * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+   * @return Whether the fCtrl field is set.
    */
   boolean hasFCtrl();
   /**
    * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+   * @return The fCtrl.
    */
   org.thethingsnetwork.api.protocol.lorawan.FCtrl getFCtrl();
   /**
@@ -27,6 +30,7 @@ public interface FHDROrBuilder extends
 
   /**
    * <code>uint32 f_cnt = 3;</code>
+   * @return The fCnt.
    */
   int getFCnt();
 

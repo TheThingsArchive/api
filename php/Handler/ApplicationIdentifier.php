@@ -16,7 +16,7 @@ class ApplicationIdentifier extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
-    private $app_id = '';
+    protected $app_id = '';
 
     /**
      * Constructor.

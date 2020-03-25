@@ -67,7 +67,7 @@ class Networkserver
             "67734e6574776f726b2f6170692f6e6574776f726b736572766572aa021c" .
             "5468655468696e67734e6574776f726b2e4150492e4d6f6e69746f726206" .
             "70726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

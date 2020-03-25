@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ActivationChallengeRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -88,7 +94,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -123,6 +129,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString payload_;
   /**
    * <code>bytes payload = 1;</code>
+   * @return The payload.
    */
   public com.google.protobuf.ByteString getPayload() {
     return payload_;
@@ -132,12 +139,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.protocol.Message message_;
   /**
    * <code>.protocol.Message message = 2;</code>
+   * @return Whether the message field is set.
    */
   public boolean hasMessage() {
     return message_ != null;
   }
   /**
    * <code>.protocol.Message message = 2;</code>
+   * @return The message.
    */
   public org.thethingsnetwork.api.protocol.Message getMessage() {
     return message_ == null ? org.thethingsnetwork.api.protocol.Message.getDefaultInstance() : message_;
@@ -153,6 +162,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString devEui_;
   /**
    * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+   * @return The devEui.
    */
   public com.google.protobuf.ByteString getDevEui() {
     return devEui_;
@@ -162,6 +172,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString appEui_;
   /**
    * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+   * @return The appEui.
    */
   public com.google.protobuf.ByteString getAppEui() {
     return appEui_;
@@ -171,6 +182,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object appId_;
   /**
    * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The appId.
    */
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
@@ -186,6 +198,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The bytes for appId.
    */
   public com.google.protobuf.ByteString
       getAppIdBytes() {
@@ -205,6 +218,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object devId_;
   /**
    * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+   * @return The devId.
    */
   public java.lang.String getDevId() {
     java.lang.Object ref = devId_;
@@ -220,6 +234,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+   * @return The bytes for devId.
    */
   public com.google.protobuf.ByteString
       getDevIdBytes() {
@@ -313,24 +328,23 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.broker.ActivationChallengeRequest other = (org.thethingsnetwork.api.broker.ActivationChallengeRequest) obj;
 
-    boolean result = true;
-    result = result && getPayload()
-        .equals(other.getPayload());
-    result = result && (hasMessage() == other.hasMessage());
+    if (!getPayload()
+        .equals(other.getPayload())) return false;
+    if (hasMessage() != other.hasMessage()) return false;
     if (hasMessage()) {
-      result = result && getMessage()
-          .equals(other.getMessage());
+      if (!getMessage()
+          .equals(other.getMessage())) return false;
     }
-    result = result && getDevEui()
-        .equals(other.getDevEui());
-    result = result && getAppEui()
-        .equals(other.getAppEui());
-    result = result && getAppId()
-        .equals(other.getAppId());
-    result = result && getDevId()
-        .equals(other.getDevId());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getDevEui()
+        .equals(other.getDevEui())) return false;
+    if (!getAppEui()
+        .equals(other.getAppEui())) return false;
+    if (!getAppId()
+        .equals(other.getAppId())) return false;
+    if (!getDevId()
+        .equals(other.getDevId())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -545,35 +559,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -639,12 +653,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString payload_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes payload = 1;</code>
+     * @return The payload.
      */
     public com.google.protobuf.ByteString getPayload() {
       return payload_;
     }
     /**
      * <code>bytes payload = 1;</code>
+     * @param value The payload to set.
+     * @return This builder for chaining.
      */
     public Builder setPayload(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -657,6 +674,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bytes payload = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPayload() {
       
@@ -665,17 +683,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private org.thethingsnetwork.api.protocol.Message message_ = null;
+    private org.thethingsnetwork.api.protocol.Message message_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.Message, org.thethingsnetwork.api.protocol.Message.Builder, org.thethingsnetwork.api.protocol.MessageOrBuilder> messageBuilder_;
     /**
      * <code>.protocol.Message message = 2;</code>
+     * @return Whether the message field is set.
      */
     public boolean hasMessage() {
       return messageBuilder_ != null || message_ != null;
     }
     /**
      * <code>.protocol.Message message = 2;</code>
+     * @return The message.
      */
     public org.thethingsnetwork.api.protocol.Message getMessage() {
       if (messageBuilder_ == null) {
@@ -785,12 +805,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString devEui_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @return The devEui.
      */
     public com.google.protobuf.ByteString getDevEui() {
       return devEui_;
     }
     /**
      * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @param value The devEui to set.
+     * @return This builder for chaining.
      */
     public Builder setDevEui(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -803,6 +826,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearDevEui() {
       
@@ -814,12 +838,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString appEui_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @return The appEui.
      */
     public com.google.protobuf.ByteString getAppEui() {
       return appEui_;
     }
     /**
      * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @param value The appEui to set.
+     * @return This builder for chaining.
      */
     public Builder setAppEui(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -832,6 +859,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearAppEui() {
       
@@ -843,6 +871,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object appId_ = "";
     /**
      * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+     * @return The appId.
      */
     public java.lang.String getAppId() {
       java.lang.Object ref = appId_;
@@ -858,6 +887,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+     * @return The bytes for appId.
      */
     public com.google.protobuf.ByteString
         getAppIdBytes() {
@@ -874,6 +904,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+     * @param value The appId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppId(
         java.lang.String value) {
@@ -887,6 +919,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearAppId() {
       
@@ -896,6 +929,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+     * @param value The bytes for appId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppIdBytes(
         com.google.protobuf.ByteString value) {
@@ -912,6 +947,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object devId_ = "";
     /**
      * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+     * @return The devId.
      */
     public java.lang.String getDevId() {
       java.lang.Object ref = devId_;
@@ -927,6 +963,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+     * @return The bytes for devId.
      */
     public com.google.protobuf.ByteString
         getDevIdBytes() {
@@ -943,6 +980,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+     * @param value The devId to set.
+     * @return This builder for chaining.
      */
     public Builder setDevId(
         java.lang.String value) {
@@ -956,6 +995,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearDevId() {
       
@@ -965,6 +1005,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+     * @param value The bytes for devId to set.
+     * @return This builder for chaining.
      */
     public Builder setDevIdBytes(
         com.google.protobuf.ByteString value) {
@@ -980,7 +1022,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

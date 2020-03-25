@@ -45,29 +45,35 @@ public final class HandlerManagerGrpc {
     if ((getGetStatusMethod = HandlerManagerGrpc.getGetStatusMethod) == null) {
       synchronized (HandlerManagerGrpc.class) {
         if ((getGetStatusMethod = HandlerManagerGrpc.getGetStatusMethod) == null) {
-          HandlerManagerGrpc.getGetStatusMethod = getGetStatusMethod = 
+          HandlerManagerGrpc.getGetStatusMethod = getGetStatusMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.StatusRequest, org.thethingsnetwork.api.handler.Status>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "handler.HandlerManager", "GetStatus"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetStatus"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.handler.StatusRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.handler.Status.getDefaultInstance()))
-                  .setSchemaDescriptor(new HandlerManagerMethodDescriptorSupplier("GetStatus"))
-                  .build();
-          }
+              .setSchemaDescriptor(new HandlerManagerMethodDescriptorSupplier("GetStatus"))
+              .build();
         }
-     }
-     return getGetStatusMethod;
+      }
+    }
+    return getGetStatusMethod;
   }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static HandlerManagerStub newStub(io.grpc.Channel channel) {
-    return new HandlerManagerStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<HandlerManagerStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<HandlerManagerStub>() {
+        @java.lang.Override
+        public HandlerManagerStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new HandlerManagerStub(channel, callOptions);
+        }
+      };
+    return HandlerManagerStub.newStub(factory, channel);
   }
 
   /**
@@ -75,7 +81,14 @@ public final class HandlerManagerGrpc {
    */
   public static HandlerManagerBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new HandlerManagerBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<HandlerManagerBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<HandlerManagerBlockingStub>() {
+        @java.lang.Override
+        public HandlerManagerBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new HandlerManagerBlockingStub(channel, callOptions);
+        }
+      };
+    return HandlerManagerBlockingStub.newStub(factory, channel);
   }
 
   /**
@@ -83,7 +96,14 @@ public final class HandlerManagerGrpc {
    */
   public static HandlerManagerFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new HandlerManagerFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<HandlerManagerFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<HandlerManagerFutureStub>() {
+        @java.lang.Override
+        public HandlerManagerFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new HandlerManagerFutureStub(channel, callOptions);
+        }
+      };
+    return HandlerManagerFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -120,19 +140,15 @@ public final class HandlerManagerGrpc {
    * functionality
    * </pre>
    */
-  public static final class HandlerManagerStub extends io.grpc.stub.AbstractStub<HandlerManagerStub> {
-    private HandlerManagerStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private HandlerManagerStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class HandlerManagerStub extends io.grpc.stub.AbstractAsyncStub<HandlerManagerStub> {
+    private HandlerManagerStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected HandlerManagerStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected HandlerManagerStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new HandlerManagerStub(channel, callOptions);
     }
 
@@ -151,19 +167,15 @@ public final class HandlerManagerGrpc {
    * functionality
    * </pre>
    */
-  public static final class HandlerManagerBlockingStub extends io.grpc.stub.AbstractStub<HandlerManagerBlockingStub> {
-    private HandlerManagerBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private HandlerManagerBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class HandlerManagerBlockingStub extends io.grpc.stub.AbstractBlockingStub<HandlerManagerBlockingStub> {
+    private HandlerManagerBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected HandlerManagerBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected HandlerManagerBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new HandlerManagerBlockingStub(channel, callOptions);
     }
 
@@ -181,19 +193,15 @@ public final class HandlerManagerGrpc {
    * functionality
    * </pre>
    */
-  public static final class HandlerManagerFutureStub extends io.grpc.stub.AbstractStub<HandlerManagerFutureStub> {
-    private HandlerManagerFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private HandlerManagerFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class HandlerManagerFutureStub extends io.grpc.stub.AbstractFutureStub<HandlerManagerFutureStub> {
+    private HandlerManagerFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected HandlerManagerFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected HandlerManagerFutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new HandlerManagerFutureStub(channel, callOptions);
     }
 

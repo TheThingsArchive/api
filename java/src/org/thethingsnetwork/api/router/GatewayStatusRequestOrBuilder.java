@@ -9,10 +9,12 @@ public interface GatewayStatusRequestOrBuilder extends
 
   /**
    * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+   * @return The gatewayId.
    */
   java.lang.String getGatewayId();
   /**
    * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+   * @return The bytes for gatewayId.
    */
   com.google.protobuf.ByteString
       getGatewayIdBytes();

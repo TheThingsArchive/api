@@ -9,30 +9,36 @@ public interface DeviceOrBuilder extends
 
   /**
    * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The appId.
    */
   java.lang.String getAppId();
   /**
    * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The bytes for appId.
    */
   com.google.protobuf.ByteString
       getAppIdBytes();
 
   /**
    * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+   * @return The devId.
    */
   java.lang.String getDevId();
   /**
    * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+   * @return The bytes for devId.
    */
   com.google.protobuf.ByteString
       getDevIdBytes();
 
   /**
    * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
+   * @return Whether the lorawanDevice field is set.
    */
   boolean hasLorawanDevice();
   /**
    * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
+   * @return The lorawanDevice.
    */
   org.thethingsnetwork.api.protocol.lorawan.Device getLorawanDevice();
   /**
@@ -42,16 +48,19 @@ public interface DeviceOrBuilder extends
 
   /**
    * <code>float latitude = 10;</code>
+   * @return The latitude.
    */
   float getLatitude();
 
   /**
    * <code>float longitude = 11;</code>
+   * @return The longitude.
    */
   float getLongitude();
 
   /**
    * <code>int32 altitude = 12;</code>
+   * @return The altitude.
    */
   int getAltitude();
 
@@ -91,10 +100,12 @@ public interface DeviceOrBuilder extends
 
   /**
    * <code>string description = 20;</code>
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
    * <code>string description = 20;</code>
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();

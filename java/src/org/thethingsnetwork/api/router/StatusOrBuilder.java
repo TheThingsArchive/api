@@ -9,10 +9,12 @@ public interface StatusOrBuilder extends
 
   /**
    * <code>.api.SystemStats system = 1;</code>
+   * @return Whether the system field is set.
    */
   boolean hasSystem();
   /**
    * <code>.api.SystemStats system = 1;</code>
+   * @return The system.
    */
   org.thethingsnetwork.api.SystemStats getSystem();
   /**
@@ -22,10 +24,12 @@ public interface StatusOrBuilder extends
 
   /**
    * <code>.api.ComponentStats component = 2;</code>
+   * @return Whether the component field is set.
    */
   boolean hasComponent();
   /**
    * <code>.api.ComponentStats component = 2;</code>
+   * @return The component.
    */
   org.thethingsnetwork.api.ComponentStats getComponent();
   /**
@@ -35,10 +39,12 @@ public interface StatusOrBuilder extends
 
   /**
    * <code>.api.Rates gateway_status = 11;</code>
+   * @return Whether the gatewayStatus field is set.
    */
   boolean hasGatewayStatus();
   /**
    * <code>.api.Rates gateway_status = 11;</code>
+   * @return The gatewayStatus.
    */
   org.thethingsnetwork.api.Rates getGatewayStatus();
   /**
@@ -48,10 +54,12 @@ public interface StatusOrBuilder extends
 
   /**
    * <code>.api.Rates uplink = 12;</code>
+   * @return Whether the uplink field is set.
    */
   boolean hasUplink();
   /**
    * <code>.api.Rates uplink = 12;</code>
+   * @return The uplink.
    */
   org.thethingsnetwork.api.Rates getUplink();
   /**
@@ -61,10 +69,12 @@ public interface StatusOrBuilder extends
 
   /**
    * <code>.api.Rates downlink = 13;</code>
+   * @return Whether the downlink field is set.
    */
   boolean hasDownlink();
   /**
    * <code>.api.Rates downlink = 13;</code>
+   * @return The downlink.
    */
   org.thethingsnetwork.api.Rates getDownlink();
   /**
@@ -74,10 +84,12 @@ public interface StatusOrBuilder extends
 
   /**
    * <code>.api.Rates activations = 14;</code>
+   * @return Whether the activations field is set.
    */
   boolean hasActivations();
   /**
    * <code>.api.Rates activations = 14;</code>
+   * @return The activations.
    */
   org.thethingsnetwork.api.Rates getActivations();
   /**
@@ -91,11 +103,13 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>uint32 connected_gateways = 21;</code>
+   * @return The connectedGateways.
    */
   int getConnectedGateways();
 
   /**
    * <code>uint32 connected_brokers = 22;</code>
+   * @return The connectedBrokers.
    */
   int getConnectedBrokers();
 }

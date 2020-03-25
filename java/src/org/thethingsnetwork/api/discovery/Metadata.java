@@ -19,6 +19,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Metadata();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -31,7 +38,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -65,7 +71,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -99,7 +105,8 @@ private static final long serialVersionUID = 0L;
   private int metadataCase_ = 0;
   private java.lang.Object metadata_;
   public enum MetadataCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GATEWAY_ID(10),
     DEV_ADDR_PREFIX(20),
     APP_ID(30),
@@ -110,6 +117,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -146,6 +155,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+   * @return The gatewayId.
    */
   public java.lang.String getGatewayId() {
     java.lang.Object ref = "";
@@ -171,6 +181,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+   * @return The bytes for gatewayId.
    */
   public com.google.protobuf.ByteString
       getGatewayIdBytes() {
@@ -200,6 +211,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes dev_addr_prefix = 20;</code>
+   * @return The devAddrPrefix.
    */
   public com.google.protobuf.ByteString getDevAddrPrefix() {
     if (metadataCase_ == 20) {
@@ -216,6 +228,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The appId.
    */
   public java.lang.String getAppId() {
     java.lang.Object ref = "";
@@ -241,6 +254,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The bytes for appId.
    */
   public com.google.protobuf.ByteString
       getAppIdBytes() {
@@ -269,6 +283,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
+   * @return The appEui.
    */
   public com.google.protobuf.ByteString getAppEui() {
     if (metadataCase_ == 31) {
@@ -345,32 +360,29 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.discovery.Metadata other = (org.thethingsnetwork.api.discovery.Metadata) obj;
 
-    boolean result = true;
-    result = result && getMetadataCase().equals(
-        other.getMetadataCase());
-    if (!result) return false;
+    if (!getMetadataCase().equals(other.getMetadataCase())) return false;
     switch (metadataCase_) {
       case 10:
-        result = result && getGatewayId()
-            .equals(other.getGatewayId());
+        if (!getGatewayId()
+            .equals(other.getGatewayId())) return false;
         break;
       case 20:
-        result = result && getDevAddrPrefix()
-            .equals(other.getDevAddrPrefix());
+        if (!getDevAddrPrefix()
+            .equals(other.getDevAddrPrefix())) return false;
         break;
       case 30:
-        result = result && getAppId()
-            .equals(other.getAppId());
+        if (!getAppId()
+            .equals(other.getAppId())) return false;
         break;
       case 31:
-        result = result && getAppEui()
-            .equals(other.getAppEui());
+        if (!getAppEui()
+            .equals(other.getAppEui())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -580,35 +592,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -698,6 +710,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @return The gatewayId.
      */
     public java.lang.String getGatewayId() {
       java.lang.Object ref = "";
@@ -723,6 +736,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @return The bytes for gatewayId.
      */
     public com.google.protobuf.ByteString
         getGatewayIdBytes() {
@@ -749,6 +763,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @param value The gatewayId to set.
+     * @return This builder for chaining.
      */
     public Builder setGatewayId(
         java.lang.String value) {
@@ -767,6 +783,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearGatewayId() {
       if (metadataCase_ == 10) {
@@ -783,6 +800,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @param value The bytes for gatewayId to set.
+     * @return This builder for chaining.
      */
     public Builder setGatewayIdBytes(
         com.google.protobuf.ByteString value) {
@@ -804,6 +823,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes dev_addr_prefix = 20;</code>
+     * @return The devAddrPrefix.
      */
     public com.google.protobuf.ByteString getDevAddrPrefix() {
       if (metadataCase_ == 20) {
@@ -819,6 +839,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes dev_addr_prefix = 20;</code>
+     * @param value The devAddrPrefix to set.
+     * @return This builder for chaining.
      */
     public Builder setDevAddrPrefix(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -837,6 +859,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes dev_addr_prefix = 20;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDevAddrPrefix() {
       if (metadataCase_ == 20) {
@@ -854,6 +877,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * @return The appId.
      */
     public java.lang.String getAppId() {
       java.lang.Object ref = "";
@@ -879,6 +903,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * @return The bytes for appId.
      */
     public com.google.protobuf.ByteString
         getAppIdBytes() {
@@ -905,6 +930,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * @param value The appId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppId(
         java.lang.String value) {
@@ -923,6 +950,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearAppId() {
       if (metadataCase_ == 30) {
@@ -939,6 +967,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * @param value The bytes for appId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppIdBytes(
         com.google.protobuf.ByteString value) {
@@ -959,6 +989,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
+     * @return The appEui.
      */
     public com.google.protobuf.ByteString getAppEui() {
       if (metadataCase_ == 31) {
@@ -973,6 +1004,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
+     * @param value The appEui to set.
+     * @return This builder for chaining.
      */
     public Builder setAppEui(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -990,6 +1023,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearAppEui() {
       if (metadataCase_ == 31) {
@@ -1002,7 +1036,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

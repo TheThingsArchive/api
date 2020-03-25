@@ -16,10 +16,13 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private FCtrl() {
-    adr_ = false;
-    adrAckReq_ = false;
-    ack_ = false;
-    fPending_ = false;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new FCtrl();
   }
 
   @java.lang.Override
@@ -35,7 +38,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -67,7 +69,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -102,6 +104,7 @@ private static final long serialVersionUID = 0L;
   private boolean adr_;
   /**
    * <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
+   * @return The adr.
    */
   public boolean getAdr() {
     return adr_;
@@ -111,6 +114,7 @@ private static final long serialVersionUID = 0L;
   private boolean adrAckReq_;
   /**
    * <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
+   * @return The adrAckReq.
    */
   public boolean getAdrAckReq() {
     return adrAckReq_;
@@ -120,6 +124,7 @@ private static final long serialVersionUID = 0L;
   private boolean ack_;
   /**
    * <code>bool ack = 3;</code>
+   * @return The ack.
    */
   public boolean getAck() {
     return ack_;
@@ -129,6 +134,7 @@ private static final long serialVersionUID = 0L;
   private boolean fPending_;
   /**
    * <code>bool f_pending = 4;</code>
+   * @return The fPending.
    */
   public boolean getFPending() {
     return fPending_;
@@ -200,17 +206,16 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.protocol.lorawan.FCtrl other = (org.thethingsnetwork.api.protocol.lorawan.FCtrl) obj;
 
-    boolean result = true;
-    result = result && (getAdr()
-        == other.getAdr());
-    result = result && (getAdrAckReq()
-        == other.getAdrAckReq());
-    result = result && (getAck()
-        == other.getAck());
-    result = result && (getFPending()
-        == other.getFPending());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getAdr()
+        != other.getAdr()) return false;
+    if (getAdrAckReq()
+        != other.getAdrAckReq()) return false;
+    if (getAck()
+        != other.getAck()) return false;
+    if (getFPending()
+        != other.getFPending()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -409,35 +414,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -495,12 +500,15 @@ private static final long serialVersionUID = 0L;
     private boolean adr_ ;
     /**
      * <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
+     * @return The adr.
      */
     public boolean getAdr() {
       return adr_;
     }
     /**
      * <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
+     * @param value The adr to set.
+     * @return This builder for chaining.
      */
     public Builder setAdr(boolean value) {
       
@@ -510,6 +518,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearAdr() {
       
@@ -521,12 +530,15 @@ private static final long serialVersionUID = 0L;
     private boolean adrAckReq_ ;
     /**
      * <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
+     * @return The adrAckReq.
      */
     public boolean getAdrAckReq() {
       return adrAckReq_;
     }
     /**
      * <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
+     * @param value The adrAckReq to set.
+     * @return This builder for chaining.
      */
     public Builder setAdrAckReq(boolean value) {
       
@@ -536,6 +548,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearAdrAckReq() {
       
@@ -547,12 +560,15 @@ private static final long serialVersionUID = 0L;
     private boolean ack_ ;
     /**
      * <code>bool ack = 3;</code>
+     * @return The ack.
      */
     public boolean getAck() {
       return ack_;
     }
     /**
      * <code>bool ack = 3;</code>
+     * @param value The ack to set.
+     * @return This builder for chaining.
      */
     public Builder setAck(boolean value) {
       
@@ -562,6 +578,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bool ack = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAck() {
       
@@ -573,12 +590,15 @@ private static final long serialVersionUID = 0L;
     private boolean fPending_ ;
     /**
      * <code>bool f_pending = 4;</code>
+     * @return The fPending.
      */
     public boolean getFPending() {
       return fPending_;
     }
     /**
      * <code>bool f_pending = 4;</code>
+     * @param value The fPending to set.
+     * @return This builder for chaining.
      */
     public Builder setFPending(boolean value) {
       
@@ -588,6 +608,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bool f_pending = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFPending() {
       
@@ -598,7 +619,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

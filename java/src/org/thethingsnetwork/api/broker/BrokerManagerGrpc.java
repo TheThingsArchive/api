@@ -44,22 +44,21 @@ public final class BrokerManagerGrpc {
     if ((getRegisterApplicationHandlerMethod = BrokerManagerGrpc.getRegisterApplicationHandlerMethod) == null) {
       synchronized (BrokerManagerGrpc.class) {
         if ((getRegisterApplicationHandlerMethod = BrokerManagerGrpc.getRegisterApplicationHandlerMethod) == null) {
-          BrokerManagerGrpc.getRegisterApplicationHandlerMethod = getRegisterApplicationHandlerMethod = 
+          BrokerManagerGrpc.getRegisterApplicationHandlerMethod = getRegisterApplicationHandlerMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.ApplicationHandlerRegistration, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "broker.BrokerManager", "RegisterApplicationHandler"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RegisterApplicationHandler"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.broker.ApplicationHandlerRegistration.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
-                  .setSchemaDescriptor(new BrokerManagerMethodDescriptorSupplier("RegisterApplicationHandler"))
-                  .build();
-          }
+              .setSchemaDescriptor(new BrokerManagerMethodDescriptorSupplier("RegisterApplicationHandler"))
+              .build();
         }
-     }
-     return getRegisterApplicationHandlerMethod;
+      }
+    }
+    return getRegisterApplicationHandlerMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.StatusRequest,
@@ -76,29 +75,35 @@ public final class BrokerManagerGrpc {
     if ((getGetStatusMethod = BrokerManagerGrpc.getGetStatusMethod) == null) {
       synchronized (BrokerManagerGrpc.class) {
         if ((getGetStatusMethod = BrokerManagerGrpc.getGetStatusMethod) == null) {
-          BrokerManagerGrpc.getGetStatusMethod = getGetStatusMethod = 
+          BrokerManagerGrpc.getGetStatusMethod = getGetStatusMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.StatusRequest, org.thethingsnetwork.api.broker.Status>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "broker.BrokerManager", "GetStatus"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetStatus"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.broker.StatusRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.broker.Status.getDefaultInstance()))
-                  .setSchemaDescriptor(new BrokerManagerMethodDescriptorSupplier("GetStatus"))
-                  .build();
-          }
+              .setSchemaDescriptor(new BrokerManagerMethodDescriptorSupplier("GetStatus"))
+              .build();
         }
-     }
-     return getGetStatusMethod;
+      }
+    }
+    return getGetStatusMethod;
   }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static BrokerManagerStub newStub(io.grpc.Channel channel) {
-    return new BrokerManagerStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<BrokerManagerStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<BrokerManagerStub>() {
+        @java.lang.Override
+        public BrokerManagerStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new BrokerManagerStub(channel, callOptions);
+        }
+      };
+    return BrokerManagerStub.newStub(factory, channel);
   }
 
   /**
@@ -106,7 +111,14 @@ public final class BrokerManagerGrpc {
    */
   public static BrokerManagerBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new BrokerManagerBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<BrokerManagerBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<BrokerManagerBlockingStub>() {
+        @java.lang.Override
+        public BrokerManagerBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new BrokerManagerBlockingStub(channel, callOptions);
+        }
+      };
+    return BrokerManagerBlockingStub.newStub(factory, channel);
   }
 
   /**
@@ -114,7 +126,14 @@ public final class BrokerManagerGrpc {
    */
   public static BrokerManagerFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new BrokerManagerFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<BrokerManagerFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<BrokerManagerFutureStub>() {
+        @java.lang.Override
+        public BrokerManagerFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new BrokerManagerFutureStub(channel, callOptions);
+        }
+      };
+    return BrokerManagerFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -170,19 +189,15 @@ public final class BrokerManagerGrpc {
    * The BrokerManager service provides configuration and monitoring functionality
    * </pre>
    */
-  public static final class BrokerManagerStub extends io.grpc.stub.AbstractStub<BrokerManagerStub> {
-    private BrokerManagerStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private BrokerManagerStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class BrokerManagerStub extends io.grpc.stub.AbstractAsyncStub<BrokerManagerStub> {
+    private BrokerManagerStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected BrokerManagerStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected BrokerManagerStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new BrokerManagerStub(channel, callOptions);
     }
 
@@ -215,19 +230,15 @@ public final class BrokerManagerGrpc {
    * The BrokerManager service provides configuration and monitoring functionality
    * </pre>
    */
-  public static final class BrokerManagerBlockingStub extends io.grpc.stub.AbstractStub<BrokerManagerBlockingStub> {
-    private BrokerManagerBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private BrokerManagerBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class BrokerManagerBlockingStub extends io.grpc.stub.AbstractBlockingStub<BrokerManagerBlockingStub> {
+    private BrokerManagerBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected BrokerManagerBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected BrokerManagerBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new BrokerManagerBlockingStub(channel, callOptions);
     }
 
@@ -258,19 +269,15 @@ public final class BrokerManagerGrpc {
    * The BrokerManager service provides configuration and monitoring functionality
    * </pre>
    */
-  public static final class BrokerManagerFutureStub extends io.grpc.stub.AbstractStub<BrokerManagerFutureStub> {
-    private BrokerManagerFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private BrokerManagerFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class BrokerManagerFutureStub extends io.grpc.stub.AbstractFutureStub<BrokerManagerFutureStub> {
+    private BrokerManagerFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected BrokerManagerFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected BrokerManagerFutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new BrokerManagerFutureStub(channel, callOptions);
     }
 

@@ -18,82 +18,82 @@ class Device extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
-    private $app_eui = '';
+    protected $app_eui = '';
     /**
      * The DevEUI is a unique, 8 byte identifier for the device.
      *
      * Generated from protobuf field <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
-    private $dev_eui = '';
+    protected $dev_eui = '';
     /**
      * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
      *
      * Generated from protobuf field <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
      */
-    private $app_id = '';
+    protected $app_id = '';
     /**
      * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
      *
      * Generated from protobuf field <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
      */
-    private $dev_id = '';
+    protected $dev_id = '';
     /**
      * The DevAddr is a dynamic, 4 byte session address for the device.
      *
      * Generated from protobuf field <code>bytes dev_addr = 5 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
-    private $dev_addr = '';
+    protected $dev_addr = '';
     /**
      * The NwkSKey is a 16 byte session key that is known by the device and the network. It is used for routing and MAC related functionality.
      * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
      *
      * Generated from protobuf field <code>bytes nwk_s_key = 6 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
      */
-    private $nwk_s_key = '';
+    protected $nwk_s_key = '';
     /**
      * The AppSKey is a 16 byte session key that is known by the device and the application. It is used for payload encryption.
      * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
      *
      * Generated from protobuf field <code>bytes app_s_key = 7 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppSKey"];</code>
      */
-    private $app_s_key = '';
+    protected $app_s_key = '';
     /**
      * The AppKey is a 16 byte static key that is known by the device and the application. It is used for negotiating session keys (OTAA).
      *
      * Generated from protobuf field <code>bytes app_key = 8 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppKey"];</code>
      */
-    private $app_key = '';
+    protected $app_key = '';
     /**
      * FCntUp is the uplink frame counter for a device session.
      *
      * Generated from protobuf field <code>uint32 f_cnt_up = 9;</code>
      */
-    private $f_cnt_up = 0;
+    protected $f_cnt_up = 0;
     /**
      * FCntDown is the downlink frame counter for a device session.
      *
      * Generated from protobuf field <code>uint32 f_cnt_down = 10;</code>
      */
-    private $f_cnt_down = 0;
+    protected $f_cnt_down = 0;
     /**
      * The DisableFCntCheck option disables the frame counter check. Disabling this makes the device vulnerable to replay attacks, but makes ABP slightly easier.
      *
      * Generated from protobuf field <code>bool disable_f_cnt_check = 11;</code>
      */
-    private $disable_f_cnt_check = false;
+    protected $disable_f_cnt_check = false;
     /**
      * The Uses32BitFCnt option indicates that the device keeps track of full 32 bit frame counters. As only the 16 lsb are actually transmitted, the 16 msb will have to be inferred.
      *
      * Generated from protobuf field <code>bool uses32_bit_f_cnt = 12;</code>
      */
-    private $uses32_bit_f_cnt = false;
+    protected $uses32_bit_f_cnt = false;
     /**
      * The ActivationContstraints are used to allocate a device address for a device (comma-separated).
      * There are different prefixes for `otaa`, `abp`, `world`, `local`, `private`, `testing`.
      *
      * Generated from protobuf field <code>string activation_constraints = 13;</code>
      */
-    private $activation_constraints = '';
+    protected $activation_constraints = '';
     /**
      * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
      *
@@ -111,7 +111,7 @@ class Device extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int64 last_seen = 21;</code>
      */
-    private $last_seen = 0;
+    protected $last_seen = 0;
 
     /**
      * Constructor.

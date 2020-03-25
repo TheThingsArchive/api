@@ -16,12 +16,14 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private LocationMetadata() {
-    time_ = 0L;
-    latitude_ = 0F;
-    longitude_ = 0F;
-    altitude_ = 0;
-    accuracy_ = 0;
     source_ = 0;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new LocationMetadata();
   }
 
   @java.lang.Override
@@ -37,7 +39,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -80,7 +81,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -210,6 +211,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -217,6 +220,10 @@ private static final long serialVersionUID = 0L;
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static LocationSource forNumber(int value) {
       switch (value) {
         case 0: return UNKNOWN;
@@ -284,6 +291,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 time = 1;</code>
+   * @return The time.
    */
   public long getTime() {
     return time_;
@@ -297,6 +305,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>float latitude = 2;</code>
+   * @return The latitude.
    */
   public float getLatitude() {
     return latitude_;
@@ -310,6 +319,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>float longitude = 3;</code>
+   * @return The longitude.
    */
   public float getLongitude() {
     return longitude_;
@@ -323,6 +333,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 altitude = 4;</code>
+   * @return The altitude.
    */
   public int getAltitude() {
     return altitude_;
@@ -336,6 +347,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 accuracy = 5;</code>
+   * @return The accuracy.
    */
   public int getAccuracy() {
     return accuracy_;
@@ -345,12 +357,14 @@ private static final long serialVersionUID = 0L;
   private int source_;
   /**
    * <code>.gateway.LocationMetadata.LocationSource source = 6;</code>
+   * @return The enum numeric value on the wire for source.
    */
   public int getSourceValue() {
     return source_;
   }
   /**
    * <code>.gateway.LocationMetadata.LocationSource source = 6;</code>
+   * @return The source.
    */
   public org.thethingsnetwork.api.gateway.LocationMetadata.LocationSource getSource() {
     @SuppressWarnings("deprecation")
@@ -438,24 +452,21 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.gateway.LocationMetadata other = (org.thethingsnetwork.api.gateway.LocationMetadata) obj;
 
-    boolean result = true;
-    result = result && (getTime()
-        == other.getTime());
-    result = result && (
-        java.lang.Float.floatToIntBits(getLatitude())
-        == java.lang.Float.floatToIntBits(
-            other.getLatitude()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getLongitude())
-        == java.lang.Float.floatToIntBits(
-            other.getLongitude()));
-    result = result && (getAltitude()
-        == other.getAltitude());
-    result = result && (getAccuracy()
-        == other.getAccuracy());
-    result = result && source_ == other.source_;
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getTime()
+        != other.getTime()) return false;
+    if (java.lang.Float.floatToIntBits(getLatitude())
+        != java.lang.Float.floatToIntBits(
+            other.getLatitude())) return false;
+    if (java.lang.Float.floatToIntBits(getLongitude())
+        != java.lang.Float.floatToIntBits(
+            other.getLongitude())) return false;
+    if (getAltitude()
+        != other.getAltitude()) return false;
+    if (getAccuracy()
+        != other.getAccuracy()) return false;
+    if (source_ != other.source_) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -663,35 +674,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -759,6 +770,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 time = 1;</code>
+     * @return The time.
      */
     public long getTime() {
       return time_;
@@ -769,6 +781,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 time = 1;</code>
+     * @param value The time to set.
+     * @return This builder for chaining.
      */
     public Builder setTime(long value) {
       
@@ -782,6 +796,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 time = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTime() {
       
@@ -797,6 +812,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float latitude = 2;</code>
+     * @return The latitude.
      */
     public float getLatitude() {
       return latitude_;
@@ -807,6 +823,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float latitude = 2;</code>
+     * @param value The latitude to set.
+     * @return This builder for chaining.
      */
     public Builder setLatitude(float value) {
       
@@ -820,6 +838,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float latitude = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLatitude() {
       
@@ -835,6 +854,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float longitude = 3;</code>
+     * @return The longitude.
      */
     public float getLongitude() {
       return longitude_;
@@ -845,6 +865,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float longitude = 3;</code>
+     * @param value The longitude to set.
+     * @return This builder for chaining.
      */
     public Builder setLongitude(float value) {
       
@@ -858,6 +880,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float longitude = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLongitude() {
       
@@ -873,6 +896,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 altitude = 4;</code>
+     * @return The altitude.
      */
     public int getAltitude() {
       return altitude_;
@@ -883,6 +907,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 altitude = 4;</code>
+     * @param value The altitude to set.
+     * @return This builder for chaining.
      */
     public Builder setAltitude(int value) {
       
@@ -896,6 +922,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 altitude = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAltitude() {
       
@@ -911,6 +938,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 accuracy = 5;</code>
+     * @return The accuracy.
      */
     public int getAccuracy() {
       return accuracy_;
@@ -921,6 +949,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 accuracy = 5;</code>
+     * @param value The accuracy to set.
+     * @return This builder for chaining.
      */
     public Builder setAccuracy(int value) {
       
@@ -934,6 +964,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 accuracy = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAccuracy() {
       
@@ -945,12 +976,15 @@ private static final long serialVersionUID = 0L;
     private int source_ = 0;
     /**
      * <code>.gateway.LocationMetadata.LocationSource source = 6;</code>
+     * @return The enum numeric value on the wire for source.
      */
     public int getSourceValue() {
       return source_;
     }
     /**
      * <code>.gateway.LocationMetadata.LocationSource source = 6;</code>
+     * @param value The enum numeric value on the wire for source to set.
+     * @return This builder for chaining.
      */
     public Builder setSourceValue(int value) {
       source_ = value;
@@ -959,6 +993,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.gateway.LocationMetadata.LocationSource source = 6;</code>
+     * @return The source.
      */
     public org.thethingsnetwork.api.gateway.LocationMetadata.LocationSource getSource() {
       @SuppressWarnings("deprecation")
@@ -967,6 +1002,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.gateway.LocationMetadata.LocationSource source = 6;</code>
+     * @param value The source to set.
+     * @return This builder for chaining.
      */
     public Builder setSource(org.thethingsnetwork.api.gateway.LocationMetadata.LocationSource value) {
       if (value == null) {
@@ -979,6 +1016,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.gateway.LocationMetadata.LocationSource source = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSource() {
       
@@ -989,7 +1027,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

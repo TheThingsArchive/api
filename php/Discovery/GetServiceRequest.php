@@ -18,7 +18,7 @@ class GetServiceRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string service_name = 1;</code>
      */
-    private $service_name = '';
+    protected $service_name = '';
 
     /**
      * Constructor.

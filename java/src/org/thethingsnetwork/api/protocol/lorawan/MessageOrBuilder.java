@@ -9,10 +9,12 @@ public interface MessageOrBuilder extends
 
   /**
    * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+   * @return Whether the mHdr field is set.
    */
   boolean hasMHdr();
   /**
    * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+   * @return The mHdr.
    */
   org.thethingsnetwork.api.protocol.lorawan.MHDR getMHdr();
   /**
@@ -22,15 +24,18 @@ public interface MessageOrBuilder extends
 
   /**
    * <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
+   * @return The mic.
    */
   com.google.protobuf.ByteString getMic();
 
   /**
    * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
+   * @return Whether the macPayload field is set.
    */
   boolean hasMacPayload();
   /**
    * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
+   * @return The macPayload.
    */
   org.thethingsnetwork.api.protocol.lorawan.MACPayload getMacPayload();
   /**
@@ -40,10 +45,12 @@ public interface MessageOrBuilder extends
 
   /**
    * <code>.lorawan.JoinRequestPayload join_request_payload = 4;</code>
+   * @return Whether the joinRequestPayload field is set.
    */
   boolean hasJoinRequestPayload();
   /**
    * <code>.lorawan.JoinRequestPayload join_request_payload = 4;</code>
+   * @return The joinRequestPayload.
    */
   org.thethingsnetwork.api.protocol.lorawan.JoinRequestPayload getJoinRequestPayload();
   /**
@@ -53,10 +60,12 @@ public interface MessageOrBuilder extends
 
   /**
    * <code>.lorawan.JoinAcceptPayload join_accept_payload = 5;</code>
+   * @return Whether the joinAcceptPayload field is set.
    */
   boolean hasJoinAcceptPayload();
   /**
    * <code>.lorawan.JoinAcceptPayload join_accept_payload = 5;</code>
+   * @return The joinAcceptPayload.
    */
   org.thethingsnetwork.api.protocol.lorawan.JoinAcceptPayload getJoinAcceptPayload();
   /**

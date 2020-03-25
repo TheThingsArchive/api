@@ -16,7 +16,13 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GatewayStatusResponse() {
-    lastSeen_ = 0L;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new GatewayStatusResponse();
   }
 
   @java.lang.Override
@@ -32,7 +38,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -62,7 +67,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -97,6 +102,7 @@ private static final long serialVersionUID = 0L;
   private long lastSeen_;
   /**
    * <code>int64 last_seen = 1;</code>
+   * @return The lastSeen.
    */
   public long getLastSeen() {
     return lastSeen_;
@@ -106,12 +112,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.gateway.Status status_;
   /**
    * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
+   * @return Whether the status field is set.
    */
   public boolean hasStatus() {
     return status_ != null;
   }
   /**
    * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
+   * @return The status.
    */
   public org.thethingsnetwork.api.gateway.Status getStatus() {
     return status_ == null ? org.thethingsnetwork.api.gateway.Status.getDefaultInstance() : status_;
@@ -175,16 +183,15 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.router.GatewayStatusResponse other = (org.thethingsnetwork.api.router.GatewayStatusResponse) obj;
 
-    boolean result = true;
-    result = result && (getLastSeen()
-        == other.getLastSeen());
-    result = result && (hasStatus() == other.hasStatus());
+    if (getLastSeen()
+        != other.getLastSeen()) return false;
+    if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      result = result && getStatus()
-          .equals(other.getStatus());
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -380,35 +387,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -460,12 +467,15 @@ private static final long serialVersionUID = 0L;
     private long lastSeen_ ;
     /**
      * <code>int64 last_seen = 1;</code>
+     * @return The lastSeen.
      */
     public long getLastSeen() {
       return lastSeen_;
     }
     /**
      * <code>int64 last_seen = 1;</code>
+     * @param value The lastSeen to set.
+     * @return This builder for chaining.
      */
     public Builder setLastSeen(long value) {
       
@@ -475,6 +485,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>int64 last_seen = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLastSeen() {
       
@@ -483,17 +494,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private org.thethingsnetwork.api.gateway.Status status_ = null;
+    private org.thethingsnetwork.api.gateway.Status status_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.gateway.Status, org.thethingsnetwork.api.gateway.Status.Builder, org.thethingsnetwork.api.gateway.StatusOrBuilder> statusBuilder_;
     /**
      * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
     }
     /**
      * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
+     * @return The status.
      */
     public org.thethingsnetwork.api.gateway.Status getStatus() {
       if (statusBuilder_ == null) {
@@ -602,7 +615,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

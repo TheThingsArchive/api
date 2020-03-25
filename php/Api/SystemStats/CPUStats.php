@@ -16,19 +16,19 @@ class CPUStats extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>float user = 1;</code>
      */
-    private $user = 0.0;
+    protected $user = 0.0;
     /**
      * Generated from protobuf field <code>float system = 2;</code>
      */
-    private $system = 0.0;
+    protected $system = 0.0;
     /**
      * Generated from protobuf field <code>float idle = 3;</code>
      */
-    private $idle = 0.0;
+    protected $idle = 0.0;
     /**
      * Generated from protobuf field <code>float percentage = 4;</code>
      */
-    private $percentage = 0.0;
+    protected $percentage = 0.0;
 
     /**
      * Constructor.

@@ -13,6 +13,7 @@ public interface GetByGatewayIDRequestOrBuilder extends
    * </pre>
    *
    * <code>string gateway_id = 30 [(.gogoproto.customname) = "GatewayID"];</code>
+   * @return The gatewayId.
    */
   java.lang.String getGatewayId();
   /**
@@ -21,6 +22,7 @@ public interface GetByGatewayIDRequestOrBuilder extends
    * </pre>
    *
    * <code>string gateway_id = 30 [(.gogoproto.customname) = "GatewayID"];</code>
+   * @return The bytes for gatewayId.
    */
   com.google.protobuf.ByteString
       getGatewayIdBytes();

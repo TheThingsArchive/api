@@ -16,11 +16,11 @@ class ApplicationHandlerRegistration extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
-    private $app_id = '';
+    protected $app_id = '';
     /**
      * Generated from protobuf field <code>string handler_id = 2 [(.gogoproto.customname) = "HandlerID"];</code>
      */
-    private $handler_id = '';
+    protected $handler_id = '';
 
     /**
      * Constructor.

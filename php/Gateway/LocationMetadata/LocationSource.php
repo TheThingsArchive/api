@@ -4,6 +4,8 @@
 
 namespace Gateway\LocationMetadata;
 
+use UnexpectedValueException;
+
 /**
  * Protobuf type <code>gateway.LocationMetadata.LocationSource</code>
  */
@@ -39,6 +41,34 @@ class LocationSource
      * Generated from protobuf enum <code>IP_GEOLOCATION = 4;</code>
      */
     const IP_GEOLOCATION = 4;
+
+    private static $valueToName = [
+        self::UNKNOWN => 'UNKNOWN',
+        self::GPS => 'GPS',
+        self::CONFIG => 'CONFIG',
+        self::REGISTRY => 'REGISTRY',
+        self::IP_GEOLOCATION => 'IP_GEOLOCATION',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

@@ -38,7 +38,7 @@ class Protocol
             "696e67734e6574776f726b2f6170692f70726f746f636f6caa021d546865" .
             "5468696e67734e6574776f726b2e4150492e50726f746f636f6c62067072" .
             "6f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

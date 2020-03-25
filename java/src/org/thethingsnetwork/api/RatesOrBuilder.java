@@ -9,16 +9,19 @@ public interface RatesOrBuilder extends
 
   /**
    * <code>float rate1 = 1;</code>
+   * @return The rate1.
    */
   float getRate1();
 
   /**
    * <code>float rate5 = 2;</code>
+   * @return The rate5.
    */
   float getRate5();
 
   /**
    * <code>float rate15 = 3;</code>
+   * @return The rate15.
    */
   float getRate15();
 }

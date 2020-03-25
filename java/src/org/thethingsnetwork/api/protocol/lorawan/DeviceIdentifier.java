@@ -21,6 +21,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new DeviceIdentifier();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -33,7 +40,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -55,7 +61,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -94,6 +100,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+   * @return The appEui.
    */
   public com.google.protobuf.ByteString getAppEui() {
     return appEui_;
@@ -107,6 +114,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+   * @return The devEui.
    */
   public com.google.protobuf.ByteString getDevEui() {
     return devEui_;
@@ -164,13 +172,12 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier other = (org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier) obj;
 
-    boolean result = true;
-    result = result && getAppEui()
-        .equals(other.getAppEui());
-    result = result && getDevEui()
-        .equals(other.getDevEui());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getAppEui()
+        .equals(other.getAppEui())) return false;
+    if (!getDevEui()
+        .equals(other.getDevEui())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -355,35 +362,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -439,6 +446,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @return The appEui.
      */
     public com.google.protobuf.ByteString getAppEui() {
       return appEui_;
@@ -449,6 +457,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @param value The appEui to set.
+     * @return This builder for chaining.
      */
     public Builder setAppEui(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -465,6 +475,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearAppEui() {
       
@@ -480,6 +491,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @return The devEui.
      */
     public com.google.protobuf.ByteString getDevEui() {
       return devEui_;
@@ -490,6 +502,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @param value The devEui to set.
+     * @return This builder for chaining.
      */
     public Builder setDevEui(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -506,6 +520,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearDevEui() {
       
@@ -516,7 +531,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

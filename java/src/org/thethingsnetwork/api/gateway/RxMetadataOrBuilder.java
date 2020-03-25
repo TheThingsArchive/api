@@ -9,10 +9,12 @@ public interface RxMetadataOrBuilder extends
 
   /**
    * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+   * @return The gatewayId.
    */
   java.lang.String getGatewayId();
   /**
    * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+   * @return The bytes for gatewayId.
    */
   com.google.protobuf.ByteString
       getGatewayIdBytes();
@@ -23,6 +25,7 @@ public interface RxMetadataOrBuilder extends
    * </pre>
    *
    * <code>bool gateway_trusted = 2;</code>
+   * @return The gatewayTrusted.
    */
   boolean getGatewayTrusted();
 
@@ -32,6 +35,7 @@ public interface RxMetadataOrBuilder extends
    * </pre>
    *
    * <code>uint32 timestamp = 11;</code>
+   * @return The timestamp.
    */
   int getTimestamp();
 
@@ -41,6 +45,7 @@ public interface RxMetadataOrBuilder extends
    * </pre>
    *
    * <code>int64 time = 12;</code>
+   * @return The time.
    */
   long getTime();
 
@@ -50,16 +55,19 @@ public interface RxMetadataOrBuilder extends
    * </pre>
    *
    * <code>bytes encrypted_time = 13;</code>
+   * @return The encryptedTime.
    */
   com.google.protobuf.ByteString getEncryptedTime();
 
   /**
    * <code>uint32 rf_chain = 21;</code>
+   * @return The rfChain.
    */
   int getRfChain();
 
   /**
    * <code>uint32 channel = 22;</code>
+   * @return The channel.
    */
   int getChannel();
 
@@ -93,6 +101,7 @@ public interface RxMetadataOrBuilder extends
    * </pre>
    *
    * <code>uint64 frequency = 31;</code>
+   * @return The frequency.
    */
   long getFrequency();
 
@@ -102,6 +111,7 @@ public interface RxMetadataOrBuilder extends
    * </pre>
    *
    * <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
+   * @return The rssi.
    */
   float getRssi();
 
@@ -111,15 +121,18 @@ public interface RxMetadataOrBuilder extends
    * </pre>
    *
    * <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
+   * @return The snr.
    */
   float getSnr();
 
   /**
    * <code>.gateway.LocationMetadata location = 41;</code>
+   * @return Whether the location field is set.
    */
   boolean hasLocation();
   /**
    * <code>.gateway.LocationMetadata location = 41;</code>
+   * @return The location.
    */
   org.thethingsnetwork.api.gateway.LocationMetadata getLocation();
   /**

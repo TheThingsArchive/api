@@ -18,7 +18,7 @@ class GetByAppEUIRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bytes app_eui = 31 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
-    private $app_eui = '';
+    protected $app_eui = '';
 
     /**
      * Constructor.

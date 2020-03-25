@@ -19,6 +19,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new SystemStats();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -31,7 +38,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -82,7 +88,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -119,16 +125,19 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <code>float load1 = 1;</code>
+     * @return The load1.
      */
     float getLoad1();
 
     /**
      * <code>float load5 = 2;</code>
+     * @return The load5.
      */
     float getLoad5();
 
     /**
      * <code>float load15 = 3;</code>
+     * @return The load15.
      */
     float getLoad15();
   }
@@ -145,9 +154,13 @@ private static final long serialVersionUID = 0L;
       super(builder);
     }
     private Loadstats() {
-      load1_ = 0F;
-      load5_ = 0F;
-      load15_ = 0F;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Loadstats();
     }
 
     @java.lang.Override
@@ -163,7 +176,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -190,7 +202,7 @@ private static final long serialVersionUID = 0L;
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -225,6 +237,7 @@ private static final long serialVersionUID = 0L;
     private float load1_;
     /**
      * <code>float load1 = 1;</code>
+     * @return The load1.
      */
     public float getLoad1() {
       return load1_;
@@ -234,6 +247,7 @@ private static final long serialVersionUID = 0L;
     private float load5_;
     /**
      * <code>float load5 = 2;</code>
+     * @return The load5.
      */
     public float getLoad5() {
       return load5_;
@@ -243,6 +257,7 @@ private static final long serialVersionUID = 0L;
     private float load15_;
     /**
      * <code>float load15 = 3;</code>
+     * @return The load15.
      */
     public float getLoad15() {
       return load15_;
@@ -307,21 +322,17 @@ private static final long serialVersionUID = 0L;
       }
       org.thethingsnetwork.api.SystemStats.Loadstats other = (org.thethingsnetwork.api.SystemStats.Loadstats) obj;
 
-      boolean result = true;
-      result = result && (
-          java.lang.Float.floatToIntBits(getLoad1())
-          == java.lang.Float.floatToIntBits(
-              other.getLoad1()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getLoad5())
-          == java.lang.Float.floatToIntBits(
-              other.getLoad5()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getLoad15())
-          == java.lang.Float.floatToIntBits(
-              other.getLoad15()));
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (java.lang.Float.floatToIntBits(getLoad1())
+          != java.lang.Float.floatToIntBits(
+              other.getLoad1())) return false;
+      if (java.lang.Float.floatToIntBits(getLoad5())
+          != java.lang.Float.floatToIntBits(
+              other.getLoad5())) return false;
+      if (java.lang.Float.floatToIntBits(getLoad15())
+          != java.lang.Float.floatToIntBits(
+              other.getLoad15())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -514,35 +525,35 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -597,12 +608,15 @@ private static final long serialVersionUID = 0L;
       private float load1_ ;
       /**
        * <code>float load1 = 1;</code>
+       * @return The load1.
        */
       public float getLoad1() {
         return load1_;
       }
       /**
        * <code>float load1 = 1;</code>
+       * @param value The load1 to set.
+       * @return This builder for chaining.
        */
       public Builder setLoad1(float value) {
         
@@ -612,6 +626,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>float load1 = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLoad1() {
         
@@ -623,12 +638,15 @@ private static final long serialVersionUID = 0L;
       private float load5_ ;
       /**
        * <code>float load5 = 2;</code>
+       * @return The load5.
        */
       public float getLoad5() {
         return load5_;
       }
       /**
        * <code>float load5 = 2;</code>
+       * @param value The load5 to set.
+       * @return This builder for chaining.
        */
       public Builder setLoad5(float value) {
         
@@ -638,6 +656,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>float load5 = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLoad5() {
         
@@ -649,12 +668,15 @@ private static final long serialVersionUID = 0L;
       private float load15_ ;
       /**
        * <code>float load15 = 3;</code>
+       * @return The load15.
        */
       public float getLoad15() {
         return load15_;
       }
       /**
        * <code>float load15 = 3;</code>
+       * @param value The load15 to set.
+       * @return This builder for chaining.
        */
       public Builder setLoad15(float value) {
         
@@ -664,6 +686,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>float load15 = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLoad15() {
         
@@ -674,7 +697,7 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -730,21 +753,25 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <code>float user = 1;</code>
+     * @return The user.
      */
     float getUser();
 
     /**
      * <code>float system = 2;</code>
+     * @return The system.
      */
     float getSystem();
 
     /**
      * <code>float idle = 3;</code>
+     * @return The idle.
      */
     float getIdle();
 
     /**
      * <code>float percentage = 4;</code>
+     * @return The percentage.
      */
     float getPercentage();
   }
@@ -761,10 +788,13 @@ private static final long serialVersionUID = 0L;
       super(builder);
     }
     private CPUStats() {
-      user_ = 0F;
-      system_ = 0F;
-      idle_ = 0F;
-      percentage_ = 0F;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CPUStats();
     }
 
     @java.lang.Override
@@ -780,7 +810,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -812,7 +841,7 @@ private static final long serialVersionUID = 0L;
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -847,6 +876,7 @@ private static final long serialVersionUID = 0L;
     private float user_;
     /**
      * <code>float user = 1;</code>
+     * @return The user.
      */
     public float getUser() {
       return user_;
@@ -856,6 +886,7 @@ private static final long serialVersionUID = 0L;
     private float system_;
     /**
      * <code>float system = 2;</code>
+     * @return The system.
      */
     public float getSystem() {
       return system_;
@@ -865,6 +896,7 @@ private static final long serialVersionUID = 0L;
     private float idle_;
     /**
      * <code>float idle = 3;</code>
+     * @return The idle.
      */
     public float getIdle() {
       return idle_;
@@ -874,6 +906,7 @@ private static final long serialVersionUID = 0L;
     private float percentage_;
     /**
      * <code>float percentage = 4;</code>
+     * @return The percentage.
      */
     public float getPercentage() {
       return percentage_;
@@ -945,25 +978,20 @@ private static final long serialVersionUID = 0L;
       }
       org.thethingsnetwork.api.SystemStats.CPUStats other = (org.thethingsnetwork.api.SystemStats.CPUStats) obj;
 
-      boolean result = true;
-      result = result && (
-          java.lang.Float.floatToIntBits(getUser())
-          == java.lang.Float.floatToIntBits(
-              other.getUser()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getSystem())
-          == java.lang.Float.floatToIntBits(
-              other.getSystem()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getIdle())
-          == java.lang.Float.floatToIntBits(
-              other.getIdle()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getPercentage())
-          == java.lang.Float.floatToIntBits(
-              other.getPercentage()));
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (java.lang.Float.floatToIntBits(getUser())
+          != java.lang.Float.floatToIntBits(
+              other.getUser())) return false;
+      if (java.lang.Float.floatToIntBits(getSystem())
+          != java.lang.Float.floatToIntBits(
+              other.getSystem())) return false;
+      if (java.lang.Float.floatToIntBits(getIdle())
+          != java.lang.Float.floatToIntBits(
+              other.getIdle())) return false;
+      if (java.lang.Float.floatToIntBits(getPercentage())
+          != java.lang.Float.floatToIntBits(
+              other.getPercentage())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1162,35 +1190,35 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1248,12 +1276,15 @@ private static final long serialVersionUID = 0L;
       private float user_ ;
       /**
        * <code>float user = 1;</code>
+       * @return The user.
        */
       public float getUser() {
         return user_;
       }
       /**
        * <code>float user = 1;</code>
+       * @param value The user to set.
+       * @return This builder for chaining.
        */
       public Builder setUser(float value) {
         
@@ -1263,6 +1294,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>float user = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearUser() {
         
@@ -1274,12 +1306,15 @@ private static final long serialVersionUID = 0L;
       private float system_ ;
       /**
        * <code>float system = 2;</code>
+       * @return The system.
        */
       public float getSystem() {
         return system_;
       }
       /**
        * <code>float system = 2;</code>
+       * @param value The system to set.
+       * @return This builder for chaining.
        */
       public Builder setSystem(float value) {
         
@@ -1289,6 +1324,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>float system = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSystem() {
         
@@ -1300,12 +1336,15 @@ private static final long serialVersionUID = 0L;
       private float idle_ ;
       /**
        * <code>float idle = 3;</code>
+       * @return The idle.
        */
       public float getIdle() {
         return idle_;
       }
       /**
        * <code>float idle = 3;</code>
+       * @param value The idle to set.
+       * @return This builder for chaining.
        */
       public Builder setIdle(float value) {
         
@@ -1315,6 +1354,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>float idle = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearIdle() {
         
@@ -1326,12 +1366,15 @@ private static final long serialVersionUID = 0L;
       private float percentage_ ;
       /**
        * <code>float percentage = 4;</code>
+       * @return The percentage.
        */
       public float getPercentage() {
         return percentage_;
       }
       /**
        * <code>float percentage = 4;</code>
+       * @param value The percentage to set.
+       * @return This builder for chaining.
        */
       public Builder setPercentage(float value) {
         
@@ -1341,6 +1384,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>float percentage = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPercentage() {
         
@@ -1351,7 +1395,7 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1407,16 +1451,19 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <code>uint64 total = 1;</code>
+     * @return The total.
      */
     long getTotal();
 
     /**
      * <code>uint64 available = 2;</code>
+     * @return The available.
      */
     long getAvailable();
 
     /**
      * <code>uint64 used = 3;</code>
+     * @return The used.
      */
     long getUsed();
   }
@@ -1433,9 +1480,13 @@ private static final long serialVersionUID = 0L;
       super(builder);
     }
     private MemoryStats() {
-      total_ = 0L;
-      available_ = 0L;
-      used_ = 0L;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MemoryStats();
     }
 
     @java.lang.Override
@@ -1451,7 +1502,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1478,7 +1528,7 @@ private static final long serialVersionUID = 0L;
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -1513,6 +1563,7 @@ private static final long serialVersionUID = 0L;
     private long total_;
     /**
      * <code>uint64 total = 1;</code>
+     * @return The total.
      */
     public long getTotal() {
       return total_;
@@ -1522,6 +1573,7 @@ private static final long serialVersionUID = 0L;
     private long available_;
     /**
      * <code>uint64 available = 2;</code>
+     * @return The available.
      */
     public long getAvailable() {
       return available_;
@@ -1531,6 +1583,7 @@ private static final long serialVersionUID = 0L;
     private long used_;
     /**
      * <code>uint64 used = 3;</code>
+     * @return The used.
      */
     public long getUsed() {
       return used_;
@@ -1595,15 +1648,14 @@ private static final long serialVersionUID = 0L;
       }
       org.thethingsnetwork.api.SystemStats.MemoryStats other = (org.thethingsnetwork.api.SystemStats.MemoryStats) obj;
 
-      boolean result = true;
-      result = result && (getTotal()
-          == other.getTotal());
-      result = result && (getAvailable()
-          == other.getAvailable());
-      result = result && (getUsed()
-          == other.getUsed());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getTotal()
+          != other.getTotal()) return false;
+      if (getAvailable()
+          != other.getAvailable()) return false;
+      if (getUsed()
+          != other.getUsed()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1796,35 +1848,35 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1879,12 +1931,15 @@ private static final long serialVersionUID = 0L;
       private long total_ ;
       /**
        * <code>uint64 total = 1;</code>
+       * @return The total.
        */
       public long getTotal() {
         return total_;
       }
       /**
        * <code>uint64 total = 1;</code>
+       * @param value The total to set.
+       * @return This builder for chaining.
        */
       public Builder setTotal(long value) {
         
@@ -1894,6 +1949,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>uint64 total = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTotal() {
         
@@ -1905,12 +1961,15 @@ private static final long serialVersionUID = 0L;
       private long available_ ;
       /**
        * <code>uint64 available = 2;</code>
+       * @return The available.
        */
       public long getAvailable() {
         return available_;
       }
       /**
        * <code>uint64 available = 2;</code>
+       * @param value The available to set.
+       * @return This builder for chaining.
        */
       public Builder setAvailable(long value) {
         
@@ -1920,6 +1979,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>uint64 available = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAvailable() {
         
@@ -1931,12 +1991,15 @@ private static final long serialVersionUID = 0L;
       private long used_ ;
       /**
        * <code>uint64 used = 3;</code>
+       * @return The used.
        */
       public long getUsed() {
         return used_;
       }
       /**
        * <code>uint64 used = 3;</code>
+       * @param value The used to set.
+       * @return This builder for chaining.
        */
       public Builder setUsed(long value) {
         
@@ -1946,6 +2009,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>uint64 used = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearUsed() {
         
@@ -1956,7 +2020,7 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2010,12 +2074,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.SystemStats.Loadstats load_;
   /**
    * <code>.api.SystemStats.Loadstats load = 1;</code>
+   * @return Whether the load field is set.
    */
   public boolean hasLoad() {
     return load_ != null;
   }
   /**
    * <code>.api.SystemStats.Loadstats load = 1;</code>
+   * @return The load.
    */
   public org.thethingsnetwork.api.SystemStats.Loadstats getLoad() {
     return load_ == null ? org.thethingsnetwork.api.SystemStats.Loadstats.getDefaultInstance() : load_;
@@ -2031,12 +2097,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.SystemStats.CPUStats cpu_;
   /**
    * <code>.api.SystemStats.CPUStats cpu = 2;</code>
+   * @return Whether the cpu field is set.
    */
   public boolean hasCpu() {
     return cpu_ != null;
   }
   /**
    * <code>.api.SystemStats.CPUStats cpu = 2;</code>
+   * @return The cpu.
    */
   public org.thethingsnetwork.api.SystemStats.CPUStats getCpu() {
     return cpu_ == null ? org.thethingsnetwork.api.SystemStats.CPUStats.getDefaultInstance() : cpu_;
@@ -2052,12 +2120,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.SystemStats.MemoryStats memory_;
   /**
    * <code>.api.SystemStats.MemoryStats memory = 3;</code>
+   * @return Whether the memory field is set.
    */
   public boolean hasMemory() {
     return memory_ != null;
   }
   /**
    * <code>.api.SystemStats.MemoryStats memory = 3;</code>
+   * @return The memory.
    */
   public org.thethingsnetwork.api.SystemStats.MemoryStats getMemory() {
     return memory_ == null ? org.thethingsnetwork.api.SystemStats.MemoryStats.getDefaultInstance() : memory_;
@@ -2128,24 +2198,23 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.SystemStats other = (org.thethingsnetwork.api.SystemStats) obj;
 
-    boolean result = true;
-    result = result && (hasLoad() == other.hasLoad());
+    if (hasLoad() != other.hasLoad()) return false;
     if (hasLoad()) {
-      result = result && getLoad()
-          .equals(other.getLoad());
+      if (!getLoad()
+          .equals(other.getLoad())) return false;
     }
-    result = result && (hasCpu() == other.hasCpu());
+    if (hasCpu() != other.hasCpu()) return false;
     if (hasCpu()) {
-      result = result && getCpu()
-          .equals(other.getCpu());
+      if (!getCpu()
+          .equals(other.getCpu())) return false;
     }
-    result = result && (hasMemory() == other.hasMemory());
+    if (hasMemory() != other.hasMemory()) return false;
     if (hasMemory()) {
-      result = result && getMemory()
-          .equals(other.getMemory());
+      if (!getMemory()
+          .equals(other.getMemory())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -2365,35 +2434,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2445,17 +2514,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private org.thethingsnetwork.api.SystemStats.Loadstats load_ = null;
+    private org.thethingsnetwork.api.SystemStats.Loadstats load_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.SystemStats.Loadstats, org.thethingsnetwork.api.SystemStats.Loadstats.Builder, org.thethingsnetwork.api.SystemStats.LoadstatsOrBuilder> loadBuilder_;
     /**
      * <code>.api.SystemStats.Loadstats load = 1;</code>
+     * @return Whether the load field is set.
      */
     public boolean hasLoad() {
       return loadBuilder_ != null || load_ != null;
     }
     /**
      * <code>.api.SystemStats.Loadstats load = 1;</code>
+     * @return The load.
      */
     public org.thethingsnetwork.api.SystemStats.Loadstats getLoad() {
       if (loadBuilder_ == null) {
@@ -2562,17 +2633,19 @@ private static final long serialVersionUID = 0L;
       return loadBuilder_;
     }
 
-    private org.thethingsnetwork.api.SystemStats.CPUStats cpu_ = null;
+    private org.thethingsnetwork.api.SystemStats.CPUStats cpu_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.SystemStats.CPUStats, org.thethingsnetwork.api.SystemStats.CPUStats.Builder, org.thethingsnetwork.api.SystemStats.CPUStatsOrBuilder> cpuBuilder_;
     /**
      * <code>.api.SystemStats.CPUStats cpu = 2;</code>
+     * @return Whether the cpu field is set.
      */
     public boolean hasCpu() {
       return cpuBuilder_ != null || cpu_ != null;
     }
     /**
      * <code>.api.SystemStats.CPUStats cpu = 2;</code>
+     * @return The cpu.
      */
     public org.thethingsnetwork.api.SystemStats.CPUStats getCpu() {
       if (cpuBuilder_ == null) {
@@ -2679,17 +2752,19 @@ private static final long serialVersionUID = 0L;
       return cpuBuilder_;
     }
 
-    private org.thethingsnetwork.api.SystemStats.MemoryStats memory_ = null;
+    private org.thethingsnetwork.api.SystemStats.MemoryStats memory_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.SystemStats.MemoryStats, org.thethingsnetwork.api.SystemStats.MemoryStats.Builder, org.thethingsnetwork.api.SystemStats.MemoryStatsOrBuilder> memoryBuilder_;
     /**
      * <code>.api.SystemStats.MemoryStats memory = 3;</code>
+     * @return Whether the memory field is set.
      */
     public boolean hasMemory() {
       return memoryBuilder_ != null || memory_ != null;
     }
     /**
      * <code>.api.SystemStats.MemoryStats memory = 3;</code>
+     * @return The memory.
      */
     public org.thethingsnetwork.api.SystemStats.MemoryStats getMemory() {
       if (memoryBuilder_ == null) {
@@ -2798,7 +2873,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

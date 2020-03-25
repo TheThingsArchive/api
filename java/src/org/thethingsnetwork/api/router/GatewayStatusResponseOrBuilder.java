@@ -9,15 +9,18 @@ public interface GatewayStatusResponseOrBuilder extends
 
   /**
    * <code>int64 last_seen = 1;</code>
+   * @return The lastSeen.
    */
   long getLastSeen();
 
   /**
    * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
    * <code>.gateway.Status status = 2 [(.gogoproto.nullable) = false];</code>
+   * @return The status.
    */
   org.thethingsnetwork.api.gateway.Status getStatus();
   /**

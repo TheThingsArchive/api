@@ -13,6 +13,7 @@ public interface TraceOrBuilder extends
    * </pre>
    *
    * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -21,6 +22,7 @@ public interface TraceOrBuilder extends
    * </pre>
    *
    * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
@@ -31,6 +33,7 @@ public interface TraceOrBuilder extends
    * </pre>
    *
    * <code>int64 time = 2;</code>
+   * @return The time.
    */
   long getTime();
 
@@ -40,6 +43,7 @@ public interface TraceOrBuilder extends
    * </pre>
    *
    * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
+   * @return The serviceId.
    */
   java.lang.String getServiceId();
   /**
@@ -48,6 +52,7 @@ public interface TraceOrBuilder extends
    * </pre>
    *
    * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
+   * @return The bytes for serviceId.
    */
   com.google.protobuf.ByteString
       getServiceIdBytes();
@@ -58,6 +63,7 @@ public interface TraceOrBuilder extends
    * </pre>
    *
    * <code>string service_name = 4;</code>
+   * @return The serviceName.
    */
   java.lang.String getServiceName();
   /**
@@ -66,6 +72,7 @@ public interface TraceOrBuilder extends
    * </pre>
    *
    * <code>string service_name = 4;</code>
+   * @return The bytes for serviceName.
    */
   com.google.protobuf.ByteString
       getServiceNameBytes();
@@ -76,6 +83,7 @@ public interface TraceOrBuilder extends
    * </pre>
    *
    * <code>string event = 5;</code>
+   * @return The event.
    */
   java.lang.String getEvent();
   /**
@@ -84,6 +92,7 @@ public interface TraceOrBuilder extends
    * </pre>
    *
    * <code>string event = 5;</code>
+   * @return The bytes for event.
    */
   com.google.protobuf.ByteString
       getEventBytes();

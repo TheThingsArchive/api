@@ -18,13 +18,13 @@ class DevicesRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
-    private $dev_addr = '';
+    protected $dev_addr = '';
     /**
      * Frame counter from the uplink message
      *
      * Generated from protobuf field <code>uint32 f_cnt = 2;</code>
      */
-    private $f_cnt = 0;
+    protected $f_cnt = 0;
 
     /**
      * Constructor.

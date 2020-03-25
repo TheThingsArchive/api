@@ -20,10 +20,14 @@ private static final long serialVersionUID = 0L;
     devEui_ = com.google.protobuf.ByteString.EMPTY;
     devAddr_ = com.google.protobuf.ByteString.EMPTY;
     nwkSKey_ = com.google.protobuf.ByteString.EMPTY;
-    rx1DrOffset_ = 0;
-    rx2Dr_ = 0;
-    rxDelay_ = 0;
     frequencyPlan_ = 0;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new ActivationMetadata();
   }
 
   @java.lang.Override
@@ -39,7 +43,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -105,7 +108,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -140,6 +143,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString appEui_;
   /**
    * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+   * @return The appEui.
    */
   public com.google.protobuf.ByteString getAppEui() {
     return appEui_;
@@ -149,6 +153,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString devEui_;
   /**
    * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+   * @return The devEui.
    */
   public com.google.protobuf.ByteString getDevEui() {
     return devEui_;
@@ -158,6 +163,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString devAddr_;
   /**
    * <code>bytes dev_addr = 3 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+   * @return The devAddr.
    */
   public com.google.protobuf.ByteString getDevAddr() {
     return devAddr_;
@@ -167,6 +173,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString nwkSKey_;
   /**
    * <code>bytes nwk_s_key = 4 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+   * @return The nwkSKey.
    */
   public com.google.protobuf.ByteString getNwkSKey() {
     return nwkSKey_;
@@ -176,6 +183,7 @@ private static final long serialVersionUID = 0L;
   private int rx1DrOffset_;
   /**
    * <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
+   * @return The rx1DrOffset.
    */
   public int getRx1DrOffset() {
     return rx1DrOffset_;
@@ -185,6 +193,7 @@ private static final long serialVersionUID = 0L;
   private int rx2Dr_;
   /**
    * <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
+   * @return The rx2Dr.
    */
   public int getRx2Dr() {
     return rx2Dr_;
@@ -194,6 +203,7 @@ private static final long serialVersionUID = 0L;
   private int rxDelay_;
   /**
    * <code>uint32 rx_delay = 13;</code>
+   * @return The rxDelay.
    */
   public int getRxDelay() {
     return rxDelay_;
@@ -203,12 +213,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.protocol.lorawan.CFList cfList_;
   /**
    * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
+   * @return Whether the cfList field is set.
    */
   public boolean hasCfList() {
     return cfList_ != null;
   }
   /**
    * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
+   * @return The cfList.
    */
   public org.thethingsnetwork.api.protocol.lorawan.CFList getCfList() {
     return cfList_ == null ? org.thethingsnetwork.api.protocol.lorawan.CFList.getDefaultInstance() : cfList_;
@@ -224,12 +236,14 @@ private static final long serialVersionUID = 0L;
   private int frequencyPlan_;
   /**
    * <code>.lorawan.FrequencyPlan frequency_plan = 15;</code>
+   * @return The enum numeric value on the wire for frequencyPlan.
    */
   public int getFrequencyPlanValue() {
     return frequencyPlan_;
   }
   /**
    * <code>.lorawan.FrequencyPlan frequency_plan = 15;</code>
+   * @return The frequencyPlan.
    */
   public org.thethingsnetwork.api.protocol.lorawan.FrequencyPlan getFrequencyPlan() {
     @SuppressWarnings("deprecation")
@@ -338,29 +352,28 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.protocol.lorawan.ActivationMetadata other = (org.thethingsnetwork.api.protocol.lorawan.ActivationMetadata) obj;
 
-    boolean result = true;
-    result = result && getAppEui()
-        .equals(other.getAppEui());
-    result = result && getDevEui()
-        .equals(other.getDevEui());
-    result = result && getDevAddr()
-        .equals(other.getDevAddr());
-    result = result && getNwkSKey()
-        .equals(other.getNwkSKey());
-    result = result && (getRx1DrOffset()
-        == other.getRx1DrOffset());
-    result = result && (getRx2Dr()
-        == other.getRx2Dr());
-    result = result && (getRxDelay()
-        == other.getRxDelay());
-    result = result && (hasCfList() == other.hasCfList());
+    if (!getAppEui()
+        .equals(other.getAppEui())) return false;
+    if (!getDevEui()
+        .equals(other.getDevEui())) return false;
+    if (!getDevAddr()
+        .equals(other.getDevAddr())) return false;
+    if (!getNwkSKey()
+        .equals(other.getNwkSKey())) return false;
+    if (getRx1DrOffset()
+        != other.getRx1DrOffset()) return false;
+    if (getRx2Dr()
+        != other.getRx2Dr()) return false;
+    if (getRxDelay()
+        != other.getRxDelay()) return false;
+    if (hasCfList() != other.hasCfList()) return false;
     if (hasCfList()) {
-      result = result && getCfList()
-          .equals(other.getCfList());
+      if (!getCfList()
+          .equals(other.getCfList())) return false;
     }
-    result = result && frequencyPlan_ == other.frequencyPlan_;
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (frequencyPlan_ != other.frequencyPlan_) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -590,35 +603,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -691,12 +704,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString appEui_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @return The appEui.
      */
     public com.google.protobuf.ByteString getAppEui() {
       return appEui_;
     }
     /**
      * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @param value The appEui to set.
+     * @return This builder for chaining.
      */
     public Builder setAppEui(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -709,6 +725,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearAppEui() {
       
@@ -720,12 +737,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString devEui_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @return The devEui.
      */
     public com.google.protobuf.ByteString getDevEui() {
       return devEui_;
     }
     /**
      * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @param value The devEui to set.
+     * @return This builder for chaining.
      */
     public Builder setDevEui(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -738,6 +758,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearDevEui() {
       
@@ -749,12 +770,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString devAddr_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes dev_addr = 3 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * @return The devAddr.
      */
     public com.google.protobuf.ByteString getDevAddr() {
       return devAddr_;
     }
     /**
      * <code>bytes dev_addr = 3 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * @param value The devAddr to set.
+     * @return This builder for chaining.
      */
     public Builder setDevAddr(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -767,6 +791,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bytes dev_addr = 3 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearDevAddr() {
       
@@ -778,12 +803,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString nwkSKey_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes nwk_s_key = 4 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+     * @return The nwkSKey.
      */
     public com.google.protobuf.ByteString getNwkSKey() {
       return nwkSKey_;
     }
     /**
      * <code>bytes nwk_s_key = 4 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+     * @param value The nwkSKey to set.
+     * @return This builder for chaining.
      */
     public Builder setNwkSKey(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -796,6 +824,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bytes nwk_s_key = 4 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearNwkSKey() {
       
@@ -807,12 +836,15 @@ private static final long serialVersionUID = 0L;
     private int rx1DrOffset_ ;
     /**
      * <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
+     * @return The rx1DrOffset.
      */
     public int getRx1DrOffset() {
       return rx1DrOffset_;
     }
     /**
      * <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
+     * @param value The rx1DrOffset to set.
+     * @return This builder for chaining.
      */
     public Builder setRx1DrOffset(int value) {
       
@@ -822,6 +854,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearRx1DrOffset() {
       
@@ -833,12 +866,15 @@ private static final long serialVersionUID = 0L;
     private int rx2Dr_ ;
     /**
      * <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
+     * @return The rx2Dr.
      */
     public int getRx2Dr() {
       return rx2Dr_;
     }
     /**
      * <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
+     * @param value The rx2Dr to set.
+     * @return This builder for chaining.
      */
     public Builder setRx2Dr(int value) {
       
@@ -848,6 +884,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearRx2Dr() {
       
@@ -859,12 +896,15 @@ private static final long serialVersionUID = 0L;
     private int rxDelay_ ;
     /**
      * <code>uint32 rx_delay = 13;</code>
+     * @return The rxDelay.
      */
     public int getRxDelay() {
       return rxDelay_;
     }
     /**
      * <code>uint32 rx_delay = 13;</code>
+     * @param value The rxDelay to set.
+     * @return This builder for chaining.
      */
     public Builder setRxDelay(int value) {
       
@@ -874,6 +914,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 rx_delay = 13;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRxDelay() {
       
@@ -882,17 +923,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private org.thethingsnetwork.api.protocol.lorawan.CFList cfList_ = null;
+    private org.thethingsnetwork.api.protocol.lorawan.CFList cfList_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.CFList, org.thethingsnetwork.api.protocol.lorawan.CFList.Builder, org.thethingsnetwork.api.protocol.lorawan.CFListOrBuilder> cfListBuilder_;
     /**
      * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
+     * @return Whether the cfList field is set.
      */
     public boolean hasCfList() {
       return cfListBuilder_ != null || cfList_ != null;
     }
     /**
      * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
+     * @return The cfList.
      */
     public org.thethingsnetwork.api.protocol.lorawan.CFList getCfList() {
       if (cfListBuilder_ == null) {
@@ -1002,12 +1045,15 @@ private static final long serialVersionUID = 0L;
     private int frequencyPlan_ = 0;
     /**
      * <code>.lorawan.FrequencyPlan frequency_plan = 15;</code>
+     * @return The enum numeric value on the wire for frequencyPlan.
      */
     public int getFrequencyPlanValue() {
       return frequencyPlan_;
     }
     /**
      * <code>.lorawan.FrequencyPlan frequency_plan = 15;</code>
+     * @param value The enum numeric value on the wire for frequencyPlan to set.
+     * @return This builder for chaining.
      */
     public Builder setFrequencyPlanValue(int value) {
       frequencyPlan_ = value;
@@ -1016,6 +1062,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.lorawan.FrequencyPlan frequency_plan = 15;</code>
+     * @return The frequencyPlan.
      */
     public org.thethingsnetwork.api.protocol.lorawan.FrequencyPlan getFrequencyPlan() {
       @SuppressWarnings("deprecation")
@@ -1024,6 +1071,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.lorawan.FrequencyPlan frequency_plan = 15;</code>
+     * @param value The frequencyPlan to set.
+     * @return This builder for chaining.
      */
     public Builder setFrequencyPlan(org.thethingsnetwork.api.protocol.lorawan.FrequencyPlan value) {
       if (value == null) {
@@ -1036,6 +1085,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.lorawan.FrequencyPlan frequency_plan = 15;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFrequencyPlan() {
       
@@ -1046,7 +1096,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -13,6 +13,7 @@ public interface DownlinkOptionOrBuilder extends
    * </pre>
    *
    * <code>string identifier = 1;</code>
+   * @return The identifier.
    */
   java.lang.String getIdentifier();
   /**
@@ -21,6 +22,7 @@ public interface DownlinkOptionOrBuilder extends
    * </pre>
    *
    * <code>string identifier = 1;</code>
+   * @return The bytes for identifier.
    */
   com.google.protobuf.ByteString
       getIdentifierBytes();
@@ -31,6 +33,7 @@ public interface DownlinkOptionOrBuilder extends
    * </pre>
    *
    * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+   * @return The gatewayId.
    */
   java.lang.String getGatewayId();
   /**
@@ -39,6 +42,7 @@ public interface DownlinkOptionOrBuilder extends
    * </pre>
    *
    * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+   * @return The bytes for gatewayId.
    */
   com.google.protobuf.ByteString
       getGatewayIdBytes();
@@ -49,6 +53,7 @@ public interface DownlinkOptionOrBuilder extends
    * </pre>
    *
    * <code>uint32 score = 3;</code>
+   * @return The score.
    */
   int getScore();
 
@@ -58,15 +63,18 @@ public interface DownlinkOptionOrBuilder extends
    * </pre>
    *
    * <code>int64 deadline = 4;</code>
+   * @return The deadline.
    */
   long getDeadline();
 
   /**
    * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+   * @return Whether the protocolConfiguration field is set.
    */
   boolean hasProtocolConfiguration();
   /**
    * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+   * @return The protocolConfiguration.
    */
   org.thethingsnetwork.api.protocol.TxConfiguration getProtocolConfiguration();
   /**
@@ -76,10 +84,12 @@ public interface DownlinkOptionOrBuilder extends
 
   /**
    * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+   * @return Whether the gatewayConfiguration field is set.
    */
   boolean hasGatewayConfiguration();
   /**
    * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+   * @return The gatewayConfiguration.
    */
   org.thethingsnetwork.api.gateway.TxConfiguration getGatewayConfiguration();
   /**

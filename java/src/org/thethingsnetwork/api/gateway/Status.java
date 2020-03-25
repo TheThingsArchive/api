@@ -20,10 +20,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Status() {
-    timestamp_ = 0;
-    time_ = 0L;
-    gatewayTrusted_ = false;
-    bootTime_ = 0L;
     ip_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     platform_ = "";
     contactEmail_ = "";
@@ -31,19 +27,15 @@ private static final long serialVersionUID = 0L;
     frequencyPlan_ = "";
     bridge_ = "";
     router_ = "";
-    fpga_ = 0;
-    dsp_ = 0;
     hal_ = "";
-    rtt_ = 0;
-    rxIn_ = 0;
-    rxOk_ = 0;
-    txIn_ = 0;
-    txOk_ = 0;
-    lmOk_ = 0;
-    lmSt_ = 0;
-    lmNw_ = 0;
-    lPps_ = 0;
     messages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Status();
   }
 
   @java.lang.Override
@@ -92,9 +84,9 @@ private static final long serialVersionUID = 0L;
           }
           case 90: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               ip_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000001;
             }
             ip_.add(s);
             break;
@@ -224,15 +216,15 @@ private static final long serialVersionUID = 0L;
           }
           case 418: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x02000000) == 0x02000000)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               messages_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x02000000;
+              mutable_bitField0_ |= 0x00000002;
             }
             messages_.add(s);
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -246,10 +238,10 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         ip_ = ip_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x02000000) == 0x02000000)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         messages_ = messages_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -275,31 +267,37 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <code>float load_1 = 1;</code>
+     * @return The load1.
      */
     float getLoad1();
 
     /**
      * <code>float load_5 = 2;</code>
+     * @return The load5.
      */
     float getLoad5();
 
     /**
      * <code>float load_15 = 3;</code>
+     * @return The load15.
      */
     float getLoad15();
 
     /**
      * <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
+     * @return The cpuPercentage.
      */
     float getCpuPercentage();
 
     /**
      * <code>float memory_percentage = 21;</code>
+     * @return The memoryPercentage.
      */
     float getMemoryPercentage();
 
     /**
      * <code>float temperature = 31;</code>
+     * @return The temperature.
      */
     float getTemperature();
   }
@@ -320,12 +318,13 @@ private static final long serialVersionUID = 0L;
       super(builder);
     }
     private OSMetrics() {
-      load1_ = 0F;
-      load5_ = 0F;
-      load15_ = 0F;
-      cpuPercentage_ = 0F;
-      memoryPercentage_ = 0F;
-      temperature_ = 0F;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new OSMetrics();
     }
 
     @java.lang.Override
@@ -341,7 +340,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -383,7 +381,7 @@ private static final long serialVersionUID = 0L;
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -418,6 +416,7 @@ private static final long serialVersionUID = 0L;
     private float load1_;
     /**
      * <code>float load_1 = 1;</code>
+     * @return The load1.
      */
     public float getLoad1() {
       return load1_;
@@ -427,6 +426,7 @@ private static final long serialVersionUID = 0L;
     private float load5_;
     /**
      * <code>float load_5 = 2;</code>
+     * @return The load5.
      */
     public float getLoad5() {
       return load5_;
@@ -436,6 +436,7 @@ private static final long serialVersionUID = 0L;
     private float load15_;
     /**
      * <code>float load_15 = 3;</code>
+     * @return The load15.
      */
     public float getLoad15() {
       return load15_;
@@ -445,6 +446,7 @@ private static final long serialVersionUID = 0L;
     private float cpuPercentage_;
     /**
      * <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
+     * @return The cpuPercentage.
      */
     public float getCpuPercentage() {
       return cpuPercentage_;
@@ -454,6 +456,7 @@ private static final long serialVersionUID = 0L;
     private float memoryPercentage_;
     /**
      * <code>float memory_percentage = 21;</code>
+     * @return The memoryPercentage.
      */
     public float getMemoryPercentage() {
       return memoryPercentage_;
@@ -463,6 +466,7 @@ private static final long serialVersionUID = 0L;
     private float temperature_;
     /**
      * <code>float temperature = 31;</code>
+     * @return The temperature.
      */
     public float getTemperature() {
       return temperature_;
@@ -548,33 +552,26 @@ private static final long serialVersionUID = 0L;
       }
       org.thethingsnetwork.api.gateway.Status.OSMetrics other = (org.thethingsnetwork.api.gateway.Status.OSMetrics) obj;
 
-      boolean result = true;
-      result = result && (
-          java.lang.Float.floatToIntBits(getLoad1())
-          == java.lang.Float.floatToIntBits(
-              other.getLoad1()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getLoad5())
-          == java.lang.Float.floatToIntBits(
-              other.getLoad5()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getLoad15())
-          == java.lang.Float.floatToIntBits(
-              other.getLoad15()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getCpuPercentage())
-          == java.lang.Float.floatToIntBits(
-              other.getCpuPercentage()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getMemoryPercentage())
-          == java.lang.Float.floatToIntBits(
-              other.getMemoryPercentage()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getTemperature())
-          == java.lang.Float.floatToIntBits(
-              other.getTemperature()));
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (java.lang.Float.floatToIntBits(getLoad1())
+          != java.lang.Float.floatToIntBits(
+              other.getLoad1())) return false;
+      if (java.lang.Float.floatToIntBits(getLoad5())
+          != java.lang.Float.floatToIntBits(
+              other.getLoad5())) return false;
+      if (java.lang.Float.floatToIntBits(getLoad15())
+          != java.lang.Float.floatToIntBits(
+              other.getLoad15())) return false;
+      if (java.lang.Float.floatToIntBits(getCpuPercentage())
+          != java.lang.Float.floatToIntBits(
+              other.getCpuPercentage())) return false;
+      if (java.lang.Float.floatToIntBits(getMemoryPercentage())
+          != java.lang.Float.floatToIntBits(
+              other.getMemoryPercentage())) return false;
+      if (java.lang.Float.floatToIntBits(getTemperature())
+          != java.lang.Float.floatToIntBits(
+              other.getTemperature())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -789,35 +786,35 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -881,12 +878,15 @@ private static final long serialVersionUID = 0L;
       private float load1_ ;
       /**
        * <code>float load_1 = 1;</code>
+       * @return The load1.
        */
       public float getLoad1() {
         return load1_;
       }
       /**
        * <code>float load_1 = 1;</code>
+       * @param value The load1 to set.
+       * @return This builder for chaining.
        */
       public Builder setLoad1(float value) {
         
@@ -896,6 +896,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>float load_1 = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLoad1() {
         
@@ -907,12 +908,15 @@ private static final long serialVersionUID = 0L;
       private float load5_ ;
       /**
        * <code>float load_5 = 2;</code>
+       * @return The load5.
        */
       public float getLoad5() {
         return load5_;
       }
       /**
        * <code>float load_5 = 2;</code>
+       * @param value The load5 to set.
+       * @return This builder for chaining.
        */
       public Builder setLoad5(float value) {
         
@@ -922,6 +926,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>float load_5 = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLoad5() {
         
@@ -933,12 +938,15 @@ private static final long serialVersionUID = 0L;
       private float load15_ ;
       /**
        * <code>float load_15 = 3;</code>
+       * @return The load15.
        */
       public float getLoad15() {
         return load15_;
       }
       /**
        * <code>float load_15 = 3;</code>
+       * @param value The load15 to set.
+       * @return This builder for chaining.
        */
       public Builder setLoad15(float value) {
         
@@ -948,6 +956,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>float load_15 = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLoad15() {
         
@@ -959,12 +968,15 @@ private static final long serialVersionUID = 0L;
       private float cpuPercentage_ ;
       /**
        * <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
+       * @return The cpuPercentage.
        */
       public float getCpuPercentage() {
         return cpuPercentage_;
       }
       /**
        * <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
+       * @param value The cpuPercentage to set.
+       * @return This builder for chaining.
        */
       public Builder setCpuPercentage(float value) {
         
@@ -974,6 +986,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearCpuPercentage() {
         
@@ -985,12 +998,15 @@ private static final long serialVersionUID = 0L;
       private float memoryPercentage_ ;
       /**
        * <code>float memory_percentage = 21;</code>
+       * @return The memoryPercentage.
        */
       public float getMemoryPercentage() {
         return memoryPercentage_;
       }
       /**
        * <code>float memory_percentage = 21;</code>
+       * @param value The memoryPercentage to set.
+       * @return This builder for chaining.
        */
       public Builder setMemoryPercentage(float value) {
         
@@ -1000,6 +1016,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>float memory_percentage = 21;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMemoryPercentage() {
         
@@ -1011,12 +1028,15 @@ private static final long serialVersionUID = 0L;
       private float temperature_ ;
       /**
        * <code>float temperature = 31;</code>
+       * @return The temperature.
        */
       public float getTemperature() {
         return temperature_;
       }
       /**
        * <code>float temperature = 31;</code>
+       * @param value The temperature to set.
+       * @return This builder for chaining.
        */
       public Builder setTemperature(float value) {
         
@@ -1026,6 +1046,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>float temperature = 31;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTemperature() {
         
@@ -1036,7 +1057,7 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1086,7 +1107,6 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  private int bitField0_;
   public static final int TIMESTAMP_FIELD_NUMBER = 1;
   private int timestamp_;
   /**
@@ -1095,6 +1115,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 timestamp = 1;</code>
+   * @return The timestamp.
    */
   public int getTimestamp() {
     return timestamp_;
@@ -1108,6 +1129,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 time = 2;</code>
+   * @return The time.
    */
   public long getTime() {
     return time_;
@@ -1121,6 +1143,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool gateway_trusted = 3;</code>
+   * @return The gatewayTrusted.
    */
   public boolean getGatewayTrusted() {
     return gatewayTrusted_;
@@ -1134,6 +1157,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 boot_time = 4;</code>
+   * @return The bootTime.
    */
   public long getBootTime() {
     return bootTime_;
@@ -1143,6 +1167,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList ip_;
   /**
    * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+   * @return A list containing the ip.
    */
   public com.google.protobuf.ProtocolStringList
       getIpList() {
@@ -1150,18 +1175,23 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+   * @return The count of ip.
    */
   public int getIpCount() {
     return ip_.size();
   }
   /**
    * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+   * @param index The index of the element to return.
+   * @return The ip at the given index.
    */
   public java.lang.String getIp(int index) {
     return ip_.get(index);
   }
   /**
    * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the ip at the given index.
    */
   public com.google.protobuf.ByteString
       getIpBytes(int index) {
@@ -1172,6 +1202,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object platform_;
   /**
    * <code>string platform = 12;</code>
+   * @return The platform.
    */
   public java.lang.String getPlatform() {
     java.lang.Object ref = platform_;
@@ -1187,6 +1218,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string platform = 12;</code>
+   * @return The bytes for platform.
    */
   public com.google.protobuf.ByteString
       getPlatformBytes() {
@@ -1206,6 +1238,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object contactEmail_;
   /**
    * <code>string contact_email = 13;</code>
+   * @return The contactEmail.
    */
   public java.lang.String getContactEmail() {
     java.lang.Object ref = contactEmail_;
@@ -1221,6 +1254,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string contact_email = 13;</code>
+   * @return The bytes for contactEmail.
    */
   public com.google.protobuf.ByteString
       getContactEmailBytes() {
@@ -1240,6 +1274,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object description_;
   /**
    * <code>string description = 14;</code>
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -1255,6 +1290,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string description = 14;</code>
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
@@ -1278,6 +1314,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string frequency_plan = 15;</code>
+   * @return The frequencyPlan.
    */
   public java.lang.String getFrequencyPlan() {
     java.lang.Object ref = frequencyPlan_;
@@ -1297,6 +1334,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string frequency_plan = 15;</code>
+   * @return The bytes for frequencyPlan.
    */
   public com.google.protobuf.ByteString
       getFrequencyPlanBytes() {
@@ -1320,6 +1358,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string bridge = 16;</code>
+   * @return The bridge.
    */
   public java.lang.String getBridge() {
     java.lang.Object ref = bridge_;
@@ -1339,6 +1378,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string bridge = 16;</code>
+   * @return The bytes for bridge.
    */
   public com.google.protobuf.ByteString
       getBridgeBytes() {
@@ -1362,6 +1402,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string router = 17;</code>
+   * @return The router.
    */
   public java.lang.String getRouter() {
     java.lang.Object ref = router_;
@@ -1381,6 +1422,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string router = 17;</code>
+   * @return The bytes for router.
    */
   public com.google.protobuf.ByteString
       getRouterBytes() {
@@ -1404,6 +1446,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
+   * @return The fpga.
    */
   public int getFpga() {
     return fpga_;
@@ -1417,6 +1460,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
+   * @return The dsp.
    */
   public int getDsp() {
     return dsp_;
@@ -1430,6 +1474,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
+   * @return The hal.
    */
   public java.lang.String getHal() {
     java.lang.Object ref = hal_;
@@ -1449,6 +1494,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
+   * @return The bytes for hal.
    */
   public com.google.protobuf.ByteString
       getHalBytes() {
@@ -1468,12 +1514,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.gateway.LocationMetadata location_;
   /**
    * <code>.gateway.LocationMetadata location = 21;</code>
+   * @return Whether the location field is set.
    */
   public boolean hasLocation() {
     return location_ != null;
   }
   /**
    * <code>.gateway.LocationMetadata location = 21;</code>
+   * @return The location.
    */
   public org.thethingsnetwork.api.gateway.LocationMetadata getLocation() {
     return location_ == null ? org.thethingsnetwork.api.gateway.LocationMetadata.getDefaultInstance() : location_;
@@ -1493,6 +1541,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
+   * @return The rtt.
    */
   public int getRtt() {
     return rtt_;
@@ -1506,6 +1555,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 rx_in = 41;</code>
+   * @return The rxIn.
    */
   public int getRxIn() {
     return rxIn_;
@@ -1519,6 +1569,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 rx_ok = 42;</code>
+   * @return The rxOk.
    */
   public int getRxOk() {
     return rxOk_;
@@ -1532,6 +1583,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 tx_in = 43;</code>
+   * @return The txIn.
    */
   public int getTxIn() {
     return txIn_;
@@ -1545,6 +1597,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 tx_ok = 44;</code>
+   * @return The txOk.
    */
   public int getTxOk() {
     return txOk_;
@@ -1558,6 +1611,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 lm_ok = 45;</code>
+   * @return The lmOk.
    */
   public int getLmOk() {
     return lmOk_;
@@ -1571,6 +1625,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 lm_st = 46;</code>
+   * @return The lmSt.
    */
   public int getLmSt() {
     return lmSt_;
@@ -1584,6 +1639,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 lm_nw = 47;</code>
+   * @return The lmNw.
    */
   public int getLmNw() {
     return lmNw_;
@@ -1597,6 +1653,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
+   * @return The lPps.
    */
   public int getLPps() {
     return lPps_;
@@ -1606,12 +1663,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.gateway.Status.OSMetrics os_;
   /**
    * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+   * @return Whether the os field is set.
    */
   public boolean hasOs() {
     return os_ != null;
   }
   /**
    * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+   * @return The os.
    */
   public org.thethingsnetwork.api.gateway.Status.OSMetrics getOs() {
     return os_ == null ? org.thethingsnetwork.api.gateway.Status.OSMetrics.getDefaultInstance() : os_;
@@ -1631,6 +1690,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string messages = 52;</code>
+   * @return A list containing the messages.
    */
   public com.google.protobuf.ProtocolStringList
       getMessagesList() {
@@ -1642,6 +1702,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string messages = 52;</code>
+   * @return The count of messages.
    */
   public int getMessagesCount() {
     return messages_.size();
@@ -1652,6 +1713,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string messages = 52;</code>
+   * @param index The index of the element to return.
+   * @return The messages at the given index.
    */
   public java.lang.String getMessages(int index) {
     return messages_.get(index);
@@ -1662,6 +1725,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string messages = 52;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the messages at the given index.
    */
   public com.google.protobuf.ByteString
       getMessagesBytes(int index) {
@@ -1889,67 +1954,66 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.gateway.Status other = (org.thethingsnetwork.api.gateway.Status) obj;
 
-    boolean result = true;
-    result = result && (getTimestamp()
-        == other.getTimestamp());
-    result = result && (getTime()
-        == other.getTime());
-    result = result && (getGatewayTrusted()
-        == other.getGatewayTrusted());
-    result = result && (getBootTime()
-        == other.getBootTime());
-    result = result && getIpList()
-        .equals(other.getIpList());
-    result = result && getPlatform()
-        .equals(other.getPlatform());
-    result = result && getContactEmail()
-        .equals(other.getContactEmail());
-    result = result && getDescription()
-        .equals(other.getDescription());
-    result = result && getFrequencyPlan()
-        .equals(other.getFrequencyPlan());
-    result = result && getBridge()
-        .equals(other.getBridge());
-    result = result && getRouter()
-        .equals(other.getRouter());
-    result = result && (getFpga()
-        == other.getFpga());
-    result = result && (getDsp()
-        == other.getDsp());
-    result = result && getHal()
-        .equals(other.getHal());
-    result = result && (hasLocation() == other.hasLocation());
+    if (getTimestamp()
+        != other.getTimestamp()) return false;
+    if (getTime()
+        != other.getTime()) return false;
+    if (getGatewayTrusted()
+        != other.getGatewayTrusted()) return false;
+    if (getBootTime()
+        != other.getBootTime()) return false;
+    if (!getIpList()
+        .equals(other.getIpList())) return false;
+    if (!getPlatform()
+        .equals(other.getPlatform())) return false;
+    if (!getContactEmail()
+        .equals(other.getContactEmail())) return false;
+    if (!getDescription()
+        .equals(other.getDescription())) return false;
+    if (!getFrequencyPlan()
+        .equals(other.getFrequencyPlan())) return false;
+    if (!getBridge()
+        .equals(other.getBridge())) return false;
+    if (!getRouter()
+        .equals(other.getRouter())) return false;
+    if (getFpga()
+        != other.getFpga()) return false;
+    if (getDsp()
+        != other.getDsp()) return false;
+    if (!getHal()
+        .equals(other.getHal())) return false;
+    if (hasLocation() != other.hasLocation()) return false;
     if (hasLocation()) {
-      result = result && getLocation()
-          .equals(other.getLocation());
+      if (!getLocation()
+          .equals(other.getLocation())) return false;
     }
-    result = result && (getRtt()
-        == other.getRtt());
-    result = result && (getRxIn()
-        == other.getRxIn());
-    result = result && (getRxOk()
-        == other.getRxOk());
-    result = result && (getTxIn()
-        == other.getTxIn());
-    result = result && (getTxOk()
-        == other.getTxOk());
-    result = result && (getLmOk()
-        == other.getLmOk());
-    result = result && (getLmSt()
-        == other.getLmSt());
-    result = result && (getLmNw()
-        == other.getLmNw());
-    result = result && (getLPps()
-        == other.getLPps());
-    result = result && (hasOs() == other.hasOs());
+    if (getRtt()
+        != other.getRtt()) return false;
+    if (getRxIn()
+        != other.getRxIn()) return false;
+    if (getRxOk()
+        != other.getRxOk()) return false;
+    if (getTxIn()
+        != other.getTxIn()) return false;
+    if (getTxOk()
+        != other.getTxOk()) return false;
+    if (getLmOk()
+        != other.getLmOk()) return false;
+    if (getLmSt()
+        != other.getLmSt()) return false;
+    if (getLmNw()
+        != other.getLmNw()) return false;
+    if (getLPps()
+        != other.getLPps()) return false;
+    if (hasOs() != other.hasOs()) return false;
     if (hasOs()) {
-      result = result && getOs()
-          .equals(other.getOs());
+      if (!getOs()
+          .equals(other.getOs())) return false;
     }
-    result = result && getMessagesList()
-        .equals(other.getMessagesList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getMessagesList()
+        .equals(other.getMessagesList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -2168,7 +2232,7 @@ private static final long serialVersionUID = 0L;
       bootTime_ = 0L;
 
       ip_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000001);
       platform_ = "";
 
       contactEmail_ = "";
@@ -2218,7 +2282,7 @@ private static final long serialVersionUID = 0L;
         osBuilder_ = null;
       }
       messages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -2246,14 +2310,13 @@ private static final long serialVersionUID = 0L;
     public org.thethingsnetwork.api.gateway.Status buildPartial() {
       org.thethingsnetwork.api.gateway.Status result = new org.thethingsnetwork.api.gateway.Status(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.timestamp_ = timestamp_;
       result.time_ = time_;
       result.gatewayTrusted_ = gatewayTrusted_;
       result.bootTime_ = bootTime_;
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         ip_ = ip_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.ip_ = ip_;
       result.platform_ = platform_;
@@ -2284,47 +2347,46 @@ private static final long serialVersionUID = 0L;
       } else {
         result.os_ = osBuilder_.build();
       }
-      if (((bitField0_ & 0x02000000) == 0x02000000)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         messages_ = messages_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x02000000);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.messages_ = messages_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2353,7 +2415,7 @@ private static final long serialVersionUID = 0L;
       if (!other.ip_.isEmpty()) {
         if (ip_.isEmpty()) {
           ip_ = other.ip_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureIpIsMutable();
           ip_.addAll(other.ip_);
@@ -2430,7 +2492,7 @@ private static final long serialVersionUID = 0L;
       if (!other.messages_.isEmpty()) {
         if (messages_.isEmpty()) {
           messages_ = other.messages_;
-          bitField0_ = (bitField0_ & ~0x02000000);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureMessagesIsMutable();
           messages_.addAll(other.messages_);
@@ -2474,6 +2536,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 timestamp = 1;</code>
+     * @return The timestamp.
      */
     public int getTimestamp() {
       return timestamp_;
@@ -2484,6 +2547,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 timestamp = 1;</code>
+     * @param value The timestamp to set.
+     * @return This builder for chaining.
      */
     public Builder setTimestamp(int value) {
       
@@ -2497,6 +2562,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 timestamp = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTimestamp() {
       
@@ -2512,6 +2578,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 time = 2;</code>
+     * @return The time.
      */
     public long getTime() {
       return time_;
@@ -2522,6 +2589,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 time = 2;</code>
+     * @param value The time to set.
+     * @return This builder for chaining.
      */
     public Builder setTime(long value) {
       
@@ -2535,6 +2604,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 time = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTime() {
       
@@ -2550,6 +2620,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool gateway_trusted = 3;</code>
+     * @return The gatewayTrusted.
      */
     public boolean getGatewayTrusted() {
       return gatewayTrusted_;
@@ -2560,6 +2631,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool gateway_trusted = 3;</code>
+     * @param value The gatewayTrusted to set.
+     * @return This builder for chaining.
      */
     public Builder setGatewayTrusted(boolean value) {
       
@@ -2573,6 +2646,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool gateway_trusted = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearGatewayTrusted() {
       
@@ -2588,6 +2662,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 boot_time = 4;</code>
+     * @return The bootTime.
      */
     public long getBootTime() {
       return bootTime_;
@@ -2598,6 +2673,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 boot_time = 4;</code>
+     * @param value The bootTime to set.
+     * @return This builder for chaining.
      */
     public Builder setBootTime(long value) {
       
@@ -2611,6 +2688,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 boot_time = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearBootTime() {
       
@@ -2621,13 +2699,14 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList ip_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureIpIsMutable() {
-      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         ip_ = new com.google.protobuf.LazyStringArrayList(ip_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
      * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * @return A list containing the ip.
      */
     public com.google.protobuf.ProtocolStringList
         getIpList() {
@@ -2635,18 +2714,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * @return The count of ip.
      */
     public int getIpCount() {
       return ip_.size();
     }
     /**
      * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * @param index The index of the element to return.
+     * @return The ip at the given index.
      */
     public java.lang.String getIp(int index) {
       return ip_.get(index);
     }
     /**
      * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the ip at the given index.
      */
     public com.google.protobuf.ByteString
         getIpBytes(int index) {
@@ -2654,6 +2738,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * @param index The index to set the value at.
+     * @param value The ip to set.
+     * @return This builder for chaining.
      */
     public Builder setIp(
         int index, java.lang.String value) {
@@ -2667,6 +2754,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * @param value The ip to add.
+     * @return This builder for chaining.
      */
     public Builder addIp(
         java.lang.String value) {
@@ -2680,6 +2769,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * @param values The ip to add.
+     * @return This builder for chaining.
      */
     public Builder addAllIp(
         java.lang.Iterable<java.lang.String> values) {
@@ -2691,15 +2782,18 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearIp() {
       ip_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
      * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * @param value The bytes of the ip to add.
+     * @return This builder for chaining.
      */
     public Builder addIpBytes(
         com.google.protobuf.ByteString value) {
@@ -2716,6 +2810,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object platform_ = "";
     /**
      * <code>string platform = 12;</code>
+     * @return The platform.
      */
     public java.lang.String getPlatform() {
       java.lang.Object ref = platform_;
@@ -2731,6 +2826,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string platform = 12;</code>
+     * @return The bytes for platform.
      */
     public com.google.protobuf.ByteString
         getPlatformBytes() {
@@ -2747,6 +2843,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string platform = 12;</code>
+     * @param value The platform to set.
+     * @return This builder for chaining.
      */
     public Builder setPlatform(
         java.lang.String value) {
@@ -2760,6 +2858,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string platform = 12;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPlatform() {
       
@@ -2769,6 +2868,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string platform = 12;</code>
+     * @param value The bytes for platform to set.
+     * @return This builder for chaining.
      */
     public Builder setPlatformBytes(
         com.google.protobuf.ByteString value) {
@@ -2785,6 +2886,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object contactEmail_ = "";
     /**
      * <code>string contact_email = 13;</code>
+     * @return The contactEmail.
      */
     public java.lang.String getContactEmail() {
       java.lang.Object ref = contactEmail_;
@@ -2800,6 +2902,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string contact_email = 13;</code>
+     * @return The bytes for contactEmail.
      */
     public com.google.protobuf.ByteString
         getContactEmailBytes() {
@@ -2816,6 +2919,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string contact_email = 13;</code>
+     * @param value The contactEmail to set.
+     * @return This builder for chaining.
      */
     public Builder setContactEmail(
         java.lang.String value) {
@@ -2829,6 +2934,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string contact_email = 13;</code>
+     * @return This builder for chaining.
      */
     public Builder clearContactEmail() {
       
@@ -2838,6 +2944,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string contact_email = 13;</code>
+     * @param value The bytes for contactEmail to set.
+     * @return This builder for chaining.
      */
     public Builder setContactEmailBytes(
         com.google.protobuf.ByteString value) {
@@ -2854,6 +2962,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object description_ = "";
     /**
      * <code>string description = 14;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -2869,6 +2978,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string description = 14;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -2885,6 +2995,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string description = 14;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(
         java.lang.String value) {
@@ -2898,6 +3010,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string description = 14;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
       
@@ -2907,6 +3020,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string description = 14;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -2927,6 +3042,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string frequency_plan = 15;</code>
+     * @return The frequencyPlan.
      */
     public java.lang.String getFrequencyPlan() {
       java.lang.Object ref = frequencyPlan_;
@@ -2946,6 +3062,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string frequency_plan = 15;</code>
+     * @return The bytes for frequencyPlan.
      */
     public com.google.protobuf.ByteString
         getFrequencyPlanBytes() {
@@ -2966,6 +3083,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string frequency_plan = 15;</code>
+     * @param value The frequencyPlan to set.
+     * @return This builder for chaining.
      */
     public Builder setFrequencyPlan(
         java.lang.String value) {
@@ -2983,6 +3102,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string frequency_plan = 15;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFrequencyPlan() {
       
@@ -2996,6 +3116,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string frequency_plan = 15;</code>
+     * @param value The bytes for frequencyPlan to set.
+     * @return This builder for chaining.
      */
     public Builder setFrequencyPlanBytes(
         com.google.protobuf.ByteString value) {
@@ -3016,6 +3138,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string bridge = 16;</code>
+     * @return The bridge.
      */
     public java.lang.String getBridge() {
       java.lang.Object ref = bridge_;
@@ -3035,6 +3158,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string bridge = 16;</code>
+     * @return The bytes for bridge.
      */
     public com.google.protobuf.ByteString
         getBridgeBytes() {
@@ -3055,6 +3179,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string bridge = 16;</code>
+     * @param value The bridge to set.
+     * @return This builder for chaining.
      */
     public Builder setBridge(
         java.lang.String value) {
@@ -3072,6 +3198,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string bridge = 16;</code>
+     * @return This builder for chaining.
      */
     public Builder clearBridge() {
       
@@ -3085,6 +3212,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string bridge = 16;</code>
+     * @param value The bytes for bridge to set.
+     * @return This builder for chaining.
      */
     public Builder setBridgeBytes(
         com.google.protobuf.ByteString value) {
@@ -3105,6 +3234,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string router = 17;</code>
+     * @return The router.
      */
     public java.lang.String getRouter() {
       java.lang.Object ref = router_;
@@ -3124,6 +3254,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string router = 17;</code>
+     * @return The bytes for router.
      */
     public com.google.protobuf.ByteString
         getRouterBytes() {
@@ -3144,6 +3275,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string router = 17;</code>
+     * @param value The router to set.
+     * @return This builder for chaining.
      */
     public Builder setRouter(
         java.lang.String value) {
@@ -3161,6 +3294,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string router = 17;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRouter() {
       
@@ -3174,6 +3308,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string router = 17;</code>
+     * @param value The bytes for router to set.
+     * @return This builder for chaining.
      */
     public Builder setRouterBytes(
         com.google.protobuf.ByteString value) {
@@ -3194,6 +3330,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
+     * @return The fpga.
      */
     public int getFpga() {
       return fpga_;
@@ -3204,6 +3341,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
+     * @param value The fpga to set.
+     * @return This builder for chaining.
      */
     public Builder setFpga(int value) {
       
@@ -3217,6 +3356,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearFpga() {
       
@@ -3232,6 +3372,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
+     * @return The dsp.
      */
     public int getDsp() {
       return dsp_;
@@ -3242,6 +3383,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
+     * @param value The dsp to set.
+     * @return This builder for chaining.
      */
     public Builder setDsp(int value) {
       
@@ -3255,6 +3398,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearDsp() {
       
@@ -3270,6 +3414,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
+     * @return The hal.
      */
     public java.lang.String getHal() {
       java.lang.Object ref = hal_;
@@ -3289,6 +3434,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
+     * @return The bytes for hal.
      */
     public com.google.protobuf.ByteString
         getHalBytes() {
@@ -3309,6 +3455,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
+     * @param value The hal to set.
+     * @return This builder for chaining.
      */
     public Builder setHal(
         java.lang.String value) {
@@ -3326,6 +3474,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearHal() {
       
@@ -3339,6 +3488,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
+     * @param value The bytes for hal to set.
+     * @return This builder for chaining.
      */
     public Builder setHalBytes(
         com.google.protobuf.ByteString value) {
@@ -3352,17 +3503,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private org.thethingsnetwork.api.gateway.LocationMetadata location_ = null;
+    private org.thethingsnetwork.api.gateway.LocationMetadata location_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.gateway.LocationMetadata, org.thethingsnetwork.api.gateway.LocationMetadata.Builder, org.thethingsnetwork.api.gateway.LocationMetadataOrBuilder> locationBuilder_;
     /**
      * <code>.gateway.LocationMetadata location = 21;</code>
+     * @return Whether the location field is set.
      */
     public boolean hasLocation() {
       return locationBuilder_ != null || location_ != null;
     }
     /**
      * <code>.gateway.LocationMetadata location = 21;</code>
+     * @return The location.
      */
     public org.thethingsnetwork.api.gateway.LocationMetadata getLocation() {
       if (locationBuilder_ == null) {
@@ -3476,6 +3629,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
+     * @return The rtt.
      */
     public int getRtt() {
       return rtt_;
@@ -3486,6 +3640,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
+     * @param value The rtt to set.
+     * @return This builder for chaining.
      */
     public Builder setRtt(int value) {
       
@@ -3499,6 +3655,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearRtt() {
       
@@ -3514,6 +3671,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 rx_in = 41;</code>
+     * @return The rxIn.
      */
     public int getRxIn() {
       return rxIn_;
@@ -3524,6 +3682,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 rx_in = 41;</code>
+     * @param value The rxIn to set.
+     * @return This builder for chaining.
      */
     public Builder setRxIn(int value) {
       
@@ -3537,6 +3697,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 rx_in = 41;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRxIn() {
       
@@ -3552,6 +3713,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 rx_ok = 42;</code>
+     * @return The rxOk.
      */
     public int getRxOk() {
       return rxOk_;
@@ -3562,6 +3724,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 rx_ok = 42;</code>
+     * @param value The rxOk to set.
+     * @return This builder for chaining.
      */
     public Builder setRxOk(int value) {
       
@@ -3575,6 +3739,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 rx_ok = 42;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRxOk() {
       
@@ -3590,6 +3755,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 tx_in = 43;</code>
+     * @return The txIn.
      */
     public int getTxIn() {
       return txIn_;
@@ -3600,6 +3766,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 tx_in = 43;</code>
+     * @param value The txIn to set.
+     * @return This builder for chaining.
      */
     public Builder setTxIn(int value) {
       
@@ -3613,6 +3781,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 tx_in = 43;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTxIn() {
       
@@ -3628,6 +3797,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 tx_ok = 44;</code>
+     * @return The txOk.
      */
     public int getTxOk() {
       return txOk_;
@@ -3638,6 +3808,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 tx_ok = 44;</code>
+     * @param value The txOk to set.
+     * @return This builder for chaining.
      */
     public Builder setTxOk(int value) {
       
@@ -3651,6 +3823,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 tx_ok = 44;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTxOk() {
       
@@ -3666,6 +3839,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 lm_ok = 45;</code>
+     * @return The lmOk.
      */
     public int getLmOk() {
       return lmOk_;
@@ -3676,6 +3850,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 lm_ok = 45;</code>
+     * @param value The lmOk to set.
+     * @return This builder for chaining.
      */
     public Builder setLmOk(int value) {
       
@@ -3689,6 +3865,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 lm_ok = 45;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLmOk() {
       
@@ -3704,6 +3881,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 lm_st = 46;</code>
+     * @return The lmSt.
      */
     public int getLmSt() {
       return lmSt_;
@@ -3714,6 +3892,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 lm_st = 46;</code>
+     * @param value The lmSt to set.
+     * @return This builder for chaining.
      */
     public Builder setLmSt(int value) {
       
@@ -3727,6 +3907,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 lm_st = 46;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLmSt() {
       
@@ -3742,6 +3923,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 lm_nw = 47;</code>
+     * @return The lmNw.
      */
     public int getLmNw() {
       return lmNw_;
@@ -3752,6 +3934,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 lm_nw = 47;</code>
+     * @param value The lmNw to set.
+     * @return This builder for chaining.
      */
     public Builder setLmNw(int value) {
       
@@ -3765,6 +3949,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 lm_nw = 47;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLmNw() {
       
@@ -3780,6 +3965,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
+     * @return The lPps.
      */
     public int getLPps() {
       return lPps_;
@@ -3790,6 +3976,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
+     * @param value The lPps to set.
+     * @return This builder for chaining.
      */
     public Builder setLPps(int value) {
       
@@ -3803,6 +3991,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearLPps() {
       
@@ -3811,17 +4000,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private org.thethingsnetwork.api.gateway.Status.OSMetrics os_ = null;
+    private org.thethingsnetwork.api.gateway.Status.OSMetrics os_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.gateway.Status.OSMetrics, org.thethingsnetwork.api.gateway.Status.OSMetrics.Builder, org.thethingsnetwork.api.gateway.Status.OSMetricsOrBuilder> osBuilder_;
     /**
      * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+     * @return Whether the os field is set.
      */
     public boolean hasOs() {
       return osBuilder_ != null || os_ != null;
     }
     /**
      * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+     * @return The os.
      */
     public org.thethingsnetwork.api.gateway.Status.OSMetrics getOs() {
       if (osBuilder_ == null) {
@@ -3930,9 +4121,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList messages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureMessagesIsMutable() {
-      if (!((bitField0_ & 0x02000000) == 0x02000000)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         messages_ = new com.google.protobuf.LazyStringArrayList(messages_);
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x00000002;
        }
     }
     /**
@@ -3941,6 +4132,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string messages = 52;</code>
+     * @return A list containing the messages.
      */
     public com.google.protobuf.ProtocolStringList
         getMessagesList() {
@@ -3952,6 +4144,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string messages = 52;</code>
+     * @return The count of messages.
      */
     public int getMessagesCount() {
       return messages_.size();
@@ -3962,6 +4155,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string messages = 52;</code>
+     * @param index The index of the element to return.
+     * @return The messages at the given index.
      */
     public java.lang.String getMessages(int index) {
       return messages_.get(index);
@@ -3972,6 +4167,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string messages = 52;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the messages at the given index.
      */
     public com.google.protobuf.ByteString
         getMessagesBytes(int index) {
@@ -3983,6 +4180,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string messages = 52;</code>
+     * @param index The index to set the value at.
+     * @param value The messages to set.
+     * @return This builder for chaining.
      */
     public Builder setMessages(
         int index, java.lang.String value) {
@@ -4000,6 +4200,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string messages = 52;</code>
+     * @param value The messages to add.
+     * @return This builder for chaining.
      */
     public Builder addMessages(
         java.lang.String value) {
@@ -4017,6 +4219,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string messages = 52;</code>
+     * @param values The messages to add.
+     * @return This builder for chaining.
      */
     public Builder addAllMessages(
         java.lang.Iterable<java.lang.String> values) {
@@ -4032,10 +4236,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string messages = 52;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMessages() {
       messages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -4045,6 +4250,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string messages = 52;</code>
+     * @param value The bytes of the messages to add.
+     * @return This builder for chaining.
      */
     public Builder addMessagesBytes(
         com.google.protobuf.ByteString value) {
@@ -4060,7 +4267,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

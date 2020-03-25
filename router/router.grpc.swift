@@ -20,8 +20,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-import Foundation
 import Dispatch
+import Foundation
 import SwiftGRPC
 import SwiftProtobuf
 
@@ -95,22 +95,51 @@ internal protocol Router_RouterService: ServiceClient {
   /// Asynchronous. Client-streaming.
   /// Use methods on the returned object to stream messages and
   /// to close the connection and wait for a final response.
-  func gatewayStatus(completion: ((CallResult) -> Void)?) throws -> Router_RouterGatewayStatusCall
+  func gatewayStatus(metadata customMetadata: Metadata, completion: ((CallResult) -> Void)?) throws -> Router_RouterGatewayStatusCall
 
   /// Asynchronous. Client-streaming.
   /// Use methods on the returned object to stream messages and
   /// to close the connection and wait for a final response.
-  func uplink(completion: ((CallResult) -> Void)?) throws -> Router_RouterUplinkCall
+  func uplink(metadata customMetadata: Metadata, completion: ((CallResult) -> Void)?) throws -> Router_RouterUplinkCall
 
   /// Asynchronous. Server-streaming.
   /// Send the initial message.
   /// Use methods on the returned object to get streamed responses.
-  func subscribe(_ request: Router_SubscribeRequest, completion: ((CallResult) -> Void)?) throws -> Router_RouterSubscribeCall
+  func subscribe(_ request: Router_SubscribeRequest, metadata customMetadata: Metadata, completion: ((CallResult) -> Void)?) throws -> Router_RouterSubscribeCall
 
   /// Synchronous. Unary.
-  func activate(_ request: Router_DeviceActivationRequest) throws -> Router_DeviceActivationResponse
+  func activate(_ request: Router_DeviceActivationRequest, metadata customMetadata: Metadata) throws -> Router_DeviceActivationResponse
   /// Asynchronous. Unary.
-  func activate(_ request: Router_DeviceActivationRequest, completion: @escaping (Router_DeviceActivationResponse?, CallResult) -> Void) throws -> Router_RouterActivateCall
+  @discardableResult
+  func activate(_ request: Router_DeviceActivationRequest, metadata customMetadata: Metadata, completion: @escaping (Router_DeviceActivationResponse?, CallResult) -> Void) throws -> Router_RouterActivateCall
+
+}
+
+internal extension Router_RouterService {
+  /// Asynchronous. Client-streaming.
+  func gatewayStatus(completion: ((CallResult) -> Void)?) throws -> Router_RouterGatewayStatusCall {
+    return try self.gatewayStatus(metadata: self.metadata, completion: completion)
+  }
+
+  /// Asynchronous. Client-streaming.
+  func uplink(completion: ((CallResult) -> Void)?) throws -> Router_RouterUplinkCall {
+    return try self.uplink(metadata: self.metadata, completion: completion)
+  }
+
+  /// Asynchronous. Server-streaming.
+  func subscribe(_ request: Router_SubscribeRequest, completion: ((CallResult) -> Void)?) throws -> Router_RouterSubscribeCall {
+    return try self.subscribe(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func activate(_ request: Router_DeviceActivationRequest) throws -> Router_DeviceActivationResponse {
+    return try self.activate(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func activate(_ request: Router_DeviceActivationRequest, completion: @escaping (Router_DeviceActivationResponse?, CallResult) -> Void) throws -> Router_RouterActivateCall {
+    return try self.activate(request, metadata: self.metadata, completion: completion)
+  }
 
 }
 
@@ -118,36 +147,37 @@ internal final class Router_RouterServiceClient: ServiceClientBase, Router_Route
   /// Asynchronous. Client-streaming.
   /// Use methods on the returned object to stream messages and
   /// to close the connection and wait for a final response.
-  internal func gatewayStatus(completion: ((CallResult) -> Void)?) throws -> Router_RouterGatewayStatusCall {
+  internal func gatewayStatus(metadata customMetadata: Metadata, completion: ((CallResult) -> Void)?) throws -> Router_RouterGatewayStatusCall {
     return try Router_RouterGatewayStatusCallBase(channel)
-      .start(metadata: metadata, completion: completion)
+      .start(metadata: customMetadata, completion: completion)
   }
 
   /// Asynchronous. Client-streaming.
   /// Use methods on the returned object to stream messages and
   /// to close the connection and wait for a final response.
-  internal func uplink(completion: ((CallResult) -> Void)?) throws -> Router_RouterUplinkCall {
+  internal func uplink(metadata customMetadata: Metadata, completion: ((CallResult) -> Void)?) throws -> Router_RouterUplinkCall {
     return try Router_RouterUplinkCallBase(channel)
-      .start(metadata: metadata, completion: completion)
+      .start(metadata: customMetadata, completion: completion)
   }
 
   /// Asynchronous. Server-streaming.
   /// Send the initial message.
   /// Use methods on the returned object to get streamed responses.
-  internal func subscribe(_ request: Router_SubscribeRequest, completion: ((CallResult) -> Void)?) throws -> Router_RouterSubscribeCall {
+  internal func subscribe(_ request: Router_SubscribeRequest, metadata customMetadata: Metadata, completion: ((CallResult) -> Void)?) throws -> Router_RouterSubscribeCall {
     return try Router_RouterSubscribeCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func activate(_ request: Router_DeviceActivationRequest) throws -> Router_DeviceActivationResponse {
+  internal func activate(_ request: Router_DeviceActivationRequest, metadata customMetadata: Metadata) throws -> Router_DeviceActivationResponse {
     return try Router_RouterActivateCallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func activate(_ request: Router_DeviceActivationRequest, completion: @escaping (Router_DeviceActivationResponse?, CallResult) -> Void) throws -> Router_RouterActivateCall {
+  @discardableResult
+  internal func activate(_ request: Router_DeviceActivationRequest, metadata customMetadata: Metadata, completion: @escaping (Router_DeviceActivationResponse?, CallResult) -> Void) throws -> Router_RouterActivateCall {
     return try Router_RouterActivateCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
 }
@@ -167,48 +197,110 @@ fileprivate final class Router_RouterManagerGetStatusCallBase: ClientCallUnaryBa
 /// Instantiate Router_RouterManagerServiceClient, then call methods of this protocol to make API calls.
 internal protocol Router_RouterManagerService: ServiceClient {
   /// Synchronous. Unary.
-  func gatewayStatus(_ request: Router_GatewayStatusRequest) throws -> Router_GatewayStatusResponse
+  func gatewayStatus(_ request: Router_GatewayStatusRequest, metadata customMetadata: Metadata) throws -> Router_GatewayStatusResponse
   /// Asynchronous. Unary.
-  func gatewayStatus(_ request: Router_GatewayStatusRequest, completion: @escaping (Router_GatewayStatusResponse?, CallResult) -> Void) throws -> Router_RouterManagerGatewayStatusCall
+  @discardableResult
+  func gatewayStatus(_ request: Router_GatewayStatusRequest, metadata customMetadata: Metadata, completion: @escaping (Router_GatewayStatusResponse?, CallResult) -> Void) throws -> Router_RouterManagerGatewayStatusCall
 
   /// Synchronous. Unary.
-  func getStatus(_ request: Router_StatusRequest) throws -> Router_Status
+  func getStatus(_ request: Router_StatusRequest, metadata customMetadata: Metadata) throws -> Router_Status
   /// Asynchronous. Unary.
-  func getStatus(_ request: Router_StatusRequest, completion: @escaping (Router_Status?, CallResult) -> Void) throws -> Router_RouterManagerGetStatusCall
+  @discardableResult
+  func getStatus(_ request: Router_StatusRequest, metadata customMetadata: Metadata, completion: @escaping (Router_Status?, CallResult) -> Void) throws -> Router_RouterManagerGetStatusCall
+
+}
+
+internal extension Router_RouterManagerService {
+  /// Synchronous. Unary.
+  func gatewayStatus(_ request: Router_GatewayStatusRequest) throws -> Router_GatewayStatusResponse {
+    return try self.gatewayStatus(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func gatewayStatus(_ request: Router_GatewayStatusRequest, completion: @escaping (Router_GatewayStatusResponse?, CallResult) -> Void) throws -> Router_RouterManagerGatewayStatusCall {
+    return try self.gatewayStatus(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func getStatus(_ request: Router_StatusRequest) throws -> Router_Status {
+    return try self.getStatus(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getStatus(_ request: Router_StatusRequest, completion: @escaping (Router_Status?, CallResult) -> Void) throws -> Router_RouterManagerGetStatusCall {
+    return try self.getStatus(request, metadata: self.metadata, completion: completion)
+  }
 
 }
 
 internal final class Router_RouterManagerServiceClient: ServiceClientBase, Router_RouterManagerService {
   /// Synchronous. Unary.
-  internal func gatewayStatus(_ request: Router_GatewayStatusRequest) throws -> Router_GatewayStatusResponse {
+  internal func gatewayStatus(_ request: Router_GatewayStatusRequest, metadata customMetadata: Metadata) throws -> Router_GatewayStatusResponse {
     return try Router_RouterManagerGatewayStatusCallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func gatewayStatus(_ request: Router_GatewayStatusRequest, completion: @escaping (Router_GatewayStatusResponse?, CallResult) -> Void) throws -> Router_RouterManagerGatewayStatusCall {
+  @discardableResult
+  internal func gatewayStatus(_ request: Router_GatewayStatusRequest, metadata customMetadata: Metadata, completion: @escaping (Router_GatewayStatusResponse?, CallResult) -> Void) throws -> Router_RouterManagerGatewayStatusCall {
     return try Router_RouterManagerGatewayStatusCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func getStatus(_ request: Router_StatusRequest) throws -> Router_Status {
+  internal func getStatus(_ request: Router_StatusRequest, metadata customMetadata: Metadata) throws -> Router_Status {
     return try Router_RouterManagerGetStatusCallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func getStatus(_ request: Router_StatusRequest, completion: @escaping (Router_Status?, CallResult) -> Void) throws -> Router_RouterManagerGetStatusCall {
+  @discardableResult
+  internal func getStatus(_ request: Router_StatusRequest, metadata customMetadata: Metadata, completion: @escaping (Router_Status?, CallResult) -> Void) throws -> Router_RouterManagerGetStatusCall {
     return try Router_RouterManagerGetStatusCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
 }
 
 /// To build a server, implement a class that conforms to this protocol.
-internal protocol Router_RouterProvider {
-  func gatewayStatus(session: Router_RouterGatewayStatusSession) throws
-  func uplink(session: Router_RouterUplinkSession) throws
-  func subscribe(request: Router_SubscribeRequest, session: Router_RouterSubscribeSession) throws
+/// If one of the methods returning `ServerStatus?` returns nil,
+/// it is expected that you have already returned a status to the client by means of `session.close`.
+internal protocol Router_RouterProvider: ServiceProvider {
+  func gatewayStatus(session: Router_RouterGatewayStatusSession) throws -> SwiftProtobuf.Google_Protobuf_Empty?
+  func uplink(session: Router_RouterUplinkSession) throws -> SwiftProtobuf.Google_Protobuf_Empty?
+  func subscribe(request: Router_SubscribeRequest, session: Router_RouterSubscribeSession) throws -> ServerStatus?
   func activate(request: Router_DeviceActivationRequest, session: Router_RouterActivateSession) throws -> Router_DeviceActivationResponse
+}
+
+extension Router_RouterProvider {
+  internal var serviceName: String { return "router.Router" }
+
+  /// Determines and calls the appropriate request handler, depending on the request's method.
+  /// Throws `HandleMethodError.unknownMethod` for methods not handled by this service.
+  internal func handleMethod(_ method: String, handler: Handler) throws -> ServerStatus? {
+    switch method {
+    case "/router.Router/GatewayStatus":
+      return try Router_RouterGatewayStatusSessionBase(
+        handler: handler,
+        providerBlock: { try self.gatewayStatus(session: $0 as! Router_RouterGatewayStatusSessionBase) })
+          .run()
+    case "/router.Router/Uplink":
+      return try Router_RouterUplinkSessionBase(
+        handler: handler,
+        providerBlock: { try self.uplink(session: $0 as! Router_RouterUplinkSessionBase) })
+          .run()
+    case "/router.Router/Subscribe":
+      return try Router_RouterSubscribeSessionBase(
+        handler: handler,
+        providerBlock: { try self.subscribe(request: $0, session: $1 as! Router_RouterSubscribeSessionBase) })
+          .run()
+    case "/router.Router/Activate":
+      return try Router_RouterActivateSessionBase(
+        handler: handler,
+        providerBlock: { try self.activate(request: $0, session: $1 as! Router_RouterActivateSessionBase) })
+          .run()
+    default:
+      throw HandleMethodError.unknownMethod
+    }
+  }
 }
 
 internal protocol Router_RouterGatewayStatusSession: ServerSessionClientStreaming {
@@ -217,7 +309,8 @@ internal protocol Router_RouterGatewayStatusSession: ServerSessionClientStreamin
   /// Call this to wait for a result. Nonblocking.
   func receive(completion: @escaping (ResultOrRPCError<Gateway_Status?>) -> Void) throws
 
-  /// You MUST call one of these two methods once you are done processing the request.
+  /// Exactly one of these two methods should be called if and only if your request handler returns nil;
+  /// otherwise SwiftGRPC will take care of sending the response and status for you.
   /// Close the connection and send a single result. Non-blocking.
   func sendAndClose(response: SwiftProtobuf.Google_Protobuf_Empty, status: ServerStatus, completion: (() -> Void)?) throws
   /// Close the connection and send an error. Non-blocking.
@@ -239,7 +332,8 @@ internal protocol Router_RouterUplinkSession: ServerSessionClientStreaming {
   /// Call this to wait for a result. Nonblocking.
   func receive(completion: @escaping (ResultOrRPCError<Router_UplinkMessage?>) -> Void) throws
 
-  /// You MUST call one of these two methods once you are done processing the request.
+  /// Exactly one of these two methods should be called if and only if your request handler returns nil;
+  /// otherwise SwiftGRPC will take care of sending the response and status for you.
   /// Close the connection and send a single result. Non-blocking.
   func sendAndClose(response: SwiftProtobuf.Google_Protobuf_Empty, status: ServerStatus, completion: (() -> Void)?) throws
   /// Close the connection and send an error. Non-blocking.
@@ -262,7 +356,8 @@ internal protocol Router_RouterSubscribeSession: ServerSessionServerStreaming {
   func _send(_ message: Router_DownlinkMessage, timeout: DispatchTime) throws
 
   /// Close the connection and send the status. Non-blocking.
-  /// You MUST call this method once you are done processing the request.
+  /// This method should be called if and only if your request handler returns a nil value instead of a server status;
+  /// otherwise SwiftGRPC will take care of sending the status for you.
   func close(withStatus status: ServerStatus, completion: (() -> Void)?) throws
 }
 
@@ -277,64 +372,35 @@ internal protocol Router_RouterActivateSession: ServerSessionUnary {}
 
 fileprivate final class Router_RouterActivateSessionBase: ServerSessionUnaryBase<Router_DeviceActivationRequest, Router_DeviceActivationResponse>, Router_RouterActivateSession {}
 
-
-/// Main server for generated service
-internal final class Router_RouterServer: ServiceServer {
-  private let provider: Router_RouterProvider
-
-  internal init(address: String, provider: Router_RouterProvider) {
-    self.provider = provider
-    super.init(address: address)
-  }
-
-  internal init?(address: String, certificateURL: URL, keyURL: URL, provider: Router_RouterProvider) {
-    self.provider = provider
-    super.init(address: address, certificateURL: certificateURL, keyURL: keyURL)
-  }
-
-  internal init?(address: String, certificateString: String, keyString: String, provider: Router_RouterProvider) {
-    self.provider = provider
-    super.init(address: address, certificateString: certificateString, keyString: keyString)
-  }
-
-  /// Start the server.
-  internal override func handleMethod(_ method: String, handler: Handler, queue: DispatchQueue) throws -> Bool {
-    let provider = self.provider
-    switch method {
-    case "/router.Router/GatewayStatus":
-      try Router_RouterGatewayStatusSessionBase(
-        handler: handler,
-        providerBlock: { try provider.gatewayStatus(session: $0 as! Router_RouterGatewayStatusSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/router.Router/Uplink":
-      try Router_RouterUplinkSessionBase(
-        handler: handler,
-        providerBlock: { try provider.uplink(session: $0 as! Router_RouterUplinkSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/router.Router/Subscribe":
-      try Router_RouterSubscribeSessionBase(
-        handler: handler,
-        providerBlock: { try provider.subscribe(request: $0, session: $1 as! Router_RouterSubscribeSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/router.Router/Activate":
-      try Router_RouterActivateSessionBase(
-        handler: handler,
-        providerBlock: { try provider.activate(request: $0, session: $1 as! Router_RouterActivateSessionBase) })
-          .run(queue: queue)
-      return true
-    default:
-      return false
-    }
-  }
-}
-
 /// To build a server, implement a class that conforms to this protocol.
-internal protocol Router_RouterManagerProvider {
+/// If one of the methods returning `ServerStatus?` returns nil,
+/// it is expected that you have already returned a status to the client by means of `session.close`.
+internal protocol Router_RouterManagerProvider: ServiceProvider {
   func gatewayStatus(request: Router_GatewayStatusRequest, session: Router_RouterManagerGatewayStatusSession) throws -> Router_GatewayStatusResponse
   func getStatus(request: Router_StatusRequest, session: Router_RouterManagerGetStatusSession) throws -> Router_Status
+}
+
+extension Router_RouterManagerProvider {
+  internal var serviceName: String { return "router.RouterManager" }
+
+  /// Determines and calls the appropriate request handler, depending on the request's method.
+  /// Throws `HandleMethodError.unknownMethod` for methods not handled by this service.
+  internal func handleMethod(_ method: String, handler: Handler) throws -> ServerStatus? {
+    switch method {
+    case "/router.RouterManager/GatewayStatus":
+      return try Router_RouterManagerGatewayStatusSessionBase(
+        handler: handler,
+        providerBlock: { try self.gatewayStatus(request: $0, session: $1 as! Router_RouterManagerGatewayStatusSessionBase) })
+          .run()
+    case "/router.RouterManager/GetStatus":
+      return try Router_RouterManagerGetStatusSessionBase(
+        handler: handler,
+        providerBlock: { try self.getStatus(request: $0, session: $1 as! Router_RouterManagerGetStatusSessionBase) })
+          .run()
+    default:
+      throw HandleMethodError.unknownMethod
+    }
+  }
 }
 
 internal protocol Router_RouterManagerGatewayStatusSession: ServerSessionUnary {}
@@ -344,46 +410,4 @@ fileprivate final class Router_RouterManagerGatewayStatusSessionBase: ServerSess
 internal protocol Router_RouterManagerGetStatusSession: ServerSessionUnary {}
 
 fileprivate final class Router_RouterManagerGetStatusSessionBase: ServerSessionUnaryBase<Router_StatusRequest, Router_Status>, Router_RouterManagerGetStatusSession {}
-
-
-/// Main server for generated service
-internal final class Router_RouterManagerServer: ServiceServer {
-  private let provider: Router_RouterManagerProvider
-
-  internal init(address: String, provider: Router_RouterManagerProvider) {
-    self.provider = provider
-    super.init(address: address)
-  }
-
-  internal init?(address: String, certificateURL: URL, keyURL: URL, provider: Router_RouterManagerProvider) {
-    self.provider = provider
-    super.init(address: address, certificateURL: certificateURL, keyURL: keyURL)
-  }
-
-  internal init?(address: String, certificateString: String, keyString: String, provider: Router_RouterManagerProvider) {
-    self.provider = provider
-    super.init(address: address, certificateString: certificateString, keyString: keyString)
-  }
-
-  /// Start the server.
-  internal override func handleMethod(_ method: String, handler: Handler, queue: DispatchQueue) throws -> Bool {
-    let provider = self.provider
-    switch method {
-    case "/router.RouterManager/GatewayStatus":
-      try Router_RouterManagerGatewayStatusSessionBase(
-        handler: handler,
-        providerBlock: { try provider.gatewayStatus(request: $0, session: $1 as! Router_RouterManagerGatewayStatusSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/router.RouterManager/GetStatus":
-      try Router_RouterManagerGetStatusSessionBase(
-        handler: handler,
-        providerBlock: { try provider.getStatus(request: $0, session: $1 as! Router_RouterManagerGetStatusSessionBase) })
-          .run(queue: queue)
-      return true
-    default:
-      return false
-    }
-  }
-}
 

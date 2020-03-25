@@ -24,14 +24,16 @@ private static final long serialVersionUID = 0L;
     nwkSKey_ = com.google.protobuf.ByteString.EMPTY;
     appSKey_ = com.google.protobuf.ByteString.EMPTY;
     appKey_ = com.google.protobuf.ByteString.EMPTY;
-    fCntUp_ = 0;
-    fCntDown_ = 0;
-    disableFCntCheck_ = false;
-    uses32BitFCnt_ = false;
     activationConstraints_ = "";
     usedDevNonces_ = java.util.Collections.emptyList();
     usedAppNonces_ = java.util.Collections.emptyList();
-    lastSeen_ = 0L;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Device();
   }
 
   @java.lang.Override
@@ -127,17 +129,17 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 114: {
-            if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               usedDevNonces_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
-              mutable_bitField0_ |= 0x00002000;
+              mutable_bitField0_ |= 0x00000001;
             }
             usedDevNonces_.add(input.readBytes());
             break;
           }
           case 122: {
-            if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               usedAppNonces_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
-              mutable_bitField0_ |= 0x00004000;
+              mutable_bitField0_ |= 0x00000002;
             }
             usedAppNonces_.add(input.readBytes());
             break;
@@ -148,7 +150,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -162,11 +164,11 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
-        usedDevNonces_ = java.util.Collections.unmodifiableList(usedDevNonces_);
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        usedDevNonces_ = java.util.Collections.unmodifiableList(usedDevNonces_); // C
       }
-      if (((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
-        usedAppNonces_ = java.util.Collections.unmodifiableList(usedAppNonces_);
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        usedAppNonces_ = java.util.Collections.unmodifiableList(usedAppNonces_); // C
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -185,7 +187,6 @@ private static final long serialVersionUID = 0L;
             org.thethingsnetwork.api.protocol.lorawan.Device.class, org.thethingsnetwork.api.protocol.lorawan.Device.Builder.class);
   }
 
-  private int bitField0_;
   public static final int APP_EUI_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString appEui_;
   /**
@@ -194,6 +195,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+   * @return The appEui.
    */
   public com.google.protobuf.ByteString getAppEui() {
     return appEui_;
@@ -207,6 +209,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+   * @return The devEui.
    */
   public com.google.protobuf.ByteString getDevEui() {
     return devEui_;
@@ -220,6 +223,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The appId.
    */
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
@@ -239,6 +243,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The bytes for appId.
    */
   public com.google.protobuf.ByteString
       getAppIdBytes() {
@@ -262,6 +267,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
+   * @return The devId.
    */
   public java.lang.String getDevId() {
     java.lang.Object ref = devId_;
@@ -281,6 +287,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
+   * @return The bytes for devId.
    */
   public com.google.protobuf.ByteString
       getDevIdBytes() {
@@ -304,6 +311,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes dev_addr = 5 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+   * @return The devAddr.
    */
   public com.google.protobuf.ByteString getDevAddr() {
     return devAddr_;
@@ -318,6 +326,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes nwk_s_key = 6 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+   * @return The nwkSKey.
    */
   public com.google.protobuf.ByteString getNwkSKey() {
     return nwkSKey_;
@@ -332,6 +341,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes app_s_key = 7 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppSKey"];</code>
+   * @return The appSKey.
    */
   public com.google.protobuf.ByteString getAppSKey() {
     return appSKey_;
@@ -345,6 +355,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes app_key = 8 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppKey"];</code>
+   * @return The appKey.
    */
   public com.google.protobuf.ByteString getAppKey() {
     return appKey_;
@@ -358,6 +369,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 f_cnt_up = 9;</code>
+   * @return The fCntUp.
    */
   public int getFCntUp() {
     return fCntUp_;
@@ -371,6 +383,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 f_cnt_down = 10;</code>
+   * @return The fCntDown.
    */
   public int getFCntDown() {
     return fCntDown_;
@@ -384,6 +397,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool disable_f_cnt_check = 11;</code>
+   * @return The disableFCntCheck.
    */
   public boolean getDisableFCntCheck() {
     return disableFCntCheck_;
@@ -397,6 +411,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool uses32_bit_f_cnt = 12;</code>
+   * @return The uses32BitFCnt.
    */
   public boolean getUses32BitFCnt() {
     return uses32BitFCnt_;
@@ -411,6 +426,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string activation_constraints = 13;</code>
+   * @return The activationConstraints.
    */
   public java.lang.String getActivationConstraints() {
     java.lang.Object ref = activationConstraints_;
@@ -431,6 +447,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string activation_constraints = 13;</code>
+   * @return The bytes for activationConstraints.
    */
   public com.google.protobuf.ByteString
       getActivationConstraintsBytes() {
@@ -454,6 +471,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+   * @return A list containing the usedDevNonces.
    */
   public java.util.List<com.google.protobuf.ByteString>
       getUsedDevNoncesList() {
@@ -465,6 +483,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+   * @return The count of usedDevNonces.
    */
   public int getUsedDevNoncesCount() {
     return usedDevNonces_.size();
@@ -475,6 +494,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+   * @param index The index of the element to return.
+   * @return The usedDevNonces at the given index.
    */
   public com.google.protobuf.ByteString getUsedDevNonces(int index) {
     return usedDevNonces_.get(index);
@@ -488,6 +509,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+   * @return A list containing the usedAppNonces.
    */
   public java.util.List<com.google.protobuf.ByteString>
       getUsedAppNoncesList() {
@@ -499,6 +521,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+   * @return The count of usedAppNonces.
    */
   public int getUsedAppNoncesCount() {
     return usedAppNonces_.size();
@@ -509,6 +532,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+   * @param index The index of the element to return.
+   * @return The usedAppNonces at the given index.
    */
   public com.google.protobuf.ByteString getUsedAppNonces(int index) {
     return usedAppNonces_.get(index);
@@ -522,6 +547,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 last_seen = 21;</code>
+   * @return The lastSeen.
    */
   public long getLastSeen() {
     return lastSeen_;
@@ -684,41 +710,40 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.protocol.lorawan.Device other = (org.thethingsnetwork.api.protocol.lorawan.Device) obj;
 
-    boolean result = true;
-    result = result && getAppEui()
-        .equals(other.getAppEui());
-    result = result && getDevEui()
-        .equals(other.getDevEui());
-    result = result && getAppId()
-        .equals(other.getAppId());
-    result = result && getDevId()
-        .equals(other.getDevId());
-    result = result && getDevAddr()
-        .equals(other.getDevAddr());
-    result = result && getNwkSKey()
-        .equals(other.getNwkSKey());
-    result = result && getAppSKey()
-        .equals(other.getAppSKey());
-    result = result && getAppKey()
-        .equals(other.getAppKey());
-    result = result && (getFCntUp()
-        == other.getFCntUp());
-    result = result && (getFCntDown()
-        == other.getFCntDown());
-    result = result && (getDisableFCntCheck()
-        == other.getDisableFCntCheck());
-    result = result && (getUses32BitFCnt()
-        == other.getUses32BitFCnt());
-    result = result && getActivationConstraints()
-        .equals(other.getActivationConstraints());
-    result = result && getUsedDevNoncesList()
-        .equals(other.getUsedDevNoncesList());
-    result = result && getUsedAppNoncesList()
-        .equals(other.getUsedAppNoncesList());
-    result = result && (getLastSeen()
-        == other.getLastSeen());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getAppEui()
+        .equals(other.getAppEui())) return false;
+    if (!getDevEui()
+        .equals(other.getDevEui())) return false;
+    if (!getAppId()
+        .equals(other.getAppId())) return false;
+    if (!getDevId()
+        .equals(other.getDevId())) return false;
+    if (!getDevAddr()
+        .equals(other.getDevAddr())) return false;
+    if (!getNwkSKey()
+        .equals(other.getNwkSKey())) return false;
+    if (!getAppSKey()
+        .equals(other.getAppSKey())) return false;
+    if (!getAppKey()
+        .equals(other.getAppKey())) return false;
+    if (getFCntUp()
+        != other.getFCntUp()) return false;
+    if (getFCntDown()
+        != other.getFCntDown()) return false;
+    if (getDisableFCntCheck()
+        != other.getDisableFCntCheck()) return false;
+    if (getUses32BitFCnt()
+        != other.getUses32BitFCnt()) return false;
+    if (!getActivationConstraints()
+        .equals(other.getActivationConstraints())) return false;
+    if (!getUsedDevNoncesList()
+        .equals(other.getUsedDevNoncesList())) return false;
+    if (!getUsedAppNoncesList()
+        .equals(other.getUsedAppNoncesList())) return false;
+    if (getLastSeen()
+        != other.getLastSeen()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -927,9 +952,9 @@ private static final long serialVersionUID = 0L;
       activationConstraints_ = "";
 
       usedDevNonces_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00000001);
       usedAppNonces_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00000002);
       lastSeen_ = 0L;
 
       return this;
@@ -959,7 +984,6 @@ private static final long serialVersionUID = 0L;
     public org.thethingsnetwork.api.protocol.lorawan.Device buildPartial() {
       org.thethingsnetwork.api.protocol.lorawan.Device result = new org.thethingsnetwork.api.protocol.lorawan.Device(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.appEui_ = appEui_;
       result.devEui_ = devEui_;
       result.appId_ = appId_;
@@ -973,53 +997,52 @@ private static final long serialVersionUID = 0L;
       result.disableFCntCheck_ = disableFCntCheck_;
       result.uses32BitFCnt_ = uses32BitFCnt_;
       result.activationConstraints_ = activationConstraints_;
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         usedDevNonces_ = java.util.Collections.unmodifiableList(usedDevNonces_);
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.usedDevNonces_ = usedDevNonces_;
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         usedAppNonces_ = java.util.Collections.unmodifiableList(usedAppNonces_);
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.usedAppNonces_ = usedAppNonces_;
       result.lastSeen_ = lastSeen_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1078,7 +1101,7 @@ private static final long serialVersionUID = 0L;
       if (!other.usedDevNonces_.isEmpty()) {
         if (usedDevNonces_.isEmpty()) {
           usedDevNonces_ = other.usedDevNonces_;
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureUsedDevNoncesIsMutable();
           usedDevNonces_.addAll(other.usedDevNonces_);
@@ -1088,7 +1111,7 @@ private static final long serialVersionUID = 0L;
       if (!other.usedAppNonces_.isEmpty()) {
         if (usedAppNonces_.isEmpty()) {
           usedAppNonces_ = other.usedAppNonces_;
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureUsedAppNoncesIsMutable();
           usedAppNonces_.addAll(other.usedAppNonces_);
@@ -1135,6 +1158,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @return The appEui.
      */
     public com.google.protobuf.ByteString getAppEui() {
       return appEui_;
@@ -1145,6 +1169,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @param value The appEui to set.
+     * @return This builder for chaining.
      */
     public Builder setAppEui(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1161,6 +1187,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearAppEui() {
       
@@ -1176,6 +1203,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @return The devEui.
      */
     public com.google.protobuf.ByteString getDevEui() {
       return devEui_;
@@ -1186,6 +1214,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @param value The devEui to set.
+     * @return This builder for chaining.
      */
     public Builder setDevEui(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1202,6 +1232,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearDevEui() {
       
@@ -1217,6 +1248,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
+     * @return The appId.
      */
     public java.lang.String getAppId() {
       java.lang.Object ref = appId_;
@@ -1236,6 +1268,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
+     * @return The bytes for appId.
      */
     public com.google.protobuf.ByteString
         getAppIdBytes() {
@@ -1256,6 +1289,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
+     * @param value The appId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppId(
         java.lang.String value) {
@@ -1273,6 +1308,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearAppId() {
       
@@ -1286,6 +1322,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
+     * @param value The bytes for appId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1306,6 +1344,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
+     * @return The devId.
      */
     public java.lang.String getDevId() {
       java.lang.Object ref = devId_;
@@ -1325,6 +1364,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
+     * @return The bytes for devId.
      */
     public com.google.protobuf.ByteString
         getDevIdBytes() {
@@ -1345,6 +1385,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
+     * @param value The devId to set.
+     * @return This builder for chaining.
      */
     public Builder setDevId(
         java.lang.String value) {
@@ -1362,6 +1404,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearDevId() {
       
@@ -1375,6 +1418,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
+     * @param value The bytes for devId to set.
+     * @return This builder for chaining.
      */
     public Builder setDevIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1395,6 +1440,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes dev_addr = 5 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * @return The devAddr.
      */
     public com.google.protobuf.ByteString getDevAddr() {
       return devAddr_;
@@ -1405,6 +1451,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes dev_addr = 5 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * @param value The devAddr to set.
+     * @return This builder for chaining.
      */
     public Builder setDevAddr(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1421,6 +1469,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes dev_addr = 5 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearDevAddr() {
       
@@ -1437,6 +1486,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes nwk_s_key = 6 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+     * @return The nwkSKey.
      */
     public com.google.protobuf.ByteString getNwkSKey() {
       return nwkSKey_;
@@ -1448,6 +1498,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes nwk_s_key = 6 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+     * @param value The nwkSKey to set.
+     * @return This builder for chaining.
      */
     public Builder setNwkSKey(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1465,6 +1517,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes nwk_s_key = 6 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearNwkSKey() {
       
@@ -1481,6 +1534,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes app_s_key = 7 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppSKey"];</code>
+     * @return The appSKey.
      */
     public com.google.protobuf.ByteString getAppSKey() {
       return appSKey_;
@@ -1492,6 +1546,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes app_s_key = 7 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppSKey"];</code>
+     * @param value The appSKey to set.
+     * @return This builder for chaining.
      */
     public Builder setAppSKey(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1509,6 +1565,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes app_s_key = 7 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppSKey"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearAppSKey() {
       
@@ -1524,6 +1581,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes app_key = 8 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppKey"];</code>
+     * @return The appKey.
      */
     public com.google.protobuf.ByteString getAppKey() {
       return appKey_;
@@ -1534,6 +1592,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes app_key = 8 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppKey"];</code>
+     * @param value The appKey to set.
+     * @return This builder for chaining.
      */
     public Builder setAppKey(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1550,6 +1610,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes app_key = 8 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppKey"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearAppKey() {
       
@@ -1565,6 +1626,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 f_cnt_up = 9;</code>
+     * @return The fCntUp.
      */
     public int getFCntUp() {
       return fCntUp_;
@@ -1575,6 +1637,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 f_cnt_up = 9;</code>
+     * @param value The fCntUp to set.
+     * @return This builder for chaining.
      */
     public Builder setFCntUp(int value) {
       
@@ -1588,6 +1652,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 f_cnt_up = 9;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFCntUp() {
       
@@ -1603,6 +1668,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 f_cnt_down = 10;</code>
+     * @return The fCntDown.
      */
     public int getFCntDown() {
       return fCntDown_;
@@ -1613,6 +1679,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 f_cnt_down = 10;</code>
+     * @param value The fCntDown to set.
+     * @return This builder for chaining.
      */
     public Builder setFCntDown(int value) {
       
@@ -1626,6 +1694,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 f_cnt_down = 10;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFCntDown() {
       
@@ -1641,6 +1710,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool disable_f_cnt_check = 11;</code>
+     * @return The disableFCntCheck.
      */
     public boolean getDisableFCntCheck() {
       return disableFCntCheck_;
@@ -1651,6 +1721,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool disable_f_cnt_check = 11;</code>
+     * @param value The disableFCntCheck to set.
+     * @return This builder for chaining.
      */
     public Builder setDisableFCntCheck(boolean value) {
       
@@ -1664,6 +1736,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool disable_f_cnt_check = 11;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDisableFCntCheck() {
       
@@ -1679,6 +1752,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool uses32_bit_f_cnt = 12;</code>
+     * @return The uses32BitFCnt.
      */
     public boolean getUses32BitFCnt() {
       return uses32BitFCnt_;
@@ -1689,6 +1763,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool uses32_bit_f_cnt = 12;</code>
+     * @param value The uses32BitFCnt to set.
+     * @return This builder for chaining.
      */
     public Builder setUses32BitFCnt(boolean value) {
       
@@ -1702,6 +1778,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool uses32_bit_f_cnt = 12;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUses32BitFCnt() {
       
@@ -1718,6 +1795,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string activation_constraints = 13;</code>
+     * @return The activationConstraints.
      */
     public java.lang.String getActivationConstraints() {
       java.lang.Object ref = activationConstraints_;
@@ -1738,6 +1816,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string activation_constraints = 13;</code>
+     * @return The bytes for activationConstraints.
      */
     public com.google.protobuf.ByteString
         getActivationConstraintsBytes() {
@@ -1759,6 +1838,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string activation_constraints = 13;</code>
+     * @param value The activationConstraints to set.
+     * @return This builder for chaining.
      */
     public Builder setActivationConstraints(
         java.lang.String value) {
@@ -1777,6 +1858,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string activation_constraints = 13;</code>
+     * @return This builder for chaining.
      */
     public Builder clearActivationConstraints() {
       
@@ -1791,6 +1873,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string activation_constraints = 13;</code>
+     * @param value The bytes for activationConstraints to set.
+     * @return This builder for chaining.
      */
     public Builder setActivationConstraintsBytes(
         com.google.protobuf.ByteString value) {
@@ -1806,9 +1890,9 @@ private static final long serialVersionUID = 0L;
 
     private java.util.List<com.google.protobuf.ByteString> usedDevNonces_ = java.util.Collections.emptyList();
     private void ensureUsedDevNoncesIsMutable() {
-      if (!((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         usedDevNonces_ = new java.util.ArrayList<com.google.protobuf.ByteString>(usedDevNonces_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
@@ -1817,10 +1901,12 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * @return A list containing the usedDevNonces.
      */
     public java.util.List<com.google.protobuf.ByteString>
         getUsedDevNoncesList() {
-      return java.util.Collections.unmodifiableList(usedDevNonces_);
+      return ((bitField0_ & 0x00000001) != 0) ?
+               java.util.Collections.unmodifiableList(usedDevNonces_) : usedDevNonces_;
     }
     /**
      * <pre>
@@ -1828,6 +1914,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * @return The count of usedDevNonces.
      */
     public int getUsedDevNoncesCount() {
       return usedDevNonces_.size();
@@ -1838,6 +1925,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * @param index The index of the element to return.
+     * @return The usedDevNonces at the given index.
      */
     public com.google.protobuf.ByteString getUsedDevNonces(int index) {
       return usedDevNonces_.get(index);
@@ -1848,6 +1937,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * @param index The index to set the value at.
+     * @param value The usedDevNonces to set.
+     * @return This builder for chaining.
      */
     public Builder setUsedDevNonces(
         int index, com.google.protobuf.ByteString value) {
@@ -1865,6 +1957,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * @param value The usedDevNonces to add.
+     * @return This builder for chaining.
      */
     public Builder addUsedDevNonces(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1881,6 +1975,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * @param values The usedDevNonces to add.
+     * @return This builder for chaining.
      */
     public Builder addAllUsedDevNonces(
         java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
@@ -1896,19 +1992,20 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearUsedDevNonces() {
       usedDevNonces_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.protobuf.ByteString> usedAppNonces_ = java.util.Collections.emptyList();
     private void ensureUsedAppNoncesIsMutable() {
-      if (!((bitField0_ & 0x00004000) == 0x00004000)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         usedAppNonces_ = new java.util.ArrayList<com.google.protobuf.ByteString>(usedAppNonces_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00000002;
        }
     }
     /**
@@ -1917,10 +2014,12 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * @return A list containing the usedAppNonces.
      */
     public java.util.List<com.google.protobuf.ByteString>
         getUsedAppNoncesList() {
-      return java.util.Collections.unmodifiableList(usedAppNonces_);
+      return ((bitField0_ & 0x00000002) != 0) ?
+               java.util.Collections.unmodifiableList(usedAppNonces_) : usedAppNonces_;
     }
     /**
      * <pre>
@@ -1928,6 +2027,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * @return The count of usedAppNonces.
      */
     public int getUsedAppNoncesCount() {
       return usedAppNonces_.size();
@@ -1938,6 +2038,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * @param index The index of the element to return.
+     * @return The usedAppNonces at the given index.
      */
     public com.google.protobuf.ByteString getUsedAppNonces(int index) {
       return usedAppNonces_.get(index);
@@ -1948,6 +2050,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * @param index The index to set the value at.
+     * @param value The usedAppNonces to set.
+     * @return This builder for chaining.
      */
     public Builder setUsedAppNonces(
         int index, com.google.protobuf.ByteString value) {
@@ -1965,6 +2070,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * @param value The usedAppNonces to add.
+     * @return This builder for chaining.
      */
     public Builder addUsedAppNonces(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1981,6 +2088,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * @param values The usedAppNonces to add.
+     * @return This builder for chaining.
      */
     public Builder addAllUsedAppNonces(
         java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
@@ -1996,10 +2105,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearUsedAppNonces() {
       usedAppNonces_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2011,6 +2121,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 last_seen = 21;</code>
+     * @return The lastSeen.
      */
     public long getLastSeen() {
       return lastSeen_;
@@ -2021,6 +2132,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 last_seen = 21;</code>
+     * @param value The lastSeen to set.
+     * @return This builder for chaining.
      */
     public Builder setLastSeen(long value) {
       
@@ -2034,6 +2147,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 last_seen = 21;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLastSeen() {
       
@@ -2044,7 +2158,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

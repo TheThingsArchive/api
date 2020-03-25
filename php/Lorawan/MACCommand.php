@@ -16,11 +16,11 @@ class MACCommand extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>uint32 cid = 1 [(.gogoproto.customname) = "CID"];</code>
      */
-    private $cid = 0;
+    protected $cid = 0;
     /**
      * Generated from protobuf field <code>bytes payload = 2;</code>
      */
-    private $payload = '';
+    protected $payload = '';
 
     /**
      * Constructor.

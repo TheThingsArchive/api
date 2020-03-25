@@ -19,6 +19,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new TxConfiguration();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -31,7 +38,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -57,7 +63,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -91,7 +97,8 @@ private static final long serialVersionUID = 0L;
   private int protocolCase_ = 0;
   private java.lang.Object protocol_;
   public enum ProtocolCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     LORAWAN(1),
     PROTOCOL_NOT_SET(0);
     private final int value;
@@ -99,6 +106,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -127,12 +136,14 @@ private static final long serialVersionUID = 0L;
   public static final int LORAWAN_FIELD_NUMBER = 1;
   /**
    * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+   * @return Whether the lorawan field is set.
    */
   public boolean hasLorawan() {
     return protocolCase_ == 1;
   }
   /**
    * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+   * @return The lorawan.
    */
   public org.thethingsnetwork.api.protocol.lorawan.TxConfiguration getLorawan() {
     if (protocolCase_ == 1) {
@@ -195,20 +206,17 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.protocol.TxConfiguration other = (org.thethingsnetwork.api.protocol.TxConfiguration) obj;
 
-    boolean result = true;
-    result = result && getProtocolCase().equals(
-        other.getProtocolCase());
-    if (!result) return false;
+    if (!getProtocolCase().equals(other.getProtocolCase())) return false;
     switch (protocolCase_) {
       case 1:
-        result = result && getLorawan()
-            .equals(other.getLorawan());
+        if (!getLorawan()
+            .equals(other.getLorawan())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -401,35 +409,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -500,12 +508,14 @@ private static final long serialVersionUID = 0L;
         org.thethingsnetwork.api.protocol.lorawan.TxConfiguration, org.thethingsnetwork.api.protocol.lorawan.TxConfiguration.Builder, org.thethingsnetwork.api.protocol.lorawan.TxConfigurationOrBuilder> lorawanBuilder_;
     /**
      * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+     * @return Whether the lorawan field is set.
      */
     public boolean hasLorawan() {
       return protocolCase_ == 1;
     }
     /**
      * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+     * @return The lorawan.
      */
     public org.thethingsnetwork.api.protocol.lorawan.TxConfiguration getLorawan() {
       if (lorawanBuilder_ == null) {
@@ -634,7 +644,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

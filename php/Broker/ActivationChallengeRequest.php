@@ -16,27 +16,27 @@ class ActivationChallengeRequest extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes payload = 1;</code>
      */
-    private $payload = '';
+    protected $payload = '';
     /**
      * Generated from protobuf field <code>.protocol.Message message = 2;</code>
      */
-    private $message = null;
+    protected $message = null;
     /**
      * Generated from protobuf field <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
-    private $dev_eui = '';
+    protected $dev_eui = '';
     /**
      * Generated from protobuf field <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
-    private $app_eui = '';
+    protected $app_eui = '';
     /**
      * Generated from protobuf field <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
      */
-    private $app_id = '';
+    protected $app_id = '';
     /**
      * Generated from protobuf field <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
      */
-    private $dev_id = '';
+    protected $dev_id = '';
 
     /**
      * Constructor.

@@ -18,33 +18,33 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string identifier = 1;</code>
      */
-    private $identifier = '';
+    protected $identifier = '';
     /**
      * ID of the gateway where this downlink should be sent
      *
      * Generated from protobuf field <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
      */
-    private $gateway_id = '';
+    protected $gateway_id = '';
     /**
      * Score of this downlink option. Lower is better.
      *
      * Generated from protobuf field <code>uint32 score = 3;</code>
      */
-    private $score = 0;
+    protected $score = 0;
     /**
      * deadline time at server represented as Unix nanoseconds
      *
      * Generated from protobuf field <code>int64 deadline = 4;</code>
      */
-    private $deadline = 0;
+    protected $deadline = 0;
     /**
      * Generated from protobuf field <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
      */
-    private $protocol_configuration = null;
+    protected $protocol_configuration = null;
     /**
      * Generated from protobuf field <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
      */
-    private $gateway_configuration = null;
+    protected $gateway_configuration = null;
 
     /**
      * Constructor.

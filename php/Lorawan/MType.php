@@ -4,6 +4,8 @@
 
 namespace Lorawan;
 
+use UnexpectedValueException;
+
 /**
  * Protobuf type <code>lorawan.MType</code>
  */
@@ -33,5 +35,34 @@ class MType
      * Generated from protobuf enum <code>CONFIRMED_DOWN = 5;</code>
      */
     const CONFIRMED_DOWN = 5;
+
+    private static $valueToName = [
+        self::JOIN_REQUEST => 'JOIN_REQUEST',
+        self::JOIN_ACCEPT => 'JOIN_ACCEPT',
+        self::UNCONFIRMED_UP => 'UNCONFIRMED_UP',
+        self::UNCONFIRMED_DOWN => 'UNCONFIRMED_DOWN',
+        self::CONFIRMED_UP => 'CONFIRMED_UP',
+        self::CONFIRMED_DOWN => 'CONFIRMED_DOWN',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 

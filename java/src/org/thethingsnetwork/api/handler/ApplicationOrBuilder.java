@@ -9,10 +9,12 @@ public interface ApplicationOrBuilder extends
 
   /**
    * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The appId.
    */
   java.lang.String getAppId();
   /**
    * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The bytes for appId.
    */
   com.google.protobuf.ByteString
       getAppIdBytes();
@@ -23,6 +25,7 @@ public interface ApplicationOrBuilder extends
    * </pre>
    *
    * <code>string payload_format = 6;</code>
+   * @return The payloadFormat.
    */
   java.lang.String getPayloadFormat();
   /**
@@ -31,6 +34,7 @@ public interface ApplicationOrBuilder extends
    * </pre>
    *
    * <code>string payload_format = 6;</code>
+   * @return The bytes for payloadFormat.
    */
   com.google.protobuf.ByteString
       getPayloadFormatBytes();
@@ -42,6 +46,7 @@ public interface ApplicationOrBuilder extends
    * </pre>
    *
    * <code>string decoder = 2;</code>
+   * @return The decoder.
    */
   java.lang.String getDecoder();
   /**
@@ -51,6 +56,7 @@ public interface ApplicationOrBuilder extends
    * </pre>
    *
    * <code>string decoder = 2;</code>
+   * @return The bytes for decoder.
    */
   com.google.protobuf.ByteString
       getDecoderBytes();
@@ -63,6 +69,7 @@ public interface ApplicationOrBuilder extends
    * </pre>
    *
    * <code>string converter = 3;</code>
+   * @return The converter.
    */
   java.lang.String getConverter();
   /**
@@ -73,6 +80,7 @@ public interface ApplicationOrBuilder extends
    * </pre>
    *
    * <code>string converter = 3;</code>
+   * @return The bytes for converter.
    */
   com.google.protobuf.ByteString
       getConverterBytes();
@@ -85,6 +93,7 @@ public interface ApplicationOrBuilder extends
    * </pre>
    *
    * <code>string validator = 4;</code>
+   * @return The validator.
    */
   java.lang.String getValidator();
   /**
@@ -95,6 +104,7 @@ public interface ApplicationOrBuilder extends
    * </pre>
    *
    * <code>string validator = 4;</code>
+   * @return The bytes for validator.
    */
   com.google.protobuf.ByteString
       getValidatorBytes();
@@ -106,6 +116,7 @@ public interface ApplicationOrBuilder extends
    * </pre>
    *
    * <code>string encoder = 5;</code>
+   * @return The encoder.
    */
   java.lang.String getEncoder();
   /**
@@ -115,6 +126,7 @@ public interface ApplicationOrBuilder extends
    * </pre>
    *
    * <code>string encoder = 5;</code>
+   * @return The bytes for encoder.
    */
   com.google.protobuf.ByteString
       getEncoderBytes();
@@ -125,6 +137,7 @@ public interface ApplicationOrBuilder extends
    * </pre>
    *
    * <code>string register_on_join_access_key = 7;</code>
+   * @return The registerOnJoinAccessKey.
    */
   java.lang.String getRegisterOnJoinAccessKey();
   /**
@@ -133,6 +146,7 @@ public interface ApplicationOrBuilder extends
    * </pre>
    *
    * <code>string register_on_join_access_key = 7;</code>
+   * @return The bytes for registerOnJoinAccessKey.
    */
   com.google.protobuf.ByteString
       getRegisterOnJoinAccessKeyBytes();

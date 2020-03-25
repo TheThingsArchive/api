@@ -16,15 +16,13 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Percentiles() {
-    percentile1_ = 0F;
-    percentile5_ = 0F;
-    percentile10_ = 0F;
-    percentile25_ = 0F;
-    percentile50_ = 0F;
-    percentile75_ = 0F;
-    percentile90_ = 0F;
-    percentile95_ = 0F;
-    percentile99_ = 0F;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Percentiles();
   }
 
   @java.lang.Override
@@ -40,7 +38,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -97,7 +94,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -132,6 +129,7 @@ private static final long serialVersionUID = 0L;
   private float percentile1_;
   /**
    * <code>float percentile1 = 1;</code>
+   * @return The percentile1.
    */
   public float getPercentile1() {
     return percentile1_;
@@ -141,6 +139,7 @@ private static final long serialVersionUID = 0L;
   private float percentile5_;
   /**
    * <code>float percentile5 = 2;</code>
+   * @return The percentile5.
    */
   public float getPercentile5() {
     return percentile5_;
@@ -150,6 +149,7 @@ private static final long serialVersionUID = 0L;
   private float percentile10_;
   /**
    * <code>float percentile10 = 3;</code>
+   * @return The percentile10.
    */
   public float getPercentile10() {
     return percentile10_;
@@ -159,6 +159,7 @@ private static final long serialVersionUID = 0L;
   private float percentile25_;
   /**
    * <code>float percentile25 = 4;</code>
+   * @return The percentile25.
    */
   public float getPercentile25() {
     return percentile25_;
@@ -168,6 +169,7 @@ private static final long serialVersionUID = 0L;
   private float percentile50_;
   /**
    * <code>float percentile50 = 5;</code>
+   * @return The percentile50.
    */
   public float getPercentile50() {
     return percentile50_;
@@ -177,6 +179,7 @@ private static final long serialVersionUID = 0L;
   private float percentile75_;
   /**
    * <code>float percentile75 = 6;</code>
+   * @return The percentile75.
    */
   public float getPercentile75() {
     return percentile75_;
@@ -186,6 +189,7 @@ private static final long serialVersionUID = 0L;
   private float percentile90_;
   /**
    * <code>float percentile90 = 7;</code>
+   * @return The percentile90.
    */
   public float getPercentile90() {
     return percentile90_;
@@ -195,6 +199,7 @@ private static final long serialVersionUID = 0L;
   private float percentile95_;
   /**
    * <code>float percentile95 = 8;</code>
+   * @return The percentile95.
    */
   public float getPercentile95() {
     return percentile95_;
@@ -204,6 +209,7 @@ private static final long serialVersionUID = 0L;
   private float percentile99_;
   /**
    * <code>float percentile99 = 9;</code>
+   * @return The percentile99.
    */
   public float getPercentile99() {
     return percentile99_;
@@ -310,45 +316,35 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.Percentiles other = (org.thethingsnetwork.api.Percentiles) obj;
 
-    boolean result = true;
-    result = result && (
-        java.lang.Float.floatToIntBits(getPercentile1())
-        == java.lang.Float.floatToIntBits(
-            other.getPercentile1()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getPercentile5())
-        == java.lang.Float.floatToIntBits(
-            other.getPercentile5()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getPercentile10())
-        == java.lang.Float.floatToIntBits(
-            other.getPercentile10()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getPercentile25())
-        == java.lang.Float.floatToIntBits(
-            other.getPercentile25()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getPercentile50())
-        == java.lang.Float.floatToIntBits(
-            other.getPercentile50()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getPercentile75())
-        == java.lang.Float.floatToIntBits(
-            other.getPercentile75()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getPercentile90())
-        == java.lang.Float.floatToIntBits(
-            other.getPercentile90()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getPercentile95())
-        == java.lang.Float.floatToIntBits(
-            other.getPercentile95()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getPercentile99())
-        == java.lang.Float.floatToIntBits(
-            other.getPercentile99()));
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (java.lang.Float.floatToIntBits(getPercentile1())
+        != java.lang.Float.floatToIntBits(
+            other.getPercentile1())) return false;
+    if (java.lang.Float.floatToIntBits(getPercentile5())
+        != java.lang.Float.floatToIntBits(
+            other.getPercentile5())) return false;
+    if (java.lang.Float.floatToIntBits(getPercentile10())
+        != java.lang.Float.floatToIntBits(
+            other.getPercentile10())) return false;
+    if (java.lang.Float.floatToIntBits(getPercentile25())
+        != java.lang.Float.floatToIntBits(
+            other.getPercentile25())) return false;
+    if (java.lang.Float.floatToIntBits(getPercentile50())
+        != java.lang.Float.floatToIntBits(
+            other.getPercentile50())) return false;
+    if (java.lang.Float.floatToIntBits(getPercentile75())
+        != java.lang.Float.floatToIntBits(
+            other.getPercentile75())) return false;
+    if (java.lang.Float.floatToIntBits(getPercentile90())
+        != java.lang.Float.floatToIntBits(
+            other.getPercentile90())) return false;
+    if (java.lang.Float.floatToIntBits(getPercentile95())
+        != java.lang.Float.floatToIntBits(
+            other.getPercentile95())) return false;
+    if (java.lang.Float.floatToIntBits(getPercentile99())
+        != java.lang.Float.floatToIntBits(
+            other.getPercentile99())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -577,35 +573,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -678,12 +674,15 @@ private static final long serialVersionUID = 0L;
     private float percentile1_ ;
     /**
      * <code>float percentile1 = 1;</code>
+     * @return The percentile1.
      */
     public float getPercentile1() {
       return percentile1_;
     }
     /**
      * <code>float percentile1 = 1;</code>
+     * @param value The percentile1 to set.
+     * @return This builder for chaining.
      */
     public Builder setPercentile1(float value) {
       
@@ -693,6 +692,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float percentile1 = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPercentile1() {
       
@@ -704,12 +704,15 @@ private static final long serialVersionUID = 0L;
     private float percentile5_ ;
     /**
      * <code>float percentile5 = 2;</code>
+     * @return The percentile5.
      */
     public float getPercentile5() {
       return percentile5_;
     }
     /**
      * <code>float percentile5 = 2;</code>
+     * @param value The percentile5 to set.
+     * @return This builder for chaining.
      */
     public Builder setPercentile5(float value) {
       
@@ -719,6 +722,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float percentile5 = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPercentile5() {
       
@@ -730,12 +734,15 @@ private static final long serialVersionUID = 0L;
     private float percentile10_ ;
     /**
      * <code>float percentile10 = 3;</code>
+     * @return The percentile10.
      */
     public float getPercentile10() {
       return percentile10_;
     }
     /**
      * <code>float percentile10 = 3;</code>
+     * @param value The percentile10 to set.
+     * @return This builder for chaining.
      */
     public Builder setPercentile10(float value) {
       
@@ -745,6 +752,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float percentile10 = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPercentile10() {
       
@@ -756,12 +764,15 @@ private static final long serialVersionUID = 0L;
     private float percentile25_ ;
     /**
      * <code>float percentile25 = 4;</code>
+     * @return The percentile25.
      */
     public float getPercentile25() {
       return percentile25_;
     }
     /**
      * <code>float percentile25 = 4;</code>
+     * @param value The percentile25 to set.
+     * @return This builder for chaining.
      */
     public Builder setPercentile25(float value) {
       
@@ -771,6 +782,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float percentile25 = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPercentile25() {
       
@@ -782,12 +794,15 @@ private static final long serialVersionUID = 0L;
     private float percentile50_ ;
     /**
      * <code>float percentile50 = 5;</code>
+     * @return The percentile50.
      */
     public float getPercentile50() {
       return percentile50_;
     }
     /**
      * <code>float percentile50 = 5;</code>
+     * @param value The percentile50 to set.
+     * @return This builder for chaining.
      */
     public Builder setPercentile50(float value) {
       
@@ -797,6 +812,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float percentile50 = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPercentile50() {
       
@@ -808,12 +824,15 @@ private static final long serialVersionUID = 0L;
     private float percentile75_ ;
     /**
      * <code>float percentile75 = 6;</code>
+     * @return The percentile75.
      */
     public float getPercentile75() {
       return percentile75_;
     }
     /**
      * <code>float percentile75 = 6;</code>
+     * @param value The percentile75 to set.
+     * @return This builder for chaining.
      */
     public Builder setPercentile75(float value) {
       
@@ -823,6 +842,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float percentile75 = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPercentile75() {
       
@@ -834,12 +854,15 @@ private static final long serialVersionUID = 0L;
     private float percentile90_ ;
     /**
      * <code>float percentile90 = 7;</code>
+     * @return The percentile90.
      */
     public float getPercentile90() {
       return percentile90_;
     }
     /**
      * <code>float percentile90 = 7;</code>
+     * @param value The percentile90 to set.
+     * @return This builder for chaining.
      */
     public Builder setPercentile90(float value) {
       
@@ -849,6 +872,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float percentile90 = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPercentile90() {
       
@@ -860,12 +884,15 @@ private static final long serialVersionUID = 0L;
     private float percentile95_ ;
     /**
      * <code>float percentile95 = 8;</code>
+     * @return The percentile95.
      */
     public float getPercentile95() {
       return percentile95_;
     }
     /**
      * <code>float percentile95 = 8;</code>
+     * @param value The percentile95 to set.
+     * @return This builder for chaining.
      */
     public Builder setPercentile95(float value) {
       
@@ -875,6 +902,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float percentile95 = 8;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPercentile95() {
       
@@ -886,12 +914,15 @@ private static final long serialVersionUID = 0L;
     private float percentile99_ ;
     /**
      * <code>float percentile99 = 9;</code>
+     * @return The percentile99.
      */
     public float getPercentile99() {
       return percentile99_;
     }
     /**
      * <code>float percentile99 = 9;</code>
+     * @param value The percentile99 to set.
+     * @return This builder for chaining.
      */
     public Builder setPercentile99(float value) {
       
@@ -901,6 +932,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float percentile99 = 9;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPercentile99() {
       
@@ -911,7 +943,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -13,6 +13,7 @@ public interface DryUplinkResultOrBuilder extends
    * </pre>
    *
    * <code>bytes payload = 1;</code>
+   * @return The payload.
    */
   com.google.protobuf.ByteString getPayload();
 
@@ -22,6 +23,7 @@ public interface DryUplinkResultOrBuilder extends
    * </pre>
    *
    * <code>string fields = 2;</code>
+   * @return The fields.
    */
   java.lang.String getFields();
   /**
@@ -30,6 +32,7 @@ public interface DryUplinkResultOrBuilder extends
    * </pre>
    *
    * <code>string fields = 2;</code>
+   * @return The bytes for fields.
    */
   com.google.protobuf.ByteString
       getFieldsBytes();
@@ -40,6 +43,7 @@ public interface DryUplinkResultOrBuilder extends
    * </pre>
    *
    * <code>bool valid = 3;</code>
+   * @return The valid.
    */
   boolean getValid();
 

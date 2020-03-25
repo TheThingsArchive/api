@@ -5,31 +5,33 @@ require 'google/protobuf'
 
 require 'protocol/lorawan/lorawan_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
-  add_message "protocol.Message" do
-    oneof :protocol do
-      optional :lorawan, :message, 1, "lorawan.Message"
+  add_file("github.com/TheThingsNetwork/api/protocol/protocol.proto", :syntax => :proto3) do
+    add_message "protocol.Message" do
+      oneof :protocol do
+        optional :lorawan, :message, 1, "lorawan.Message"
+      end
     end
-  end
-  add_message "protocol.RxMetadata" do
-    oneof :protocol do
-      optional :lorawan, :message, 1, "lorawan.Metadata"
+    add_message "protocol.RxMetadata" do
+      oneof :protocol do
+        optional :lorawan, :message, 1, "lorawan.Metadata"
+      end
     end
-  end
-  add_message "protocol.TxConfiguration" do
-    oneof :protocol do
-      optional :lorawan, :message, 1, "lorawan.TxConfiguration"
+    add_message "protocol.TxConfiguration" do
+      oneof :protocol do
+        optional :lorawan, :message, 1, "lorawan.TxConfiguration"
+      end
     end
-  end
-  add_message "protocol.ActivationMetadata" do
-    oneof :protocol do
-      optional :lorawan, :message, 1, "lorawan.ActivationMetadata"
+    add_message "protocol.ActivationMetadata" do
+      oneof :protocol do
+        optional :lorawan, :message, 1, "lorawan.ActivationMetadata"
+      end
     end
   end
 end
 
 module Protocol
-  Message = Google::Protobuf::DescriptorPool.generated_pool.lookup("protocol.Message").msgclass
-  RxMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("protocol.RxMetadata").msgclass
-  TxConfiguration = Google::Protobuf::DescriptorPool.generated_pool.lookup("protocol.TxConfiguration").msgclass
-  ActivationMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("protocol.ActivationMetadata").msgclass
+  Message = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("protocol.Message").msgclass
+  RxMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("protocol.RxMetadata").msgclass
+  TxConfiguration = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("protocol.TxConfiguration").msgclass
+  ActivationMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("protocol.ActivationMetadata").msgclass
 end

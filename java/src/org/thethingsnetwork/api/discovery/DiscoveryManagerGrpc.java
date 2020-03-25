@@ -34,7 +34,14 @@ public final class DiscoveryManagerGrpc {
    * Creates a new async stub that supports all call types for the service
    */
   public static DiscoveryManagerStub newStub(io.grpc.Channel channel) {
-    return new DiscoveryManagerStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DiscoveryManagerStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<DiscoveryManagerStub>() {
+        @java.lang.Override
+        public DiscoveryManagerStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new DiscoveryManagerStub(channel, callOptions);
+        }
+      };
+    return DiscoveryManagerStub.newStub(factory, channel);
   }
 
   /**
@@ -42,7 +49,14 @@ public final class DiscoveryManagerGrpc {
    */
   public static DiscoveryManagerBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new DiscoveryManagerBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DiscoveryManagerBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<DiscoveryManagerBlockingStub>() {
+        @java.lang.Override
+        public DiscoveryManagerBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new DiscoveryManagerBlockingStub(channel, callOptions);
+        }
+      };
+    return DiscoveryManagerBlockingStub.newStub(factory, channel);
   }
 
   /**
@@ -50,7 +64,14 @@ public final class DiscoveryManagerGrpc {
    */
   public static DiscoveryManagerFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new DiscoveryManagerFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DiscoveryManagerFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<DiscoveryManagerFutureStub>() {
+        @java.lang.Override
+        public DiscoveryManagerFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new DiscoveryManagerFutureStub(channel, callOptions);
+        }
+      };
+    return DiscoveryManagerFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -71,19 +92,15 @@ public final class DiscoveryManagerGrpc {
    * The DiscoveryManager service provides configuration and monitoring functionality
    * </pre>
    */
-  public static final class DiscoveryManagerStub extends io.grpc.stub.AbstractStub<DiscoveryManagerStub> {
-    private DiscoveryManagerStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private DiscoveryManagerStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class DiscoveryManagerStub extends io.grpc.stub.AbstractAsyncStub<DiscoveryManagerStub> {
+    private DiscoveryManagerStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected DiscoveryManagerStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected DiscoveryManagerStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new DiscoveryManagerStub(channel, callOptions);
     }
   }
@@ -93,19 +110,15 @@ public final class DiscoveryManagerGrpc {
    * The DiscoveryManager service provides configuration and monitoring functionality
    * </pre>
    */
-  public static final class DiscoveryManagerBlockingStub extends io.grpc.stub.AbstractStub<DiscoveryManagerBlockingStub> {
-    private DiscoveryManagerBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private DiscoveryManagerBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class DiscoveryManagerBlockingStub extends io.grpc.stub.AbstractBlockingStub<DiscoveryManagerBlockingStub> {
+    private DiscoveryManagerBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected DiscoveryManagerBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected DiscoveryManagerBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new DiscoveryManagerBlockingStub(channel, callOptions);
     }
   }
@@ -115,19 +128,15 @@ public final class DiscoveryManagerGrpc {
    * The DiscoveryManager service provides configuration and monitoring functionality
    * </pre>
    */
-  public static final class DiscoveryManagerFutureStub extends io.grpc.stub.AbstractStub<DiscoveryManagerFutureStub> {
-    private DiscoveryManagerFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private DiscoveryManagerFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class DiscoveryManagerFutureStub extends io.grpc.stub.AbstractFutureStub<DiscoveryManagerFutureStub> {
+    private DiscoveryManagerFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected DiscoveryManagerFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected DiscoveryManagerFutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new DiscoveryManagerFutureStub(channel, callOptions);
     }
   }

@@ -13,6 +13,7 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+   * @return The appEui.
    */
   com.google.protobuf.ByteString getAppEui();
 
@@ -22,6 +23,7 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+   * @return The devEui.
    */
   com.google.protobuf.ByteString getDevEui();
 
@@ -31,6 +33,7 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The appId.
    */
   java.lang.String getAppId();
   /**
@@ -39,6 +42,7 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The bytes for appId.
    */
   com.google.protobuf.ByteString
       getAppIdBytes();
@@ -49,6 +53,7 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
+   * @return The devId.
    */
   java.lang.String getDevId();
   /**
@@ -57,6 +62,7 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
+   * @return The bytes for devId.
    */
   com.google.protobuf.ByteString
       getDevIdBytes();
@@ -67,6 +73,7 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>bytes dev_addr = 5 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+   * @return The devAddr.
    */
   com.google.protobuf.ByteString getDevAddr();
 
@@ -77,6 +84,7 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>bytes nwk_s_key = 6 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+   * @return The nwkSKey.
    */
   com.google.protobuf.ByteString getNwkSKey();
 
@@ -87,6 +95,7 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>bytes app_s_key = 7 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppSKey"];</code>
+   * @return The appSKey.
    */
   com.google.protobuf.ByteString getAppSKey();
 
@@ -96,6 +105,7 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>bytes app_key = 8 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppKey"];</code>
+   * @return The appKey.
    */
   com.google.protobuf.ByteString getAppKey();
 
@@ -105,6 +115,7 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>uint32 f_cnt_up = 9;</code>
+   * @return The fCntUp.
    */
   int getFCntUp();
 
@@ -114,6 +125,7 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>uint32 f_cnt_down = 10;</code>
+   * @return The fCntDown.
    */
   int getFCntDown();
 
@@ -123,6 +135,7 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>bool disable_f_cnt_check = 11;</code>
+   * @return The disableFCntCheck.
    */
   boolean getDisableFCntCheck();
 
@@ -132,6 +145,7 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>bool uses32_bit_f_cnt = 12;</code>
+   * @return The uses32BitFCnt.
    */
   boolean getUses32BitFCnt();
 
@@ -142,6 +156,7 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>string activation_constraints = 13;</code>
+   * @return The activationConstraints.
    */
   java.lang.String getActivationConstraints();
   /**
@@ -151,6 +166,7 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>string activation_constraints = 13;</code>
+   * @return The bytes for activationConstraints.
    */
   com.google.protobuf.ByteString
       getActivationConstraintsBytes();
@@ -161,6 +177,7 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+   * @return A list containing the usedDevNonces.
    */
   java.util.List<com.google.protobuf.ByteString> getUsedDevNoncesList();
   /**
@@ -169,6 +186,7 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+   * @return The count of usedDevNonces.
    */
   int getUsedDevNoncesCount();
   /**
@@ -177,6 +195,8 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+   * @param index The index of the element to return.
+   * @return The usedDevNonces at the given index.
    */
   com.google.protobuf.ByteString getUsedDevNonces(int index);
 
@@ -186,6 +206,7 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+   * @return A list containing the usedAppNonces.
    */
   java.util.List<com.google.protobuf.ByteString> getUsedAppNoncesList();
   /**
@@ -194,6 +215,7 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+   * @return The count of usedAppNonces.
    */
   int getUsedAppNoncesCount();
   /**
@@ -202,6 +224,8 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+   * @param index The index of the element to return.
+   * @return The usedAppNonces at the given index.
    */
   com.google.protobuf.ByteString getUsedAppNonces(int index);
 
@@ -211,6 +235,7 @@ public interface DeviceOrBuilder extends
    * </pre>
    *
    * <code>int64 last_seen = 21;</code>
+   * @return The lastSeen.
    */
   long getLastSeen();
 }

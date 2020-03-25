@@ -126,15 +126,7 @@ public final class RouterProto {
       "etwork/api/router\252\002\033TheThingsNetwork.API" +
       ".Routerb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.EmptyProto.getDescriptor(),
@@ -143,7 +135,7 @@ public final class RouterProto {
           org.thethingsnetwork.api.protocol.ProtocolProto.getDescriptor(),
           org.thethingsnetwork.api.gateway.GatewayProto.getDescriptor(),
           org.thethingsnetwork.api.trace.TraceProto.getDescriptor(),
-        }, assigner);
+        });
     internal_static_router_SubscribeRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_router_SubscribeRequest_fieldAccessorTable = new

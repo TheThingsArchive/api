@@ -20,8 +20,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-import Foundation
 import Dispatch
+import Foundation
 import SwiftGRPC
 import SwiftProtobuf
 
@@ -47,63 +47,132 @@ fileprivate final class Lorawan_DeviceManagerDeleteDeviceCallBase: ClientCallUna
 /// Instantiate Lorawan_DeviceManagerServiceClient, then call methods of this protocol to make API calls.
 internal protocol Lorawan_DeviceManagerService: ServiceClient {
   /// Synchronous. Unary.
-  func getDevice(_ request: Lorawan_DeviceIdentifier) throws -> Lorawan_Device
+  func getDevice(_ request: Lorawan_DeviceIdentifier, metadata customMetadata: Metadata) throws -> Lorawan_Device
   /// Asynchronous. Unary.
-  func getDevice(_ request: Lorawan_DeviceIdentifier, completion: @escaping (Lorawan_Device?, CallResult) -> Void) throws -> Lorawan_DeviceManagerGetDeviceCall
+  @discardableResult
+  func getDevice(_ request: Lorawan_DeviceIdentifier, metadata customMetadata: Metadata, completion: @escaping (Lorawan_Device?, CallResult) -> Void) throws -> Lorawan_DeviceManagerGetDeviceCall
 
   /// Synchronous. Unary.
-  func setDevice(_ request: Lorawan_Device) throws -> SwiftProtobuf.Google_Protobuf_Empty
+  func setDevice(_ request: Lorawan_Device, metadata customMetadata: Metadata) throws -> SwiftProtobuf.Google_Protobuf_Empty
   /// Asynchronous. Unary.
-  func setDevice(_ request: Lorawan_Device, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Lorawan_DeviceManagerSetDeviceCall
+  @discardableResult
+  func setDevice(_ request: Lorawan_Device, metadata customMetadata: Metadata, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Lorawan_DeviceManagerSetDeviceCall
 
   /// Synchronous. Unary.
-  func deleteDevice(_ request: Lorawan_DeviceIdentifier) throws -> SwiftProtobuf.Google_Protobuf_Empty
+  func deleteDevice(_ request: Lorawan_DeviceIdentifier, metadata customMetadata: Metadata) throws -> SwiftProtobuf.Google_Protobuf_Empty
   /// Asynchronous. Unary.
-  func deleteDevice(_ request: Lorawan_DeviceIdentifier, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Lorawan_DeviceManagerDeleteDeviceCall
+  @discardableResult
+  func deleteDevice(_ request: Lorawan_DeviceIdentifier, metadata customMetadata: Metadata, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Lorawan_DeviceManagerDeleteDeviceCall
+
+}
+
+internal extension Lorawan_DeviceManagerService {
+  /// Synchronous. Unary.
+  func getDevice(_ request: Lorawan_DeviceIdentifier) throws -> Lorawan_Device {
+    return try self.getDevice(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getDevice(_ request: Lorawan_DeviceIdentifier, completion: @escaping (Lorawan_Device?, CallResult) -> Void) throws -> Lorawan_DeviceManagerGetDeviceCall {
+    return try self.getDevice(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func setDevice(_ request: Lorawan_Device) throws -> SwiftProtobuf.Google_Protobuf_Empty {
+    return try self.setDevice(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func setDevice(_ request: Lorawan_Device, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Lorawan_DeviceManagerSetDeviceCall {
+    return try self.setDevice(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func deleteDevice(_ request: Lorawan_DeviceIdentifier) throws -> SwiftProtobuf.Google_Protobuf_Empty {
+    return try self.deleteDevice(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func deleteDevice(_ request: Lorawan_DeviceIdentifier, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Lorawan_DeviceManagerDeleteDeviceCall {
+    return try self.deleteDevice(request, metadata: self.metadata, completion: completion)
+  }
 
 }
 
 internal final class Lorawan_DeviceManagerServiceClient: ServiceClientBase, Lorawan_DeviceManagerService {
   /// Synchronous. Unary.
-  internal func getDevice(_ request: Lorawan_DeviceIdentifier) throws -> Lorawan_Device {
+  internal func getDevice(_ request: Lorawan_DeviceIdentifier, metadata customMetadata: Metadata) throws -> Lorawan_Device {
     return try Lorawan_DeviceManagerGetDeviceCallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func getDevice(_ request: Lorawan_DeviceIdentifier, completion: @escaping (Lorawan_Device?, CallResult) -> Void) throws -> Lorawan_DeviceManagerGetDeviceCall {
+  @discardableResult
+  internal func getDevice(_ request: Lorawan_DeviceIdentifier, metadata customMetadata: Metadata, completion: @escaping (Lorawan_Device?, CallResult) -> Void) throws -> Lorawan_DeviceManagerGetDeviceCall {
     return try Lorawan_DeviceManagerGetDeviceCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func setDevice(_ request: Lorawan_Device) throws -> SwiftProtobuf.Google_Protobuf_Empty {
+  internal func setDevice(_ request: Lorawan_Device, metadata customMetadata: Metadata) throws -> SwiftProtobuf.Google_Protobuf_Empty {
     return try Lorawan_DeviceManagerSetDeviceCallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func setDevice(_ request: Lorawan_Device, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Lorawan_DeviceManagerSetDeviceCall {
+  @discardableResult
+  internal func setDevice(_ request: Lorawan_Device, metadata customMetadata: Metadata, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Lorawan_DeviceManagerSetDeviceCall {
     return try Lorawan_DeviceManagerSetDeviceCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func deleteDevice(_ request: Lorawan_DeviceIdentifier) throws -> SwiftProtobuf.Google_Protobuf_Empty {
+  internal func deleteDevice(_ request: Lorawan_DeviceIdentifier, metadata customMetadata: Metadata) throws -> SwiftProtobuf.Google_Protobuf_Empty {
     return try Lorawan_DeviceManagerDeleteDeviceCallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func deleteDevice(_ request: Lorawan_DeviceIdentifier, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Lorawan_DeviceManagerDeleteDeviceCall {
+  @discardableResult
+  internal func deleteDevice(_ request: Lorawan_DeviceIdentifier, metadata customMetadata: Metadata, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Lorawan_DeviceManagerDeleteDeviceCall {
     return try Lorawan_DeviceManagerDeleteDeviceCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
 }
 
 /// To build a server, implement a class that conforms to this protocol.
-internal protocol Lorawan_DeviceManagerProvider {
+/// If one of the methods returning `ServerStatus?` returns nil,
+/// it is expected that you have already returned a status to the client by means of `session.close`.
+internal protocol Lorawan_DeviceManagerProvider: ServiceProvider {
   func getDevice(request: Lorawan_DeviceIdentifier, session: Lorawan_DeviceManagerGetDeviceSession) throws -> Lorawan_Device
   func setDevice(request: Lorawan_Device, session: Lorawan_DeviceManagerSetDeviceSession) throws -> SwiftProtobuf.Google_Protobuf_Empty
   func deleteDevice(request: Lorawan_DeviceIdentifier, session: Lorawan_DeviceManagerDeleteDeviceSession) throws -> SwiftProtobuf.Google_Protobuf_Empty
+}
+
+extension Lorawan_DeviceManagerProvider {
+  internal var serviceName: String { return "lorawan.DeviceManager" }
+
+  /// Determines and calls the appropriate request handler, depending on the request's method.
+  /// Throws `HandleMethodError.unknownMethod` for methods not handled by this service.
+  internal func handleMethod(_ method: String, handler: Handler) throws -> ServerStatus? {
+    switch method {
+    case "/lorawan.DeviceManager/GetDevice":
+      return try Lorawan_DeviceManagerGetDeviceSessionBase(
+        handler: handler,
+        providerBlock: { try self.getDevice(request: $0, session: $1 as! Lorawan_DeviceManagerGetDeviceSessionBase) })
+          .run()
+    case "/lorawan.DeviceManager/SetDevice":
+      return try Lorawan_DeviceManagerSetDeviceSessionBase(
+        handler: handler,
+        providerBlock: { try self.setDevice(request: $0, session: $1 as! Lorawan_DeviceManagerSetDeviceSessionBase) })
+          .run()
+    case "/lorawan.DeviceManager/DeleteDevice":
+      return try Lorawan_DeviceManagerDeleteDeviceSessionBase(
+        handler: handler,
+        providerBlock: { try self.deleteDevice(request: $0, session: $1 as! Lorawan_DeviceManagerDeleteDeviceSessionBase) })
+          .run()
+    default:
+      throw HandleMethodError.unknownMethod
+    }
+  }
 }
 
 internal protocol Lorawan_DeviceManagerGetDeviceSession: ServerSessionUnary {}
@@ -117,52 +186,4 @@ fileprivate final class Lorawan_DeviceManagerSetDeviceSessionBase: ServerSession
 internal protocol Lorawan_DeviceManagerDeleteDeviceSession: ServerSessionUnary {}
 
 fileprivate final class Lorawan_DeviceManagerDeleteDeviceSessionBase: ServerSessionUnaryBase<Lorawan_DeviceIdentifier, SwiftProtobuf.Google_Protobuf_Empty>, Lorawan_DeviceManagerDeleteDeviceSession {}
-
-
-/// Main server for generated service
-internal final class Lorawan_DeviceManagerServer: ServiceServer {
-  private let provider: Lorawan_DeviceManagerProvider
-
-  internal init(address: String, provider: Lorawan_DeviceManagerProvider) {
-    self.provider = provider
-    super.init(address: address)
-  }
-
-  internal init?(address: String, certificateURL: URL, keyURL: URL, provider: Lorawan_DeviceManagerProvider) {
-    self.provider = provider
-    super.init(address: address, certificateURL: certificateURL, keyURL: keyURL)
-  }
-
-  internal init?(address: String, certificateString: String, keyString: String, provider: Lorawan_DeviceManagerProvider) {
-    self.provider = provider
-    super.init(address: address, certificateString: certificateString, keyString: keyString)
-  }
-
-  /// Start the server.
-  internal override func handleMethod(_ method: String, handler: Handler, queue: DispatchQueue) throws -> Bool {
-    let provider = self.provider
-    switch method {
-    case "/lorawan.DeviceManager/GetDevice":
-      try Lorawan_DeviceManagerGetDeviceSessionBase(
-        handler: handler,
-        providerBlock: { try provider.getDevice(request: $0, session: $1 as! Lorawan_DeviceManagerGetDeviceSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/lorawan.DeviceManager/SetDevice":
-      try Lorawan_DeviceManagerSetDeviceSessionBase(
-        handler: handler,
-        providerBlock: { try provider.setDevice(request: $0, session: $1 as! Lorawan_DeviceManagerSetDeviceSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/lorawan.DeviceManager/DeleteDevice":
-      try Lorawan_DeviceManagerDeleteDeviceSessionBase(
-        handler: handler,
-        providerBlock: { try provider.deleteDevice(request: $0, session: $1 as! Lorawan_DeviceManagerDeleteDeviceSessionBase) })
-          .run(queue: queue)
-      return true
-    default:
-      return false
-    }
-  }
-}
 

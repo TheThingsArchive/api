@@ -9,30 +9,36 @@ public interface JoinAcceptPayloadOrBuilder extends
 
   /**
    * <code>bytes encrypted = 1;</code>
+   * @return The encrypted.
    */
   com.google.protobuf.ByteString getEncrypted();
 
   /**
    * <code>bytes app_nonce = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+   * @return The appNonce.
    */
   com.google.protobuf.ByteString getAppNonce();
 
   /**
    * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
+   * @return The netId.
    */
   com.google.protobuf.ByteString getNetId();
 
   /**
    * <code>bytes dev_addr = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+   * @return The devAddr.
    */
   com.google.protobuf.ByteString getDevAddr();
 
   /**
    * <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+   * @return Whether the dlSettings field is set.
    */
   boolean hasDlSettings();
   /**
    * <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+   * @return The dlSettings.
    */
   org.thethingsnetwork.api.protocol.lorawan.DLSettings getDlSettings();
   /**
@@ -42,15 +48,18 @@ public interface JoinAcceptPayloadOrBuilder extends
 
   /**
    * <code>uint32 rx_delay = 6;</code>
+   * @return The rxDelay.
    */
   int getRxDelay();
 
   /**
    * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+   * @return Whether the cfList field is set.
    */
   boolean hasCfList();
   /**
    * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+   * @return The cfList.
    */
   org.thethingsnetwork.api.protocol.lorawan.CFList getCfList();
   /**

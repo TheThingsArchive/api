@@ -16,39 +16,39 @@ class Percentiles extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>float percentile1 = 1;</code>
      */
-    private $percentile1 = 0.0;
+    protected $percentile1 = 0.0;
     /**
      * Generated from protobuf field <code>float percentile5 = 2;</code>
      */
-    private $percentile5 = 0.0;
+    protected $percentile5 = 0.0;
     /**
      * Generated from protobuf field <code>float percentile10 = 3;</code>
      */
-    private $percentile10 = 0.0;
+    protected $percentile10 = 0.0;
     /**
      * Generated from protobuf field <code>float percentile25 = 4;</code>
      */
-    private $percentile25 = 0.0;
+    protected $percentile25 = 0.0;
     /**
      * Generated from protobuf field <code>float percentile50 = 5;</code>
      */
-    private $percentile50 = 0.0;
+    protected $percentile50 = 0.0;
     /**
      * Generated from protobuf field <code>float percentile75 = 6;</code>
      */
-    private $percentile75 = 0.0;
+    protected $percentile75 = 0.0;
     /**
      * Generated from protobuf field <code>float percentile90 = 7;</code>
      */
-    private $percentile90 = 0.0;
+    protected $percentile90 = 0.0;
     /**
      * Generated from protobuf field <code>float percentile95 = 8;</code>
      */
-    private $percentile95 = 0.0;
+    protected $percentile95 = 0.0;
     /**
      * Generated from protobuf field <code>float percentile99 = 9;</code>
      */
-    private $percentile99 = 0.0;
+    protected $percentile99 = 0.0;
 
     /**
      * Constructor.

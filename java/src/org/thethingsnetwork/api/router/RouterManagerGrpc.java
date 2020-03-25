@@ -44,22 +44,21 @@ public final class RouterManagerGrpc {
     if ((getGatewayStatusMethod = RouterManagerGrpc.getGatewayStatusMethod) == null) {
       synchronized (RouterManagerGrpc.class) {
         if ((getGatewayStatusMethod = RouterManagerGrpc.getGatewayStatusMethod) == null) {
-          RouterManagerGrpc.getGatewayStatusMethod = getGatewayStatusMethod = 
+          RouterManagerGrpc.getGatewayStatusMethod = getGatewayStatusMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.router.GatewayStatusRequest, org.thethingsnetwork.api.router.GatewayStatusResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "router.RouterManager", "GatewayStatus"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GatewayStatus"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.router.GatewayStatusRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.router.GatewayStatusResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new RouterManagerMethodDescriptorSupplier("GatewayStatus"))
-                  .build();
-          }
+              .setSchemaDescriptor(new RouterManagerMethodDescriptorSupplier("GatewayStatus"))
+              .build();
         }
-     }
-     return getGatewayStatusMethod;
+      }
+    }
+    return getGatewayStatusMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.StatusRequest,
@@ -76,29 +75,35 @@ public final class RouterManagerGrpc {
     if ((getGetStatusMethod = RouterManagerGrpc.getGetStatusMethod) == null) {
       synchronized (RouterManagerGrpc.class) {
         if ((getGetStatusMethod = RouterManagerGrpc.getGetStatusMethod) == null) {
-          RouterManagerGrpc.getGetStatusMethod = getGetStatusMethod = 
+          RouterManagerGrpc.getGetStatusMethod = getGetStatusMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.router.StatusRequest, org.thethingsnetwork.api.router.Status>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "router.RouterManager", "GetStatus"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetStatus"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.router.StatusRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.router.Status.getDefaultInstance()))
-                  .setSchemaDescriptor(new RouterManagerMethodDescriptorSupplier("GetStatus"))
-                  .build();
-          }
+              .setSchemaDescriptor(new RouterManagerMethodDescriptorSupplier("GetStatus"))
+              .build();
         }
-     }
-     return getGetStatusMethod;
+      }
+    }
+    return getGetStatusMethod;
   }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static RouterManagerStub newStub(io.grpc.Channel channel) {
-    return new RouterManagerStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<RouterManagerStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<RouterManagerStub>() {
+        @java.lang.Override
+        public RouterManagerStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new RouterManagerStub(channel, callOptions);
+        }
+      };
+    return RouterManagerStub.newStub(factory, channel);
   }
 
   /**
@@ -106,7 +111,14 @@ public final class RouterManagerGrpc {
    */
   public static RouterManagerBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new RouterManagerBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<RouterManagerBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<RouterManagerBlockingStub>() {
+        @java.lang.Override
+        public RouterManagerBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new RouterManagerBlockingStub(channel, callOptions);
+        }
+      };
+    return RouterManagerBlockingStub.newStub(factory, channel);
   }
 
   /**
@@ -114,7 +126,14 @@ public final class RouterManagerGrpc {
    */
   public static RouterManagerFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new RouterManagerFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<RouterManagerFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<RouterManagerFutureStub>() {
+        @java.lang.Override
+        public RouterManagerFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new RouterManagerFutureStub(channel, callOptions);
+        }
+      };
+    return RouterManagerFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -170,19 +189,15 @@ public final class RouterManagerGrpc {
    * The RouterManager service provides configuration and monitoring functionality
    * </pre>
    */
-  public static final class RouterManagerStub extends io.grpc.stub.AbstractStub<RouterManagerStub> {
-    private RouterManagerStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private RouterManagerStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class RouterManagerStub extends io.grpc.stub.AbstractAsyncStub<RouterManagerStub> {
+    private RouterManagerStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected RouterManagerStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected RouterManagerStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new RouterManagerStub(channel, callOptions);
     }
 
@@ -215,19 +230,15 @@ public final class RouterManagerGrpc {
    * The RouterManager service provides configuration and monitoring functionality
    * </pre>
    */
-  public static final class RouterManagerBlockingStub extends io.grpc.stub.AbstractStub<RouterManagerBlockingStub> {
-    private RouterManagerBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private RouterManagerBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class RouterManagerBlockingStub extends io.grpc.stub.AbstractBlockingStub<RouterManagerBlockingStub> {
+    private RouterManagerBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected RouterManagerBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected RouterManagerBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new RouterManagerBlockingStub(channel, callOptions);
     }
 
@@ -258,19 +269,15 @@ public final class RouterManagerGrpc {
    * The RouterManager service provides configuration and monitoring functionality
    * </pre>
    */
-  public static final class RouterManagerFutureStub extends io.grpc.stub.AbstractStub<RouterManagerFutureStub> {
-    private RouterManagerFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private RouterManagerFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class RouterManagerFutureStub extends io.grpc.stub.AbstractFutureStub<RouterManagerFutureStub> {
+    private RouterManagerFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected RouterManagerFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected RouterManagerFutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new RouterManagerFutureStub(channel, callOptions);
     }
 

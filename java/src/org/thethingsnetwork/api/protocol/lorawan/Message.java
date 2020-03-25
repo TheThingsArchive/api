@@ -20,6 +20,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Message();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -32,7 +39,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -104,7 +110,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -138,7 +144,8 @@ private static final long serialVersionUID = 0L;
   private int payloadCase_ = 0;
   private java.lang.Object payload_;
   public enum PayloadCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     MAC_PAYLOAD(3),
     JOIN_REQUEST_PAYLOAD(4),
     JOIN_ACCEPT_PAYLOAD(5),
@@ -148,6 +155,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -179,12 +188,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.protocol.lorawan.MHDR mHdr_;
   /**
    * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+   * @return Whether the mHdr field is set.
    */
   public boolean hasMHdr() {
     return mHdr_ != null;
   }
   /**
    * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+   * @return The mHdr.
    */
   public org.thethingsnetwork.api.protocol.lorawan.MHDR getMHdr() {
     return mHdr_ == null ? org.thethingsnetwork.api.protocol.lorawan.MHDR.getDefaultInstance() : mHdr_;
@@ -200,6 +211,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString mic_;
   /**
    * <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
+   * @return The mic.
    */
   public com.google.protobuf.ByteString getMic() {
     return mic_;
@@ -208,12 +220,14 @@ private static final long serialVersionUID = 0L;
   public static final int MAC_PAYLOAD_FIELD_NUMBER = 3;
   /**
    * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
+   * @return Whether the macPayload field is set.
    */
   public boolean hasMacPayload() {
     return payloadCase_ == 3;
   }
   /**
    * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
+   * @return The macPayload.
    */
   public org.thethingsnetwork.api.protocol.lorawan.MACPayload getMacPayload() {
     if (payloadCase_ == 3) {
@@ -234,12 +248,14 @@ private static final long serialVersionUID = 0L;
   public static final int JOIN_REQUEST_PAYLOAD_FIELD_NUMBER = 4;
   /**
    * <code>.lorawan.JoinRequestPayload join_request_payload = 4;</code>
+   * @return Whether the joinRequestPayload field is set.
    */
   public boolean hasJoinRequestPayload() {
     return payloadCase_ == 4;
   }
   /**
    * <code>.lorawan.JoinRequestPayload join_request_payload = 4;</code>
+   * @return The joinRequestPayload.
    */
   public org.thethingsnetwork.api.protocol.lorawan.JoinRequestPayload getJoinRequestPayload() {
     if (payloadCase_ == 4) {
@@ -260,12 +276,14 @@ private static final long serialVersionUID = 0L;
   public static final int JOIN_ACCEPT_PAYLOAD_FIELD_NUMBER = 5;
   /**
    * <code>.lorawan.JoinAcceptPayload join_accept_payload = 5;</code>
+   * @return Whether the joinAcceptPayload field is set.
    */
   public boolean hasJoinAcceptPayload() {
     return payloadCase_ == 5;
   }
   /**
    * <code>.lorawan.JoinAcceptPayload join_accept_payload = 5;</code>
+   * @return The joinAcceptPayload.
    */
   public org.thethingsnetwork.api.protocol.lorawan.JoinAcceptPayload getJoinAcceptPayload() {
     if (payloadCase_ == 5) {
@@ -356,35 +374,32 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.protocol.lorawan.Message other = (org.thethingsnetwork.api.protocol.lorawan.Message) obj;
 
-    boolean result = true;
-    result = result && (hasMHdr() == other.hasMHdr());
+    if (hasMHdr() != other.hasMHdr()) return false;
     if (hasMHdr()) {
-      result = result && getMHdr()
-          .equals(other.getMHdr());
+      if (!getMHdr()
+          .equals(other.getMHdr())) return false;
     }
-    result = result && getMic()
-        .equals(other.getMic());
-    result = result && getPayloadCase().equals(
-        other.getPayloadCase());
-    if (!result) return false;
+    if (!getMic()
+        .equals(other.getMic())) return false;
+    if (!getPayloadCase().equals(other.getPayloadCase())) return false;
     switch (payloadCase_) {
       case 3:
-        result = result && getMacPayload()
-            .equals(other.getMacPayload());
+        if (!getMacPayload()
+            .equals(other.getMacPayload())) return false;
         break;
       case 4:
-        result = result && getJoinRequestPayload()
-            .equals(other.getJoinRequestPayload());
+        if (!getJoinRequestPayload()
+            .equals(other.getJoinRequestPayload())) return false;
         break;
       case 5:
-        result = result && getJoinAcceptPayload()
-            .equals(other.getJoinAcceptPayload());
+        if (!getJoinAcceptPayload()
+            .equals(other.getJoinAcceptPayload())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -619,35 +634,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -728,17 +743,19 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    private org.thethingsnetwork.api.protocol.lorawan.MHDR mHdr_ = null;
+    private org.thethingsnetwork.api.protocol.lorawan.MHDR mHdr_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.MHDR, org.thethingsnetwork.api.protocol.lorawan.MHDR.Builder, org.thethingsnetwork.api.protocol.lorawan.MHDROrBuilder> mHdrBuilder_;
     /**
      * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * @return Whether the mHdr field is set.
      */
     public boolean hasMHdr() {
       return mHdrBuilder_ != null || mHdr_ != null;
     }
     /**
      * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * @return The mHdr.
      */
     public org.thethingsnetwork.api.protocol.lorawan.MHDR getMHdr() {
       if (mHdrBuilder_ == null) {
@@ -848,12 +865,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString mic_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
+     * @return The mic.
      */
     public com.google.protobuf.ByteString getMic() {
       return mic_;
     }
     /**
      * <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
+     * @param value The mic to set.
+     * @return This builder for chaining.
      */
     public Builder setMic(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -866,6 +886,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearMic() {
       
@@ -878,12 +899,14 @@ private static final long serialVersionUID = 0L;
         org.thethingsnetwork.api.protocol.lorawan.MACPayload, org.thethingsnetwork.api.protocol.lorawan.MACPayload.Builder, org.thethingsnetwork.api.protocol.lorawan.MACPayloadOrBuilder> macPayloadBuilder_;
     /**
      * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
+     * @return Whether the macPayload field is set.
      */
     public boolean hasMacPayload() {
       return payloadCase_ == 3;
     }
     /**
      * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
+     * @return The macPayload.
      */
     public org.thethingsnetwork.api.protocol.lorawan.MACPayload getMacPayload() {
       if (macPayloadBuilder_ == null) {
@@ -1014,12 +1037,14 @@ private static final long serialVersionUID = 0L;
         org.thethingsnetwork.api.protocol.lorawan.JoinRequestPayload, org.thethingsnetwork.api.protocol.lorawan.JoinRequestPayload.Builder, org.thethingsnetwork.api.protocol.lorawan.JoinRequestPayloadOrBuilder> joinRequestPayloadBuilder_;
     /**
      * <code>.lorawan.JoinRequestPayload join_request_payload = 4;</code>
+     * @return Whether the joinRequestPayload field is set.
      */
     public boolean hasJoinRequestPayload() {
       return payloadCase_ == 4;
     }
     /**
      * <code>.lorawan.JoinRequestPayload join_request_payload = 4;</code>
+     * @return The joinRequestPayload.
      */
     public org.thethingsnetwork.api.protocol.lorawan.JoinRequestPayload getJoinRequestPayload() {
       if (joinRequestPayloadBuilder_ == null) {
@@ -1150,12 +1175,14 @@ private static final long serialVersionUID = 0L;
         org.thethingsnetwork.api.protocol.lorawan.JoinAcceptPayload, org.thethingsnetwork.api.protocol.lorawan.JoinAcceptPayload.Builder, org.thethingsnetwork.api.protocol.lorawan.JoinAcceptPayloadOrBuilder> joinAcceptPayloadBuilder_;
     /**
      * <code>.lorawan.JoinAcceptPayload join_accept_payload = 5;</code>
+     * @return Whether the joinAcceptPayload field is set.
      */
     public boolean hasJoinAcceptPayload() {
       return payloadCase_ == 5;
     }
     /**
      * <code>.lorawan.JoinAcceptPayload join_accept_payload = 5;</code>
+     * @return The joinAcceptPayload.
      */
     public org.thethingsnetwork.api.protocol.lorawan.JoinAcceptPayload getJoinAcceptPayload() {
       if (joinAcceptPayloadBuilder_ == null) {
@@ -1284,7 +1311,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

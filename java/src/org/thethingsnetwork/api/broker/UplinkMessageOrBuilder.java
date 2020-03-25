@@ -9,15 +9,18 @@ public interface UplinkMessageOrBuilder extends
 
   /**
    * <code>bytes payload = 1;</code>
+   * @return The payload.
    */
   com.google.protobuf.ByteString getPayload();
 
   /**
    * <code>.protocol.Message message = 2;</code>
+   * @return Whether the message field is set.
    */
   boolean hasMessage();
   /**
    * <code>.protocol.Message message = 2;</code>
+   * @return The message.
    */
   org.thethingsnetwork.api.protocol.Message getMessage();
   /**
@@ -27,40 +30,48 @@ public interface UplinkMessageOrBuilder extends
 
   /**
    * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+   * @return The devEui.
    */
   com.google.protobuf.ByteString getDevEui();
 
   /**
    * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+   * @return The appEui.
    */
   com.google.protobuf.ByteString getAppEui();
 
   /**
    * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The appId.
    */
   java.lang.String getAppId();
   /**
    * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The bytes for appId.
    */
   com.google.protobuf.ByteString
       getAppIdBytes();
 
   /**
    * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+   * @return The devId.
    */
   java.lang.String getDevId();
   /**
    * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+   * @return The bytes for devId.
    */
   com.google.protobuf.ByteString
       getDevIdBytes();
 
   /**
    * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
+   * @return Whether the protocolMetadata field is set.
    */
   boolean hasProtocolMetadata();
   /**
    * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
+   * @return The protocolMetadata.
    */
   org.thethingsnetwork.api.protocol.RxMetadata getProtocolMetadata();
   /**
@@ -70,10 +81,12 @@ public interface UplinkMessageOrBuilder extends
 
   /**
    * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
+   * @return Whether the gatewayMetadata field is set.
    */
   boolean hasGatewayMetadata();
   /**
    * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
+   * @return The gatewayMetadata.
    */
   org.thethingsnetwork.api.gateway.RxMetadata getGatewayMetadata();
   /**
@@ -107,10 +120,12 @@ public interface UplinkMessageOrBuilder extends
 
   /**
    * <code>.trace.Trace trace = 41;</code>
+   * @return Whether the trace field is set.
    */
   boolean hasTrace();
   /**
    * <code>.trace.Trace trace = 41;</code>
+   * @return The trace.
    */
   org.thethingsnetwork.api.trace.Trace getTrace();
   /**

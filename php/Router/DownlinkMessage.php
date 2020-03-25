@@ -16,23 +16,23 @@ class DownlinkMessage extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes payload = 1;</code>
      */
-    private $payload = '';
+    protected $payload = '';
     /**
      * Generated from protobuf field <code>.protocol.Message message = 2;</code>
      */
-    private $message = null;
+    protected $message = null;
     /**
      * Generated from protobuf field <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
      */
-    private $protocol_configuration = null;
+    protected $protocol_configuration = null;
     /**
      * Generated from protobuf field <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
      */
-    private $gateway_configuration = null;
+    protected $gateway_configuration = null;
     /**
      * Generated from protobuf field <code>.trace.Trace trace = 21;</code>
      */
-    private $trace = null;
+    protected $trace = null;
 
     /**
      * Constructor.

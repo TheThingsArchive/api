@@ -18,20 +18,20 @@ class Application extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
-    private $app_id = '';
+    protected $app_id = '';
     /**
      * The payload format indicates how payload is formatted.
      *
      * Generated from protobuf field <code>string payload_format = 6;</code>
      */
-    private $payload_format = '';
+    protected $payload_format = '';
     /**
      * The decoder is a JavaScript function that decodes a byte array to an object.
      * This function is used when the payload format is set to custom.
      *
      * Generated from protobuf field <code>string decoder = 2;</code>
      */
-    private $decoder = '';
+    protected $decoder = '';
     /**
      * The converter is a JavaScript function that can be used to convert values
      * in the object returned from the decoder. This can for example be useful to
@@ -39,7 +39,7 @@ class Application extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string converter = 3;</code>
      */
-    private $converter = '';
+    protected $converter = '';
     /**
      * The validator is a JavaScript function that checks the validity of the
      * object returned by the decoder or converter. If validation fails, the
@@ -47,20 +47,20 @@ class Application extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string validator = 4;</code>
      */
-    private $validator = '';
+    protected $validator = '';
     /**
      * The encoder is a JavaScript function that encodes an object to a byte array.
      * This function is used when the payload format is set to custom.
      *
      * Generated from protobuf field <code>string encoder = 5;</code>
      */
-    private $encoder = '';
+    protected $encoder = '';
     /**
      * The "register on join" access key should only be set if devices need to be registered on join
      *
      * Generated from protobuf field <code>string register_on_join_access_key = 7;</code>
      */
-    private $register_on_join_access_key = '';
+    protected $register_on_join_access_key = '';
 
     /**
      * Constructor.

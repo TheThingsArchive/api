@@ -16,39 +16,39 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
      */
-    private $gateway_id = '';
+    protected $gateway_id = '';
     /**
      * Indicates whether the gateway is trusted. Components that are able to verify gateway trust MUST do so and set this value accordingly
      *
      * Generated from protobuf field <code>bool gateway_trusted = 2;</code>
      */
-    private $gateway_trusted = false;
+    protected $gateway_trusted = false;
     /**
      * Timestamp (uptime of LoRa module) in microseconds with rollover
      *
      * Generated from protobuf field <code>uint32 timestamp = 11;</code>
      */
-    private $timestamp = 0;
+    protected $timestamp = 0;
     /**
      * Time in Unix nanoseconds
      *
      * Generated from protobuf field <code>int64 time = 12;</code>
      */
-    private $time = 0;
+    protected $time = 0;
     /**
      * Encrypted time from the Gateway FPGA
      *
      * Generated from protobuf field <code>bytes encrypted_time = 13;</code>
      */
-    private $encrypted_time = '';
+    protected $encrypted_time = '';
     /**
      * Generated from protobuf field <code>uint32 rf_chain = 21;</code>
      */
-    private $rf_chain = 0;
+    protected $rf_chain = 0;
     /**
      * Generated from protobuf field <code>uint32 channel = 22;</code>
      */
-    private $channel = 0;
+    protected $channel = 0;
     /**
      * Generated from protobuf field <code>repeated .gateway.RxMetadata.Antenna antennas = 30;</code>
      */
@@ -58,23 +58,23 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>uint64 frequency = 31;</code>
      */
-    private $frequency = 0;
+    protected $frequency = 0;
     /**
      * Received signal strength in dBm
      *
      * Generated from protobuf field <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
      */
-    private $rssi = 0.0;
+    protected $rssi = 0.0;
     /**
      * Signal-to-noise-ratio in dB
      *
      * Generated from protobuf field <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
      */
-    private $snr = 0.0;
+    protected $snr = 0.0;
     /**
      * Generated from protobuf field <code>.gateway.LocationMetadata location = 41;</code>
      */
-    private $location = null;
+    protected $location = null;
 
     /**
      * Constructor.

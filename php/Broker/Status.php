@@ -16,45 +16,45 @@ class Status extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
      */
-    private $system = null;
+    protected $system = null;
     /**
      * Generated from protobuf field <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
      */
-    private $component = null;
+    protected $component = null;
     /**
      * Generated from protobuf field <code>.api.Rates uplink = 11;</code>
      */
-    private $uplink = null;
+    protected $uplink = null;
     /**
      * Generated from protobuf field <code>.api.Rates uplink_unique = 12;</code>
      */
-    private $uplink_unique = null;
+    protected $uplink_unique = null;
     /**
      * Generated from protobuf field <code>.api.Rates downlink = 13;</code>
      */
-    private $downlink = null;
+    protected $downlink = null;
     /**
      * Generated from protobuf field <code>.api.Rates activations = 14;</code>
      */
-    private $activations = null;
+    protected $activations = null;
     /**
      * Generated from protobuf field <code>.api.Rates activations_unique = 15;</code>
      */
-    private $activations_unique = null;
+    protected $activations_unique = null;
     /**
      * Generated from protobuf field <code>.api.Percentiles deduplication = 16;</code>
      */
-    private $deduplication = null;
+    protected $deduplication = null;
     /**
      * Connections
      *
      * Generated from protobuf field <code>uint32 connected_routers = 21;</code>
      */
-    private $connected_routers = 0;
+    protected $connected_routers = 0;
     /**
      * Generated from protobuf field <code>uint32 connected_handlers = 22;</code>
      */
-    private $connected_handlers = 0;
+    protected $connected_handlers = 0;
 
     /**
      * Constructor.

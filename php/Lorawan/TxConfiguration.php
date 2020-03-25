@@ -16,31 +16,31 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.lorawan.Modulation modulation = 11;</code>
      */
-    private $modulation = 0;
+    protected $modulation = 0;
     /**
      * LoRa data rate - SF{spreadingfactor}BW{bandwidth}
      *
      * Generated from protobuf field <code>string data_rate = 12;</code>
      */
-    private $data_rate = '';
+    protected $data_rate = '';
     /**
      * FSK bit rate in bit/s
      *
      * Generated from protobuf field <code>uint32 bit_rate = 13;</code>
      */
-    private $bit_rate = 0;
+    protected $bit_rate = 0;
     /**
      * LoRa coding rate
      *
      * Generated from protobuf field <code>string coding_rate = 14;</code>
      */
-    private $coding_rate = '';
+    protected $coding_rate = '';
     /**
      * Store the full 32 bit FCnt (deprecated; do not use)
      *
      * Generated from protobuf field <code>uint32 f_cnt = 15;</code>
      */
-    private $f_cnt = 0;
+    protected $f_cnt = 0;
 
     /**
      * Constructor.

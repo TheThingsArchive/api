@@ -9,15 +9,18 @@ public interface DownlinkMessageOrBuilder extends
 
   /**
    * <code>bytes payload = 1;</code>
+   * @return The payload.
    */
   com.google.protobuf.ByteString getPayload();
 
   /**
    * <code>.protocol.Message message = 2;</code>
+   * @return Whether the message field is set.
    */
   boolean hasMessage();
   /**
    * <code>.protocol.Message message = 2;</code>
+   * @return The message.
    */
   org.thethingsnetwork.api.protocol.Message getMessage();
   /**
@@ -27,10 +30,12 @@ public interface DownlinkMessageOrBuilder extends
 
   /**
    * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
+   * @return Whether the protocolConfiguration field is set.
    */
   boolean hasProtocolConfiguration();
   /**
    * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
+   * @return The protocolConfiguration.
    */
   org.thethingsnetwork.api.protocol.TxConfiguration getProtocolConfiguration();
   /**
@@ -40,10 +45,12 @@ public interface DownlinkMessageOrBuilder extends
 
   /**
    * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
+   * @return Whether the gatewayConfiguration field is set.
    */
   boolean hasGatewayConfiguration();
   /**
    * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
+   * @return The gatewayConfiguration.
    */
   org.thethingsnetwork.api.gateway.TxConfiguration getGatewayConfiguration();
   /**
@@ -53,10 +60,12 @@ public interface DownlinkMessageOrBuilder extends
 
   /**
    * <code>.trace.Trace trace = 21;</code>
+   * @return Whether the trace field is set.
    */
   boolean hasTrace();
   /**
    * <code>.trace.Trace trace = 21;</code>
+   * @return The trace.
    */
   org.thethingsnetwork.api.trace.Trace getTrace();
   /**

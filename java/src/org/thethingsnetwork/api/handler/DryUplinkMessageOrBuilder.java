@@ -13,6 +13,7 @@ public interface DryUplinkMessageOrBuilder extends
    * </pre>
    *
    * <code>bytes payload = 1;</code>
+   * @return The payload.
    */
   com.google.protobuf.ByteString getPayload();
 
@@ -22,6 +23,7 @@ public interface DryUplinkMessageOrBuilder extends
    * </pre>
    *
    * <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
+   * @return Whether the app field is set.
    */
   boolean hasApp();
   /**
@@ -30,6 +32,7 @@ public interface DryUplinkMessageOrBuilder extends
    * </pre>
    *
    * <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
+   * @return The app.
    */
   org.thethingsnetwork.api.handler.Application getApp();
   /**
@@ -47,6 +50,7 @@ public interface DryUplinkMessageOrBuilder extends
    * </pre>
    *
    * <code>uint32 port = 3;</code>
+   * @return The port.
    */
   int getPort();
 }

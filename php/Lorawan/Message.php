@@ -16,11 +16,11 @@ class Message extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
-    private $m_hdr = null;
+    protected $m_hdr = null;
     /**
      * Generated from protobuf field <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
      */
-    private $mic = '';
+    protected $mic = '';
     protected $Payload;
 
     /**

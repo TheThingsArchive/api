@@ -16,8 +16,13 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DLSettings() {
-    rx1DrOffset_ = 0;
-    rx2Dr_ = 0;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new DLSettings();
   }
 
   @java.lang.Override
@@ -33,7 +38,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -55,7 +59,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -90,6 +94,7 @@ private static final long serialVersionUID = 0L;
   private int rx1DrOffset_;
   /**
    * <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
+   * @return The rx1DrOffset.
    */
   public int getRx1DrOffset() {
     return rx1DrOffset_;
@@ -99,6 +104,7 @@ private static final long serialVersionUID = 0L;
   private int rx2Dr_;
   /**
    * <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
+   * @return The rx2Dr.
    */
   public int getRx2Dr() {
     return rx2Dr_;
@@ -156,13 +162,12 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.protocol.lorawan.DLSettings other = (org.thethingsnetwork.api.protocol.lorawan.DLSettings) obj;
 
-    boolean result = true;
-    result = result && (getRx1DrOffset()
-        == other.getRx1DrOffset());
-    result = result && (getRx2Dr()
-        == other.getRx2Dr());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getRx1DrOffset()
+        != other.getRx1DrOffset()) return false;
+    if (getRx2Dr()
+        != other.getRx2Dr()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -347,35 +352,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -427,12 +432,15 @@ private static final long serialVersionUID = 0L;
     private int rx1DrOffset_ ;
     /**
      * <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
+     * @return The rx1DrOffset.
      */
     public int getRx1DrOffset() {
       return rx1DrOffset_;
     }
     /**
      * <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
+     * @param value The rx1DrOffset to set.
+     * @return This builder for chaining.
      */
     public Builder setRx1DrOffset(int value) {
       
@@ -442,6 +450,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearRx1DrOffset() {
       
@@ -453,12 +462,15 @@ private static final long serialVersionUID = 0L;
     private int rx2Dr_ ;
     /**
      * <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
+     * @return The rx2Dr.
      */
     public int getRx2Dr() {
       return rx2Dr_;
     }
     /**
      * <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
+     * @param value The rx2Dr to set.
+     * @return This builder for chaining.
      */
     public Builder setRx2Dr(int value) {
       
@@ -468,6 +480,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearRx2Dr() {
       
@@ -478,7 +491,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

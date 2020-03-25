@@ -18,7 +18,7 @@ class PrefixMapping extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string prefix = 1;</code>
      */
-    private $prefix = '';
+    protected $prefix = '';
     /**
      * Usage constraints of this prefix (see activation_constraints in device.proto)
      *

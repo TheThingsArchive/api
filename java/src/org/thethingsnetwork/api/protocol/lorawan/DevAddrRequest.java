@@ -20,6 +20,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new DevAddrRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -45,7 +52,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               usage_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000001;
             }
@@ -53,7 +60,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -67,7 +74,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         usage_ = usage_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -95,6 +102,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string usage = 1;</code>
+   * @return A list containing the usage.
    */
   public com.google.protobuf.ProtocolStringList
       getUsageList() {
@@ -106,6 +114,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string usage = 1;</code>
+   * @return The count of usage.
    */
   public int getUsageCount() {
     return usage_.size();
@@ -116,6 +125,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string usage = 1;</code>
+   * @param index The index of the element to return.
+   * @return The usage at the given index.
    */
   public java.lang.String getUsage(int index) {
     return usage_.get(index);
@@ -126,6 +137,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string usage = 1;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the usage at the given index.
    */
   public com.google.protobuf.ByteString
       getUsageBytes(int index) {
@@ -181,11 +194,10 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest other = (org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest) obj;
 
-    boolean result = true;
-    result = result && getUsageList()
-        .equals(other.getUsageList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getUsageList()
+        .equals(other.getUsageList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -361,7 +373,7 @@ private static final long serialVersionUID = 0L;
     public org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest buildPartial() {
       org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest result = new org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest(this);
       int from_bitField0_ = bitField0_;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         usage_ = usage_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
@@ -372,35 +384,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -456,7 +468,7 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList usage_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureUsageIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         usage_ = new com.google.protobuf.LazyStringArrayList(usage_);
         bitField0_ |= 0x00000001;
        }
@@ -467,6 +479,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string usage = 1;</code>
+     * @return A list containing the usage.
      */
     public com.google.protobuf.ProtocolStringList
         getUsageList() {
@@ -478,6 +491,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string usage = 1;</code>
+     * @return The count of usage.
      */
     public int getUsageCount() {
       return usage_.size();
@@ -488,6 +502,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string usage = 1;</code>
+     * @param index The index of the element to return.
+     * @return The usage at the given index.
      */
     public java.lang.String getUsage(int index) {
       return usage_.get(index);
@@ -498,6 +514,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string usage = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the usage at the given index.
      */
     public com.google.protobuf.ByteString
         getUsageBytes(int index) {
@@ -509,6 +527,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string usage = 1;</code>
+     * @param index The index to set the value at.
+     * @param value The usage to set.
+     * @return This builder for chaining.
      */
     public Builder setUsage(
         int index, java.lang.String value) {
@@ -526,6 +547,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string usage = 1;</code>
+     * @param value The usage to add.
+     * @return This builder for chaining.
      */
     public Builder addUsage(
         java.lang.String value) {
@@ -543,6 +566,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string usage = 1;</code>
+     * @param values The usage to add.
+     * @return This builder for chaining.
      */
     public Builder addAllUsage(
         java.lang.Iterable<java.lang.String> values) {
@@ -558,6 +583,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string usage = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUsage() {
       usage_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -571,6 +597,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string usage = 1;</code>
+     * @param value The bytes of the usage to add.
+     * @return This builder for chaining.
      */
     public Builder addUsageBytes(
         com.google.protobuf.ByteString value) {
@@ -586,7 +614,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

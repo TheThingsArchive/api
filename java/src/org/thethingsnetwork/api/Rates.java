@@ -16,9 +16,13 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Rates() {
-    rate1_ = 0F;
-    rate5_ = 0F;
-    rate15_ = 0F;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Rates();
   }
 
   @java.lang.Override
@@ -34,7 +38,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -61,7 +64,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -96,6 +99,7 @@ private static final long serialVersionUID = 0L;
   private float rate1_;
   /**
    * <code>float rate1 = 1;</code>
+   * @return The rate1.
    */
   public float getRate1() {
     return rate1_;
@@ -105,6 +109,7 @@ private static final long serialVersionUID = 0L;
   private float rate5_;
   /**
    * <code>float rate5 = 2;</code>
+   * @return The rate5.
    */
   public float getRate5() {
     return rate5_;
@@ -114,6 +119,7 @@ private static final long serialVersionUID = 0L;
   private float rate15_;
   /**
    * <code>float rate15 = 3;</code>
+   * @return The rate15.
    */
   public float getRate15() {
     return rate15_;
@@ -178,21 +184,17 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.Rates other = (org.thethingsnetwork.api.Rates) obj;
 
-    boolean result = true;
-    result = result && (
-        java.lang.Float.floatToIntBits(getRate1())
-        == java.lang.Float.floatToIntBits(
-            other.getRate1()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getRate5())
-        == java.lang.Float.floatToIntBits(
-            other.getRate5()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getRate15())
-        == java.lang.Float.floatToIntBits(
-            other.getRate15()));
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (java.lang.Float.floatToIntBits(getRate1())
+        != java.lang.Float.floatToIntBits(
+            other.getRate1())) return false;
+    if (java.lang.Float.floatToIntBits(getRate5())
+        != java.lang.Float.floatToIntBits(
+            other.getRate5())) return false;
+    if (java.lang.Float.floatToIntBits(getRate15())
+        != java.lang.Float.floatToIntBits(
+            other.getRate15())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -385,35 +387,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -468,12 +470,15 @@ private static final long serialVersionUID = 0L;
     private float rate1_ ;
     /**
      * <code>float rate1 = 1;</code>
+     * @return The rate1.
      */
     public float getRate1() {
       return rate1_;
     }
     /**
      * <code>float rate1 = 1;</code>
+     * @param value The rate1 to set.
+     * @return This builder for chaining.
      */
     public Builder setRate1(float value) {
       
@@ -483,6 +488,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float rate1 = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRate1() {
       
@@ -494,12 +500,15 @@ private static final long serialVersionUID = 0L;
     private float rate5_ ;
     /**
      * <code>float rate5 = 2;</code>
+     * @return The rate5.
      */
     public float getRate5() {
       return rate5_;
     }
     /**
      * <code>float rate5 = 2;</code>
+     * @param value The rate5 to set.
+     * @return This builder for chaining.
      */
     public Builder setRate5(float value) {
       
@@ -509,6 +518,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float rate5 = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRate5() {
       
@@ -520,12 +530,15 @@ private static final long serialVersionUID = 0L;
     private float rate15_ ;
     /**
      * <code>float rate15 = 3;</code>
+     * @return The rate15.
      */
     public float getRate15() {
       return rate15_;
     }
     /**
      * <code>float rate15 = 3;</code>
+     * @param value The rate15 to set.
+     * @return This builder for chaining.
      */
     public Builder setRate15(float value) {
       
@@ -535,6 +548,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float rate15 = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRate15() {
       
@@ -545,7 +559,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

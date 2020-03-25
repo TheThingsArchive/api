@@ -21,6 +21,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new MHDR();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -33,7 +40,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -57,7 +63,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -92,12 +98,14 @@ private static final long serialVersionUID = 0L;
   private int mType_;
   /**
    * <code>.lorawan.MType m_type = 1;</code>
+   * @return The enum numeric value on the wire for mType.
    */
   public int getMTypeValue() {
     return mType_;
   }
   /**
    * <code>.lorawan.MType m_type = 1;</code>
+   * @return The mType.
    */
   public org.thethingsnetwork.api.protocol.lorawan.MType getMType() {
     @SuppressWarnings("deprecation")
@@ -109,12 +117,14 @@ private static final long serialVersionUID = 0L;
   private int major_;
   /**
    * <code>.lorawan.Major major = 2;</code>
+   * @return The enum numeric value on the wire for major.
    */
   public int getMajorValue() {
     return major_;
   }
   /**
    * <code>.lorawan.Major major = 2;</code>
+   * @return The major.
    */
   public org.thethingsnetwork.api.protocol.lorawan.Major getMajor() {
     @SuppressWarnings("deprecation")
@@ -174,11 +184,10 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.protocol.lorawan.MHDR other = (org.thethingsnetwork.api.protocol.lorawan.MHDR) obj;
 
-    boolean result = true;
-    result = result && mType_ == other.mType_;
-    result = result && major_ == other.major_;
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (mType_ != other.mType_) return false;
+    if (major_ != other.major_) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -363,35 +372,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -443,12 +452,15 @@ private static final long serialVersionUID = 0L;
     private int mType_ = 0;
     /**
      * <code>.lorawan.MType m_type = 1;</code>
+     * @return The enum numeric value on the wire for mType.
      */
     public int getMTypeValue() {
       return mType_;
     }
     /**
      * <code>.lorawan.MType m_type = 1;</code>
+     * @param value The enum numeric value on the wire for mType to set.
+     * @return This builder for chaining.
      */
     public Builder setMTypeValue(int value) {
       mType_ = value;
@@ -457,6 +469,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.lorawan.MType m_type = 1;</code>
+     * @return The mType.
      */
     public org.thethingsnetwork.api.protocol.lorawan.MType getMType() {
       @SuppressWarnings("deprecation")
@@ -465,6 +478,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.lorawan.MType m_type = 1;</code>
+     * @param value The mType to set.
+     * @return This builder for chaining.
      */
     public Builder setMType(org.thethingsnetwork.api.protocol.lorawan.MType value) {
       if (value == null) {
@@ -477,6 +492,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.lorawan.MType m_type = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMType() {
       
@@ -488,12 +504,15 @@ private static final long serialVersionUID = 0L;
     private int major_ = 0;
     /**
      * <code>.lorawan.Major major = 2;</code>
+     * @return The enum numeric value on the wire for major.
      */
     public int getMajorValue() {
       return major_;
     }
     /**
      * <code>.lorawan.Major major = 2;</code>
+     * @param value The enum numeric value on the wire for major to set.
+     * @return This builder for chaining.
      */
     public Builder setMajorValue(int value) {
       major_ = value;
@@ -502,6 +521,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.lorawan.Major major = 2;</code>
+     * @return The major.
      */
     public org.thethingsnetwork.api.protocol.lorawan.Major getMajor() {
       @SuppressWarnings("deprecation")
@@ -510,6 +530,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.lorawan.Major major = 2;</code>
+     * @param value The major to set.
+     * @return This builder for chaining.
      */
     public Builder setMajor(org.thethingsnetwork.api.protocol.lorawan.Major value) {
       if (value == null) {
@@ -522,6 +544,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.lorawan.Major major = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMajor() {
       
@@ -532,7 +555,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

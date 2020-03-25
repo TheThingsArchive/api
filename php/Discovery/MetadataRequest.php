@@ -20,19 +20,19 @@ class MetadataRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
-    private $id = '';
+    protected $id = '';
     /**
      * The name of the service (router/broker/handler) that should be modified
      *
      * Generated from protobuf field <code>string service_name = 2;</code>
      */
-    private $service_name = '';
+    protected $service_name = '';
     /**
      * Metadata to add or remove
      *
      * Generated from protobuf field <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
-    private $metadata = null;
+    protected $metadata = null;
 
     /**
      * Constructor.

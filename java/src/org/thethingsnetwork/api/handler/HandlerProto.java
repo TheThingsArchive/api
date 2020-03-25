@@ -193,15 +193,7 @@ public final class HandlerProto {
       "i/handler\252\002\034TheThingsNetwork.API.Handler" +
       "b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.EmptyProto.getDescriptor(),
@@ -212,7 +204,7 @@ public final class HandlerProto {
           org.thethingsnetwork.api.protocol.ProtocolProto.getDescriptor(),
           org.thethingsnetwork.api.protocol.lorawan.LoRaWANDeviceProto.getDescriptor(),
           org.thethingsnetwork.api.trace.TraceProto.getDescriptor(),
-        }, assigner);
+        });
     internal_static_handler_DeviceActivationResponse_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_handler_DeviceActivationResponse_fieldAccessorTable = new

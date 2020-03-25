@@ -16,11 +16,11 @@ class DLSettings extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      */
-    private $rx1_dr_offset = 0;
+    protected $rx1_dr_offset = 0;
     /**
      * Generated from protobuf field <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
      */
-    private $rx2_dr = 0;
+    protected $rx2_dr = 0;
 
     /**
      * Constructor.

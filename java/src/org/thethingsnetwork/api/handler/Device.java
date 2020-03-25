@@ -22,10 +22,14 @@ private static final long serialVersionUID = 0L;
   private Device() {
     appId_ = "";
     devId_ = "";
-    latitude_ = 0F;
-    longitude_ = 0F;
-    altitude_ = 0;
     description_ = "";
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Device();
   }
 
   @java.lang.Override
@@ -94,10 +98,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 106: {
-            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               attributes_ = com.google.protobuf.MapField.newMapField(
                   AttributesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000040;
+              mutable_bitField0_ |= 0x00000001;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             attributes__ = input.readMessage(
@@ -113,7 +117,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -156,11 +160,11 @@ private static final long serialVersionUID = 0L;
             org.thethingsnetwork.api.handler.Device.class, org.thethingsnetwork.api.handler.Device.Builder.class);
   }
 
-  private int bitField0_;
   private int deviceCase_ = 0;
   private java.lang.Object device_;
   public enum DeviceCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     LORAWAN_DEVICE(3),
     DEVICE_NOT_SET(0);
     private final int value;
@@ -168,6 +172,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -197,6 +203,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object appId_;
   /**
    * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The appId.
    */
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
@@ -212,6 +219,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The bytes for appId.
    */
   public com.google.protobuf.ByteString
       getAppIdBytes() {
@@ -231,6 +239,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object devId_;
   /**
    * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+   * @return The devId.
    */
   public java.lang.String getDevId() {
     java.lang.Object ref = devId_;
@@ -246,6 +255,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+   * @return The bytes for devId.
    */
   public com.google.protobuf.ByteString
       getDevIdBytes() {
@@ -264,12 +274,14 @@ private static final long serialVersionUID = 0L;
   public static final int LORAWAN_DEVICE_FIELD_NUMBER = 3;
   /**
    * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
+   * @return Whether the lorawanDevice field is set.
    */
   public boolean hasLorawanDevice() {
     return deviceCase_ == 3;
   }
   /**
    * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
+   * @return The lorawanDevice.
    */
   public org.thethingsnetwork.api.protocol.lorawan.Device getLorawanDevice() {
     if (deviceCase_ == 3) {
@@ -291,6 +303,7 @@ private static final long serialVersionUID = 0L;
   private float latitude_;
   /**
    * <code>float latitude = 10;</code>
+   * @return The latitude.
    */
   public float getLatitude() {
     return latitude_;
@@ -300,6 +313,7 @@ private static final long serialVersionUID = 0L;
   private float longitude_;
   /**
    * <code>float longitude = 11;</code>
+   * @return The longitude.
    */
   public float getLongitude() {
     return longitude_;
@@ -309,6 +323,7 @@ private static final long serialVersionUID = 0L;
   private int altitude_;
   /**
    * <code>int32 altitude = 12;</code>
+   * @return The altitude.
    */
   public int getAltitude() {
     return altitude_;
@@ -394,6 +409,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object description_;
   /**
    * <code>string description = 20;</code>
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -409,6 +425,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string description = 20;</code>
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
@@ -524,38 +541,33 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.handler.Device other = (org.thethingsnetwork.api.handler.Device) obj;
 
-    boolean result = true;
-    result = result && getAppId()
-        .equals(other.getAppId());
-    result = result && getDevId()
-        .equals(other.getDevId());
-    result = result && (
-        java.lang.Float.floatToIntBits(getLatitude())
-        == java.lang.Float.floatToIntBits(
-            other.getLatitude()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getLongitude())
-        == java.lang.Float.floatToIntBits(
-            other.getLongitude()));
-    result = result && (getAltitude()
-        == other.getAltitude());
-    result = result && internalGetAttributes().equals(
-        other.internalGetAttributes());
-    result = result && getDescription()
-        .equals(other.getDescription());
-    result = result && getDeviceCase().equals(
-        other.getDeviceCase());
-    if (!result) return false;
+    if (!getAppId()
+        .equals(other.getAppId())) return false;
+    if (!getDevId()
+        .equals(other.getDevId())) return false;
+    if (java.lang.Float.floatToIntBits(getLatitude())
+        != java.lang.Float.floatToIntBits(
+            other.getLatitude())) return false;
+    if (java.lang.Float.floatToIntBits(getLongitude())
+        != java.lang.Float.floatToIntBits(
+            other.getLongitude())) return false;
+    if (getAltitude()
+        != other.getAltitude()) return false;
+    if (!internalGetAttributes().equals(
+        other.internalGetAttributes())) return false;
+    if (!getDescription()
+        .equals(other.getDescription())) return false;
+    if (!getDeviceCase().equals(other.getDeviceCase())) return false;
     switch (deviceCase_) {
       case 3:
-        result = result && getLorawanDevice()
-            .equals(other.getLorawanDevice());
+        if (!getLorawanDevice()
+            .equals(other.getLorawanDevice())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -792,7 +804,6 @@ private static final long serialVersionUID = 0L;
     public org.thethingsnetwork.api.handler.Device buildPartial() {
       org.thethingsnetwork.api.handler.Device result = new org.thethingsnetwork.api.handler.Device(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.appId_ = appId_;
       result.devId_ = devId_;
       if (deviceCase_ == 3) {
@@ -808,7 +819,6 @@ private static final long serialVersionUID = 0L;
       result.attributes_ = internalGetAttributes();
       result.attributes_.makeImmutable();
       result.description_ = description_;
-      result.bitField0_ = to_bitField0_;
       result.deviceCase_ = deviceCase_;
       onBuilt();
       return result;
@@ -816,35 +826,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -938,6 +948,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object appId_ = "";
     /**
      * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * @return The appId.
      */
     public java.lang.String getAppId() {
       java.lang.Object ref = appId_;
@@ -953,6 +964,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * @return The bytes for appId.
      */
     public com.google.protobuf.ByteString
         getAppIdBytes() {
@@ -969,6 +981,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * @param value The appId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppId(
         java.lang.String value) {
@@ -982,6 +996,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearAppId() {
       
@@ -991,6 +1006,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * @param value The bytes for appId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1007,6 +1024,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object devId_ = "";
     /**
      * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+     * @return The devId.
      */
     public java.lang.String getDevId() {
       java.lang.Object ref = devId_;
@@ -1022,6 +1040,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+     * @return The bytes for devId.
      */
     public com.google.protobuf.ByteString
         getDevIdBytes() {
@@ -1038,6 +1057,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+     * @param value The devId to set.
+     * @return This builder for chaining.
      */
     public Builder setDevId(
         java.lang.String value) {
@@ -1051,6 +1072,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearDevId() {
       
@@ -1060,6 +1082,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+     * @param value The bytes for devId to set.
+     * @return This builder for chaining.
      */
     public Builder setDevIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1077,12 +1101,14 @@ private static final long serialVersionUID = 0L;
         org.thethingsnetwork.api.protocol.lorawan.Device, org.thethingsnetwork.api.protocol.lorawan.Device.Builder, org.thethingsnetwork.api.protocol.lorawan.DeviceOrBuilder> lorawanDeviceBuilder_;
     /**
      * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
+     * @return Whether the lorawanDevice field is set.
      */
     public boolean hasLorawanDevice() {
       return deviceCase_ == 3;
     }
     /**
      * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
+     * @return The lorawanDevice.
      */
     public org.thethingsnetwork.api.protocol.lorawan.Device getLorawanDevice() {
       if (lorawanDeviceBuilder_ == null) {
@@ -1212,12 +1238,15 @@ private static final long serialVersionUID = 0L;
     private float latitude_ ;
     /**
      * <code>float latitude = 10;</code>
+     * @return The latitude.
      */
     public float getLatitude() {
       return latitude_;
     }
     /**
      * <code>float latitude = 10;</code>
+     * @param value The latitude to set.
+     * @return This builder for chaining.
      */
     public Builder setLatitude(float value) {
       
@@ -1227,6 +1256,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float latitude = 10;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLatitude() {
       
@@ -1238,12 +1268,15 @@ private static final long serialVersionUID = 0L;
     private float longitude_ ;
     /**
      * <code>float longitude = 11;</code>
+     * @return The longitude.
      */
     public float getLongitude() {
       return longitude_;
     }
     /**
      * <code>float longitude = 11;</code>
+     * @param value The longitude to set.
+     * @return This builder for chaining.
      */
     public Builder setLongitude(float value) {
       
@@ -1253,6 +1286,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float longitude = 11;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLongitude() {
       
@@ -1264,12 +1298,15 @@ private static final long serialVersionUID = 0L;
     private int altitude_ ;
     /**
      * <code>int32 altitude = 12;</code>
+     * @return The altitude.
      */
     public int getAltitude() {
       return altitude_;
     }
     /**
      * <code>int32 altitude = 12;</code>
+     * @param value The altitude to set.
+     * @return This builder for chaining.
      */
     public Builder setAltitude(int value) {
       
@@ -1279,6 +1316,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>int32 altitude = 12;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAltitude() {
       
@@ -1413,6 +1451,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object description_ = "";
     /**
      * <code>string description = 20;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1428,6 +1467,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string description = 20;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -1444,6 +1484,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string description = 20;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(
         java.lang.String value) {
@@ -1457,6 +1499,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string description = 20;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
       
@@ -1466,6 +1509,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string description = 20;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -1481,7 +1526,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

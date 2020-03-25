@@ -44,22 +44,21 @@ public final class RouterGrpc {
     if ((getGatewayStatusMethod = RouterGrpc.getGatewayStatusMethod) == null) {
       synchronized (RouterGrpc.class) {
         if ((getGatewayStatusMethod = RouterGrpc.getGatewayStatusMethod) == null) {
-          RouterGrpc.getGatewayStatusMethod = getGatewayStatusMethod = 
+          RouterGrpc.getGatewayStatusMethod = getGatewayStatusMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.gateway.Status, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-              .setFullMethodName(generateFullMethodName(
-                  "router.Router", "GatewayStatus"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GatewayStatus"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.gateway.Status.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
-                  .setSchemaDescriptor(new RouterMethodDescriptorSupplier("GatewayStatus"))
-                  .build();
-          }
+              .setSchemaDescriptor(new RouterMethodDescriptorSupplier("GatewayStatus"))
+              .build();
         }
-     }
-     return getGatewayStatusMethod;
+      }
+    }
+    return getGatewayStatusMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.UplinkMessage,
@@ -76,22 +75,21 @@ public final class RouterGrpc {
     if ((getUplinkMethod = RouterGrpc.getUplinkMethod) == null) {
       synchronized (RouterGrpc.class) {
         if ((getUplinkMethod = RouterGrpc.getUplinkMethod) == null) {
-          RouterGrpc.getUplinkMethod = getUplinkMethod = 
+          RouterGrpc.getUplinkMethod = getUplinkMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.router.UplinkMessage, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-              .setFullMethodName(generateFullMethodName(
-                  "router.Router", "Uplink"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Uplink"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.router.UplinkMessage.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
-                  .setSchemaDescriptor(new RouterMethodDescriptorSupplier("Uplink"))
-                  .build();
-          }
+              .setSchemaDescriptor(new RouterMethodDescriptorSupplier("Uplink"))
+              .build();
         }
-     }
-     return getUplinkMethod;
+      }
+    }
+    return getUplinkMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.SubscribeRequest,
@@ -108,22 +106,21 @@ public final class RouterGrpc {
     if ((getSubscribeMethod = RouterGrpc.getSubscribeMethod) == null) {
       synchronized (RouterGrpc.class) {
         if ((getSubscribeMethod = RouterGrpc.getSubscribeMethod) == null) {
-          RouterGrpc.getSubscribeMethod = getSubscribeMethod = 
+          RouterGrpc.getSubscribeMethod = getSubscribeMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.router.SubscribeRequest, org.thethingsnetwork.api.router.DownlinkMessage>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(
-                  "router.Router", "Subscribe"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Subscribe"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.router.SubscribeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.router.DownlinkMessage.getDefaultInstance()))
-                  .setSchemaDescriptor(new RouterMethodDescriptorSupplier("Subscribe"))
-                  .build();
-          }
+              .setSchemaDescriptor(new RouterMethodDescriptorSupplier("Subscribe"))
+              .build();
         }
-     }
-     return getSubscribeMethod;
+      }
+    }
+    return getSubscribeMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.router.DeviceActivationRequest,
@@ -140,29 +137,35 @@ public final class RouterGrpc {
     if ((getActivateMethod = RouterGrpc.getActivateMethod) == null) {
       synchronized (RouterGrpc.class) {
         if ((getActivateMethod = RouterGrpc.getActivateMethod) == null) {
-          RouterGrpc.getActivateMethod = getActivateMethod = 
+          RouterGrpc.getActivateMethod = getActivateMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.router.DeviceActivationRequest, org.thethingsnetwork.api.router.DeviceActivationResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "router.Router", "Activate"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Activate"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.router.DeviceActivationRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.router.DeviceActivationResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new RouterMethodDescriptorSupplier("Activate"))
-                  .build();
-          }
+              .setSchemaDescriptor(new RouterMethodDescriptorSupplier("Activate"))
+              .build();
         }
-     }
-     return getActivateMethod;
+      }
+    }
+    return getActivateMethod;
   }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static RouterStub newStub(io.grpc.Channel channel) {
-    return new RouterStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<RouterStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<RouterStub>() {
+        @java.lang.Override
+        public RouterStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new RouterStub(channel, callOptions);
+        }
+      };
+    return RouterStub.newStub(factory, channel);
   }
 
   /**
@@ -170,7 +173,14 @@ public final class RouterGrpc {
    */
   public static RouterBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new RouterBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<RouterBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<RouterBlockingStub>() {
+        @java.lang.Override
+        public RouterBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new RouterBlockingStub(channel, callOptions);
+        }
+      };
+    return RouterBlockingStub.newStub(factory, channel);
   }
 
   /**
@@ -178,7 +188,14 @@ public final class RouterGrpc {
    */
   public static RouterFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new RouterFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<RouterFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<RouterFutureStub>() {
+        @java.lang.Override
+        public RouterFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new RouterFutureStub(channel, callOptions);
+        }
+      };
+    return RouterFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -269,19 +286,15 @@ public final class RouterGrpc {
    * The Router service provides pure network functionality
    * </pre>
    */
-  public static final class RouterStub extends io.grpc.stub.AbstractStub<RouterStub> {
-    private RouterStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private RouterStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class RouterStub extends io.grpc.stub.AbstractAsyncStub<RouterStub> {
+    private RouterStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected RouterStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected RouterStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new RouterStub(channel, callOptions);
     }
 
@@ -337,19 +350,15 @@ public final class RouterGrpc {
    * The Router service provides pure network functionality
    * </pre>
    */
-  public static final class RouterBlockingStub extends io.grpc.stub.AbstractStub<RouterBlockingStub> {
-    private RouterBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private RouterBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class RouterBlockingStub extends io.grpc.stub.AbstractBlockingStub<RouterBlockingStub> {
+    private RouterBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected RouterBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected RouterBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new RouterBlockingStub(channel, callOptions);
     }
 
@@ -382,19 +391,15 @@ public final class RouterGrpc {
    * The Router service provides pure network functionality
    * </pre>
    */
-  public static final class RouterFutureStub extends io.grpc.stub.AbstractStub<RouterFutureStub> {
-    private RouterFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private RouterFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class RouterFutureStub extends io.grpc.stub.AbstractFutureStub<RouterFutureStub> {
+    private RouterFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected RouterFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected RouterFutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new RouterFutureStub(channel, callOptions);
     }
 

@@ -9,20 +9,24 @@ public interface DeviceIdentifierOrBuilder extends
 
   /**
    * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The appId.
    */
   java.lang.String getAppId();
   /**
    * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The bytes for appId.
    */
   com.google.protobuf.ByteString
       getAppIdBytes();
 
   /**
    * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+   * @return The devId.
    */
   java.lang.String getDevId();
   /**
    * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+   * @return The bytes for devId.
    */
   com.google.protobuf.ByteString
       getDevIdBytes();

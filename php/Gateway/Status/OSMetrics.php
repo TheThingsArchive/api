@@ -18,27 +18,27 @@ class OSMetrics extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>float load_1 = 1;</code>
      */
-    private $load_1 = 0.0;
+    protected $load_1 = 0.0;
     /**
      * Generated from protobuf field <code>float load_5 = 2;</code>
      */
-    private $load_5 = 0.0;
+    protected $load_5 = 0.0;
     /**
      * Generated from protobuf field <code>float load_15 = 3;</code>
      */
-    private $load_15 = 0.0;
+    protected $load_15 = 0.0;
     /**
      * Generated from protobuf field <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
      */
-    private $cpu_percentage = 0.0;
+    protected $cpu_percentage = 0.0;
     /**
      * Generated from protobuf field <code>float memory_percentage = 21;</code>
      */
-    private $memory_percentage = 0.0;
+    protected $memory_percentage = 0.0;
     /**
      * Generated from protobuf field <code>float temperature = 31;</code>
      */
-    private $temperature = 0.0;
+    protected $temperature = 0.0;
 
     /**
      * Constructor.

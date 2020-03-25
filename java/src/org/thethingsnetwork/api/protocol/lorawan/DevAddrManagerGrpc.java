@@ -44,22 +44,21 @@ public final class DevAddrManagerGrpc {
     if ((getGetPrefixesMethod = DevAddrManagerGrpc.getGetPrefixesMethod) == null) {
       synchronized (DevAddrManagerGrpc.class) {
         if ((getGetPrefixesMethod = DevAddrManagerGrpc.getGetPrefixesMethod) == null) {
-          DevAddrManagerGrpc.getGetPrefixesMethod = getGetPrefixesMethod = 
+          DevAddrManagerGrpc.getGetPrefixesMethod = getGetPrefixesMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.protocol.lorawan.PrefixesRequest, org.thethingsnetwork.api.protocol.lorawan.PrefixesResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "lorawan.DevAddrManager", "GetPrefixes"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPrefixes"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.protocol.lorawan.PrefixesRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.protocol.lorawan.PrefixesResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new DevAddrManagerMethodDescriptorSupplier("GetPrefixes"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DevAddrManagerMethodDescriptorSupplier("GetPrefixes"))
+              .build();
         }
-     }
-     return getGetPrefixesMethod;
+      }
+    }
+    return getGetPrefixesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest,
@@ -76,29 +75,35 @@ public final class DevAddrManagerGrpc {
     if ((getGetDevAddrMethod = DevAddrManagerGrpc.getGetDevAddrMethod) == null) {
       synchronized (DevAddrManagerGrpc.class) {
         if ((getGetDevAddrMethod = DevAddrManagerGrpc.getGetDevAddrMethod) == null) {
-          DevAddrManagerGrpc.getGetDevAddrMethod = getGetDevAddrMethod = 
+          DevAddrManagerGrpc.getGetDevAddrMethod = getGetDevAddrMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest, org.thethingsnetwork.api.protocol.lorawan.DevAddrResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "lorawan.DevAddrManager", "GetDevAddr"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDevAddr"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.protocol.lorawan.DevAddrRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.protocol.lorawan.DevAddrResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new DevAddrManagerMethodDescriptorSupplier("GetDevAddr"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DevAddrManagerMethodDescriptorSupplier("GetDevAddr"))
+              .build();
         }
-     }
-     return getGetDevAddrMethod;
+      }
+    }
+    return getGetDevAddrMethod;
   }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static DevAddrManagerStub newStub(io.grpc.Channel channel) {
-    return new DevAddrManagerStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DevAddrManagerStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<DevAddrManagerStub>() {
+        @java.lang.Override
+        public DevAddrManagerStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new DevAddrManagerStub(channel, callOptions);
+        }
+      };
+    return DevAddrManagerStub.newStub(factory, channel);
   }
 
   /**
@@ -106,7 +111,14 @@ public final class DevAddrManagerGrpc {
    */
   public static DevAddrManagerBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new DevAddrManagerBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DevAddrManagerBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<DevAddrManagerBlockingStub>() {
+        @java.lang.Override
+        public DevAddrManagerBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new DevAddrManagerBlockingStub(channel, callOptions);
+        }
+      };
+    return DevAddrManagerBlockingStub.newStub(factory, channel);
   }
 
   /**
@@ -114,7 +126,14 @@ public final class DevAddrManagerGrpc {
    */
   public static DevAddrManagerFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new DevAddrManagerFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DevAddrManagerFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<DevAddrManagerFutureStub>() {
+        @java.lang.Override
+        public DevAddrManagerFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new DevAddrManagerFutureStub(channel, callOptions);
+        }
+      };
+    return DevAddrManagerFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -169,19 +188,15 @@ public final class DevAddrManagerGrpc {
    * The Device Addresses in the network are issued by the NetworkServer
    * </pre>
    */
-  public static final class DevAddrManagerStub extends io.grpc.stub.AbstractStub<DevAddrManagerStub> {
-    private DevAddrManagerStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private DevAddrManagerStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class DevAddrManagerStub extends io.grpc.stub.AbstractAsyncStub<DevAddrManagerStub> {
+    private DevAddrManagerStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected DevAddrManagerStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected DevAddrManagerStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new DevAddrManagerStub(channel, callOptions);
     }
 
@@ -213,19 +228,15 @@ public final class DevAddrManagerGrpc {
    * The Device Addresses in the network are issued by the NetworkServer
    * </pre>
    */
-  public static final class DevAddrManagerBlockingStub extends io.grpc.stub.AbstractStub<DevAddrManagerBlockingStub> {
-    private DevAddrManagerBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private DevAddrManagerBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class DevAddrManagerBlockingStub extends io.grpc.stub.AbstractBlockingStub<DevAddrManagerBlockingStub> {
+    private DevAddrManagerBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected DevAddrManagerBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected DevAddrManagerBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new DevAddrManagerBlockingStub(channel, callOptions);
     }
 
@@ -255,19 +266,15 @@ public final class DevAddrManagerGrpc {
    * The Device Addresses in the network are issued by the NetworkServer
    * </pre>
    */
-  public static final class DevAddrManagerFutureStub extends io.grpc.stub.AbstractStub<DevAddrManagerFutureStub> {
-    private DevAddrManagerFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private DevAddrManagerFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class DevAddrManagerFutureStub extends io.grpc.stub.AbstractFutureStub<DevAddrManagerFutureStub> {
+    private DevAddrManagerFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected DevAddrManagerFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected DevAddrManagerFutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new DevAddrManagerFutureStub(channel, callOptions);
     }
 

@@ -13,6 +13,7 @@ public interface GetServiceRequestOrBuilder extends
    * </pre>
    *
    * <code>string service_name = 1;</code>
+   * @return The serviceName.
    */
   java.lang.String getServiceName();
   /**
@@ -21,6 +22,7 @@ public interface GetServiceRequestOrBuilder extends
    * </pre>
    *
    * <code>string service_name = 1;</code>
+   * @return The bytes for serviceName.
    */
   com.google.protobuf.ByteString
       getServiceNameBytes();

@@ -13,6 +13,7 @@ public interface LocationMetadataOrBuilder extends
    * </pre>
    *
    * <code>int64 time = 1;</code>
+   * @return The time.
    */
   long getTime();
 
@@ -22,6 +23,7 @@ public interface LocationMetadataOrBuilder extends
    * </pre>
    *
    * <code>float latitude = 2;</code>
+   * @return The latitude.
    */
   float getLatitude();
 
@@ -31,6 +33,7 @@ public interface LocationMetadataOrBuilder extends
    * </pre>
    *
    * <code>float longitude = 3;</code>
+   * @return The longitude.
    */
   float getLongitude();
 
@@ -40,6 +43,7 @@ public interface LocationMetadataOrBuilder extends
    * </pre>
    *
    * <code>int32 altitude = 4;</code>
+   * @return The altitude.
    */
   int getAltitude();
 
@@ -49,15 +53,18 @@ public interface LocationMetadataOrBuilder extends
    * </pre>
    *
    * <code>int32 accuracy = 5;</code>
+   * @return The accuracy.
    */
   int getAccuracy();
 
   /**
    * <code>.gateway.LocationMetadata.LocationSource source = 6;</code>
+   * @return The enum numeric value on the wire for source.
    */
   int getSourceValue();
   /**
    * <code>.gateway.LocationMetadata.LocationSource source = 6;</code>
+   * @return The source.
    */
   org.thethingsnetwork.api.gateway.LocationMetadata.LocationSource getSource();
 }

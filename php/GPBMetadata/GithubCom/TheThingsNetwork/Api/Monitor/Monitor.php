@@ -63,7 +63,7 @@ class Monitor
             "696e67734e6574776f726b2f6170692f6d6f6e69746f72aa021c54686554" .
             "68696e67734e6574776f726b2e4150492e4d6f6e69746f72620670726f74" .
             "6f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

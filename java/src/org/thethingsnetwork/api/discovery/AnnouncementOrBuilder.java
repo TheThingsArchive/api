@@ -13,6 +13,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -21,6 +22,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
@@ -31,6 +33,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string service_name = 2;</code>
+   * @return The serviceName.
    */
   java.lang.String getServiceName();
   /**
@@ -39,6 +42,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string service_name = 2;</code>
+   * @return The bytes for serviceName.
    */
   com.google.protobuf.ByteString
       getServiceNameBytes();
@@ -49,6 +53,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string service_version = 3;</code>
+   * @return The serviceVersion.
    */
   java.lang.String getServiceVersion();
   /**
@@ -57,6 +62,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string service_version = 3;</code>
+   * @return The bytes for serviceVersion.
    */
   com.google.protobuf.ByteString
       getServiceVersionBytes();
@@ -67,6 +73,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string description = 4;</code>
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -75,6 +82,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string description = 4;</code>
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
@@ -85,6 +93,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string url = 5;</code>
+   * @return The url.
    */
   java.lang.String getUrl();
   /**
@@ -93,6 +102,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string url = 5;</code>
+   * @return The bytes for url.
    */
   com.google.protobuf.ByteString
       getUrlBytes();
@@ -103,6 +113,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>bool public = 6;</code>
+   * @return The public.
    */
   boolean getPublic();
 
@@ -112,6 +123,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string net_address = 11;</code>
+   * @return The netAddress.
    */
   java.lang.String getNetAddress();
   /**
@@ -120,6 +132,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string net_address = 11;</code>
+   * @return The bytes for netAddress.
    */
   com.google.protobuf.ByteString
       getNetAddressBytes();
@@ -130,6 +143,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string public_key = 12;</code>
+   * @return The publicKey.
    */
   java.lang.String getPublicKey();
   /**
@@ -138,6 +152,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string public_key = 12;</code>
+   * @return The bytes for publicKey.
    */
   com.google.protobuf.ByteString
       getPublicKeyBytes();
@@ -148,6 +163,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string certificate = 13;</code>
+   * @return The certificate.
    */
   java.lang.String getCertificate();
   /**
@@ -156,6 +172,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string certificate = 13;</code>
+   * @return The bytes for certificate.
    */
   com.google.protobuf.ByteString
       getCertificateBytes();
@@ -168,6 +185,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string api_address = 14;</code>
+   * @return The apiAddress.
    */
   java.lang.String getApiAddress();
   /**
@@ -178,6 +196,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string api_address = 14;</code>
+   * @return The bytes for apiAddress.
    */
   com.google.protobuf.ByteString
       getApiAddressBytes();
@@ -196,6 +215,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string mqtt_address = 15;</code>
+   * @return The mqttAddress.
    */
   java.lang.String getMqttAddress();
   /**
@@ -212,6 +232,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string mqtt_address = 15;</code>
+   * @return The bytes for mqttAddress.
    */
   com.google.protobuf.ByteString
       getMqttAddressBytes();
@@ -230,6 +251,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string amqp_address = 16;</code>
+   * @return The amqpAddress.
    */
   java.lang.String getAmqpAddress();
   /**
@@ -246,6 +268,7 @@ public interface AnnouncementOrBuilder extends
    * </pre>
    *
    * <code>string amqp_address = 16;</code>
+   * @return The bytes for amqpAddress.
    */
   com.google.protobuf.ByteString
       getAmqpAddressBytes();

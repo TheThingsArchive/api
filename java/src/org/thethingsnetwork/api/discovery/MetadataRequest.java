@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new MetadataRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -74,7 +80,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -113,6 +119,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -132,6 +139,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
@@ -155,6 +163,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string service_name = 2;</code>
+   * @return The serviceName.
    */
   public java.lang.String getServiceName() {
     java.lang.Object ref = serviceName_;
@@ -174,6 +183,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string service_name = 2;</code>
+   * @return The bytes for serviceName.
    */
   public com.google.protobuf.ByteString
       getServiceNameBytes() {
@@ -197,6 +207,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
+   * @return Whether the metadata field is set.
    */
   public boolean hasMetadata() {
     return metadata_ != null;
@@ -207,6 +218,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
+   * @return The metadata.
    */
   public org.thethingsnetwork.api.discovery.Metadata getMetadata() {
     return metadata_ == null ? org.thethingsnetwork.api.discovery.Metadata.getDefaultInstance() : metadata_;
@@ -279,18 +291,17 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.discovery.MetadataRequest other = (org.thethingsnetwork.api.discovery.MetadataRequest) obj;
 
-    boolean result = true;
-    result = result && getId()
-        .equals(other.getId());
-    result = result && getServiceName()
-        .equals(other.getServiceName());
-    result = result && (hasMetadata() == other.hasMetadata());
+    if (!getId()
+        .equals(other.getId())) return false;
+    if (!getServiceName()
+        .equals(other.getServiceName())) return false;
+    if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
-      result = result && getMetadata()
-          .equals(other.getMetadata());
+      if (!getMetadata()
+          .equals(other.getMetadata())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -494,35 +505,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -583,6 +594,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -602,6 +614,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -622,6 +635,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
@@ -639,6 +654,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       
@@ -652,6 +668,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
@@ -672,6 +690,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string service_name = 2;</code>
+     * @return The serviceName.
      */
     public java.lang.String getServiceName() {
       java.lang.Object ref = serviceName_;
@@ -691,6 +710,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string service_name = 2;</code>
+     * @return The bytes for serviceName.
      */
     public com.google.protobuf.ByteString
         getServiceNameBytes() {
@@ -711,6 +731,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string service_name = 2;</code>
+     * @param value The serviceName to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceName(
         java.lang.String value) {
@@ -728,6 +750,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string service_name = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearServiceName() {
       
@@ -741,6 +764,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string service_name = 2;</code>
+     * @param value The bytes for serviceName to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceNameBytes(
         com.google.protobuf.ByteString value) {
@@ -754,7 +779,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private org.thethingsnetwork.api.discovery.Metadata metadata_ = null;
+    private org.thethingsnetwork.api.discovery.Metadata metadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.discovery.Metadata, org.thethingsnetwork.api.discovery.Metadata.Builder, org.thethingsnetwork.api.discovery.MetadataOrBuilder> metadataBuilder_;
     /**
@@ -763,6 +788,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
       return metadataBuilder_ != null || metadata_ != null;
@@ -773,6 +799,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
+     * @return The metadata.
      */
     public org.thethingsnetwork.api.discovery.Metadata getMetadata() {
       if (metadataBuilder_ == null) {
@@ -909,7 +936,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

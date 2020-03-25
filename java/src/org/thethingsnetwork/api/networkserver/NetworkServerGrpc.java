@@ -41,22 +41,21 @@ public final class NetworkServerGrpc {
     if ((getGetDevicesMethod = NetworkServerGrpc.getGetDevicesMethod) == null) {
       synchronized (NetworkServerGrpc.class) {
         if ((getGetDevicesMethod = NetworkServerGrpc.getGetDevicesMethod) == null) {
-          NetworkServerGrpc.getGetDevicesMethod = getGetDevicesMethod = 
+          NetworkServerGrpc.getGetDevicesMethod = getGetDevicesMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.networkserver.DevicesRequest, org.thethingsnetwork.api.networkserver.DevicesResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "networkserver.NetworkServer", "GetDevices"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDevices"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.networkserver.DevicesRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.networkserver.DevicesResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new NetworkServerMethodDescriptorSupplier("GetDevices"))
-                  .build();
-          }
+              .setSchemaDescriptor(new NetworkServerMethodDescriptorSupplier("GetDevices"))
+              .build();
         }
-     }
-     return getGetDevicesMethod;
+      }
+    }
+    return getGetDevicesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest,
@@ -73,22 +72,21 @@ public final class NetworkServerGrpc {
     if ((getPrepareActivationMethod = NetworkServerGrpc.getPrepareActivationMethod) == null) {
       synchronized (NetworkServerGrpc.class) {
         if ((getPrepareActivationMethod = NetworkServerGrpc.getPrepareActivationMethod) == null) {
-          NetworkServerGrpc.getPrepareActivationMethod = getPrepareActivationMethod = 
+          NetworkServerGrpc.getPrepareActivationMethod = getPrepareActivationMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest, org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "networkserver.NetworkServer", "PrepareActivation"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PrepareActivation"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest.getDefaultInstance()))
-                  .setSchemaDescriptor(new NetworkServerMethodDescriptorSupplier("PrepareActivation"))
-                  .build();
-          }
+              .setSchemaDescriptor(new NetworkServerMethodDescriptorSupplier("PrepareActivation"))
+              .build();
         }
-     }
-     return getPrepareActivationMethod;
+      }
+    }
+    return getPrepareActivationMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.handler.DeviceActivationResponse,
@@ -105,22 +103,21 @@ public final class NetworkServerGrpc {
     if ((getActivateMethod = NetworkServerGrpc.getActivateMethod) == null) {
       synchronized (NetworkServerGrpc.class) {
         if ((getActivateMethod = NetworkServerGrpc.getActivateMethod) == null) {
-          NetworkServerGrpc.getActivateMethod = getActivateMethod = 
+          NetworkServerGrpc.getActivateMethod = getActivateMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.handler.DeviceActivationResponse, org.thethingsnetwork.api.handler.DeviceActivationResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "networkserver.NetworkServer", "Activate"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Activate"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.handler.DeviceActivationResponse.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.handler.DeviceActivationResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new NetworkServerMethodDescriptorSupplier("Activate"))
-                  .build();
-          }
+              .setSchemaDescriptor(new NetworkServerMethodDescriptorSupplier("Activate"))
+              .build();
         }
-     }
-     return getActivateMethod;
+      }
+    }
+    return getActivateMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage,
@@ -137,22 +134,21 @@ public final class NetworkServerGrpc {
     if ((getUplinkMethod = NetworkServerGrpc.getUplinkMethod) == null) {
       synchronized (NetworkServerGrpc.class) {
         if ((getUplinkMethod = NetworkServerGrpc.getUplinkMethod) == null) {
-          NetworkServerGrpc.getUplinkMethod = getUplinkMethod = 
+          NetworkServerGrpc.getUplinkMethod = getUplinkMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage, org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "networkserver.NetworkServer", "Uplink"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Uplink"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage.getDefaultInstance()))
-                  .setSchemaDescriptor(new NetworkServerMethodDescriptorSupplier("Uplink"))
-                  .build();
-          }
+              .setSchemaDescriptor(new NetworkServerMethodDescriptorSupplier("Uplink"))
+              .build();
         }
-     }
-     return getUplinkMethod;
+      }
+    }
+    return getUplinkMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DownlinkMessage,
@@ -169,29 +165,35 @@ public final class NetworkServerGrpc {
     if ((getDownlinkMethod = NetworkServerGrpc.getDownlinkMethod) == null) {
       synchronized (NetworkServerGrpc.class) {
         if ((getDownlinkMethod = NetworkServerGrpc.getDownlinkMethod) == null) {
-          NetworkServerGrpc.getDownlinkMethod = getDownlinkMethod = 
+          NetworkServerGrpc.getDownlinkMethod = getDownlinkMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.DownlinkMessage, org.thethingsnetwork.api.broker.DownlinkMessage>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "networkserver.NetworkServer", "Downlink"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Downlink"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.broker.DownlinkMessage.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.broker.DownlinkMessage.getDefaultInstance()))
-                  .setSchemaDescriptor(new NetworkServerMethodDescriptorSupplier("Downlink"))
-                  .build();
-          }
+              .setSchemaDescriptor(new NetworkServerMethodDescriptorSupplier("Downlink"))
+              .build();
         }
-     }
-     return getDownlinkMethod;
+      }
+    }
+    return getDownlinkMethod;
   }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static NetworkServerStub newStub(io.grpc.Channel channel) {
-    return new NetworkServerStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<NetworkServerStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<NetworkServerStub>() {
+        @java.lang.Override
+        public NetworkServerStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new NetworkServerStub(channel, callOptions);
+        }
+      };
+    return NetworkServerStub.newStub(factory, channel);
   }
 
   /**
@@ -199,7 +201,14 @@ public final class NetworkServerGrpc {
    */
   public static NetworkServerBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new NetworkServerBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<NetworkServerBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<NetworkServerBlockingStub>() {
+        @java.lang.Override
+        public NetworkServerBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new NetworkServerBlockingStub(channel, callOptions);
+        }
+      };
+    return NetworkServerBlockingStub.newStub(factory, channel);
   }
 
   /**
@@ -207,7 +216,14 @@ public final class NetworkServerGrpc {
    */
   public static NetworkServerFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new NetworkServerFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<NetworkServerFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<NetworkServerFutureStub>() {
+        @java.lang.Override
+        public NetworkServerFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new NetworkServerFutureStub(channel, callOptions);
+        }
+      };
+    return NetworkServerFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -307,19 +323,15 @@ public final class NetworkServerGrpc {
 
   /**
    */
-  public static final class NetworkServerStub extends io.grpc.stub.AbstractStub<NetworkServerStub> {
-    private NetworkServerStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private NetworkServerStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class NetworkServerStub extends io.grpc.stub.AbstractAsyncStub<NetworkServerStub> {
+    private NetworkServerStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected NetworkServerStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected NetworkServerStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new NetworkServerStub(channel, callOptions);
     }
 
@@ -381,19 +393,15 @@ public final class NetworkServerGrpc {
 
   /**
    */
-  public static final class NetworkServerBlockingStub extends io.grpc.stub.AbstractStub<NetworkServerBlockingStub> {
-    private NetworkServerBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private NetworkServerBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class NetworkServerBlockingStub extends io.grpc.stub.AbstractBlockingStub<NetworkServerBlockingStub> {
+    private NetworkServerBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected NetworkServerBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected NetworkServerBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new NetworkServerBlockingStub(channel, callOptions);
     }
 
@@ -450,19 +458,15 @@ public final class NetworkServerGrpc {
 
   /**
    */
-  public static final class NetworkServerFutureStub extends io.grpc.stub.AbstractStub<NetworkServerFutureStub> {
-    private NetworkServerFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private NetworkServerFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class NetworkServerFutureStub extends io.grpc.stub.AbstractFutureStub<NetworkServerFutureStub> {
+    private NetworkServerFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected NetworkServerFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected NetworkServerFutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new NetworkServerFutureStub(channel, callOptions);
     }
 

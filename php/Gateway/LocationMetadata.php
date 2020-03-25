@@ -18,35 +18,35 @@ class LocationMetadata extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int64 time = 1;</code>
      */
-    private $time = 0;
+    protected $time = 0;
     /**
      * the north–south position (degrees; -90 to +90), where 0 is the equator, north pole is positive, south pole is negative
      *
      * Generated from protobuf field <code>float latitude = 2;</code>
      */
-    private $latitude = 0.0;
+    protected $latitude = 0.0;
     /**
      * the east-west position (degrees; -180 to +180), where 0 is the Prime Meridian (Greenwich), east is positive , west is negative
      *
      * Generated from protobuf field <code>float longitude = 3;</code>
      */
-    private $longitude = 0.0;
+    protected $longitude = 0.0;
     /**
      * the altitude (meters), where 0 is the mean sea level
      *
      * Generated from protobuf field <code>int32 altitude = 4;</code>
      */
-    private $altitude = 0;
+    protected $altitude = 0;
     /**
      * the accuracy of the location (meters)
      *
      * Generated from protobuf field <code>int32 accuracy = 5;</code>
      */
-    private $accuracy = 0;
+    protected $accuracy = 0;
     /**
      * Generated from protobuf field <code>.gateway.LocationMetadata.LocationSource source = 6;</code>
      */
-    private $source = 0;
+    protected $source = 0;
 
     /**
      * Constructor.

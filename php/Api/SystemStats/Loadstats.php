@@ -16,15 +16,15 @@ class Loadstats extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>float load1 = 1;</code>
      */
-    private $load1 = 0.0;
+    protected $load1 = 0.0;
     /**
      * Generated from protobuf field <code>float load5 = 2;</code>
      */
-    private $load5 = 0.0;
+    protected $load5 = 0.0;
     /**
      * Generated from protobuf field <code>float load15 = 3;</code>
      */
-    private $load15 = 0.0;
+    protected $load15 = 0.0;
 
     /**
      * Constructor.

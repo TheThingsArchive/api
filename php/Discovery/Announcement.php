@@ -20,55 +20,55 @@ class Announcement extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
-    private $id = '';
+    protected $id = '';
     /**
      * The name of the component (router/broker/handler)
      *
      * Generated from protobuf field <code>string service_name = 2;</code>
      */
-    private $service_name = '';
+    protected $service_name = '';
     /**
      * Service version in the form "[version]-[commit] ([build date])"
      *
      * Generated from protobuf field <code>string service_version = 3;</code>
      */
-    private $service_version = '';
+    protected $service_version = '';
     /**
      * Description of the component
      *
      * Generated from protobuf field <code>string description = 4;</code>
      */
-    private $description = '';
+    protected $description = '';
     /**
      * URL with documentation or more information about this component
      *
      * Generated from protobuf field <code>string url = 5;</code>
      */
-    private $url = '';
+    protected $url = '';
     /**
      * Indicates whether this service is part of The Things Network (the public community network)
      *
      * Generated from protobuf field <code>bool public = 6;</code>
      */
-    private $public = false;
+    protected $public = false;
     /**
      * Comma-separated network addresses in the form "domain1:port,domain2:port,domain3:port" (currently we only use the first)
      *
      * Generated from protobuf field <code>string net_address = 11;</code>
      */
-    private $net_address = '';
+    protected $net_address = '';
     /**
      * ECDSA public key of this component
      *
      * Generated from protobuf field <code>string public_key = 12;</code>
      */
-    private $public_key = '';
+    protected $public_key = '';
     /**
      * TLS Certificate for gRPC on net_address (if TLS is enabled)
      *
      * Generated from protobuf field <code>string certificate = 13;</code>
      */
-    private $certificate = '';
+    protected $certificate = '';
     /**
      * Contains the address where the HTTP API is exposed (if there is one).
      * Format of api_address: `http(s)://domain(:port)`
@@ -76,7 +76,7 @@ class Announcement extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string api_address = 14;</code>
      */
-    private $api_address = '';
+    protected $api_address = '';
     /**
      * Contains the address where the MQTT API is exposed (if there is one)
      * Format of mqtt_address: `(mqtt(s)://)host(:port)`
@@ -90,7 +90,7 @@ class Announcement extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string mqtt_address = 15;</code>
      */
-    private $mqtt_address = '';
+    protected $mqtt_address = '';
     /**
      * Contains the address where the AMQP API is exposed (if there is one)
      * Format of amqp_address: `(amqp(s)://)host(:port)`
@@ -104,7 +104,7 @@ class Announcement extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string amqp_address = 16;</code>
      */
-    private $amqp_address = '';
+    protected $amqp_address = '';
     /**
      * Metadata for this component
      *

@@ -16,15 +16,15 @@ class JoinRequestPayload extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
-    private $app_eui = '';
+    protected $app_eui = '';
     /**
      * Generated from protobuf field <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
-    private $dev_eui = '';
+    protected $dev_eui = '';
     /**
      * Generated from protobuf field <code>bytes dev_nonce = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
      */
-    private $dev_nonce = '';
+    protected $dev_nonce = '';
 
     /**
      * Constructor.

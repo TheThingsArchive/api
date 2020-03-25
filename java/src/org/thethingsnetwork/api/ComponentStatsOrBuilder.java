@@ -9,15 +9,18 @@ public interface ComponentStatsOrBuilder extends
 
   /**
    * <code>uint64 uptime = 1;</code>
+   * @return The uptime.
    */
   long getUptime();
 
   /**
    * <code>.api.ComponentStats.CPUStats cpu = 2;</code>
+   * @return Whether the cpu field is set.
    */
   boolean hasCpu();
   /**
    * <code>.api.ComponentStats.CPUStats cpu = 2;</code>
+   * @return The cpu.
    */
   org.thethingsnetwork.api.ComponentStats.CPUStats getCpu();
   /**
@@ -27,10 +30,12 @@ public interface ComponentStatsOrBuilder extends
 
   /**
    * <code>.api.ComponentStats.MemoryStats memory = 3;</code>
+   * @return Whether the memory field is set.
    */
   boolean hasMemory();
   /**
    * <code>.api.ComponentStats.MemoryStats memory = 3;</code>
+   * @return The memory.
    */
   org.thethingsnetwork.api.ComponentStats.MemoryStats getMemory();
   /**
@@ -40,11 +45,13 @@ public interface ComponentStatsOrBuilder extends
 
   /**
    * <code>uint64 goroutines = 4;</code>
+   * @return The goroutines.
    */
   long getGoroutines();
 
   /**
    * <code>float gc_cpu_fraction = 5;</code>
+   * @return The gcCpuFraction.
    */
   float getGcCpuFraction();
 }

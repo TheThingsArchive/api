@@ -44,22 +44,21 @@ public final class DiscoveryGrpc {
     if ((getAnnounceMethod = DiscoveryGrpc.getAnnounceMethod) == null) {
       synchronized (DiscoveryGrpc.class) {
         if ((getAnnounceMethod = DiscoveryGrpc.getAnnounceMethod) == null) {
-          DiscoveryGrpc.getAnnounceMethod = getAnnounceMethod = 
+          DiscoveryGrpc.getAnnounceMethod = getAnnounceMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.discovery.Announcement, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "discovery.Discovery", "Announce"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Announce"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.discovery.Announcement.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
-                  .setSchemaDescriptor(new DiscoveryMethodDescriptorSupplier("Announce"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DiscoveryMethodDescriptorSupplier("Announce"))
+              .build();
         }
-     }
-     return getAnnounceMethod;
+      }
+    }
+    return getAnnounceMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.discovery.GetServiceRequest,
@@ -76,22 +75,21 @@ public final class DiscoveryGrpc {
     if ((getGetAllMethod = DiscoveryGrpc.getGetAllMethod) == null) {
       synchronized (DiscoveryGrpc.class) {
         if ((getGetAllMethod = DiscoveryGrpc.getGetAllMethod) == null) {
-          DiscoveryGrpc.getGetAllMethod = getGetAllMethod = 
+          DiscoveryGrpc.getGetAllMethod = getGetAllMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.discovery.GetServiceRequest, org.thethingsnetwork.api.discovery.AnnouncementsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "discovery.Discovery", "GetAll"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAll"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.discovery.GetServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.discovery.AnnouncementsResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new DiscoveryMethodDescriptorSupplier("GetAll"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DiscoveryMethodDescriptorSupplier("GetAll"))
+              .build();
         }
-     }
-     return getGetAllMethod;
+      }
+    }
+    return getGetAllMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.discovery.GetRequest,
@@ -108,22 +106,21 @@ public final class DiscoveryGrpc {
     if ((getGetMethod = DiscoveryGrpc.getGetMethod) == null) {
       synchronized (DiscoveryGrpc.class) {
         if ((getGetMethod = DiscoveryGrpc.getGetMethod) == null) {
-          DiscoveryGrpc.getGetMethod = getGetMethod = 
+          DiscoveryGrpc.getGetMethod = getGetMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.discovery.GetRequest, org.thethingsnetwork.api.discovery.Announcement>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "discovery.Discovery", "Get"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Get"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.discovery.GetRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.discovery.Announcement.getDefaultInstance()))
-                  .setSchemaDescriptor(new DiscoveryMethodDescriptorSupplier("Get"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DiscoveryMethodDescriptorSupplier("Get"))
+              .build();
         }
-     }
-     return getGetMethod;
+      }
+    }
+    return getGetMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.discovery.MetadataRequest,
@@ -140,22 +137,21 @@ public final class DiscoveryGrpc {
     if ((getAddMetadataMethod = DiscoveryGrpc.getAddMetadataMethod) == null) {
       synchronized (DiscoveryGrpc.class) {
         if ((getAddMetadataMethod = DiscoveryGrpc.getAddMetadataMethod) == null) {
-          DiscoveryGrpc.getAddMetadataMethod = getAddMetadataMethod = 
+          DiscoveryGrpc.getAddMetadataMethod = getAddMetadataMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.discovery.MetadataRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "discovery.Discovery", "AddMetadata"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddMetadata"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.discovery.MetadataRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
-                  .setSchemaDescriptor(new DiscoveryMethodDescriptorSupplier("AddMetadata"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DiscoveryMethodDescriptorSupplier("AddMetadata"))
+              .build();
         }
-     }
-     return getAddMetadataMethod;
+      }
+    }
+    return getAddMetadataMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.discovery.MetadataRequest,
@@ -172,22 +168,21 @@ public final class DiscoveryGrpc {
     if ((getDeleteMetadataMethod = DiscoveryGrpc.getDeleteMetadataMethod) == null) {
       synchronized (DiscoveryGrpc.class) {
         if ((getDeleteMetadataMethod = DiscoveryGrpc.getDeleteMetadataMethod) == null) {
-          DiscoveryGrpc.getDeleteMetadataMethod = getDeleteMetadataMethod = 
+          DiscoveryGrpc.getDeleteMetadataMethod = getDeleteMetadataMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.discovery.MetadataRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "discovery.Discovery", "DeleteMetadata"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteMetadata"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.discovery.MetadataRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
-                  .setSchemaDescriptor(new DiscoveryMethodDescriptorSupplier("DeleteMetadata"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DiscoveryMethodDescriptorSupplier("DeleteMetadata"))
+              .build();
         }
-     }
-     return getDeleteMetadataMethod;
+      }
+    }
+    return getDeleteMetadataMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.discovery.GetByAppIDRequest,
@@ -204,22 +199,21 @@ public final class DiscoveryGrpc {
     if ((getGetByAppIDMethod = DiscoveryGrpc.getGetByAppIDMethod) == null) {
       synchronized (DiscoveryGrpc.class) {
         if ((getGetByAppIDMethod = DiscoveryGrpc.getGetByAppIDMethod) == null) {
-          DiscoveryGrpc.getGetByAppIDMethod = getGetByAppIDMethod = 
+          DiscoveryGrpc.getGetByAppIDMethod = getGetByAppIDMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.discovery.GetByAppIDRequest, org.thethingsnetwork.api.discovery.Announcement>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "discovery.Discovery", "GetByAppID"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetByAppID"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.discovery.GetByAppIDRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.discovery.Announcement.getDefaultInstance()))
-                  .setSchemaDescriptor(new DiscoveryMethodDescriptorSupplier("GetByAppID"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DiscoveryMethodDescriptorSupplier("GetByAppID"))
+              .build();
         }
-     }
-     return getGetByAppIDMethod;
+      }
+    }
+    return getGetByAppIDMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.discovery.GetByGatewayIDRequest,
@@ -236,22 +230,21 @@ public final class DiscoveryGrpc {
     if ((getGetByGatewayIDMethod = DiscoveryGrpc.getGetByGatewayIDMethod) == null) {
       synchronized (DiscoveryGrpc.class) {
         if ((getGetByGatewayIDMethod = DiscoveryGrpc.getGetByGatewayIDMethod) == null) {
-          DiscoveryGrpc.getGetByGatewayIDMethod = getGetByGatewayIDMethod = 
+          DiscoveryGrpc.getGetByGatewayIDMethod = getGetByGatewayIDMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.discovery.GetByGatewayIDRequest, org.thethingsnetwork.api.discovery.Announcement>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "discovery.Discovery", "GetByGatewayID"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetByGatewayID"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.discovery.GetByGatewayIDRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.discovery.Announcement.getDefaultInstance()))
-                  .setSchemaDescriptor(new DiscoveryMethodDescriptorSupplier("GetByGatewayID"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DiscoveryMethodDescriptorSupplier("GetByGatewayID"))
+              .build();
         }
-     }
-     return getGetByGatewayIDMethod;
+      }
+    }
+    return getGetByGatewayIDMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.discovery.GetByAppEUIRequest,
@@ -268,29 +261,35 @@ public final class DiscoveryGrpc {
     if ((getGetByAppEUIMethod = DiscoveryGrpc.getGetByAppEUIMethod) == null) {
       synchronized (DiscoveryGrpc.class) {
         if ((getGetByAppEUIMethod = DiscoveryGrpc.getGetByAppEUIMethod) == null) {
-          DiscoveryGrpc.getGetByAppEUIMethod = getGetByAppEUIMethod = 
+          DiscoveryGrpc.getGetByAppEUIMethod = getGetByAppEUIMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.discovery.GetByAppEUIRequest, org.thethingsnetwork.api.discovery.Announcement>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "discovery.Discovery", "GetByAppEUI"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetByAppEUI"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.discovery.GetByAppEUIRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.discovery.Announcement.getDefaultInstance()))
-                  .setSchemaDescriptor(new DiscoveryMethodDescriptorSupplier("GetByAppEUI"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DiscoveryMethodDescriptorSupplier("GetByAppEUI"))
+              .build();
         }
-     }
-     return getGetByAppEUIMethod;
+      }
+    }
+    return getGetByAppEUIMethod;
   }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static DiscoveryStub newStub(io.grpc.Channel channel) {
-    return new DiscoveryStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DiscoveryStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<DiscoveryStub>() {
+        @java.lang.Override
+        public DiscoveryStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new DiscoveryStub(channel, callOptions);
+        }
+      };
+    return DiscoveryStub.newStub(factory, channel);
   }
 
   /**
@@ -298,7 +297,14 @@ public final class DiscoveryGrpc {
    */
   public static DiscoveryBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new DiscoveryBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DiscoveryBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<DiscoveryBlockingStub>() {
+        @java.lang.Override
+        public DiscoveryBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new DiscoveryBlockingStub(channel, callOptions);
+        }
+      };
+    return DiscoveryBlockingStub.newStub(factory, channel);
   }
 
   /**
@@ -306,7 +312,14 @@ public final class DiscoveryGrpc {
    */
   public static DiscoveryFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new DiscoveryFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DiscoveryFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<DiscoveryFutureStub>() {
+        @java.lang.Override
+        public DiscoveryFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new DiscoveryFutureStub(channel, callOptions);
+        }
+      };
+    return DiscoveryFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -456,19 +469,15 @@ public final class DiscoveryGrpc {
    * The Discovery service is used to discover services within The Things Network.
    * </pre>
    */
-  public static final class DiscoveryStub extends io.grpc.stub.AbstractStub<DiscoveryStub> {
-    private DiscoveryStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private DiscoveryStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class DiscoveryStub extends io.grpc.stub.AbstractAsyncStub<DiscoveryStub> {
+    private DiscoveryStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected DiscoveryStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected DiscoveryStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new DiscoveryStub(channel, callOptions);
     }
 
@@ -559,19 +568,15 @@ public final class DiscoveryGrpc {
    * The Discovery service is used to discover services within The Things Network.
    * </pre>
    */
-  public static final class DiscoveryBlockingStub extends io.grpc.stub.AbstractStub<DiscoveryBlockingStub> {
-    private DiscoveryBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private DiscoveryBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class DiscoveryBlockingStub extends io.grpc.stub.AbstractBlockingStub<DiscoveryBlockingStub> {
+    private DiscoveryBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected DiscoveryBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected DiscoveryBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new DiscoveryBlockingStub(channel, callOptions);
     }
 
@@ -654,19 +659,15 @@ public final class DiscoveryGrpc {
    * The Discovery service is used to discover services within The Things Network.
    * </pre>
    */
-  public static final class DiscoveryFutureStub extends io.grpc.stub.AbstractStub<DiscoveryFutureStub> {
-    private DiscoveryFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private DiscoveryFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class DiscoveryFutureStub extends io.grpc.stub.AbstractFutureStub<DiscoveryFutureStub> {
+    private DiscoveryFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected DiscoveryFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected DiscoveryFutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new DiscoveryFutureStub(channel, callOptions);
     }
 

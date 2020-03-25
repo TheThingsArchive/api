@@ -13,6 +13,7 @@ public interface GetByAppIDRequestOrBuilder extends
    * </pre>
    *
    * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The appId.
    */
   java.lang.String getAppId();
   /**
@@ -21,6 +22,7 @@ public interface GetByAppIDRequestOrBuilder extends
    * </pre>
    *
    * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The bytes for appId.
    */
   com.google.protobuf.ByteString
       getAppIdBytes();

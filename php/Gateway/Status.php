@@ -20,25 +20,25 @@ class Status extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>uint32 timestamp = 1;</code>
      */
-    private $timestamp = 0;
+    protected $timestamp = 0;
     /**
      * Time in Unix nanoseconds
      *
      * Generated from protobuf field <code>int64 time = 2;</code>
      */
-    private $time = 0;
+    protected $time = 0;
     /**
      * Indicates whether the gateway is trusted. Components that are able to verify gateway trust MUST do so and set this value accordingly
      *
      * Generated from protobuf field <code>bool gateway_trusted = 3;</code>
      */
-    private $gateway_trusted = false;
+    protected $gateway_trusted = false;
     /**
      * Boot time in Unix nanoseconds
      *
      * Generated from protobuf field <code>int64 boot_time = 4;</code>
      */
-    private $boot_time = 0;
+    protected $boot_time = 0;
     /**
      * Generated from protobuf field <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
      */
@@ -46,113 +46,113 @@ class Status extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string platform = 12;</code>
      */
-    private $platform = '';
+    protected $platform = '';
     /**
      * Generated from protobuf field <code>string contact_email = 13;</code>
      */
-    private $contact_email = '';
+    protected $contact_email = '';
     /**
      * Generated from protobuf field <code>string description = 14;</code>
      */
-    private $description = '';
+    protected $description = '';
     /**
      * The gateway's frequency plan: one of EU_863_870, US_902_928, CN_779_787, EU_433, AU_915_928, CN_470_510, AS_923, AS_920_923, AS_923_925, KR_920_923
      *
      * Generated from protobuf field <code>string frequency_plan = 15;</code>
      */
-    private $frequency_plan = '';
+    protected $frequency_plan = '';
     /**
      * The value of Bridge is set by the Bridge
      *
      * Generated from protobuf field <code>string bridge = 16;</code>
      */
-    private $bridge = '';
+    protected $bridge = '';
     /**
      * The value of Router is set by the Router
      *
      * Generated from protobuf field <code>string router = 17;</code>
      */
-    private $router = '';
+    protected $router = '';
     /**
      * Version of Gateway FPGA
      *
      * Generated from protobuf field <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
      */
-    private $fpga = 0;
+    protected $fpga = 0;
     /**
      * Version of Gateway DSP software
      *
      * Generated from protobuf field <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
      */
-    private $dsp = 0;
+    protected $dsp = 0;
     /**
      * Version of gateway driver (in X.X.X format)
      *
      * Generated from protobuf field <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
      */
-    private $hal = '';
+    protected $hal = '';
     /**
      * Generated from protobuf field <code>.gateway.LocationMetadata location = 21;</code>
      */
-    private $location = null;
+    protected $location = null;
     /**
      * Round-trip time to the server in milliseconds
      *
      * Generated from protobuf field <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
      */
-    private $rtt = 0;
+    protected $rtt = 0;
     /**
      * Total number of received uplink packets since boot
      *
      * Generated from protobuf field <code>uint32 rx_in = 41;</code>
      */
-    private $rx_in = 0;
+    protected $rx_in = 0;
     /**
      * Total number of successful (correct) uplink packets since boot
      *
      * Generated from protobuf field <code>uint32 rx_ok = 42;</code>
      */
-    private $rx_ok = 0;
+    protected $rx_ok = 0;
     /**
      * Total number of received downlink packets since boot
      *
      * Generated from protobuf field <code>uint32 tx_in = 43;</code>
      */
-    private $tx_in = 0;
+    protected $tx_in = 0;
     /**
      * Total number of successfully sent downlink packets since boot
      *
      * Generated from protobuf field <code>uint32 tx_ok = 44;</code>
      */
-    private $tx_ok = 0;
+    protected $tx_ok = 0;
     /**
      * Total number of packets received from link testing mote, with CRC OK
      *
      * Generated from protobuf field <code>uint32 lm_ok = 45;</code>
      */
-    private $lm_ok = 0;
+    protected $lm_ok = 0;
     /**
      * Sequence number of the first packet received from the link testing mote
      *
      * Generated from protobuf field <code>uint32 lm_st = 46;</code>
      */
-    private $lm_st = 0;
+    protected $lm_st = 0;
     /**
      * Sequence number of the last packet received from the link testing mote
      *
      * Generated from protobuf field <code>uint32 lm_nw = 47;</code>
      */
-    private $lm_nw = 0;
+    protected $lm_nw = 0;
     /**
      * Number of lost PPS pulses
      *
      * Generated from protobuf field <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
      */
-    private $l_pps = 0;
+    protected $l_pps = 0;
     /**
      * Generated from protobuf field <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
      */
-    private $os = null;
+    protected $os = null;
     /**
      * debug or warning messages from the gateway
      *

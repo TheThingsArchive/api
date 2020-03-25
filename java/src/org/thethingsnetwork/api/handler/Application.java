@@ -30,6 +30,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Application();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -42,7 +49,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -96,7 +102,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -131,6 +137,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object appId_;
   /**
    * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The appId.
    */
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
@@ -146,6 +153,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The bytes for appId.
    */
   public com.google.protobuf.ByteString
       getAppIdBytes() {
@@ -169,6 +177,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string payload_format = 6;</code>
+   * @return The payloadFormat.
    */
   public java.lang.String getPayloadFormat() {
     java.lang.Object ref = payloadFormat_;
@@ -188,6 +197,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string payload_format = 6;</code>
+   * @return The bytes for payloadFormat.
    */
   public com.google.protobuf.ByteString
       getPayloadFormatBytes() {
@@ -212,6 +222,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string decoder = 2;</code>
+   * @return The decoder.
    */
   public java.lang.String getDecoder() {
     java.lang.Object ref = decoder_;
@@ -232,6 +243,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string decoder = 2;</code>
+   * @return The bytes for decoder.
    */
   public com.google.protobuf.ByteString
       getDecoderBytes() {
@@ -257,6 +269,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string converter = 3;</code>
+   * @return The converter.
    */
   public java.lang.String getConverter() {
     java.lang.Object ref = converter_;
@@ -278,6 +291,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string converter = 3;</code>
+   * @return The bytes for converter.
    */
   public com.google.protobuf.ByteString
       getConverterBytes() {
@@ -303,6 +317,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string validator = 4;</code>
+   * @return The validator.
    */
   public java.lang.String getValidator() {
     java.lang.Object ref = validator_;
@@ -324,6 +339,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string validator = 4;</code>
+   * @return The bytes for validator.
    */
   public com.google.protobuf.ByteString
       getValidatorBytes() {
@@ -348,6 +364,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string encoder = 5;</code>
+   * @return The encoder.
    */
   public java.lang.String getEncoder() {
     java.lang.Object ref = encoder_;
@@ -368,6 +385,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string encoder = 5;</code>
+   * @return The bytes for encoder.
    */
   public com.google.protobuf.ByteString
       getEncoderBytes() {
@@ -391,6 +409,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string register_on_join_access_key = 7;</code>
+   * @return The registerOnJoinAccessKey.
    */
   public java.lang.String getRegisterOnJoinAccessKey() {
     java.lang.Object ref = registerOnJoinAccessKey_;
@@ -410,6 +429,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string register_on_join_access_key = 7;</code>
+   * @return The bytes for registerOnJoinAccessKey.
    */
   public com.google.protobuf.ByteString
       getRegisterOnJoinAccessKeyBytes() {
@@ -505,23 +525,22 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.handler.Application other = (org.thethingsnetwork.api.handler.Application) obj;
 
-    boolean result = true;
-    result = result && getAppId()
-        .equals(other.getAppId());
-    result = result && getPayloadFormat()
-        .equals(other.getPayloadFormat());
-    result = result && getDecoder()
-        .equals(other.getDecoder());
-    result = result && getConverter()
-        .equals(other.getConverter());
-    result = result && getValidator()
-        .equals(other.getValidator());
-    result = result && getEncoder()
-        .equals(other.getEncoder());
-    result = result && getRegisterOnJoinAccessKey()
-        .equals(other.getRegisterOnJoinAccessKey());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getAppId()
+        .equals(other.getAppId())) return false;
+    if (!getPayloadFormat()
+        .equals(other.getPayloadFormat())) return false;
+    if (!getDecoder()
+        .equals(other.getDecoder())) return false;
+    if (!getConverter()
+        .equals(other.getConverter())) return false;
+    if (!getValidator()
+        .equals(other.getValidator())) return false;
+    if (!getEncoder()
+        .equals(other.getEncoder())) return false;
+    if (!getRegisterOnJoinAccessKey()
+        .equals(other.getRegisterOnJoinAccessKey())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -735,35 +754,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -837,6 +856,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object appId_ = "";
     /**
      * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * @return The appId.
      */
     public java.lang.String getAppId() {
       java.lang.Object ref = appId_;
@@ -852,6 +872,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * @return The bytes for appId.
      */
     public com.google.protobuf.ByteString
         getAppIdBytes() {
@@ -868,6 +889,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * @param value The appId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppId(
         java.lang.String value) {
@@ -881,6 +904,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearAppId() {
       
@@ -890,6 +914,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * @param value The bytes for appId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppIdBytes(
         com.google.protobuf.ByteString value) {
@@ -910,6 +936,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string payload_format = 6;</code>
+     * @return The payloadFormat.
      */
     public java.lang.String getPayloadFormat() {
       java.lang.Object ref = payloadFormat_;
@@ -929,6 +956,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string payload_format = 6;</code>
+     * @return The bytes for payloadFormat.
      */
     public com.google.protobuf.ByteString
         getPayloadFormatBytes() {
@@ -949,6 +977,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string payload_format = 6;</code>
+     * @param value The payloadFormat to set.
+     * @return This builder for chaining.
      */
     public Builder setPayloadFormat(
         java.lang.String value) {
@@ -966,6 +996,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string payload_format = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPayloadFormat() {
       
@@ -979,6 +1010,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string payload_format = 6;</code>
+     * @param value The bytes for payloadFormat to set.
+     * @return This builder for chaining.
      */
     public Builder setPayloadFormatBytes(
         com.google.protobuf.ByteString value) {
@@ -1000,6 +1033,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string decoder = 2;</code>
+     * @return The decoder.
      */
     public java.lang.String getDecoder() {
       java.lang.Object ref = decoder_;
@@ -1020,6 +1054,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string decoder = 2;</code>
+     * @return The bytes for decoder.
      */
     public com.google.protobuf.ByteString
         getDecoderBytes() {
@@ -1041,6 +1076,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string decoder = 2;</code>
+     * @param value The decoder to set.
+     * @return This builder for chaining.
      */
     public Builder setDecoder(
         java.lang.String value) {
@@ -1059,6 +1096,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string decoder = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDecoder() {
       
@@ -1073,6 +1111,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string decoder = 2;</code>
+     * @param value The bytes for decoder to set.
+     * @return This builder for chaining.
      */
     public Builder setDecoderBytes(
         com.google.protobuf.ByteString value) {
@@ -1095,6 +1135,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string converter = 3;</code>
+     * @return The converter.
      */
     public java.lang.String getConverter() {
       java.lang.Object ref = converter_;
@@ -1116,6 +1157,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string converter = 3;</code>
+     * @return The bytes for converter.
      */
     public com.google.protobuf.ByteString
         getConverterBytes() {
@@ -1138,6 +1180,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string converter = 3;</code>
+     * @param value The converter to set.
+     * @return This builder for chaining.
      */
     public Builder setConverter(
         java.lang.String value) {
@@ -1157,6 +1201,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string converter = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearConverter() {
       
@@ -1172,6 +1217,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string converter = 3;</code>
+     * @param value The bytes for converter to set.
+     * @return This builder for chaining.
      */
     public Builder setConverterBytes(
         com.google.protobuf.ByteString value) {
@@ -1194,6 +1241,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string validator = 4;</code>
+     * @return The validator.
      */
     public java.lang.String getValidator() {
       java.lang.Object ref = validator_;
@@ -1215,6 +1263,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string validator = 4;</code>
+     * @return The bytes for validator.
      */
     public com.google.protobuf.ByteString
         getValidatorBytes() {
@@ -1237,6 +1286,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string validator = 4;</code>
+     * @param value The validator to set.
+     * @return This builder for chaining.
      */
     public Builder setValidator(
         java.lang.String value) {
@@ -1256,6 +1307,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string validator = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearValidator() {
       
@@ -1271,6 +1323,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string validator = 4;</code>
+     * @param value The bytes for validator to set.
+     * @return This builder for chaining.
      */
     public Builder setValidatorBytes(
         com.google.protobuf.ByteString value) {
@@ -1292,6 +1346,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string encoder = 5;</code>
+     * @return The encoder.
      */
     public java.lang.String getEncoder() {
       java.lang.Object ref = encoder_;
@@ -1312,6 +1367,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string encoder = 5;</code>
+     * @return The bytes for encoder.
      */
     public com.google.protobuf.ByteString
         getEncoderBytes() {
@@ -1333,6 +1389,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string encoder = 5;</code>
+     * @param value The encoder to set.
+     * @return This builder for chaining.
      */
     public Builder setEncoder(
         java.lang.String value) {
@@ -1351,6 +1409,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string encoder = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearEncoder() {
       
@@ -1365,6 +1424,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string encoder = 5;</code>
+     * @param value The bytes for encoder to set.
+     * @return This builder for chaining.
      */
     public Builder setEncoderBytes(
         com.google.protobuf.ByteString value) {
@@ -1385,6 +1446,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string register_on_join_access_key = 7;</code>
+     * @return The registerOnJoinAccessKey.
      */
     public java.lang.String getRegisterOnJoinAccessKey() {
       java.lang.Object ref = registerOnJoinAccessKey_;
@@ -1404,6 +1466,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string register_on_join_access_key = 7;</code>
+     * @return The bytes for registerOnJoinAccessKey.
      */
     public com.google.protobuf.ByteString
         getRegisterOnJoinAccessKeyBytes() {
@@ -1424,6 +1487,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string register_on_join_access_key = 7;</code>
+     * @param value The registerOnJoinAccessKey to set.
+     * @return This builder for chaining.
      */
     public Builder setRegisterOnJoinAccessKey(
         java.lang.String value) {
@@ -1441,6 +1506,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string register_on_join_access_key = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRegisterOnJoinAccessKey() {
       
@@ -1454,6 +1520,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string register_on_join_access_key = 7;</code>
+     * @param value The bytes for registerOnJoinAccessKey to set.
+     * @return This builder for chaining.
      */
     public Builder setRegisterOnJoinAccessKeyBytes(
         com.google.protobuf.ByteString value) {
@@ -1469,7 +1537,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

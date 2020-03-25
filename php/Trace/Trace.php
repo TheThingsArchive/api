@@ -20,31 +20,31 @@ class Trace extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
-    private $id = '';
+    protected $id = '';
     /**
      * Time in Unix nanoseconds
      *
      * Generated from protobuf field <code>int64 time = 2;</code>
      */
-    private $time = 0;
+    protected $time = 0;
     /**
      * The ID of the component
      *
      * Generated from protobuf field <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
      */
-    private $service_id = '';
+    protected $service_id = '';
     /**
      * The name of the component (router/broker/handler)
      *
      * Generated from protobuf field <code>string service_name = 4;</code>
      */
-    private $service_name = '';
+    protected $service_name = '';
     /**
      * Short event name
      *
      * Generated from protobuf field <code>string event = 5;</code>
      */
-    private $event = '';
+    protected $event = '';
     /**
      * metadata for the event
      *

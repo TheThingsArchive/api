@@ -16,15 +16,15 @@ class MACPayload extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
-    private $f_hdr = null;
+    protected $f_hdr = null;
     /**
      * Generated from protobuf field <code>int32 f_port = 2;</code>
      */
-    private $f_port = 0;
+    protected $f_port = 0;
     /**
      * Generated from protobuf field <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
      */
-    private $frm_payload = '';
+    protected $frm_payload = '';
 
     /**
      * Constructor.

@@ -20,7 +20,7 @@ class DryDownlinkResult extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bytes payload = 1;</code>
      */
-    private $payload = '';
+    protected $payload = '';
     /**
      * Logs that have been generated while processing
      *

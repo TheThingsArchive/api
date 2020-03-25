@@ -18,8 +18,13 @@ private static final long serialVersionUID = 0L;
   private DownlinkOption() {
     identifier_ = "";
     gatewayId_ = "";
-    score_ = 0;
-    deadline_ = 0L;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new DownlinkOption();
   }
 
   @java.lang.Override
@@ -35,7 +40,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -95,7 +99,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -134,6 +138,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string identifier = 1;</code>
+   * @return The identifier.
    */
   public java.lang.String getIdentifier() {
     java.lang.Object ref = identifier_;
@@ -153,6 +158,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string identifier = 1;</code>
+   * @return The bytes for identifier.
    */
   public com.google.protobuf.ByteString
       getIdentifierBytes() {
@@ -176,6 +182,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+   * @return The gatewayId.
    */
   public java.lang.String getGatewayId() {
     java.lang.Object ref = gatewayId_;
@@ -195,6 +202,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+   * @return The bytes for gatewayId.
    */
   public com.google.protobuf.ByteString
       getGatewayIdBytes() {
@@ -218,6 +226,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 score = 3;</code>
+   * @return The score.
    */
   public int getScore() {
     return score_;
@@ -231,6 +240,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 deadline = 4;</code>
+   * @return The deadline.
    */
   public long getDeadline() {
     return deadline_;
@@ -240,12 +250,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.protocol.TxConfiguration protocolConfiguration_;
   /**
    * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+   * @return Whether the protocolConfiguration field is set.
    */
   public boolean hasProtocolConfiguration() {
     return protocolConfiguration_ != null;
   }
   /**
    * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+   * @return The protocolConfiguration.
    */
   public org.thethingsnetwork.api.protocol.TxConfiguration getProtocolConfiguration() {
     return protocolConfiguration_ == null ? org.thethingsnetwork.api.protocol.TxConfiguration.getDefaultInstance() : protocolConfiguration_;
@@ -261,12 +273,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.gateway.TxConfiguration gatewayConfiguration_;
   /**
    * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+   * @return Whether the gatewayConfiguration field is set.
    */
   public boolean hasGatewayConfiguration() {
     return gatewayConfiguration_ != null;
   }
   /**
    * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+   * @return The gatewayConfiguration.
    */
   public org.thethingsnetwork.api.gateway.TxConfiguration getGatewayConfiguration() {
     return gatewayConfiguration_ == null ? org.thethingsnetwork.api.gateway.TxConfiguration.getDefaultInstance() : gatewayConfiguration_;
@@ -356,27 +370,26 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.broker.DownlinkOption other = (org.thethingsnetwork.api.broker.DownlinkOption) obj;
 
-    boolean result = true;
-    result = result && getIdentifier()
-        .equals(other.getIdentifier());
-    result = result && getGatewayId()
-        .equals(other.getGatewayId());
-    result = result && (getScore()
-        == other.getScore());
-    result = result && (getDeadline()
-        == other.getDeadline());
-    result = result && (hasProtocolConfiguration() == other.hasProtocolConfiguration());
+    if (!getIdentifier()
+        .equals(other.getIdentifier())) return false;
+    if (!getGatewayId()
+        .equals(other.getGatewayId())) return false;
+    if (getScore()
+        != other.getScore()) return false;
+    if (getDeadline()
+        != other.getDeadline()) return false;
+    if (hasProtocolConfiguration() != other.hasProtocolConfiguration()) return false;
     if (hasProtocolConfiguration()) {
-      result = result && getProtocolConfiguration()
-          .equals(other.getProtocolConfiguration());
+      if (!getProtocolConfiguration()
+          .equals(other.getProtocolConfiguration())) return false;
     }
-    result = result && (hasGatewayConfiguration() == other.hasGatewayConfiguration());
+    if (hasGatewayConfiguration() != other.hasGatewayConfiguration()) return false;
     if (hasGatewayConfiguration()) {
-      result = result && getGatewayConfiguration()
-          .equals(other.getGatewayConfiguration());
+      if (!getGatewayConfiguration()
+          .equals(other.getGatewayConfiguration())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -602,35 +615,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -700,6 +713,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string identifier = 1;</code>
+     * @return The identifier.
      */
     public java.lang.String getIdentifier() {
       java.lang.Object ref = identifier_;
@@ -719,6 +733,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string identifier = 1;</code>
+     * @return The bytes for identifier.
      */
     public com.google.protobuf.ByteString
         getIdentifierBytes() {
@@ -739,6 +754,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string identifier = 1;</code>
+     * @param value The identifier to set.
+     * @return This builder for chaining.
      */
     public Builder setIdentifier(
         java.lang.String value) {
@@ -756,6 +773,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string identifier = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearIdentifier() {
       
@@ -769,6 +787,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string identifier = 1;</code>
+     * @param value The bytes for identifier to set.
+     * @return This builder for chaining.
      */
     public Builder setIdentifierBytes(
         com.google.protobuf.ByteString value) {
@@ -789,6 +809,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @return The gatewayId.
      */
     public java.lang.String getGatewayId() {
       java.lang.Object ref = gatewayId_;
@@ -808,6 +829,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @return The bytes for gatewayId.
      */
     public com.google.protobuf.ByteString
         getGatewayIdBytes() {
@@ -828,6 +850,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @param value The gatewayId to set.
+     * @return This builder for chaining.
      */
     public Builder setGatewayId(
         java.lang.String value) {
@@ -845,6 +869,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearGatewayId() {
       
@@ -858,6 +883,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @param value The bytes for gatewayId to set.
+     * @return This builder for chaining.
      */
     public Builder setGatewayIdBytes(
         com.google.protobuf.ByteString value) {
@@ -878,6 +905,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 score = 3;</code>
+     * @return The score.
      */
     public int getScore() {
       return score_;
@@ -888,6 +916,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 score = 3;</code>
+     * @param value The score to set.
+     * @return This builder for chaining.
      */
     public Builder setScore(int value) {
       
@@ -901,6 +931,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 score = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearScore() {
       
@@ -916,6 +947,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 deadline = 4;</code>
+     * @return The deadline.
      */
     public long getDeadline() {
       return deadline_;
@@ -926,6 +958,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 deadline = 4;</code>
+     * @param value The deadline to set.
+     * @return This builder for chaining.
      */
     public Builder setDeadline(long value) {
       
@@ -939,6 +973,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 deadline = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDeadline() {
       
@@ -947,17 +982,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private org.thethingsnetwork.api.protocol.TxConfiguration protocolConfiguration_ = null;
+    private org.thethingsnetwork.api.protocol.TxConfiguration protocolConfiguration_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.TxConfiguration, org.thethingsnetwork.api.protocol.TxConfiguration.Builder, org.thethingsnetwork.api.protocol.TxConfigurationOrBuilder> protocolConfigurationBuilder_;
     /**
      * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the protocolConfiguration field is set.
      */
     public boolean hasProtocolConfiguration() {
       return protocolConfigurationBuilder_ != null || protocolConfiguration_ != null;
     }
     /**
      * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+     * @return The protocolConfiguration.
      */
     public org.thethingsnetwork.api.protocol.TxConfiguration getProtocolConfiguration() {
       if (protocolConfigurationBuilder_ == null) {
@@ -1064,17 +1101,19 @@ private static final long serialVersionUID = 0L;
       return protocolConfigurationBuilder_;
     }
 
-    private org.thethingsnetwork.api.gateway.TxConfiguration gatewayConfiguration_ = null;
+    private org.thethingsnetwork.api.gateway.TxConfiguration gatewayConfiguration_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.gateway.TxConfiguration, org.thethingsnetwork.api.gateway.TxConfiguration.Builder, org.thethingsnetwork.api.gateway.TxConfigurationOrBuilder> gatewayConfigurationBuilder_;
     /**
      * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the gatewayConfiguration field is set.
      */
     public boolean hasGatewayConfiguration() {
       return gatewayConfigurationBuilder_ != null || gatewayConfiguration_ != null;
     }
     /**
      * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+     * @return The gatewayConfiguration.
      */
     public org.thethingsnetwork.api.gateway.TxConfiguration getGatewayConfiguration() {
       if (gatewayConfigurationBuilder_ == null) {
@@ -1183,7 +1222,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

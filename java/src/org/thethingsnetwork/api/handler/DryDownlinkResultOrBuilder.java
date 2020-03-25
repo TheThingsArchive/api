@@ -13,6 +13,7 @@ public interface DryDownlinkResultOrBuilder extends
    * </pre>
    *
    * <code>bytes payload = 1;</code>
+   * @return The payload.
    */
   com.google.protobuf.ByteString getPayload();
 

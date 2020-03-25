@@ -18,7 +18,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string function = 1;</code>
      */
-    private $function = '';
+    protected $function = '';
     /**
      * A list of JSON-encoded fields that were logged
      *

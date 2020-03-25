@@ -16,23 +16,23 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes payload = 1;</code>
      */
-    private $payload = '';
+    protected $payload = '';
     /**
      * Generated from protobuf field <code>.protocol.Message message = 2;</code>
      */
-    private $message = null;
+    protected $message = null;
     /**
      * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
      */
-    private $protocol_metadata = null;
+    protected $protocol_metadata = null;
     /**
      * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
-    private $gateway_metadata = null;
+    protected $gateway_metadata = null;
     /**
      * Generated from protobuf field <code>.trace.Trace trace = 21;</code>
      */
-    private $trace = null;
+    protected $trace = null;
 
     /**
      * Constructor.

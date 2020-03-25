@@ -16,15 +16,15 @@ class FHDR extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
-    private $dev_addr = '';
+    protected $dev_addr = '';
     /**
      * Generated from protobuf field <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
-    private $f_ctrl = null;
+    protected $f_ctrl = null;
     /**
      * Generated from protobuf field <code>uint32 f_cnt = 3;</code>
      */
-    private $f_cnt = 0;
+    protected $f_cnt = 0;
     /**
      * Generated from protobuf field <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      */

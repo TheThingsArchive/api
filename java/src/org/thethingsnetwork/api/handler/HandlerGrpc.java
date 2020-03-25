@@ -44,22 +44,21 @@ public final class HandlerGrpc {
     if ((getActivationChallengeMethod = HandlerGrpc.getActivationChallengeMethod) == null) {
       synchronized (HandlerGrpc.class) {
         if ((getActivationChallengeMethod = HandlerGrpc.getActivationChallengeMethod) == null) {
-          HandlerGrpc.getActivationChallengeMethod = getActivationChallengeMethod = 
+          HandlerGrpc.getActivationChallengeMethod = getActivationChallengeMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.ActivationChallengeRequest, org.thethingsnetwork.api.broker.ActivationChallengeResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "handler.Handler", "ActivationChallenge"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ActivationChallenge"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.broker.ActivationChallengeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.broker.ActivationChallengeResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new HandlerMethodDescriptorSupplier("ActivationChallenge"))
-                  .build();
-          }
+              .setSchemaDescriptor(new HandlerMethodDescriptorSupplier("ActivationChallenge"))
+              .build();
         }
-     }
-     return getActivationChallengeMethod;
+      }
+    }
+    return getActivationChallengeMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest,
@@ -76,29 +75,35 @@ public final class HandlerGrpc {
     if ((getActivateMethod = HandlerGrpc.getActivateMethod) == null) {
       synchronized (HandlerGrpc.class) {
         if ((getActivateMethod = HandlerGrpc.getActivateMethod) == null) {
-          HandlerGrpc.getActivateMethod = getActivateMethod = 
+          HandlerGrpc.getActivateMethod = getActivateMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest, org.thethingsnetwork.api.handler.DeviceActivationResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "handler.Handler", "Activate"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Activate"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.broker.DeduplicatedDeviceActivationRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.handler.DeviceActivationResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new HandlerMethodDescriptorSupplier("Activate"))
-                  .build();
-          }
+              .setSchemaDescriptor(new HandlerMethodDescriptorSupplier("Activate"))
+              .build();
         }
-     }
-     return getActivateMethod;
+      }
+    }
+    return getActivateMethod;
   }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static HandlerStub newStub(io.grpc.Channel channel) {
-    return new HandlerStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<HandlerStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<HandlerStub>() {
+        @java.lang.Override
+        public HandlerStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new HandlerStub(channel, callOptions);
+        }
+      };
+    return HandlerStub.newStub(factory, channel);
   }
 
   /**
@@ -106,7 +111,14 @@ public final class HandlerGrpc {
    */
   public static HandlerBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new HandlerBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<HandlerBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<HandlerBlockingStub>() {
+        @java.lang.Override
+        public HandlerBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new HandlerBlockingStub(channel, callOptions);
+        }
+      };
+    return HandlerBlockingStub.newStub(factory, channel);
   }
 
   /**
@@ -114,7 +126,14 @@ public final class HandlerGrpc {
    */
   public static HandlerFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new HandlerFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<HandlerFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<HandlerFutureStub>() {
+        @java.lang.Override
+        public HandlerFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new HandlerFutureStub(channel, callOptions);
+        }
+      };
+    return HandlerFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -163,19 +182,15 @@ public final class HandlerGrpc {
    * The Handler service provides pure network functionality
    * </pre>
    */
-  public static final class HandlerStub extends io.grpc.stub.AbstractStub<HandlerStub> {
-    private HandlerStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private HandlerStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class HandlerStub extends io.grpc.stub.AbstractAsyncStub<HandlerStub> {
+    private HandlerStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected HandlerStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected HandlerStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new HandlerStub(channel, callOptions);
     }
 
@@ -201,19 +216,15 @@ public final class HandlerGrpc {
    * The Handler service provides pure network functionality
    * </pre>
    */
-  public static final class HandlerBlockingStub extends io.grpc.stub.AbstractStub<HandlerBlockingStub> {
-    private HandlerBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private HandlerBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class HandlerBlockingStub extends io.grpc.stub.AbstractBlockingStub<HandlerBlockingStub> {
+    private HandlerBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected HandlerBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected HandlerBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new HandlerBlockingStub(channel, callOptions);
     }
 
@@ -237,19 +248,15 @@ public final class HandlerGrpc {
    * The Handler service provides pure network functionality
    * </pre>
    */
-  public static final class HandlerFutureStub extends io.grpc.stub.AbstractStub<HandlerFutureStub> {
-    private HandlerFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private HandlerFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class HandlerFutureStub extends io.grpc.stub.AbstractFutureStub<HandlerFutureStub> {
+    private HandlerFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected HandlerFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected HandlerFutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new HandlerFutureStub(channel, callOptions);
     }
 

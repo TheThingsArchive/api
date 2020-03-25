@@ -9,20 +9,24 @@ public interface SimulatedUplinkMessageOrBuilder extends
 
   /**
    * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The appId.
    */
   java.lang.String getAppId();
   /**
    * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The bytes for appId.
    */
   com.google.protobuf.ByteString
       getAppIdBytes();
 
   /**
    * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+   * @return The devId.
    */
   java.lang.String getDevId();
   /**
    * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+   * @return The bytes for devId.
    */
   com.google.protobuf.ByteString
       getDevIdBytes();
@@ -33,6 +37,7 @@ public interface SimulatedUplinkMessageOrBuilder extends
    * </pre>
    *
    * <code>bytes payload = 3;</code>
+   * @return The payload.
    */
   com.google.protobuf.ByteString getPayload();
 
@@ -42,6 +47,7 @@ public interface SimulatedUplinkMessageOrBuilder extends
    * </pre>
    *
    * <code>uint32 port = 4;</code>
+   * @return The port.
    */
   int getPort();
 }

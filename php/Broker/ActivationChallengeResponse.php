@@ -16,11 +16,11 @@ class ActivationChallengeResponse extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes payload = 1;</code>
      */
-    private $payload = '';
+    protected $payload = '';
     /**
      * Generated from protobuf field <code>.protocol.Message message = 2;</code>
      */
-    private $message = null;
+    protected $message = null;
 
     /**
      * Constructor.

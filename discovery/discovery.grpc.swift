@@ -20,8 +20,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-import Foundation
 import Dispatch
+import Foundation
 import SwiftGRPC
 import SwiftProtobuf
 
@@ -77,134 +77,233 @@ fileprivate final class Discovery_DiscoveryGetByAppEUICallBase: ClientCallUnaryB
 /// Instantiate Discovery_DiscoveryServiceClient, then call methods of this protocol to make API calls.
 internal protocol Discovery_DiscoveryService: ServiceClient {
   /// Synchronous. Unary.
-  func announce(_ request: Discovery_Announcement) throws -> SwiftProtobuf.Google_Protobuf_Empty
+  func announce(_ request: Discovery_Announcement, metadata customMetadata: Metadata) throws -> SwiftProtobuf.Google_Protobuf_Empty
   /// Asynchronous. Unary.
-  func announce(_ request: Discovery_Announcement, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Discovery_DiscoveryAnnounceCall
+  @discardableResult
+  func announce(_ request: Discovery_Announcement, metadata customMetadata: Metadata, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Discovery_DiscoveryAnnounceCall
 
   /// Synchronous. Unary.
-  func getAll(_ request: Discovery_GetServiceRequest) throws -> Discovery_AnnouncementsResponse
+  func getAll(_ request: Discovery_GetServiceRequest, metadata customMetadata: Metadata) throws -> Discovery_AnnouncementsResponse
   /// Asynchronous. Unary.
-  func getAll(_ request: Discovery_GetServiceRequest, completion: @escaping (Discovery_AnnouncementsResponse?, CallResult) -> Void) throws -> Discovery_DiscoveryGetAllCall
+  @discardableResult
+  func getAll(_ request: Discovery_GetServiceRequest, metadata customMetadata: Metadata, completion: @escaping (Discovery_AnnouncementsResponse?, CallResult) -> Void) throws -> Discovery_DiscoveryGetAllCall
 
   /// Synchronous. Unary.
-  func get(_ request: Discovery_GetRequest) throws -> Discovery_Announcement
+  func get(_ request: Discovery_GetRequest, metadata customMetadata: Metadata) throws -> Discovery_Announcement
   /// Asynchronous. Unary.
-  func get(_ request: Discovery_GetRequest, completion: @escaping (Discovery_Announcement?, CallResult) -> Void) throws -> Discovery_DiscoveryGetCall
+  @discardableResult
+  func get(_ request: Discovery_GetRequest, metadata customMetadata: Metadata, completion: @escaping (Discovery_Announcement?, CallResult) -> Void) throws -> Discovery_DiscoveryGetCall
 
   /// Synchronous. Unary.
-  func addMetadata(_ request: Discovery_MetadataRequest) throws -> SwiftProtobuf.Google_Protobuf_Empty
+  func addMetadata(_ request: Discovery_MetadataRequest, metadata customMetadata: Metadata) throws -> SwiftProtobuf.Google_Protobuf_Empty
   /// Asynchronous. Unary.
-  func addMetadata(_ request: Discovery_MetadataRequest, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Discovery_DiscoveryAddMetadataCall
+  @discardableResult
+  func addMetadata(_ request: Discovery_MetadataRequest, metadata customMetadata: Metadata, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Discovery_DiscoveryAddMetadataCall
 
   /// Synchronous. Unary.
-  func deleteMetadata(_ request: Discovery_MetadataRequest) throws -> SwiftProtobuf.Google_Protobuf_Empty
+  func deleteMetadata(_ request: Discovery_MetadataRequest, metadata customMetadata: Metadata) throws -> SwiftProtobuf.Google_Protobuf_Empty
   /// Asynchronous. Unary.
-  func deleteMetadata(_ request: Discovery_MetadataRequest, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Discovery_DiscoveryDeleteMetadataCall
+  @discardableResult
+  func deleteMetadata(_ request: Discovery_MetadataRequest, metadata customMetadata: Metadata, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Discovery_DiscoveryDeleteMetadataCall
 
   /// Synchronous. Unary.
-  func getByAppID(_ request: Discovery_GetByAppIDRequest) throws -> Discovery_Announcement
+  func getByAppID(_ request: Discovery_GetByAppIDRequest, metadata customMetadata: Metadata) throws -> Discovery_Announcement
   /// Asynchronous. Unary.
-  func getByAppID(_ request: Discovery_GetByAppIDRequest, completion: @escaping (Discovery_Announcement?, CallResult) -> Void) throws -> Discovery_DiscoveryGetByAppIDCall
+  @discardableResult
+  func getByAppID(_ request: Discovery_GetByAppIDRequest, metadata customMetadata: Metadata, completion: @escaping (Discovery_Announcement?, CallResult) -> Void) throws -> Discovery_DiscoveryGetByAppIDCall
 
   /// Synchronous. Unary.
-  func getByGatewayID(_ request: Discovery_GetByGatewayIDRequest) throws -> Discovery_Announcement
+  func getByGatewayID(_ request: Discovery_GetByGatewayIDRequest, metadata customMetadata: Metadata) throws -> Discovery_Announcement
   /// Asynchronous. Unary.
-  func getByGatewayID(_ request: Discovery_GetByGatewayIDRequest, completion: @escaping (Discovery_Announcement?, CallResult) -> Void) throws -> Discovery_DiscoveryGetByGatewayIDCall
+  @discardableResult
+  func getByGatewayID(_ request: Discovery_GetByGatewayIDRequest, metadata customMetadata: Metadata, completion: @escaping (Discovery_Announcement?, CallResult) -> Void) throws -> Discovery_DiscoveryGetByGatewayIDCall
 
   /// Synchronous. Unary.
-  func getByAppEUI(_ request: Discovery_GetByAppEUIRequest) throws -> Discovery_Announcement
+  func getByAppEUI(_ request: Discovery_GetByAppEUIRequest, metadata customMetadata: Metadata) throws -> Discovery_Announcement
   /// Asynchronous. Unary.
-  func getByAppEUI(_ request: Discovery_GetByAppEUIRequest, completion: @escaping (Discovery_Announcement?, CallResult) -> Void) throws -> Discovery_DiscoveryGetByAppEUICall
+  @discardableResult
+  func getByAppEUI(_ request: Discovery_GetByAppEUIRequest, metadata customMetadata: Metadata, completion: @escaping (Discovery_Announcement?, CallResult) -> Void) throws -> Discovery_DiscoveryGetByAppEUICall
+
+}
+
+internal extension Discovery_DiscoveryService {
+  /// Synchronous. Unary.
+  func announce(_ request: Discovery_Announcement) throws -> SwiftProtobuf.Google_Protobuf_Empty {
+    return try self.announce(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func announce(_ request: Discovery_Announcement, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Discovery_DiscoveryAnnounceCall {
+    return try self.announce(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func getAll(_ request: Discovery_GetServiceRequest) throws -> Discovery_AnnouncementsResponse {
+    return try self.getAll(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getAll(_ request: Discovery_GetServiceRequest, completion: @escaping (Discovery_AnnouncementsResponse?, CallResult) -> Void) throws -> Discovery_DiscoveryGetAllCall {
+    return try self.getAll(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func get(_ request: Discovery_GetRequest) throws -> Discovery_Announcement {
+    return try self.get(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func get(_ request: Discovery_GetRequest, completion: @escaping (Discovery_Announcement?, CallResult) -> Void) throws -> Discovery_DiscoveryGetCall {
+    return try self.get(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func addMetadata(_ request: Discovery_MetadataRequest) throws -> SwiftProtobuf.Google_Protobuf_Empty {
+    return try self.addMetadata(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func addMetadata(_ request: Discovery_MetadataRequest, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Discovery_DiscoveryAddMetadataCall {
+    return try self.addMetadata(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func deleteMetadata(_ request: Discovery_MetadataRequest) throws -> SwiftProtobuf.Google_Protobuf_Empty {
+    return try self.deleteMetadata(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func deleteMetadata(_ request: Discovery_MetadataRequest, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Discovery_DiscoveryDeleteMetadataCall {
+    return try self.deleteMetadata(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func getByAppID(_ request: Discovery_GetByAppIDRequest) throws -> Discovery_Announcement {
+    return try self.getByAppID(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getByAppID(_ request: Discovery_GetByAppIDRequest, completion: @escaping (Discovery_Announcement?, CallResult) -> Void) throws -> Discovery_DiscoveryGetByAppIDCall {
+    return try self.getByAppID(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func getByGatewayID(_ request: Discovery_GetByGatewayIDRequest) throws -> Discovery_Announcement {
+    return try self.getByGatewayID(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getByGatewayID(_ request: Discovery_GetByGatewayIDRequest, completion: @escaping (Discovery_Announcement?, CallResult) -> Void) throws -> Discovery_DiscoveryGetByGatewayIDCall {
+    return try self.getByGatewayID(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func getByAppEUI(_ request: Discovery_GetByAppEUIRequest) throws -> Discovery_Announcement {
+    return try self.getByAppEUI(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getByAppEUI(_ request: Discovery_GetByAppEUIRequest, completion: @escaping (Discovery_Announcement?, CallResult) -> Void) throws -> Discovery_DiscoveryGetByAppEUICall {
+    return try self.getByAppEUI(request, metadata: self.metadata, completion: completion)
+  }
 
 }
 
 internal final class Discovery_DiscoveryServiceClient: ServiceClientBase, Discovery_DiscoveryService {
   /// Synchronous. Unary.
-  internal func announce(_ request: Discovery_Announcement) throws -> SwiftProtobuf.Google_Protobuf_Empty {
+  internal func announce(_ request: Discovery_Announcement, metadata customMetadata: Metadata) throws -> SwiftProtobuf.Google_Protobuf_Empty {
     return try Discovery_DiscoveryAnnounceCallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func announce(_ request: Discovery_Announcement, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Discovery_DiscoveryAnnounceCall {
+  @discardableResult
+  internal func announce(_ request: Discovery_Announcement, metadata customMetadata: Metadata, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Discovery_DiscoveryAnnounceCall {
     return try Discovery_DiscoveryAnnounceCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func getAll(_ request: Discovery_GetServiceRequest) throws -> Discovery_AnnouncementsResponse {
+  internal func getAll(_ request: Discovery_GetServiceRequest, metadata customMetadata: Metadata) throws -> Discovery_AnnouncementsResponse {
     return try Discovery_DiscoveryGetAllCallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func getAll(_ request: Discovery_GetServiceRequest, completion: @escaping (Discovery_AnnouncementsResponse?, CallResult) -> Void) throws -> Discovery_DiscoveryGetAllCall {
+  @discardableResult
+  internal func getAll(_ request: Discovery_GetServiceRequest, metadata customMetadata: Metadata, completion: @escaping (Discovery_AnnouncementsResponse?, CallResult) -> Void) throws -> Discovery_DiscoveryGetAllCall {
     return try Discovery_DiscoveryGetAllCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func get(_ request: Discovery_GetRequest) throws -> Discovery_Announcement {
+  internal func get(_ request: Discovery_GetRequest, metadata customMetadata: Metadata) throws -> Discovery_Announcement {
     return try Discovery_DiscoveryGetCallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func get(_ request: Discovery_GetRequest, completion: @escaping (Discovery_Announcement?, CallResult) -> Void) throws -> Discovery_DiscoveryGetCall {
+  @discardableResult
+  internal func get(_ request: Discovery_GetRequest, metadata customMetadata: Metadata, completion: @escaping (Discovery_Announcement?, CallResult) -> Void) throws -> Discovery_DiscoveryGetCall {
     return try Discovery_DiscoveryGetCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func addMetadata(_ request: Discovery_MetadataRequest) throws -> SwiftProtobuf.Google_Protobuf_Empty {
+  internal func addMetadata(_ request: Discovery_MetadataRequest, metadata customMetadata: Metadata) throws -> SwiftProtobuf.Google_Protobuf_Empty {
     return try Discovery_DiscoveryAddMetadataCallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func addMetadata(_ request: Discovery_MetadataRequest, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Discovery_DiscoveryAddMetadataCall {
+  @discardableResult
+  internal func addMetadata(_ request: Discovery_MetadataRequest, metadata customMetadata: Metadata, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Discovery_DiscoveryAddMetadataCall {
     return try Discovery_DiscoveryAddMetadataCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func deleteMetadata(_ request: Discovery_MetadataRequest) throws -> SwiftProtobuf.Google_Protobuf_Empty {
+  internal func deleteMetadata(_ request: Discovery_MetadataRequest, metadata customMetadata: Metadata) throws -> SwiftProtobuf.Google_Protobuf_Empty {
     return try Discovery_DiscoveryDeleteMetadataCallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func deleteMetadata(_ request: Discovery_MetadataRequest, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Discovery_DiscoveryDeleteMetadataCall {
+  @discardableResult
+  internal func deleteMetadata(_ request: Discovery_MetadataRequest, metadata customMetadata: Metadata, completion: @escaping (SwiftProtobuf.Google_Protobuf_Empty?, CallResult) -> Void) throws -> Discovery_DiscoveryDeleteMetadataCall {
     return try Discovery_DiscoveryDeleteMetadataCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func getByAppID(_ request: Discovery_GetByAppIDRequest) throws -> Discovery_Announcement {
+  internal func getByAppID(_ request: Discovery_GetByAppIDRequest, metadata customMetadata: Metadata) throws -> Discovery_Announcement {
     return try Discovery_DiscoveryGetByAppIDCallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func getByAppID(_ request: Discovery_GetByAppIDRequest, completion: @escaping (Discovery_Announcement?, CallResult) -> Void) throws -> Discovery_DiscoveryGetByAppIDCall {
+  @discardableResult
+  internal func getByAppID(_ request: Discovery_GetByAppIDRequest, metadata customMetadata: Metadata, completion: @escaping (Discovery_Announcement?, CallResult) -> Void) throws -> Discovery_DiscoveryGetByAppIDCall {
     return try Discovery_DiscoveryGetByAppIDCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func getByGatewayID(_ request: Discovery_GetByGatewayIDRequest) throws -> Discovery_Announcement {
+  internal func getByGatewayID(_ request: Discovery_GetByGatewayIDRequest, metadata customMetadata: Metadata) throws -> Discovery_Announcement {
     return try Discovery_DiscoveryGetByGatewayIDCallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func getByGatewayID(_ request: Discovery_GetByGatewayIDRequest, completion: @escaping (Discovery_Announcement?, CallResult) -> Void) throws -> Discovery_DiscoveryGetByGatewayIDCall {
+  @discardableResult
+  internal func getByGatewayID(_ request: Discovery_GetByGatewayIDRequest, metadata customMetadata: Metadata, completion: @escaping (Discovery_Announcement?, CallResult) -> Void) throws -> Discovery_DiscoveryGetByGatewayIDCall {
     return try Discovery_DiscoveryGetByGatewayIDCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func getByAppEUI(_ request: Discovery_GetByAppEUIRequest) throws -> Discovery_Announcement {
+  internal func getByAppEUI(_ request: Discovery_GetByAppEUIRequest, metadata customMetadata: Metadata) throws -> Discovery_Announcement {
     return try Discovery_DiscoveryGetByAppEUICallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func getByAppEUI(_ request: Discovery_GetByAppEUIRequest, completion: @escaping (Discovery_Announcement?, CallResult) -> Void) throws -> Discovery_DiscoveryGetByAppEUICall {
+  @discardableResult
+  internal func getByAppEUI(_ request: Discovery_GetByAppEUIRequest, metadata customMetadata: Metadata, completion: @escaping (Discovery_Announcement?, CallResult) -> Void) throws -> Discovery_DiscoveryGetByAppEUICall {
     return try Discovery_DiscoveryGetByAppEUICallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
 }
@@ -213,11 +312,16 @@ internal final class Discovery_DiscoveryServiceClient: ServiceClientBase, Discov
 internal protocol Discovery_DiscoveryManagerService: ServiceClient {
 }
 
+internal extension Discovery_DiscoveryManagerService {
+}
+
 internal final class Discovery_DiscoveryManagerServiceClient: ServiceClientBase, Discovery_DiscoveryManagerService {
 }
 
 /// To build a server, implement a class that conforms to this protocol.
-internal protocol Discovery_DiscoveryProvider {
+/// If one of the methods returning `ServerStatus?` returns nil,
+/// it is expected that you have already returned a status to the client by means of `session.close`.
+internal protocol Discovery_DiscoveryProvider: ServiceProvider {
   func announce(request: Discovery_Announcement, session: Discovery_DiscoveryAnnounceSession) throws -> SwiftProtobuf.Google_Protobuf_Empty
   func getAll(request: Discovery_GetServiceRequest, session: Discovery_DiscoveryGetAllSession) throws -> Discovery_AnnouncementsResponse
   func get(request: Discovery_GetRequest, session: Discovery_DiscoveryGetSession) throws -> Discovery_Announcement
@@ -226,6 +330,59 @@ internal protocol Discovery_DiscoveryProvider {
   func getByAppID(request: Discovery_GetByAppIDRequest, session: Discovery_DiscoveryGetByAppIDSession) throws -> Discovery_Announcement
   func getByGatewayID(request: Discovery_GetByGatewayIDRequest, session: Discovery_DiscoveryGetByGatewayIDSession) throws -> Discovery_Announcement
   func getByAppEUI(request: Discovery_GetByAppEUIRequest, session: Discovery_DiscoveryGetByAppEUISession) throws -> Discovery_Announcement
+}
+
+extension Discovery_DiscoveryProvider {
+  internal var serviceName: String { return "discovery.Discovery" }
+
+  /// Determines and calls the appropriate request handler, depending on the request's method.
+  /// Throws `HandleMethodError.unknownMethod` for methods not handled by this service.
+  internal func handleMethod(_ method: String, handler: Handler) throws -> ServerStatus? {
+    switch method {
+    case "/discovery.Discovery/Announce":
+      return try Discovery_DiscoveryAnnounceSessionBase(
+        handler: handler,
+        providerBlock: { try self.announce(request: $0, session: $1 as! Discovery_DiscoveryAnnounceSessionBase) })
+          .run()
+    case "/discovery.Discovery/GetAll":
+      return try Discovery_DiscoveryGetAllSessionBase(
+        handler: handler,
+        providerBlock: { try self.getAll(request: $0, session: $1 as! Discovery_DiscoveryGetAllSessionBase) })
+          .run()
+    case "/discovery.Discovery/Get":
+      return try Discovery_DiscoveryGetSessionBase(
+        handler: handler,
+        providerBlock: { try self.get(request: $0, session: $1 as! Discovery_DiscoveryGetSessionBase) })
+          .run()
+    case "/discovery.Discovery/AddMetadata":
+      return try Discovery_DiscoveryAddMetadataSessionBase(
+        handler: handler,
+        providerBlock: { try self.addMetadata(request: $0, session: $1 as! Discovery_DiscoveryAddMetadataSessionBase) })
+          .run()
+    case "/discovery.Discovery/DeleteMetadata":
+      return try Discovery_DiscoveryDeleteMetadataSessionBase(
+        handler: handler,
+        providerBlock: { try self.deleteMetadata(request: $0, session: $1 as! Discovery_DiscoveryDeleteMetadataSessionBase) })
+          .run()
+    case "/discovery.Discovery/GetByAppID":
+      return try Discovery_DiscoveryGetByAppIDSessionBase(
+        handler: handler,
+        providerBlock: { try self.getByAppID(request: $0, session: $1 as! Discovery_DiscoveryGetByAppIDSessionBase) })
+          .run()
+    case "/discovery.Discovery/GetByGatewayID":
+      return try Discovery_DiscoveryGetByGatewayIDSessionBase(
+        handler: handler,
+        providerBlock: { try self.getByGatewayID(request: $0, session: $1 as! Discovery_DiscoveryGetByGatewayIDSessionBase) })
+          .run()
+    case "/discovery.Discovery/GetByAppEUI":
+      return try Discovery_DiscoveryGetByAppEUISessionBase(
+        handler: handler,
+        providerBlock: { try self.getByAppEUI(request: $0, session: $1 as! Discovery_DiscoveryGetByAppEUISessionBase) })
+          .run()
+    default:
+      throw HandleMethodError.unknownMethod
+    }
+  }
 }
 
 internal protocol Discovery_DiscoveryAnnounceSession: ServerSessionUnary {}
@@ -260,114 +417,21 @@ internal protocol Discovery_DiscoveryGetByAppEUISession: ServerSessionUnary {}
 
 fileprivate final class Discovery_DiscoveryGetByAppEUISessionBase: ServerSessionUnaryBase<Discovery_GetByAppEUIRequest, Discovery_Announcement>, Discovery_DiscoveryGetByAppEUISession {}
 
-
-/// Main server for generated service
-internal final class Discovery_DiscoveryServer: ServiceServer {
-  private let provider: Discovery_DiscoveryProvider
-
-  internal init(address: String, provider: Discovery_DiscoveryProvider) {
-    self.provider = provider
-    super.init(address: address)
-  }
-
-  internal init?(address: String, certificateURL: URL, keyURL: URL, provider: Discovery_DiscoveryProvider) {
-    self.provider = provider
-    super.init(address: address, certificateURL: certificateURL, keyURL: keyURL)
-  }
-
-  internal init?(address: String, certificateString: String, keyString: String, provider: Discovery_DiscoveryProvider) {
-    self.provider = provider
-    super.init(address: address, certificateString: certificateString, keyString: keyString)
-  }
-
-  /// Start the server.
-  internal override func handleMethod(_ method: String, handler: Handler, queue: DispatchQueue) throws -> Bool {
-    let provider = self.provider
-    switch method {
-    case "/discovery.Discovery/Announce":
-      try Discovery_DiscoveryAnnounceSessionBase(
-        handler: handler,
-        providerBlock: { try provider.announce(request: $0, session: $1 as! Discovery_DiscoveryAnnounceSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/discovery.Discovery/GetAll":
-      try Discovery_DiscoveryGetAllSessionBase(
-        handler: handler,
-        providerBlock: { try provider.getAll(request: $0, session: $1 as! Discovery_DiscoveryGetAllSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/discovery.Discovery/Get":
-      try Discovery_DiscoveryGetSessionBase(
-        handler: handler,
-        providerBlock: { try provider.get(request: $0, session: $1 as! Discovery_DiscoveryGetSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/discovery.Discovery/AddMetadata":
-      try Discovery_DiscoveryAddMetadataSessionBase(
-        handler: handler,
-        providerBlock: { try provider.addMetadata(request: $0, session: $1 as! Discovery_DiscoveryAddMetadataSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/discovery.Discovery/DeleteMetadata":
-      try Discovery_DiscoveryDeleteMetadataSessionBase(
-        handler: handler,
-        providerBlock: { try provider.deleteMetadata(request: $0, session: $1 as! Discovery_DiscoveryDeleteMetadataSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/discovery.Discovery/GetByAppID":
-      try Discovery_DiscoveryGetByAppIDSessionBase(
-        handler: handler,
-        providerBlock: { try provider.getByAppID(request: $0, session: $1 as! Discovery_DiscoveryGetByAppIDSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/discovery.Discovery/GetByGatewayID":
-      try Discovery_DiscoveryGetByGatewayIDSessionBase(
-        handler: handler,
-        providerBlock: { try provider.getByGatewayID(request: $0, session: $1 as! Discovery_DiscoveryGetByGatewayIDSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/discovery.Discovery/GetByAppEUI":
-      try Discovery_DiscoveryGetByAppEUISessionBase(
-        handler: handler,
-        providerBlock: { try provider.getByAppEUI(request: $0, session: $1 as! Discovery_DiscoveryGetByAppEUISessionBase) })
-          .run(queue: queue)
-      return true
-    default:
-      return false
-    }
-  }
-}
-
 /// To build a server, implement a class that conforms to this protocol.
-internal protocol Discovery_DiscoveryManagerProvider {
+/// If one of the methods returning `ServerStatus?` returns nil,
+/// it is expected that you have already returned a status to the client by means of `session.close`.
+internal protocol Discovery_DiscoveryManagerProvider: ServiceProvider {
 }
 
+extension Discovery_DiscoveryManagerProvider {
+  internal var serviceName: String { return "discovery.DiscoveryManager" }
 
-/// Main server for generated service
-internal final class Discovery_DiscoveryManagerServer: ServiceServer {
-  private let provider: Discovery_DiscoveryManagerProvider
-
-  internal init(address: String, provider: Discovery_DiscoveryManagerProvider) {
-    self.provider = provider
-    super.init(address: address)
-  }
-
-  internal init?(address: String, certificateURL: URL, keyURL: URL, provider: Discovery_DiscoveryManagerProvider) {
-    self.provider = provider
-    super.init(address: address, certificateURL: certificateURL, keyURL: keyURL)
-  }
-
-  internal init?(address: String, certificateString: String, keyString: String, provider: Discovery_DiscoveryManagerProvider) {
-    self.provider = provider
-    super.init(address: address, certificateString: certificateString, keyString: keyString)
-  }
-
-  /// Start the server.
-  internal override func handleMethod(_ method: String, handler: Handler, queue: DispatchQueue) throws -> Bool {
-    let provider = self.provider
+  /// Determines and calls the appropriate request handler, depending on the request's method.
+  /// Throws `HandleMethodError.unknownMethod` for methods not handled by this service.
+  internal func handleMethod(_ method: String, handler: Handler) throws -> ServerStatus? {
     switch method {
     default:
-      return false
+      throw HandleMethodError.unknownMethod
     }
   }
 }

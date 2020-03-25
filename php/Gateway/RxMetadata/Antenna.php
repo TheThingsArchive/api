@@ -16,53 +16,53 @@ class Antenna extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>uint32 antenna = 1;</code>
      */
-    private $antenna = 0;
+    protected $antenna = 0;
     /**
      * Generated from protobuf field <code>uint32 channel = 2;</code>
      */
-    private $channel = 0;
+    protected $channel = 0;
     /**
      * Received signal power in dBm
      *
      * Generated from protobuf field <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
      */
-    private $rssi = 0.0;
+    protected $rssi = 0.0;
     /**
      * Received channel power in dBm
      *
      * Generated from protobuf field <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
      */
-    private $channel_rssi = 0.0;
+    protected $channel_rssi = 0.0;
     /**
      * Standard deviation of the RSSI
      *
      * Generated from protobuf field <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
      */
-    private $rssi_standard_deviation = 0.0;
+    protected $rssi_standard_deviation = 0.0;
     /**
      * Frequency offset (Hz)
      *
      * Generated from protobuf field <code>int64 frequency_offset = 7;</code>
      */
-    private $frequency_offset = 0;
+    protected $frequency_offset = 0;
     /**
      * Signal-to-noise-ratio in dB
      *
      * Generated from protobuf field <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
      */
-    private $snr = 0.0;
+    protected $snr = 0.0;
     /**
      * Encrypted fine timestamp from the Gateway FPGA
      *
      * Generated from protobuf field <code>bytes encrypted_time = 10;</code>
      */
-    private $encrypted_time = '';
+    protected $encrypted_time = '';
     /**
      * Fine timestamp from the Gateway FPGA (decrypted)
      *
      * Generated from protobuf field <code>int64 fine_time = 11;</code>
      */
-    private $fine_time = 0;
+    protected $fine_time = 0;
 
     /**
      * Constructor.

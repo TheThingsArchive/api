@@ -9,15 +9,18 @@ public interface ActivationChallengeRequestOrBuilder extends
 
   /**
    * <code>bytes payload = 1;</code>
+   * @return The payload.
    */
   com.google.protobuf.ByteString getPayload();
 
   /**
    * <code>.protocol.Message message = 2;</code>
+   * @return Whether the message field is set.
    */
   boolean hasMessage();
   /**
    * <code>.protocol.Message message = 2;</code>
+   * @return The message.
    */
   org.thethingsnetwork.api.protocol.Message getMessage();
   /**
@@ -27,30 +30,36 @@ public interface ActivationChallengeRequestOrBuilder extends
 
   /**
    * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+   * @return The devEui.
    */
   com.google.protobuf.ByteString getDevEui();
 
   /**
    * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+   * @return The appEui.
    */
   com.google.protobuf.ByteString getAppEui();
 
   /**
    * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The appId.
    */
   java.lang.String getAppId();
   /**
    * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The bytes for appId.
    */
   com.google.protobuf.ByteString
       getAppIdBytes();
 
   /**
    * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+   * @return The devId.
    */
   java.lang.String getDevId();
   /**
    * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+   * @return The bytes for devId.
    */
   com.google.protobuf.ByteString
       getDevIdBytes();

@@ -41,22 +41,21 @@ public final class DeviceManagerGrpc {
     if ((getGetDeviceMethod = DeviceManagerGrpc.getGetDeviceMethod) == null) {
       synchronized (DeviceManagerGrpc.class) {
         if ((getGetDeviceMethod = DeviceManagerGrpc.getGetDeviceMethod) == null) {
-          DeviceManagerGrpc.getGetDeviceMethod = getGetDeviceMethod = 
+          DeviceManagerGrpc.getGetDeviceMethod = getGetDeviceMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier, org.thethingsnetwork.api.protocol.lorawan.Device>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "lorawan.DeviceManager", "GetDevice"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDevice"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.protocol.lorawan.Device.getDefaultInstance()))
-                  .setSchemaDescriptor(new DeviceManagerMethodDescriptorSupplier("GetDevice"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DeviceManagerMethodDescriptorSupplier("GetDevice"))
+              .build();
         }
-     }
-     return getGetDeviceMethod;
+      }
+    }
+    return getGetDeviceMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.Device,
@@ -73,22 +72,21 @@ public final class DeviceManagerGrpc {
     if ((getSetDeviceMethod = DeviceManagerGrpc.getSetDeviceMethod) == null) {
       synchronized (DeviceManagerGrpc.class) {
         if ((getSetDeviceMethod = DeviceManagerGrpc.getSetDeviceMethod) == null) {
-          DeviceManagerGrpc.getSetDeviceMethod = getSetDeviceMethod = 
+          DeviceManagerGrpc.getSetDeviceMethod = getSetDeviceMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.protocol.lorawan.Device, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "lorawan.DeviceManager", "SetDevice"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetDevice"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.protocol.lorawan.Device.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
-                  .setSchemaDescriptor(new DeviceManagerMethodDescriptorSupplier("SetDevice"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DeviceManagerMethodDescriptorSupplier("SetDevice"))
+              .build();
         }
-     }
-     return getSetDeviceMethod;
+      }
+    }
+    return getSetDeviceMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier,
@@ -105,29 +103,35 @@ public final class DeviceManagerGrpc {
     if ((getDeleteDeviceMethod = DeviceManagerGrpc.getDeleteDeviceMethod) == null) {
       synchronized (DeviceManagerGrpc.class) {
         if ((getDeleteDeviceMethod = DeviceManagerGrpc.getDeleteDeviceMethod) == null) {
-          DeviceManagerGrpc.getDeleteDeviceMethod = getDeleteDeviceMethod = 
+          DeviceManagerGrpc.getDeleteDeviceMethod = getDeleteDeviceMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "lorawan.DeviceManager", "DeleteDevice"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteDevice"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.protocol.lorawan.DeviceIdentifier.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
-                  .setSchemaDescriptor(new DeviceManagerMethodDescriptorSupplier("DeleteDevice"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DeviceManagerMethodDescriptorSupplier("DeleteDevice"))
+              .build();
         }
-     }
-     return getDeleteDeviceMethod;
+      }
+    }
+    return getDeleteDeviceMethod;
   }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static DeviceManagerStub newStub(io.grpc.Channel channel) {
-    return new DeviceManagerStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DeviceManagerStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<DeviceManagerStub>() {
+        @java.lang.Override
+        public DeviceManagerStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new DeviceManagerStub(channel, callOptions);
+        }
+      };
+    return DeviceManagerStub.newStub(factory, channel);
   }
 
   /**
@@ -135,7 +139,14 @@ public final class DeviceManagerGrpc {
    */
   public static DeviceManagerBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new DeviceManagerBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DeviceManagerBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<DeviceManagerBlockingStub>() {
+        @java.lang.Override
+        public DeviceManagerBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new DeviceManagerBlockingStub(channel, callOptions);
+        }
+      };
+    return DeviceManagerBlockingStub.newStub(factory, channel);
   }
 
   /**
@@ -143,7 +154,14 @@ public final class DeviceManagerGrpc {
    */
   public static DeviceManagerFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new DeviceManagerFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DeviceManagerFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<DeviceManagerFutureStub>() {
+        @java.lang.Override
+        public DeviceManagerFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new DeviceManagerFutureStub(channel, callOptions);
+        }
+      };
+    return DeviceManagerFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -200,19 +218,15 @@ public final class DeviceManagerGrpc {
 
   /**
    */
-  public static final class DeviceManagerStub extends io.grpc.stub.AbstractStub<DeviceManagerStub> {
-    private DeviceManagerStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private DeviceManagerStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class DeviceManagerStub extends io.grpc.stub.AbstractAsyncStub<DeviceManagerStub> {
+    private DeviceManagerStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected DeviceManagerStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected DeviceManagerStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new DeviceManagerStub(channel, callOptions);
     }
 
@@ -243,19 +257,15 @@ public final class DeviceManagerGrpc {
 
   /**
    */
-  public static final class DeviceManagerBlockingStub extends io.grpc.stub.AbstractStub<DeviceManagerBlockingStub> {
-    private DeviceManagerBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private DeviceManagerBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class DeviceManagerBlockingStub extends io.grpc.stub.AbstractBlockingStub<DeviceManagerBlockingStub> {
+    private DeviceManagerBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected DeviceManagerBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected DeviceManagerBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new DeviceManagerBlockingStub(channel, callOptions);
     }
 
@@ -283,19 +293,15 @@ public final class DeviceManagerGrpc {
 
   /**
    */
-  public static final class DeviceManagerFutureStub extends io.grpc.stub.AbstractStub<DeviceManagerFutureStub> {
-    private DeviceManagerFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private DeviceManagerFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class DeviceManagerFutureStub extends io.grpc.stub.AbstractFutureStub<DeviceManagerFutureStub> {
+    private DeviceManagerFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected DeviceManagerFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected DeviceManagerFutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new DeviceManagerFutureStub(channel, callOptions);
     }
 

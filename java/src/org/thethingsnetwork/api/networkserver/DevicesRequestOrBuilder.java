@@ -13,6 +13,7 @@ public interface DevicesRequestOrBuilder extends
    * </pre>
    *
    * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+   * @return The devAddr.
    */
   com.google.protobuf.ByteString getDevAddr();
 
@@ -22,6 +23,7 @@ public interface DevicesRequestOrBuilder extends
    * </pre>
    *
    * <code>uint32 f_cnt = 2;</code>
+   * @return The fCnt.
    */
   int getFCnt();
 }

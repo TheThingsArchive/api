@@ -1580,7 +1580,7 @@ static const ProtobufCFieldDescriptor lorawan__cflist__field_descriptors[1] =
     offsetof(Lorawan__CFList, freq),
     NULL,
     NULL,
-    0,             /* flags */
+    0 | PROTOBUF_C_FIELD_FLAG_PACKED,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };

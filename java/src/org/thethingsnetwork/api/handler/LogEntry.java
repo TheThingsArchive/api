@@ -21,6 +21,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new LogEntry();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -52,15 +59,15 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               fields_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             fields_.add(s);
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -74,7 +81,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         fields_ = fields_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -94,7 +101,6 @@ private static final long serialVersionUID = 0L;
             org.thethingsnetwork.api.handler.LogEntry.class, org.thethingsnetwork.api.handler.LogEntry.Builder.class);
   }
 
-  private int bitField0_;
   public static final int FUNCTION_FIELD_NUMBER = 1;
   private volatile java.lang.Object function_;
   /**
@@ -103,6 +109,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string function = 1;</code>
+   * @return The function.
    */
   public java.lang.String getFunction() {
     java.lang.Object ref = function_;
@@ -122,6 +129,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string function = 1;</code>
+   * @return The bytes for function.
    */
   public com.google.protobuf.ByteString
       getFunctionBytes() {
@@ -145,6 +153,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string fields = 2;</code>
+   * @return A list containing the fields.
    */
   public com.google.protobuf.ProtocolStringList
       getFieldsList() {
@@ -156,6 +165,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string fields = 2;</code>
+   * @return The count of fields.
    */
   public int getFieldsCount() {
     return fields_.size();
@@ -166,6 +176,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string fields = 2;</code>
+   * @param index The index of the element to return.
+   * @return The fields at the given index.
    */
   public java.lang.String getFields(int index) {
     return fields_.get(index);
@@ -176,6 +188,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string fields = 2;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the fields at the given index.
    */
   public com.google.protobuf.ByteString
       getFieldsBytes(int index) {
@@ -237,13 +251,12 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.handler.LogEntry other = (org.thethingsnetwork.api.handler.LogEntry) obj;
 
-    boolean result = true;
-    result = result && getFunction()
-        .equals(other.getFunction());
-    result = result && getFieldsList()
-        .equals(other.getFieldsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getFunction()
+        .equals(other.getFunction())) return false;
+    if (!getFieldsList()
+        .equals(other.getFieldsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -395,7 +408,7 @@ private static final long serialVersionUID = 0L;
       function_ = "";
 
       fields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -423,49 +436,47 @@ private static final long serialVersionUID = 0L;
     public org.thethingsnetwork.api.handler.LogEntry buildPartial() {
       org.thethingsnetwork.api.handler.LogEntry result = new org.thethingsnetwork.api.handler.LogEntry(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.function_ = function_;
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         fields_ = fields_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.fields_ = fields_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -486,7 +497,7 @@ private static final long serialVersionUID = 0L;
       if (!other.fields_.isEmpty()) {
         if (fields_.isEmpty()) {
           fields_ = other.fields_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureFieldsIsMutable();
           fields_.addAll(other.fields_);
@@ -530,6 +541,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string function = 1;</code>
+     * @return The function.
      */
     public java.lang.String getFunction() {
       java.lang.Object ref = function_;
@@ -549,6 +561,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string function = 1;</code>
+     * @return The bytes for function.
      */
     public com.google.protobuf.ByteString
         getFunctionBytes() {
@@ -569,6 +582,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string function = 1;</code>
+     * @param value The function to set.
+     * @return This builder for chaining.
      */
     public Builder setFunction(
         java.lang.String value) {
@@ -586,6 +601,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string function = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFunction() {
       
@@ -599,6 +615,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string function = 1;</code>
+     * @param value The bytes for function to set.
+     * @return This builder for chaining.
      */
     public Builder setFunctionBytes(
         com.google.protobuf.ByteString value) {
@@ -614,9 +632,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList fields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         fields_ = new com.google.protobuf.LazyStringArrayList(fields_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
@@ -625,6 +643,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string fields = 2;</code>
+     * @return A list containing the fields.
      */
     public com.google.protobuf.ProtocolStringList
         getFieldsList() {
@@ -636,6 +655,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string fields = 2;</code>
+     * @return The count of fields.
      */
     public int getFieldsCount() {
       return fields_.size();
@@ -646,6 +666,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string fields = 2;</code>
+     * @param index The index of the element to return.
+     * @return The fields at the given index.
      */
     public java.lang.String getFields(int index) {
       return fields_.get(index);
@@ -656,6 +678,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string fields = 2;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the fields at the given index.
      */
     public com.google.protobuf.ByteString
         getFieldsBytes(int index) {
@@ -667,6 +691,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string fields = 2;</code>
+     * @param index The index to set the value at.
+     * @param value The fields to set.
+     * @return This builder for chaining.
      */
     public Builder setFields(
         int index, java.lang.String value) {
@@ -684,6 +711,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string fields = 2;</code>
+     * @param value The fields to add.
+     * @return This builder for chaining.
      */
     public Builder addFields(
         java.lang.String value) {
@@ -701,6 +730,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string fields = 2;</code>
+     * @param values The fields to add.
+     * @return This builder for chaining.
      */
     public Builder addAllFields(
         java.lang.Iterable<java.lang.String> values) {
@@ -716,10 +747,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string fields = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFields() {
       fields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -729,6 +761,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string fields = 2;</code>
+     * @param value The bytes of the fields to add.
+     * @return This builder for chaining.
      */
     public Builder addFieldsBytes(
         com.google.protobuf.ByteString value) {
@@ -744,7 +778,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -16,7 +16,14 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CFList() {
-    freq_ = java.util.Collections.emptyList();
+    freq_ = emptyIntList();
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CFList();
   }
 
   @java.lang.Override
@@ -44,28 +51,28 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 8: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              freq_ = new java.util.ArrayList<java.lang.Integer>();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              freq_ = newIntList();
               mutable_bitField0_ |= 0x00000001;
             }
-            freq_.add(input.readUInt32());
+            freq_.addInt(input.readUInt32());
             break;
           }
           case 10: {
             int length = input.readRawVarint32();
             int limit = input.pushLimit(length);
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
-              freq_ = new java.util.ArrayList<java.lang.Integer>();
+            if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              freq_ = newIntList();
               mutable_bitField0_ |= 0x00000001;
             }
             while (input.getBytesUntilLimit() > 0) {
-              freq_.add(input.readUInt32());
+              freq_.addInt(input.readUInt32());
             }
             input.popLimit(limit);
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -79,8 +86,8 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-        freq_ = java.util.Collections.unmodifiableList(freq_);
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        freq_.makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -100,9 +107,10 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int FREQ_FIELD_NUMBER = 1;
-  private java.util.List<java.lang.Integer> freq_;
+  private com.google.protobuf.Internal.IntList freq_;
   /**
    * <code>repeated uint32 freq = 1;</code>
+   * @return A list containing the freq.
    */
   public java.util.List<java.lang.Integer>
       getFreqList() {
@@ -110,15 +118,18 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>repeated uint32 freq = 1;</code>
+   * @return The count of freq.
    */
   public int getFreqCount() {
     return freq_.size();
   }
   /**
    * <code>repeated uint32 freq = 1;</code>
+   * @param index The index of the element to return.
+   * @return The freq at the given index.
    */
   public int getFreq(int index) {
-    return freq_.get(index);
+    return freq_.getInt(index);
   }
   private int freqMemoizedSerializedSize = -1;
 
@@ -142,7 +153,7 @@ private static final long serialVersionUID = 0L;
       output.writeUInt32NoTag(freqMemoizedSerializedSize);
     }
     for (int i = 0; i < freq_.size(); i++) {
-      output.writeUInt32NoTag(freq_.get(i));
+      output.writeUInt32NoTag(freq_.getInt(i));
     }
     unknownFields.writeTo(output);
   }
@@ -157,7 +168,7 @@ private static final long serialVersionUID = 0L;
       int dataSize = 0;
       for (int i = 0; i < freq_.size(); i++) {
         dataSize += com.google.protobuf.CodedOutputStream
-          .computeUInt32SizeNoTag(freq_.get(i));
+          .computeUInt32SizeNoTag(freq_.getInt(i));
       }
       size += dataSize;
       if (!getFreqList().isEmpty()) {
@@ -182,11 +193,10 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.protocol.lorawan.CFList other = (org.thethingsnetwork.api.protocol.lorawan.CFList) obj;
 
-    boolean result = true;
-    result = result && getFreqList()
-        .equals(other.getFreqList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getFreqList()
+        .equals(other.getFreqList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -333,7 +343,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      freq_ = java.util.Collections.emptyList();
+      freq_ = emptyIntList();
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
@@ -362,8 +372,8 @@ private static final long serialVersionUID = 0L;
     public org.thethingsnetwork.api.protocol.lorawan.CFList buildPartial() {
       org.thethingsnetwork.api.protocol.lorawan.CFList result = new org.thethingsnetwork.api.protocol.lorawan.CFList(this);
       int from_bitField0_ = bitField0_;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        freq_ = java.util.Collections.unmodifiableList(freq_);
+      if (((bitField0_ & 0x00000001) != 0)) {
+        freq_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.freq_ = freq_;
@@ -373,35 +383,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -455,53 +465,65 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<java.lang.Integer> freq_ = java.util.Collections.emptyList();
+    private com.google.protobuf.Internal.IntList freq_ = emptyIntList();
     private void ensureFreqIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        freq_ = new java.util.ArrayList<java.lang.Integer>(freq_);
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        freq_ = mutableCopy(freq_);
         bitField0_ |= 0x00000001;
        }
     }
     /**
      * <code>repeated uint32 freq = 1;</code>
+     * @return A list containing the freq.
      */
     public java.util.List<java.lang.Integer>
         getFreqList() {
-      return java.util.Collections.unmodifiableList(freq_);
+      return ((bitField0_ & 0x00000001) != 0) ?
+               java.util.Collections.unmodifiableList(freq_) : freq_;
     }
     /**
      * <code>repeated uint32 freq = 1;</code>
+     * @return The count of freq.
      */
     public int getFreqCount() {
       return freq_.size();
     }
     /**
      * <code>repeated uint32 freq = 1;</code>
+     * @param index The index of the element to return.
+     * @return The freq at the given index.
      */
     public int getFreq(int index) {
-      return freq_.get(index);
+      return freq_.getInt(index);
     }
     /**
      * <code>repeated uint32 freq = 1;</code>
+     * @param index The index to set the value at.
+     * @param value The freq to set.
+     * @return This builder for chaining.
      */
     public Builder setFreq(
         int index, int value) {
       ensureFreqIsMutable();
-      freq_.set(index, value);
+      freq_.setInt(index, value);
       onChanged();
       return this;
     }
     /**
      * <code>repeated uint32 freq = 1;</code>
+     * @param value The freq to add.
+     * @return This builder for chaining.
      */
     public Builder addFreq(int value) {
       ensureFreqIsMutable();
-      freq_.add(value);
+      freq_.addInt(value);
       onChanged();
       return this;
     }
     /**
      * <code>repeated uint32 freq = 1;</code>
+     * @param values The freq to add.
+     * @return This builder for chaining.
      */
     public Builder addAllFreq(
         java.lang.Iterable<? extends java.lang.Integer> values) {
@@ -513,9 +535,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated uint32 freq = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFreq() {
-      freq_ = java.util.Collections.emptyList();
+      freq_ = emptyIntList();
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
@@ -523,7 +546,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

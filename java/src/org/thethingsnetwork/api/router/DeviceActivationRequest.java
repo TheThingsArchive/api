@@ -22,6 +22,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new DeviceActivationRequest();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -34,7 +41,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -126,7 +132,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -161,6 +167,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString payload_;
   /**
    * <code>bytes payload = 1;</code>
+   * @return The payload.
    */
   public com.google.protobuf.ByteString getPayload() {
     return payload_;
@@ -170,12 +177,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.protocol.Message message_;
   /**
    * <code>.protocol.Message message = 2;</code>
+   * @return Whether the message field is set.
    */
   public boolean hasMessage() {
     return message_ != null;
   }
   /**
    * <code>.protocol.Message message = 2;</code>
+   * @return The message.
    */
   public org.thethingsnetwork.api.protocol.Message getMessage() {
     return message_ == null ? org.thethingsnetwork.api.protocol.Message.getDefaultInstance() : message_;
@@ -191,6 +200,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString devEui_;
   /**
    * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+   * @return The devEui.
    */
   public com.google.protobuf.ByteString getDevEui() {
     return devEui_;
@@ -200,6 +210,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString appEui_;
   /**
    * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+   * @return The appEui.
    */
   public com.google.protobuf.ByteString getAppEui() {
     return appEui_;
@@ -209,12 +220,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.protocol.RxMetadata protocolMetadata_;
   /**
    * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
+   * @return Whether the protocolMetadata field is set.
    */
   public boolean hasProtocolMetadata() {
     return protocolMetadata_ != null;
   }
   /**
    * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
+   * @return The protocolMetadata.
    */
   public org.thethingsnetwork.api.protocol.RxMetadata getProtocolMetadata() {
     return protocolMetadata_ == null ? org.thethingsnetwork.api.protocol.RxMetadata.getDefaultInstance() : protocolMetadata_;
@@ -230,12 +243,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.gateway.RxMetadata gatewayMetadata_;
   /**
    * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
+   * @return Whether the gatewayMetadata field is set.
    */
   public boolean hasGatewayMetadata() {
     return gatewayMetadata_ != null;
   }
   /**
    * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
+   * @return The gatewayMetadata.
    */
   public org.thethingsnetwork.api.gateway.RxMetadata getGatewayMetadata() {
     return gatewayMetadata_ == null ? org.thethingsnetwork.api.gateway.RxMetadata.getDefaultInstance() : gatewayMetadata_;
@@ -251,12 +266,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.protocol.ActivationMetadata activationMetadata_;
   /**
    * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+   * @return Whether the activationMetadata field is set.
    */
   public boolean hasActivationMetadata() {
     return activationMetadata_ != null;
   }
   /**
    * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+   * @return The activationMetadata.
    */
   public org.thethingsnetwork.api.protocol.ActivationMetadata getActivationMetadata() {
     return activationMetadata_ == null ? org.thethingsnetwork.api.protocol.ActivationMetadata.getDefaultInstance() : activationMetadata_;
@@ -272,12 +289,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.trace.Trace trace_;
   /**
    * <code>.trace.Trace trace = 31;</code>
+   * @return Whether the trace field is set.
    */
   public boolean hasTrace() {
     return trace_ != null;
   }
   /**
    * <code>.trace.Trace trace = 31;</code>
+   * @return The trace.
    */
   public org.thethingsnetwork.api.trace.Trace getTrace() {
     return trace_ == null ? org.thethingsnetwork.api.trace.Trace.getDefaultInstance() : trace_;
@@ -383,40 +402,39 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.router.DeviceActivationRequest other = (org.thethingsnetwork.api.router.DeviceActivationRequest) obj;
 
-    boolean result = true;
-    result = result && getPayload()
-        .equals(other.getPayload());
-    result = result && (hasMessage() == other.hasMessage());
+    if (!getPayload()
+        .equals(other.getPayload())) return false;
+    if (hasMessage() != other.hasMessage()) return false;
     if (hasMessage()) {
-      result = result && getMessage()
-          .equals(other.getMessage());
+      if (!getMessage()
+          .equals(other.getMessage())) return false;
     }
-    result = result && getDevEui()
-        .equals(other.getDevEui());
-    result = result && getAppEui()
-        .equals(other.getAppEui());
-    result = result && (hasProtocolMetadata() == other.hasProtocolMetadata());
+    if (!getDevEui()
+        .equals(other.getDevEui())) return false;
+    if (!getAppEui()
+        .equals(other.getAppEui())) return false;
+    if (hasProtocolMetadata() != other.hasProtocolMetadata()) return false;
     if (hasProtocolMetadata()) {
-      result = result && getProtocolMetadata()
-          .equals(other.getProtocolMetadata());
+      if (!getProtocolMetadata()
+          .equals(other.getProtocolMetadata())) return false;
     }
-    result = result && (hasGatewayMetadata() == other.hasGatewayMetadata());
+    if (hasGatewayMetadata() != other.hasGatewayMetadata()) return false;
     if (hasGatewayMetadata()) {
-      result = result && getGatewayMetadata()
-          .equals(other.getGatewayMetadata());
+      if (!getGatewayMetadata()
+          .equals(other.getGatewayMetadata())) return false;
     }
-    result = result && (hasActivationMetadata() == other.hasActivationMetadata());
+    if (hasActivationMetadata() != other.hasActivationMetadata()) return false;
     if (hasActivationMetadata()) {
-      result = result && getActivationMetadata()
-          .equals(other.getActivationMetadata());
+      if (!getActivationMetadata()
+          .equals(other.getActivationMetadata())) return false;
     }
-    result = result && (hasTrace() == other.hasTrace());
+    if (hasTrace() != other.hasTrace()) return false;
     if (hasTrace()) {
-      result = result && getTrace()
-          .equals(other.getTrace());
+      if (!getTrace()
+          .equals(other.getTrace())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -681,35 +699,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -779,12 +797,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString payload_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes payload = 1;</code>
+     * @return The payload.
      */
     public com.google.protobuf.ByteString getPayload() {
       return payload_;
     }
     /**
      * <code>bytes payload = 1;</code>
+     * @param value The payload to set.
+     * @return This builder for chaining.
      */
     public Builder setPayload(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -797,6 +818,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bytes payload = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPayload() {
       
@@ -805,17 +827,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private org.thethingsnetwork.api.protocol.Message message_ = null;
+    private org.thethingsnetwork.api.protocol.Message message_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.Message, org.thethingsnetwork.api.protocol.Message.Builder, org.thethingsnetwork.api.protocol.MessageOrBuilder> messageBuilder_;
     /**
      * <code>.protocol.Message message = 2;</code>
+     * @return Whether the message field is set.
      */
     public boolean hasMessage() {
       return messageBuilder_ != null || message_ != null;
     }
     /**
      * <code>.protocol.Message message = 2;</code>
+     * @return The message.
      */
     public org.thethingsnetwork.api.protocol.Message getMessage() {
       if (messageBuilder_ == null) {
@@ -925,12 +949,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString devEui_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @return The devEui.
      */
     public com.google.protobuf.ByteString getDevEui() {
       return devEui_;
     }
     /**
      * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @param value The devEui to set.
+     * @return This builder for chaining.
      */
     public Builder setDevEui(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -943,6 +970,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearDevEui() {
       
@@ -954,12 +982,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString appEui_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @return The appEui.
      */
     public com.google.protobuf.ByteString getAppEui() {
       return appEui_;
     }
     /**
      * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @param value The appEui to set.
+     * @return This builder for chaining.
      */
     public Builder setAppEui(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -972,6 +1003,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearAppEui() {
       
@@ -980,17 +1012,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private org.thethingsnetwork.api.protocol.RxMetadata protocolMetadata_ = null;
+    private org.thethingsnetwork.api.protocol.RxMetadata protocolMetadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.RxMetadata, org.thethingsnetwork.api.protocol.RxMetadata.Builder, org.thethingsnetwork.api.protocol.RxMetadataOrBuilder> protocolMetadataBuilder_;
     /**
      * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the protocolMetadata field is set.
      */
     public boolean hasProtocolMetadata() {
       return protocolMetadataBuilder_ != null || protocolMetadata_ != null;
     }
     /**
      * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
+     * @return The protocolMetadata.
      */
     public org.thethingsnetwork.api.protocol.RxMetadata getProtocolMetadata() {
       if (protocolMetadataBuilder_ == null) {
@@ -1097,17 +1131,19 @@ private static final long serialVersionUID = 0L;
       return protocolMetadataBuilder_;
     }
 
-    private org.thethingsnetwork.api.gateway.RxMetadata gatewayMetadata_ = null;
+    private org.thethingsnetwork.api.gateway.RxMetadata gatewayMetadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.gateway.RxMetadata, org.thethingsnetwork.api.gateway.RxMetadata.Builder, org.thethingsnetwork.api.gateway.RxMetadataOrBuilder> gatewayMetadataBuilder_;
     /**
      * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
+     * @return Whether the gatewayMetadata field is set.
      */
     public boolean hasGatewayMetadata() {
       return gatewayMetadataBuilder_ != null || gatewayMetadata_ != null;
     }
     /**
      * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
+     * @return The gatewayMetadata.
      */
     public org.thethingsnetwork.api.gateway.RxMetadata getGatewayMetadata() {
       if (gatewayMetadataBuilder_ == null) {
@@ -1214,17 +1250,19 @@ private static final long serialVersionUID = 0L;
       return gatewayMetadataBuilder_;
     }
 
-    private org.thethingsnetwork.api.protocol.ActivationMetadata activationMetadata_ = null;
+    private org.thethingsnetwork.api.protocol.ActivationMetadata activationMetadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.ActivationMetadata, org.thethingsnetwork.api.protocol.ActivationMetadata.Builder, org.thethingsnetwork.api.protocol.ActivationMetadataOrBuilder> activationMetadataBuilder_;
     /**
      * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+     * @return Whether the activationMetadata field is set.
      */
     public boolean hasActivationMetadata() {
       return activationMetadataBuilder_ != null || activationMetadata_ != null;
     }
     /**
      * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
+     * @return The activationMetadata.
      */
     public org.thethingsnetwork.api.protocol.ActivationMetadata getActivationMetadata() {
       if (activationMetadataBuilder_ == null) {
@@ -1331,17 +1369,19 @@ private static final long serialVersionUID = 0L;
       return activationMetadataBuilder_;
     }
 
-    private org.thethingsnetwork.api.trace.Trace trace_ = null;
+    private org.thethingsnetwork.api.trace.Trace trace_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.trace.Trace, org.thethingsnetwork.api.trace.Trace.Builder, org.thethingsnetwork.api.trace.TraceOrBuilder> traceBuilder_;
     /**
      * <code>.trace.Trace trace = 31;</code>
+     * @return Whether the trace field is set.
      */
     public boolean hasTrace() {
       return traceBuilder_ != null || trace_ != null;
     }
     /**
      * <code>.trace.Trace trace = 31;</code>
+     * @return The trace.
      */
     public org.thethingsnetwork.api.trace.Trace getTrace() {
       if (traceBuilder_ == null) {
@@ -1450,7 +1490,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

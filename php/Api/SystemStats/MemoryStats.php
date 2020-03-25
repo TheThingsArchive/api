@@ -16,15 +16,15 @@ class MemoryStats extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>uint64 total = 1;</code>
      */
-    private $total = 0;
+    protected $total = 0;
     /**
      * Generated from protobuf field <code>uint64 available = 2;</code>
      */
-    private $available = 0;
+    protected $available = 0;
     /**
      * Generated from protobuf field <code>uint64 used = 3;</code>
      */
-    private $used = 0;
+    protected $used = 0;
 
     /**
      * Constructor.

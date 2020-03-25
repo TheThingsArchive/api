@@ -17,8 +17,14 @@ private static final long serialVersionUID = 0L;
   }
   private FHDR() {
     devAddr_ = com.google.protobuf.ByteString.EMPTY;
-    fCnt_ = 0;
     fOpts_ = java.util.Collections.emptyList();
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new FHDR();
   }
 
   @java.lang.Override
@@ -69,16 +75,16 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               fOpts_ = new java.util.ArrayList<org.thethingsnetwork.api.protocol.lorawan.MACCommand>();
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000001;
             }
             fOpts_.add(
                 input.readMessage(org.thethingsnetwork.api.protocol.lorawan.MACCommand.parser(), extensionRegistry));
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -92,7 +98,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         fOpts_ = java.util.Collections.unmodifiableList(fOpts_);
       }
       this.unknownFields = unknownFields.build();
@@ -112,11 +118,11 @@ private static final long serialVersionUID = 0L;
             org.thethingsnetwork.api.protocol.lorawan.FHDR.class, org.thethingsnetwork.api.protocol.lorawan.FHDR.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DEV_ADDR_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString devAddr_;
   /**
    * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+   * @return The devAddr.
    */
   public com.google.protobuf.ByteString getDevAddr() {
     return devAddr_;
@@ -126,12 +132,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.protocol.lorawan.FCtrl fCtrl_;
   /**
    * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+   * @return Whether the fCtrl field is set.
    */
   public boolean hasFCtrl() {
     return fCtrl_ != null;
   }
   /**
    * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+   * @return The fCtrl.
    */
   public org.thethingsnetwork.api.protocol.lorawan.FCtrl getFCtrl() {
     return fCtrl_ == null ? org.thethingsnetwork.api.protocol.lorawan.FCtrl.getDefaultInstance() : fCtrl_;
@@ -147,6 +155,7 @@ private static final long serialVersionUID = 0L;
   private int fCnt_;
   /**
    * <code>uint32 f_cnt = 3;</code>
+   * @return The fCnt.
    */
   public int getFCnt() {
     return fCnt_;
@@ -253,20 +262,19 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.protocol.lorawan.FHDR other = (org.thethingsnetwork.api.protocol.lorawan.FHDR) obj;
 
-    boolean result = true;
-    result = result && getDevAddr()
-        .equals(other.getDevAddr());
-    result = result && (hasFCtrl() == other.hasFCtrl());
+    if (!getDevAddr()
+        .equals(other.getDevAddr())) return false;
+    if (hasFCtrl() != other.hasFCtrl()) return false;
     if (hasFCtrl()) {
-      result = result && getFCtrl()
-          .equals(other.getFCtrl());
+      if (!getFCtrl()
+          .equals(other.getFCtrl())) return false;
     }
-    result = result && (getFCnt()
-        == other.getFCnt());
-    result = result && getFOptsList()
-        .equals(other.getFOptsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getFCnt()
+        != other.getFCnt()) return false;
+    if (!getFOptsList()
+        .equals(other.getFOptsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -434,7 +442,7 @@ private static final long serialVersionUID = 0L;
 
       if (fOptsBuilder_ == null) {
         fOpts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         fOptsBuilder_.clear();
       }
@@ -465,7 +473,6 @@ private static final long serialVersionUID = 0L;
     public org.thethingsnetwork.api.protocol.lorawan.FHDR buildPartial() {
       org.thethingsnetwork.api.protocol.lorawan.FHDR result = new org.thethingsnetwork.api.protocol.lorawan.FHDR(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.devAddr_ = devAddr_;
       if (fCtrlBuilder_ == null) {
         result.fCtrl_ = fCtrl_;
@@ -474,50 +481,49 @@ private static final long serialVersionUID = 0L;
       }
       result.fCnt_ = fCnt_;
       if (fOptsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           fOpts_ = java.util.Collections.unmodifiableList(fOpts_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.fOpts_ = fOpts_;
       } else {
         result.fOpts_ = fOptsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -544,7 +550,7 @@ private static final long serialVersionUID = 0L;
         if (!other.fOpts_.isEmpty()) {
           if (fOpts_.isEmpty()) {
             fOpts_ = other.fOpts_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureFOptsIsMutable();
             fOpts_.addAll(other.fOpts_);
@@ -557,7 +563,7 @@ private static final long serialVersionUID = 0L;
             fOptsBuilder_.dispose();
             fOptsBuilder_ = null;
             fOpts_ = other.fOpts_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             fOptsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getFOptsFieldBuilder() : null;
@@ -599,12 +605,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString devAddr_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * @return The devAddr.
      */
     public com.google.protobuf.ByteString getDevAddr() {
       return devAddr_;
     }
     /**
      * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * @param value The devAddr to set.
+     * @return This builder for chaining.
      */
     public Builder setDevAddr(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -617,6 +626,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearDevAddr() {
       
@@ -625,17 +635,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private org.thethingsnetwork.api.protocol.lorawan.FCtrl fCtrl_ = null;
+    private org.thethingsnetwork.api.protocol.lorawan.FCtrl fCtrl_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.FCtrl, org.thethingsnetwork.api.protocol.lorawan.FCtrl.Builder, org.thethingsnetwork.api.protocol.lorawan.FCtrlOrBuilder> fCtrlBuilder_;
     /**
      * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * @return Whether the fCtrl field is set.
      */
     public boolean hasFCtrl() {
       return fCtrlBuilder_ != null || fCtrl_ != null;
     }
     /**
      * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * @return The fCtrl.
      */
     public org.thethingsnetwork.api.protocol.lorawan.FCtrl getFCtrl() {
       if (fCtrlBuilder_ == null) {
@@ -745,12 +757,15 @@ private static final long serialVersionUID = 0L;
     private int fCnt_ ;
     /**
      * <code>uint32 f_cnt = 3;</code>
+     * @return The fCnt.
      */
     public int getFCnt() {
       return fCnt_;
     }
     /**
      * <code>uint32 f_cnt = 3;</code>
+     * @param value The fCnt to set.
+     * @return This builder for chaining.
      */
     public Builder setFCnt(int value) {
       
@@ -760,6 +775,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 f_cnt = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFCnt() {
       
@@ -771,9 +787,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.thethingsnetwork.api.protocol.lorawan.MACCommand> fOpts_ =
       java.util.Collections.emptyList();
     private void ensureFOptsIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         fOpts_ = new java.util.ArrayList<org.thethingsnetwork.api.protocol.lorawan.MACCommand>(fOpts_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -923,7 +939,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearFOpts() {
       if (fOptsBuilder_ == null) {
         fOpts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         fOptsBuilder_.clear();
@@ -1000,7 +1016,7 @@ private static final long serialVersionUID = 0L;
         fOptsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.thethingsnetwork.api.protocol.lorawan.MACCommand, org.thethingsnetwork.api.protocol.lorawan.MACCommand.Builder, org.thethingsnetwork.api.protocol.lorawan.MACCommandOrBuilder>(
                 fOpts_,
-                ((bitField0_ & 0x00000008) == 0x00000008),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         fOpts_ = null;
@@ -1010,7 +1026,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

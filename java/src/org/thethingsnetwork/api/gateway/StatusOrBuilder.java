@@ -13,6 +13,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>uint32 timestamp = 1;</code>
+   * @return The timestamp.
    */
   int getTimestamp();
 
@@ -22,6 +23,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>int64 time = 2;</code>
+   * @return The time.
    */
   long getTime();
 
@@ -31,6 +33,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>bool gateway_trusted = 3;</code>
+   * @return The gatewayTrusted.
    */
   boolean getGatewayTrusted();
 
@@ -40,54 +43,67 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>int64 boot_time = 4;</code>
+   * @return The bootTime.
    */
   long getBootTime();
 
   /**
    * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+   * @return A list containing the ip.
    */
   java.util.List<java.lang.String>
       getIpList();
   /**
    * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+   * @return The count of ip.
    */
   int getIpCount();
   /**
    * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+   * @param index The index of the element to return.
+   * @return The ip at the given index.
    */
   java.lang.String getIp(int index);
   /**
    * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the ip at the given index.
    */
   com.google.protobuf.ByteString
       getIpBytes(int index);
 
   /**
    * <code>string platform = 12;</code>
+   * @return The platform.
    */
   java.lang.String getPlatform();
   /**
    * <code>string platform = 12;</code>
+   * @return The bytes for platform.
    */
   com.google.protobuf.ByteString
       getPlatformBytes();
 
   /**
    * <code>string contact_email = 13;</code>
+   * @return The contactEmail.
    */
   java.lang.String getContactEmail();
   /**
    * <code>string contact_email = 13;</code>
+   * @return The bytes for contactEmail.
    */
   com.google.protobuf.ByteString
       getContactEmailBytes();
 
   /**
    * <code>string description = 14;</code>
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
    * <code>string description = 14;</code>
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
@@ -98,6 +114,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>string frequency_plan = 15;</code>
+   * @return The frequencyPlan.
    */
   java.lang.String getFrequencyPlan();
   /**
@@ -106,6 +123,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>string frequency_plan = 15;</code>
+   * @return The bytes for frequencyPlan.
    */
   com.google.protobuf.ByteString
       getFrequencyPlanBytes();
@@ -116,6 +134,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>string bridge = 16;</code>
+   * @return The bridge.
    */
   java.lang.String getBridge();
   /**
@@ -124,6 +143,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>string bridge = 16;</code>
+   * @return The bytes for bridge.
    */
   com.google.protobuf.ByteString
       getBridgeBytes();
@@ -134,6 +154,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>string router = 17;</code>
+   * @return The router.
    */
   java.lang.String getRouter();
   /**
@@ -142,6 +163,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>string router = 17;</code>
+   * @return The bytes for router.
    */
   com.google.protobuf.ByteString
       getRouterBytes();
@@ -152,6 +174,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
+   * @return The fpga.
    */
   int getFpga();
 
@@ -161,6 +184,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
+   * @return The dsp.
    */
   int getDsp();
 
@@ -170,6 +194,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
+   * @return The hal.
    */
   java.lang.String getHal();
   /**
@@ -178,16 +203,19 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
+   * @return The bytes for hal.
    */
   com.google.protobuf.ByteString
       getHalBytes();
 
   /**
    * <code>.gateway.LocationMetadata location = 21;</code>
+   * @return Whether the location field is set.
    */
   boolean hasLocation();
   /**
    * <code>.gateway.LocationMetadata location = 21;</code>
+   * @return The location.
    */
   org.thethingsnetwork.api.gateway.LocationMetadata getLocation();
   /**
@@ -201,6 +229,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
+   * @return The rtt.
    */
   int getRtt();
 
@@ -210,6 +239,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>uint32 rx_in = 41;</code>
+   * @return The rxIn.
    */
   int getRxIn();
 
@@ -219,6 +249,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>uint32 rx_ok = 42;</code>
+   * @return The rxOk.
    */
   int getRxOk();
 
@@ -228,6 +259,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>uint32 tx_in = 43;</code>
+   * @return The txIn.
    */
   int getTxIn();
 
@@ -237,6 +269,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>uint32 tx_ok = 44;</code>
+   * @return The txOk.
    */
   int getTxOk();
 
@@ -246,6 +279,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>uint32 lm_ok = 45;</code>
+   * @return The lmOk.
    */
   int getLmOk();
 
@@ -255,6 +289,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>uint32 lm_st = 46;</code>
+   * @return The lmSt.
    */
   int getLmSt();
 
@@ -264,6 +299,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>uint32 lm_nw = 47;</code>
+   * @return The lmNw.
    */
   int getLmNw();
 
@@ -273,15 +309,18 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
+   * @return The lPps.
    */
   int getLPps();
 
   /**
    * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+   * @return Whether the os field is set.
    */
   boolean hasOs();
   /**
    * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+   * @return The os.
    */
   org.thethingsnetwork.api.gateway.Status.OSMetrics getOs();
   /**
@@ -295,6 +334,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>repeated string messages = 52;</code>
+   * @return A list containing the messages.
    */
   java.util.List<java.lang.String>
       getMessagesList();
@@ -304,6 +344,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>repeated string messages = 52;</code>
+   * @return The count of messages.
    */
   int getMessagesCount();
   /**
@@ -312,6 +353,8 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>repeated string messages = 52;</code>
+   * @param index The index of the element to return.
+   * @return The messages at the given index.
    */
   java.lang.String getMessages(int index);
   /**
@@ -320,6 +363,8 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>repeated string messages = 52;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the messages at the given index.
    */
   com.google.protobuf.ByteString
       getMessagesBytes(int index);

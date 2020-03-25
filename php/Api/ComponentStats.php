@@ -16,23 +16,23 @@ class ComponentStats extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>uint64 uptime = 1;</code>
      */
-    private $uptime = 0;
+    protected $uptime = 0;
     /**
      * Generated from protobuf field <code>.api.ComponentStats.CPUStats cpu = 2;</code>
      */
-    private $cpu = null;
+    protected $cpu = null;
     /**
      * Generated from protobuf field <code>.api.ComponentStats.MemoryStats memory = 3;</code>
      */
-    private $memory = null;
+    protected $memory = null;
     /**
      * Generated from protobuf field <code>uint64 goroutines = 4;</code>
      */
-    private $goroutines = 0;
+    protected $goroutines = 0;
     /**
      * Generated from protobuf field <code>float gc_cpu_fraction = 5;</code>
      */
-    private $gc_cpu_fraction = 0.0;
+    protected $gc_cpu_fraction = 0.0;
 
     /**
      * Constructor.

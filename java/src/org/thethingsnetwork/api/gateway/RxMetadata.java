@@ -17,16 +17,15 @@ private static final long serialVersionUID = 0L;
   }
   private RxMetadata() {
     gatewayId_ = "";
-    gatewayTrusted_ = false;
-    timestamp_ = 0;
-    time_ = 0L;
     encryptedTime_ = com.google.protobuf.ByteString.EMPTY;
-    rfChain_ = 0;
-    channel_ = 0;
     antennas_ = java.util.Collections.emptyList();
-    frequency_ = 0L;
-    rssi_ = 0F;
-    snr_ = 0F;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new RxMetadata();
   }
 
   @java.lang.Override
@@ -90,9 +89,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 242: {
-            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               antennas_ = new java.util.ArrayList<org.thethingsnetwork.api.gateway.RxMetadata.Antenna>();
-              mutable_bitField0_ |= 0x00000080;
+              mutable_bitField0_ |= 0x00000001;
             }
             antennas_.add(
                 input.readMessage(org.thethingsnetwork.api.gateway.RxMetadata.Antenna.parser(), extensionRegistry));
@@ -127,7 +126,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -141,7 +140,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         antennas_ = java.util.Collections.unmodifiableList(antennas_);
       }
       this.unknownFields = unknownFields.build();
@@ -167,11 +166,13 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <code>uint32 antenna = 1;</code>
+     * @return The antenna.
      */
     int getAntenna();
 
     /**
      * <code>uint32 channel = 2;</code>
+     * @return The channel.
      */
     int getChannel();
 
@@ -181,6 +182,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
+     * @return The rssi.
      */
     float getRssi();
 
@@ -190,6 +192,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
+     * @return The channelRssi.
      */
     float getChannelRssi();
 
@@ -199,6 +202,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
+     * @return The rssiStandardDeviation.
      */
     float getRssiStandardDeviation();
 
@@ -208,6 +212,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 frequency_offset = 7;</code>
+     * @return The frequencyOffset.
      */
     long getFrequencyOffset();
 
@@ -217,6 +222,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
+     * @return The snr.
      */
     float getSnr();
 
@@ -226,6 +232,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes encrypted_time = 10;</code>
+     * @return The encryptedTime.
      */
     com.google.protobuf.ByteString getEncryptedTime();
 
@@ -235,6 +242,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 fine_time = 11;</code>
+     * @return The fineTime.
      */
     long getFineTime();
   }
@@ -251,15 +259,14 @@ private static final long serialVersionUID = 0L;
       super(builder);
     }
     private Antenna() {
-      antenna_ = 0;
-      channel_ = 0;
-      rssi_ = 0F;
-      channelRssi_ = 0F;
-      rssiStandardDeviation_ = 0F;
-      frequencyOffset_ = 0L;
-      snr_ = 0F;
       encryptedTime_ = com.google.protobuf.ByteString.EMPTY;
-      fineTime_ = 0L;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Antenna();
     }
 
     @java.lang.Override
@@ -275,7 +282,6 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -332,7 +338,7 @@ private static final long serialVersionUID = 0L;
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -367,6 +373,7 @@ private static final long serialVersionUID = 0L;
     private int antenna_;
     /**
      * <code>uint32 antenna = 1;</code>
+     * @return The antenna.
      */
     public int getAntenna() {
       return antenna_;
@@ -376,6 +383,7 @@ private static final long serialVersionUID = 0L;
     private int channel_;
     /**
      * <code>uint32 channel = 2;</code>
+     * @return The channel.
      */
     public int getChannel() {
       return channel_;
@@ -389,6 +397,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
+     * @return The rssi.
      */
     public float getRssi() {
       return rssi_;
@@ -402,6 +411,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
+     * @return The channelRssi.
      */
     public float getChannelRssi() {
       return channelRssi_;
@@ -415,6 +425,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
+     * @return The rssiStandardDeviation.
      */
     public float getRssiStandardDeviation() {
       return rssiStandardDeviation_;
@@ -428,6 +439,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 frequency_offset = 7;</code>
+     * @return The frequencyOffset.
      */
     public long getFrequencyOffset() {
       return frequencyOffset_;
@@ -441,6 +453,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
+     * @return The snr.
      */
     public float getSnr() {
       return snr_;
@@ -454,6 +467,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes encrypted_time = 10;</code>
+     * @return The encryptedTime.
      */
     public com.google.protobuf.ByteString getEncryptedTime() {
       return encryptedTime_;
@@ -467,6 +481,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 fine_time = 11;</code>
+     * @return The fineTime.
      */
     public long getFineTime() {
       return fineTime_;
@@ -573,35 +588,30 @@ private static final long serialVersionUID = 0L;
       }
       org.thethingsnetwork.api.gateway.RxMetadata.Antenna other = (org.thethingsnetwork.api.gateway.RxMetadata.Antenna) obj;
 
-      boolean result = true;
-      result = result && (getAntenna()
-          == other.getAntenna());
-      result = result && (getChannel()
-          == other.getChannel());
-      result = result && (
-          java.lang.Float.floatToIntBits(getRssi())
-          == java.lang.Float.floatToIntBits(
-              other.getRssi()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getChannelRssi())
-          == java.lang.Float.floatToIntBits(
-              other.getChannelRssi()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getRssiStandardDeviation())
-          == java.lang.Float.floatToIntBits(
-              other.getRssiStandardDeviation()));
-      result = result && (getFrequencyOffset()
-          == other.getFrequencyOffset());
-      result = result && (
-          java.lang.Float.floatToIntBits(getSnr())
-          == java.lang.Float.floatToIntBits(
-              other.getSnr()));
-      result = result && getEncryptedTime()
-          .equals(other.getEncryptedTime());
-      result = result && (getFineTime()
-          == other.getFineTime());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getAntenna()
+          != other.getAntenna()) return false;
+      if (getChannel()
+          != other.getChannel()) return false;
+      if (java.lang.Float.floatToIntBits(getRssi())
+          != java.lang.Float.floatToIntBits(
+              other.getRssi())) return false;
+      if (java.lang.Float.floatToIntBits(getChannelRssi())
+          != java.lang.Float.floatToIntBits(
+              other.getChannelRssi())) return false;
+      if (java.lang.Float.floatToIntBits(getRssiStandardDeviation())
+          != java.lang.Float.floatToIntBits(
+              other.getRssiStandardDeviation())) return false;
+      if (getFrequencyOffset()
+          != other.getFrequencyOffset()) return false;
+      if (java.lang.Float.floatToIntBits(getSnr())
+          != java.lang.Float.floatToIntBits(
+              other.getSnr())) return false;
+      if (!getEncryptedTime()
+          .equals(other.getEncryptedTime())) return false;
+      if (getFineTime()
+          != other.getFineTime()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -827,35 +837,35 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -928,12 +938,15 @@ private static final long serialVersionUID = 0L;
       private int antenna_ ;
       /**
        * <code>uint32 antenna = 1;</code>
+       * @return The antenna.
        */
       public int getAntenna() {
         return antenna_;
       }
       /**
        * <code>uint32 antenna = 1;</code>
+       * @param value The antenna to set.
+       * @return This builder for chaining.
        */
       public Builder setAntenna(int value) {
         
@@ -943,6 +956,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>uint32 antenna = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAntenna() {
         
@@ -954,12 +968,15 @@ private static final long serialVersionUID = 0L;
       private int channel_ ;
       /**
        * <code>uint32 channel = 2;</code>
+       * @return The channel.
        */
       public int getChannel() {
         return channel_;
       }
       /**
        * <code>uint32 channel = 2;</code>
+       * @param value The channel to set.
+       * @return This builder for chaining.
        */
       public Builder setChannel(int value) {
         
@@ -969,6 +986,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>uint32 channel = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearChannel() {
         
@@ -984,6 +1002,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
+       * @return The rssi.
        */
       public float getRssi() {
         return rssi_;
@@ -994,6 +1013,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
+       * @param value The rssi to set.
+       * @return This builder for chaining.
        */
       public Builder setRssi(float value) {
         
@@ -1007,6 +1028,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearRssi() {
         
@@ -1022,6 +1044,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
+       * @return The channelRssi.
        */
       public float getChannelRssi() {
         return channelRssi_;
@@ -1032,6 +1055,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
+       * @param value The channelRssi to set.
+       * @return This builder for chaining.
        */
       public Builder setChannelRssi(float value) {
         
@@ -1045,6 +1070,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearChannelRssi() {
         
@@ -1060,6 +1086,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
+       * @return The rssiStandardDeviation.
        */
       public float getRssiStandardDeviation() {
         return rssiStandardDeviation_;
@@ -1070,6 +1097,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
+       * @param value The rssiStandardDeviation to set.
+       * @return This builder for chaining.
        */
       public Builder setRssiStandardDeviation(float value) {
         
@@ -1083,6 +1112,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearRssiStandardDeviation() {
         
@@ -1098,6 +1128,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 frequency_offset = 7;</code>
+       * @return The frequencyOffset.
        */
       public long getFrequencyOffset() {
         return frequencyOffset_;
@@ -1108,6 +1139,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 frequency_offset = 7;</code>
+       * @param value The frequencyOffset to set.
+       * @return This builder for chaining.
        */
       public Builder setFrequencyOffset(long value) {
         
@@ -1121,6 +1154,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 frequency_offset = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearFrequencyOffset() {
         
@@ -1136,6 +1170,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
+       * @return The snr.
        */
       public float getSnr() {
         return snr_;
@@ -1146,6 +1181,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
+       * @param value The snr to set.
+       * @return This builder for chaining.
        */
       public Builder setSnr(float value) {
         
@@ -1159,6 +1196,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearSnr() {
         
@@ -1174,6 +1212,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>bytes encrypted_time = 10;</code>
+       * @return The encryptedTime.
        */
       public com.google.protobuf.ByteString getEncryptedTime() {
         return encryptedTime_;
@@ -1184,6 +1223,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>bytes encrypted_time = 10;</code>
+       * @param value The encryptedTime to set.
+       * @return This builder for chaining.
        */
       public Builder setEncryptedTime(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1200,6 +1241,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>bytes encrypted_time = 10;</code>
+       * @return This builder for chaining.
        */
       public Builder clearEncryptedTime() {
         
@@ -1215,6 +1257,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 fine_time = 11;</code>
+       * @return The fineTime.
        */
       public long getFineTime() {
         return fineTime_;
@@ -1225,6 +1268,8 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 fine_time = 11;</code>
+       * @param value The fineTime to set.
+       * @return This builder for chaining.
        */
       public Builder setFineTime(long value) {
         
@@ -1238,6 +1283,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 fine_time = 11;</code>
+       * @return This builder for chaining.
        */
       public Builder clearFineTime() {
         
@@ -1248,7 +1294,7 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1298,11 +1344,11 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  private int bitField0_;
   public static final int GATEWAY_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object gatewayId_;
   /**
    * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+   * @return The gatewayId.
    */
   public java.lang.String getGatewayId() {
     java.lang.Object ref = gatewayId_;
@@ -1318,6 +1364,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+   * @return The bytes for gatewayId.
    */
   public com.google.protobuf.ByteString
       getGatewayIdBytes() {
@@ -1341,6 +1388,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool gateway_trusted = 2;</code>
+   * @return The gatewayTrusted.
    */
   public boolean getGatewayTrusted() {
     return gatewayTrusted_;
@@ -1354,6 +1402,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 timestamp = 11;</code>
+   * @return The timestamp.
    */
   public int getTimestamp() {
     return timestamp_;
@@ -1367,6 +1416,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 time = 12;</code>
+   * @return The time.
    */
   public long getTime() {
     return time_;
@@ -1380,6 +1430,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes encrypted_time = 13;</code>
+   * @return The encryptedTime.
    */
   public com.google.protobuf.ByteString getEncryptedTime() {
     return encryptedTime_;
@@ -1389,6 +1440,7 @@ private static final long serialVersionUID = 0L;
   private int rfChain_;
   /**
    * <code>uint32 rf_chain = 21;</code>
+   * @return The rfChain.
    */
   public int getRfChain() {
     return rfChain_;
@@ -1398,6 +1450,7 @@ private static final long serialVersionUID = 0L;
   private int channel_;
   /**
    * <code>uint32 channel = 22;</code>
+   * @return The channel.
    */
   public int getChannel() {
     return channel_;
@@ -1446,6 +1499,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint64 frequency = 31;</code>
+   * @return The frequency.
    */
   public long getFrequency() {
     return frequency_;
@@ -1459,6 +1513,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
+   * @return The rssi.
    */
   public float getRssi() {
     return rssi_;
@@ -1472,6 +1527,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
+   * @return The snr.
    */
   public float getSnr() {
     return snr_;
@@ -1481,12 +1537,14 @@ private static final long serialVersionUID = 0L;
   private org.thethingsnetwork.api.gateway.LocationMetadata location_;
   /**
    * <code>.gateway.LocationMetadata location = 41;</code>
+   * @return Whether the location field is set.
    */
   public boolean hasLocation() {
     return location_ != null;
   }
   /**
    * <code>.gateway.LocationMetadata location = 41;</code>
+   * @return The location.
    */
   public org.thethingsnetwork.api.gateway.LocationMetadata getLocation() {
     return location_ == null ? org.thethingsnetwork.api.gateway.LocationMetadata.getDefaultInstance() : location_;
@@ -1619,40 +1677,37 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.gateway.RxMetadata other = (org.thethingsnetwork.api.gateway.RxMetadata) obj;
 
-    boolean result = true;
-    result = result && getGatewayId()
-        .equals(other.getGatewayId());
-    result = result && (getGatewayTrusted()
-        == other.getGatewayTrusted());
-    result = result && (getTimestamp()
-        == other.getTimestamp());
-    result = result && (getTime()
-        == other.getTime());
-    result = result && getEncryptedTime()
-        .equals(other.getEncryptedTime());
-    result = result && (getRfChain()
-        == other.getRfChain());
-    result = result && (getChannel()
-        == other.getChannel());
-    result = result && getAntennasList()
-        .equals(other.getAntennasList());
-    result = result && (getFrequency()
-        == other.getFrequency());
-    result = result && (
-        java.lang.Float.floatToIntBits(getRssi())
-        == java.lang.Float.floatToIntBits(
-            other.getRssi()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getSnr())
-        == java.lang.Float.floatToIntBits(
-            other.getSnr()));
-    result = result && (hasLocation() == other.hasLocation());
+    if (!getGatewayId()
+        .equals(other.getGatewayId())) return false;
+    if (getGatewayTrusted()
+        != other.getGatewayTrusted()) return false;
+    if (getTimestamp()
+        != other.getTimestamp()) return false;
+    if (getTime()
+        != other.getTime()) return false;
+    if (!getEncryptedTime()
+        .equals(other.getEncryptedTime())) return false;
+    if (getRfChain()
+        != other.getRfChain()) return false;
+    if (getChannel()
+        != other.getChannel()) return false;
+    if (!getAntennasList()
+        .equals(other.getAntennasList())) return false;
+    if (getFrequency()
+        != other.getFrequency()) return false;
+    if (java.lang.Float.floatToIntBits(getRssi())
+        != java.lang.Float.floatToIntBits(
+            other.getRssi())) return false;
+    if (java.lang.Float.floatToIntBits(getSnr())
+        != java.lang.Float.floatToIntBits(
+            other.getSnr())) return false;
+    if (hasLocation() != other.hasLocation()) return false;
     if (hasLocation()) {
-      result = result && getLocation()
-          .equals(other.getLocation());
+      if (!getLocation()
+          .equals(other.getLocation())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1845,7 +1900,7 @@ private static final long serialVersionUID = 0L;
 
       if (antennasBuilder_ == null) {
         antennas_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         antennasBuilder_.clear();
       }
@@ -1888,7 +1943,6 @@ private static final long serialVersionUID = 0L;
     public org.thethingsnetwork.api.gateway.RxMetadata buildPartial() {
       org.thethingsnetwork.api.gateway.RxMetadata result = new org.thethingsnetwork.api.gateway.RxMetadata(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.gatewayId_ = gatewayId_;
       result.gatewayTrusted_ = gatewayTrusted_;
       result.timestamp_ = timestamp_;
@@ -1897,9 +1951,9 @@ private static final long serialVersionUID = 0L;
       result.rfChain_ = rfChain_;
       result.channel_ = channel_;
       if (antennasBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           antennas_ = java.util.Collections.unmodifiableList(antennas_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.antennas_ = antennas_;
       } else {
@@ -1913,42 +1967,41 @@ private static final long serialVersionUID = 0L;
       } else {
         result.location_ = locationBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1988,7 +2041,7 @@ private static final long serialVersionUID = 0L;
         if (!other.antennas_.isEmpty()) {
           if (antennas_.isEmpty()) {
             antennas_ = other.antennas_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureAntennasIsMutable();
             antennas_.addAll(other.antennas_);
@@ -2001,7 +2054,7 @@ private static final long serialVersionUID = 0L;
             antennasBuilder_.dispose();
             antennasBuilder_ = null;
             antennas_ = other.antennas_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000001);
             antennasBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getAntennasFieldBuilder() : null;
@@ -2055,6 +2108,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object gatewayId_ = "";
     /**
      * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @return The gatewayId.
      */
     public java.lang.String getGatewayId() {
       java.lang.Object ref = gatewayId_;
@@ -2070,6 +2124,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @return The bytes for gatewayId.
      */
     public com.google.protobuf.ByteString
         getGatewayIdBytes() {
@@ -2086,6 +2141,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @param value The gatewayId to set.
+     * @return This builder for chaining.
      */
     public Builder setGatewayId(
         java.lang.String value) {
@@ -2099,6 +2156,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearGatewayId() {
       
@@ -2108,6 +2166,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * @param value The bytes for gatewayId to set.
+     * @return This builder for chaining.
      */
     public Builder setGatewayIdBytes(
         com.google.protobuf.ByteString value) {
@@ -2128,6 +2188,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool gateway_trusted = 2;</code>
+     * @return The gatewayTrusted.
      */
     public boolean getGatewayTrusted() {
       return gatewayTrusted_;
@@ -2138,6 +2199,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool gateway_trusted = 2;</code>
+     * @param value The gatewayTrusted to set.
+     * @return This builder for chaining.
      */
     public Builder setGatewayTrusted(boolean value) {
       
@@ -2151,6 +2214,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool gateway_trusted = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearGatewayTrusted() {
       
@@ -2166,6 +2230,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 timestamp = 11;</code>
+     * @return The timestamp.
      */
     public int getTimestamp() {
       return timestamp_;
@@ -2176,6 +2241,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 timestamp = 11;</code>
+     * @param value The timestamp to set.
+     * @return This builder for chaining.
      */
     public Builder setTimestamp(int value) {
       
@@ -2189,6 +2256,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 timestamp = 11;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTimestamp() {
       
@@ -2204,6 +2272,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 time = 12;</code>
+     * @return The time.
      */
     public long getTime() {
       return time_;
@@ -2214,6 +2283,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 time = 12;</code>
+     * @param value The time to set.
+     * @return This builder for chaining.
      */
     public Builder setTime(long value) {
       
@@ -2227,6 +2298,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 time = 12;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTime() {
       
@@ -2242,6 +2314,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes encrypted_time = 13;</code>
+     * @return The encryptedTime.
      */
     public com.google.protobuf.ByteString getEncryptedTime() {
       return encryptedTime_;
@@ -2252,6 +2325,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes encrypted_time = 13;</code>
+     * @param value The encryptedTime to set.
+     * @return This builder for chaining.
      */
     public Builder setEncryptedTime(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -2268,6 +2343,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes encrypted_time = 13;</code>
+     * @return This builder for chaining.
      */
     public Builder clearEncryptedTime() {
       
@@ -2279,12 +2355,15 @@ private static final long serialVersionUID = 0L;
     private int rfChain_ ;
     /**
      * <code>uint32 rf_chain = 21;</code>
+     * @return The rfChain.
      */
     public int getRfChain() {
       return rfChain_;
     }
     /**
      * <code>uint32 rf_chain = 21;</code>
+     * @param value The rfChain to set.
+     * @return This builder for chaining.
      */
     public Builder setRfChain(int value) {
       
@@ -2294,6 +2373,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 rf_chain = 21;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRfChain() {
       
@@ -2305,12 +2385,15 @@ private static final long serialVersionUID = 0L;
     private int channel_ ;
     /**
      * <code>uint32 channel = 22;</code>
+     * @return The channel.
      */
     public int getChannel() {
       return channel_;
     }
     /**
      * <code>uint32 channel = 22;</code>
+     * @param value The channel to set.
+     * @return This builder for chaining.
      */
     public Builder setChannel(int value) {
       
@@ -2320,6 +2403,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 channel = 22;</code>
+     * @return This builder for chaining.
      */
     public Builder clearChannel() {
       
@@ -2331,9 +2415,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.thethingsnetwork.api.gateway.RxMetadata.Antenna> antennas_ =
       java.util.Collections.emptyList();
     private void ensureAntennasIsMutable() {
-      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         antennas_ = new java.util.ArrayList<org.thethingsnetwork.api.gateway.RxMetadata.Antenna>(antennas_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -2483,7 +2567,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearAntennas() {
       if (antennasBuilder_ == null) {
         antennas_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         antennasBuilder_.clear();
@@ -2560,7 +2644,7 @@ private static final long serialVersionUID = 0L;
         antennasBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.thethingsnetwork.api.gateway.RxMetadata.Antenna, org.thethingsnetwork.api.gateway.RxMetadata.Antenna.Builder, org.thethingsnetwork.api.gateway.RxMetadata.AntennaOrBuilder>(
                 antennas_,
-                ((bitField0_ & 0x00000080) == 0x00000080),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         antennas_ = null;
@@ -2575,6 +2659,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint64 frequency = 31;</code>
+     * @return The frequency.
      */
     public long getFrequency() {
       return frequency_;
@@ -2585,6 +2670,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint64 frequency = 31;</code>
+     * @param value The frequency to set.
+     * @return This builder for chaining.
      */
     public Builder setFrequency(long value) {
       
@@ -2598,6 +2685,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint64 frequency = 31;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFrequency() {
       
@@ -2613,6 +2701,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
+     * @return The rssi.
      */
     public float getRssi() {
       return rssi_;
@@ -2623,6 +2712,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
+     * @param value The rssi to set.
+     * @return This builder for chaining.
      */
     public Builder setRssi(float value) {
       
@@ -2636,6 +2727,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearRssi() {
       
@@ -2651,6 +2743,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
+     * @return The snr.
      */
     public float getSnr() {
       return snr_;
@@ -2661,6 +2754,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
+     * @param value The snr to set.
+     * @return This builder for chaining.
      */
     public Builder setSnr(float value) {
       
@@ -2674,6 +2769,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearSnr() {
       
@@ -2682,17 +2778,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private org.thethingsnetwork.api.gateway.LocationMetadata location_ = null;
+    private org.thethingsnetwork.api.gateway.LocationMetadata location_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.gateway.LocationMetadata, org.thethingsnetwork.api.gateway.LocationMetadata.Builder, org.thethingsnetwork.api.gateway.LocationMetadataOrBuilder> locationBuilder_;
     /**
      * <code>.gateway.LocationMetadata location = 41;</code>
+     * @return Whether the location field is set.
      */
     public boolean hasLocation() {
       return locationBuilder_ != null || location_ != null;
     }
     /**
      * <code>.gateway.LocationMetadata location = 41;</code>
+     * @return The location.
      */
     public org.thethingsnetwork.api.gateway.LocationMetadata getLocation() {
       if (locationBuilder_ == null) {
@@ -2801,7 +2899,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

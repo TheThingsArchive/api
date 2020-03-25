@@ -16,19 +16,19 @@ class FCtrl extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
      */
-    private $adr = false;
+    protected $adr = false;
     /**
      * Generated from protobuf field <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
      */
-    private $adr_ack_req = false;
+    protected $adr_ack_req = false;
     /**
      * Generated from protobuf field <code>bool ack = 3;</code>
      */
-    private $ack = false;
+    protected $ack = false;
     /**
      * Generated from protobuf field <code>bool f_pending = 4;</code>
      */
-    private $f_pending = false;
+    protected $f_pending = false;
 
     /**
      * Constructor.

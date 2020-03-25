@@ -18,35 +18,35 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>uint32 timestamp = 11;</code>
      */
-    private $timestamp = 0;
+    protected $timestamp = 0;
     /**
      * Generated from protobuf field <code>uint32 rf_chain = 21;</code>
      */
-    private $rf_chain = 0;
+    protected $rf_chain = 0;
     /**
      * Frequency in Hz
      *
      * Generated from protobuf field <code>uint64 frequency = 22;</code>
      */
-    private $frequency = 0;
+    protected $frequency = 0;
     /**
      * Transmit power in dBm
      *
      * Generated from protobuf field <code>int32 power = 23;</code>
      */
-    private $power = 0;
+    protected $power = 0;
     /**
      * LoRa polarization inversion (basically always true for messages from gateway to node)
      *
      * Generated from protobuf field <code>bool polarization_inversion = 31;</code>
      */
-    private $polarization_inversion = false;
+    protected $polarization_inversion = false;
     /**
      * FSK frequency deviation in Hz
      *
      * Generated from protobuf field <code>uint32 frequency_deviation = 32;</code>
      */
-    private $frequency_deviation = 0;
+    protected $frequency_deviation = 0;
 
     /**
      * Constructor.

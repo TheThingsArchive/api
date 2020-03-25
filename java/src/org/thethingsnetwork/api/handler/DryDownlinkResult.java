@@ -25,6 +25,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new DryDownlinkResult();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -54,16 +61,16 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               logs_ = new java.util.ArrayList<org.thethingsnetwork.api.handler.LogEntry>();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             logs_.add(
                 input.readMessage(org.thethingsnetwork.api.handler.LogEntry.parser(), extensionRegistry));
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -77,7 +84,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         logs_ = java.util.Collections.unmodifiableList(logs_);
       }
       this.unknownFields = unknownFields.build();
@@ -97,7 +104,6 @@ private static final long serialVersionUID = 0L;
             org.thethingsnetwork.api.handler.DryDownlinkResult.class, org.thethingsnetwork.api.handler.DryDownlinkResult.Builder.class);
   }
 
-  private int bitField0_;
   public static final int PAYLOAD_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString payload_;
   /**
@@ -106,6 +112,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes payload = 1;</code>
+   * @return The payload.
    */
   public com.google.protobuf.ByteString getPayload() {
     return payload_;
@@ -218,13 +225,12 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.handler.DryDownlinkResult other = (org.thethingsnetwork.api.handler.DryDownlinkResult) obj;
 
-    boolean result = true;
-    result = result && getPayload()
-        .equals(other.getPayload());
-    result = result && getLogsList()
-        .equals(other.getLogsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getPayload()
+        .equals(other.getPayload())) return false;
+    if (!getLogsList()
+        .equals(other.getLogsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -382,7 +388,7 @@ private static final long serialVersionUID = 0L;
 
       if (logsBuilder_ == null) {
         logs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         logsBuilder_.clear();
       }
@@ -413,53 +419,51 @@ private static final long serialVersionUID = 0L;
     public org.thethingsnetwork.api.handler.DryDownlinkResult buildPartial() {
       org.thethingsnetwork.api.handler.DryDownlinkResult result = new org.thethingsnetwork.api.handler.DryDownlinkResult(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.payload_ = payload_;
       if (logsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           logs_ = java.util.Collections.unmodifiableList(logs_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.logs_ = logs_;
       } else {
         result.logs_ = logsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -480,7 +484,7 @@ private static final long serialVersionUID = 0L;
         if (!other.logs_.isEmpty()) {
           if (logs_.isEmpty()) {
             logs_ = other.logs_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureLogsIsMutable();
             logs_.addAll(other.logs_);
@@ -493,7 +497,7 @@ private static final long serialVersionUID = 0L;
             logsBuilder_.dispose();
             logsBuilder_ = null;
             logs_ = other.logs_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             logsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getLogsFieldBuilder() : null;
@@ -539,6 +543,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes payload = 1;</code>
+     * @return The payload.
      */
     public com.google.protobuf.ByteString getPayload() {
       return payload_;
@@ -549,6 +554,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes payload = 1;</code>
+     * @param value The payload to set.
+     * @return This builder for chaining.
      */
     public Builder setPayload(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -565,6 +572,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes payload = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPayload() {
       
@@ -576,9 +584,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.thethingsnetwork.api.handler.LogEntry> logs_ =
       java.util.Collections.emptyList();
     private void ensureLogsIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         logs_ = new java.util.ArrayList<org.thethingsnetwork.api.handler.LogEntry>(logs_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -772,7 +780,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearLogs() {
       if (logsBuilder_ == null) {
         logs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         logsBuilder_.clear();
@@ -877,7 +885,7 @@ private static final long serialVersionUID = 0L;
         logsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.thethingsnetwork.api.handler.LogEntry, org.thethingsnetwork.api.handler.LogEntry.Builder, org.thethingsnetwork.api.handler.LogEntryOrBuilder>(
                 logs_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         logs_ = null;
@@ -887,7 +895,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -16,15 +16,15 @@ class Rates extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>float rate1 = 1;</code>
      */
-    private $rate1 = 0.0;
+    protected $rate1 = 0.0;
     /**
      * Generated from protobuf field <code>float rate5 = 2;</code>
      */
-    private $rate5 = 0.0;
+    protected $rate5 = 0.0;
     /**
      * Generated from protobuf field <code>float rate15 = 3;</code>
      */
-    private $rate15 = 0.0;
+    protected $rate15 = 0.0;
 
     /**
      * Constructor.

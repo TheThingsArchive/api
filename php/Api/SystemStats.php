@@ -16,15 +16,15 @@ class SystemStats extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.api.SystemStats.Loadstats load = 1;</code>
      */
-    private $load = null;
+    protected $load = null;
     /**
      * Generated from protobuf field <code>.api.SystemStats.CPUStats cpu = 2;</code>
      */
-    private $cpu = null;
+    protected $cpu = null;
     /**
      * Generated from protobuf field <code>.api.SystemStats.MemoryStats memory = 3;</code>
      */
-    private $memory = null;
+    protected $memory = null;
 
     /**
      * Constructor.

@@ -9,20 +9,24 @@ public interface ApplicationHandlerRegistrationOrBuilder extends
 
   /**
    * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The appId.
    */
   java.lang.String getAppId();
   /**
    * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The bytes for appId.
    */
   com.google.protobuf.ByteString
       getAppIdBytes();
 
   /**
    * <code>string handler_id = 2 [(.gogoproto.customname) = "HandlerID"];</code>
+   * @return The handlerId.
    */
   java.lang.String getHandlerId();
   /**
    * <code>string handler_id = 2 [(.gogoproto.customname) = "HandlerID"];</code>
+   * @return The bytes for handlerId.
    */
   com.google.protobuf.ByteString
       getHandlerIdBytes();

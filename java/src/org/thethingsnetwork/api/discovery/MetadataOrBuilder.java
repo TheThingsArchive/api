@@ -14,6 +14,7 @@ public interface MetadataOrBuilder extends
    * </pre>
    *
    * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+   * @return The gatewayId.
    */
   java.lang.String getGatewayId();
   /**
@@ -23,6 +24,7 @@ public interface MetadataOrBuilder extends
    * </pre>
    *
    * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+   * @return The bytes for gatewayId.
    */
   com.google.protobuf.ByteString
       getGatewayIdBytes();
@@ -35,6 +37,7 @@ public interface MetadataOrBuilder extends
    * </pre>
    *
    * <code>bytes dev_addr_prefix = 20;</code>
+   * @return The devAddrPrefix.
    */
   com.google.protobuf.ByteString getDevAddrPrefix();
 
@@ -45,6 +48,7 @@ public interface MetadataOrBuilder extends
    * </pre>
    *
    * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The appId.
    */
   java.lang.String getAppId();
   /**
@@ -54,6 +58,7 @@ public interface MetadataOrBuilder extends
    * </pre>
    *
    * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+   * @return The bytes for appId.
    */
   com.google.protobuf.ByteString
       getAppIdBytes();
@@ -65,6 +70,7 @@ public interface MetadataOrBuilder extends
    * </pre>
    *
    * <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
+   * @return The appEui.
    */
   com.google.protobuf.ByteString getAppEui();
 

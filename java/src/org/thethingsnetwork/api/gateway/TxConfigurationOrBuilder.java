@@ -13,11 +13,13 @@ public interface TxConfigurationOrBuilder extends
    * </pre>
    *
    * <code>uint32 timestamp = 11;</code>
+   * @return The timestamp.
    */
   int getTimestamp();
 
   /**
    * <code>uint32 rf_chain = 21;</code>
+   * @return The rfChain.
    */
   int getRfChain();
 
@@ -27,6 +29,7 @@ public interface TxConfigurationOrBuilder extends
    * </pre>
    *
    * <code>uint64 frequency = 22;</code>
+   * @return The frequency.
    */
   long getFrequency();
 
@@ -36,6 +39,7 @@ public interface TxConfigurationOrBuilder extends
    * </pre>
    *
    * <code>int32 power = 23;</code>
+   * @return The power.
    */
   int getPower();
 
@@ -45,6 +49,7 @@ public interface TxConfigurationOrBuilder extends
    * </pre>
    *
    * <code>bool polarization_inversion = 31;</code>
+   * @return The polarizationInversion.
    */
   boolean getPolarizationInversion();
 
@@ -54,6 +59,7 @@ public interface TxConfigurationOrBuilder extends
    * </pre>
    *
    * <code>uint32 frequency_deviation = 32;</code>
+   * @return The frequencyDeviation.
    */
   int getFrequencyDeviation();
 }

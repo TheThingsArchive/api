@@ -9,10 +9,12 @@ public interface StatusOrBuilder extends
 
   /**
    * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
+   * @return Whether the system field is set.
    */
   boolean hasSystem();
   /**
    * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
+   * @return The system.
    */
   org.thethingsnetwork.api.SystemStats getSystem();
   /**
@@ -22,10 +24,12 @@ public interface StatusOrBuilder extends
 
   /**
    * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
+   * @return Whether the component field is set.
    */
   boolean hasComponent();
   /**
    * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
+   * @return The component.
    */
   org.thethingsnetwork.api.ComponentStats getComponent();
   /**
@@ -35,10 +39,12 @@ public interface StatusOrBuilder extends
 
   /**
    * <code>.api.Rates uplink = 11;</code>
+   * @return Whether the uplink field is set.
    */
   boolean hasUplink();
   /**
    * <code>.api.Rates uplink = 11;</code>
+   * @return The uplink.
    */
   org.thethingsnetwork.api.Rates getUplink();
   /**
@@ -48,10 +54,12 @@ public interface StatusOrBuilder extends
 
   /**
    * <code>.api.Rates uplink_unique = 12;</code>
+   * @return Whether the uplinkUnique field is set.
    */
   boolean hasUplinkUnique();
   /**
    * <code>.api.Rates uplink_unique = 12;</code>
+   * @return The uplinkUnique.
    */
   org.thethingsnetwork.api.Rates getUplinkUnique();
   /**
@@ -61,10 +69,12 @@ public interface StatusOrBuilder extends
 
   /**
    * <code>.api.Rates downlink = 13;</code>
+   * @return Whether the downlink field is set.
    */
   boolean hasDownlink();
   /**
    * <code>.api.Rates downlink = 13;</code>
+   * @return The downlink.
    */
   org.thethingsnetwork.api.Rates getDownlink();
   /**
@@ -74,10 +84,12 @@ public interface StatusOrBuilder extends
 
   /**
    * <code>.api.Rates activations = 14;</code>
+   * @return Whether the activations field is set.
    */
   boolean hasActivations();
   /**
    * <code>.api.Rates activations = 14;</code>
+   * @return The activations.
    */
   org.thethingsnetwork.api.Rates getActivations();
   /**
@@ -87,10 +99,12 @@ public interface StatusOrBuilder extends
 
   /**
    * <code>.api.Rates activations_unique = 15;</code>
+   * @return Whether the activationsUnique field is set.
    */
   boolean hasActivationsUnique();
   /**
    * <code>.api.Rates activations_unique = 15;</code>
+   * @return The activationsUnique.
    */
   org.thethingsnetwork.api.Rates getActivationsUnique();
   /**
@@ -100,10 +114,12 @@ public interface StatusOrBuilder extends
 
   /**
    * <code>.api.Percentiles deduplication = 16;</code>
+   * @return Whether the deduplication field is set.
    */
   boolean hasDeduplication();
   /**
    * <code>.api.Percentiles deduplication = 16;</code>
+   * @return The deduplication.
    */
   org.thethingsnetwork.api.Percentiles getDeduplication();
   /**
@@ -117,11 +133,13 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>uint32 connected_routers = 21;</code>
+   * @return The connectedRouters.
    */
   int getConnectedRouters();
 
   /**
    * <code>uint32 connected_handlers = 22;</code>
+   * @return The connectedHandlers.
    */
   int getConnectedHandlers();
 }

@@ -9,126 +9,128 @@ require 'protocol/protocol_pb'
 require 'gateway/gateway_pb'
 require 'trace/trace_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
-  add_message "broker.DownlinkOption" do
-    optional :identifier, :string, 1
-    optional :gateway_id, :string, 2
-    optional :score, :uint32, 3
-    optional :deadline, :int64, 4
-    optional :protocol_configuration, :message, 5, "protocol.TxConfiguration"
-    optional :gateway_configuration, :message, 6, "gateway.TxConfiguration"
-  end
-  add_message "broker.UplinkMessage" do
-    optional :payload, :bytes, 1
-    optional :message, :message, 2, "protocol.Message"
-    optional :dev_eui, :bytes, 11
-    optional :app_eui, :bytes, 12
-    optional :app_id, :string, 13
-    optional :dev_id, :string, 14
-    optional :protocol_metadata, :message, 21, "protocol.RxMetadata"
-    optional :gateway_metadata, :message, 22, "gateway.RxMetadata"
-    repeated :downlink_options, :message, 31, "broker.DownlinkOption"
-    optional :trace, :message, 41, "trace.Trace"
-  end
-  add_message "broker.DownlinkMessage" do
-    optional :payload, :bytes, 1
-    optional :message, :message, 2, "protocol.Message"
-    optional :dev_eui, :bytes, 11
-    optional :app_eui, :bytes, 12
-    optional :app_id, :string, 13
-    optional :dev_id, :string, 14
-    optional :downlink_option, :message, 21, "broker.DownlinkOption"
-    optional :trace, :message, 31, "trace.Trace"
-  end
-  add_message "broker.DeviceActivationResponse" do
-    optional :payload, :bytes, 1
-    optional :message, :message, 2, "protocol.Message"
-    optional :downlink_option, :message, 11, "broker.DownlinkOption"
-    optional :trace, :message, 21, "trace.Trace"
-  end
-  add_message "broker.DeduplicatedUplinkMessage" do
-    optional :payload, :bytes, 1
-    optional :message, :message, 2, "protocol.Message"
-    optional :dev_eui, :bytes, 11
-    optional :app_eui, :bytes, 12
-    optional :app_id, :string, 13
-    optional :dev_id, :string, 14
-    optional :protocol_metadata, :message, 21, "protocol.RxMetadata"
-    repeated :gateway_metadata, :message, 22, "gateway.RxMetadata"
-    optional :server_time, :int64, 23
-    optional :response_template, :message, 31, "broker.DownlinkMessage"
-    optional :trace, :message, 41, "trace.Trace"
-  end
-  add_message "broker.DeviceActivationRequest" do
-    optional :payload, :bytes, 1
-    optional :message, :message, 2, "protocol.Message"
-    optional :dev_eui, :bytes, 11
-    optional :app_eui, :bytes, 12
-    optional :protocol_metadata, :message, 21, "protocol.RxMetadata"
-    optional :gateway_metadata, :message, 22, "gateway.RxMetadata"
-    optional :activation_metadata, :message, 23, "protocol.ActivationMetadata"
-    repeated :downlink_options, :message, 31, "broker.DownlinkOption"
-    optional :trace, :message, 41, "trace.Trace"
-  end
-  add_message "broker.DeduplicatedDeviceActivationRequest" do
-    optional :payload, :bytes, 1
-    optional :message, :message, 2, "protocol.Message"
-    optional :dev_eui, :bytes, 11
-    optional :app_eui, :bytes, 12
-    optional :app_id, :string, 13
-    optional :dev_id, :string, 14
-    optional :protocol_metadata, :message, 21, "protocol.RxMetadata"
-    repeated :gateway_metadata, :message, 22, "gateway.RxMetadata"
-    optional :activation_metadata, :message, 23, "protocol.ActivationMetadata"
-    optional :server_time, :int64, 24
-    optional :response_template, :message, 31, "broker.DeviceActivationResponse"
-    optional :trace, :message, 41, "trace.Trace"
-  end
-  add_message "broker.ActivationChallengeRequest" do
-    optional :payload, :bytes, 1
-    optional :message, :message, 2, "protocol.Message"
-    optional :dev_eui, :bytes, 11
-    optional :app_eui, :bytes, 12
-    optional :app_id, :string, 13
-    optional :dev_id, :string, 14
-  end
-  add_message "broker.ActivationChallengeResponse" do
-    optional :payload, :bytes, 1
-    optional :message, :message, 2, "protocol.Message"
-  end
-  add_message "broker.SubscribeRequest" do
-  end
-  add_message "broker.StatusRequest" do
-  end
-  add_message "broker.Status" do
-    optional :system, :message, 1, "api.SystemStats"
-    optional :component, :message, 2, "api.ComponentStats"
-    optional :uplink, :message, 11, "api.Rates"
-    optional :uplink_unique, :message, 12, "api.Rates"
-    optional :downlink, :message, 13, "api.Rates"
-    optional :activations, :message, 14, "api.Rates"
-    optional :activations_unique, :message, 15, "api.Rates"
-    optional :deduplication, :message, 16, "api.Percentiles"
-    optional :connected_routers, :uint32, 21
-    optional :connected_handlers, :uint32, 22
-  end
-  add_message "broker.ApplicationHandlerRegistration" do
-    optional :app_id, :string, 1
-    optional :handler_id, :string, 2
+  add_file("github.com/TheThingsNetwork/api/broker/broker.proto", :syntax => :proto3) do
+    add_message "broker.DownlinkOption" do
+      optional :identifier, :string, 1
+      optional :gateway_id, :string, 2
+      optional :score, :uint32, 3
+      optional :deadline, :int64, 4
+      optional :protocol_configuration, :message, 5, "protocol.TxConfiguration"
+      optional :gateway_configuration, :message, 6, "gateway.TxConfiguration"
+    end
+    add_message "broker.UplinkMessage" do
+      optional :payload, :bytes, 1
+      optional :message, :message, 2, "protocol.Message"
+      optional :dev_eui, :bytes, 11
+      optional :app_eui, :bytes, 12
+      optional :app_id, :string, 13
+      optional :dev_id, :string, 14
+      optional :protocol_metadata, :message, 21, "protocol.RxMetadata"
+      optional :gateway_metadata, :message, 22, "gateway.RxMetadata"
+      repeated :downlink_options, :message, 31, "broker.DownlinkOption"
+      optional :trace, :message, 41, "trace.Trace"
+    end
+    add_message "broker.DownlinkMessage" do
+      optional :payload, :bytes, 1
+      optional :message, :message, 2, "protocol.Message"
+      optional :dev_eui, :bytes, 11
+      optional :app_eui, :bytes, 12
+      optional :app_id, :string, 13
+      optional :dev_id, :string, 14
+      optional :downlink_option, :message, 21, "broker.DownlinkOption"
+      optional :trace, :message, 31, "trace.Trace"
+    end
+    add_message "broker.DeviceActivationResponse" do
+      optional :payload, :bytes, 1
+      optional :message, :message, 2, "protocol.Message"
+      optional :downlink_option, :message, 11, "broker.DownlinkOption"
+      optional :trace, :message, 21, "trace.Trace"
+    end
+    add_message "broker.DeduplicatedUplinkMessage" do
+      optional :payload, :bytes, 1
+      optional :message, :message, 2, "protocol.Message"
+      optional :dev_eui, :bytes, 11
+      optional :app_eui, :bytes, 12
+      optional :app_id, :string, 13
+      optional :dev_id, :string, 14
+      optional :protocol_metadata, :message, 21, "protocol.RxMetadata"
+      repeated :gateway_metadata, :message, 22, "gateway.RxMetadata"
+      optional :server_time, :int64, 23
+      optional :response_template, :message, 31, "broker.DownlinkMessage"
+      optional :trace, :message, 41, "trace.Trace"
+    end
+    add_message "broker.DeviceActivationRequest" do
+      optional :payload, :bytes, 1
+      optional :message, :message, 2, "protocol.Message"
+      optional :dev_eui, :bytes, 11
+      optional :app_eui, :bytes, 12
+      optional :protocol_metadata, :message, 21, "protocol.RxMetadata"
+      optional :gateway_metadata, :message, 22, "gateway.RxMetadata"
+      optional :activation_metadata, :message, 23, "protocol.ActivationMetadata"
+      repeated :downlink_options, :message, 31, "broker.DownlinkOption"
+      optional :trace, :message, 41, "trace.Trace"
+    end
+    add_message "broker.DeduplicatedDeviceActivationRequest" do
+      optional :payload, :bytes, 1
+      optional :message, :message, 2, "protocol.Message"
+      optional :dev_eui, :bytes, 11
+      optional :app_eui, :bytes, 12
+      optional :app_id, :string, 13
+      optional :dev_id, :string, 14
+      optional :protocol_metadata, :message, 21, "protocol.RxMetadata"
+      repeated :gateway_metadata, :message, 22, "gateway.RxMetadata"
+      optional :activation_metadata, :message, 23, "protocol.ActivationMetadata"
+      optional :server_time, :int64, 24
+      optional :response_template, :message, 31, "broker.DeviceActivationResponse"
+      optional :trace, :message, 41, "trace.Trace"
+    end
+    add_message "broker.ActivationChallengeRequest" do
+      optional :payload, :bytes, 1
+      optional :message, :message, 2, "protocol.Message"
+      optional :dev_eui, :bytes, 11
+      optional :app_eui, :bytes, 12
+      optional :app_id, :string, 13
+      optional :dev_id, :string, 14
+    end
+    add_message "broker.ActivationChallengeResponse" do
+      optional :payload, :bytes, 1
+      optional :message, :message, 2, "protocol.Message"
+    end
+    add_message "broker.SubscribeRequest" do
+    end
+    add_message "broker.StatusRequest" do
+    end
+    add_message "broker.Status" do
+      optional :system, :message, 1, "api.SystemStats"
+      optional :component, :message, 2, "api.ComponentStats"
+      optional :uplink, :message, 11, "api.Rates"
+      optional :uplink_unique, :message, 12, "api.Rates"
+      optional :downlink, :message, 13, "api.Rates"
+      optional :activations, :message, 14, "api.Rates"
+      optional :activations_unique, :message, 15, "api.Rates"
+      optional :deduplication, :message, 16, "api.Percentiles"
+      optional :connected_routers, :uint32, 21
+      optional :connected_handlers, :uint32, 22
+    end
+    add_message "broker.ApplicationHandlerRegistration" do
+      optional :app_id, :string, 1
+      optional :handler_id, :string, 2
+    end
   end
 end
 
 module Broker
-  DownlinkOption = Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.DownlinkOption").msgclass
-  UplinkMessage = Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.UplinkMessage").msgclass
-  DownlinkMessage = Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.DownlinkMessage").msgclass
-  DeviceActivationResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.DeviceActivationResponse").msgclass
-  DeduplicatedUplinkMessage = Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.DeduplicatedUplinkMessage").msgclass
-  DeviceActivationRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.DeviceActivationRequest").msgclass
-  DeduplicatedDeviceActivationRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.DeduplicatedDeviceActivationRequest").msgclass
-  ActivationChallengeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.ActivationChallengeRequest").msgclass
-  ActivationChallengeResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.ActivationChallengeResponse").msgclass
-  SubscribeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.SubscribeRequest").msgclass
-  StatusRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.StatusRequest").msgclass
-  Status = Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.Status").msgclass
-  ApplicationHandlerRegistration = Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.ApplicationHandlerRegistration").msgclass
+  DownlinkOption = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.DownlinkOption").msgclass
+  UplinkMessage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.UplinkMessage").msgclass
+  DownlinkMessage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.DownlinkMessage").msgclass
+  DeviceActivationResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.DeviceActivationResponse").msgclass
+  DeduplicatedUplinkMessage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.DeduplicatedUplinkMessage").msgclass
+  DeviceActivationRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.DeviceActivationRequest").msgclass
+  DeduplicatedDeviceActivationRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.DeduplicatedDeviceActivationRequest").msgclass
+  ActivationChallengeRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.ActivationChallengeRequest").msgclass
+  ActivationChallengeResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.ActivationChallengeResponse").msgclass
+  SubscribeRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.SubscribeRequest").msgclass
+  StatusRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.StatusRequest").msgclass
+  Status = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.Status").msgclass
+  ApplicationHandlerRegistration = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("broker.ApplicationHandlerRegistration").msgclass
 end

@@ -13,6 +13,7 @@ public interface LogEntryOrBuilder extends
    * </pre>
    *
    * <code>string function = 1;</code>
+   * @return The function.
    */
   java.lang.String getFunction();
   /**
@@ -21,6 +22,7 @@ public interface LogEntryOrBuilder extends
    * </pre>
    *
    * <code>string function = 1;</code>
+   * @return The bytes for function.
    */
   com.google.protobuf.ByteString
       getFunctionBytes();
@@ -31,6 +33,7 @@ public interface LogEntryOrBuilder extends
    * </pre>
    *
    * <code>repeated string fields = 2;</code>
+   * @return A list containing the fields.
    */
   java.util.List<java.lang.String>
       getFieldsList();
@@ -40,6 +43,7 @@ public interface LogEntryOrBuilder extends
    * </pre>
    *
    * <code>repeated string fields = 2;</code>
+   * @return The count of fields.
    */
   int getFieldsCount();
   /**
@@ -48,6 +52,8 @@ public interface LogEntryOrBuilder extends
    * </pre>
    *
    * <code>repeated string fields = 2;</code>
+   * @param index The index of the element to return.
+   * @return The fields at the given index.
    */
   java.lang.String getFields(int index);
   /**
@@ -56,6 +62,8 @@ public interface LogEntryOrBuilder extends
    * </pre>
    *
    * <code>repeated string fields = 2;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the fields at the given index.
    */
   com.google.protobuf.ByteString
       getFieldsBytes(int index);

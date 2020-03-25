@@ -16,12 +16,13 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private TxConfiguration() {
-    timestamp_ = 0;
-    rfChain_ = 0;
-    frequency_ = 0L;
-    power_ = 0;
-    polarizationInversion_ = false;
-    frequencyDeviation_ = 0;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new TxConfiguration();
   }
 
   @java.lang.Override
@@ -37,7 +38,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -79,7 +79,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -118,6 +118,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 timestamp = 11;</code>
+   * @return The timestamp.
    */
   public int getTimestamp() {
     return timestamp_;
@@ -127,6 +128,7 @@ private static final long serialVersionUID = 0L;
   private int rfChain_;
   /**
    * <code>uint32 rf_chain = 21;</code>
+   * @return The rfChain.
    */
   public int getRfChain() {
     return rfChain_;
@@ -140,6 +142,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint64 frequency = 22;</code>
+   * @return The frequency.
    */
   public long getFrequency() {
     return frequency_;
@@ -153,6 +156,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 power = 23;</code>
+   * @return The power.
    */
   public int getPower() {
     return power_;
@@ -166,6 +170,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool polarization_inversion = 31;</code>
+   * @return The polarizationInversion.
    */
   public boolean getPolarizationInversion() {
     return polarizationInversion_;
@@ -179,6 +184,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 frequency_deviation = 32;</code>
+   * @return The frequencyDeviation.
    */
   public int getFrequencyDeviation() {
     return frequencyDeviation_;
@@ -264,21 +270,20 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.gateway.TxConfiguration other = (org.thethingsnetwork.api.gateway.TxConfiguration) obj;
 
-    boolean result = true;
-    result = result && (getTimestamp()
-        == other.getTimestamp());
-    result = result && (getRfChain()
-        == other.getRfChain());
-    result = result && (getFrequency()
-        == other.getFrequency());
-    result = result && (getPower()
-        == other.getPower());
-    result = result && (getPolarizationInversion()
-        == other.getPolarizationInversion());
-    result = result && (getFrequencyDeviation()
-        == other.getFrequencyDeviation());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getTimestamp()
+        != other.getTimestamp()) return false;
+    if (getRfChain()
+        != other.getRfChain()) return false;
+    if (getFrequency()
+        != other.getFrequency()) return false;
+    if (getPower()
+        != other.getPower()) return false;
+    if (getPolarizationInversion()
+        != other.getPolarizationInversion()) return false;
+    if (getFrequencyDeviation()
+        != other.getFrequencyDeviation()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -485,35 +490,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -581,6 +586,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 timestamp = 11;</code>
+     * @return The timestamp.
      */
     public int getTimestamp() {
       return timestamp_;
@@ -591,6 +597,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 timestamp = 11;</code>
+     * @param value The timestamp to set.
+     * @return This builder for chaining.
      */
     public Builder setTimestamp(int value) {
       
@@ -604,6 +612,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 timestamp = 11;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTimestamp() {
       
@@ -615,12 +624,15 @@ private static final long serialVersionUID = 0L;
     private int rfChain_ ;
     /**
      * <code>uint32 rf_chain = 21;</code>
+     * @return The rfChain.
      */
     public int getRfChain() {
       return rfChain_;
     }
     /**
      * <code>uint32 rf_chain = 21;</code>
+     * @param value The rfChain to set.
+     * @return This builder for chaining.
      */
     public Builder setRfChain(int value) {
       
@@ -630,6 +642,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 rf_chain = 21;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRfChain() {
       
@@ -645,6 +658,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint64 frequency = 22;</code>
+     * @return The frequency.
      */
     public long getFrequency() {
       return frequency_;
@@ -655,6 +669,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint64 frequency = 22;</code>
+     * @param value The frequency to set.
+     * @return This builder for chaining.
      */
     public Builder setFrequency(long value) {
       
@@ -668,6 +684,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint64 frequency = 22;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFrequency() {
       
@@ -683,6 +700,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 power = 23;</code>
+     * @return The power.
      */
     public int getPower() {
       return power_;
@@ -693,6 +711,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 power = 23;</code>
+     * @param value The power to set.
+     * @return This builder for chaining.
      */
     public Builder setPower(int value) {
       
@@ -706,6 +726,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 power = 23;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPower() {
       
@@ -721,6 +742,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool polarization_inversion = 31;</code>
+     * @return The polarizationInversion.
      */
     public boolean getPolarizationInversion() {
       return polarizationInversion_;
@@ -731,6 +753,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool polarization_inversion = 31;</code>
+     * @param value The polarizationInversion to set.
+     * @return This builder for chaining.
      */
     public Builder setPolarizationInversion(boolean value) {
       
@@ -744,6 +768,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool polarization_inversion = 31;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPolarizationInversion() {
       
@@ -759,6 +784,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 frequency_deviation = 32;</code>
+     * @return The frequencyDeviation.
      */
     public int getFrequencyDeviation() {
       return frequencyDeviation_;
@@ -769,6 +795,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 frequency_deviation = 32;</code>
+     * @param value The frequencyDeviation to set.
+     * @return This builder for chaining.
      */
     public Builder setFrequencyDeviation(int value) {
       
@@ -782,6 +810,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 frequency_deviation = 32;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFrequencyDeviation() {
       
@@ -792,7 +821,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

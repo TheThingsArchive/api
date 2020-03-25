@@ -9,15 +9,18 @@ public interface UplinkMessageOrBuilder extends
 
   /**
    * <code>bytes payload = 1;</code>
+   * @return The payload.
    */
   com.google.protobuf.ByteString getPayload();
 
   /**
    * <code>.protocol.Message message = 2;</code>
+   * @return Whether the message field is set.
    */
   boolean hasMessage();
   /**
    * <code>.protocol.Message message = 2;</code>
+   * @return The message.
    */
   org.thethingsnetwork.api.protocol.Message getMessage();
   /**
@@ -27,10 +30,12 @@ public interface UplinkMessageOrBuilder extends
 
   /**
    * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
+   * @return Whether the protocolMetadata field is set.
    */
   boolean hasProtocolMetadata();
   /**
    * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
+   * @return The protocolMetadata.
    */
   org.thethingsnetwork.api.protocol.RxMetadata getProtocolMetadata();
   /**
@@ -40,10 +45,12 @@ public interface UplinkMessageOrBuilder extends
 
   /**
    * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
+   * @return Whether the gatewayMetadata field is set.
    */
   boolean hasGatewayMetadata();
   /**
    * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
+   * @return The gatewayMetadata.
    */
   org.thethingsnetwork.api.gateway.RxMetadata getGatewayMetadata();
   /**
@@ -53,10 +60,12 @@ public interface UplinkMessageOrBuilder extends
 
   /**
    * <code>.trace.Trace trace = 21;</code>
+   * @return Whether the trace field is set.
    */
   boolean hasTrace();
   /**
    * <code>.trace.Trace trace = 21;</code>
+   * @return The trace.
    */
   org.thethingsnetwork.api.trace.Trace getTrace();
   /**

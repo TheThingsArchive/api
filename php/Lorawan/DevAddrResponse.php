@@ -16,7 +16,7 @@ class DevAddrResponse extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
-    private $dev_addr = '';
+    protected $dev_addr = '';
 
     /**
      * Constructor.

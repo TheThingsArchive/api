@@ -18,23 +18,23 @@ class Device extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
-    private $app_id = '';
+    protected $app_id = '';
     /**
      * Generated from protobuf field <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      */
-    private $dev_id = '';
+    protected $dev_id = '';
     /**
      * Generated from protobuf field <code>float latitude = 10;</code>
      */
-    private $latitude = 0.0;
+    protected $latitude = 0.0;
     /**
      * Generated from protobuf field <code>float longitude = 11;</code>
      */
-    private $longitude = 0.0;
+    protected $longitude = 0.0;
     /**
      * Generated from protobuf field <code>int32 altitude = 12;</code>
      */
-    private $altitude = 0;
+    protected $altitude = 0;
     /**
      * Generated from protobuf field <code>map<string, string> attributes = 13;</code>
      */
@@ -42,7 +42,7 @@ class Device extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string description = 20;</code>
      */
-    private $description = '';
+    protected $description = '';
     protected $device;
 
     /**

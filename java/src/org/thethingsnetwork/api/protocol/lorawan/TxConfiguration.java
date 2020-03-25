@@ -18,9 +18,14 @@ private static final long serialVersionUID = 0L;
   private TxConfiguration() {
     modulation_ = 0;
     dataRate_ = "";
-    bitRate_ = 0;
     codingRate_ = "";
-    fCnt_ = 0;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new TxConfiguration();
   }
 
   @java.lang.Override
@@ -36,7 +41,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -76,7 +80,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -111,12 +115,14 @@ private static final long serialVersionUID = 0L;
   private int modulation_;
   /**
    * <code>.lorawan.Modulation modulation = 11;</code>
+   * @return The enum numeric value on the wire for modulation.
    */
   public int getModulationValue() {
     return modulation_;
   }
   /**
    * <code>.lorawan.Modulation modulation = 11;</code>
+   * @return The modulation.
    */
   public org.thethingsnetwork.api.protocol.lorawan.Modulation getModulation() {
     @SuppressWarnings("deprecation")
@@ -132,6 +138,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string data_rate = 12;</code>
+   * @return The dataRate.
    */
   public java.lang.String getDataRate() {
     java.lang.Object ref = dataRate_;
@@ -151,6 +158,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string data_rate = 12;</code>
+   * @return The bytes for dataRate.
    */
   public com.google.protobuf.ByteString
       getDataRateBytes() {
@@ -174,6 +182,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 bit_rate = 13;</code>
+   * @return The bitRate.
    */
   public int getBitRate() {
     return bitRate_;
@@ -187,6 +196,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string coding_rate = 14;</code>
+   * @return The codingRate.
    */
   public java.lang.String getCodingRate() {
     java.lang.Object ref = codingRate_;
@@ -206,6 +216,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string coding_rate = 14;</code>
+   * @return The bytes for codingRate.
    */
   public com.google.protobuf.ByteString
       getCodingRateBytes() {
@@ -229,6 +240,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 f_cnt = 15;</code>
+   * @return The fCnt.
    */
   public int getFCnt() {
     return fCnt_;
@@ -305,18 +317,17 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.protocol.lorawan.TxConfiguration other = (org.thethingsnetwork.api.protocol.lorawan.TxConfiguration) obj;
 
-    boolean result = true;
-    result = result && modulation_ == other.modulation_;
-    result = result && getDataRate()
-        .equals(other.getDataRate());
-    result = result && (getBitRate()
-        == other.getBitRate());
-    result = result && getCodingRate()
-        .equals(other.getCodingRate());
-    result = result && (getFCnt()
-        == other.getFCnt());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (modulation_ != other.modulation_) return false;
+    if (!getDataRate()
+        .equals(other.getDataRate())) return false;
+    if (getBitRate()
+        != other.getBitRate()) return false;
+    if (!getCodingRate()
+        .equals(other.getCodingRate())) return false;
+    if (getFCnt()
+        != other.getFCnt()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -516,35 +527,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -607,12 +618,15 @@ private static final long serialVersionUID = 0L;
     private int modulation_ = 0;
     /**
      * <code>.lorawan.Modulation modulation = 11;</code>
+     * @return The enum numeric value on the wire for modulation.
      */
     public int getModulationValue() {
       return modulation_;
     }
     /**
      * <code>.lorawan.Modulation modulation = 11;</code>
+     * @param value The enum numeric value on the wire for modulation to set.
+     * @return This builder for chaining.
      */
     public Builder setModulationValue(int value) {
       modulation_ = value;
@@ -621,6 +635,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.lorawan.Modulation modulation = 11;</code>
+     * @return The modulation.
      */
     public org.thethingsnetwork.api.protocol.lorawan.Modulation getModulation() {
       @SuppressWarnings("deprecation")
@@ -629,6 +644,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.lorawan.Modulation modulation = 11;</code>
+     * @param value The modulation to set.
+     * @return This builder for chaining.
      */
     public Builder setModulation(org.thethingsnetwork.api.protocol.lorawan.Modulation value) {
       if (value == null) {
@@ -641,6 +658,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.lorawan.Modulation modulation = 11;</code>
+     * @return This builder for chaining.
      */
     public Builder clearModulation() {
       
@@ -656,6 +674,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string data_rate = 12;</code>
+     * @return The dataRate.
      */
     public java.lang.String getDataRate() {
       java.lang.Object ref = dataRate_;
@@ -675,6 +694,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string data_rate = 12;</code>
+     * @return The bytes for dataRate.
      */
     public com.google.protobuf.ByteString
         getDataRateBytes() {
@@ -695,6 +715,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string data_rate = 12;</code>
+     * @param value The dataRate to set.
+     * @return This builder for chaining.
      */
     public Builder setDataRate(
         java.lang.String value) {
@@ -712,6 +734,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string data_rate = 12;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDataRate() {
       
@@ -725,6 +748,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string data_rate = 12;</code>
+     * @param value The bytes for dataRate to set.
+     * @return This builder for chaining.
      */
     public Builder setDataRateBytes(
         com.google.protobuf.ByteString value) {
@@ -745,6 +770,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 bit_rate = 13;</code>
+     * @return The bitRate.
      */
     public int getBitRate() {
       return bitRate_;
@@ -755,6 +781,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 bit_rate = 13;</code>
+     * @param value The bitRate to set.
+     * @return This builder for chaining.
      */
     public Builder setBitRate(int value) {
       
@@ -768,6 +796,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 bit_rate = 13;</code>
+     * @return This builder for chaining.
      */
     public Builder clearBitRate() {
       
@@ -783,6 +812,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string coding_rate = 14;</code>
+     * @return The codingRate.
      */
     public java.lang.String getCodingRate() {
       java.lang.Object ref = codingRate_;
@@ -802,6 +832,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string coding_rate = 14;</code>
+     * @return The bytes for codingRate.
      */
     public com.google.protobuf.ByteString
         getCodingRateBytes() {
@@ -822,6 +853,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string coding_rate = 14;</code>
+     * @param value The codingRate to set.
+     * @return This builder for chaining.
      */
     public Builder setCodingRate(
         java.lang.String value) {
@@ -839,6 +872,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string coding_rate = 14;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCodingRate() {
       
@@ -852,6 +886,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string coding_rate = 14;</code>
+     * @param value The bytes for codingRate to set.
+     * @return This builder for chaining.
      */
     public Builder setCodingRateBytes(
         com.google.protobuf.ByteString value) {
@@ -872,6 +908,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 f_cnt = 15;</code>
+     * @return The fCnt.
      */
     public int getFCnt() {
       return fCnt_;
@@ -882,6 +919,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 f_cnt = 15;</code>
+     * @param value The fCnt to set.
+     * @return This builder for chaining.
      */
     public Builder setFCnt(int value) {
       
@@ -895,6 +934,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 f_cnt = 15;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFCnt() {
       
@@ -905,7 +945,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

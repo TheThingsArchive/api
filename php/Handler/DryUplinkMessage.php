@@ -20,19 +20,19 @@ class DryUplinkMessage extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bytes payload = 1;</code>
      */
-    private $payload = '';
+    protected $payload = '';
     /**
      * The Application containing the payload functions that should be executed
      *
      * Generated from protobuf field <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
      */
-    private $app = null;
+    protected $app = null;
     /**
      * The port number that should be passed to the payload function
      *
      * Generated from protobuf field <code>uint32 port = 3;</code>
      */
-    private $port = 0;
+    protected $port = 0;
 
     /**
      * Constructor.

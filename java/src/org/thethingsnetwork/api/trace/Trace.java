@@ -21,11 +21,17 @@ private static final long serialVersionUID = 0L;
   }
   private Trace() {
     id_ = "";
-    time_ = 0L;
     serviceId_ = "";
     serviceName_ = "";
     event_ = "";
     parents_ = java.util.Collections.emptyList();
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Trace();
   }
 
   @java.lang.Override
@@ -82,10 +88,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 50: {
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               metadata_ = com.google.protobuf.MapField.newMapField(
                   MetadataDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000020;
+              mutable_bitField0_ |= 0x00000001;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             metadata__ = input.readMessage(
@@ -95,16 +101,16 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 90: {
-            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               parents_ = new java.util.ArrayList<org.thethingsnetwork.api.trace.Trace>();
-              mutable_bitField0_ |= 0x00000040;
+              mutable_bitField0_ |= 0x00000002;
             }
             parents_.add(
                 input.readMessage(org.thethingsnetwork.api.trace.Trace.parser(), extensionRegistry));
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -118,7 +124,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         parents_ = java.util.Collections.unmodifiableList(parents_);
       }
       this.unknownFields = unknownFields.build();
@@ -150,7 +156,6 @@ private static final long serialVersionUID = 0L;
             org.thethingsnetwork.api.trace.Trace.class, org.thethingsnetwork.api.trace.Trace.Builder.class);
   }
 
-  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object id_;
   /**
@@ -159,6 +164,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -178,6 +184,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
@@ -201,6 +208,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 time = 2;</code>
+   * @return The time.
    */
   public long getTime() {
     return time_;
@@ -214,6 +222,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
+   * @return The serviceId.
    */
   public java.lang.String getServiceId() {
     java.lang.Object ref = serviceId_;
@@ -233,6 +242,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
+   * @return The bytes for serviceId.
    */
   public com.google.protobuf.ByteString
       getServiceIdBytes() {
@@ -256,6 +266,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string service_name = 4;</code>
+   * @return The serviceName.
    */
   public java.lang.String getServiceName() {
     java.lang.Object ref = serviceName_;
@@ -275,6 +286,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string service_name = 4;</code>
+   * @return The bytes for serviceName.
    */
   public com.google.protobuf.ByteString
       getServiceNameBytes() {
@@ -298,6 +310,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string event = 5;</code>
+   * @return The event.
    */
   public java.lang.String getEvent() {
     java.lang.Object ref = event_;
@@ -317,6 +330,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string event = 5;</code>
+   * @return The bytes for event.
    */
   public com.google.protobuf.ByteString
       getEventBytes() {
@@ -571,23 +585,22 @@ private static final long serialVersionUID = 0L;
     }
     org.thethingsnetwork.api.trace.Trace other = (org.thethingsnetwork.api.trace.Trace) obj;
 
-    boolean result = true;
-    result = result && getId()
-        .equals(other.getId());
-    result = result && (getTime()
-        == other.getTime());
-    result = result && getServiceId()
-        .equals(other.getServiceId());
-    result = result && getServiceName()
-        .equals(other.getServiceName());
-    result = result && getEvent()
-        .equals(other.getEvent());
-    result = result && internalGetMetadata().equals(
-        other.internalGetMetadata());
-    result = result && getParentsList()
-        .equals(other.getParentsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getId()
+        .equals(other.getId())) return false;
+    if (getTime()
+        != other.getTime()) return false;
+    if (!getServiceId()
+        .equals(other.getServiceId())) return false;
+    if (!getServiceName()
+        .equals(other.getServiceName())) return false;
+    if (!getEvent()
+        .equals(other.getEvent())) return false;
+    if (!internalGetMetadata().equals(
+        other.internalGetMetadata())) return false;
+    if (!getParentsList()
+        .equals(other.getParentsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -789,7 +802,7 @@ private static final long serialVersionUID = 0L;
       internalGetMutableMetadata().clear();
       if (parentsBuilder_ == null) {
         parents_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         parentsBuilder_.clear();
       }
@@ -820,7 +833,6 @@ private static final long serialVersionUID = 0L;
     public org.thethingsnetwork.api.trace.Trace buildPartial() {
       org.thethingsnetwork.api.trace.Trace result = new org.thethingsnetwork.api.trace.Trace(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.id_ = id_;
       result.time_ = time_;
       result.serviceId_ = serviceId_;
@@ -829,50 +841,49 @@ private static final long serialVersionUID = 0L;
       result.metadata_ = internalGetMetadata();
       result.metadata_.makeImmutable();
       if (parentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           parents_ = java.util.Collections.unmodifiableList(parents_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.parents_ = parents_;
       } else {
         result.parents_ = parentsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -911,7 +922,7 @@ private static final long serialVersionUID = 0L;
         if (!other.parents_.isEmpty()) {
           if (parents_.isEmpty()) {
             parents_ = other.parents_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureParentsIsMutable();
             parents_.addAll(other.parents_);
@@ -924,7 +935,7 @@ private static final long serialVersionUID = 0L;
             parentsBuilder_.dispose();
             parentsBuilder_ = null;
             parents_ = other.parents_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000002);
             parentsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getParentsFieldBuilder() : null;
@@ -970,6 +981,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -989,6 +1001,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -1009,6 +1022,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
@@ -1026,6 +1041,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       
@@ -1039,6 +1055,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1059,6 +1077,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 time = 2;</code>
+     * @return The time.
      */
     public long getTime() {
       return time_;
@@ -1069,6 +1088,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 time = 2;</code>
+     * @param value The time to set.
+     * @return This builder for chaining.
      */
     public Builder setTime(long value) {
       
@@ -1082,6 +1103,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 time = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTime() {
       
@@ -1097,6 +1119,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
+     * @return The serviceId.
      */
     public java.lang.String getServiceId() {
       java.lang.Object ref = serviceId_;
@@ -1116,6 +1139,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
+     * @return The bytes for serviceId.
      */
     public com.google.protobuf.ByteString
         getServiceIdBytes() {
@@ -1136,6 +1160,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
+     * @param value The serviceId to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceId(
         java.lang.String value) {
@@ -1153,6 +1179,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearServiceId() {
       
@@ -1166,6 +1193,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
+     * @param value The bytes for serviceId to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1186,6 +1215,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string service_name = 4;</code>
+     * @return The serviceName.
      */
     public java.lang.String getServiceName() {
       java.lang.Object ref = serviceName_;
@@ -1205,6 +1235,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string service_name = 4;</code>
+     * @return The bytes for serviceName.
      */
     public com.google.protobuf.ByteString
         getServiceNameBytes() {
@@ -1225,6 +1256,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string service_name = 4;</code>
+     * @param value The serviceName to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceName(
         java.lang.String value) {
@@ -1242,6 +1275,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string service_name = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearServiceName() {
       
@@ -1255,6 +1289,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string service_name = 4;</code>
+     * @param value The bytes for serviceName to set.
+     * @return This builder for chaining.
      */
     public Builder setServiceNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1275,6 +1311,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string event = 5;</code>
+     * @return The event.
      */
     public java.lang.String getEvent() {
       java.lang.Object ref = event_;
@@ -1294,6 +1331,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string event = 5;</code>
+     * @return The bytes for event.
      */
     public com.google.protobuf.ByteString
         getEventBytes() {
@@ -1314,6 +1352,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string event = 5;</code>
+     * @param value The event to set.
+     * @return This builder for chaining.
      */
     public Builder setEvent(
         java.lang.String value) {
@@ -1331,6 +1371,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string event = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearEvent() {
       
@@ -1344,6 +1385,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string event = 5;</code>
+     * @param value The bytes for event to set.
+     * @return This builder for chaining.
      */
     public Builder setEventBytes(
         com.google.protobuf.ByteString value) {
@@ -1511,9 +1554,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.thethingsnetwork.api.trace.Trace> parents_ =
       java.util.Collections.emptyList();
     private void ensureParentsIsMutable() {
-      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         parents_ = new java.util.ArrayList<org.thethingsnetwork.api.trace.Trace>(parents_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -1707,7 +1750,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearParents() {
       if (parentsBuilder_ == null) {
         parents_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         parentsBuilder_.clear();
@@ -1812,7 +1855,7 @@ private static final long serialVersionUID = 0L;
         parentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.thethingsnetwork.api.trace.Trace, org.thethingsnetwork.api.trace.Trace.Builder, org.thethingsnetwork.api.trace.TraceOrBuilder>(
                 parents_,
-                ((bitField0_ & 0x00000040) == 0x00000040),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         parents_ = null;
@@ -1822,7 +1865,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

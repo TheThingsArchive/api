@@ -13,6 +13,7 @@ public interface GetByAppEUIRequestOrBuilder extends
    * </pre>
    *
    * <code>bytes app_eui = 31 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+   * @return The appEui.
    */
   com.google.protobuf.ByteString getAppEui();
 }

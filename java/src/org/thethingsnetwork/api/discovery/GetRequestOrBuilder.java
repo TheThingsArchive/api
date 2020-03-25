@@ -13,6 +13,7 @@ public interface GetRequestOrBuilder extends
    * </pre>
    *
    * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -21,6 +22,7 @@ public interface GetRequestOrBuilder extends
    * </pre>
    *
    * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
@@ -31,6 +33,7 @@ public interface GetRequestOrBuilder extends
    * </pre>
    *
    * <code>string service_name = 2;</code>
+   * @return The serviceName.
    */
   java.lang.String getServiceName();
   /**
@@ -39,6 +42,7 @@ public interface GetRequestOrBuilder extends
    * </pre>
    *
    * <code>string service_name = 2;</code>
+   * @return The bytes for serviceName.
    */
   com.google.protobuf.ByteString
       getServiceNameBytes();

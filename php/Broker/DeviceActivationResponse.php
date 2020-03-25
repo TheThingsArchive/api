@@ -18,19 +18,19 @@ class DeviceActivationResponse extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes payload = 1;</code>
      */
-    private $payload = '';
+    protected $payload = '';
     /**
      * Generated from protobuf field <code>.protocol.Message message = 2;</code>
      */
-    private $message = null;
+    protected $message = null;
     /**
      * Generated from protobuf field <code>.broker.DownlinkOption downlink_option = 11;</code>
      */
-    private $downlink_option = null;
+    protected $downlink_option = null;
     /**
      * Generated from protobuf field <code>.trace.Trace trace = 21;</code>
      */
-    private $trace = null;
+    protected $trace = null;
 
     /**
      * Constructor.

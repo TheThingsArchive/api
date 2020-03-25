@@ -18,23 +18,23 @@ class SimulatedUplinkMessage extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
-    private $app_id = '';
+    protected $app_id = '';
     /**
      * Generated from protobuf field <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      */
-    private $dev_id = '';
+    protected $dev_id = '';
     /**
      * The binary payload to use
      *
      * Generated from protobuf field <code>bytes payload = 3;</code>
      */
-    private $payload = '';
+    protected $payload = '';
     /**
      * The port number
      *
      * Generated from protobuf field <code>uint32 port = 4;</code>
      */
-    private $port = 0;
+    protected $port = 0;
 
     /**
      * Constructor.

@@ -16,39 +16,39 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
-    private $app_eui = '';
+    protected $app_eui = '';
     /**
      * Generated from protobuf field <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
-    private $dev_eui = '';
+    protected $dev_eui = '';
     /**
      * Generated from protobuf field <code>bytes dev_addr = 3 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
-    private $dev_addr = '';
+    protected $dev_addr = '';
     /**
      * Generated from protobuf field <code>bytes nwk_s_key = 4 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
      */
-    private $nwk_s_key = '';
+    protected $nwk_s_key = '';
     /**
      * Generated from protobuf field <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      */
-    private $rx1_dr_offset = 0;
+    protected $rx1_dr_offset = 0;
     /**
      * Generated from protobuf field <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
      */
-    private $rx2_dr = 0;
+    protected $rx2_dr = 0;
     /**
      * Generated from protobuf field <code>uint32 rx_delay = 13;</code>
      */
-    private $rx_delay = 0;
+    protected $rx_delay = 0;
     /**
      * Generated from protobuf field <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
      */
-    private $cf_list = null;
+    protected $cf_list = null;
     /**
      * Generated from protobuf field <code>.lorawan.FrequencyPlan frequency_plan = 15;</code>
      */
-    private $frequency_plan = 0;
+    protected $frequency_plan = 0;
 
     /**
      * Constructor.

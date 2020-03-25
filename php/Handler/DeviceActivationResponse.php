@@ -16,23 +16,23 @@ class DeviceActivationResponse extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes payload = 1;</code>
      */
-    private $payload = '';
+    protected $payload = '';
     /**
      * Generated from protobuf field <code>.protocol.Message message = 2;</code>
      */
-    private $message = null;
+    protected $message = null;
     /**
      * Generated from protobuf field <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
      */
-    private $downlink_option = null;
+    protected $downlink_option = null;
     /**
      * Generated from protobuf field <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
      */
-    private $activation_metadata = null;
+    protected $activation_metadata = null;
     /**
      * Generated from protobuf field <code>.trace.Trace trace = 31;</code>
      */
-    private $trace = null;
+    protected $trace = null;
 
     /**
      * Constructor.

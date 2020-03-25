@@ -13,6 +13,7 @@ public interface DevAddrRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated string usage = 1;</code>
+   * @return A list containing the usage.
    */
   java.util.List<java.lang.String>
       getUsageList();
@@ -22,6 +23,7 @@ public interface DevAddrRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated string usage = 1;</code>
+   * @return The count of usage.
    */
   int getUsageCount();
   /**
@@ -30,6 +32,8 @@ public interface DevAddrRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated string usage = 1;</code>
+   * @param index The index of the element to return.
+   * @return The usage at the given index.
    */
   java.lang.String getUsage(int index);
   /**
@@ -38,6 +42,8 @@ public interface DevAddrRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated string usage = 1;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the usage at the given index.
    */
   com.google.protobuf.ByteString
       getUsageBytes(int index);

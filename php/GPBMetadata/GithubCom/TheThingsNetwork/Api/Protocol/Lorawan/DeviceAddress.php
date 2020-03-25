@@ -39,7 +39,7 @@ class DeviceAddress
             "68655468696e67734e6574776f726b2f6170692f70726f746f636f6c2f6c" .
             "6f726177616eaa02245468655468696e67734e6574776f726b2e4150492e" .
             "4c6f526157414e50726f746f636f6c620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

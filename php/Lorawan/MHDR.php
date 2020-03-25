@@ -16,11 +16,11 @@ class MHDR extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.lorawan.MType m_type = 1;</code>
      */
-    private $m_type = 0;
+    protected $m_type = 0;
     /**
      * Generated from protobuf field <code>.lorawan.Major major = 2;</code>
      */
-    private $major = 0;
+    protected $major = 0;
 
     /**
      * Constructor.

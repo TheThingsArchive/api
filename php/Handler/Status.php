@@ -18,23 +18,23 @@ class Status extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
      */
-    private $system = null;
+    protected $system = null;
     /**
      * Generated from protobuf field <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
      */
-    private $component = null;
+    protected $component = null;
     /**
      * Generated from protobuf field <code>.api.Rates uplink = 11;</code>
      */
-    private $uplink = null;
+    protected $uplink = null;
     /**
      * Generated from protobuf field <code>.api.Rates downlink = 12;</code>
      */
-    private $downlink = null;
+    protected $downlink = null;
     /**
      * Generated from protobuf field <code>.api.Rates activations = 13;</code>
      */
-    private $activations = null;
+    protected $activations = null;
 
     /**
      * Constructor.

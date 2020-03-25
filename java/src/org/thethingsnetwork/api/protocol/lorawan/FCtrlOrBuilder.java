@@ -9,21 +9,25 @@ public interface FCtrlOrBuilder extends
 
   /**
    * <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
+   * @return The adr.
    */
   boolean getAdr();
 
   /**
    * <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
+   * @return The adrAckReq.
    */
   boolean getAdrAckReq();
 
   /**
    * <code>bool ack = 3;</code>
+   * @return The ack.
    */
   boolean getAck();
 
   /**
    * <code>bool f_pending = 4;</code>
+   * @return The fPending.
    */
   boolean getFPending();
 }

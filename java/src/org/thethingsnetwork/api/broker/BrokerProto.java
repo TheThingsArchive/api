@@ -206,15 +206,7 @@ public final class BrokerProto {
       "sNetwork/api/broker\252\002\033TheThingsNetwork.A" +
       "PI.Brokerb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.EmptyProto.getDescriptor(),
@@ -223,7 +215,7 @@ public final class BrokerProto {
           org.thethingsnetwork.api.protocol.ProtocolProto.getDescriptor(),
           org.thethingsnetwork.api.gateway.GatewayProto.getDescriptor(),
           org.thethingsnetwork.api.trace.TraceProto.getDescriptor(),
-        }, assigner);
+        });
     internal_static_broker_DownlinkOption_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_broker_DownlinkOption_fieldAccessorTable = new

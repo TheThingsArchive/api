@@ -18,37 +18,37 @@ class Status extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>.api.SystemStats system = 1;</code>
      */
-    private $system = null;
+    protected $system = null;
     /**
      * Generated from protobuf field <code>.api.ComponentStats component = 2;</code>
      */
-    private $component = null;
+    protected $component = null;
     /**
      * Generated from protobuf field <code>.api.Rates gateway_status = 11;</code>
      */
-    private $gateway_status = null;
+    protected $gateway_status = null;
     /**
      * Generated from protobuf field <code>.api.Rates uplink = 12;</code>
      */
-    private $uplink = null;
+    protected $uplink = null;
     /**
      * Generated from protobuf field <code>.api.Rates downlink = 13;</code>
      */
-    private $downlink = null;
+    protected $downlink = null;
     /**
      * Generated from protobuf field <code>.api.Rates activations = 14;</code>
      */
-    private $activations = null;
+    protected $activations = null;
     /**
      * Connections
      *
      * Generated from protobuf field <code>uint32 connected_gateways = 21;</code>
      */
-    private $connected_gateways = 0;
+    protected $connected_gateways = 0;
     /**
      * Generated from protobuf field <code>uint32 connected_brokers = 22;</code>
      */
-    private $connected_brokers = 0;
+    protected $connected_brokers = 0;
 
     /**
      * Constructor.

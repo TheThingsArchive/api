@@ -20,8 +20,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-import Foundation
 import Dispatch
+import Foundation
 import SwiftGRPC
 import SwiftProtobuf
 
@@ -59,86 +59,149 @@ fileprivate final class Networkserver_NetworkServerDownlinkCallBase: ClientCallU
 /// Instantiate Networkserver_NetworkServerServiceClient, then call methods of this protocol to make API calls.
 internal protocol Networkserver_NetworkServerService: ServiceClient {
   /// Synchronous. Unary.
-  func getDevices(_ request: Networkserver_DevicesRequest) throws -> Networkserver_DevicesResponse
+  func getDevices(_ request: Networkserver_DevicesRequest, metadata customMetadata: Metadata) throws -> Networkserver_DevicesResponse
   /// Asynchronous. Unary.
-  func getDevices(_ request: Networkserver_DevicesRequest, completion: @escaping (Networkserver_DevicesResponse?, CallResult) -> Void) throws -> Networkserver_NetworkServerGetDevicesCall
+  @discardableResult
+  func getDevices(_ request: Networkserver_DevicesRequest, metadata customMetadata: Metadata, completion: @escaping (Networkserver_DevicesResponse?, CallResult) -> Void) throws -> Networkserver_NetworkServerGetDevicesCall
 
   /// Synchronous. Unary.
-  func prepareActivation(_ request: Broker_DeduplicatedDeviceActivationRequest) throws -> Broker_DeduplicatedDeviceActivationRequest
+  func prepareActivation(_ request: Broker_DeduplicatedDeviceActivationRequest, metadata customMetadata: Metadata) throws -> Broker_DeduplicatedDeviceActivationRequest
   /// Asynchronous. Unary.
-  func prepareActivation(_ request: Broker_DeduplicatedDeviceActivationRequest, completion: @escaping (Broker_DeduplicatedDeviceActivationRequest?, CallResult) -> Void) throws -> Networkserver_NetworkServerPrepareActivationCall
+  @discardableResult
+  func prepareActivation(_ request: Broker_DeduplicatedDeviceActivationRequest, metadata customMetadata: Metadata, completion: @escaping (Broker_DeduplicatedDeviceActivationRequest?, CallResult) -> Void) throws -> Networkserver_NetworkServerPrepareActivationCall
 
   /// Synchronous. Unary.
-  func activate(_ request: Handler_DeviceActivationResponse) throws -> Handler_DeviceActivationResponse
+  func activate(_ request: Handler_DeviceActivationResponse, metadata customMetadata: Metadata) throws -> Handler_DeviceActivationResponse
   /// Asynchronous. Unary.
-  func activate(_ request: Handler_DeviceActivationResponse, completion: @escaping (Handler_DeviceActivationResponse?, CallResult) -> Void) throws -> Networkserver_NetworkServerActivateCall
+  @discardableResult
+  func activate(_ request: Handler_DeviceActivationResponse, metadata customMetadata: Metadata, completion: @escaping (Handler_DeviceActivationResponse?, CallResult) -> Void) throws -> Networkserver_NetworkServerActivateCall
 
   /// Synchronous. Unary.
-  func uplink(_ request: Broker_DeduplicatedUplinkMessage) throws -> Broker_DeduplicatedUplinkMessage
+  func uplink(_ request: Broker_DeduplicatedUplinkMessage, metadata customMetadata: Metadata) throws -> Broker_DeduplicatedUplinkMessage
   /// Asynchronous. Unary.
-  func uplink(_ request: Broker_DeduplicatedUplinkMessage, completion: @escaping (Broker_DeduplicatedUplinkMessage?, CallResult) -> Void) throws -> Networkserver_NetworkServerUplinkCall
+  @discardableResult
+  func uplink(_ request: Broker_DeduplicatedUplinkMessage, metadata customMetadata: Metadata, completion: @escaping (Broker_DeduplicatedUplinkMessage?, CallResult) -> Void) throws -> Networkserver_NetworkServerUplinkCall
 
   /// Synchronous. Unary.
-  func downlink(_ request: Broker_DownlinkMessage) throws -> Broker_DownlinkMessage
+  func downlink(_ request: Broker_DownlinkMessage, metadata customMetadata: Metadata) throws -> Broker_DownlinkMessage
   /// Asynchronous. Unary.
-  func downlink(_ request: Broker_DownlinkMessage, completion: @escaping (Broker_DownlinkMessage?, CallResult) -> Void) throws -> Networkserver_NetworkServerDownlinkCall
+  @discardableResult
+  func downlink(_ request: Broker_DownlinkMessage, metadata customMetadata: Metadata, completion: @escaping (Broker_DownlinkMessage?, CallResult) -> Void) throws -> Networkserver_NetworkServerDownlinkCall
+
+}
+
+internal extension Networkserver_NetworkServerService {
+  /// Synchronous. Unary.
+  func getDevices(_ request: Networkserver_DevicesRequest) throws -> Networkserver_DevicesResponse {
+    return try self.getDevices(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getDevices(_ request: Networkserver_DevicesRequest, completion: @escaping (Networkserver_DevicesResponse?, CallResult) -> Void) throws -> Networkserver_NetworkServerGetDevicesCall {
+    return try self.getDevices(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func prepareActivation(_ request: Broker_DeduplicatedDeviceActivationRequest) throws -> Broker_DeduplicatedDeviceActivationRequest {
+    return try self.prepareActivation(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func prepareActivation(_ request: Broker_DeduplicatedDeviceActivationRequest, completion: @escaping (Broker_DeduplicatedDeviceActivationRequest?, CallResult) -> Void) throws -> Networkserver_NetworkServerPrepareActivationCall {
+    return try self.prepareActivation(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func activate(_ request: Handler_DeviceActivationResponse) throws -> Handler_DeviceActivationResponse {
+    return try self.activate(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func activate(_ request: Handler_DeviceActivationResponse, completion: @escaping (Handler_DeviceActivationResponse?, CallResult) -> Void) throws -> Networkserver_NetworkServerActivateCall {
+    return try self.activate(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func uplink(_ request: Broker_DeduplicatedUplinkMessage) throws -> Broker_DeduplicatedUplinkMessage {
+    return try self.uplink(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func uplink(_ request: Broker_DeduplicatedUplinkMessage, completion: @escaping (Broker_DeduplicatedUplinkMessage?, CallResult) -> Void) throws -> Networkserver_NetworkServerUplinkCall {
+    return try self.uplink(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func downlink(_ request: Broker_DownlinkMessage) throws -> Broker_DownlinkMessage {
+    return try self.downlink(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func downlink(_ request: Broker_DownlinkMessage, completion: @escaping (Broker_DownlinkMessage?, CallResult) -> Void) throws -> Networkserver_NetworkServerDownlinkCall {
+    return try self.downlink(request, metadata: self.metadata, completion: completion)
+  }
 
 }
 
 internal final class Networkserver_NetworkServerServiceClient: ServiceClientBase, Networkserver_NetworkServerService {
   /// Synchronous. Unary.
-  internal func getDevices(_ request: Networkserver_DevicesRequest) throws -> Networkserver_DevicesResponse {
+  internal func getDevices(_ request: Networkserver_DevicesRequest, metadata customMetadata: Metadata) throws -> Networkserver_DevicesResponse {
     return try Networkserver_NetworkServerGetDevicesCallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func getDevices(_ request: Networkserver_DevicesRequest, completion: @escaping (Networkserver_DevicesResponse?, CallResult) -> Void) throws -> Networkserver_NetworkServerGetDevicesCall {
+  @discardableResult
+  internal func getDevices(_ request: Networkserver_DevicesRequest, metadata customMetadata: Metadata, completion: @escaping (Networkserver_DevicesResponse?, CallResult) -> Void) throws -> Networkserver_NetworkServerGetDevicesCall {
     return try Networkserver_NetworkServerGetDevicesCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func prepareActivation(_ request: Broker_DeduplicatedDeviceActivationRequest) throws -> Broker_DeduplicatedDeviceActivationRequest {
+  internal func prepareActivation(_ request: Broker_DeduplicatedDeviceActivationRequest, metadata customMetadata: Metadata) throws -> Broker_DeduplicatedDeviceActivationRequest {
     return try Networkserver_NetworkServerPrepareActivationCallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func prepareActivation(_ request: Broker_DeduplicatedDeviceActivationRequest, completion: @escaping (Broker_DeduplicatedDeviceActivationRequest?, CallResult) -> Void) throws -> Networkserver_NetworkServerPrepareActivationCall {
+  @discardableResult
+  internal func prepareActivation(_ request: Broker_DeduplicatedDeviceActivationRequest, metadata customMetadata: Metadata, completion: @escaping (Broker_DeduplicatedDeviceActivationRequest?, CallResult) -> Void) throws -> Networkserver_NetworkServerPrepareActivationCall {
     return try Networkserver_NetworkServerPrepareActivationCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func activate(_ request: Handler_DeviceActivationResponse) throws -> Handler_DeviceActivationResponse {
+  internal func activate(_ request: Handler_DeviceActivationResponse, metadata customMetadata: Metadata) throws -> Handler_DeviceActivationResponse {
     return try Networkserver_NetworkServerActivateCallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func activate(_ request: Handler_DeviceActivationResponse, completion: @escaping (Handler_DeviceActivationResponse?, CallResult) -> Void) throws -> Networkserver_NetworkServerActivateCall {
+  @discardableResult
+  internal func activate(_ request: Handler_DeviceActivationResponse, metadata customMetadata: Metadata, completion: @escaping (Handler_DeviceActivationResponse?, CallResult) -> Void) throws -> Networkserver_NetworkServerActivateCall {
     return try Networkserver_NetworkServerActivateCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func uplink(_ request: Broker_DeduplicatedUplinkMessage) throws -> Broker_DeduplicatedUplinkMessage {
+  internal func uplink(_ request: Broker_DeduplicatedUplinkMessage, metadata customMetadata: Metadata) throws -> Broker_DeduplicatedUplinkMessage {
     return try Networkserver_NetworkServerUplinkCallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func uplink(_ request: Broker_DeduplicatedUplinkMessage, completion: @escaping (Broker_DeduplicatedUplinkMessage?, CallResult) -> Void) throws -> Networkserver_NetworkServerUplinkCall {
+  @discardableResult
+  internal func uplink(_ request: Broker_DeduplicatedUplinkMessage, metadata customMetadata: Metadata, completion: @escaping (Broker_DeduplicatedUplinkMessage?, CallResult) -> Void) throws -> Networkserver_NetworkServerUplinkCall {
     return try Networkserver_NetworkServerUplinkCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func downlink(_ request: Broker_DownlinkMessage) throws -> Broker_DownlinkMessage {
+  internal func downlink(_ request: Broker_DownlinkMessage, metadata customMetadata: Metadata) throws -> Broker_DownlinkMessage {
     return try Networkserver_NetworkServerDownlinkCallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func downlink(_ request: Broker_DownlinkMessage, completion: @escaping (Broker_DownlinkMessage?, CallResult) -> Void) throws -> Networkserver_NetworkServerDownlinkCall {
+  @discardableResult
+  internal func downlink(_ request: Broker_DownlinkMessage, metadata customMetadata: Metadata, completion: @escaping (Broker_DownlinkMessage?, CallResult) -> Void) throws -> Networkserver_NetworkServerDownlinkCall {
     return try Networkserver_NetworkServerDownlinkCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
 }
@@ -152,33 +215,88 @@ fileprivate final class Networkserver_NetworkServerManagerGetStatusCallBase: Cli
 /// Instantiate Networkserver_NetworkServerManagerServiceClient, then call methods of this protocol to make API calls.
 internal protocol Networkserver_NetworkServerManagerService: ServiceClient {
   /// Synchronous. Unary.
-  func getStatus(_ request: Networkserver_StatusRequest) throws -> Networkserver_Status
+  func getStatus(_ request: Networkserver_StatusRequest, metadata customMetadata: Metadata) throws -> Networkserver_Status
   /// Asynchronous. Unary.
-  func getStatus(_ request: Networkserver_StatusRequest, completion: @escaping (Networkserver_Status?, CallResult) -> Void) throws -> Networkserver_NetworkServerManagerGetStatusCall
+  @discardableResult
+  func getStatus(_ request: Networkserver_StatusRequest, metadata customMetadata: Metadata, completion: @escaping (Networkserver_Status?, CallResult) -> Void) throws -> Networkserver_NetworkServerManagerGetStatusCall
+
+}
+
+internal extension Networkserver_NetworkServerManagerService {
+  /// Synchronous. Unary.
+  func getStatus(_ request: Networkserver_StatusRequest) throws -> Networkserver_Status {
+    return try self.getStatus(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getStatus(_ request: Networkserver_StatusRequest, completion: @escaping (Networkserver_Status?, CallResult) -> Void) throws -> Networkserver_NetworkServerManagerGetStatusCall {
+    return try self.getStatus(request, metadata: self.metadata, completion: completion)
+  }
 
 }
 
 internal final class Networkserver_NetworkServerManagerServiceClient: ServiceClientBase, Networkserver_NetworkServerManagerService {
   /// Synchronous. Unary.
-  internal func getStatus(_ request: Networkserver_StatusRequest) throws -> Networkserver_Status {
+  internal func getStatus(_ request: Networkserver_StatusRequest, metadata customMetadata: Metadata) throws -> Networkserver_Status {
     return try Networkserver_NetworkServerManagerGetStatusCallBase(channel)
-      .run(request: request, metadata: metadata)
+      .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
-  internal func getStatus(_ request: Networkserver_StatusRequest, completion: @escaping (Networkserver_Status?, CallResult) -> Void) throws -> Networkserver_NetworkServerManagerGetStatusCall {
+  @discardableResult
+  internal func getStatus(_ request: Networkserver_StatusRequest, metadata customMetadata: Metadata, completion: @escaping (Networkserver_Status?, CallResult) -> Void) throws -> Networkserver_NetworkServerManagerGetStatusCall {
     return try Networkserver_NetworkServerManagerGetStatusCallBase(channel)
-      .start(request: request, metadata: metadata, completion: completion)
+      .start(request: request, metadata: customMetadata, completion: completion)
   }
 
 }
 
 /// To build a server, implement a class that conforms to this protocol.
-internal protocol Networkserver_NetworkServerProvider {
+/// If one of the methods returning `ServerStatus?` returns nil,
+/// it is expected that you have already returned a status to the client by means of `session.close`.
+internal protocol Networkserver_NetworkServerProvider: ServiceProvider {
   func getDevices(request: Networkserver_DevicesRequest, session: Networkserver_NetworkServerGetDevicesSession) throws -> Networkserver_DevicesResponse
   func prepareActivation(request: Broker_DeduplicatedDeviceActivationRequest, session: Networkserver_NetworkServerPrepareActivationSession) throws -> Broker_DeduplicatedDeviceActivationRequest
   func activate(request: Handler_DeviceActivationResponse, session: Networkserver_NetworkServerActivateSession) throws -> Handler_DeviceActivationResponse
   func uplink(request: Broker_DeduplicatedUplinkMessage, session: Networkserver_NetworkServerUplinkSession) throws -> Broker_DeduplicatedUplinkMessage
   func downlink(request: Broker_DownlinkMessage, session: Networkserver_NetworkServerDownlinkSession) throws -> Broker_DownlinkMessage
+}
+
+extension Networkserver_NetworkServerProvider {
+  internal var serviceName: String { return "networkserver.NetworkServer" }
+
+  /// Determines and calls the appropriate request handler, depending on the request's method.
+  /// Throws `HandleMethodError.unknownMethod` for methods not handled by this service.
+  internal func handleMethod(_ method: String, handler: Handler) throws -> ServerStatus? {
+    switch method {
+    case "/networkserver.NetworkServer/GetDevices":
+      return try Networkserver_NetworkServerGetDevicesSessionBase(
+        handler: handler,
+        providerBlock: { try self.getDevices(request: $0, session: $1 as! Networkserver_NetworkServerGetDevicesSessionBase) })
+          .run()
+    case "/networkserver.NetworkServer/PrepareActivation":
+      return try Networkserver_NetworkServerPrepareActivationSessionBase(
+        handler: handler,
+        providerBlock: { try self.prepareActivation(request: $0, session: $1 as! Networkserver_NetworkServerPrepareActivationSessionBase) })
+          .run()
+    case "/networkserver.NetworkServer/Activate":
+      return try Networkserver_NetworkServerActivateSessionBase(
+        handler: handler,
+        providerBlock: { try self.activate(request: $0, session: $1 as! Networkserver_NetworkServerActivateSessionBase) })
+          .run()
+    case "/networkserver.NetworkServer/Uplink":
+      return try Networkserver_NetworkServerUplinkSessionBase(
+        handler: handler,
+        providerBlock: { try self.uplink(request: $0, session: $1 as! Networkserver_NetworkServerUplinkSessionBase) })
+          .run()
+    case "/networkserver.NetworkServer/Downlink":
+      return try Networkserver_NetworkServerDownlinkSessionBase(
+        handler: handler,
+        providerBlock: { try self.downlink(request: $0, session: $1 as! Networkserver_NetworkServerDownlinkSessionBase) })
+          .run()
+    default:
+      throw HandleMethodError.unknownMethod
+    }
+  }
 }
 
 internal protocol Networkserver_NetworkServerGetDevicesSession: ServerSessionUnary {}
@@ -201,108 +319,32 @@ internal protocol Networkserver_NetworkServerDownlinkSession: ServerSessionUnary
 
 fileprivate final class Networkserver_NetworkServerDownlinkSessionBase: ServerSessionUnaryBase<Broker_DownlinkMessage, Broker_DownlinkMessage>, Networkserver_NetworkServerDownlinkSession {}
 
-
-/// Main server for generated service
-internal final class Networkserver_NetworkServerServer: ServiceServer {
-  private let provider: Networkserver_NetworkServerProvider
-
-  internal init(address: String, provider: Networkserver_NetworkServerProvider) {
-    self.provider = provider
-    super.init(address: address)
-  }
-
-  internal init?(address: String, certificateURL: URL, keyURL: URL, provider: Networkserver_NetworkServerProvider) {
-    self.provider = provider
-    super.init(address: address, certificateURL: certificateURL, keyURL: keyURL)
-  }
-
-  internal init?(address: String, certificateString: String, keyString: String, provider: Networkserver_NetworkServerProvider) {
-    self.provider = provider
-    super.init(address: address, certificateString: certificateString, keyString: keyString)
-  }
-
-  /// Start the server.
-  internal override func handleMethod(_ method: String, handler: Handler, queue: DispatchQueue) throws -> Bool {
-    let provider = self.provider
-    switch method {
-    case "/networkserver.NetworkServer/GetDevices":
-      try Networkserver_NetworkServerGetDevicesSessionBase(
-        handler: handler,
-        providerBlock: { try provider.getDevices(request: $0, session: $1 as! Networkserver_NetworkServerGetDevicesSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/networkserver.NetworkServer/PrepareActivation":
-      try Networkserver_NetworkServerPrepareActivationSessionBase(
-        handler: handler,
-        providerBlock: { try provider.prepareActivation(request: $0, session: $1 as! Networkserver_NetworkServerPrepareActivationSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/networkserver.NetworkServer/Activate":
-      try Networkserver_NetworkServerActivateSessionBase(
-        handler: handler,
-        providerBlock: { try provider.activate(request: $0, session: $1 as! Networkserver_NetworkServerActivateSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/networkserver.NetworkServer/Uplink":
-      try Networkserver_NetworkServerUplinkSessionBase(
-        handler: handler,
-        providerBlock: { try provider.uplink(request: $0, session: $1 as! Networkserver_NetworkServerUplinkSessionBase) })
-          .run(queue: queue)
-      return true
-    case "/networkserver.NetworkServer/Downlink":
-      try Networkserver_NetworkServerDownlinkSessionBase(
-        handler: handler,
-        providerBlock: { try provider.downlink(request: $0, session: $1 as! Networkserver_NetworkServerDownlinkSessionBase) })
-          .run(queue: queue)
-      return true
-    default:
-      return false
-    }
-  }
+/// To build a server, implement a class that conforms to this protocol.
+/// If one of the methods returning `ServerStatus?` returns nil,
+/// it is expected that you have already returned a status to the client by means of `session.close`.
+internal protocol Networkserver_NetworkServerManagerProvider: ServiceProvider {
+  func getStatus(request: Networkserver_StatusRequest, session: Networkserver_NetworkServerManagerGetStatusSession) throws -> Networkserver_Status
 }
 
-/// To build a server, implement a class that conforms to this protocol.
-internal protocol Networkserver_NetworkServerManagerProvider {
-  func getStatus(request: Networkserver_StatusRequest, session: Networkserver_NetworkServerManagerGetStatusSession) throws -> Networkserver_Status
+extension Networkserver_NetworkServerManagerProvider {
+  internal var serviceName: String { return "networkserver.NetworkServerManager" }
+
+  /// Determines and calls the appropriate request handler, depending on the request's method.
+  /// Throws `HandleMethodError.unknownMethod` for methods not handled by this service.
+  internal func handleMethod(_ method: String, handler: Handler) throws -> ServerStatus? {
+    switch method {
+    case "/networkserver.NetworkServerManager/GetStatus":
+      return try Networkserver_NetworkServerManagerGetStatusSessionBase(
+        handler: handler,
+        providerBlock: { try self.getStatus(request: $0, session: $1 as! Networkserver_NetworkServerManagerGetStatusSessionBase) })
+          .run()
+    default:
+      throw HandleMethodError.unknownMethod
+    }
+  }
 }
 
 internal protocol Networkserver_NetworkServerManagerGetStatusSession: ServerSessionUnary {}
 
 fileprivate final class Networkserver_NetworkServerManagerGetStatusSessionBase: ServerSessionUnaryBase<Networkserver_StatusRequest, Networkserver_Status>, Networkserver_NetworkServerManagerGetStatusSession {}
-
-
-/// Main server for generated service
-internal final class Networkserver_NetworkServerManagerServer: ServiceServer {
-  private let provider: Networkserver_NetworkServerManagerProvider
-
-  internal init(address: String, provider: Networkserver_NetworkServerManagerProvider) {
-    self.provider = provider
-    super.init(address: address)
-  }
-
-  internal init?(address: String, certificateURL: URL, keyURL: URL, provider: Networkserver_NetworkServerManagerProvider) {
-    self.provider = provider
-    super.init(address: address, certificateURL: certificateURL, keyURL: keyURL)
-  }
-
-  internal init?(address: String, certificateString: String, keyString: String, provider: Networkserver_NetworkServerManagerProvider) {
-    self.provider = provider
-    super.init(address: address, certificateString: certificateString, keyString: keyString)
-  }
-
-  /// Start the server.
-  internal override func handleMethod(_ method: String, handler: Handler, queue: DispatchQueue) throws -> Bool {
-    let provider = self.provider
-    switch method {
-    case "/networkserver.NetworkServerManager/GetStatus":
-      try Networkserver_NetworkServerManagerGetStatusSessionBase(
-        handler: handler,
-        providerBlock: { try provider.getStatus(request: $0, session: $1 as! Networkserver_NetworkServerManagerGetStatusSessionBase) })
-          .run(queue: queue)
-      return true
-    default:
-      return false
-    }
-  }
-}
 

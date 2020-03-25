@@ -9,10 +9,12 @@ public interface MACPayloadOrBuilder extends
 
   /**
    * <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+   * @return Whether the fHdr field is set.
    */
   boolean hasFHdr();
   /**
    * <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+   * @return The fHdr.
    */
   org.thethingsnetwork.api.protocol.lorawan.FHDR getFHdr();
   /**
@@ -22,11 +24,13 @@ public interface MACPayloadOrBuilder extends
 
   /**
    * <code>int32 f_port = 2;</code>
+   * @return The fPort.
    */
   int getFPort();
 
   /**
    * <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
+   * @return The frmPayload.
    */
   com.google.protobuf.ByteString getFrmPayload();
 }

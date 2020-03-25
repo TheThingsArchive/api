@@ -9,11 +9,13 @@ public interface MACCommandOrBuilder extends
 
   /**
    * <code>uint32 cid = 1 [(.gogoproto.customname) = "CID"];</code>
+   * @return The cid.
    */
   int getCid();
 
   /**
    * <code>bytes payload = 2;</code>
+   * @return The payload.
    */
   com.google.protobuf.ByteString getPayload();
 }

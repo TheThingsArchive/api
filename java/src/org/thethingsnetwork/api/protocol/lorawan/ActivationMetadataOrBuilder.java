@@ -9,45 +9,54 @@ public interface ActivationMetadataOrBuilder extends
 
   /**
    * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+   * @return The appEui.
    */
   com.google.protobuf.ByteString getAppEui();
 
   /**
    * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+   * @return The devEui.
    */
   com.google.protobuf.ByteString getDevEui();
 
   /**
    * <code>bytes dev_addr = 3 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+   * @return The devAddr.
    */
   com.google.protobuf.ByteString getDevAddr();
 
   /**
    * <code>bytes nwk_s_key = 4 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+   * @return The nwkSKey.
    */
   com.google.protobuf.ByteString getNwkSKey();
 
   /**
    * <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
+   * @return The rx1DrOffset.
    */
   int getRx1DrOffset();
 
   /**
    * <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
+   * @return The rx2Dr.
    */
   int getRx2Dr();
 
   /**
    * <code>uint32 rx_delay = 13;</code>
+   * @return The rxDelay.
    */
   int getRxDelay();
 
   /**
    * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
+   * @return Whether the cfList field is set.
    */
   boolean hasCfList();
   /**
    * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
+   * @return The cfList.
    */
   org.thethingsnetwork.api.protocol.lorawan.CFList getCfList();
   /**
@@ -57,10 +66,12 @@ public interface ActivationMetadataOrBuilder extends
 
   /**
    * <code>.lorawan.FrequencyPlan frequency_plan = 15;</code>
+   * @return The enum numeric value on the wire for frequencyPlan.
    */
   int getFrequencyPlanValue();
   /**
    * <code>.lorawan.FrequencyPlan frequency_plan = 15;</code>
+   * @return The frequencyPlan.
    */
   org.thethingsnetwork.api.protocol.lorawan.FrequencyPlan getFrequencyPlan();
 }

@@ -16,35 +16,35 @@ class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
     /**
      * Generated from protobuf field <code>bytes payload = 1;</code>
      */
-    private $payload = '';
+    protected $payload = '';
     /**
      * Generated from protobuf field <code>.protocol.Message message = 2;</code>
      */
-    private $message = null;
+    protected $message = null;
     /**
      * Generated from protobuf field <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
-    private $dev_eui = '';
+    protected $dev_eui = '';
     /**
      * Generated from protobuf field <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
-    private $app_eui = '';
+    protected $app_eui = '';
     /**
      * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
-    private $protocol_metadata = null;
+    protected $protocol_metadata = null;
     /**
      * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
      */
-    private $gateway_metadata = null;
+    protected $gateway_metadata = null;
     /**
      * Generated from protobuf field <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
      */
-    private $activation_metadata = null;
+    protected $activation_metadata = null;
     /**
      * Generated from protobuf field <code>.trace.Trace trace = 31;</code>
      */
-    private $trace = null;
+    protected $trace = null;
 
     /**
      * Constructor.

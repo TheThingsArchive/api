@@ -45,29 +45,35 @@ public final class NetworkServerManagerGrpc {
     if ((getGetStatusMethod = NetworkServerManagerGrpc.getGetStatusMethod) == null) {
       synchronized (NetworkServerManagerGrpc.class) {
         if ((getGetStatusMethod = NetworkServerManagerGrpc.getGetStatusMethod) == null) {
-          NetworkServerManagerGrpc.getGetStatusMethod = getGetStatusMethod = 
+          NetworkServerManagerGrpc.getGetStatusMethod = getGetStatusMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.networkserver.StatusRequest, org.thethingsnetwork.api.networkserver.Status>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "networkserver.NetworkServerManager", "GetStatus"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetStatus"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.networkserver.StatusRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.networkserver.Status.getDefaultInstance()))
-                  .setSchemaDescriptor(new NetworkServerManagerMethodDescriptorSupplier("GetStatus"))
-                  .build();
-          }
+              .setSchemaDescriptor(new NetworkServerManagerMethodDescriptorSupplier("GetStatus"))
+              .build();
         }
-     }
-     return getGetStatusMethod;
+      }
+    }
+    return getGetStatusMethod;
   }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static NetworkServerManagerStub newStub(io.grpc.Channel channel) {
-    return new NetworkServerManagerStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<NetworkServerManagerStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<NetworkServerManagerStub>() {
+        @java.lang.Override
+        public NetworkServerManagerStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new NetworkServerManagerStub(channel, callOptions);
+        }
+      };
+    return NetworkServerManagerStub.newStub(factory, channel);
   }
 
   /**
@@ -75,7 +81,14 @@ public final class NetworkServerManagerGrpc {
    */
   public static NetworkServerManagerBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new NetworkServerManagerBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<NetworkServerManagerBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<NetworkServerManagerBlockingStub>() {
+        @java.lang.Override
+        public NetworkServerManagerBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new NetworkServerManagerBlockingStub(channel, callOptions);
+        }
+      };
+    return NetworkServerManagerBlockingStub.newStub(factory, channel);
   }
 
   /**
@@ -83,7 +96,14 @@ public final class NetworkServerManagerGrpc {
    */
   public static NetworkServerManagerFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new NetworkServerManagerFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<NetworkServerManagerFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<NetworkServerManagerFutureStub>() {
+        @java.lang.Override
+        public NetworkServerManagerFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new NetworkServerManagerFutureStub(channel, callOptions);
+        }
+      };
+    return NetworkServerManagerFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -120,19 +140,15 @@ public final class NetworkServerManagerGrpc {
    * functionality
    * </pre>
    */
-  public static final class NetworkServerManagerStub extends io.grpc.stub.AbstractStub<NetworkServerManagerStub> {
-    private NetworkServerManagerStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private NetworkServerManagerStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class NetworkServerManagerStub extends io.grpc.stub.AbstractAsyncStub<NetworkServerManagerStub> {
+    private NetworkServerManagerStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected NetworkServerManagerStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected NetworkServerManagerStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new NetworkServerManagerStub(channel, callOptions);
     }
 
@@ -151,19 +167,15 @@ public final class NetworkServerManagerGrpc {
    * functionality
    * </pre>
    */
-  public static final class NetworkServerManagerBlockingStub extends io.grpc.stub.AbstractStub<NetworkServerManagerBlockingStub> {
-    private NetworkServerManagerBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private NetworkServerManagerBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class NetworkServerManagerBlockingStub extends io.grpc.stub.AbstractBlockingStub<NetworkServerManagerBlockingStub> {
+    private NetworkServerManagerBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected NetworkServerManagerBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected NetworkServerManagerBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new NetworkServerManagerBlockingStub(channel, callOptions);
     }
 
@@ -181,19 +193,15 @@ public final class NetworkServerManagerGrpc {
    * functionality
    * </pre>
    */
-  public static final class NetworkServerManagerFutureStub extends io.grpc.stub.AbstractStub<NetworkServerManagerFutureStub> {
-    private NetworkServerManagerFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private NetworkServerManagerFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class NetworkServerManagerFutureStub extends io.grpc.stub.AbstractFutureStub<NetworkServerManagerFutureStub> {
+    private NetworkServerManagerFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected NetworkServerManagerFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected NetworkServerManagerFutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new NetworkServerManagerFutureStub(channel, callOptions);
     }
 

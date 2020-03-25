@@ -10,6 +10,8 @@ require 'broker/broker_pb'
 require 'handler/handler_pb'
 require 'networkserver/networkserver_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
+  add_file("github.com/TheThingsNetwork/api/monitor/monitor.proto", :syntax => :proto3) do
+  end
 end
 
 module Monitor

@@ -44,22 +44,21 @@ public final class BrokerGrpc {
     if ((getAssociateMethod = BrokerGrpc.getAssociateMethod) == null) {
       synchronized (BrokerGrpc.class) {
         if ((getAssociateMethod = BrokerGrpc.getAssociateMethod) == null) {
-          BrokerGrpc.getAssociateMethod = getAssociateMethod = 
+          BrokerGrpc.getAssociateMethod = getAssociateMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.UplinkMessage, org.thethingsnetwork.api.broker.DownlinkMessage>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
-              .setFullMethodName(generateFullMethodName(
-                  "broker.Broker", "Associate"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Associate"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.broker.UplinkMessage.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.broker.DownlinkMessage.getDefaultInstance()))
-                  .setSchemaDescriptor(new BrokerMethodDescriptorSupplier("Associate"))
-                  .build();
-          }
+              .setSchemaDescriptor(new BrokerMethodDescriptorSupplier("Associate"))
+              .build();
         }
-     }
-     return getAssociateMethod;
+      }
+    }
+    return getAssociateMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.SubscribeRequest,
@@ -76,22 +75,21 @@ public final class BrokerGrpc {
     if ((getSubscribeMethod = BrokerGrpc.getSubscribeMethod) == null) {
       synchronized (BrokerGrpc.class) {
         if ((getSubscribeMethod = BrokerGrpc.getSubscribeMethod) == null) {
-          BrokerGrpc.getSubscribeMethod = getSubscribeMethod = 
+          BrokerGrpc.getSubscribeMethod = getSubscribeMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.SubscribeRequest, org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(
-                  "broker.Broker", "Subscribe"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Subscribe"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.broker.SubscribeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.broker.DeduplicatedUplinkMessage.getDefaultInstance()))
-                  .setSchemaDescriptor(new BrokerMethodDescriptorSupplier("Subscribe"))
-                  .build();
-          }
+              .setSchemaDescriptor(new BrokerMethodDescriptorSupplier("Subscribe"))
+              .build();
         }
-     }
-     return getSubscribeMethod;
+      }
+    }
+    return getSubscribeMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DownlinkMessage,
@@ -108,22 +106,21 @@ public final class BrokerGrpc {
     if ((getPublishMethod = BrokerGrpc.getPublishMethod) == null) {
       synchronized (BrokerGrpc.class) {
         if ((getPublishMethod = BrokerGrpc.getPublishMethod) == null) {
-          BrokerGrpc.getPublishMethod = getPublishMethod = 
+          BrokerGrpc.getPublishMethod = getPublishMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.DownlinkMessage, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-              .setFullMethodName(generateFullMethodName(
-                  "broker.Broker", "Publish"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Publish"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.broker.DownlinkMessage.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
-                  .setSchemaDescriptor(new BrokerMethodDescriptorSupplier("Publish"))
-                  .build();
-          }
+              .setSchemaDescriptor(new BrokerMethodDescriptorSupplier("Publish"))
+              .build();
         }
-     }
-     return getPublishMethod;
+      }
+    }
+    return getPublishMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.thethingsnetwork.api.broker.DeviceActivationRequest,
@@ -140,29 +137,35 @@ public final class BrokerGrpc {
     if ((getActivateMethod = BrokerGrpc.getActivateMethod) == null) {
       synchronized (BrokerGrpc.class) {
         if ((getActivateMethod = BrokerGrpc.getActivateMethod) == null) {
-          BrokerGrpc.getActivateMethod = getActivateMethod = 
+          BrokerGrpc.getActivateMethod = getActivateMethod =
               io.grpc.MethodDescriptor.<org.thethingsnetwork.api.broker.DeviceActivationRequest, org.thethingsnetwork.api.broker.DeviceActivationResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "broker.Broker", "Activate"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Activate"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.broker.DeviceActivationRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.thethingsnetwork.api.broker.DeviceActivationResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new BrokerMethodDescriptorSupplier("Activate"))
-                  .build();
-          }
+              .setSchemaDescriptor(new BrokerMethodDescriptorSupplier("Activate"))
+              .build();
         }
-     }
-     return getActivateMethod;
+      }
+    }
+    return getActivateMethod;
   }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static BrokerStub newStub(io.grpc.Channel channel) {
-    return new BrokerStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<BrokerStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<BrokerStub>() {
+        @java.lang.Override
+        public BrokerStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new BrokerStub(channel, callOptions);
+        }
+      };
+    return BrokerStub.newStub(factory, channel);
   }
 
   /**
@@ -170,7 +173,14 @@ public final class BrokerGrpc {
    */
   public static BrokerBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new BrokerBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<BrokerBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<BrokerBlockingStub>() {
+        @java.lang.Override
+        public BrokerBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new BrokerBlockingStub(channel, callOptions);
+        }
+      };
+    return BrokerBlockingStub.newStub(factory, channel);
   }
 
   /**
@@ -178,7 +188,14 @@ public final class BrokerGrpc {
    */
   public static BrokerFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new BrokerFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<BrokerFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<BrokerFutureStub>() {
+        @java.lang.Override
+        public BrokerFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new BrokerFutureStub(channel, callOptions);
+        }
+      };
+    return BrokerFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -267,19 +284,15 @@ public final class BrokerGrpc {
    * The Broker service provides pure network functionality
    * </pre>
    */
-  public static final class BrokerStub extends io.grpc.stub.AbstractStub<BrokerStub> {
-    private BrokerStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private BrokerStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class BrokerStub extends io.grpc.stub.AbstractAsyncStub<BrokerStub> {
+    private BrokerStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected BrokerStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected BrokerStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new BrokerStub(channel, callOptions);
     }
 
@@ -333,19 +346,15 @@ public final class BrokerGrpc {
    * The Broker service provides pure network functionality
    * </pre>
    */
-  public static final class BrokerBlockingStub extends io.grpc.stub.AbstractStub<BrokerBlockingStub> {
-    private BrokerBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private BrokerBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class BrokerBlockingStub extends io.grpc.stub.AbstractBlockingStub<BrokerBlockingStub> {
+    private BrokerBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected BrokerBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected BrokerBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new BrokerBlockingStub(channel, callOptions);
     }
 
@@ -376,19 +385,15 @@ public final class BrokerGrpc {
    * The Broker service provides pure network functionality
    * </pre>
    */
-  public static final class BrokerFutureStub extends io.grpc.stub.AbstractStub<BrokerFutureStub> {
-    private BrokerFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private BrokerFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class BrokerFutureStub extends io.grpc.stub.AbstractFutureStub<BrokerFutureStub> {
+    private BrokerFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected BrokerFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected BrokerFutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new BrokerFutureStub(channel, callOptions);
     }
 

@@ -117,7 +117,7 @@ class Lorawan
             "6f726b2f6170692f70726f746f636f6c2f6c6f726177616eaa0224546865" .
             "5468696e67734e6574776f726b2e4150492e4c6f526157414e50726f746f" .
             "636f6c620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

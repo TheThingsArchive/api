@@ -6,63 +6,65 @@ require 'google/protobuf'
 require 'google/protobuf/empty_pb'
 require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
-  add_message "discovery.Metadata" do
-    oneof :metadata do
-      optional :gateway_id, :string, 10
-      optional :dev_addr_prefix, :bytes, 20
+  add_file("github.com/TheThingsNetwork/api/discovery/discovery.proto", :syntax => :proto3) do
+    add_message "discovery.Metadata" do
+      oneof :metadata do
+        optional :gateway_id, :string, 10
+        optional :dev_addr_prefix, :bytes, 20
+        optional :app_id, :string, 30
+        optional :app_eui, :bytes, 31
+      end
+    end
+    add_message "discovery.Announcement" do
+      optional :id, :string, 1
+      optional :service_name, :string, 2
+      optional :service_version, :string, 3
+      optional :description, :string, 4
+      optional :url, :string, 5
+      optional :public, :bool, 6
+      optional :net_address, :string, 11
+      optional :public_key, :string, 12
+      optional :certificate, :string, 13
+      optional :api_address, :string, 14
+      optional :mqtt_address, :string, 15
+      optional :amqp_address, :string, 16
+      repeated :metadata, :message, 22, "discovery.Metadata"
+    end
+    add_message "discovery.GetServiceRequest" do
+      optional :service_name, :string, 1
+    end
+    add_message "discovery.GetRequest" do
+      optional :id, :string, 1
+      optional :service_name, :string, 2
+    end
+    add_message "discovery.MetadataRequest" do
+      optional :id, :string, 1
+      optional :service_name, :string, 2
+      optional :metadata, :message, 12, "discovery.Metadata"
+    end
+    add_message "discovery.AnnouncementsResponse" do
+      repeated :services, :message, 1, "discovery.Announcement"
+    end
+    add_message "discovery.GetByAppIDRequest" do
       optional :app_id, :string, 30
+    end
+    add_message "discovery.GetByGatewayIDRequest" do
+      optional :gateway_id, :string, 30
+    end
+    add_message "discovery.GetByAppEUIRequest" do
       optional :app_eui, :bytes, 31
     end
-  end
-  add_message "discovery.Announcement" do
-    optional :id, :string, 1
-    optional :service_name, :string, 2
-    optional :service_version, :string, 3
-    optional :description, :string, 4
-    optional :url, :string, 5
-    optional :public, :bool, 6
-    optional :net_address, :string, 11
-    optional :public_key, :string, 12
-    optional :certificate, :string, 13
-    optional :api_address, :string, 14
-    optional :mqtt_address, :string, 15
-    optional :amqp_address, :string, 16
-    repeated :metadata, :message, 22, "discovery.Metadata"
-  end
-  add_message "discovery.GetServiceRequest" do
-    optional :service_name, :string, 1
-  end
-  add_message "discovery.GetRequest" do
-    optional :id, :string, 1
-    optional :service_name, :string, 2
-  end
-  add_message "discovery.MetadataRequest" do
-    optional :id, :string, 1
-    optional :service_name, :string, 2
-    optional :metadata, :message, 12, "discovery.Metadata"
-  end
-  add_message "discovery.AnnouncementsResponse" do
-    repeated :services, :message, 1, "discovery.Announcement"
-  end
-  add_message "discovery.GetByAppIDRequest" do
-    optional :app_id, :string, 30
-  end
-  add_message "discovery.GetByGatewayIDRequest" do
-    optional :gateway_id, :string, 30
-  end
-  add_message "discovery.GetByAppEUIRequest" do
-    optional :app_eui, :bytes, 31
   end
 end
 
 module Discovery
-  Metadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.Metadata").msgclass
-  Announcement = Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.Announcement").msgclass
-  GetServiceRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.GetServiceRequest").msgclass
-  GetRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.GetRequest").msgclass
-  MetadataRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.MetadataRequest").msgclass
-  AnnouncementsResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.AnnouncementsResponse").msgclass
-  GetByAppIDRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.GetByAppIDRequest").msgclass
-  GetByGatewayIDRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.GetByGatewayIDRequest").msgclass
-  GetByAppEUIRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.GetByAppEUIRequest").msgclass
+  Metadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.Metadata").msgclass
+  Announcement = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.Announcement").msgclass
+  GetServiceRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.GetServiceRequest").msgclass
+  GetRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.GetRequest").msgclass
+  MetadataRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.MetadataRequest").msgclass
+  AnnouncementsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.AnnouncementsResponse").msgclass
+  GetByAppIDRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.GetByAppIDRequest").msgclass
+  GetByGatewayIDRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.GetByGatewayIDRequest").msgclass
+  GetByAppEUIRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("discovery.GetByAppEUIRequest").msgclass
 end

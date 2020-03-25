@@ -9,10 +9,12 @@ public interface SystemStatsOrBuilder extends
 
   /**
    * <code>.api.SystemStats.Loadstats load = 1;</code>
+   * @return Whether the load field is set.
    */
   boolean hasLoad();
   /**
    * <code>.api.SystemStats.Loadstats load = 1;</code>
+   * @return The load.
    */
   org.thethingsnetwork.api.SystemStats.Loadstats getLoad();
   /**
@@ -22,10 +24,12 @@ public interface SystemStatsOrBuilder extends
 
   /**
    * <code>.api.SystemStats.CPUStats cpu = 2;</code>
+   * @return Whether the cpu field is set.
    */
   boolean hasCpu();
   /**
    * <code>.api.SystemStats.CPUStats cpu = 2;</code>
+   * @return The cpu.
    */
   org.thethingsnetwork.api.SystemStats.CPUStats getCpu();
   /**
@@ -35,10 +39,12 @@ public interface SystemStatsOrBuilder extends
 
   /**
    * <code>.api.SystemStats.MemoryStats memory = 3;</code>
+   * @return Whether the memory field is set.
    */
   boolean hasMemory();
   /**
    * <code>.api.SystemStats.MemoryStats memory = 3;</code>
+   * @return The memory.
    */
   org.thethingsnetwork.api.SystemStats.MemoryStats getMemory();
   /**
