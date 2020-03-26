@@ -13,7 +13,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 
-goog.object.extend(proto, github_com_gogo_protobuf_gogoproto_gogo_pb);
+
 goog.exportSymbol('proto.gateway.LocationMetadata', null, global);
 goog.exportSymbol('proto.gateway.LocationMetadata.LocationSource', null, global);
 goog.exportSymbol('proto.gateway.RxMetadata', null, global);

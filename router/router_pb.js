@@ -15,7 +15,7 @@ var global = Function('return this')();
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 goog.object.extend(proto, google_protobuf_empty_pb);
 
-goog.object.extend(proto, github_com_gogo_protobuf_gogoproto_gogo_pb);
+
 var ttn_api_pb = require('../api_pb.js');
 goog.object.extend(proto, ttn_api_pb);
 var ttn_protocol_protocol_pb = require('../protocol/protocol_pb.js');

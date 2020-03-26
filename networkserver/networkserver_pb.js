@@ -13,7 +13,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 
-goog.object.extend(proto, github_com_gogo_protobuf_gogoproto_gogo_pb);
+
 var ttn_api_pb = require('../api_pb.js');
 goog.object.extend(proto, ttn_api_pb);
 var ttn_protocol_lorawan_device_pb = require('../protocol/lorawan/device_pb.js');

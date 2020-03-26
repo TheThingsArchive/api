@@ -69,7 +69,9 @@ clean/java:
 
 js_replace := -pe 's!../../../github.com/TheThingsNetwork/api/!!;' \
 	            -pe 's!.*require(.*github.com/gogo/protobuf.*).*!!;' \
+	            -pe 's!.*github_com_gogo_protobuf_gogoproto_gogo_pb.*!!;' \
 	            -pe 's!.*require(.*google/api/annotations_pb\.js.*).*!!;' \
+	            -pe 's!.*google_api_annotations_pb.*!!;' \
 	            -pe 's!github_com_TheThingsNetwork_api!ttn!g;' \
               -pe 's!github.com_!github_com_!g;'
 

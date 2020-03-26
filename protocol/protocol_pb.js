@@ -13,7 +13,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 
-goog.object.extend(proto, github_com_gogo_protobuf_gogoproto_gogo_pb);
+
 var ttn_protocol_lorawan_lorawan_pb = require('../protocol/lorawan/lorawan_pb.js');
 goog.object.extend(proto, ttn_protocol_lorawan_lorawan_pb);
 goog.exportSymbol('proto.protocol.ActivationMetadata', null, global);
