@@ -17,7 +17,7 @@ proto_files := $(shell find . -name '*.proto')
 DOCKER ?= docker
 
 PROTOC_API_PATH = /src/github.com/TheThingsNetwork/api
-PROTOC_DOCKER_IMAGE ?= thethingsindustries/protoc:3.1
+PROTOC_DOCKER_IMAGE ?= thethingsindustries/protoc:3.1.26
 PROTOC ?= $(DOCKER) run --user `id -u` --rm --mount type=bind,src=$(PWD),dst=$(PROTOC_API_PATH) -w $(PROTOC_API_PATH) $(PROTOC_DOCKER_IMAGE) -I/src
 
 protoc:
