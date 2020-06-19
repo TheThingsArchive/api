@@ -6,153 +6,261 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class BrokerStub(object):
-  """The Broker service provides pure network functionality
-  """
-
-  def __init__(self, channel):
-    """Constructor.
-
-    Args:
-      channel: A grpc.Channel.
+    """The Broker service provides pure network functionality
     """
-    self.Associate = channel.stream_stream(
-        '/broker.Broker/Associate',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.UplinkMessage.SerializeToString,
-        response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.FromString,
-        )
-    self.Subscribe = channel.unary_stream(
-        '/broker.Broker/Subscribe',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.SubscribeRequest.SerializeToString,
-        response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.FromString,
-        )
-    self.Publish = channel.stream_unary(
-        '/broker.Broker/Publish',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.Activate = channel.unary_unary(
-        '/broker.Broker/Activate',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeviceActivationRequest.SerializeToString,
-        response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeviceActivationResponse.FromString,
-        )
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.Associate = channel.stream_stream(
+                '/broker.Broker/Associate',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.UplinkMessage.SerializeToString,
+                response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.FromString,
+                )
+        self.Subscribe = channel.unary_stream(
+                '/broker.Broker/Subscribe',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.SubscribeRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.FromString,
+                )
+        self.Publish = channel.stream_unary(
+                '/broker.Broker/Publish',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.Activate = channel.unary_unary(
+                '/broker.Broker/Activate',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeviceActivationRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeviceActivationResponse.FromString,
+                )
 
 
 class BrokerServicer(object):
-  """The Broker service provides pure network functionality
-  """
-
-  def Associate(self, request_iterator, context):
-    """Router initiates an Association with the Broker.
+    """The Broker service provides pure network functionality
     """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
 
-  def Subscribe(self, request, context):
-    """Handler subscribes to uplink stream.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def Associate(self, request_iterator, context):
+        """Router initiates an Association with the Broker.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def Publish(self, request_iterator, context):
-    """Handler initiates downlink stream.
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def Subscribe(self, request, context):
+        """Handler subscribes to uplink stream.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def Activate(self, request, context):
-    """Router requests device activation
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def Publish(self, request_iterator, context):
+        """Handler initiates downlink stream.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Activate(self, request, context):
+        """Router requests device activation
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
 
 def add_BrokerServicer_to_server(servicer, server):
-  rpc_method_handlers = {
-      'Associate': grpc.stream_stream_rpc_method_handler(
-          servicer.Associate,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.UplinkMessage.FromString,
-          response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.SerializeToString,
-      ),
-      'Subscribe': grpc.unary_stream_rpc_method_handler(
-          servicer.Subscribe,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.SubscribeRequest.FromString,
-          response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.SerializeToString,
-      ),
-      'Publish': grpc.stream_unary_rpc_method_handler(
-          servicer.Publish,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'Activate': grpc.unary_unary_rpc_method_handler(
-          servicer.Activate,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeviceActivationRequest.FromString,
-          response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeviceActivationResponse.SerializeToString,
-      ),
-  }
-  generic_handler = grpc.method_handlers_generic_handler(
-      'broker.Broker', rpc_method_handlers)
-  server.add_generic_rpc_handlers((generic_handler,))
+    rpc_method_handlers = {
+            'Associate': grpc.stream_stream_rpc_method_handler(
+                    servicer.Associate,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.UplinkMessage.FromString,
+                    response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.SerializeToString,
+            ),
+            'Subscribe': grpc.unary_stream_rpc_method_handler(
+                    servicer.Subscribe,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.SubscribeRequest.FromString,
+                    response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.SerializeToString,
+            ),
+            'Publish': grpc.stream_unary_rpc_method_handler(
+                    servicer.Publish,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'Activate': grpc.unary_unary_rpc_method_handler(
+                    servicer.Activate,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeviceActivationRequest.FromString,
+                    response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeviceActivationResponse.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'broker.Broker', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class Broker(object):
+    """The Broker service provides pure network functionality
+    """
+
+    @staticmethod
+    def Associate(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_stream(request_iterator, target, '/broker.Broker/Associate',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.UplinkMessage.SerializeToString,
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Subscribe(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/broker.Broker/Subscribe',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.SubscribeRequest.SerializeToString,
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Publish(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_unary(request_iterator, target, '/broker.Broker/Publish',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Activate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/broker.Broker/Activate',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeviceActivationRequest.SerializeToString,
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeviceActivationResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
 
 
 class BrokerManagerStub(object):
-  """The BrokerManager service provides configuration and monitoring functionality
-  """
-
-  def __init__(self, channel):
-    """Constructor.
-
-    Args:
-      channel: A grpc.Channel.
+    """The BrokerManager service provides configuration and monitoring functionality
     """
-    self.RegisterApplicationHandler = channel.unary_unary(
-        '/broker.BrokerManager/RegisterApplicationHandler',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.ApplicationHandlerRegistration.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.GetStatus = channel.unary_unary(
-        '/broker.BrokerManager/GetStatus',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.StatusRequest.SerializeToString,
-        response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.Status.FromString,
-        )
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.RegisterApplicationHandler = channel.unary_unary(
+                '/broker.BrokerManager/RegisterApplicationHandler',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.ApplicationHandlerRegistration.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GetStatus = channel.unary_unary(
+                '/broker.BrokerManager/GetStatus',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.StatusRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.Status.FromString,
+                )
 
 
 class BrokerManagerServicer(object):
-  """The BrokerManager service provides configuration and monitoring functionality
-  """
-
-  def RegisterApplicationHandler(self, request, context):
-    """Handler announces a new application to Broker. This is a temporary method that will be removed
-    when we can push updates from the Discovery service to the routing services.
+    """The BrokerManager service provides configuration and monitoring functionality
     """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
 
-  def GetStatus(self, request, context):
-    """Network operator requests Broker status
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def RegisterApplicationHandler(self, request, context):
+        """Handler announces a new application to Broker. This is a temporary method that will be removed
+        when we can push updates from the Discovery service to the routing services.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetStatus(self, request, context):
+        """Network operator requests Broker status
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
 
 def add_BrokerManagerServicer_to_server(servicer, server):
-  rpc_method_handlers = {
-      'RegisterApplicationHandler': grpc.unary_unary_rpc_method_handler(
-          servicer.RegisterApplicationHandler,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.ApplicationHandlerRegistration.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'GetStatus': grpc.unary_unary_rpc_method_handler(
-          servicer.GetStatus,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.StatusRequest.FromString,
-          response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.Status.SerializeToString,
-      ),
-  }
-  generic_handler = grpc.method_handlers_generic_handler(
-      'broker.BrokerManager', rpc_method_handlers)
-  server.add_generic_rpc_handlers((generic_handler,))
+    rpc_method_handlers = {
+            'RegisterApplicationHandler': grpc.unary_unary_rpc_method_handler(
+                    servicer.RegisterApplicationHandler,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.ApplicationHandlerRegistration.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetStatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetStatus,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.StatusRequest.FromString,
+                    response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.Status.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'broker.BrokerManager', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class BrokerManager(object):
+    """The BrokerManager service provides configuration and monitoring functionality
+    """
+
+    @staticmethod
+    def RegisterApplicationHandler(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/broker.BrokerManager/RegisterApplicationHandler',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.ApplicationHandlerRegistration.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetStatus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/broker.BrokerManager/GetStatus',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.StatusRequest.SerializeToString,
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.Status.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)

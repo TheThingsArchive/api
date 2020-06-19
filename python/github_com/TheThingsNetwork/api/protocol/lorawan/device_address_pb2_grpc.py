@@ -5,59 +5,97 @@ from github_com.TheThingsNetwork.api.protocol.lorawan import device_address_pb2 
 
 
 class DevAddrManagerStub(object):
-  """The Device Addresses in the network are issued by the NetworkServer
-  """
-
-  def __init__(self, channel):
-    """Constructor.
-
-    Args:
-      channel: A grpc.Channel.
+    """The Device Addresses in the network are issued by the NetworkServer
     """
-    self.GetPrefixes = channel.unary_unary(
-        '/lorawan.DevAddrManager/GetPrefixes',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__address__pb2.PrefixesRequest.SerializeToString,
-        response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__address__pb2.PrefixesResponse.FromString,
-        )
-    self.GetDevAddr = channel.unary_unary(
-        '/lorawan.DevAddrManager/GetDevAddr',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__address__pb2.DevAddrRequest.SerializeToString,
-        response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__address__pb2.DevAddrResponse.FromString,
-        )
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.GetPrefixes = channel.unary_unary(
+                '/lorawan.DevAddrManager/GetPrefixes',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__address__pb2.PrefixesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__address__pb2.PrefixesResponse.FromString,
+                )
+        self.GetDevAddr = channel.unary_unary(
+                '/lorawan.DevAddrManager/GetDevAddr',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__address__pb2.DevAddrRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__address__pb2.DevAddrResponse.FromString,
+                )
 
 
 class DevAddrManagerServicer(object):
-  """The Device Addresses in the network are issued by the NetworkServer
-  """
-
-  def GetPrefixes(self, request, context):
-    """Get all prefixes that are in use or available
+    """The Device Addresses in the network are issued by the NetworkServer
     """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
 
-  def GetDevAddr(self, request, context):
-    """Request a device address
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def GetPrefixes(self, request, context):
+        """Get all prefixes that are in use or available
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetDevAddr(self, request, context):
+        """Request a device address
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
 
 def add_DevAddrManagerServicer_to_server(servicer, server):
-  rpc_method_handlers = {
-      'GetPrefixes': grpc.unary_unary_rpc_method_handler(
-          servicer.GetPrefixes,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__address__pb2.PrefixesRequest.FromString,
-          response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__address__pb2.PrefixesResponse.SerializeToString,
-      ),
-      'GetDevAddr': grpc.unary_unary_rpc_method_handler(
-          servicer.GetDevAddr,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__address__pb2.DevAddrRequest.FromString,
-          response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__address__pb2.DevAddrResponse.SerializeToString,
-      ),
-  }
-  generic_handler = grpc.method_handlers_generic_handler(
-      'lorawan.DevAddrManager', rpc_method_handlers)
-  server.add_generic_rpc_handlers((generic_handler,))
+    rpc_method_handlers = {
+            'GetPrefixes': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPrefixes,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__address__pb2.PrefixesRequest.FromString,
+                    response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__address__pb2.PrefixesResponse.SerializeToString,
+            ),
+            'GetDevAddr': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDevAddr,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__address__pb2.DevAddrRequest.FromString,
+                    response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__address__pb2.DevAddrResponse.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'lorawan.DevAddrManager', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class DevAddrManager(object):
+    """The Device Addresses in the network are issued by the NetworkServer
+    """
+
+    @staticmethod
+    def GetPrefixes(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/lorawan.DevAddrManager/GetPrefixes',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__address__pb2.PrefixesRequest.SerializeToString,
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__address__pb2.PrefixesResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetDevAddr(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/lorawan.DevAddrManager/GetDevAddr',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__address__pb2.DevAddrRequest.SerializeToString,
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__address__pb2.DevAddrResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)

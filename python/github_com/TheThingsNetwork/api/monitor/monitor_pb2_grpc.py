@@ -10,212 +10,380 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class MonitorStub(object):
-  # missing associated documentation comment in .proto file
-  pass
+    """Missing associated documentation comment in .proto file"""
 
-  def __init__(self, channel):
-    """Constructor.
+    def __init__(self, channel):
+        """Constructor.
 
-    Args:
-      channel: A grpc.Channel.
-    """
-    self.RouterStatus = channel.stream_unary(
-        '/monitor.Monitor/RouterStatus',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_router_dot_router__pb2.Status.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.GatewayStatus = channel.stream_unary(
-        '/monitor.Monitor/GatewayStatus',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_gateway_dot_gateway__pb2.Status.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.GatewayUplink = channel.stream_unary(
-        '/monitor.Monitor/GatewayUplink',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_router_dot_router__pb2.UplinkMessage.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.GatewayDownlink = channel.stream_unary(
-        '/monitor.Monitor/GatewayDownlink',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_router_dot_router__pb2.DownlinkMessage.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.BrokerStatus = channel.stream_unary(
-        '/monitor.Monitor/BrokerStatus',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.Status.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.BrokerUplink = channel.stream_unary(
-        '/monitor.Monitor/BrokerUplink',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.BrokerDownlink = channel.stream_unary(
-        '/monitor.Monitor/BrokerDownlink',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.HandlerStatus = channel.stream_unary(
-        '/monitor.Monitor/HandlerStatus',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_handler_dot_handler__pb2.Status.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.HandlerUplink = channel.stream_unary(
-        '/monitor.Monitor/HandlerUplink',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.HandlerDownlink = channel.stream_unary(
-        '/monitor.Monitor/HandlerDownlink',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
-    self.NetworkServerStatus = channel.stream_unary(
-        '/monitor.Monitor/NetworkServerStatus',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.Status.SerializeToString,
-        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-        )
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.RouterStatus = channel.stream_unary(
+                '/monitor.Monitor/RouterStatus',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_router_dot_router__pb2.Status.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GatewayStatus = channel.stream_unary(
+                '/monitor.Monitor/GatewayStatus',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_gateway_dot_gateway__pb2.Status.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GatewayUplink = channel.stream_unary(
+                '/monitor.Monitor/GatewayUplink',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_router_dot_router__pb2.UplinkMessage.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GatewayDownlink = channel.stream_unary(
+                '/monitor.Monitor/GatewayDownlink',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_router_dot_router__pb2.DownlinkMessage.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.BrokerStatus = channel.stream_unary(
+                '/monitor.Monitor/BrokerStatus',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.Status.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.BrokerUplink = channel.stream_unary(
+                '/monitor.Monitor/BrokerUplink',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.BrokerDownlink = channel.stream_unary(
+                '/monitor.Monitor/BrokerDownlink',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.HandlerStatus = channel.stream_unary(
+                '/monitor.Monitor/HandlerStatus',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_handler_dot_handler__pb2.Status.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.HandlerUplink = channel.stream_unary(
+                '/monitor.Monitor/HandlerUplink',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.HandlerDownlink = channel.stream_unary(
+                '/monitor.Monitor/HandlerDownlink',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.NetworkServerStatus = channel.stream_unary(
+                '/monitor.Monitor/NetworkServerStatus',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.Status.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
 
 
 class MonitorServicer(object):
-  # missing associated documentation comment in .proto file
-  pass
+    """Missing associated documentation comment in .proto file"""
 
-  def RouterStatus(self, request_iterator, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def RouterStatus(self, request_iterator, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def GatewayStatus(self, request_iterator, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def GatewayStatus(self, request_iterator, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def GatewayUplink(self, request_iterator, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def GatewayUplink(self, request_iterator, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def GatewayDownlink(self, request_iterator, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def GatewayDownlink(self, request_iterator, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def BrokerStatus(self, request_iterator, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def BrokerStatus(self, request_iterator, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def BrokerUplink(self, request_iterator, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def BrokerUplink(self, request_iterator, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def BrokerDownlink(self, request_iterator, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def BrokerDownlink(self, request_iterator, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def HandlerStatus(self, request_iterator, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def HandlerStatus(self, request_iterator, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def HandlerUplink(self, request_iterator, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def HandlerUplink(self, request_iterator, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def HandlerDownlink(self, request_iterator, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def HandlerDownlink(self, request_iterator, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def NetworkServerStatus(self, request_iterator, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def NetworkServerStatus(self, request_iterator, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
 
 def add_MonitorServicer_to_server(servicer, server):
-  rpc_method_handlers = {
-      'RouterStatus': grpc.stream_unary_rpc_method_handler(
-          servicer.RouterStatus,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_router_dot_router__pb2.Status.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'GatewayStatus': grpc.stream_unary_rpc_method_handler(
-          servicer.GatewayStatus,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_gateway_dot_gateway__pb2.Status.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'GatewayUplink': grpc.stream_unary_rpc_method_handler(
-          servicer.GatewayUplink,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_router_dot_router__pb2.UplinkMessage.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'GatewayDownlink': grpc.stream_unary_rpc_method_handler(
-          servicer.GatewayDownlink,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_router_dot_router__pb2.DownlinkMessage.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'BrokerStatus': grpc.stream_unary_rpc_method_handler(
-          servicer.BrokerStatus,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.Status.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'BrokerUplink': grpc.stream_unary_rpc_method_handler(
-          servicer.BrokerUplink,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'BrokerDownlink': grpc.stream_unary_rpc_method_handler(
-          servicer.BrokerDownlink,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'HandlerStatus': grpc.stream_unary_rpc_method_handler(
-          servicer.HandlerStatus,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_handler_dot_handler__pb2.Status.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'HandlerUplink': grpc.stream_unary_rpc_method_handler(
-          servicer.HandlerUplink,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'HandlerDownlink': grpc.stream_unary_rpc_method_handler(
-          servicer.HandlerDownlink,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-      'NetworkServerStatus': grpc.stream_unary_rpc_method_handler(
-          servicer.NetworkServerStatus,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.Status.FromString,
-          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-      ),
-  }
-  generic_handler = grpc.method_handlers_generic_handler(
-      'monitor.Monitor', rpc_method_handlers)
-  server.add_generic_rpc_handlers((generic_handler,))
+    rpc_method_handlers = {
+            'RouterStatus': grpc.stream_unary_rpc_method_handler(
+                    servicer.RouterStatus,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_router_dot_router__pb2.Status.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GatewayStatus': grpc.stream_unary_rpc_method_handler(
+                    servicer.GatewayStatus,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_gateway_dot_gateway__pb2.Status.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GatewayUplink': grpc.stream_unary_rpc_method_handler(
+                    servicer.GatewayUplink,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_router_dot_router__pb2.UplinkMessage.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GatewayDownlink': grpc.stream_unary_rpc_method_handler(
+                    servicer.GatewayDownlink,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_router_dot_router__pb2.DownlinkMessage.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'BrokerStatus': grpc.stream_unary_rpc_method_handler(
+                    servicer.BrokerStatus,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.Status.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'BrokerUplink': grpc.stream_unary_rpc_method_handler(
+                    servicer.BrokerUplink,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'BrokerDownlink': grpc.stream_unary_rpc_method_handler(
+                    servicer.BrokerDownlink,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'HandlerStatus': grpc.stream_unary_rpc_method_handler(
+                    servicer.HandlerStatus,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_handler_dot_handler__pb2.Status.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'HandlerUplink': grpc.stream_unary_rpc_method_handler(
+                    servicer.HandlerUplink,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'HandlerDownlink': grpc.stream_unary_rpc_method_handler(
+                    servicer.HandlerDownlink,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'NetworkServerStatus': grpc.stream_unary_rpc_method_handler(
+                    servicer.NetworkServerStatus,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.Status.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'monitor.Monitor', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class Monitor(object):
+    """Missing associated documentation comment in .proto file"""
+
+    @staticmethod
+    def RouterStatus(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_unary(request_iterator, target, '/monitor.Monitor/RouterStatus',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_router_dot_router__pb2.Status.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GatewayStatus(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_unary(request_iterator, target, '/monitor.Monitor/GatewayStatus',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_gateway_dot_gateway__pb2.Status.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GatewayUplink(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_unary(request_iterator, target, '/monitor.Monitor/GatewayUplink',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_router_dot_router__pb2.UplinkMessage.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GatewayDownlink(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_unary(request_iterator, target, '/monitor.Monitor/GatewayDownlink',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_router_dot_router__pb2.DownlinkMessage.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def BrokerStatus(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_unary(request_iterator, target, '/monitor.Monitor/BrokerStatus',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.Status.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def BrokerUplink(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_unary(request_iterator, target, '/monitor.Monitor/BrokerUplink',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def BrokerDownlink(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_unary(request_iterator, target, '/monitor.Monitor/BrokerDownlink',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def HandlerStatus(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_unary(request_iterator, target, '/monitor.Monitor/HandlerStatus',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_handler_dot_handler__pb2.Status.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def HandlerUplink(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_unary(request_iterator, target, '/monitor.Monitor/HandlerUplink',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def HandlerDownlink(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_unary(request_iterator, target, '/monitor.Monitor/HandlerDownlink',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def NetworkServerStatus(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_unary(request_iterator, target, '/monitor.Monitor/NetworkServerStatus',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.Status.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)

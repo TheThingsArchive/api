@@ -7,154 +7,259 @@ from github_com.TheThingsNetwork.api.networkserver import networkserver_pb2 as g
 
 
 class NetworkServerStub(object):
-  # missing associated documentation comment in .proto file
-  pass
+    """Missing associated documentation comment in .proto file"""
 
-  def __init__(self, channel):
-    """Constructor.
+    def __init__(self, channel):
+        """Constructor.
 
-    Args:
-      channel: A grpc.Channel.
-    """
-    self.GetDevices = channel.unary_unary(
-        '/networkserver.NetworkServer/GetDevices',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.DevicesRequest.SerializeToString,
-        response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.DevicesResponse.FromString,
-        )
-    self.PrepareActivation = channel.unary_unary(
-        '/networkserver.NetworkServer/PrepareActivation',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedDeviceActivationRequest.SerializeToString,
-        response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedDeviceActivationRequest.FromString,
-        )
-    self.Activate = channel.unary_unary(
-        '/networkserver.NetworkServer/Activate',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_handler_dot_handler__pb2.DeviceActivationResponse.SerializeToString,
-        response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_handler_dot_handler__pb2.DeviceActivationResponse.FromString,
-        )
-    self.Uplink = channel.unary_unary(
-        '/networkserver.NetworkServer/Uplink',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.SerializeToString,
-        response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.FromString,
-        )
-    self.Downlink = channel.unary_unary(
-        '/networkserver.NetworkServer/Downlink',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.SerializeToString,
-        response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.FromString,
-        )
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.GetDevices = channel.unary_unary(
+                '/networkserver.NetworkServer/GetDevices',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.DevicesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.DevicesResponse.FromString,
+                )
+        self.PrepareActivation = channel.unary_unary(
+                '/networkserver.NetworkServer/PrepareActivation',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedDeviceActivationRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedDeviceActivationRequest.FromString,
+                )
+        self.Activate = channel.unary_unary(
+                '/networkserver.NetworkServer/Activate',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_handler_dot_handler__pb2.DeviceActivationResponse.SerializeToString,
+                response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_handler_dot_handler__pb2.DeviceActivationResponse.FromString,
+                )
+        self.Uplink = channel.unary_unary(
+                '/networkserver.NetworkServer/Uplink',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.SerializeToString,
+                response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.FromString,
+                )
+        self.Downlink = channel.unary_unary(
+                '/networkserver.NetworkServer/Downlink',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.SerializeToString,
+                response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.FromString,
+                )
 
 
 class NetworkServerServicer(object):
-  # missing associated documentation comment in .proto file
-  pass
+    """Missing associated documentation comment in .proto file"""
 
-  def GetDevices(self, request, context):
-    """Broker requests devices with DevAddr and matching FCnt (or disabled FCnt check)
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def GetDevices(self, request, context):
+        """Broker requests devices with DevAddr and matching FCnt (or disabled FCnt check)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def PrepareActivation(self, request, context):
-    """Broker requests device activation "template" from Network Server
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def PrepareActivation(self, request, context):
+        """Broker requests device activation "template" from Network Server
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def Activate(self, request, context):
-    """Broker confirms device activation (after response from Handler)
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def Activate(self, request, context):
+        """Broker confirms device activation (after response from Handler)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def Uplink(self, request, context):
-    """Broker informs Network Server about Uplink
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def Uplink(self, request, context):
+        """Broker informs Network Server about Uplink
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def Downlink(self, request, context):
-    """Broker informs Network Server about Downlink, NetworkServer may add MAC commands and re-set MIC
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def Downlink(self, request, context):
+        """Broker informs Network Server about Downlink, NetworkServer may add MAC commands and re-set MIC
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
 
 def add_NetworkServerServicer_to_server(servicer, server):
-  rpc_method_handlers = {
-      'GetDevices': grpc.unary_unary_rpc_method_handler(
-          servicer.GetDevices,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.DevicesRequest.FromString,
-          response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.DevicesResponse.SerializeToString,
-      ),
-      'PrepareActivation': grpc.unary_unary_rpc_method_handler(
-          servicer.PrepareActivation,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedDeviceActivationRequest.FromString,
-          response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedDeviceActivationRequest.SerializeToString,
-      ),
-      'Activate': grpc.unary_unary_rpc_method_handler(
-          servicer.Activate,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_handler_dot_handler__pb2.DeviceActivationResponse.FromString,
-          response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_handler_dot_handler__pb2.DeviceActivationResponse.SerializeToString,
-      ),
-      'Uplink': grpc.unary_unary_rpc_method_handler(
-          servicer.Uplink,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.FromString,
-          response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.SerializeToString,
-      ),
-      'Downlink': grpc.unary_unary_rpc_method_handler(
-          servicer.Downlink,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.FromString,
-          response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.SerializeToString,
-      ),
-  }
-  generic_handler = grpc.method_handlers_generic_handler(
-      'networkserver.NetworkServer', rpc_method_handlers)
-  server.add_generic_rpc_handlers((generic_handler,))
+    rpc_method_handlers = {
+            'GetDevices': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDevices,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.DevicesRequest.FromString,
+                    response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.DevicesResponse.SerializeToString,
+            ),
+            'PrepareActivation': grpc.unary_unary_rpc_method_handler(
+                    servicer.PrepareActivation,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedDeviceActivationRequest.FromString,
+                    response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedDeviceActivationRequest.SerializeToString,
+            ),
+            'Activate': grpc.unary_unary_rpc_method_handler(
+                    servicer.Activate,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_handler_dot_handler__pb2.DeviceActivationResponse.FromString,
+                    response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_handler_dot_handler__pb2.DeviceActivationResponse.SerializeToString,
+            ),
+            'Uplink': grpc.unary_unary_rpc_method_handler(
+                    servicer.Uplink,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.FromString,
+                    response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.SerializeToString,
+            ),
+            'Downlink': grpc.unary_unary_rpc_method_handler(
+                    servicer.Downlink,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.FromString,
+                    response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'networkserver.NetworkServer', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class NetworkServer(object):
+    """Missing associated documentation comment in .proto file"""
+
+    @staticmethod
+    def GetDevices(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/networkserver.NetworkServer/GetDevices',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.DevicesRequest.SerializeToString,
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.DevicesResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PrepareActivation(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/networkserver.NetworkServer/PrepareActivation',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedDeviceActivationRequest.SerializeToString,
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedDeviceActivationRequest.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Activate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/networkserver.NetworkServer/Activate',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_handler_dot_handler__pb2.DeviceActivationResponse.SerializeToString,
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_handler_dot_handler__pb2.DeviceActivationResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Uplink(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/networkserver.NetworkServer/Uplink',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.SerializeToString,
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DeduplicatedUplinkMessage.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Downlink(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/networkserver.NetworkServer/Downlink',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.SerializeToString,
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DownlinkMessage.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
 
 
 class NetworkServerManagerStub(object):
-  """The NetworkServerManager service provides configuration and monitoring
-  functionality
-  """
-
-  def __init__(self, channel):
-    """Constructor.
-
-    Args:
-      channel: A grpc.Channel.
+    """The NetworkServerManager service provides configuration and monitoring
+    functionality
     """
-    self.GetStatus = channel.unary_unary(
-        '/networkserver.NetworkServerManager/GetStatus',
-        request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.StatusRequest.SerializeToString,
-        response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.Status.FromString,
-        )
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.GetStatus = channel.unary_unary(
+                '/networkserver.NetworkServerManager/GetStatus',
+                request_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.StatusRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.Status.FromString,
+                )
 
 
 class NetworkServerManagerServicer(object):
-  """The NetworkServerManager service provides configuration and monitoring
-  functionality
-  """
+    """The NetworkServerManager service provides configuration and monitoring
+    functionality
+    """
 
-  def GetStatus(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def GetStatus(self, request, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
 
 def add_NetworkServerManagerServicer_to_server(servicer, server):
-  rpc_method_handlers = {
-      'GetStatus': grpc.unary_unary_rpc_method_handler(
-          servicer.GetStatus,
-          request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.StatusRequest.FromString,
-          response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.Status.SerializeToString,
-      ),
-  }
-  generic_handler = grpc.method_handlers_generic_handler(
-      'networkserver.NetworkServerManager', rpc_method_handlers)
-  server.add_generic_rpc_handlers((generic_handler,))
+    rpc_method_handlers = {
+            'GetStatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetStatus,
+                    request_deserializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.StatusRequest.FromString,
+                    response_serializer=github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.Status.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'networkserver.NetworkServerManager', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class NetworkServerManager(object):
+    """The NetworkServerManager service provides configuration and monitoring
+    functionality
+    """
+
+    @staticmethod
+    def GetStatus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/networkserver.NetworkServerManager/GetStatus',
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.StatusRequest.SerializeToString,
+            github_dot_com_dot_TheThingsNetwork_dot_api_dot_networkserver_dot_networkserver__pb2.Status.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)

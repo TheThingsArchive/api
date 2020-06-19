@@ -7,6 +7,7 @@
 //   https://github.com/apple/swift-protobuf/
 
 // Copyright © 2017 The Things Network
+//
 // Use of this source code is governed by the MIT license that can be found in the LICENSE file.
 
 import Foundation
@@ -168,20 +169,26 @@ struct Handler_Application {
   var payloadFormat: String = String()
 
   /// The decoder is a JavaScript function that decodes a byte array to an object.
+  ///
   /// This function is used when the payload format is set to custom.
   var decoder: String = String()
 
   /// The converter is a JavaScript function that can be used to convert values
+  ///
   /// in the object returned from the decoder. This can for example be useful to
+  ///
   /// convert a voltage to a temperature. This function is used when the payload format is set to custom.
   var converter: String = String()
 
   /// The validator is a JavaScript function that checks the validity of the
+  ///
   /// object returned by the decoder or converter. If validation fails, the
+  ///
   /// message is dropped. This function is used when the payload format is set to custom.
   var validator: String = String()
 
   /// The encoder is a JavaScript function that encodes an object to a byte array.
+  ///
   /// This function is used when the payload format is set to custom.
   var encoder: String = String()
 

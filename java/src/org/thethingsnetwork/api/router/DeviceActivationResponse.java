@@ -7,6 +7,7 @@ package org.thethingsnetwork.api.router;
  * <pre>
  * NOTE: In LoRaWAN, device activations are accepted with DownlinkMessages, so
  * this message is just an Ack.
+ *
  * bytes                     payload                 = 1;
  * protocol.Message          message                 = 2;
  * protocol.TxConfiguration  protocol_configuration  = 11;
@@ -238,6 +239,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * NOTE: In LoRaWAN, device activations are accepted with DownlinkMessages, so
    * this message is just an Ack.
+   *
    * bytes                     payload                 = 1;
    * protocol.Message          message                 = 2;
    * protocol.TxConfiguration  protocol_configuration  = 11;

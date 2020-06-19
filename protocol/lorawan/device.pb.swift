@@ -7,6 +7,7 @@
 //   https://github.com/apple/swift-protobuf/
 
 // Copyright © 2017 The Things Network
+//
 // Use of this source code is governed by the MIT license that can be found in the LICENSE file.
 
 import Foundation
@@ -59,10 +60,12 @@ struct Lorawan_Device {
   var devAddr: Data = SwiftProtobuf.Internal.emptyData
 
   /// The NwkSKey is a 16 byte session key that is known by the device and the network. It is used for routing and MAC related functionality.
+  ///
   /// This key is negotiated during the OTAA join procedure, or statically configured using ABP.
   var nwkSKey: Data = SwiftProtobuf.Internal.emptyData
 
   /// The AppSKey is a 16 byte session key that is known by the device and the application. It is used for payload encryption.
+  ///
   /// This key is negotiated during the OTAA join procedure, or statically configured using ABP.
   var appSKey: Data = SwiftProtobuf.Internal.emptyData
 
@@ -82,6 +85,7 @@ struct Lorawan_Device {
   var uses32BitFCnt: Bool = false
 
   /// The ActivationContstraints are used to allocate a device address for a device (comma-separated).
+  ///
   /// There are different prefixes for `otaa`, `abp`, `world`, `local`, `private`, `testing`.
   var activationConstraints: String = String()
 

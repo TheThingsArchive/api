@@ -7,6 +7,7 @@
 //   https://github.com/apple/swift-protobuf/
 
 // Copyright © 2017 The Things Network
+//
 // Use of this source code is governed by the MIT license that can be found in the LICENSE file.
 
 import Foundation
@@ -31,6 +32,7 @@ struct Discovery_Metadata {
   var metadata: Discovery_Metadata.OneOf_Metadata? = nil
 
   /// GatewayID that is registered to this Router
+  ///
   /// This metadata can only be added if the requesting client is authorized to manage this GatewayID.
   var gatewayID: String {
     get {
@@ -41,7 +43,9 @@ struct Discovery_Metadata {
   }
 
   /// DevAddr prefix that is routed by this Broker
+  ///
   /// 5 bytes; the first byte is the prefix length, the following 4 bytes are the address.
+  ///
   /// Only authorized Brokers can announce PREFIX metadata.
   var devAddrPrefix: Data {
     get {
@@ -52,6 +56,7 @@ struct Discovery_Metadata {
   }
 
   /// AppID that is registered to this Handler
+  ///
   /// This metadata can only be added if the requesting client is authorized to manage this AppID.
   var appID: String {
     get {
@@ -62,6 +67,7 @@ struct Discovery_Metadata {
   }
 
   /// AppEUI that is registered to this Join Handler
+  ///
   /// Only authorized Join Handlers can announce APP_EUI metadata (and we don't have any of those yet).
   var appEui: Data {
     get {
@@ -76,16 +82,21 @@ struct Discovery_Metadata {
   /// General metadata (0-9)
   enum OneOf_Metadata: Equatable {
     /// GatewayID that is registered to this Router
+    ///
     /// This metadata can only be added if the requesting client is authorized to manage this GatewayID.
     case gatewayID(String)
     /// DevAddr prefix that is routed by this Broker
+    ///
     /// 5 bytes; the first byte is the prefix length, the following 4 bytes are the address.
+    ///
     /// Only authorized Brokers can announce PREFIX metadata.
     case devAddrPrefix(Data)
     /// AppID that is registered to this Handler
+    ///
     /// This metadata can only be added if the requesting client is authorized to manage this AppID.
     case appID(String)
     /// AppEUI that is registered to this Join Handler
+    ///
     /// Only authorized Join Handlers can announce APP_EUI metadata (and we don't have any of those yet).
     case appEui(Data)
 
@@ -139,29 +150,47 @@ struct Discovery_Announcement {
   var certificate: String = String()
 
   /// Contains the address where the HTTP API is exposed (if there is one).
+  ///
   /// Format of api_address: `http(s)://domain(:port)`
+  ///
   /// default http port is 80, default https port is 443.
   var apiAddress: String = String()
 
   /// Contains the address where the MQTT API is exposed (if there is one)
+  ///
   /// Format of mqtt_address: `(mqtt(s)://)host(:port)`
+  ///
   /// default mqtt port is 1883, default mqtts port is 8883.
+  ///
   /// Examples:
+  ///
   /// if `host:port` then `mqtt://host:port`
+  ///
   /// if `host:8883` then `mqtts://host:8883`
+  ///
   /// if `host` then `mqtt://host:1883` and `mqtts://host:8883`
+  ///
   /// if `mqtt://host` then `mqtt://host:1883`
+  ///
   /// if `mqtts://host` then `mqtt://host:1883` and `mqtts://host:8883`
   var mqttAddress: String = String()
 
   /// Contains the address where the AMQP API is exposed (if there is one)
+  ///
   /// Format of amqp_address: `(amqp(s)://)host(:port)`
+  ///
   /// default amqp port is 5672, default amqps port is 5671.
+  ///
   /// Examples:
+  ///
   /// if `host:port` then `amqp://host:port`
+  ///
   /// if `host:5671` then `amqps://host:5671`
+  ///
   /// if `host` then `amqp://host:5672` and `amqps://host:5671`
+  ///
   /// if `amqp://host` then `amqp://host:5672`
+  ///
   /// if `amqps://host` then `amqp://host:5672` and `amqps://host:5671`
   var amqpAddress: String = String()
 

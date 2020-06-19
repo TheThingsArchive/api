@@ -11,6 +11,7 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * NOTE: In LoRaWAN, device activations are accepted with DownlinkMessages, so
  * this message is just an Ack.
+ *
  * bytes                     payload                 = 1;
  * protocol.Message          message                 = 2;
  * protocol.TxConfiguration  protocol_configuration  = 11;
