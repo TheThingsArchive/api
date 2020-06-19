@@ -1,3 +1,6 @@
 /node_modules
 /swiftgrpc.log
 *.pyc
+**/bin
+**/obj
+**/.vs

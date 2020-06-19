@@ -170,4 +170,4 @@ postprocess/csharp:
 	@#nothing
 
 clean/csharp:
-	rm -rf csharp/*
+	rm -rf csharp/API
