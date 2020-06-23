@@ -3,8 +3,6 @@
 
 syntax = "proto3";
 
-import "github.com/gogo/protobuf/gogoproto/gogo.proto";
-
 package lorawan;
 
 option csharp_namespace = "TheThingsNetwork.API.LoRaWANProtocol";
@@ -32,7 +30,7 @@ message DevAddrRequest {
 }
 
 message DevAddrResponse {
-  bytes  dev_addr = 1 [(gogoproto.nullable) = false, (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];
+  bytes  dev_addr = 1;
 }
 
 // The Device Addresses in the network are issued by the NetworkServer

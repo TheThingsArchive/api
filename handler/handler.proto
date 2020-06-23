@@ -6,8 +6,6 @@ syntax = "proto3";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
 
-import "github.com/gogo/protobuf/gogoproto/gogo.proto";
-
 import "github.com/TheThingsNetwork/api/api.proto";
 import "github.com/TheThingsNetwork/api/broker/broker.proto";
 import "github.com/TheThingsNetwork/api/protocol/protocol.proto";
@@ -25,8 +23,8 @@ option java_multiple_files = true;
 message DeviceActivationResponse {
   bytes                        payload              = 1;
   protocol.Message             message              = 2;
-  broker.DownlinkOption        downlink_option      = 11 [(gogoproto.nullable) = false];
-  protocol.ActivationMetadata  activation_metadata  = 23 [(gogoproto.nullable) = false];
+  broker.DownlinkOption        downlink_option      = 11;
+  protocol.ActivationMetadata  activation_metadata  = 23;
 
   trace.Trace                  trace                = 31;
 }
@@ -42,8 +40,8 @@ message StatusRequest {}
 
 // message Status is the response to the StatusRequest
 message Status {
-  api.SystemStats    system    = 1 [(gogoproto.nullable) = false];
-  api.ComponentStats component = 2 [(gogoproto.nullable) = false];
+  api.SystemStats    system    = 1;
+  api.ComponentStats component = 2;
 
   api.Rates uplink      = 11;
   api.Rates downlink    = 12;
@@ -51,12 +49,12 @@ message Status {
 }
 
 message ApplicationIdentifier {
-  string app_id      = 1 [(gogoproto.customname) = "AppID"];
+  string app_id      = 1;
 }
 
 // The Application settings
 message Application {
-  string app_id         = 1 [(gogoproto.customname) = "AppID"];
+  string app_id         = 1;
 
   // The payload format indicates how payload is formatted.
   string payload_format = 6;
@@ -84,18 +82,18 @@ message Application {
 }
 
 message DeviceIdentifier {
-  string app_id      = 1 [(gogoproto.customname) = "AppID"];
-  string dev_id      = 2 [(gogoproto.customname) = "DevID"];
+  string app_id      = 1;
+  string dev_id      = 2;
 }
 
 // The Device settings
 message Device {
-  string app_id      = 1 [(gogoproto.customname) = "AppID"];
-  string dev_id      = 2 [(gogoproto.customname) = "DevID"];
+  string app_id      = 1;
+  string dev_id      = 2;
 
   // The device can be of different kinds
   oneof device {
-    lorawan.Device lorawan_device = 3 [(gogoproto.customname) = "LoRaWANDevice"];
+    lorawan.Device lorawan_device = 3;
   }
 
   float latitude  = 10;
@@ -118,7 +116,7 @@ message DryDownlinkMessage {
   // JSON-encoded object with fields to encode
   string fields   = 2;
   // The Application containing the payload functions that should be executed
-  Application app = 3 [(gogoproto.nullable) = false];
+  Application app = 3;
   // The port number that should be passed to the payload function
   uint32 port     = 4;
 }
@@ -128,15 +126,15 @@ message DryUplinkMessage {
   // The binary payload to use
   bytes  payload  = 1;
   // The Application containing the payload functions that should be executed
-  Application app = 2 [(gogoproto.nullable) = false];
+  Application app = 2;
   // The port number that should be passed to the payload function
   uint32 port     = 3;
 }
 
 // SimulatedUplinkMessage is a simulated uplink message
 message SimulatedUplinkMessage {
-  string app_id       = 1 [(gogoproto.customname) = "AppID"];
-  string dev_id       = 2 [(gogoproto.customname) = "DevID"];
+  string app_id       = 1;
+  string dev_id       = 2;
 
   // The binary payload to use
   bytes  payload      = 3;

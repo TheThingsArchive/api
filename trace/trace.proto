@@ -3,8 +3,6 @@
 
 syntax = "proto3";
 
-import "github.com/gogo/protobuf/gogoproto/gogo.proto";
-
 package trace;
 
 option csharp_namespace = "TheThingsNetwork.API.Trace";
@@ -16,13 +14,13 @@ option java_multiple_files = true;
 // Trace information
 message Trace {
   // Generated ID
-  string id = 1 [(gogoproto.customname) = "ID"];
+  string id = 1;
 
   // Time in Unix nanoseconds
   int64 time = 2;
 
   // The ID of the component
-  string service_id = 3 [(gogoproto.customname) = "ServiceID"];
+  string service_id = 3;
 
   // The name of the component (router/broker/handler)
   string service_name = 4;

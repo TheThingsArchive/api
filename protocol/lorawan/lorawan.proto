@@ -3,8 +3,6 @@
 
 syntax = "proto3";
 
-import "github.com/gogo/protobuf/gogoproto/gogo.proto";
-
 package lorawan;
 
 option csharp_namespace = "TheThingsNetwork.API.LoRaWANProtocol";
@@ -47,15 +45,15 @@ message TxConfiguration {
 }
 
 message ActivationMetadata {
-  bytes app_eui    = 1 [(gogoproto.customname) = "AppEUI", (gogoproto.nullable) = false, (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];
-  bytes dev_eui    = 2 [(gogoproto.customname) = "DevEUI", (gogoproto.nullable) = false, (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];
-  bytes dev_addr   = 3 [(gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];
-  bytes nwk_s_key  = 4 [(gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];
+  bytes app_eui    = 1;
+  bytes dev_eui    = 2;
+  bytes dev_addr   = 3;
+  bytes nwk_s_key  = 4;
 
-  uint32 rx1_dr_offset    = 11 [(gogoproto.customname) = "Rx1DROffset"];
-  uint32 rx2_dr           = 12 [(gogoproto.customname) = "Rx2DR"];
+  uint32 rx1_dr_offset    = 11;
+  uint32 rx2_dr           = 12;
   uint32 rx_delay         = 13;
-  CFList cf_list          = 14 [(gogoproto.customname) = "CFList"];
+  CFList cf_list          = 14;
   FrequencyPlan frequency_plan = 15;
 }
 
@@ -84,11 +82,11 @@ enum FrequencyPlan {
 }
 
 message Message {
-  MHDR  m_hdr = 1 [(gogoproto.embed) = true, (gogoproto.nullable) = false];
-  bytes mic   = 2 [(gogoproto.customname) = "MIC"];
+  MHDR  m_hdr = 1;
+  bytes mic   = 2;
 
   oneof Payload {
-    MACPayload          mac_payload           = 3 [(gogoproto.customname) = "MACPayload"];
+    MACPayload          mac_payload           = 3;
     JoinRequestPayload  join_request_payload  = 4;
     JoinAcceptPayload   join_accept_payload   = 5;
   }
@@ -113,49 +111,49 @@ message MHDR {
 }
 
 message MACPayload {
-  FHDR  f_hdr       = 1 [(gogoproto.embed) = true, (gogoproto.nullable) = false];
+  FHDR  f_hdr       = 1;
   int32 f_port      = 2;
-  bytes frm_payload = 3 [(gogoproto.customname) = "FRMPayload"];
+  bytes frm_payload = 3;
 }
 
 message FHDR {
-  bytes dev_addr  = 1 [(gogoproto.nullable) = false, (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];
-  FCtrl f_ctrl    = 2 [(gogoproto.embed) = true, (gogoproto.nullable) = false];
+  bytes dev_addr  = 1;
+  FCtrl f_ctrl    = 2;
   uint32 f_cnt    = 3;
-  repeated MACCommand f_opts = 4 [(gogoproto.nullable) = false];
+  repeated MACCommand f_opts = 4;
 }
 
 message FCtrl {
-  bool    adr         = 1 [(gogoproto.customname) = "ADR"];
-  bool    adr_ack_req = 2 [(gogoproto.customname) = "ADRAckReq"];
+  bool    adr         = 1;
+  bool    adr_ack_req = 2;
   bool    ack         = 3;
   bool    f_pending   = 4;
 }
 
 message MACCommand {
-  uint32 cid     = 1 [(gogoproto.customname) = "CID"];
+  uint32 cid     = 1;
   bytes  payload = 2;
 }
 
 message JoinRequestPayload {
-  bytes app_eui   = 1 [(gogoproto.nullable) = false, (gogoproto.customname) = "AppEUI", (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];
-  bytes dev_eui   = 2 [(gogoproto.nullable) = false, (gogoproto.customname) = "DevEUI", (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];
-  bytes dev_nonce = 3 [(gogoproto.nullable) = false, (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];
+  bytes app_eui   = 1;
+  bytes dev_eui   = 2;
+  bytes dev_nonce = 3;
 }
 
 message JoinAcceptPayload {
   bytes       encrypted   = 1;
-  bytes       app_nonce   = 2 [(gogoproto.nullable) = false, (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];
-  bytes       net_id      = 3 [(gogoproto.nullable) = false, (gogoproto.customname) = "NetID", (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID"];
-  bytes       dev_addr    = 4 [(gogoproto.nullable) = false, (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];
-  DLSettings  dl_settings = 5 [(gogoproto.embed) = true, (gogoproto.nullable) = false];
+  bytes       app_nonce   = 2;
+  bytes       net_id      = 3;
+  bytes       dev_addr    = 4;
+  DLSettings  dl_settings = 5;
   uint32      rx_delay    = 6;
-  CFList      cf_list     = 7 [(gogoproto.customname) = "CFList"];
+  CFList      cf_list     = 7;
 }
 
 message DLSettings {
-  uint32 rx1_dr_offset = 1 [(gogoproto.customname) = "Rx1DROffset"];
-  uint32 rx2_dr        = 2 [(gogoproto.customname) = "Rx2DR"];
+  uint32 rx1_dr_offset = 1;
+  uint32 rx2_dr        = 2;
 }
 
 message CFList {

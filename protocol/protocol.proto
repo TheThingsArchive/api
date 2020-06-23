@@ -3,8 +3,6 @@
 
 syntax = "proto3";
 
-import "github.com/gogo/protobuf/gogoproto/gogo.proto";
-
 import "github.com/TheThingsNetwork/api/protocol/lorawan/lorawan.proto";
 
 package protocol;
@@ -17,24 +15,24 @@ option java_multiple_files = true;
 
 message Message {
   oneof protocol {
-    lorawan.Message lorawan = 1 [(gogoproto.customname) = "LoRaWAN"];
+    lorawan.Message lorawan = 1;
   }
 }
 
 message RxMetadata {
   oneof protocol {
-    lorawan.Metadata lorawan = 1 [(gogoproto.customname) = "LoRaWAN"];
+    lorawan.Metadata lorawan = 1;
   }
 }
 
 message TxConfiguration {
   oneof protocol {
-    lorawan.TxConfiguration lorawan = 1 [(gogoproto.customname) = "LoRaWAN"];
+    lorawan.TxConfiguration lorawan = 1;
   }
 }
 
 message ActivationMetadata {
   oneof protocol {
-    lorawan.ActivationMetadata lorawan = 1 [(gogoproto.customname) = "LoRaWAN"];
+    lorawan.ActivationMetadata lorawan = 1;
   }
 }

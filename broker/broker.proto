@@ -5,8 +5,6 @@ syntax = "proto3";
 
 import "google/protobuf/empty.proto";
 
-import "github.com/gogo/protobuf/gogoproto/gogo.proto";
-
 import "github.com/TheThingsNetwork/api/api.proto";
 import "github.com/TheThingsNetwork/api/protocol/protocol.proto";
 import "github.com/TheThingsNetwork/api/gateway/gateway.proto";
@@ -24,14 +22,14 @@ message DownlinkOption {
   // String that identifies this downlink option in the Router
   string  identifier  = 1;
   // ID of the gateway where this downlink should be sent
-  string  gateway_id  = 2 [(gogoproto.customname) = "GatewayID"];
+  string  gateway_id  = 2;
   // Score of this downlink option. Lower is better.
   uint32  score       = 3;
   // deadline time at server represented as Unix nanoseconds
   int64   deadline    = 4;
 
-  protocol.TxConfiguration protocol_configuration = 5 [(gogoproto.nullable) = false];
-  gateway.TxConfiguration  gateway_configuration = 6 [(gogoproto.nullable) = false];
+  protocol.TxConfiguration protocol_configuration = 5;
+  gateway.TxConfiguration  gateway_configuration = 6;
 }
 
 // received from the Router
@@ -41,13 +39,13 @@ message UplinkMessage {
 
   // NOTE: For LoRaWAN, the Router doesn't know the DevEUI/ID and AppEUI/ID
 
-  bytes                    dev_eui            = 11 [(gogoproto.customname) = "DevEUI", (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];
-  bytes                    app_eui            = 12 [(gogoproto.customname) = "AppEUI", (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];
-  string                   app_id             = 13 [(gogoproto.customname) = "AppID"];
-  string                   dev_id             = 14 [(gogoproto.customname) = "DevID"];
+  bytes                    dev_eui            = 11;
+  bytes                    app_eui            = 12;
+  string                   app_id             = 13;
+  string                   dev_id             = 14;
 
-  protocol.RxMetadata      protocol_metadata  = 21 [(gogoproto.nullable) = false];
-  gateway.RxMetadata       gateway_metadata   = 22 [(gogoproto.nullable) = false];
+  protocol.RxMetadata      protocol_metadata  = 21;
+  gateway.RxMetadata       gateway_metadata   = 22;
   repeated DownlinkOption  downlink_options   = 31;
 
   trace.Trace              trace              = 41;
@@ -58,10 +56,10 @@ message DownlinkMessage {
   bytes             payload          = 1;
   protocol.Message  message          = 2;
 
-  bytes             dev_eui          = 11 [(gogoproto.nullable) = false, (gogoproto.customname) = "DevEUI", (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];
-  bytes             app_eui          = 12 [(gogoproto.nullable) = false, (gogoproto.customname) = "AppEUI", (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];
-  string            app_id           = 13 [(gogoproto.customname) = "AppID"];
-  string            dev_id           = 14 [(gogoproto.customname) = "DevID"];
+  bytes             dev_eui          = 11;
+  bytes             app_eui          = 12;
+  string            app_id           = 13;
+  string            dev_id           = 14;
 
   DownlinkOption    downlink_option  = 21;
 
@@ -83,12 +81,12 @@ message DeduplicatedUplinkMessage {
   bytes                       payload            = 1;
   protocol.Message            message            = 2;
 
-  bytes                       dev_eui            = 11 [(gogoproto.customname) = "DevEUI", (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];
-  bytes                       app_eui            = 12 [(gogoproto.customname) = "AppEUI", (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];
-  string                      app_id             = 13 [(gogoproto.customname) = "AppID"];
-  string                      dev_id             = 14 [(gogoproto.customname) = "DevID"];
+  bytes                       dev_eui            = 11;
+  bytes                       app_eui            = 12;
+  string                      app_id             = 13;
+  string                      dev_id             = 14;
 
-  protocol.RxMetadata         protocol_metadata  = 21 [(gogoproto.nullable) = false];
+  protocol.RxMetadata         protocol_metadata  = 21;
   repeated gateway.RxMetadata gateway_metadata   = 22;
 
   int64                       server_time        = 23;
@@ -103,11 +101,11 @@ message DeviceActivationRequest {
   bytes                        payload              = 1;
   protocol.Message             message              = 2;
 
-  bytes                        dev_eui              = 11 [(gogoproto.nullable) = false, (gogoproto.customname) = "DevEUI", (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];
-  bytes                        app_eui              = 12 [(gogoproto.nullable) = false, (gogoproto.customname) = "AppEUI", (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];
+  bytes                        dev_eui              = 11;
+  bytes                        app_eui              = 12;
 
-  protocol.RxMetadata          protocol_metadata    = 21 [(gogoproto.nullable) = false];
-  gateway.RxMetadata           gateway_metadata     = 22 [(gogoproto.nullable) = false];
+  protocol.RxMetadata          protocol_metadata    = 21;
+  gateway.RxMetadata           gateway_metadata     = 22;
   protocol.ActivationMetadata  activation_metadata  = 23;
   repeated DownlinkOption      downlink_options     = 31;
 
@@ -119,12 +117,12 @@ message DeduplicatedDeviceActivationRequest {
   bytes                        payload              = 1;
   protocol.Message             message              = 2;
 
-  bytes                        dev_eui              = 11 [(gogoproto.nullable) = false, (gogoproto.customname) = "DevEUI", (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];
-  bytes                        app_eui              = 12 [(gogoproto.nullable) = false, (gogoproto.customname) = "AppEUI", (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];
-  string                       app_id               = 13 [(gogoproto.customname) = "AppID"];
-  string                       dev_id               = 14 [(gogoproto.customname) = "DevID"];
+  bytes                        dev_eui              = 11;
+  bytes                        app_eui              = 12;
+  string                       app_id               = 13;
+  string                       dev_id               = 14;
 
-  protocol.RxMetadata          protocol_metadata    = 21 [(gogoproto.nullable) = false];
+  protocol.RxMetadata          protocol_metadata    = 21;
   repeated gateway.RxMetadata  gateway_metadata     = 22;
   protocol.ActivationMetadata  activation_metadata  = 23;
 
@@ -139,10 +137,10 @@ message ActivationChallengeRequest {
   bytes                        payload              = 1;
   protocol.Message             message              = 2;
 
-  bytes                        dev_eui              = 11 [(gogoproto.nullable) = false, (gogoproto.customname) = "DevEUI", (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];
-  bytes                        app_eui              = 12 [(gogoproto.nullable) = false, (gogoproto.customname) = "AppEUI", (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];
-  string                       app_id               = 13 [(gogoproto.customname) = "AppID"];
-  string                       dev_id               = 14 [(gogoproto.customname) = "DevID"];
+  bytes                        dev_eui              = 11;
+  bytes                        app_eui              = 12;
+  string                       app_id               = 13;
+  string                       dev_id               = 14;
 }
 
 message ActivationChallengeResponse {
@@ -172,8 +170,8 @@ service Broker {
 message StatusRequest {}
 
 message Status {
-  api.SystemStats    system     = 1 [(gogoproto.nullable) = false];
-  api.ComponentStats component  = 2 [(gogoproto.nullable) = false];
+  api.SystemStats    system     = 1;
+  api.ComponentStats component  = 2;
 
   api.Rates uplink              = 11;
   api.Rates uplink_unique       = 12;
@@ -188,8 +186,8 @@ message Status {
 }
 
 message ApplicationHandlerRegistration {
-  string app_id      = 1 [(gogoproto.customname) = "AppID"];
-  string handler_id  = 2 [(gogoproto.customname) = "HandlerID"];
+  string app_id      = 1;
+  string handler_id  = 2;
 }
 
 // The BrokerManager service provides configuration and monitoring functionality

@@ -5,8 +5,6 @@ syntax = "proto3";
 
 import "google/protobuf/empty.proto";
 
-import "github.com/gogo/protobuf/gogoproto/gogo.proto";
-
 package lorawan;
 
 option csharp_namespace = "TheThingsNetwork.API.LoRaWANProtocol";
@@ -17,30 +15,30 @@ option java_multiple_files = true;
 
 message DeviceIdentifier {
   // The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
-  bytes  app_eui  = 1 [(gogoproto.customname) = "AppEUI", (gogoproto.nullable) = false, (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];
+  bytes  app_eui  = 1;
   // The DevEUI is a unique, 8 byte identifier for the device.
-  bytes  dev_eui  = 2 [(gogoproto.customname) = "DevEUI", (gogoproto.nullable) = false, (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];
+  bytes  dev_eui  = 2;
 }
 
 message Device {
   // The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
-  bytes  app_eui     = 1 [(gogoproto.customname) = "AppEUI", (gogoproto.nullable) = false, (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];
+  bytes  app_eui     = 1;
   // The DevEUI is a unique, 8 byte identifier for the device.
-  bytes  dev_eui     = 2 [(gogoproto.customname) = "DevEUI", (gogoproto.nullable) = false, (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];
+  bytes  dev_eui     = 2;
   // The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
-  string app_id      = 3 [(gogoproto.customname) = "AppID"];
+  string app_id      = 3;
   // The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
-  string dev_id      = 4 [(gogoproto.customname) = "DevID"];
+  string dev_id      = 4;
   // The DevAddr is a dynamic, 4 byte session address for the device.
-  bytes  dev_addr    = 5 [(gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];
+  bytes  dev_addr    = 5;
   // The NwkSKey is a 16 byte session key that is known by the device and the network. It is used for routing and MAC related functionality.
   // This key is negotiated during the OTAA join procedure, or statically configured using ABP.
-  bytes  nwk_s_key   = 6 [(gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];
+  bytes  nwk_s_key   = 6;
   // The AppSKey is a 16 byte session key that is known by the device and the application. It is used for payload encryption.
   // This key is negotiated during the OTAA join procedure, or statically configured using ABP.
-  bytes  app_s_key   = 7 [(gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppSKey"];
+  bytes  app_s_key   = 7;
   // The AppKey is a 16 byte static key that is known by the device and the application. It is used for negotiating session keys (OTAA).
-  bytes  app_key     = 8 [(gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppKey"];
+  bytes  app_key     = 8;
   // FCntUp is the uplink frame counter for a device session.
   uint32 f_cnt_up    = 9;
   // FCntDown is the downlink frame counter for a device session.
@@ -55,9 +53,9 @@ message Device {
   string activation_constraints = 13;
 
   // The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
-  repeated bytes used_dev_nonces = 14 [(gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];
+  repeated bytes used_dev_nonces = 14;
   // The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
-  repeated bytes used_app_nonces = 15 [(gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];
+  repeated bytes used_app_nonces = 15;
 
   // When the device was last seen (Unix nanoseconds)
   int64  last_seen = 21;
