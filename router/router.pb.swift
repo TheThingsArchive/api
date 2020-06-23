@@ -7,6 +7,7 @@
 //   https://github.com/apple/swift-protobuf/
 
 // Copyright © 2017 The Things Network
+//
 // Use of this source code is governed by the MIT license that can be found in the LICENSE file.
 
 import Foundation
@@ -211,12 +212,19 @@ struct Router_DeviceActivationRequest {
 }
 
 /// NOTE: In LoRaWAN, device activations are accepted with DownlinkMessages, so
+///
 /// this message is just an Ack.
 ///
+///
+///
 /// bytes                     payload                 = 1;
+///
 /// protocol.Message          message                 = 2;
+///
 /// protocol.TxConfiguration  protocol_configuration  = 11;
+///
 /// gateway.TxConfiguration   gateway_configuration   = 12;
+///
 /// trace.Trace               trace                   = 21;
 struct Router_DeviceActivationResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
@@ -229,6 +237,7 @@ struct Router_DeviceActivationResponse {
 }
 
 /// message GatewayStatusRequest is used to request the status of a gateway from
+///
 /// this Router
 struct Router_GatewayStatusRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the

@@ -14,15 +14,13 @@ _sym_db = _symbol_database.Default()
 
 
 
-
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/TheThingsNetwork/api/protocol/lorawan/lorawan.proto',
   package='lorawan',
   syntax='proto3',
   serialized_options=b'\n)org.thethingsnetwork.api.protocol.lorawanB\014LoRaWANProtoP\001Z0github.com/TheThingsNetwork/api/protocol/lorawan\252\002$TheThingsNetwork.API.LoRaWANProtocol',
-  serialized_pb=b'\n>github.com/TheThingsNetwork/api/protocol/lorawan/lorawan.proto\x12\x07lorawan\x1a-github.com/gogo/protobuf/gogoproto/gogo.proto\"\xac\x01\n\x08Metadata\x12\'\n\nmodulation\x18\x0b \x01(\x0e\x32\x13.lorawan.Modulation\x12\x11\n\tdata_rate\x18\x0c \x01(\t\x12\x10\n\x08\x62it_rate\x18\r \x01(\r\x12\x13\n\x0b\x63oding_rate\x18\x0e \x01(\t\x12\r\n\x05\x66_cnt\x18\x0f \x01(\r\x12.\n\x0e\x66requency_plan\x18\x10 \x01(\x0e\x32\x16.lorawan.FrequencyPlan\"\x83\x01\n\x0fTxConfiguration\x12\'\n\nmodulation\x18\x0b \x01(\x0e\x32\x13.lorawan.Modulation\x12\x11\n\tdata_rate\x18\x0c \x01(\t\x12\x10\n\x08\x62it_rate\x18\r \x01(\r\x12\x13\n\x0b\x63oding_rate\x18\x0e \x01(\t\x12\r\n\x05\x66_cnt\x18\x0f \x01(\r\"\x88\x04\n\x12\x41\x63tivationMetadata\x12T\n\x07\x61pp_eui\x18\x01 \x01(\x0c\x42\x43\xe2\xde\x1f\x06\x41ppEUI\xc8\xde\x1f\x00\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.AppEUI\x12T\n\x07\x64\x65v_eui\x18\x02 \x01(\x0c\x42\x43\xe2\xde\x1f\x06\x44\x65vEUI\xc8\xde\x1f\x00\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.DevEUI\x12H\n\x08\x64\x65v_addr\x18\x03 \x01(\x0c\x42\x36\xda\xde\x1f\x32github.com/TheThingsNetwork/ttn/core/types.DevAddr\x12I\n\tnwk_s_key\x18\x04 \x01(\x0c\x42\x36\xda\xde\x1f\x32github.com/TheThingsNetwork/ttn/core/types.NwkSKey\x12&\n\rrx1_dr_offset\x18\x0b \x01(\rB\x0f\xe2\xde\x1f\x0bRx1DROffset\x12\x19\n\x06rx2_dr\x18\x0c \x01(\rB\t\xe2\xde\x1f\x05Rx2DR\x12\x10\n\x08rx_delay\x18\r \x01(\r\x12,\n\x07\x63\x66_list\x18\x0e \x01(\x0b\x32\x0f.lorawan.CFListB\n\xe2\xde\x1f\x06\x43\x46List\x12.\n\x0e\x66requency_plan\x18\x0f \x01(\x0e\x32\x16.lorawan.FrequencyPlan\"\x86\x02\n\x07Message\x12&\n\x05m_hdr\x18\x01 \x01(\x0b\x32\r.lorawan.MHDRB\x08\xd0\xde\x1f\x01\xc8\xde\x1f\x00\x12\x14\n\x03mic\x18\x02 \x01(\x0c\x42\x07\xe2\xde\x1f\x03MIC\x12:\n\x0bmac_payload\x18\x03 \x01(\x0b\x32\x13.lorawan.MACPayloadB\x0e\xe2\xde\x1f\nMACPayloadH\x00\x12;\n\x14join_request_payload\x18\x04 \x01(\x0b\x32\x1b.lorawan.JoinRequestPayloadH\x00\x12\x39\n\x13join_accept_payload\x18\x05 \x01(\x0b\x32\x1a.lorawan.JoinAcceptPayloadH\x00\x42\t\n\x07Payload\"E\n\x04MHDR\x12\x1e\n\x06m_type\x18\x01 \x01(\x0e\x32\x0e.lorawan.MType\x12\x1d\n\x05major\x18\x02 \x01(\x0e\x32\x0e.lorawan.Major\"i\n\nMACPayload\x12&\n\x05\x66_hdr\x18\x01 \x01(\x0b\x32\r.lorawan.FHDRB\x08\xd0\xde\x1f\x01\xc8\xde\x1f\x00\x12\x0e\n\x06\x66_port\x18\x02 \x01(\x05\x12#\n\x0b\x66rm_payload\x18\x03 \x01(\x0c\x42\x0e\xe2\xde\x1f\nFRMPayload\"\xb8\x01\n\x04\x46HDR\x12L\n\x08\x64\x65v_addr\x18\x01 \x01(\x0c\x42:\xc8\xde\x1f\x00\xda\xde\x1f\x32github.com/TheThingsNetwork/ttn/core/types.DevAddr\x12(\n\x06\x66_ctrl\x18\x02 \x01(\x0b\x32\x0e.lorawan.FCtrlB\x08\xd0\xde\x1f\x01\xc8\xde\x1f\x00\x12\r\n\x05\x66_cnt\x18\x03 \x01(\r\x12)\n\x06\x66_opts\x18\x04 \x03(\x0b\x32\x13.lorawan.MACCommandB\x04\xc8\xde\x1f\x00\"a\n\x05\x46\x43trl\x12\x14\n\x03\x61\x64r\x18\x01 \x01(\x08\x42\x07\xe2\xde\x1f\x03\x41\x44R\x12\"\n\x0b\x61\x64r_ack_req\x18\x02 \x01(\x08\x42\r\xe2\xde\x1f\tADRAckReq\x12\x0b\n\x03\x61\x63k\x18\x03 \x01(\x08\x12\x11\n\tf_pending\x18\x04 \x01(\x08\"3\n\nMACCommand\x12\x14\n\x03\x63id\x18\x01 \x01(\rB\x07\xe2\xde\x1f\x03\x43ID\x12\x0f\n\x07payload\x18\x02 \x01(\x0c\"\x90\x02\n\x12JoinRequestPayload\x12T\n\x07\x61pp_eui\x18\x01 \x01(\x0c\x42\x43\xc8\xde\x1f\x00\xe2\xde\x1f\x06\x41ppEUI\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.AppEUI\x12T\n\x07\x64\x65v_eui\x18\x02 \x01(\x0c\x42\x43\xc8\xde\x1f\x00\xe2\xde\x1f\x06\x44\x65vEUI\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.DevEUI\x12N\n\tdev_nonce\x18\x03 \x01(\x0c\x42;\xc8\xde\x1f\x00\xda\xde\x1f\x33github.com/TheThingsNetwork/ttn/core/types.DevNonce\"\x8b\x03\n\x11JoinAcceptPayload\x12\x11\n\tencrypted\x18\x01 \x01(\x0c\x12N\n\tapp_nonce\x18\x02 \x01(\x0c\x42;\xc8\xde\x1f\x00\xda\xde\x1f\x33github.com/TheThingsNetwork/ttn/core/types.AppNonce\x12Q\n\x06net_id\x18\x03 \x01(\x0c\x42\x41\xc8\xde\x1f\x00\xe2\xde\x1f\x05NetID\xda\xde\x1f\x30github.com/TheThingsNetwork/ttn/core/types.NetID\x12L\n\x08\x64\x65v_addr\x18\x04 \x01(\x0c\x42:\xc8\xde\x1f\x00\xda\xde\x1f\x32github.com/TheThingsNetwork/ttn/core/types.DevAddr\x12\x32\n\x0b\x64l_settings\x18\x05 \x01(\x0b\x32\x13.lorawan.DLSettingsB\x08\xd0\xde\x1f\x01\xc8\xde\x1f\x00\x12\x10\n\x08rx_delay\x18\x06 \x01(\r\x12,\n\x07\x63\x66_list\x18\x07 \x01(\x0b\x32\x0f.lorawan.CFListB\n\xe2\xde\x1f\x06\x43\x46List\"O\n\nDLSettings\x12&\n\rrx1_dr_offset\x18\x01 \x01(\rB\x0f\xe2\xde\x1f\x0bRx1DROffset\x12\x19\n\x06rx2_dr\x18\x02 \x01(\rB\t\xe2\xde\x1f\x05Rx2DR\"\x16\n\x06\x43\x46List\x12\x0c\n\x04\x66req\x18\x01 \x03(\r*\x1f\n\nModulation\x12\x08\n\x04LORA\x10\x00\x12\x07\n\x03\x46SK\x10\x01*\xc7\x01\n\rFrequencyPlan\x12\x0e\n\nEU_863_870\x10\x00\x12\x0e\n\nUS_902_928\x10\x01\x12\x0e\n\nCN_779_787\x10\x02\x12\n\n\x06\x45U_433\x10\x03\x12\x0e\n\nAU_915_928\x10\x04\x12\x0e\n\nCN_470_510\x10\x05\x12\n\n\x06\x41S_923\x10\x06\x12\x0e\n\nAS_920_923\x10=\x12\x0e\n\nAS_923_925\x10>\x12\x0e\n\nKR_920_923\x10\x07\x12\x0e\n\nIN_865_867\x10\x08\x12\x0e\n\nRU_864_870\x10\t*\x17\n\x05Major\x12\x0e\n\nLORAWAN_R1\x10\x00*z\n\x05MType\x12\x10\n\x0cJOIN_REQUEST\x10\x00\x12\x0f\n\x0bJOIN_ACCEPT\x10\x01\x12\x12\n\x0eUNCONFIRMED_UP\x10\x02\x12\x14\n\x10UNCONFIRMED_DOWN\x10\x03\x12\x10\n\x0c\x43ONFIRMED_UP\x10\x04\x12\x12\n\x0e\x43ONFIRMED_DOWN\x10\x05\x42\x94\x01\n)org.thethingsnetwork.api.protocol.lorawanB\x0cLoRaWANProtoP\x01Z0github.com/TheThingsNetwork/api/protocol/lorawan\xaa\x02$TheThingsNetwork.API.LoRaWANProtocolb\x06proto3'
-  ,
-  dependencies=[])
+  serialized_pb=b'\n>github.com/TheThingsNetwork/api/protocol/lorawan/lorawan.proto\x12\x07lorawan\"\xac\x01\n\x08Metadata\x12\'\n\nmodulation\x18\x0b \x01(\x0e\x32\x13.lorawan.Modulation\x12\x11\n\tdata_rate\x18\x0c \x01(\t\x12\x10\n\x08\x62it_rate\x18\r \x01(\r\x12\x13\n\x0b\x63oding_rate\x18\x0e \x01(\t\x12\r\n\x05\x66_cnt\x18\x0f \x01(\r\x12.\n\x0e\x66requency_plan\x18\x10 \x01(\x0e\x32\x16.lorawan.FrequencyPlan\"\x83\x01\n\x0fTxConfiguration\x12\'\n\nmodulation\x18\x0b \x01(\x0e\x32\x13.lorawan.Modulation\x12\x11\n\tdata_rate\x18\x0c \x01(\t\x12\x10\n\x08\x62it_rate\x18\r \x01(\r\x12\x13\n\x0b\x63oding_rate\x18\x0e \x01(\t\x12\r\n\x05\x66_cnt\x18\x0f \x01(\r\"\xe6\x01\n\x12\x41\x63tivationMetadata\x12\x0f\n\x07\x61pp_eui\x18\x01 \x01(\x0c\x12\x0f\n\x07\x64\x65v_eui\x18\x02 \x01(\x0c\x12\x10\n\x08\x64\x65v_addr\x18\x03 \x01(\x0c\x12\x11\n\tnwk_s_key\x18\x04 \x01(\x0c\x12\x15\n\rrx1_dr_offset\x18\x0b \x01(\r\x12\x0e\n\x06rx2_dr\x18\x0c \x01(\r\x12\x10\n\x08rx_delay\x18\r \x01(\r\x12 \n\x07\x63\x66_list\x18\x0e \x01(\x0b\x32\x0f.lorawan.CFList\x12.\n\x0e\x66requency_plan\x18\x0f \x01(\x0e\x32\x16.lorawan.FrequencyPlan\"\xe3\x01\n\x07Message\x12\x1c\n\x05m_hdr\x18\x01 \x01(\x0b\x32\r.lorawan.MHDR\x12\x0b\n\x03mic\x18\x02 \x01(\x0c\x12*\n\x0bmac_payload\x18\x03 \x01(\x0b\x32\x13.lorawan.MACPayloadH\x00\x12;\n\x14join_request_payload\x18\x04 \x01(\x0b\x32\x1b.lorawan.JoinRequestPayloadH\x00\x12\x39\n\x13join_accept_payload\x18\x05 \x01(\x0b\x32\x1a.lorawan.JoinAcceptPayloadH\x00\x42\t\n\x07Payload\"E\n\x04MHDR\x12\x1e\n\x06m_type\x18\x01 \x01(\x0e\x32\x0e.lorawan.MType\x12\x1d\n\x05major\x18\x02 \x01(\x0e\x32\x0e.lorawan.Major\"O\n\nMACPayload\x12\x1c\n\x05\x66_hdr\x18\x01 \x01(\x0b\x32\r.lorawan.FHDR\x12\x0e\n\x06\x66_port\x18\x02 \x01(\x05\x12\x13\n\x0b\x66rm_payload\x18\x03 \x01(\x0c\"l\n\x04\x46HDR\x12\x10\n\x08\x64\x65v_addr\x18\x01 \x01(\x0c\x12\x1e\n\x06\x66_ctrl\x18\x02 \x01(\x0b\x32\x0e.lorawan.FCtrl\x12\r\n\x05\x66_cnt\x18\x03 \x01(\r\x12#\n\x06\x66_opts\x18\x04 \x03(\x0b\x32\x13.lorawan.MACCommand\"I\n\x05\x46\x43trl\x12\x0b\n\x03\x61\x64r\x18\x01 \x01(\x08\x12\x13\n\x0b\x61\x64r_ack_req\x18\x02 \x01(\x08\x12\x0b\n\x03\x61\x63k\x18\x03 \x01(\x08\x12\x11\n\tf_pending\x18\x04 \x01(\x08\"*\n\nMACCommand\x12\x0b\n\x03\x63id\x18\x01 \x01(\r\x12\x0f\n\x07payload\x18\x02 \x01(\x0c\"I\n\x12JoinRequestPayload\x12\x0f\n\x07\x61pp_eui\x18\x01 \x01(\x0c\x12\x0f\n\x07\x64\x65v_eui\x18\x02 \x01(\x0c\x12\x11\n\tdev_nonce\x18\x03 \x01(\x0c\"\xb9\x01\n\x11JoinAcceptPayload\x12\x11\n\tencrypted\x18\x01 \x01(\x0c\x12\x11\n\tapp_nonce\x18\x02 \x01(\x0c\x12\x0e\n\x06net_id\x18\x03 \x01(\x0c\x12\x10\n\x08\x64\x65v_addr\x18\x04 \x01(\x0c\x12(\n\x0b\x64l_settings\x18\x05 \x01(\x0b\x32\x13.lorawan.DLSettings\x12\x10\n\x08rx_delay\x18\x06 \x01(\r\x12 \n\x07\x63\x66_list\x18\x07 \x01(\x0b\x32\x0f.lorawan.CFList\"3\n\nDLSettings\x12\x15\n\rrx1_dr_offset\x18\x01 \x01(\r\x12\x0e\n\x06rx2_dr\x18\x02 \x01(\r\"\x16\n\x06\x43\x46List\x12\x0c\n\x04\x66req\x18\x01 \x03(\r*\x1f\n\nModulation\x12\x08\n\x04LORA\x10\x00\x12\x07\n\x03\x46SK\x10\x01*\xc7\x01\n\rFrequencyPlan\x12\x0e\n\nEU_863_870\x10\x00\x12\x0e\n\nUS_902_928\x10\x01\x12\x0e\n\nCN_779_787\x10\x02\x12\n\n\x06\x45U_433\x10\x03\x12\x0e\n\nAU_915_928\x10\x04\x12\x0e\n\nCN_470_510\x10\x05\x12\n\n\x06\x41S_923\x10\x06\x12\x0e\n\nAS_920_923\x10=\x12\x0e\n\nAS_923_925\x10>\x12\x0e\n\nKR_920_923\x10\x07\x12\x0e\n\nIN_865_867\x10\x08\x12\x0e\n\nRU_864_870\x10\t*\x17\n\x05Major\x12\x0e\n\nLORAWAN_R1\x10\x00*z\n\x05MType\x12\x10\n\x0cJOIN_REQUEST\x10\x00\x12\x0f\n\x0bJOIN_ACCEPT\x10\x01\x12\x12\n\x0eUNCONFIRMED_UP\x10\x02\x12\x14\n\x10UNCONFIRMED_DOWN\x10\x03\x12\x10\n\x0c\x43ONFIRMED_UP\x10\x04\x12\x12\n\x0e\x43ONFIRMED_DOWN\x10\x05\x42\x94\x01\n)org.thethingsnetwork.api.protocol.lorawanB\x0cLoRaWANProtoP\x01Z0github.com/TheThingsNetwork/api/protocol/lorawan\xaa\x02$TheThingsNetwork.API.LoRaWANProtocolb\x06proto3'
+)
 
 _MODULATION = _descriptor.EnumDescriptor(
   name='Modulation',
@@ -41,8 +39,8 @@ _MODULATION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2514,
-  serialized_end=2545,
+  serialized_start=1568,
+  serialized_end=1599,
 )
 _sym_db.RegisterEnumDescriptor(_MODULATION)
 
@@ -104,8 +102,8 @@ _FREQUENCYPLAN = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2548,
-  serialized_end=2747,
+  serialized_start=1602,
+  serialized_end=1801,
 )
 _sym_db.RegisterEnumDescriptor(_FREQUENCYPLAN)
 
@@ -123,8 +121,8 @@ _MAJOR = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2749,
-  serialized_end=2772,
+  serialized_start=1803,
+  serialized_end=1826,
 )
 _sym_db.RegisterEnumDescriptor(_MAJOR)
 
@@ -162,8 +160,8 @@ _MTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2774,
-  serialized_end=2896,
+  serialized_start=1828,
+  serialized_end=1950,
 )
 _sym_db.RegisterEnumDescriptor(_MTYPE)
 
@@ -253,8 +251,8 @@ _METADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=123,
-  serialized_end=295,
+  serialized_start=76,
+  serialized_end=248,
 )
 
 
@@ -312,8 +310,8 @@ _TXCONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=298,
-  serialized_end=429,
+  serialized_start=251,
+  serialized_end=382,
 )
 
 
@@ -330,42 +328,42 @@ _ACTIVATIONMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\006AppEUI\310\336\037\000\332\336\0371github.com/TheThingsNetwork/ttn/core/types.AppEUI', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='lorawan.ActivationMetadata.dev_eui', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\006DevEUI\310\336\037\000\332\336\0371github.com/TheThingsNetwork/ttn/core/types.DevEUI', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dev_addr', full_name='lorawan.ActivationMetadata.dev_addr', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\332\336\0372github.com/TheThingsNetwork/ttn/core/types.DevAddr', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='nwk_s_key', full_name='lorawan.ActivationMetadata.nwk_s_key', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\332\336\0372github.com/TheThingsNetwork/ttn/core/types.NwkSKey', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rx1_dr_offset', full_name='lorawan.ActivationMetadata.rx1_dr_offset', index=4,
       number=11, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\013Rx1DROffset', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rx2_dr', full_name='lorawan.ActivationMetadata.rx2_dr', index=5,
       number=12, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\005Rx2DR', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rx_delay', full_name='lorawan.ActivationMetadata.rx_delay', index=6,
       number=13, type=13, cpp_type=3, label=1,
@@ -379,7 +377,7 @@ _ACTIVATIONMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\006CFList', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='frequency_plan', full_name='lorawan.ActivationMetadata.frequency_plan', index=8,
       number=15, type=14, cpp_type=8, label=1,
@@ -399,8 +397,8 @@ _ACTIVATIONMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=432,
-  serialized_end=952,
+  serialized_start=385,
+  serialized_end=615,
 )
 
 
@@ -417,21 +415,21 @@ _MESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\320\336\037\001\310\336\037\000', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mic', full_name='lorawan.Message.mic', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\003MIC', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mac_payload', full_name='lorawan.Message.mac_payload', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\nMACPayload', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='join_request_payload', full_name='lorawan.Message.join_request_payload', index=3,
       number=4, type=11, cpp_type=10, label=1,
@@ -461,8 +459,8 @@ _MESSAGE = _descriptor.Descriptor(
       name='Payload', full_name='lorawan.Message.Payload',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=955,
-  serialized_end=1217,
+  serialized_start=618,
+  serialized_end=845,
 )
 
 
@@ -499,8 +497,8 @@ _MHDR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1219,
-  serialized_end=1288,
+  serialized_start=847,
+  serialized_end=916,
 )
 
 
@@ -517,7 +515,7 @@ _MACPAYLOAD = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\320\336\037\001\310\336\037\000', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='f_port', full_name='lorawan.MACPayload.f_port', index=1,
       number=2, type=5, cpp_type=1, label=1,
@@ -531,7 +529,7 @@ _MACPAYLOAD = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\nFRMPayload', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -544,8 +542,8 @@ _MACPAYLOAD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1290,
-  serialized_end=1395,
+  serialized_start=918,
+  serialized_end=997,
 )
 
 
@@ -562,14 +560,14 @@ _FHDR = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000\332\336\0372github.com/TheThingsNetwork/ttn/core/types.DevAddr', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='f_ctrl', full_name='lorawan.FHDR.f_ctrl', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\320\336\037\001\310\336\037\000', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='f_cnt', full_name='lorawan.FHDR.f_cnt', index=2,
       number=3, type=13, cpp_type=3, label=1,
@@ -583,7 +581,7 @@ _FHDR = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -596,8 +594,8 @@ _FHDR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1398,
-  serialized_end=1582,
+  serialized_start=999,
+  serialized_end=1107,
 )
 
 
@@ -614,14 +612,14 @@ _FCTRL = _descriptor.Descriptor(
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\003ADR', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='adr_ack_req', full_name='lorawan.FCtrl.adr_ack_req', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\tADRAckReq', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ack', full_name='lorawan.FCtrl.ack', index=2,
       number=3, type=8, cpp_type=7, label=1,
@@ -648,8 +646,8 @@ _FCTRL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1584,
-  serialized_end=1681,
+  serialized_start=1109,
+  serialized_end=1182,
 )
 
 
@@ -666,7 +664,7 @@ _MACCOMMAND = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\003CID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='payload', full_name='lorawan.MACCommand.payload', index=1,
       number=2, type=12, cpp_type=9, label=1,
@@ -686,8 +684,8 @@ _MACCOMMAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1683,
-  serialized_end=1734,
+  serialized_start=1184,
+  serialized_end=1226,
 )
 
 
@@ -704,21 +702,21 @@ _JOINREQUESTPAYLOAD = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000\342\336\037\006AppEUI\332\336\0371github.com/TheThingsNetwork/ttn/core/types.AppEUI', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='lorawan.JoinRequestPayload.dev_eui', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000\342\336\037\006DevEUI\332\336\0371github.com/TheThingsNetwork/ttn/core/types.DevEUI', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dev_nonce', full_name='lorawan.JoinRequestPayload.dev_nonce', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000\332\336\0373github.com/TheThingsNetwork/ttn/core/types.DevNonce', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -731,8 +729,8 @@ _JOINREQUESTPAYLOAD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1737,
-  serialized_end=2009,
+  serialized_start=1228,
+  serialized_end=1301,
 )
 
 
@@ -756,28 +754,28 @@ _JOINACCEPTPAYLOAD = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000\332\336\0373github.com/TheThingsNetwork/ttn/core/types.AppNonce', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='net_id', full_name='lorawan.JoinAcceptPayload.net_id', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000\342\336\037\005NetID\332\336\0370github.com/TheThingsNetwork/ttn/core/types.NetID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dev_addr', full_name='lorawan.JoinAcceptPayload.dev_addr', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000\332\336\0372github.com/TheThingsNetwork/ttn/core/types.DevAddr', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dl_settings', full_name='lorawan.JoinAcceptPayload.dl_settings', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\320\336\037\001\310\336\037\000', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rx_delay', full_name='lorawan.JoinAcceptPayload.rx_delay', index=5,
       number=6, type=13, cpp_type=3, label=1,
@@ -791,7 +789,7 @@ _JOINACCEPTPAYLOAD = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\006CFList', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -804,8 +802,8 @@ _JOINACCEPTPAYLOAD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2012,
-  serialized_end=2407,
+  serialized_start=1304,
+  serialized_end=1489,
 )
 
 
@@ -822,14 +820,14 @@ _DLSETTINGS = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\013Rx1DROffset', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='rx2_dr', full_name='lorawan.DLSettings.rx2_dr', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\005Rx2DR', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -842,8 +840,8 @@ _DLSETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2409,
-  serialized_end=2488,
+  serialized_start=1491,
+  serialized_end=1542,
 )
 
 
@@ -873,8 +871,8 @@ _CFLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2490,
-  serialized_end=2512,
+  serialized_start=1544,
+  serialized_end=1566,
 )
 
 _METADATA.fields_by_name['modulation'].enum_type = _MODULATION
@@ -1014,32 +1012,4 @@ _sym_db.RegisterMessage(CFList)
 
 
 DESCRIPTOR._options = None
-_ACTIVATIONMETADATA.fields_by_name['app_eui']._options = None
-_ACTIVATIONMETADATA.fields_by_name['dev_eui']._options = None
-_ACTIVATIONMETADATA.fields_by_name['dev_addr']._options = None
-_ACTIVATIONMETADATA.fields_by_name['nwk_s_key']._options = None
-_ACTIVATIONMETADATA.fields_by_name['rx1_dr_offset']._options = None
-_ACTIVATIONMETADATA.fields_by_name['rx2_dr']._options = None
-_ACTIVATIONMETADATA.fields_by_name['cf_list']._options = None
-_MESSAGE.fields_by_name['m_hdr']._options = None
-_MESSAGE.fields_by_name['mic']._options = None
-_MESSAGE.fields_by_name['mac_payload']._options = None
-_MACPAYLOAD.fields_by_name['f_hdr']._options = None
-_MACPAYLOAD.fields_by_name['frm_payload']._options = None
-_FHDR.fields_by_name['dev_addr']._options = None
-_FHDR.fields_by_name['f_ctrl']._options = None
-_FHDR.fields_by_name['f_opts']._options = None
-_FCTRL.fields_by_name['adr']._options = None
-_FCTRL.fields_by_name['adr_ack_req']._options = None
-_MACCOMMAND.fields_by_name['cid']._options = None
-_JOINREQUESTPAYLOAD.fields_by_name['app_eui']._options = None
-_JOINREQUESTPAYLOAD.fields_by_name['dev_eui']._options = None
-_JOINREQUESTPAYLOAD.fields_by_name['dev_nonce']._options = None
-_JOINACCEPTPAYLOAD.fields_by_name['app_nonce']._options = None
-_JOINACCEPTPAYLOAD.fields_by_name['net_id']._options = None
-_JOINACCEPTPAYLOAD.fields_by_name['dev_addr']._options = None
-_JOINACCEPTPAYLOAD.fields_by_name['dl_settings']._options = None
-_JOINACCEPTPAYLOAD.fields_by_name['cf_list']._options = None
-_DLSETTINGS.fields_by_name['rx1_dr_offset']._options = None
-_DLSETTINGS.fields_by_name['rx2_dr']._options = None
 # @@protoc_insertion_point(module_scope)

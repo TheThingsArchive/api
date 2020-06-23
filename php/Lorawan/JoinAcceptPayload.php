@@ -18,19 +18,19 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
      */
     protected $encrypted = '';
     /**
-     * Generated from protobuf field <code>bytes app_nonce = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * Generated from protobuf field <code>bytes app_nonce = 2;</code>
      */
     protected $app_nonce = '';
     /**
-     * Generated from protobuf field <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
+     * Generated from protobuf field <code>bytes net_id = 3;</code>
      */
     protected $net_id = '';
     /**
-     * Generated from protobuf field <code>bytes dev_addr = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * Generated from protobuf field <code>bytes dev_addr = 4;</code>
      */
     protected $dev_addr = '';
     /**
-     * Generated from protobuf field <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * Generated from protobuf field <code>.lorawan.DLSettings dl_settings = 5;</code>
      */
     protected $dl_settings = null;
     /**
@@ -38,7 +38,7 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
      */
     protected $rx_delay = 0;
     /**
-     * Generated from protobuf field <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+     * Generated from protobuf field <code>.lorawan.CFList cf_list = 7;</code>
      */
     protected $cf_list = null;
 
@@ -85,7 +85,7 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes app_nonce = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * Generated from protobuf field <code>bytes app_nonce = 2;</code>
      * @return string
      */
     public function getAppNonce()
@@ -94,7 +94,7 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes app_nonce = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * Generated from protobuf field <code>bytes app_nonce = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -107,7 +107,7 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
+     * Generated from protobuf field <code>bytes net_id = 3;</code>
      * @return string
      */
     public function getNetId()
@@ -116,7 +116,7 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
+     * Generated from protobuf field <code>bytes net_id = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -129,7 +129,7 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_addr = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * Generated from protobuf field <code>bytes dev_addr = 4;</code>
      * @return string
      */
     public function getDevAddr()
@@ -138,7 +138,7 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_addr = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * Generated from protobuf field <code>bytes dev_addr = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -151,7 +151,7 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * Generated from protobuf field <code>.lorawan.DLSettings dl_settings = 5;</code>
      * @return \Lorawan\DLSettings
      */
     public function getDlSettings()
@@ -160,7 +160,7 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * Generated from protobuf field <code>.lorawan.DLSettings dl_settings = 5;</code>
      * @param \Lorawan\DLSettings $var
      * @return $this
      */
@@ -195,7 +195,7 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+     * Generated from protobuf field <code>.lorawan.CFList cf_list = 7;</code>
      * @return \Lorawan\CFList
      */
     public function getCfList()
@@ -204,7 +204,7 @@ class JoinAcceptPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+     * Generated from protobuf field <code>.lorawan.CFList cf_list = 7;</code>
      * @param \Lorawan\CFList $var
      * @return $this
      */

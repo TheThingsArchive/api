@@ -95,7 +95,7 @@ private static final long serialVersionUID = 0L;
   public static final int GATEWAY_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object gatewayId_;
   /**
-   * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+   * <code>string gateway_id = 1;</code>
    * @return The gatewayId.
    */
   public java.lang.String getGatewayId() {
@@ -111,7 +111,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+   * <code>string gateway_id = 1;</code>
    * @return The bytes for gatewayId.
    */
   public com.google.protobuf.ByteString
@@ -437,7 +437,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object gatewayId_ = "";
     /**
-     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * <code>string gateway_id = 1;</code>
      * @return The gatewayId.
      */
     public java.lang.String getGatewayId() {
@@ -453,7 +453,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * <code>string gateway_id = 1;</code>
      * @return The bytes for gatewayId.
      */
     public com.google.protobuf.ByteString
@@ -470,7 +470,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * <code>string gateway_id = 1;</code>
      * @param value The gatewayId to set.
      * @return This builder for chaining.
      */
@@ -485,7 +485,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * <code>string gateway_id = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearGatewayId() {
@@ -495,7 +495,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * <code>string gateway_id = 1;</code>
      * @param value The bytes for gatewayId to set.
      * @return This builder for chaining.
      */

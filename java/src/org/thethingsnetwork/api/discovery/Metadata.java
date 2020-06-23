@@ -154,7 +154,7 @@ private static final long serialVersionUID = 0L;
    * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
    * </pre>
    *
-   * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+   * <code>string gateway_id = 10;</code>
    * @return The gatewayId.
    */
   public java.lang.String getGatewayId() {
@@ -180,7 +180,7 @@ private static final long serialVersionUID = 0L;
    * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
    * </pre>
    *
-   * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+   * <code>string gateway_id = 10;</code>
    * @return The bytes for gatewayId.
    */
   public com.google.protobuf.ByteString
@@ -227,7 +227,7 @@ private static final long serialVersionUID = 0L;
    * This metadata can only be added if the requesting client is authorized to manage this AppID.
    * </pre>
    *
-   * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+   * <code>string app_id = 30;</code>
    * @return The appId.
    */
   public java.lang.String getAppId() {
@@ -253,7 +253,7 @@ private static final long serialVersionUID = 0L;
    * This metadata can only be added if the requesting client is authorized to manage this AppID.
    * </pre>
    *
-   * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+   * <code>string app_id = 30;</code>
    * @return The bytes for appId.
    */
   public com.google.protobuf.ByteString
@@ -282,7 +282,7 @@ private static final long serialVersionUID = 0L;
    * Only authorized Join Handlers can announce APP_EUI metadata (and we don't have any of those yet).
    * </pre>
    *
-   * <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
+   * <code>bytes app_eui = 31;</code>
    * @return The appEui.
    */
   public com.google.protobuf.ByteString getAppEui() {
@@ -709,7 +709,7 @@ private static final long serialVersionUID = 0L;
      * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
      * </pre>
      *
-     * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     * <code>string gateway_id = 10;</code>
      * @return The gatewayId.
      */
     public java.lang.String getGatewayId() {
@@ -735,7 +735,7 @@ private static final long serialVersionUID = 0L;
      * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
      * </pre>
      *
-     * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     * <code>string gateway_id = 10;</code>
      * @return The bytes for gatewayId.
      */
     public com.google.protobuf.ByteString
@@ -762,7 +762,7 @@ private static final long serialVersionUID = 0L;
      * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
      * </pre>
      *
-     * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     * <code>string gateway_id = 10;</code>
      * @param value The gatewayId to set.
      * @return This builder for chaining.
      */
@@ -782,7 +782,7 @@ private static final long serialVersionUID = 0L;
      * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
      * </pre>
      *
-     * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     * <code>string gateway_id = 10;</code>
      * @return This builder for chaining.
      */
     public Builder clearGatewayId() {
@@ -799,7 +799,7 @@ private static final long serialVersionUID = 0L;
      * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
      * </pre>
      *
-     * <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     * <code>string gateway_id = 10;</code>
      * @param value The bytes for gatewayId to set.
      * @return This builder for chaining.
      */
@@ -876,7 +876,7 @@ private static final long serialVersionUID = 0L;
      * This metadata can only be added if the requesting client is authorized to manage this AppID.
      * </pre>
      *
-     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * <code>string app_id = 30;</code>
      * @return The appId.
      */
     public java.lang.String getAppId() {
@@ -902,7 +902,7 @@ private static final long serialVersionUID = 0L;
      * This metadata can only be added if the requesting client is authorized to manage this AppID.
      * </pre>
      *
-     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * <code>string app_id = 30;</code>
      * @return The bytes for appId.
      */
     public com.google.protobuf.ByteString
@@ -929,7 +929,7 @@ private static final long serialVersionUID = 0L;
      * This metadata can only be added if the requesting client is authorized to manage this AppID.
      * </pre>
      *
-     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * <code>string app_id = 30;</code>
      * @param value The appId to set.
      * @return This builder for chaining.
      */
@@ -949,7 +949,7 @@ private static final long serialVersionUID = 0L;
      * This metadata can only be added if the requesting client is authorized to manage this AppID.
      * </pre>
      *
-     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * <code>string app_id = 30;</code>
      * @return This builder for chaining.
      */
     public Builder clearAppId() {
@@ -966,7 +966,7 @@ private static final long serialVersionUID = 0L;
      * This metadata can only be added if the requesting client is authorized to manage this AppID.
      * </pre>
      *
-     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * <code>string app_id = 30;</code>
      * @param value The bytes for appId to set.
      * @return This builder for chaining.
      */
@@ -988,7 +988,7 @@ private static final long serialVersionUID = 0L;
      * Only authorized Join Handlers can announce APP_EUI metadata (and we don't have any of those yet).
      * </pre>
      *
-     * <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 31;</code>
      * @return The appEui.
      */
     public com.google.protobuf.ByteString getAppEui() {
@@ -1003,7 +1003,7 @@ private static final long serialVersionUID = 0L;
      * Only authorized Join Handlers can announce APP_EUI metadata (and we don't have any of those yet).
      * </pre>
      *
-     * <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 31;</code>
      * @param value The appEui to set.
      * @return This builder for chaining.
      */
@@ -1022,7 +1022,7 @@ private static final long serialVersionUID = 0L;
      * Only authorized Join Handlers can announce APP_EUI metadata (and we don't have any of those yet).
      * </pre>
      *
-     * <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 31;</code>
      * @return This builder for chaining.
      */
     public Builder clearAppEui() {

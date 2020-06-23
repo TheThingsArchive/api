@@ -93,7 +93,7 @@ private static final long serialVersionUID = 0L;
    * compatible with Metadata message
    * </pre>
    *
-   * <code>bytes app_eui = 31 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+   * <code>bytes app_eui = 31;</code>
    * @return The appEui.
    */
   public com.google.protobuf.ByteString getAppEui() {
@@ -408,7 +408,7 @@ private static final long serialVersionUID = 0L;
      * compatible with Metadata message
      * </pre>
      *
-     * <code>bytes app_eui = 31 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 31;</code>
      * @return The appEui.
      */
     public com.google.protobuf.ByteString getAppEui() {
@@ -419,7 +419,7 @@ private static final long serialVersionUID = 0L;
      * compatible with Metadata message
      * </pre>
      *
-     * <code>bytes app_eui = 31 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 31;</code>
      * @param value The appEui to set.
      * @return This builder for chaining.
      */
@@ -437,7 +437,7 @@ private static final long serialVersionUID = 0L;
      * compatible with Metadata message
      * </pre>
      *
-     * <code>bytes app_eui = 31 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 31;</code>
      * @return This builder for chaining.
      */
     public Builder clearAppEui() {

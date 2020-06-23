@@ -94,7 +94,7 @@ private static final long serialVersionUID = 0L;
    * compatible with Metadata message
    * </pre>
    *
-   * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+   * <code>string app_id = 30;</code>
    * @return The appId.
    */
   public java.lang.String getAppId() {
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
    * compatible with Metadata message
    * </pre>
    *
-   * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+   * <code>string app_id = 30;</code>
    * @return The bytes for appId.
    */
   public com.google.protobuf.ByteString
@@ -439,7 +439,7 @@ private static final long serialVersionUID = 0L;
      * compatible with Metadata message
      * </pre>
      *
-     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * <code>string app_id = 30;</code>
      * @return The appId.
      */
     public java.lang.String getAppId() {
@@ -459,7 +459,7 @@ private static final long serialVersionUID = 0L;
      * compatible with Metadata message
      * </pre>
      *
-     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * <code>string app_id = 30;</code>
      * @return The bytes for appId.
      */
     public com.google.protobuf.ByteString
@@ -480,7 +480,7 @@ private static final long serialVersionUID = 0L;
      * compatible with Metadata message
      * </pre>
      *
-     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * <code>string app_id = 30;</code>
      * @param value The appId to set.
      * @return This builder for chaining.
      */
@@ -499,7 +499,7 @@ private static final long serialVersionUID = 0L;
      * compatible with Metadata message
      * </pre>
      *
-     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * <code>string app_id = 30;</code>
      * @return This builder for chaining.
      */
     public Builder clearAppId() {
@@ -513,7 +513,7 @@ private static final long serialVersionUID = 0L;
      * compatible with Metadata message
      * </pre>
      *
-     * <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * <code>string app_id = 30;</code>
      * @param value The bytes for appId to set.
      * @return This builder for chaining.
      */

@@ -135,14 +135,14 @@ private static final long serialVersionUID = 0L;
 
   public static final int LORAWAN_FIELD_NUMBER = 1;
   /**
-   * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+   * <code>.lorawan.TxConfiguration lorawan = 1;</code>
    * @return Whether the lorawan field is set.
    */
   public boolean hasLorawan() {
     return protocolCase_ == 1;
   }
   /**
-   * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+   * <code>.lorawan.TxConfiguration lorawan = 1;</code>
    * @return The lorawan.
    */
   public org.thethingsnetwork.api.protocol.lorawan.TxConfiguration getLorawan() {
@@ -152,7 +152,7 @@ private static final long serialVersionUID = 0L;
     return org.thethingsnetwork.api.protocol.lorawan.TxConfiguration.getDefaultInstance();
   }
   /**
-   * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+   * <code>.lorawan.TxConfiguration lorawan = 1;</code>
    */
   public org.thethingsnetwork.api.protocol.lorawan.TxConfigurationOrBuilder getLorawanOrBuilder() {
     if (protocolCase_ == 1) {
@@ -507,14 +507,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.TxConfiguration, org.thethingsnetwork.api.protocol.lorawan.TxConfiguration.Builder, org.thethingsnetwork.api.protocol.lorawan.TxConfigurationOrBuilder> lorawanBuilder_;
     /**
-     * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+     * <code>.lorawan.TxConfiguration lorawan = 1;</code>
      * @return Whether the lorawan field is set.
      */
     public boolean hasLorawan() {
       return protocolCase_ == 1;
     }
     /**
-     * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+     * <code>.lorawan.TxConfiguration lorawan = 1;</code>
      * @return The lorawan.
      */
     public org.thethingsnetwork.api.protocol.lorawan.TxConfiguration getLorawan() {
@@ -531,7 +531,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+     * <code>.lorawan.TxConfiguration lorawan = 1;</code>
      */
     public Builder setLorawan(org.thethingsnetwork.api.protocol.lorawan.TxConfiguration value) {
       if (lorawanBuilder_ == null) {
@@ -547,7 +547,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+     * <code>.lorawan.TxConfiguration lorawan = 1;</code>
      */
     public Builder setLorawan(
         org.thethingsnetwork.api.protocol.lorawan.TxConfiguration.Builder builderForValue) {
@@ -561,7 +561,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+     * <code>.lorawan.TxConfiguration lorawan = 1;</code>
      */
     public Builder mergeLorawan(org.thethingsnetwork.api.protocol.lorawan.TxConfiguration value) {
       if (lorawanBuilder_ == null) {
@@ -583,7 +583,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+     * <code>.lorawan.TxConfiguration lorawan = 1;</code>
      */
     public Builder clearLorawan() {
       if (lorawanBuilder_ == null) {
@@ -602,13 +602,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+     * <code>.lorawan.TxConfiguration lorawan = 1;</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.TxConfiguration.Builder getLorawanBuilder() {
       return getLorawanFieldBuilder().getBuilder();
     }
     /**
-     * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+     * <code>.lorawan.TxConfiguration lorawan = 1;</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.TxConfigurationOrBuilder getLorawanOrBuilder() {
       if ((protocolCase_ == 1) && (lorawanBuilder_ != null)) {
@@ -621,7 +621,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+     * <code>.lorawan.TxConfiguration lorawan = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.TxConfiguration, org.thethingsnetwork.api.protocol.lorawan.TxConfiguration.Builder, org.thethingsnetwork.api.protocol.lorawan.TxConfigurationOrBuilder> 

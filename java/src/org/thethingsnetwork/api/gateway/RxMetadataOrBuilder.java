@@ -8,12 +8,12 @@ public interface RxMetadataOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+   * <code>string gateway_id = 1;</code>
    * @return The gatewayId.
    */
   java.lang.String getGatewayId();
   /**
-   * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+   * <code>string gateway_id = 1;</code>
    * @return The bytes for gatewayId.
    */
   com.google.protobuf.ByteString
@@ -110,7 +110,7 @@ public interface RxMetadataOrBuilder extends
    * Received signal strength in dBm
    * </pre>
    *
-   * <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
+   * <code>float rssi = 32;</code>
    * @return The rssi.
    */
   float getRssi();
@@ -120,7 +120,7 @@ public interface RxMetadataOrBuilder extends
    * Signal-to-noise-ratio in dB
    * </pre>
    *
-   * <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
+   * <code>float snr = 33;</code>
    * @return The snr.
    */
   float getSnr();

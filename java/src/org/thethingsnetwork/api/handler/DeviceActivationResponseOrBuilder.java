@@ -29,32 +29,32 @@ public interface DeviceActivationResponseOrBuilder extends
   org.thethingsnetwork.api.protocol.MessageOrBuilder getMessageOrBuilder();
 
   /**
-   * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
+   * <code>.broker.DownlinkOption downlink_option = 11;</code>
    * @return Whether the downlinkOption field is set.
    */
   boolean hasDownlinkOption();
   /**
-   * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
+   * <code>.broker.DownlinkOption downlink_option = 11;</code>
    * @return The downlinkOption.
    */
   org.thethingsnetwork.api.broker.DownlinkOption getDownlinkOption();
   /**
-   * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
+   * <code>.broker.DownlinkOption downlink_option = 11;</code>
    */
   org.thethingsnetwork.api.broker.DownlinkOptionOrBuilder getDownlinkOptionOrBuilder();
 
   /**
-   * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
+   * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
    * @return Whether the activationMetadata field is set.
    */
   boolean hasActivationMetadata();
   /**
-   * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
+   * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
    * @return The activationMetadata.
    */
   org.thethingsnetwork.api.protocol.ActivationMetadata getActivationMetadata();
   /**
-   * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
+   * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
    */
   org.thethingsnetwork.api.protocol.ActivationMetadataOrBuilder getActivationMetadataOrBuilder();
 

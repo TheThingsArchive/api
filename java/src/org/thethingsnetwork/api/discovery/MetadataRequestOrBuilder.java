@@ -12,7 +12,7 @@ public interface MetadataRequestOrBuilder extends
    * The ID of the service that should be modified
    * </pre>
    *
-   * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+   * <code>string id = 1;</code>
    * @return The id.
    */
   java.lang.String getId();
@@ -21,7 +21,7 @@ public interface MetadataRequestOrBuilder extends
    * The ID of the service that should be modified
    * </pre>
    *
-   * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+   * <code>string id = 1;</code>
    * @return The bytes for id.
    */
   com.google.protobuf.ByteString
@@ -52,7 +52,7 @@ public interface MetadataRequestOrBuilder extends
    * Metadata to add or remove
    * </pre>
    *
-   * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
+   * <code>.discovery.Metadata metadata = 12;</code>
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
@@ -61,7 +61,7 @@ public interface MetadataRequestOrBuilder extends
    * Metadata to add or remove
    * </pre>
    *
-   * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
+   * <code>.discovery.Metadata metadata = 12;</code>
    * @return The metadata.
    */
   org.thethingsnetwork.api.discovery.Metadata getMetadata();
@@ -70,7 +70,7 @@ public interface MetadataRequestOrBuilder extends
    * Metadata to add or remove
    * </pre>
    *
-   * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
+   * <code>.discovery.Metadata metadata = 12;</code>
    */
   org.thethingsnetwork.api.discovery.MetadataOrBuilder getMetadataOrBuilder();
 }

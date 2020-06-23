@@ -14,15 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class JoinRequestPayload extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 1;</code>
      */
     protected $app_eui = '';
     /**
-     * Generated from protobuf field <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * Generated from protobuf field <code>bytes dev_eui = 2;</code>
      */
     protected $dev_eui = '';
     /**
-     * Generated from protobuf field <code>bytes dev_nonce = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * Generated from protobuf field <code>bytes dev_nonce = 3;</code>
      */
     protected $dev_nonce = '';
 
@@ -43,7 +43,7 @@ class JoinRequestPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 1;</code>
      * @return string
      */
     public function getAppEui()
@@ -52,7 +52,7 @@ class JoinRequestPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 1;</code>
      * @param string $var
      * @return $this
      */
@@ -65,7 +65,7 @@ class JoinRequestPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * Generated from protobuf field <code>bytes dev_eui = 2;</code>
      * @return string
      */
     public function getDevEui()
@@ -74,7 +74,7 @@ class JoinRequestPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * Generated from protobuf field <code>bytes dev_eui = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -87,7 +87,7 @@ class JoinRequestPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_nonce = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * Generated from protobuf field <code>bytes dev_nonce = 3;</code>
      * @return string
      */
     public function getDevNonce()
@@ -96,7 +96,7 @@ class JoinRequestPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_nonce = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * Generated from protobuf field <code>bytes dev_nonce = 3;</code>
      * @param string $var
      * @return $this
      */

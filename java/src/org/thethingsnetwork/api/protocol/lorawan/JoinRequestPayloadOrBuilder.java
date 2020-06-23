@@ -8,19 +8,19 @@ public interface JoinRequestPayloadOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+   * <code>bytes app_eui = 1;</code>
    * @return The appEui.
    */
   com.google.protobuf.ByteString getAppEui();
 
   /**
-   * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+   * <code>bytes dev_eui = 2;</code>
    * @return The devEui.
    */
   com.google.protobuf.ByteString getDevEui();
 
   /**
-   * <code>bytes dev_nonce = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+   * <code>bytes dev_nonce = 3;</code>
    * @return The devNonce.
    */
   com.google.protobuf.ByteString getDevNonce();

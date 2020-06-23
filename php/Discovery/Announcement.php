@@ -18,7 +18,7 @@ class Announcement extends \Google\Protobuf\Internal\Message
     /**
      * The ID of the component
      *
-     * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * Generated from protobuf field <code>string id = 1;</code>
      */
     protected $id = '';
     /**
@@ -172,7 +172,7 @@ class Announcement extends \Google\Protobuf\Internal\Message
     /**
      * The ID of the component
      *
-     * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * Generated from protobuf field <code>string id = 1;</code>
      * @return string
      */
     public function getId()
@@ -183,7 +183,7 @@ class Announcement extends \Google\Protobuf\Internal\Message
     /**
      * The ID of the component
      *
-     * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * Generated from protobuf field <code>string id = 1;</code>
      * @param string $var
      * @return $this
      */

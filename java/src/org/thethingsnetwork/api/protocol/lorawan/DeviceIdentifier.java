@@ -99,7 +99,7 @@ private static final long serialVersionUID = 0L;
    * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
    * </pre>
    *
-   * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+   * <code>bytes app_eui = 1;</code>
    * @return The appEui.
    */
   public com.google.protobuf.ByteString getAppEui() {
@@ -113,7 +113,7 @@ private static final long serialVersionUID = 0L;
    * The DevEUI is a unique, 8 byte identifier for the device.
    * </pre>
    *
-   * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+   * <code>bytes dev_eui = 2;</code>
    * @return The devEui.
    */
   public com.google.protobuf.ByteString getDevEui() {
@@ -445,7 +445,7 @@ private static final long serialVersionUID = 0L;
      * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
      * </pre>
      *
-     * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 1;</code>
      * @return The appEui.
      */
     public com.google.protobuf.ByteString getAppEui() {
@@ -456,7 +456,7 @@ private static final long serialVersionUID = 0L;
      * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
      * </pre>
      *
-     * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 1;</code>
      * @param value The appEui to set.
      * @return This builder for chaining.
      */
@@ -474,7 +474,7 @@ private static final long serialVersionUID = 0L;
      * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
      * </pre>
      *
-     * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearAppEui() {
@@ -490,7 +490,7 @@ private static final long serialVersionUID = 0L;
      * The DevEUI is a unique, 8 byte identifier for the device.
      * </pre>
      *
-     * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * <code>bytes dev_eui = 2;</code>
      * @return The devEui.
      */
     public com.google.protobuf.ByteString getDevEui() {
@@ -501,7 +501,7 @@ private static final long serialVersionUID = 0L;
      * The DevEUI is a unique, 8 byte identifier for the device.
      * </pre>
      *
-     * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * <code>bytes dev_eui = 2;</code>
      * @param value The devEui to set.
      * @return This builder for chaining.
      */
@@ -519,7 +519,7 @@ private static final long serialVersionUID = 0L;
      * The DevEUI is a unique, 8 byte identifier for the device.
      * </pre>
      *
-     * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * <code>bytes dev_eui = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearDevEui() {

@@ -12,8 +12,6 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-
-
 goog.exportSymbol('proto.lorawan.ActivationMetadata', null, global);
 goog.exportSymbol('proto.lorawan.CFList', null, global);
 goog.exportSymbol('proto.lorawan.DLSettings', null, global);

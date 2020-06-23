@@ -101,7 +101,7 @@ private static final long serialVersionUID = 0L;
   public static final int APP_EUI_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString appEui_;
   /**
-   * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+   * <code>bytes app_eui = 1;</code>
    * @return The appEui.
    */
   public com.google.protobuf.ByteString getAppEui() {
@@ -111,7 +111,7 @@ private static final long serialVersionUID = 0L;
   public static final int DEV_EUI_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString devEui_;
   /**
-   * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+   * <code>bytes dev_eui = 2;</code>
    * @return The devEui.
    */
   public com.google.protobuf.ByteString getDevEui() {
@@ -121,7 +121,7 @@ private static final long serialVersionUID = 0L;
   public static final int DEV_NONCE_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString devNonce_;
   /**
-   * <code>bytes dev_nonce = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+   * <code>bytes dev_nonce = 3;</code>
    * @return The devNonce.
    */
   public com.google.protobuf.ByteString getDevNonce() {
@@ -466,14 +466,14 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString appEui_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 1;</code>
      * @return The appEui.
      */
     public com.google.protobuf.ByteString getAppEui() {
       return appEui_;
     }
     /**
-     * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 1;</code>
      * @param value The appEui to set.
      * @return This builder for chaining.
      */
@@ -487,7 +487,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearAppEui() {
@@ -499,14 +499,14 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString devEui_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * <code>bytes dev_eui = 2;</code>
      * @return The devEui.
      */
     public com.google.protobuf.ByteString getDevEui() {
       return devEui_;
     }
     /**
-     * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * <code>bytes dev_eui = 2;</code>
      * @param value The devEui to set.
      * @return This builder for chaining.
      */
@@ -520,7 +520,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * <code>bytes dev_eui = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearDevEui() {
@@ -532,14 +532,14 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString devNonce_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes dev_nonce = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * <code>bytes dev_nonce = 3;</code>
      * @return The devNonce.
      */
     public com.google.protobuf.ByteString getDevNonce() {
       return devNonce_;
     }
     /**
-     * <code>bytes dev_nonce = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * <code>bytes dev_nonce = 3;</code>
      * @param value The devNonce to set.
      * @return This builder for chaining.
      */
@@ -553,7 +553,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bytes dev_nonce = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * <code>bytes dev_nonce = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearDevNonce() {

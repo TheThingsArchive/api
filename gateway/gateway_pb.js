@@ -12,8 +12,6 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-
-
 goog.exportSymbol('proto.gateway.LocationMetadata', null, global);
 goog.exportSymbol('proto.gateway.LocationMetadata.LocationSource', null, global);
 goog.exportSymbol('proto.gateway.RxMetadata', null, global);

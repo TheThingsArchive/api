@@ -94,7 +94,7 @@ private static final long serialVersionUID = 0L;
   public static final int CID_FIELD_NUMBER = 1;
   private int cid_;
   /**
-   * <code>uint32 cid = 1 [(.gogoproto.customname) = "CID"];</code>
+   * <code>uint32 cid = 1;</code>
    * @return The cid.
    */
   public int getCid() {
@@ -432,14 +432,14 @@ private static final long serialVersionUID = 0L;
 
     private int cid_ ;
     /**
-     * <code>uint32 cid = 1 [(.gogoproto.customname) = "CID"];</code>
+     * <code>uint32 cid = 1;</code>
      * @return The cid.
      */
     public int getCid() {
       return cid_;
     }
     /**
-     * <code>uint32 cid = 1 [(.gogoproto.customname) = "CID"];</code>
+     * <code>uint32 cid = 1;</code>
      * @param value The cid to set.
      * @return This builder for chaining.
      */
@@ -450,7 +450,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>uint32 cid = 1 [(.gogoproto.customname) = "CID"];</code>
+     * <code>uint32 cid = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearCid() {

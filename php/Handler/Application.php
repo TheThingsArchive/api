@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class Application extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 1;</code>
      */
     protected $app_id = '';
     /**
@@ -95,7 +95,7 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 1;</code>
      * @return string
      */
     public function getAppId()
@@ -104,7 +104,7 @@ class Application extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 1;</code>
      * @param string $var
      * @return $this
      */

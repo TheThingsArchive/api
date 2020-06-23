@@ -8,23 +8,23 @@ public interface FHDROrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+   * <code>bytes dev_addr = 1;</code>
    * @return The devAddr.
    */
   com.google.protobuf.ByteString getDevAddr();
 
   /**
-   * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+   * <code>.lorawan.FCtrl f_ctrl = 2;</code>
    * @return Whether the fCtrl field is set.
    */
   boolean hasFCtrl();
   /**
-   * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+   * <code>.lorawan.FCtrl f_ctrl = 2;</code>
    * @return The fCtrl.
    */
   org.thethingsnetwork.api.protocol.lorawan.FCtrl getFCtrl();
   /**
-   * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+   * <code>.lorawan.FCtrl f_ctrl = 2;</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.FCtrlOrBuilder getFCtrlOrBuilder();
 
@@ -35,25 +35,25 @@ public interface FHDROrBuilder extends
   int getFCnt();
 
   /**
-   * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
+   * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
    */
   java.util.List<org.thethingsnetwork.api.protocol.lorawan.MACCommand> 
       getFOptsList();
   /**
-   * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
+   * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.MACCommand getFOpts(int index);
   /**
-   * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
+   * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
    */
   int getFOptsCount();
   /**
-   * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
+   * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
    */
   java.util.List<? extends org.thethingsnetwork.api.protocol.lorawan.MACCommandOrBuilder> 
       getFOptsOrBuilderList();
   /**
-   * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
+   * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.MACCommandOrBuilder getFOptsOrBuilder(
       int index);

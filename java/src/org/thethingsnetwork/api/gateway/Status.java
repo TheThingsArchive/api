@@ -284,7 +284,7 @@ private static final long serialVersionUID = 0L;
     float getLoad15();
 
     /**
-     * <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
+     * <code>float cpu_percentage = 11;</code>
      * @return The cpuPercentage.
      */
     float getCpuPercentage();
@@ -445,7 +445,7 @@ private static final long serialVersionUID = 0L;
     public static final int CPU_PERCENTAGE_FIELD_NUMBER = 11;
     private float cpuPercentage_;
     /**
-     * <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
+     * <code>float cpu_percentage = 11;</code>
      * @return The cpuPercentage.
      */
     public float getCpuPercentage() {
@@ -967,14 +967,14 @@ private static final long serialVersionUID = 0L;
 
       private float cpuPercentage_ ;
       /**
-       * <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
+       * <code>float cpu_percentage = 11;</code>
        * @return The cpuPercentage.
        */
       public float getCpuPercentage() {
         return cpuPercentage_;
       }
       /**
-       * <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
+       * <code>float cpu_percentage = 11;</code>
        * @param value The cpuPercentage to set.
        * @return This builder for chaining.
        */
@@ -985,7 +985,7 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
-       * <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
+       * <code>float cpu_percentage = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearCpuPercentage() {
@@ -1166,7 +1166,7 @@ private static final long serialVersionUID = 0L;
   public static final int IP_FIELD_NUMBER = 11;
   private com.google.protobuf.LazyStringList ip_;
   /**
-   * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+   * <code>repeated string ip = 11;</code>
    * @return A list containing the ip.
    */
   public com.google.protobuf.ProtocolStringList
@@ -1174,14 +1174,14 @@ private static final long serialVersionUID = 0L;
     return ip_;
   }
   /**
-   * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+   * <code>repeated string ip = 11;</code>
    * @return The count of ip.
    */
   public int getIpCount() {
     return ip_.size();
   }
   /**
-   * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+   * <code>repeated string ip = 11;</code>
    * @param index The index of the element to return.
    * @return The ip at the given index.
    */
@@ -1189,7 +1189,7 @@ private static final long serialVersionUID = 0L;
     return ip_.get(index);
   }
   /**
-   * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+   * <code>repeated string ip = 11;</code>
    * @param index The index of the value to return.
    * @return The bytes of the ip at the given index.
    */
@@ -1445,7 +1445,7 @@ private static final long serialVersionUID = 0L;
    * Version of Gateway FPGA
    * </pre>
    *
-   * <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
+   * <code>uint32 fpga = 18;</code>
    * @return The fpga.
    */
   public int getFpga() {
@@ -1459,7 +1459,7 @@ private static final long serialVersionUID = 0L;
    * Version of Gateway DSP software
    * </pre>
    *
-   * <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
+   * <code>uint32 dsp = 19;</code>
    * @return The dsp.
    */
   public int getDsp() {
@@ -1473,7 +1473,7 @@ private static final long serialVersionUID = 0L;
    * Version of gateway driver (in X.X.X format)
    * </pre>
    *
-   * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
+   * <code>string hal = 20;</code>
    * @return The hal.
    */
   public java.lang.String getHal() {
@@ -1493,7 +1493,7 @@ private static final long serialVersionUID = 0L;
    * Version of gateway driver (in X.X.X format)
    * </pre>
    *
-   * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
+   * <code>string hal = 20;</code>
    * @return The bytes for hal.
    */
   public com.google.protobuf.ByteString
@@ -1540,7 +1540,7 @@ private static final long serialVersionUID = 0L;
    * Round-trip time to the server in milliseconds
    * </pre>
    *
-   * <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
+   * <code>uint32 rtt = 31;</code>
    * @return The rtt.
    */
   public int getRtt() {
@@ -1652,7 +1652,7 @@ private static final long serialVersionUID = 0L;
    * Number of lost PPS pulses
    * </pre>
    *
-   * <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
+   * <code>uint32 l_pps = 48;</code>
    * @return The lPps.
    */
   public int getLPps() {
@@ -1662,21 +1662,21 @@ private static final long serialVersionUID = 0L;
   public static final int OS_FIELD_NUMBER = 51;
   private org.thethingsnetwork.api.gateway.Status.OSMetrics os_;
   /**
-   * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+   * <code>.gateway.Status.OSMetrics os = 51;</code>
    * @return Whether the os field is set.
    */
   public boolean hasOs() {
     return os_ != null;
   }
   /**
-   * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+   * <code>.gateway.Status.OSMetrics os = 51;</code>
    * @return The os.
    */
   public org.thethingsnetwork.api.gateway.Status.OSMetrics getOs() {
     return os_ == null ? org.thethingsnetwork.api.gateway.Status.OSMetrics.getDefaultInstance() : os_;
   }
   /**
-   * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+   * <code>.gateway.Status.OSMetrics os = 51;</code>
    */
   public org.thethingsnetwork.api.gateway.Status.OSMetricsOrBuilder getOsOrBuilder() {
     return getOs();
@@ -2705,7 +2705,7 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
-     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * <code>repeated string ip = 11;</code>
      * @return A list containing the ip.
      */
     public com.google.protobuf.ProtocolStringList
@@ -2713,14 +2713,14 @@ private static final long serialVersionUID = 0L;
       return ip_.getUnmodifiableView();
     }
     /**
-     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * <code>repeated string ip = 11;</code>
      * @return The count of ip.
      */
     public int getIpCount() {
       return ip_.size();
     }
     /**
-     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * <code>repeated string ip = 11;</code>
      * @param index The index of the element to return.
      * @return The ip at the given index.
      */
@@ -2728,7 +2728,7 @@ private static final long serialVersionUID = 0L;
       return ip_.get(index);
     }
     /**
-     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * <code>repeated string ip = 11;</code>
      * @param index The index of the value to return.
      * @return The bytes of the ip at the given index.
      */
@@ -2737,7 +2737,7 @@ private static final long serialVersionUID = 0L;
       return ip_.getByteString(index);
     }
     /**
-     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * <code>repeated string ip = 11;</code>
      * @param index The index to set the value at.
      * @param value The ip to set.
      * @return This builder for chaining.
@@ -2753,7 +2753,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * <code>repeated string ip = 11;</code>
      * @param value The ip to add.
      * @return This builder for chaining.
      */
@@ -2768,7 +2768,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * <code>repeated string ip = 11;</code>
      * @param values The ip to add.
      * @return This builder for chaining.
      */
@@ -2781,7 +2781,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * <code>repeated string ip = 11;</code>
      * @return This builder for chaining.
      */
     public Builder clearIp() {
@@ -2791,7 +2791,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
+     * <code>repeated string ip = 11;</code>
      * @param value The bytes of the ip to add.
      * @return This builder for chaining.
      */
@@ -3329,7 +3329,7 @@ private static final long serialVersionUID = 0L;
      * Version of Gateway FPGA
      * </pre>
      *
-     * <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
+     * <code>uint32 fpga = 18;</code>
      * @return The fpga.
      */
     public int getFpga() {
@@ -3340,7 +3340,7 @@ private static final long serialVersionUID = 0L;
      * Version of Gateway FPGA
      * </pre>
      *
-     * <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
+     * <code>uint32 fpga = 18;</code>
      * @param value The fpga to set.
      * @return This builder for chaining.
      */
@@ -3355,7 +3355,7 @@ private static final long serialVersionUID = 0L;
      * Version of Gateway FPGA
      * </pre>
      *
-     * <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
+     * <code>uint32 fpga = 18;</code>
      * @return This builder for chaining.
      */
     public Builder clearFpga() {
@@ -3371,7 +3371,7 @@ private static final long serialVersionUID = 0L;
      * Version of Gateway DSP software
      * </pre>
      *
-     * <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
+     * <code>uint32 dsp = 19;</code>
      * @return The dsp.
      */
     public int getDsp() {
@@ -3382,7 +3382,7 @@ private static final long serialVersionUID = 0L;
      * Version of Gateway DSP software
      * </pre>
      *
-     * <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
+     * <code>uint32 dsp = 19;</code>
      * @param value The dsp to set.
      * @return This builder for chaining.
      */
@@ -3397,7 +3397,7 @@ private static final long serialVersionUID = 0L;
      * Version of Gateway DSP software
      * </pre>
      *
-     * <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
+     * <code>uint32 dsp = 19;</code>
      * @return This builder for chaining.
      */
     public Builder clearDsp() {
@@ -3413,7 +3413,7 @@ private static final long serialVersionUID = 0L;
      * Version of gateway driver (in X.X.X format)
      * </pre>
      *
-     * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
+     * <code>string hal = 20;</code>
      * @return The hal.
      */
     public java.lang.String getHal() {
@@ -3433,7 +3433,7 @@ private static final long serialVersionUID = 0L;
      * Version of gateway driver (in X.X.X format)
      * </pre>
      *
-     * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
+     * <code>string hal = 20;</code>
      * @return The bytes for hal.
      */
     public com.google.protobuf.ByteString
@@ -3454,7 +3454,7 @@ private static final long serialVersionUID = 0L;
      * Version of gateway driver (in X.X.X format)
      * </pre>
      *
-     * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
+     * <code>string hal = 20;</code>
      * @param value The hal to set.
      * @return This builder for chaining.
      */
@@ -3473,7 +3473,7 @@ private static final long serialVersionUID = 0L;
      * Version of gateway driver (in X.X.X format)
      * </pre>
      *
-     * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
+     * <code>string hal = 20;</code>
      * @return This builder for chaining.
      */
     public Builder clearHal() {
@@ -3487,7 +3487,7 @@ private static final long serialVersionUID = 0L;
      * Version of gateway driver (in X.X.X format)
      * </pre>
      *
-     * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
+     * <code>string hal = 20;</code>
      * @param value The bytes for hal to set.
      * @return This builder for chaining.
      */
@@ -3628,7 +3628,7 @@ private static final long serialVersionUID = 0L;
      * Round-trip time to the server in milliseconds
      * </pre>
      *
-     * <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
+     * <code>uint32 rtt = 31;</code>
      * @return The rtt.
      */
     public int getRtt() {
@@ -3639,7 +3639,7 @@ private static final long serialVersionUID = 0L;
      * Round-trip time to the server in milliseconds
      * </pre>
      *
-     * <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
+     * <code>uint32 rtt = 31;</code>
      * @param value The rtt to set.
      * @return This builder for chaining.
      */
@@ -3654,7 +3654,7 @@ private static final long serialVersionUID = 0L;
      * Round-trip time to the server in milliseconds
      * </pre>
      *
-     * <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
+     * <code>uint32 rtt = 31;</code>
      * @return This builder for chaining.
      */
     public Builder clearRtt() {
@@ -3964,7 +3964,7 @@ private static final long serialVersionUID = 0L;
      * Number of lost PPS pulses
      * </pre>
      *
-     * <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
+     * <code>uint32 l_pps = 48;</code>
      * @return The lPps.
      */
     public int getLPps() {
@@ -3975,7 +3975,7 @@ private static final long serialVersionUID = 0L;
      * Number of lost PPS pulses
      * </pre>
      *
-     * <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
+     * <code>uint32 l_pps = 48;</code>
      * @param value The lPps to set.
      * @return This builder for chaining.
      */
@@ -3990,7 +3990,7 @@ private static final long serialVersionUID = 0L;
      * Number of lost PPS pulses
      * </pre>
      *
-     * <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
+     * <code>uint32 l_pps = 48;</code>
      * @return This builder for chaining.
      */
     public Builder clearLPps() {
@@ -4004,14 +4004,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.gateway.Status.OSMetrics, org.thethingsnetwork.api.gateway.Status.OSMetrics.Builder, org.thethingsnetwork.api.gateway.Status.OSMetricsOrBuilder> osBuilder_;
     /**
-     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+     * <code>.gateway.Status.OSMetrics os = 51;</code>
      * @return Whether the os field is set.
      */
     public boolean hasOs() {
       return osBuilder_ != null || os_ != null;
     }
     /**
-     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+     * <code>.gateway.Status.OSMetrics os = 51;</code>
      * @return The os.
      */
     public org.thethingsnetwork.api.gateway.Status.OSMetrics getOs() {
@@ -4022,7 +4022,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+     * <code>.gateway.Status.OSMetrics os = 51;</code>
      */
     public Builder setOs(org.thethingsnetwork.api.gateway.Status.OSMetrics value) {
       if (osBuilder_ == null) {
@@ -4038,7 +4038,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+     * <code>.gateway.Status.OSMetrics os = 51;</code>
      */
     public Builder setOs(
         org.thethingsnetwork.api.gateway.Status.OSMetrics.Builder builderForValue) {
@@ -4052,7 +4052,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+     * <code>.gateway.Status.OSMetrics os = 51;</code>
      */
     public Builder mergeOs(org.thethingsnetwork.api.gateway.Status.OSMetrics value) {
       if (osBuilder_ == null) {
@@ -4070,7 +4070,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+     * <code>.gateway.Status.OSMetrics os = 51;</code>
      */
     public Builder clearOs() {
       if (osBuilder_ == null) {
@@ -4084,7 +4084,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+     * <code>.gateway.Status.OSMetrics os = 51;</code>
      */
     public org.thethingsnetwork.api.gateway.Status.OSMetrics.Builder getOsBuilder() {
       
@@ -4092,7 +4092,7 @@ private static final long serialVersionUID = 0L;
       return getOsFieldBuilder().getBuilder();
     }
     /**
-     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+     * <code>.gateway.Status.OSMetrics os = 51;</code>
      */
     public org.thethingsnetwork.api.gateway.Status.OSMetricsOrBuilder getOsOrBuilder() {
       if (osBuilder_ != null) {
@@ -4103,7 +4103,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
+     * <code>.gateway.Status.OSMetrics os = 51;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.gateway.Status.OSMetrics, org.thethingsnetwork.api.gateway.Status.OSMetrics.Builder, org.thethingsnetwork.api.gateway.Status.OSMetricsOrBuilder> 

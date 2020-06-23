@@ -12,7 +12,6 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
-
 from github_com.TheThingsNetwork.api import api_pb2 as github_dot_com_dot_TheThingsNetwork_dot_api_dot_api__pb2
 from github_com.TheThingsNetwork.api.protocol import protocol_pb2 as github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_protocol__pb2
 from github_com.TheThingsNetwork.api.gateway import gateway_pb2 as github_dot_com_dot_TheThingsNetwork_dot_api_dot_gateway_dot_gateway__pb2
@@ -24,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='broker',
   syntax='proto3',
   serialized_options=b'\n\037org.thethingsnetwork.api.brokerB\013BrokerProtoP\001Z&github.com/TheThingsNetwork/api/broker\252\002\033TheThingsNetwork.API.Broker',
-  serialized_pb=b'\n3github.com/TheThingsNetwork/api/broker/broker.proto\x12\x06\x62roker\x1a\x1bgoogle/protobuf/empty.proto\x1a-github.com/gogo/protobuf/gogoproto/gogo.proto\x1a)github.com/TheThingsNetwork/api/api.proto\x1a\x37github.com/TheThingsNetwork/api/protocol/protocol.proto\x1a\x35github.com/TheThingsNetwork/api/gateway/gateway.proto\x1a\x31github.com/TheThingsNetwork/api/trace/trace.proto\"\xe8\x01\n\x0e\x44ownlinkOption\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12!\n\ngateway_id\x18\x02 \x01(\tB\r\xe2\xde\x1f\tGatewayID\x12\r\n\x05score\x18\x03 \x01(\r\x12\x10\n\x08\x64\x65\x61\x64line\x18\x04 \x01(\x03\x12?\n\x16protocol_configuration\x18\x05 \x01(\x0b\x32\x19.protocol.TxConfigurationB\x04\xc8\xde\x1f\x00\x12=\n\x15gateway_configuration\x18\x06 \x01(\x0b\x32\x18.gateway.TxConfigurationB\x04\xc8\xde\x1f\x00\"\xd9\x03\n\rUplinkMessage\x12\x0f\n\x07payload\x18\x01 \x01(\x0c\x12\"\n\x07message\x18\x02 \x01(\x0b\x32\x11.protocol.Message\x12P\n\x07\x64\x65v_eui\x18\x0b \x01(\x0c\x42?\xe2\xde\x1f\x06\x44\x65vEUI\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.DevEUI\x12P\n\x07\x61pp_eui\x18\x0c \x01(\x0c\x42?\xe2\xde\x1f\x06\x41ppEUI\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.AppEUI\x12\x19\n\x06\x61pp_id\x18\r \x01(\tB\t\xe2\xde\x1f\x05\x41ppID\x12\x19\n\x06\x64\x65v_id\x18\x0e \x01(\tB\t\xe2\xde\x1f\x05\x44\x65vID\x12\x35\n\x11protocol_metadata\x18\x15 \x01(\x0b\x32\x14.protocol.RxMetadataB\x04\xc8\xde\x1f\x00\x12\x33\n\x10gateway_metadata\x18\x16 \x01(\x0b\x32\x13.gateway.RxMetadataB\x04\xc8\xde\x1f\x00\x12\x30\n\x10\x64ownlink_options\x18\x1f \x03(\x0b\x32\x16.broker.DownlinkOption\x12\x1b\n\x05trace\x18) \x01(\x0b\x32\x0c.trace.Trace\"\xf6\x02\n\x0f\x44ownlinkMessage\x12\x0f\n\x07payload\x18\x01 \x01(\x0c\x12\"\n\x07message\x18\x02 \x01(\x0b\x32\x11.protocol.Message\x12T\n\x07\x64\x65v_eui\x18\x0b \x01(\x0c\x42\x43\xc8\xde\x1f\x00\xe2\xde\x1f\x06\x44\x65vEUI\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.DevEUI\x12T\n\x07\x61pp_eui\x18\x0c \x01(\x0c\x42\x43\xc8\xde\x1f\x00\xe2\xde\x1f\x06\x41ppEUI\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.AppEUI\x12\x19\n\x06\x61pp_id\x18\r \x01(\tB\t\xe2\xde\x1f\x05\x41ppID\x12\x19\n\x06\x64\x65v_id\x18\x0e \x01(\tB\t\xe2\xde\x1f\x05\x44\x65vID\x12/\n\x0f\x64ownlink_option\x18\x15 \x01(\x0b\x32\x16.broker.DownlinkOption\x12\x1b\n\x05trace\x18\x1f \x01(\x0b\x32\x0c.trace.Trace\"\x9d\x01\n\x18\x44\x65viceActivationResponse\x12\x0f\n\x07payload\x18\x01 \x01(\x0c\x12\"\n\x07message\x18\x02 \x01(\x0b\x32\x11.protocol.Message\x12/\n\x0f\x64ownlink_option\x18\x0b \x01(\x0b\x32\x16.broker.DownlinkOption\x12\x1b\n\x05trace\x18\x15 \x01(\x0b\x32\x0c.trace.Trace\"\xf6\x03\n\x19\x44\x65\x64uplicatedUplinkMessage\x12\x0f\n\x07payload\x18\x01 \x01(\x0c\x12\"\n\x07message\x18\x02 \x01(\x0b\x32\x11.protocol.Message\x12P\n\x07\x64\x65v_eui\x18\x0b \x01(\x0c\x42?\xe2\xde\x1f\x06\x44\x65vEUI\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.DevEUI\x12P\n\x07\x61pp_eui\x18\x0c \x01(\x0c\x42?\xe2\xde\x1f\x06\x41ppEUI\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.AppEUI\x12\x19\n\x06\x61pp_id\x18\r \x01(\tB\t\xe2\xde\x1f\x05\x41ppID\x12\x19\n\x06\x64\x65v_id\x18\x0e \x01(\tB\t\xe2\xde\x1f\x05\x44\x65vID\x12\x35\n\x11protocol_metadata\x18\x15 \x01(\x0b\x32\x14.protocol.RxMetadataB\x04\xc8\xde\x1f\x00\x12-\n\x10gateway_metadata\x18\x16 \x03(\x0b\x32\x13.gateway.RxMetadata\x12\x13\n\x0bserver_time\x18\x17 \x01(\x03\x12\x32\n\x11response_template\x18\x1f \x01(\x0b\x32\x17.broker.DownlinkMessage\x12\x1b\n\x05trace\x18) \x01(\x0b\x32\x0c.trace.Trace\"\xf0\x03\n\x17\x44\x65viceActivationRequest\x12\x0f\n\x07payload\x18\x01 \x01(\x0c\x12\"\n\x07message\x18\x02 \x01(\x0b\x32\x11.protocol.Message\x12T\n\x07\x64\x65v_eui\x18\x0b \x01(\x0c\x42\x43\xc8\xde\x1f\x00\xe2\xde\x1f\x06\x44\x65vEUI\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.DevEUI\x12T\n\x07\x61pp_eui\x18\x0c \x01(\x0c\x42\x43\xc8\xde\x1f\x00\xe2\xde\x1f\x06\x41ppEUI\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.AppEUI\x12\x35\n\x11protocol_metadata\x18\x15 \x01(\x0b\x32\x14.protocol.RxMetadataB\x04\xc8\xde\x1f\x00\x12\x33\n\x10gateway_metadata\x18\x16 \x01(\x0b\x32\x13.gateway.RxMetadataB\x04\xc8\xde\x1f\x00\x12\x39\n\x13\x61\x63tivation_metadata\x18\x17 \x01(\x0b\x32\x1c.protocol.ActivationMetadata\x12\x30\n\x10\x64ownlink_options\x18\x1f \x03(\x0b\x32\x16.broker.DownlinkOption\x12\x1b\n\x05trace\x18) \x01(\x0b\x32\x0c.trace.Trace\"\xcc\x04\n#DeduplicatedDeviceActivationRequest\x12\x0f\n\x07payload\x18\x01 \x01(\x0c\x12\"\n\x07message\x18\x02 \x01(\x0b\x32\x11.protocol.Message\x12T\n\x07\x64\x65v_eui\x18\x0b \x01(\x0c\x42\x43\xc8\xde\x1f\x00\xe2\xde\x1f\x06\x44\x65vEUI\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.DevEUI\x12T\n\x07\x61pp_eui\x18\x0c \x01(\x0c\x42\x43\xc8\xde\x1f\x00\xe2\xde\x1f\x06\x41ppEUI\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.AppEUI\x12\x19\n\x06\x61pp_id\x18\r \x01(\tB\t\xe2\xde\x1f\x05\x41ppID\x12\x19\n\x06\x64\x65v_id\x18\x0e \x01(\tB\t\xe2\xde\x1f\x05\x44\x65vID\x12\x35\n\x11protocol_metadata\x18\x15 \x01(\x0b\x32\x14.protocol.RxMetadataB\x04\xc8\xde\x1f\x00\x12-\n\x10gateway_metadata\x18\x16 \x03(\x0b\x32\x13.gateway.RxMetadata\x12\x39\n\x13\x61\x63tivation_metadata\x18\x17 \x01(\x0b\x32\x1c.protocol.ActivationMetadata\x12\x13\n\x0bserver_time\x18\x18 \x01(\x03\x12;\n\x11response_template\x18\x1f \x01(\x0b\x32 .broker.DeviceActivationResponse\x12\x1b\n\x05trace\x18) \x01(\x0b\x32\x0c.trace.Trace\"\xb3\x02\n\x1a\x41\x63tivationChallengeRequest\x12\x0f\n\x07payload\x18\x01 \x01(\x0c\x12\"\n\x07message\x18\x02 \x01(\x0b\x32\x11.protocol.Message\x12T\n\x07\x64\x65v_eui\x18\x0b \x01(\x0c\x42\x43\xc8\xde\x1f\x00\xe2\xde\x1f\x06\x44\x65vEUI\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.DevEUI\x12T\n\x07\x61pp_eui\x18\x0c \x01(\x0c\x42\x43\xc8\xde\x1f\x00\xe2\xde\x1f\x06\x41ppEUI\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.AppEUI\x12\x19\n\x06\x61pp_id\x18\r \x01(\tB\t\xe2\xde\x1f\x05\x41ppID\x12\x19\n\x06\x64\x65v_id\x18\x0e \x01(\tB\t\xe2\xde\x1f\x05\x44\x65vID\"R\n\x1b\x41\x63tivationChallengeResponse\x12\x0f\n\x07payload\x18\x01 \x01(\x0c\x12\"\n\x07message\x18\x02 \x01(\x0b\x32\x11.protocol.Message\"\x12\n\x10SubscribeRequest\"\x0f\n\rStatusRequest\"\xe4\x02\n\x06Status\x12&\n\x06system\x18\x01 \x01(\x0b\x32\x10.api.SystemStatsB\x04\xc8\xde\x1f\x00\x12,\n\tcomponent\x18\x02 \x01(\x0b\x32\x13.api.ComponentStatsB\x04\xc8\xde\x1f\x00\x12\x1a\n\x06uplink\x18\x0b \x01(\x0b\x32\n.api.Rates\x12!\n\ruplink_unique\x18\x0c \x01(\x0b\x32\n.api.Rates\x12\x1c\n\x08\x64ownlink\x18\r \x01(\x0b\x32\n.api.Rates\x12\x1f\n\x0b\x61\x63tivations\x18\x0e \x01(\x0b\x32\n.api.Rates\x12&\n\x12\x61\x63tivations_unique\x18\x0f \x01(\x0b\x32\n.api.Rates\x12\'\n\rdeduplication\x18\x10 \x01(\x0b\x32\x10.api.Percentiles\x12\x19\n\x11\x63onnected_routers\x18\x15 \x01(\r\x12\x1a\n\x12\x63onnected_handlers\x18\x16 \x01(\r\"^\n\x1e\x41pplicationHandlerRegistration\x12\x19\n\x06\x61pp_id\x18\x01 \x01(\tB\t\xe2\xde\x1f\x05\x41ppID\x12!\n\nhandler_id\x18\x02 \x01(\tB\r\xe2\xde\x1f\tHandlerID2\xa2\x02\n\x06\x42roker\x12?\n\tAssociate\x12\x15.broker.UplinkMessage\x1a\x17.broker.DownlinkMessage(\x01\x30\x01\x12J\n\tSubscribe\x12\x18.broker.SubscribeRequest\x1a!.broker.DeduplicatedUplinkMessage0\x01\x12<\n\x07Publish\x12\x17.broker.DownlinkMessage\x1a\x16.google.protobuf.Empty(\x01\x12M\n\x08\x41\x63tivate\x12\x1f.broker.DeviceActivationRequest\x1a .broker.DeviceActivationResponse2\xa1\x01\n\rBrokerManager\x12\\\n\x1aRegisterApplicationHandler\x12&.broker.ApplicationHandlerRegistration\x1a\x16.google.protobuf.Empty\x12\x32\n\tGetStatus\x12\x15.broker.StatusRequest\x1a\x0e.broker.StatusBv\n\x1forg.thethingsnetwork.api.brokerB\x0b\x42rokerProtoP\x01Z&github.com/TheThingsNetwork/api/broker\xaa\x02\x1bTheThingsNetwork.API.Brokerb\x06proto3'
+  serialized_pb=b'\n3github.com/TheThingsNetwork/api/broker/broker.proto\x12\x06\x62roker\x1a\x1bgoogle/protobuf/empty.proto\x1a)github.com/TheThingsNetwork/api/api.proto\x1a\x37github.com/TheThingsNetwork/api/protocol/protocol.proto\x1a\x35github.com/TheThingsNetwork/api/gateway/gateway.proto\x1a\x31github.com/TheThingsNetwork/api/trace/trace.proto\"\xcd\x01\n\x0e\x44ownlinkOption\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12\x12\n\ngateway_id\x18\x02 \x01(\t\x12\r\n\x05score\x18\x03 \x01(\r\x12\x10\n\x08\x64\x65\x61\x64line\x18\x04 \x01(\x03\x12\x39\n\x16protocol_configuration\x18\x05 \x01(\x0b\x32\x19.protocol.TxConfiguration\x12\x37\n\x15gateway_configuration\x18\x06 \x01(\x0b\x32\x18.gateway.TxConfiguration\"\xb5\x02\n\rUplinkMessage\x12\x0f\n\x07payload\x18\x01 \x01(\x0c\x12\"\n\x07message\x18\x02 \x01(\x0b\x32\x11.protocol.Message\x12\x0f\n\x07\x64\x65v_eui\x18\x0b \x01(\x0c\x12\x0f\n\x07\x61pp_eui\x18\x0c \x01(\x0c\x12\x0e\n\x06\x61pp_id\x18\r \x01(\t\x12\x0e\n\x06\x64\x65v_id\x18\x0e \x01(\t\x12/\n\x11protocol_metadata\x18\x15 \x01(\x0b\x32\x14.protocol.RxMetadata\x12-\n\x10gateway_metadata\x18\x16 \x01(\x0b\x32\x13.gateway.RxMetadata\x12\x30\n\x10\x64ownlink_options\x18\x1f \x03(\x0b\x32\x16.broker.DownlinkOption\x12\x1b\n\x05trace\x18) \x01(\x0b\x32\x0c.trace.Trace\"\xd6\x01\n\x0f\x44ownlinkMessage\x12\x0f\n\x07payload\x18\x01 \x01(\x0c\x12\"\n\x07message\x18\x02 \x01(\x0b\x32\x11.protocol.Message\x12\x0f\n\x07\x64\x65v_eui\x18\x0b \x01(\x0c\x12\x0f\n\x07\x61pp_eui\x18\x0c \x01(\x0c\x12\x0e\n\x06\x61pp_id\x18\r \x01(\t\x12\x0e\n\x06\x64\x65v_id\x18\x0e \x01(\t\x12/\n\x0f\x64ownlink_option\x18\x15 \x01(\x0b\x32\x16.broker.DownlinkOption\x12\x1b\n\x05trace\x18\x1f \x01(\x0b\x32\x0c.trace.Trace\"\x9d\x01\n\x18\x44\x65viceActivationResponse\x12\x0f\n\x07payload\x18\x01 \x01(\x0c\x12\"\n\x07message\x18\x02 \x01(\x0b\x32\x11.protocol.Message\x12/\n\x0f\x64ownlink_option\x18\x0b \x01(\x0b\x32\x16.broker.DownlinkOption\x12\x1b\n\x05trace\x18\x15 \x01(\x0b\x32\x0c.trace.Trace\"\xd8\x02\n\x19\x44\x65\x64uplicatedUplinkMessage\x12\x0f\n\x07payload\x18\x01 \x01(\x0c\x12\"\n\x07message\x18\x02 \x01(\x0b\x32\x11.protocol.Message\x12\x0f\n\x07\x64\x65v_eui\x18\x0b \x01(\x0c\x12\x0f\n\x07\x61pp_eui\x18\x0c \x01(\x0c\x12\x0e\n\x06\x61pp_id\x18\r \x01(\t\x12\x0e\n\x06\x64\x65v_id\x18\x0e \x01(\t\x12/\n\x11protocol_metadata\x18\x15 \x01(\x0b\x32\x14.protocol.RxMetadata\x12-\n\x10gateway_metadata\x18\x16 \x03(\x0b\x32\x13.gateway.RxMetadata\x12\x13\n\x0bserver_time\x18\x17 \x01(\x03\x12\x32\n\x11response_template\x18\x1f \x01(\x0b\x32\x17.broker.DownlinkMessage\x12\x1b\n\x05trace\x18) \x01(\x0b\x32\x0c.trace.Trace\"\xda\x02\n\x17\x44\x65viceActivationRequest\x12\x0f\n\x07payload\x18\x01 \x01(\x0c\x12\"\n\x07message\x18\x02 \x01(\x0b\x32\x11.protocol.Message\x12\x0f\n\x07\x64\x65v_eui\x18\x0b \x01(\x0c\x12\x0f\n\x07\x61pp_eui\x18\x0c \x01(\x0c\x12/\n\x11protocol_metadata\x18\x15 \x01(\x0b\x32\x14.protocol.RxMetadata\x12-\n\x10gateway_metadata\x18\x16 \x01(\x0b\x32\x13.gateway.RxMetadata\x12\x39\n\x13\x61\x63tivation_metadata\x18\x17 \x01(\x0b\x32\x1c.protocol.ActivationMetadata\x12\x30\n\x10\x64ownlink_options\x18\x1f \x03(\x0b\x32\x16.broker.DownlinkOption\x12\x1b\n\x05trace\x18) \x01(\x0b\x32\x0c.trace.Trace\"\xa6\x03\n#DeduplicatedDeviceActivationRequest\x12\x0f\n\x07payload\x18\x01 \x01(\x0c\x12\"\n\x07message\x18\x02 \x01(\x0b\x32\x11.protocol.Message\x12\x0f\n\x07\x64\x65v_eui\x18\x0b \x01(\x0c\x12\x0f\n\x07\x61pp_eui\x18\x0c \x01(\x0c\x12\x0e\n\x06\x61pp_id\x18\r \x01(\t\x12\x0e\n\x06\x64\x65v_id\x18\x0e \x01(\t\x12/\n\x11protocol_metadata\x18\x15 \x01(\x0b\x32\x14.protocol.RxMetadata\x12-\n\x10gateway_metadata\x18\x16 \x03(\x0b\x32\x13.gateway.RxMetadata\x12\x39\n\x13\x61\x63tivation_metadata\x18\x17 \x01(\x0b\x32\x1c.protocol.ActivationMetadata\x12\x13\n\x0bserver_time\x18\x18 \x01(\x03\x12;\n\x11response_template\x18\x1f \x01(\x0b\x32 .broker.DeviceActivationResponse\x12\x1b\n\x05trace\x18) \x01(\x0b\x32\x0c.trace.Trace\"\x93\x01\n\x1a\x41\x63tivationChallengeRequest\x12\x0f\n\x07payload\x18\x01 \x01(\x0c\x12\"\n\x07message\x18\x02 \x01(\x0b\x32\x11.protocol.Message\x12\x0f\n\x07\x64\x65v_eui\x18\x0b \x01(\x0c\x12\x0f\n\x07\x61pp_eui\x18\x0c \x01(\x0c\x12\x0e\n\x06\x61pp_id\x18\r \x01(\t\x12\x0e\n\x06\x64\x65v_id\x18\x0e \x01(\t\"R\n\x1b\x41\x63tivationChallengeResponse\x12\x0f\n\x07payload\x18\x01 \x01(\x0c\x12\"\n\x07message\x18\x02 \x01(\x0b\x32\x11.protocol.Message\"\x12\n\x10SubscribeRequest\"\x0f\n\rStatusRequest\"\xd8\x02\n\x06Status\x12 \n\x06system\x18\x01 \x01(\x0b\x32\x10.api.SystemStats\x12&\n\tcomponent\x18\x02 \x01(\x0b\x32\x13.api.ComponentStats\x12\x1a\n\x06uplink\x18\x0b \x01(\x0b\x32\n.api.Rates\x12!\n\ruplink_unique\x18\x0c \x01(\x0b\x32\n.api.Rates\x12\x1c\n\x08\x64ownlink\x18\r \x01(\x0b\x32\n.api.Rates\x12\x1f\n\x0b\x61\x63tivations\x18\x0e \x01(\x0b\x32\n.api.Rates\x12&\n\x12\x61\x63tivations_unique\x18\x0f \x01(\x0b\x32\n.api.Rates\x12\'\n\rdeduplication\x18\x10 \x01(\x0b\x32\x10.api.Percentiles\x12\x19\n\x11\x63onnected_routers\x18\x15 \x01(\r\x12\x1a\n\x12\x63onnected_handlers\x18\x16 \x01(\r\"D\n\x1e\x41pplicationHandlerRegistration\x12\x0e\n\x06\x61pp_id\x18\x01 \x01(\t\x12\x12\n\nhandler_id\x18\x02 \x01(\t2\xa2\x02\n\x06\x42roker\x12?\n\tAssociate\x12\x15.broker.UplinkMessage\x1a\x17.broker.DownlinkMessage(\x01\x30\x01\x12J\n\tSubscribe\x12\x18.broker.SubscribeRequest\x1a!.broker.DeduplicatedUplinkMessage0\x01\x12<\n\x07Publish\x12\x17.broker.DownlinkMessage\x1a\x16.google.protobuf.Empty(\x01\x12M\n\x08\x41\x63tivate\x12\x1f.broker.DeviceActivationRequest\x1a .broker.DeviceActivationResponse2\xa1\x01\n\rBrokerManager\x12\\\n\x1aRegisterApplicationHandler\x12&.broker.ApplicationHandlerRegistration\x1a\x16.google.protobuf.Empty\x12\x32\n\tGetStatus\x12\x15.broker.StatusRequest\x1a\x0e.broker.StatusBv\n\x1forg.thethingsnetwork.api.brokerB\x0b\x42rokerProtoP\x01Z&github.com/TheThingsNetwork/api/broker\xaa\x02\x1bTheThingsNetwork.API.Brokerb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,github_dot_com_dot_TheThingsNetwork_dot_api_dot_api__pb2.DESCRIPTOR,github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_protocol__pb2.DESCRIPTOR,github_dot_com_dot_TheThingsNetwork_dot_api_dot_gateway_dot_gateway__pb2.DESCRIPTOR,github_dot_com_dot_TheThingsNetwork_dot_api_dot_trace_dot_trace__pb2.DESCRIPTOR,])
 
@@ -51,7 +50,7 @@ _DOWNLINKOPTION = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\tGatewayID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='score', full_name='broker.DownlinkOption.score', index=2,
       number=3, type=13, cpp_type=3, label=1,
@@ -72,14 +71,14 @@ _DOWNLINKOPTION = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='gateway_configuration', full_name='broker.DownlinkOption.gateway_configuration', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -92,8 +91,8 @@ _DOWNLINKOPTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=346,
-  serialized_end=578,
+  serialized_start=299,
+  serialized_end=504,
 )
 
 
@@ -124,42 +123,42 @@ _UPLINKMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\006DevEUI\332\336\0371github.com/TheThingsNetwork/ttn/core/types.DevEUI', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_eui', full_name='broker.UplinkMessage.app_eui', index=3,
       number=12, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\006AppEUI\332\336\0371github.com/TheThingsNetwork/ttn/core/types.AppEUI', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_id', full_name='broker.UplinkMessage.app_id', index=4,
       number=13, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\005AppID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dev_id', full_name='broker.UplinkMessage.dev_id', index=5,
       number=14, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\005DevID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='protocol_metadata', full_name='broker.UplinkMessage.protocol_metadata', index=6,
       number=21, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='gateway_metadata', full_name='broker.UplinkMessage.gateway_metadata', index=7,
       number=22, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='downlink_options', full_name='broker.UplinkMessage.downlink_options', index=8,
       number=31, type=11, cpp_type=10, label=3,
@@ -186,8 +185,8 @@ _UPLINKMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=581,
-  serialized_end=1054,
+  serialized_start=507,
+  serialized_end=816,
 )
 
 
@@ -218,28 +217,28 @@ _DOWNLINKMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000\342\336\037\006DevEUI\332\336\0371github.com/TheThingsNetwork/ttn/core/types.DevEUI', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_eui', full_name='broker.DownlinkMessage.app_eui', index=3,
       number=12, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000\342\336\037\006AppEUI\332\336\0371github.com/TheThingsNetwork/ttn/core/types.AppEUI', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_id', full_name='broker.DownlinkMessage.app_id', index=4,
       number=13, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\005AppID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dev_id', full_name='broker.DownlinkMessage.dev_id', index=5,
       number=14, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\005DevID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='downlink_option', full_name='broker.DownlinkMessage.downlink_option', index=6,
       number=21, type=11, cpp_type=10, label=1,
@@ -266,8 +265,8 @@ _DOWNLINKMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1057,
-  serialized_end=1431,
+  serialized_start=819,
+  serialized_end=1033,
 )
 
 
@@ -318,8 +317,8 @@ _DEVICEACTIVATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1434,
-  serialized_end=1591,
+  serialized_start=1036,
+  serialized_end=1193,
 )
 
 
@@ -350,35 +349,35 @@ _DEDUPLICATEDUPLINKMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\006DevEUI\332\336\0371github.com/TheThingsNetwork/ttn/core/types.DevEUI', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_eui', full_name='broker.DeduplicatedUplinkMessage.app_eui', index=3,
       number=12, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\006AppEUI\332\336\0371github.com/TheThingsNetwork/ttn/core/types.AppEUI', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_id', full_name='broker.DeduplicatedUplinkMessage.app_id', index=4,
       number=13, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\005AppID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dev_id', full_name='broker.DeduplicatedUplinkMessage.dev_id', index=5,
       number=14, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\005DevID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='protocol_metadata', full_name='broker.DeduplicatedUplinkMessage.protocol_metadata', index=6,
       number=21, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='gateway_metadata', full_name='broker.DeduplicatedUplinkMessage.gateway_metadata', index=7,
       number=22, type=11, cpp_type=10, label=3,
@@ -419,8 +418,8 @@ _DEDUPLICATEDUPLINKMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1594,
-  serialized_end=2096,
+  serialized_start=1196,
+  serialized_end=1540,
 )
 
 
@@ -451,28 +450,28 @@ _DEVICEACTIVATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000\342\336\037\006DevEUI\332\336\0371github.com/TheThingsNetwork/ttn/core/types.DevEUI', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_eui', full_name='broker.DeviceActivationRequest.app_eui', index=3,
       number=12, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000\342\336\037\006AppEUI\332\336\0371github.com/TheThingsNetwork/ttn/core/types.AppEUI', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='protocol_metadata', full_name='broker.DeviceActivationRequest.protocol_metadata', index=4,
       number=21, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='gateway_metadata', full_name='broker.DeviceActivationRequest.gateway_metadata', index=5,
       number=22, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='activation_metadata', full_name='broker.DeviceActivationRequest.activation_metadata', index=6,
       number=23, type=11, cpp_type=10, label=1,
@@ -506,8 +505,8 @@ _DEVICEACTIVATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2099,
-  serialized_end=2595,
+  serialized_start=1543,
+  serialized_end=1889,
 )
 
 
@@ -538,35 +537,35 @@ _DEDUPLICATEDDEVICEACTIVATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000\342\336\037\006DevEUI\332\336\0371github.com/TheThingsNetwork/ttn/core/types.DevEUI', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_eui', full_name='broker.DeduplicatedDeviceActivationRequest.app_eui', index=3,
       number=12, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000\342\336\037\006AppEUI\332\336\0371github.com/TheThingsNetwork/ttn/core/types.AppEUI', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_id', full_name='broker.DeduplicatedDeviceActivationRequest.app_id', index=4,
       number=13, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\005AppID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dev_id', full_name='broker.DeduplicatedDeviceActivationRequest.dev_id', index=5,
       number=14, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\005DevID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='protocol_metadata', full_name='broker.DeduplicatedDeviceActivationRequest.protocol_metadata', index=6,
       number=21, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='gateway_metadata', full_name='broker.DeduplicatedDeviceActivationRequest.gateway_metadata', index=7,
       number=22, type=11, cpp_type=10, label=3,
@@ -614,8 +613,8 @@ _DEDUPLICATEDDEVICEACTIVATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2598,
-  serialized_end=3186,
+  serialized_start=1892,
+  serialized_end=2314,
 )
 
 
@@ -646,28 +645,28 @@ _ACTIVATIONCHALLENGEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000\342\336\037\006DevEUI\332\336\0371github.com/TheThingsNetwork/ttn/core/types.DevEUI', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_eui', full_name='broker.ActivationChallengeRequest.app_eui', index=3,
       number=12, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000\342\336\037\006AppEUI\332\336\0371github.com/TheThingsNetwork/ttn/core/types.AppEUI', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_id', full_name='broker.ActivationChallengeRequest.app_id', index=4,
       number=13, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\005AppID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dev_id', full_name='broker.ActivationChallengeRequest.dev_id', index=5,
       number=14, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\005DevID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -680,8 +679,8 @@ _ACTIVATIONCHALLENGEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3189,
-  serialized_end=3496,
+  serialized_start=2317,
+  serialized_end=2464,
 )
 
 
@@ -718,8 +717,8 @@ _ACTIVATIONCHALLENGERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3498,
-  serialized_end=3580,
+  serialized_start=2466,
+  serialized_end=2548,
 )
 
 
@@ -742,8 +741,8 @@ _SUBSCRIBEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3582,
-  serialized_end=3600,
+  serialized_start=2550,
+  serialized_end=2568,
 )
 
 
@@ -766,8 +765,8 @@ _STATUSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3602,
-  serialized_end=3617,
+  serialized_start=2570,
+  serialized_end=2585,
 )
 
 
@@ -784,14 +783,14 @@ _STATUS = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='component', full_name='broker.Status.component', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='uplink', full_name='broker.Status.uplink', index=2,
       number=11, type=11, cpp_type=10, label=1,
@@ -860,8 +859,8 @@ _STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3620,
-  serialized_end=3976,
+  serialized_start=2588,
+  serialized_end=2932,
 )
 
 
@@ -878,14 +877,14 @@ _APPLICATIONHANDLERREGISTRATION = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\005AppID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='handler_id', full_name='broker.ApplicationHandlerRegistration.handler_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\tHandlerID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -898,8 +897,8 @@ _APPLICATIONHANDLERREGISTRATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3978,
-  serialized_end=4072,
+  serialized_start=2934,
+  serialized_end=3002,
 )
 
 _DOWNLINKOPTION.fields_by_name['protocol_configuration'].message_type = github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_protocol__pb2._TXCONFIGURATION
@@ -1050,41 +1049,6 @@ _sym_db.RegisterMessage(ApplicationHandlerRegistration)
 
 
 DESCRIPTOR._options = None
-_DOWNLINKOPTION.fields_by_name['gateway_id']._options = None
-_DOWNLINKOPTION.fields_by_name['protocol_configuration']._options = None
-_DOWNLINKOPTION.fields_by_name['gateway_configuration']._options = None
-_UPLINKMESSAGE.fields_by_name['dev_eui']._options = None
-_UPLINKMESSAGE.fields_by_name['app_eui']._options = None
-_UPLINKMESSAGE.fields_by_name['app_id']._options = None
-_UPLINKMESSAGE.fields_by_name['dev_id']._options = None
-_UPLINKMESSAGE.fields_by_name['protocol_metadata']._options = None
-_UPLINKMESSAGE.fields_by_name['gateway_metadata']._options = None
-_DOWNLINKMESSAGE.fields_by_name['dev_eui']._options = None
-_DOWNLINKMESSAGE.fields_by_name['app_eui']._options = None
-_DOWNLINKMESSAGE.fields_by_name['app_id']._options = None
-_DOWNLINKMESSAGE.fields_by_name['dev_id']._options = None
-_DEDUPLICATEDUPLINKMESSAGE.fields_by_name['dev_eui']._options = None
-_DEDUPLICATEDUPLINKMESSAGE.fields_by_name['app_eui']._options = None
-_DEDUPLICATEDUPLINKMESSAGE.fields_by_name['app_id']._options = None
-_DEDUPLICATEDUPLINKMESSAGE.fields_by_name['dev_id']._options = None
-_DEDUPLICATEDUPLINKMESSAGE.fields_by_name['protocol_metadata']._options = None
-_DEVICEACTIVATIONREQUEST.fields_by_name['dev_eui']._options = None
-_DEVICEACTIVATIONREQUEST.fields_by_name['app_eui']._options = None
-_DEVICEACTIVATIONREQUEST.fields_by_name['protocol_metadata']._options = None
-_DEVICEACTIVATIONREQUEST.fields_by_name['gateway_metadata']._options = None
-_DEDUPLICATEDDEVICEACTIVATIONREQUEST.fields_by_name['dev_eui']._options = None
-_DEDUPLICATEDDEVICEACTIVATIONREQUEST.fields_by_name['app_eui']._options = None
-_DEDUPLICATEDDEVICEACTIVATIONREQUEST.fields_by_name['app_id']._options = None
-_DEDUPLICATEDDEVICEACTIVATIONREQUEST.fields_by_name['dev_id']._options = None
-_DEDUPLICATEDDEVICEACTIVATIONREQUEST.fields_by_name['protocol_metadata']._options = None
-_ACTIVATIONCHALLENGEREQUEST.fields_by_name['dev_eui']._options = None
-_ACTIVATIONCHALLENGEREQUEST.fields_by_name['app_eui']._options = None
-_ACTIVATIONCHALLENGEREQUEST.fields_by_name['app_id']._options = None
-_ACTIVATIONCHALLENGEREQUEST.fields_by_name['dev_id']._options = None
-_STATUS.fields_by_name['system']._options = None
-_STATUS.fields_by_name['component']._options = None
-_APPLICATIONHANDLERREGISTRATION.fields_by_name['app_id']._options = None
-_APPLICATIONHANDLERREGISTRATION.fields_by_name['handler_id']._options = None
 
 _BROKER = _descriptor.ServiceDescriptor(
   name='Broker',
@@ -1092,8 +1056,8 @@ _BROKER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=4075,
-  serialized_end=4365,
+  serialized_start=3005,
+  serialized_end=3295,
   methods=[
   _descriptor.MethodDescriptor(
     name='Associate',
@@ -1143,8 +1107,8 @@ _BROKERMANAGER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=1,
   serialized_options=None,
-  serialized_start=4368,
-  serialized_end=4529,
+  serialized_start=3298,
+  serialized_end=3459,
   methods=[
   _descriptor.MethodDescriptor(
     name='RegisterApplicationHandler',

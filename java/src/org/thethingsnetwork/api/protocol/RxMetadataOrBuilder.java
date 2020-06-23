@@ -8,17 +8,17 @@ public interface RxMetadataOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.lorawan.Metadata lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+   * <code>.lorawan.Metadata lorawan = 1;</code>
    * @return Whether the lorawan field is set.
    */
   boolean hasLorawan();
   /**
-   * <code>.lorawan.Metadata lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+   * <code>.lorawan.Metadata lorawan = 1;</code>
    * @return The lorawan.
    */
   org.thethingsnetwork.api.protocol.lorawan.Metadata getLorawan();
   /**
-   * <code>.lorawan.Metadata lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+   * <code>.lorawan.Metadata lorawan = 1;</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.MetadataOrBuilder getLorawanOrBuilder();
 

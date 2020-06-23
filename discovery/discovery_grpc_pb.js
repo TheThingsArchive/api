@@ -10,7 +10,6 @@ var ttn_discovery_discovery_pb = require('../discovery/discovery_pb.js');
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 
 
-
 function serialize_discovery_Announcement(arg) {
   if (!(arg instanceof ttn_discovery_discovery_pb.Announcement)) {
     throw new Error('Expected argument of type discovery.Announcement');

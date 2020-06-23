@@ -15,7 +15,6 @@ PROTOBUF_C__BEGIN_DECLS
 #endif
 
 #include "google/protobuf/empty.pb-c.h"
-#include "github.com/gogo/protobuf/gogoproto/gogo.pb-c.h"
 
 typedef struct _Lorawan__DeviceIdentifier Lorawan__DeviceIdentifier;
 typedef struct _Lorawan__Device Lorawan__Device;

@@ -24,23 +24,23 @@ class DeduplicatedDeviceActivationRequest extends \Google\Protobuf\Internal\Mess
      */
     protected $message = null;
     /**
-     * Generated from protobuf field <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * Generated from protobuf field <code>bytes dev_eui = 11;</code>
      */
     protected $dev_eui = '';
     /**
-     * Generated from protobuf field <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 12;</code>
      */
     protected $app_eui = '';
     /**
-     * Generated from protobuf field <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 13;</code>
      */
     protected $app_id = '';
     /**
-     * Generated from protobuf field <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+     * Generated from protobuf field <code>string dev_id = 14;</code>
      */
     protected $dev_id = '';
     /**
-     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21;</code>
      */
     protected $protocol_metadata = null;
     /**
@@ -134,7 +134,7 @@ class DeduplicatedDeviceActivationRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * Generated from protobuf field <code>bytes dev_eui = 11;</code>
      * @return string
      */
     public function getDevEui()
@@ -143,7 +143,7 @@ class DeduplicatedDeviceActivationRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * Generated from protobuf field <code>bytes dev_eui = 11;</code>
      * @param string $var
      * @return $this
      */
@@ -156,7 +156,7 @@ class DeduplicatedDeviceActivationRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 12;</code>
      * @return string
      */
     public function getAppEui()
@@ -165,7 +165,7 @@ class DeduplicatedDeviceActivationRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 12;</code>
      * @param string $var
      * @return $this
      */
@@ -178,7 +178,7 @@ class DeduplicatedDeviceActivationRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 13;</code>
      * @return string
      */
     public function getAppId()
@@ -187,7 +187,7 @@ class DeduplicatedDeviceActivationRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 13;</code>
      * @param string $var
      * @return $this
      */
@@ -200,7 +200,7 @@ class DeduplicatedDeviceActivationRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+     * Generated from protobuf field <code>string dev_id = 14;</code>
      * @return string
      */
     public function getDevId()
@@ -209,7 +209,7 @@ class DeduplicatedDeviceActivationRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+     * Generated from protobuf field <code>string dev_id = 14;</code>
      * @param string $var
      * @return $this
      */
@@ -222,7 +222,7 @@ class DeduplicatedDeviceActivationRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21;</code>
      * @return \Protocol\RxMetadata
      */
     public function getProtocolMetadata()
@@ -231,7 +231,7 @@ class DeduplicatedDeviceActivationRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21;</code>
      * @param \Protocol\RxMetadata $var
      * @return $this
      */

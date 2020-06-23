@@ -30,7 +30,7 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+     * Generated from protobuf field <code>.lorawan.TxConfiguration lorawan = 1;</code>
      * @return \Lorawan\TxConfiguration
      */
     public function getLorawan()
@@ -39,7 +39,7 @@ class TxConfiguration extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
+     * Generated from protobuf field <code>.lorawan.TxConfiguration lorawan = 1;</code>
      * @param \Lorawan\TxConfiguration $var
      * @return $this
      */

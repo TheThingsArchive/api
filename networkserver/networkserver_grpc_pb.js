@@ -7,7 +7,6 @@
 'use strict';
 var grpc = require('grpc');
 var ttn_networkserver_networkserver_pb = require('../networkserver/networkserver_pb.js');
-
 var ttn_api_pb = require('../api_pb.js');
 var ttn_protocol_lorawan_device_pb = require('../protocol/lorawan/device_pb.js');
 var ttn_broker_broker_pb = require('../broker/broker_pb.js');

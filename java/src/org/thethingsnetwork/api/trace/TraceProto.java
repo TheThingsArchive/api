@@ -34,22 +34,20 @@ public final class TraceProto {
   static {
     java.lang.String[] descriptorData = {
       "\n1github.com/TheThingsNetwork/api/trace/" +
-      "trace.proto\022\005trace\032-github.com/gogo/prot" +
-      "obuf/gogoproto/gogo.proto\"\357\001\n\005Trace\022\022\n\002i" +
-      "d\030\001 \001(\tB\006\342\336\037\002ID\022\014\n\004time\030\002 \001(\003\022!\n\nservice" +
-      "_id\030\003 \001(\tB\r\342\336\037\tServiceID\022\024\n\014service_name" +
-      "\030\004 \001(\t\022\r\n\005event\030\005 \001(\t\022,\n\010metadata\030\006 \003(\0132" +
-      "\032.trace.Trace.MetadataEntry\022\035\n\007parents\030\013" +
-      " \003(\0132\014.trace.Trace\032/\n\rMetadataEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001Br\n\036org.theth" +
-      "ingsnetwork.api.traceB\nTraceProtoP\001Z%git" +
-      "hub.com/TheThingsNetwork/api/trace\252\002\032The" +
-      "ThingsNetwork.API.Traceb\006proto3"
+      "trace.proto\022\005trace\"\330\001\n\005Trace\022\n\n\002id\030\001 \001(\t" +
+      "\022\014\n\004time\030\002 \001(\003\022\022\n\nservice_id\030\003 \001(\t\022\024\n\014se" +
+      "rvice_name\030\004 \001(\t\022\r\n\005event\030\005 \001(\t\022,\n\010metad" +
+      "ata\030\006 \003(\0132\032.trace.Trace.MetadataEntry\022\035\n" +
+      "\007parents\030\013 \003(\0132\014.trace.Trace\032/\n\rMetadata" +
+      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001Br\n" +
+      "\036org.thethingsnetwork.api.traceB\nTracePr" +
+      "otoP\001Z%github.com/TheThingsNetwork/api/t" +
+      "race\252\002\032TheThingsNetwork.API.Traceb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
         });
     internal_static_trace_Trace_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -63,12 +61,6 @@ public final class TraceProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_trace_Trace_MetadataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    com.google.protobuf.ExtensionRegistry registry =
-        com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.customname);
-    com.google.protobuf.Descriptors.FileDescriptor
-        .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

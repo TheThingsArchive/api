@@ -25,18 +25,16 @@ namespace TheThingsNetwork.API.Trace {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjFnaXRodWIuY29tL1RoZVRoaW5nc05ldHdvcmsvYXBpL3RyYWNlL3RyYWNl",
-            "LnByb3RvEgV0cmFjZRotZ2l0aHViLmNvbS9nb2dvL3Byb3RvYnVmL2dvZ29w",
-            "cm90by9nb2dvLnByb3RvIu8BCgVUcmFjZRISCgJpZBgBIAEoCUIG4t4fAklE",
-            "EgwKBHRpbWUYAiABKAMSIQoKc2VydmljZV9pZBgDIAEoCUIN4t4fCVNlcnZp",
-            "Y2VJRBIUCgxzZXJ2aWNlX25hbWUYBCABKAkSDQoFZXZlbnQYBSABKAkSLAoI",
-            "bWV0YWRhdGEYBiADKAsyGi50cmFjZS5UcmFjZS5NZXRhZGF0YUVudHJ5Eh0K",
-            "B3BhcmVudHMYCyADKAsyDC50cmFjZS5UcmFjZRovCg1NZXRhZGF0YUVudHJ5",
-            "EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoCToCOAFCcgoeb3JnLnRoZXRo",
-            "aW5nc25ldHdvcmsuYXBpLnRyYWNlQgpUcmFjZVByb3RvUAFaJWdpdGh1Yi5j",
-            "b20vVGhlVGhpbmdzTmV0d29yay9hcGkvdHJhY2WqAhpUaGVUaGluZ3NOZXR3",
-            "b3JrLkFQSS5UcmFjZWIGcHJvdG8z"));
+            "LnByb3RvEgV0cmFjZSLYAQoFVHJhY2USCgoCaWQYASABKAkSDAoEdGltZRgC",
+            "IAEoAxISCgpzZXJ2aWNlX2lkGAMgASgJEhQKDHNlcnZpY2VfbmFtZRgEIAEo",
+            "CRINCgVldmVudBgFIAEoCRIsCghtZXRhZGF0YRgGIAMoCzIaLnRyYWNlLlRy",
+            "YWNlLk1ldGFkYXRhRW50cnkSHQoHcGFyZW50cxgLIAMoCzIMLnRyYWNlLlRy",
+            "YWNlGi8KDU1ldGFkYXRhRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIg",
+            "ASgJOgI4AUJyCh5vcmcudGhldGhpbmdzbmV0d29yay5hcGkudHJhY2VCClRy",
+            "YWNlUHJvdG9QAVolZ2l0aHViLmNvbS9UaGVUaGluZ3NOZXR3b3JrL2FwaS90",
+            "cmFjZaoCGlRoZVRoaW5nc05ldHdvcmsuQVBJLlRyYWNlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Gogoproto.GogoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TheThingsNetwork.API.Trace.Trace), global::TheThingsNetwork.API.Trace.Trace.Parser, new[]{ "Id", "Time", "ServiceId", "ServiceName", "Event", "Metadata", "Parents" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));

@@ -45,7 +45,7 @@ class Metadata extends \Google\Protobuf\Internal\Message
      * GatewayID that is registered to this Router
      * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
      *
-     * Generated from protobuf field <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 10;</code>
      * @return string
      */
     public function getGatewayId()
@@ -57,7 +57,7 @@ class Metadata extends \Google\Protobuf\Internal\Message
      * GatewayID that is registered to this Router
      * This metadata can only be added if the requesting client is authorized to manage this GatewayID.
      *
-     * Generated from protobuf field <code>string gateway_id = 10 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 10;</code>
      * @param string $var
      * @return $this
      */
@@ -103,7 +103,7 @@ class Metadata extends \Google\Protobuf\Internal\Message
      * AppID that is registered to this Handler
      * This metadata can only be added if the requesting client is authorized to manage this AppID.
      *
-     * Generated from protobuf field <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 30;</code>
      * @return string
      */
     public function getAppId()
@@ -115,7 +115,7 @@ class Metadata extends \Google\Protobuf\Internal\Message
      * AppID that is registered to this Handler
      * This metadata can only be added if the requesting client is authorized to manage this AppID.
      *
-     * Generated from protobuf field <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 30;</code>
      * @param string $var
      * @return $this
      */
@@ -131,7 +131,7 @@ class Metadata extends \Google\Protobuf\Internal\Message
      * AppEUI that is registered to this Join Handler
      * Only authorized Join Handlers can announce APP_EUI metadata (and we don't have any of those yet).
      *
-     * Generated from protobuf field <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 31;</code>
      * @return string
      */
     public function getAppEui()
@@ -143,7 +143,7 @@ class Metadata extends \Google\Protobuf\Internal\Message
      * AppEUI that is registered to this Join Handler
      * Only authorized Join Handlers can announce APP_EUI metadata (and we don't have any of those yet).
      *
-     * Generated from protobuf field <code>bytes app_eui = 31 [(.gogoproto.customname) = "AppEUI"];</code>
+     * Generated from protobuf field <code>bytes app_eui = 31;</code>
      * @param string $var
      * @return $this
      */

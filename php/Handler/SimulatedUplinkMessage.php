@@ -16,11 +16,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class SimulatedUplinkMessage extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 1;</code>
      */
     protected $app_id = '';
     /**
-     * Generated from protobuf field <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+     * Generated from protobuf field <code>string dev_id = 2;</code>
      */
     protected $dev_id = '';
     /**
@@ -56,7 +56,7 @@ class SimulatedUplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 1;</code>
      * @return string
      */
     public function getAppId()
@@ -65,7 +65,7 @@ class SimulatedUplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 1;</code>
      * @param string $var
      * @return $this
      */
@@ -78,7 +78,7 @@ class SimulatedUplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+     * Generated from protobuf field <code>string dev_id = 2;</code>
      * @return string
      */
     public function getDevId()
@@ -87,7 +87,7 @@ class SimulatedUplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+     * Generated from protobuf field <code>string dev_id = 2;</code>
      * @param string $var
      * @return $this
      */

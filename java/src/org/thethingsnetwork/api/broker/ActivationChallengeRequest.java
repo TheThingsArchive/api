@@ -161,7 +161,7 @@ private static final long serialVersionUID = 0L;
   public static final int DEV_EUI_FIELD_NUMBER = 11;
   private com.google.protobuf.ByteString devEui_;
   /**
-   * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+   * <code>bytes dev_eui = 11;</code>
    * @return The devEui.
    */
   public com.google.protobuf.ByteString getDevEui() {
@@ -171,7 +171,7 @@ private static final long serialVersionUID = 0L;
   public static final int APP_EUI_FIELD_NUMBER = 12;
   private com.google.protobuf.ByteString appEui_;
   /**
-   * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+   * <code>bytes app_eui = 12;</code>
    * @return The appEui.
    */
   public com.google.protobuf.ByteString getAppEui() {
@@ -181,7 +181,7 @@ private static final long serialVersionUID = 0L;
   public static final int APP_ID_FIELD_NUMBER = 13;
   private volatile java.lang.Object appId_;
   /**
-   * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+   * <code>string app_id = 13;</code>
    * @return The appId.
    */
   public java.lang.String getAppId() {
@@ -197,7 +197,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+   * <code>string app_id = 13;</code>
    * @return The bytes for appId.
    */
   public com.google.protobuf.ByteString
@@ -217,7 +217,7 @@ private static final long serialVersionUID = 0L;
   public static final int DEV_ID_FIELD_NUMBER = 14;
   private volatile java.lang.Object devId_;
   /**
-   * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+   * <code>string dev_id = 14;</code>
    * @return The devId.
    */
   public java.lang.String getDevId() {
@@ -233,7 +233,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+   * <code>string dev_id = 14;</code>
    * @return The bytes for devId.
    */
   public com.google.protobuf.ByteString
@@ -804,14 +804,14 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString devEui_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * <code>bytes dev_eui = 11;</code>
      * @return The devEui.
      */
     public com.google.protobuf.ByteString getDevEui() {
       return devEui_;
     }
     /**
-     * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * <code>bytes dev_eui = 11;</code>
      * @param value The devEui to set.
      * @return This builder for chaining.
      */
@@ -825,7 +825,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * <code>bytes dev_eui = 11;</code>
      * @return This builder for chaining.
      */
     public Builder clearDevEui() {
@@ -837,14 +837,14 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString appEui_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 12;</code>
      * @return The appEui.
      */
     public com.google.protobuf.ByteString getAppEui() {
       return appEui_;
     }
     /**
-     * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 12;</code>
      * @param value The appEui to set.
      * @return This builder for chaining.
      */
@@ -858,7 +858,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 12;</code>
      * @return This builder for chaining.
      */
     public Builder clearAppEui() {
@@ -870,7 +870,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object appId_ = "";
     /**
-     * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+     * <code>string app_id = 13;</code>
      * @return The appId.
      */
     public java.lang.String getAppId() {
@@ -886,7 +886,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+     * <code>string app_id = 13;</code>
      * @return The bytes for appId.
      */
     public com.google.protobuf.ByteString
@@ -903,7 +903,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+     * <code>string app_id = 13;</code>
      * @param value The appId to set.
      * @return This builder for chaining.
      */
@@ -918,7 +918,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+     * <code>string app_id = 13;</code>
      * @return This builder for chaining.
      */
     public Builder clearAppId() {
@@ -928,7 +928,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+     * <code>string app_id = 13;</code>
      * @param value The bytes for appId to set.
      * @return This builder for chaining.
      */
@@ -946,7 +946,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object devId_ = "";
     /**
-     * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+     * <code>string dev_id = 14;</code>
      * @return The devId.
      */
     public java.lang.String getDevId() {
@@ -962,7 +962,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+     * <code>string dev_id = 14;</code>
      * @return The bytes for devId.
      */
     public com.google.protobuf.ByteString
@@ -979,7 +979,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+     * <code>string dev_id = 14;</code>
      * @param value The devId to set.
      * @return This builder for chaining.
      */
@@ -994,7 +994,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+     * <code>string dev_id = 14;</code>
      * @return This builder for chaining.
      */
     public Builder clearDevId() {
@@ -1004,7 +1004,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+     * <code>string dev_id = 14;</code>
      * @param value The bytes for devId to set.
      * @return This builder for chaining.
      */

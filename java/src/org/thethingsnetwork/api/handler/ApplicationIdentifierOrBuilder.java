@@ -8,12 +8,12 @@ public interface ApplicationIdentifierOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+   * <code>string app_id = 1;</code>
    * @return The appId.
    */
   java.lang.String getAppId();
   /**
-   * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+   * <code>string app_id = 1;</code>
    * @return The bytes for appId.
    */
   com.google.protobuf.ByteString

@@ -30,7 +30,7 @@ class DryDownlinkMessage extends \Google\Protobuf\Internal\Message
     /**
      * The Application containing the payload functions that should be executed
      *
-     * Generated from protobuf field <code>.handler.Application app = 3 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.handler.Application app = 3;</code>
      */
     protected $app = null;
     /**
@@ -116,7 +116,7 @@ class DryDownlinkMessage extends \Google\Protobuf\Internal\Message
     /**
      * The Application containing the payload functions that should be executed
      *
-     * Generated from protobuf field <code>.handler.Application app = 3 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.handler.Application app = 3;</code>
      * @return \Handler\Application
      */
     public function getApp()
@@ -127,7 +127,7 @@ class DryDownlinkMessage extends \Google\Protobuf\Internal\Message
     /**
      * The Application containing the payload functions that should be executed
      *
-     * Generated from protobuf field <code>.handler.Application app = 3 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.handler.Application app = 3;</code>
      * @param \Handler\Application $var
      * @return $this
      */

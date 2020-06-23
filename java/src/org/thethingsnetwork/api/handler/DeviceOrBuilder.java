@@ -8,41 +8,41 @@ public interface DeviceOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+   * <code>string app_id = 1;</code>
    * @return The appId.
    */
   java.lang.String getAppId();
   /**
-   * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
+   * <code>string app_id = 1;</code>
    * @return The bytes for appId.
    */
   com.google.protobuf.ByteString
       getAppIdBytes();
 
   /**
-   * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+   * <code>string dev_id = 2;</code>
    * @return The devId.
    */
   java.lang.String getDevId();
   /**
-   * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
+   * <code>string dev_id = 2;</code>
    * @return The bytes for devId.
    */
   com.google.protobuf.ByteString
       getDevIdBytes();
 
   /**
-   * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
+   * <code>.lorawan.Device lorawan_device = 3;</code>
    * @return Whether the lorawanDevice field is set.
    */
   boolean hasLorawanDevice();
   /**
-   * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
+   * <code>.lorawan.Device lorawan_device = 3;</code>
    * @return The lorawanDevice.
    */
   org.thethingsnetwork.api.protocol.lorawan.Device getLorawanDevice();
   /**
-   * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
+   * <code>.lorawan.Device lorawan_device = 3;</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.DeviceOrBuilder getLorawanDeviceOrBuilder();
 

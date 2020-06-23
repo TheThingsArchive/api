@@ -22,11 +22,11 @@ class DeviceActivationResponse extends \Google\Protobuf\Internal\Message
      */
     protected $message = null;
     /**
-     * Generated from protobuf field <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.broker.DownlinkOption downlink_option = 11;</code>
      */
     protected $downlink_option = null;
     /**
-     * Generated from protobuf field <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
      */
     protected $activation_metadata = null;
     /**
@@ -97,7 +97,7 @@ class DeviceActivationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.broker.DownlinkOption downlink_option = 11;</code>
      * @return \Broker\DownlinkOption
      */
     public function getDownlinkOption()
@@ -106,7 +106,7 @@ class DeviceActivationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.broker.DownlinkOption downlink_option = 11;</code>
      * @param \Broker\DownlinkOption $var
      * @return $this
      */
@@ -119,7 +119,7 @@ class DeviceActivationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
      * @return \Protocol\ActivationMetadata
      */
     public function getActivationMetadata()
@@ -128,7 +128,7 @@ class DeviceActivationResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
      * @param \Protocol\ActivationMetadata $var
      * @return $this
      */

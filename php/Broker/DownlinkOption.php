@@ -22,7 +22,7 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
     /**
      * ID of the gateway where this downlink should be sent
      *
-     * Generated from protobuf field <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 2;</code>
      */
     protected $gateway_id = '';
     /**
@@ -38,11 +38,11 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
      */
     protected $deadline = 0;
     /**
-     * Generated from protobuf field <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      */
     protected $protocol_configuration = null;
     /**
-     * Generated from protobuf field <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      */
     protected $gateway_configuration = null;
 
@@ -98,7 +98,7 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
     /**
      * ID of the gateway where this downlink should be sent
      *
-     * Generated from protobuf field <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 2;</code>
      * @return string
      */
     public function getGatewayId()
@@ -109,7 +109,7 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
     /**
      * ID of the gateway where this downlink should be sent
      *
-     * Generated from protobuf field <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -174,7 +174,7 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      * @return \Protocol\TxConfiguration
      */
     public function getProtocolConfiguration()
@@ -183,7 +183,7 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      * @param \Protocol\TxConfiguration $var
      * @return $this
      */
@@ -196,7 +196,7 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      * @return \Gateway\TxConfiguration
      */
     public function getGatewayConfiguration()
@@ -205,7 +205,7 @@ class DownlinkOption extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      * @param \Gateway\TxConfiguration $var
      * @return $this
      */

@@ -15,13 +15,12 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 
-
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/TheThingsNetwork/api/discovery/discovery.proto',
   package='discovery',
   syntax='proto3',
   serialized_options=b'\n\"org.thethingsnetwork.api.discoveryB\016DiscoveryProtoP\001Z)github.com/TheThingsNetwork/api/discovery\252\002\036TheThingsNetwork.API.Discovery',
-  serialized_pb=b'\n9github.com/TheThingsNetwork/api/discovery/discovery.proto\x12\tdiscovery\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a-github.com/gogo/protobuf/gogoproto/gogo.proto\"\x92\x01\n\x08Metadata\x12#\n\ngateway_id\x18\n \x01(\tB\r\xe2\xde\x1f\tGatewayIDH\x00\x12\x19\n\x0f\x64\x65v_addr_prefix\x18\x14 \x01(\x0cH\x00\x12\x1b\n\x06\x61pp_id\x18\x1e \x01(\tB\t\xe2\xde\x1f\x05\x41ppIDH\x00\x12\x1d\n\x07\x61pp_eui\x18\x1f \x01(\x0c\x42\n\xe2\xde\x1f\x06\x41ppEUIH\x00\x42\n\n\x08metadata\"\xa9\x02\n\x0c\x41nnouncement\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xe2\xde\x1f\x02ID\x12\x14\n\x0cservice_name\x18\x02 \x01(\t\x12\x17\n\x0fservice_version\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0b\n\x03url\x18\x05 \x01(\t\x12\x0e\n\x06public\x18\x06 \x01(\x08\x12\x13\n\x0bnet_address\x18\x0b \x01(\t\x12\x12\n\npublic_key\x18\x0c \x01(\t\x12\x13\n\x0b\x63\x65rtificate\x18\r \x01(\t\x12\x13\n\x0b\x61pi_address\x18\x0e \x01(\t\x12\x14\n\x0cmqtt_address\x18\x0f \x01(\t\x12\x14\n\x0c\x61mqp_address\x18\x10 \x01(\t\x12%\n\x08metadata\x18\x16 \x03(\x0b\x32\x13.discovery.Metadata\")\n\x11GetServiceRequest\x12\x14\n\x0cservice_name\x18\x01 \x01(\t\"6\n\nGetRequest\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xe2\xde\x1f\x02ID\x12\x14\n\x0cservice_name\x18\x02 \x01(\t\"h\n\x0fMetadataRequest\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xe2\xde\x1f\x02ID\x12\x14\n\x0cservice_name\x18\x02 \x01(\t\x12+\n\x08metadata\x18\x0c \x01(\x0b\x32\x13.discovery.MetadataB\x04\xc8\xde\x1f\x00\"B\n\x15\x41nnouncementsResponse\x12)\n\x08services\x18\x01 \x03(\x0b\x32\x17.discovery.Announcement\".\n\x11GetByAppIDRequest\x12\x19\n\x06\x61pp_id\x18\x1e \x01(\tB\t\xe2\xde\x1f\x05\x41ppID\":\n\x15GetByGatewayIDRequest\x12!\n\ngateway_id\x18\x1e \x01(\tB\r\xe2\xde\x1f\tGatewayID\"j\n\x12GetByAppEUIRequest\x12T\n\x07\x61pp_eui\x18\x1f \x01(\x0c\x42\x43\xe2\xde\x1f\x06\x41ppEUI\xc8\xde\x1f\x00\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.AppEUI2\xfe\x04\n\tDiscovery\x12;\n\x08\x41nnounce\x12\x17.discovery.Announcement\x1a\x16.google.protobuf.Empty\x12o\n\x06GetAll\x12\x1c.discovery.GetServiceRequest\x1a .discovery.AnnouncementsResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/announcements/{service_name}\x12\x61\n\x03Get\x12\x15.discovery.GetRequest\x1a\x17.discovery.Announcement\"*\x82\xd3\xe4\x93\x02$\x12\"/announcements/{service_name}/{id}\x12\x41\n\x0b\x41\x64\x64Metadata\x12\x1a.discovery.MetadataRequest\x1a\x16.google.protobuf.Empty\x12\x44\n\x0e\x44\x65leteMetadata\x12\x1a.discovery.MetadataRequest\x1a\x16.google.protobuf.Empty\x12\x43\n\nGetByAppID\x12\x1c.discovery.GetByAppIDRequest\x1a\x17.discovery.Announcement\x12K\n\x0eGetByGatewayID\x12 .discovery.GetByGatewayIDRequest\x1a\x17.discovery.Announcement\x12\x45\n\x0bGetByAppEUI\x12\x1d.discovery.GetByAppEUIRequest\x1a\x17.discovery.Announcement2\x12\n\x10\x44iscoveryManagerB\x82\x01\n\"org.thethingsnetwork.api.discoveryB\x0e\x44iscoveryProtoP\x01Z)github.com/TheThingsNetwork/api/discovery\xaa\x02\x1eTheThingsNetwork.API.Discoveryb\x06proto3'
+  serialized_pb=b'\n9github.com/TheThingsNetwork/api/discovery/discovery.proto\x12\tdiscovery\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\"l\n\x08Metadata\x12\x14\n\ngateway_id\x18\n \x01(\tH\x00\x12\x19\n\x0f\x64\x65v_addr_prefix\x18\x14 \x01(\x0cH\x00\x12\x10\n\x06\x61pp_id\x18\x1e \x01(\tH\x00\x12\x11\n\x07\x61pp_eui\x18\x1f \x01(\x0cH\x00\x42\n\n\x08metadata\"\xa1\x02\n\x0c\x41nnouncement\x12\n\n\x02id\x18\x01 \x01(\t\x12\x14\n\x0cservice_name\x18\x02 \x01(\t\x12\x17\n\x0fservice_version\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0b\n\x03url\x18\x05 \x01(\t\x12\x0e\n\x06public\x18\x06 \x01(\x08\x12\x13\n\x0bnet_address\x18\x0b \x01(\t\x12\x12\n\npublic_key\x18\x0c \x01(\t\x12\x13\n\x0b\x63\x65rtificate\x18\r \x01(\t\x12\x13\n\x0b\x61pi_address\x18\x0e \x01(\t\x12\x14\n\x0cmqtt_address\x18\x0f \x01(\t\x12\x14\n\x0c\x61mqp_address\x18\x10 \x01(\t\x12%\n\x08metadata\x18\x16 \x03(\x0b\x32\x13.discovery.Metadata\")\n\x11GetServiceRequest\x12\x14\n\x0cservice_name\x18\x01 \x01(\t\".\n\nGetRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x14\n\x0cservice_name\x18\x02 \x01(\t\"Z\n\x0fMetadataRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x14\n\x0cservice_name\x18\x02 \x01(\t\x12%\n\x08metadata\x18\x0c \x01(\x0b\x32\x13.discovery.Metadata\"B\n\x15\x41nnouncementsResponse\x12)\n\x08services\x18\x01 \x03(\x0b\x32\x17.discovery.Announcement\"#\n\x11GetByAppIDRequest\x12\x0e\n\x06\x61pp_id\x18\x1e \x01(\t\"+\n\x15GetByGatewayIDRequest\x12\x12\n\ngateway_id\x18\x1e \x01(\t\"%\n\x12GetByAppEUIRequest\x12\x0f\n\x07\x61pp_eui\x18\x1f \x01(\x0c\x32\xfe\x04\n\tDiscovery\x12;\n\x08\x41nnounce\x12\x17.discovery.Announcement\x1a\x16.google.protobuf.Empty\x12o\n\x06GetAll\x12\x1c.discovery.GetServiceRequest\x1a .discovery.AnnouncementsResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/announcements/{service_name}\x12\x61\n\x03Get\x12\x15.discovery.GetRequest\x1a\x17.discovery.Announcement\"*\x82\xd3\xe4\x93\x02$\x12\"/announcements/{service_name}/{id}\x12\x41\n\x0b\x41\x64\x64Metadata\x12\x1a.discovery.MetadataRequest\x1a\x16.google.protobuf.Empty\x12\x44\n\x0e\x44\x65leteMetadata\x12\x1a.discovery.MetadataRequest\x1a\x16.google.protobuf.Empty\x12\x43\n\nGetByAppID\x12\x1c.discovery.GetByAppIDRequest\x1a\x17.discovery.Announcement\x12K\n\x0eGetByGatewayID\x12 .discovery.GetByGatewayIDRequest\x1a\x17.discovery.Announcement\x12\x45\n\x0bGetByAppEUI\x12\x1d.discovery.GetByAppEUIRequest\x1a\x17.discovery.Announcement2\x12\n\x10\x44iscoveryManagerB\x82\x01\n\"org.thethingsnetwork.api.discoveryB\x0e\x44iscoveryProtoP\x01Z)github.com/TheThingsNetwork/api/discovery\xaa\x02\x1eTheThingsNetwork.API.Discoveryb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
@@ -41,7 +40,7 @@ _METADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\tGatewayID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dev_addr_prefix', full_name='discovery.Metadata.dev_addr_prefix', index=1,
       number=20, type=12, cpp_type=9, label=1,
@@ -55,14 +54,14 @@ _METADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\005AppID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_eui', full_name='discovery.Metadata.app_eui', index=3,
       number=31, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\006AppEUI', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -78,8 +77,8 @@ _METADATA = _descriptor.Descriptor(
       name='metadata', full_name='discovery.Metadata.metadata',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=179,
-  serialized_end=325,
+  serialized_start=131,
+  serialized_end=239,
 )
 
 
@@ -96,7 +95,7 @@ _ANNOUNCEMENT = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\002ID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='service_name', full_name='discovery.Announcement.service_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -193,8 +192,8 @@ _ANNOUNCEMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=328,
-  serialized_end=625,
+  serialized_start=242,
+  serialized_end=531,
 )
 
 
@@ -224,8 +223,8 @@ _GETSERVICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=627,
-  serialized_end=668,
+  serialized_start=533,
+  serialized_end=574,
 )
 
 
@@ -242,7 +241,7 @@ _GETREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\002ID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='service_name', full_name='discovery.GetRequest.service_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -262,8 +261,8 @@ _GETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=670,
-  serialized_end=724,
+  serialized_start=576,
+  serialized_end=622,
 )
 
 
@@ -280,7 +279,7 @@ _METADATAREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\002ID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='service_name', full_name='discovery.MetadataRequest.service_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -294,7 +293,7 @@ _METADATAREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -307,8 +306,8 @@ _METADATAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=726,
-  serialized_end=830,
+  serialized_start=624,
+  serialized_end=714,
 )
 
 
@@ -338,8 +337,8 @@ _ANNOUNCEMENTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=832,
-  serialized_end=898,
+  serialized_start=716,
+  serialized_end=782,
 )
 
 
@@ -356,7 +355,7 @@ _GETBYAPPIDREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\005AppID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -369,8 +368,8 @@ _GETBYAPPIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=900,
-  serialized_end=946,
+  serialized_start=784,
+  serialized_end=819,
 )
 
 
@@ -387,7 +386,7 @@ _GETBYGATEWAYIDREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\tGatewayID', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -400,8 +399,8 @@ _GETBYGATEWAYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=948,
-  serialized_end=1006,
+  serialized_start=821,
+  serialized_end=864,
 )
 
 
@@ -418,7 +417,7 @@ _GETBYAPPEUIREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\336\037\006AppEUI\310\336\037\000\332\336\0371github.com/TheThingsNetwork/ttn/core/types.AppEUI', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -431,8 +430,8 @@ _GETBYAPPEUIREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1008,
-  serialized_end=1114,
+  serialized_start=866,
+  serialized_end=903,
 )
 
 _METADATA.oneofs_by_name['metadata'].fields.append(
@@ -526,16 +525,6 @@ _sym_db.RegisterMessage(GetByAppEUIRequest)
 
 
 DESCRIPTOR._options = None
-_METADATA.fields_by_name['gateway_id']._options = None
-_METADATA.fields_by_name['app_id']._options = None
-_METADATA.fields_by_name['app_eui']._options = None
-_ANNOUNCEMENT.fields_by_name['id']._options = None
-_GETREQUEST.fields_by_name['id']._options = None
-_METADATAREQUEST.fields_by_name['id']._options = None
-_METADATAREQUEST.fields_by_name['metadata']._options = None
-_GETBYAPPIDREQUEST.fields_by_name['app_id']._options = None
-_GETBYGATEWAYIDREQUEST.fields_by_name['gateway_id']._options = None
-_GETBYAPPEUIREQUEST.fields_by_name['app_eui']._options = None
 
 _DISCOVERY = _descriptor.ServiceDescriptor(
   name='Discovery',
@@ -543,8 +532,8 @@ _DISCOVERY = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1117,
-  serialized_end=1755,
+  serialized_start=906,
+  serialized_end=1544,
   methods=[
   _descriptor.MethodDescriptor(
     name='Announce',
@@ -630,8 +619,8 @@ _DISCOVERYMANAGER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=1,
   serialized_options=None,
-  serialized_start=1757,
-  serialized_end=1775,
+  serialized_start=1546,
+  serialized_end=1564,
   methods=[
 ])
 _sym_db.RegisterServiceDescriptor(_DISCOVERYMANAGER)

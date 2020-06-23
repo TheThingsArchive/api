@@ -12,7 +12,7 @@ public interface GetByAppEUIRequestOrBuilder extends
    * compatible with Metadata message
    * </pre>
    *
-   * <code>bytes app_eui = 31 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+   * <code>bytes app_eui = 31;</code>
    * @return The appEui.
    */
   com.google.protobuf.ByteString getAppEui();

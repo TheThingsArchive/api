@@ -12,8 +12,6 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-
-
 goog.exportSymbol('proto.lorawan.DevAddrRequest', null, global);
 goog.exportSymbol('proto.lorawan.DevAddrResponse', null, global);
 goog.exportSymbol('proto.lorawan.PrefixesRequest', null, global);

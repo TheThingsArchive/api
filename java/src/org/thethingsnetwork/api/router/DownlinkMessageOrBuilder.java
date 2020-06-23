@@ -29,32 +29,32 @@ public interface DownlinkMessageOrBuilder extends
   org.thethingsnetwork.api.protocol.MessageOrBuilder getMessageOrBuilder();
 
   /**
-   * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
+   * <code>.protocol.TxConfiguration protocol_configuration = 11;</code>
    * @return Whether the protocolConfiguration field is set.
    */
   boolean hasProtocolConfiguration();
   /**
-   * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
+   * <code>.protocol.TxConfiguration protocol_configuration = 11;</code>
    * @return The protocolConfiguration.
    */
   org.thethingsnetwork.api.protocol.TxConfiguration getProtocolConfiguration();
   /**
-   * <code>.protocol.TxConfiguration protocol_configuration = 11 [(.gogoproto.nullable) = false];</code>
+   * <code>.protocol.TxConfiguration protocol_configuration = 11;</code>
    */
   org.thethingsnetwork.api.protocol.TxConfigurationOrBuilder getProtocolConfigurationOrBuilder();
 
   /**
-   * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
+   * <code>.gateway.TxConfiguration gateway_configuration = 12;</code>
    * @return Whether the gatewayConfiguration field is set.
    */
   boolean hasGatewayConfiguration();
   /**
-   * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
+   * <code>.gateway.TxConfiguration gateway_configuration = 12;</code>
    * @return The gatewayConfiguration.
    */
   org.thethingsnetwork.api.gateway.TxConfiguration getGatewayConfiguration();
   /**
-   * <code>.gateway.TxConfiguration gateway_configuration = 12 [(.gogoproto.nullable) = false];</code>
+   * <code>.gateway.TxConfiguration gateway_configuration = 12;</code>
    */
   org.thethingsnetwork.api.gateway.TxConfigurationOrBuilder getGatewayConfigurationOrBuilder();
 

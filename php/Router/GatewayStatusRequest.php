@@ -17,7 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class GatewayStatusRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 1;</code>
      */
     protected $gateway_id = '';
 
@@ -36,7 +36,7 @@ class GatewayStatusRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 1;</code>
      * @return string
      */
     public function getGatewayId()
@@ -45,7 +45,7 @@ class GatewayStatusRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * Generated from protobuf field <code>string gateway_id = 1;</code>
      * @param string $var
      * @return $this
      */

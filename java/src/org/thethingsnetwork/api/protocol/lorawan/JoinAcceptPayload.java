@@ -148,7 +148,7 @@ private static final long serialVersionUID = 0L;
   public static final int APP_NONCE_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString appNonce_;
   /**
-   * <code>bytes app_nonce = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+   * <code>bytes app_nonce = 2;</code>
    * @return The appNonce.
    */
   public com.google.protobuf.ByteString getAppNonce() {
@@ -158,7 +158,7 @@ private static final long serialVersionUID = 0L;
   public static final int NET_ID_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString netId_;
   /**
-   * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
+   * <code>bytes net_id = 3;</code>
    * @return The netId.
    */
   public com.google.protobuf.ByteString getNetId() {
@@ -168,7 +168,7 @@ private static final long serialVersionUID = 0L;
   public static final int DEV_ADDR_FIELD_NUMBER = 4;
   private com.google.protobuf.ByteString devAddr_;
   /**
-   * <code>bytes dev_addr = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+   * <code>bytes dev_addr = 4;</code>
    * @return The devAddr.
    */
   public com.google.protobuf.ByteString getDevAddr() {
@@ -178,21 +178,21 @@ private static final long serialVersionUID = 0L;
   public static final int DL_SETTINGS_FIELD_NUMBER = 5;
   private org.thethingsnetwork.api.protocol.lorawan.DLSettings dlSettings_;
   /**
-   * <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+   * <code>.lorawan.DLSettings dl_settings = 5;</code>
    * @return Whether the dlSettings field is set.
    */
   public boolean hasDlSettings() {
     return dlSettings_ != null;
   }
   /**
-   * <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+   * <code>.lorawan.DLSettings dl_settings = 5;</code>
    * @return The dlSettings.
    */
   public org.thethingsnetwork.api.protocol.lorawan.DLSettings getDlSettings() {
     return dlSettings_ == null ? org.thethingsnetwork.api.protocol.lorawan.DLSettings.getDefaultInstance() : dlSettings_;
   }
   /**
-   * <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+   * <code>.lorawan.DLSettings dl_settings = 5;</code>
    */
   public org.thethingsnetwork.api.protocol.lorawan.DLSettingsOrBuilder getDlSettingsOrBuilder() {
     return getDlSettings();
@@ -211,21 +211,21 @@ private static final long serialVersionUID = 0L;
   public static final int CF_LIST_FIELD_NUMBER = 7;
   private org.thethingsnetwork.api.protocol.lorawan.CFList cfList_;
   /**
-   * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+   * <code>.lorawan.CFList cf_list = 7;</code>
    * @return Whether the cfList field is set.
    */
   public boolean hasCfList() {
     return cfList_ != null;
   }
   /**
-   * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+   * <code>.lorawan.CFList cf_list = 7;</code>
    * @return The cfList.
    */
   public org.thethingsnetwork.api.protocol.lorawan.CFList getCfList() {
     return cfList_ == null ? org.thethingsnetwork.api.protocol.lorawan.CFList.getDefaultInstance() : cfList_;
   }
   /**
-   * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+   * <code>.lorawan.CFList cf_list = 7;</code>
    */
   public org.thethingsnetwork.api.protocol.lorawan.CFListOrBuilder getCfListOrBuilder() {
     return getCfList();
@@ -696,14 +696,14 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString appNonce_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes app_nonce = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * <code>bytes app_nonce = 2;</code>
      * @return The appNonce.
      */
     public com.google.protobuf.ByteString getAppNonce() {
       return appNonce_;
     }
     /**
-     * <code>bytes app_nonce = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * <code>bytes app_nonce = 2;</code>
      * @param value The appNonce to set.
      * @return This builder for chaining.
      */
@@ -717,7 +717,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bytes app_nonce = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * <code>bytes app_nonce = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearAppNonce() {
@@ -729,14 +729,14 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString netId_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
+     * <code>bytes net_id = 3;</code>
      * @return The netId.
      */
     public com.google.protobuf.ByteString getNetId() {
       return netId_;
     }
     /**
-     * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
+     * <code>bytes net_id = 3;</code>
      * @param value The netId to set.
      * @return This builder for chaining.
      */
@@ -750,7 +750,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bytes net_id = 3 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NetID", (.gogoproto.customname) = "NetID"];</code>
+     * <code>bytes net_id = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearNetId() {
@@ -762,14 +762,14 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString devAddr_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes dev_addr = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * <code>bytes dev_addr = 4;</code>
      * @return The devAddr.
      */
     public com.google.protobuf.ByteString getDevAddr() {
       return devAddr_;
     }
     /**
-     * <code>bytes dev_addr = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * <code>bytes dev_addr = 4;</code>
      * @param value The devAddr to set.
      * @return This builder for chaining.
      */
@@ -783,7 +783,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bytes dev_addr = 4 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * <code>bytes dev_addr = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearDevAddr() {
@@ -797,14 +797,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.DLSettings, org.thethingsnetwork.api.protocol.lorawan.DLSettings.Builder, org.thethingsnetwork.api.protocol.lorawan.DLSettingsOrBuilder> dlSettingsBuilder_;
     /**
-     * <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * <code>.lorawan.DLSettings dl_settings = 5;</code>
      * @return Whether the dlSettings field is set.
      */
     public boolean hasDlSettings() {
       return dlSettingsBuilder_ != null || dlSettings_ != null;
     }
     /**
-     * <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * <code>.lorawan.DLSettings dl_settings = 5;</code>
      * @return The dlSettings.
      */
     public org.thethingsnetwork.api.protocol.lorawan.DLSettings getDlSettings() {
@@ -815,7 +815,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * <code>.lorawan.DLSettings dl_settings = 5;</code>
      */
     public Builder setDlSettings(org.thethingsnetwork.api.protocol.lorawan.DLSettings value) {
       if (dlSettingsBuilder_ == null) {
@@ -831,7 +831,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * <code>.lorawan.DLSettings dl_settings = 5;</code>
      */
     public Builder setDlSettings(
         org.thethingsnetwork.api.protocol.lorawan.DLSettings.Builder builderForValue) {
@@ -845,7 +845,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * <code>.lorawan.DLSettings dl_settings = 5;</code>
      */
     public Builder mergeDlSettings(org.thethingsnetwork.api.protocol.lorawan.DLSettings value) {
       if (dlSettingsBuilder_ == null) {
@@ -863,7 +863,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * <code>.lorawan.DLSettings dl_settings = 5;</code>
      */
     public Builder clearDlSettings() {
       if (dlSettingsBuilder_ == null) {
@@ -877,7 +877,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * <code>.lorawan.DLSettings dl_settings = 5;</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.DLSettings.Builder getDlSettingsBuilder() {
       
@@ -885,7 +885,7 @@ private static final long serialVersionUID = 0L;
       return getDlSettingsFieldBuilder().getBuilder();
     }
     /**
-     * <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * <code>.lorawan.DLSettings dl_settings = 5;</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.DLSettingsOrBuilder getDlSettingsOrBuilder() {
       if (dlSettingsBuilder_ != null) {
@@ -896,7 +896,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.lorawan.DLSettings dl_settings = 5 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+     * <code>.lorawan.DLSettings dl_settings = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.DLSettings, org.thethingsnetwork.api.protocol.lorawan.DLSettings.Builder, org.thethingsnetwork.api.protocol.lorawan.DLSettingsOrBuilder> 
@@ -946,14 +946,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.CFList, org.thethingsnetwork.api.protocol.lorawan.CFList.Builder, org.thethingsnetwork.api.protocol.lorawan.CFListOrBuilder> cfListBuilder_;
     /**
-     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+     * <code>.lorawan.CFList cf_list = 7;</code>
      * @return Whether the cfList field is set.
      */
     public boolean hasCfList() {
       return cfListBuilder_ != null || cfList_ != null;
     }
     /**
-     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+     * <code>.lorawan.CFList cf_list = 7;</code>
      * @return The cfList.
      */
     public org.thethingsnetwork.api.protocol.lorawan.CFList getCfList() {
@@ -964,7 +964,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+     * <code>.lorawan.CFList cf_list = 7;</code>
      */
     public Builder setCfList(org.thethingsnetwork.api.protocol.lorawan.CFList value) {
       if (cfListBuilder_ == null) {
@@ -980,7 +980,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+     * <code>.lorawan.CFList cf_list = 7;</code>
      */
     public Builder setCfList(
         org.thethingsnetwork.api.protocol.lorawan.CFList.Builder builderForValue) {
@@ -994,7 +994,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+     * <code>.lorawan.CFList cf_list = 7;</code>
      */
     public Builder mergeCfList(org.thethingsnetwork.api.protocol.lorawan.CFList value) {
       if (cfListBuilder_ == null) {
@@ -1012,7 +1012,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+     * <code>.lorawan.CFList cf_list = 7;</code>
      */
     public Builder clearCfList() {
       if (cfListBuilder_ == null) {
@@ -1026,7 +1026,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+     * <code>.lorawan.CFList cf_list = 7;</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.CFList.Builder getCfListBuilder() {
       
@@ -1034,7 +1034,7 @@ private static final long serialVersionUID = 0L;
       return getCfListFieldBuilder().getBuilder();
     }
     /**
-     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+     * <code>.lorawan.CFList cf_list = 7;</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.CFListOrBuilder getCfListOrBuilder() {
       if (cfListBuilder_ != null) {
@@ -1045,7 +1045,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.lorawan.CFList cf_list = 7 [(.gogoproto.customname) = "CFList"];</code>
+     * <code>.lorawan.CFList cf_list = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.CFList, org.thethingsnetwork.api.protocol.lorawan.CFList.Builder, org.thethingsnetwork.api.protocol.lorawan.CFListOrBuilder> 

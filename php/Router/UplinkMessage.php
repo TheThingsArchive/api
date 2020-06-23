@@ -22,11 +22,11 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
      */
     protected $message = null;
     /**
-     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 11;</code>
      */
     protected $protocol_metadata = null;
     /**
-     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 12;</code>
      */
     protected $gateway_metadata = null;
     /**
@@ -97,7 +97,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 11;</code>
      * @return \Protocol\RxMetadata
      */
     public function getProtocolMetadata()
@@ -106,7 +106,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 11;</code>
      * @param \Protocol\RxMetadata $var
      * @return $this
      */
@@ -119,7 +119,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 12;</code>
      * @return \Gateway\RxMetadata
      */
     public function getGatewayMetadata()
@@ -128,7 +128,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
+     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 12;</code>
      * @param \Gateway\RxMetadata $var
      * @return $this
      */

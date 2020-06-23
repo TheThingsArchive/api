@@ -44,27 +44,23 @@ public final class ProtocolProto {
   static {
     java.lang.String[] descriptorData = {
       "\n7github.com/TheThingsNetwork/api/protoc" +
-      "ol/protocol.proto\022\010protocol\032-github.com/" +
-      "gogo/protobuf/gogoproto/gogo.proto\032>gith" +
-      "ub.com/TheThingsNetwork/api/protocol/lor" +
-      "awan/lorawan.proto\"G\n\007Message\0220\n\007lorawan" +
-      "\030\001 \001(\0132\020.lorawan.MessageB\013\342\336\037\007LoRaWANH\000B" +
-      "\n\n\010protocol\"K\n\nRxMetadata\0221\n\007lorawan\030\001 \001" +
-      "(\0132\021.lorawan.MetadataB\013\342\336\037\007LoRaWANH\000B\n\n\010" +
-      "protocol\"W\n\017TxConfiguration\0228\n\007lorawan\030\001" +
-      " \001(\0132\030.lorawan.TxConfigurationB\013\342\336\037\007LoRa" +
-      "WANH\000B\n\n\010protocol\"]\n\022ActivationMetadata\022" +
-      ";\n\007lorawan\030\001 \001(\0132\033.lorawan.ActivationMet" +
-      "adataB\013\342\336\037\007LoRaWANH\000B\n\n\010protocolB~\n!org." +
-      "thethingsnetwork.api.protocolB\rProtocolP" +
-      "rotoP\001Z(github.com/TheThingsNetwork/api/" +
-      "protocol\252\002\035TheThingsNetwork.API.Protocol" +
-      "b\006proto3"
+      "ol/protocol.proto\022\010protocol\032>github.com/" +
+      "TheThingsNetwork/api/protocol/lorawan/lo" +
+      "rawan.proto\":\n\007Message\022#\n\007lorawan\030\001 \001(\0132" +
+      "\020.lorawan.MessageH\000B\n\n\010protocol\">\n\nRxMet" +
+      "adata\022$\n\007lorawan\030\001 \001(\0132\021.lorawan.Metadat" +
+      "aH\000B\n\n\010protocol\"J\n\017TxConfiguration\022+\n\007lo" +
+      "rawan\030\001 \001(\0132\030.lorawan.TxConfigurationH\000B" +
+      "\n\n\010protocol\"P\n\022ActivationMetadata\022.\n\007lor" +
+      "awan\030\001 \001(\0132\033.lorawan.ActivationMetadataH" +
+      "\000B\n\n\010protocolB~\n!org.thethingsnetwork.ap" +
+      "i.protocolB\rProtocolProtoP\001Z(github.com/" +
+      "TheThingsNetwork/api/protocol\252\002\035TheThing" +
+      "sNetwork.API.Protocolb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.GoGoProtos.getDescriptor(),
           org.thethingsnetwork.api.protocol.lorawan.LoRaWANProto.getDescriptor(),
         });
     internal_static_protocol_Message_descriptor =
@@ -91,12 +87,6 @@ public final class ProtocolProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protocol_ActivationMetadata_descriptor,
         new java.lang.String[] { "Lorawan", "Protocol", });
-    com.google.protobuf.ExtensionRegistry registry =
-        com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.protobuf.GoGoProtos.customname);
-    com.google.protobuf.Descriptors.FileDescriptor
-        .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.GoGoProtos.getDescriptor();
     org.thethingsnetwork.api.protocol.lorawan.LoRaWANProto.getDescriptor();
   }
 

@@ -9,7 +9,6 @@ var grpc = require('grpc');
 var ttn_protocol_lorawan_device_pb = require('../../protocol/lorawan/device_pb.js');
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 
-
 function serialize_google_protobuf_Empty(arg) {
   if (!(arg instanceof google_protobuf_empty_pb.Empty)) {
     throw new Error('Expected argument of type google.protobuf.Empty');

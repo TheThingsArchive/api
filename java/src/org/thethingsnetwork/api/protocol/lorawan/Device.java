@@ -194,7 +194,7 @@ private static final long serialVersionUID = 0L;
    * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
    * </pre>
    *
-   * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+   * <code>bytes app_eui = 1;</code>
    * @return The appEui.
    */
   public com.google.protobuf.ByteString getAppEui() {
@@ -208,7 +208,7 @@ private static final long serialVersionUID = 0L;
    * The DevEUI is a unique, 8 byte identifier for the device.
    * </pre>
    *
-   * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+   * <code>bytes dev_eui = 2;</code>
    * @return The devEui.
    */
   public com.google.protobuf.ByteString getDevEui() {
@@ -222,7 +222,7 @@ private static final long serialVersionUID = 0L;
    * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
    * </pre>
    *
-   * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
+   * <code>string app_id = 3;</code>
    * @return The appId.
    */
   public java.lang.String getAppId() {
@@ -242,7 +242,7 @@ private static final long serialVersionUID = 0L;
    * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
    * </pre>
    *
-   * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
+   * <code>string app_id = 3;</code>
    * @return The bytes for appId.
    */
   public com.google.protobuf.ByteString
@@ -266,7 +266,7 @@ private static final long serialVersionUID = 0L;
    * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
    * </pre>
    *
-   * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
+   * <code>string dev_id = 4;</code>
    * @return The devId.
    */
   public java.lang.String getDevId() {
@@ -286,7 +286,7 @@ private static final long serialVersionUID = 0L;
    * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
    * </pre>
    *
-   * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
+   * <code>string dev_id = 4;</code>
    * @return The bytes for devId.
    */
   public com.google.protobuf.ByteString
@@ -310,7 +310,7 @@ private static final long serialVersionUID = 0L;
    * The DevAddr is a dynamic, 4 byte session address for the device.
    * </pre>
    *
-   * <code>bytes dev_addr = 5 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+   * <code>bytes dev_addr = 5;</code>
    * @return The devAddr.
    */
   public com.google.protobuf.ByteString getDevAddr() {
@@ -325,7 +325,7 @@ private static final long serialVersionUID = 0L;
    * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
    * </pre>
    *
-   * <code>bytes nwk_s_key = 6 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+   * <code>bytes nwk_s_key = 6;</code>
    * @return The nwkSKey.
    */
   public com.google.protobuf.ByteString getNwkSKey() {
@@ -340,7 +340,7 @@ private static final long serialVersionUID = 0L;
    * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
    * </pre>
    *
-   * <code>bytes app_s_key = 7 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppSKey"];</code>
+   * <code>bytes app_s_key = 7;</code>
    * @return The appSKey.
    */
   public com.google.protobuf.ByteString getAppSKey() {
@@ -354,7 +354,7 @@ private static final long serialVersionUID = 0L;
    * The AppKey is a 16 byte static key that is known by the device and the application. It is used for negotiating session keys (OTAA).
    * </pre>
    *
-   * <code>bytes app_key = 8 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppKey"];</code>
+   * <code>bytes app_key = 8;</code>
    * @return The appKey.
    */
   public com.google.protobuf.ByteString getAppKey() {
@@ -470,7 +470,7 @@ private static final long serialVersionUID = 0L;
    * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
    * </pre>
    *
-   * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+   * <code>repeated bytes used_dev_nonces = 14;</code>
    * @return A list containing the usedDevNonces.
    */
   public java.util.List<com.google.protobuf.ByteString>
@@ -482,7 +482,7 @@ private static final long serialVersionUID = 0L;
    * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
    * </pre>
    *
-   * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+   * <code>repeated bytes used_dev_nonces = 14;</code>
    * @return The count of usedDevNonces.
    */
   public int getUsedDevNoncesCount() {
@@ -493,7 +493,7 @@ private static final long serialVersionUID = 0L;
    * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
    * </pre>
    *
-   * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+   * <code>repeated bytes used_dev_nonces = 14;</code>
    * @param index The index of the element to return.
    * @return The usedDevNonces at the given index.
    */
@@ -508,7 +508,7 @@ private static final long serialVersionUID = 0L;
    * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
    * </pre>
    *
-   * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+   * <code>repeated bytes used_app_nonces = 15;</code>
    * @return A list containing the usedAppNonces.
    */
   public java.util.List<com.google.protobuf.ByteString>
@@ -520,7 +520,7 @@ private static final long serialVersionUID = 0L;
    * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
    * </pre>
    *
-   * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+   * <code>repeated bytes used_app_nonces = 15;</code>
    * @return The count of usedAppNonces.
    */
   public int getUsedAppNoncesCount() {
@@ -531,7 +531,7 @@ private static final long serialVersionUID = 0L;
    * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
    * </pre>
    *
-   * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+   * <code>repeated bytes used_app_nonces = 15;</code>
    * @param index The index of the element to return.
    * @return The usedAppNonces at the given index.
    */
@@ -1157,7 +1157,7 @@ private static final long serialVersionUID = 0L;
      * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
      * </pre>
      *
-     * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 1;</code>
      * @return The appEui.
      */
     public com.google.protobuf.ByteString getAppEui() {
@@ -1168,7 +1168,7 @@ private static final long serialVersionUID = 0L;
      * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
      * </pre>
      *
-     * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 1;</code>
      * @param value The appEui to set.
      * @return This builder for chaining.
      */
@@ -1186,7 +1186,7 @@ private static final long serialVersionUID = 0L;
      * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
      * </pre>
      *
-     * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+     * <code>bytes app_eui = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearAppEui() {
@@ -1202,7 +1202,7 @@ private static final long serialVersionUID = 0L;
      * The DevEUI is a unique, 8 byte identifier for the device.
      * </pre>
      *
-     * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * <code>bytes dev_eui = 2;</code>
      * @return The devEui.
      */
     public com.google.protobuf.ByteString getDevEui() {
@@ -1213,7 +1213,7 @@ private static final long serialVersionUID = 0L;
      * The DevEUI is a unique, 8 byte identifier for the device.
      * </pre>
      *
-     * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * <code>bytes dev_eui = 2;</code>
      * @param value The devEui to set.
      * @return This builder for chaining.
      */
@@ -1231,7 +1231,7 @@ private static final long serialVersionUID = 0L;
      * The DevEUI is a unique, 8 byte identifier for the device.
      * </pre>
      *
-     * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+     * <code>bytes dev_eui = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearDevEui() {
@@ -1247,7 +1247,7 @@ private static final long serialVersionUID = 0L;
      * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
+     * <code>string app_id = 3;</code>
      * @return The appId.
      */
     public java.lang.String getAppId() {
@@ -1267,7 +1267,7 @@ private static final long serialVersionUID = 0L;
      * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
+     * <code>string app_id = 3;</code>
      * @return The bytes for appId.
      */
     public com.google.protobuf.ByteString
@@ -1288,7 +1288,7 @@ private static final long serialVersionUID = 0L;
      * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
+     * <code>string app_id = 3;</code>
      * @param value The appId to set.
      * @return This builder for chaining.
      */
@@ -1307,7 +1307,7 @@ private static final long serialVersionUID = 0L;
      * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
+     * <code>string app_id = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearAppId() {
@@ -1321,7 +1321,7 @@ private static final long serialVersionUID = 0L;
      * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
+     * <code>string app_id = 3;</code>
      * @param value The bytes for appId to set.
      * @return This builder for chaining.
      */
@@ -1343,7 +1343,7 @@ private static final long serialVersionUID = 0L;
      * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
+     * <code>string dev_id = 4;</code>
      * @return The devId.
      */
     public java.lang.String getDevId() {
@@ -1363,7 +1363,7 @@ private static final long serialVersionUID = 0L;
      * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
+     * <code>string dev_id = 4;</code>
      * @return The bytes for devId.
      */
     public com.google.protobuf.ByteString
@@ -1384,7 +1384,7 @@ private static final long serialVersionUID = 0L;
      * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
+     * <code>string dev_id = 4;</code>
      * @param value The devId to set.
      * @return This builder for chaining.
      */
@@ -1403,7 +1403,7 @@ private static final long serialVersionUID = 0L;
      * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
+     * <code>string dev_id = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearDevId() {
@@ -1417,7 +1417,7 @@ private static final long serialVersionUID = 0L;
      * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
      * </pre>
      *
-     * <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
+     * <code>string dev_id = 4;</code>
      * @param value The bytes for devId to set.
      * @return This builder for chaining.
      */
@@ -1439,7 +1439,7 @@ private static final long serialVersionUID = 0L;
      * The DevAddr is a dynamic, 4 byte session address for the device.
      * </pre>
      *
-     * <code>bytes dev_addr = 5 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * <code>bytes dev_addr = 5;</code>
      * @return The devAddr.
      */
     public com.google.protobuf.ByteString getDevAddr() {
@@ -1450,7 +1450,7 @@ private static final long serialVersionUID = 0L;
      * The DevAddr is a dynamic, 4 byte session address for the device.
      * </pre>
      *
-     * <code>bytes dev_addr = 5 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * <code>bytes dev_addr = 5;</code>
      * @param value The devAddr to set.
      * @return This builder for chaining.
      */
@@ -1468,7 +1468,7 @@ private static final long serialVersionUID = 0L;
      * The DevAddr is a dynamic, 4 byte session address for the device.
      * </pre>
      *
-     * <code>bytes dev_addr = 5 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
+     * <code>bytes dev_addr = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearDevAddr() {
@@ -1485,7 +1485,7 @@ private static final long serialVersionUID = 0L;
      * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
      * </pre>
      *
-     * <code>bytes nwk_s_key = 6 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+     * <code>bytes nwk_s_key = 6;</code>
      * @return The nwkSKey.
      */
     public com.google.protobuf.ByteString getNwkSKey() {
@@ -1497,7 +1497,7 @@ private static final long serialVersionUID = 0L;
      * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
      * </pre>
      *
-     * <code>bytes nwk_s_key = 6 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+     * <code>bytes nwk_s_key = 6;</code>
      * @param value The nwkSKey to set.
      * @return This builder for chaining.
      */
@@ -1516,7 +1516,7 @@ private static final long serialVersionUID = 0L;
      * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
      * </pre>
      *
-     * <code>bytes nwk_s_key = 6 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
+     * <code>bytes nwk_s_key = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearNwkSKey() {
@@ -1533,7 +1533,7 @@ private static final long serialVersionUID = 0L;
      * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
      * </pre>
      *
-     * <code>bytes app_s_key = 7 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppSKey"];</code>
+     * <code>bytes app_s_key = 7;</code>
      * @return The appSKey.
      */
     public com.google.protobuf.ByteString getAppSKey() {
@@ -1545,7 +1545,7 @@ private static final long serialVersionUID = 0L;
      * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
      * </pre>
      *
-     * <code>bytes app_s_key = 7 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppSKey"];</code>
+     * <code>bytes app_s_key = 7;</code>
      * @param value The appSKey to set.
      * @return This builder for chaining.
      */
@@ -1564,7 +1564,7 @@ private static final long serialVersionUID = 0L;
      * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
      * </pre>
      *
-     * <code>bytes app_s_key = 7 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppSKey"];</code>
+     * <code>bytes app_s_key = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearAppSKey() {
@@ -1580,7 +1580,7 @@ private static final long serialVersionUID = 0L;
      * The AppKey is a 16 byte static key that is known by the device and the application. It is used for negotiating session keys (OTAA).
      * </pre>
      *
-     * <code>bytes app_key = 8 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppKey"];</code>
+     * <code>bytes app_key = 8;</code>
      * @return The appKey.
      */
     public com.google.protobuf.ByteString getAppKey() {
@@ -1591,7 +1591,7 @@ private static final long serialVersionUID = 0L;
      * The AppKey is a 16 byte static key that is known by the device and the application. It is used for negotiating session keys (OTAA).
      * </pre>
      *
-     * <code>bytes app_key = 8 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppKey"];</code>
+     * <code>bytes app_key = 8;</code>
      * @param value The appKey to set.
      * @return This builder for chaining.
      */
@@ -1609,7 +1609,7 @@ private static final long serialVersionUID = 0L;
      * The AppKey is a 16 byte static key that is known by the device and the application. It is used for negotiating session keys (OTAA).
      * </pre>
      *
-     * <code>bytes app_key = 8 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppKey"];</code>
+     * <code>bytes app_key = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearAppKey() {
@@ -1900,7 +1900,7 @@ private static final long serialVersionUID = 0L;
      * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
      * </pre>
      *
-     * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * <code>repeated bytes used_dev_nonces = 14;</code>
      * @return A list containing the usedDevNonces.
      */
     public java.util.List<com.google.protobuf.ByteString>
@@ -1913,7 +1913,7 @@ private static final long serialVersionUID = 0L;
      * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
      * </pre>
      *
-     * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * <code>repeated bytes used_dev_nonces = 14;</code>
      * @return The count of usedDevNonces.
      */
     public int getUsedDevNoncesCount() {
@@ -1924,7 +1924,7 @@ private static final long serialVersionUID = 0L;
      * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
      * </pre>
      *
-     * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * <code>repeated bytes used_dev_nonces = 14;</code>
      * @param index The index of the element to return.
      * @return The usedDevNonces at the given index.
      */
@@ -1936,7 +1936,7 @@ private static final long serialVersionUID = 0L;
      * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
      * </pre>
      *
-     * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * <code>repeated bytes used_dev_nonces = 14;</code>
      * @param index The index to set the value at.
      * @param value The usedDevNonces to set.
      * @return This builder for chaining.
@@ -1956,7 +1956,7 @@ private static final long serialVersionUID = 0L;
      * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
      * </pre>
      *
-     * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * <code>repeated bytes used_dev_nonces = 14;</code>
      * @param value The usedDevNonces to add.
      * @return This builder for chaining.
      */
@@ -1974,7 +1974,7 @@ private static final long serialVersionUID = 0L;
      * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
      * </pre>
      *
-     * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * <code>repeated bytes used_dev_nonces = 14;</code>
      * @param values The usedDevNonces to add.
      * @return This builder for chaining.
      */
@@ -1991,7 +1991,7 @@ private static final long serialVersionUID = 0L;
      * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
      * </pre>
      *
-     * <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
+     * <code>repeated bytes used_dev_nonces = 14;</code>
      * @return This builder for chaining.
      */
     public Builder clearUsedDevNonces() {
@@ -2013,7 +2013,7 @@ private static final long serialVersionUID = 0L;
      * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
      * </pre>
      *
-     * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * <code>repeated bytes used_app_nonces = 15;</code>
      * @return A list containing the usedAppNonces.
      */
     public java.util.List<com.google.protobuf.ByteString>
@@ -2026,7 +2026,7 @@ private static final long serialVersionUID = 0L;
      * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
      * </pre>
      *
-     * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * <code>repeated bytes used_app_nonces = 15;</code>
      * @return The count of usedAppNonces.
      */
     public int getUsedAppNoncesCount() {
@@ -2037,7 +2037,7 @@ private static final long serialVersionUID = 0L;
      * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
      * </pre>
      *
-     * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * <code>repeated bytes used_app_nonces = 15;</code>
      * @param index The index of the element to return.
      * @return The usedAppNonces at the given index.
      */
@@ -2049,7 +2049,7 @@ private static final long serialVersionUID = 0L;
      * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
      * </pre>
      *
-     * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * <code>repeated bytes used_app_nonces = 15;</code>
      * @param index The index to set the value at.
      * @param value The usedAppNonces to set.
      * @return This builder for chaining.
@@ -2069,7 +2069,7 @@ private static final long serialVersionUID = 0L;
      * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
      * </pre>
      *
-     * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * <code>repeated bytes used_app_nonces = 15;</code>
      * @param value The usedAppNonces to add.
      * @return This builder for chaining.
      */
@@ -2087,7 +2087,7 @@ private static final long serialVersionUID = 0L;
      * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
      * </pre>
      *
-     * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * <code>repeated bytes used_app_nonces = 15;</code>
      * @param values The usedAppNonces to add.
      * @return This builder for chaining.
      */
@@ -2104,7 +2104,7 @@ private static final long serialVersionUID = 0L;
      * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
      * </pre>
      *
-     * <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
+     * <code>repeated bytes used_app_nonces = 15;</code>
      * @return This builder for chaining.
      */
     public Builder clearUsedAppNonces() {

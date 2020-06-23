@@ -16,7 +16,6 @@ PROTOBUF_C__BEGIN_DECLS
 
 #include "google/protobuf/empty.pb-c.h"
 #include "google/api/annotations.pb-c.h"
-#include "github.com/gogo/protobuf/gogoproto/gogo.pb-c.h"
 #include "github.com/TheThingsNetwork/api/api.pb-c.h"
 #include "github.com/TheThingsNetwork/api/broker/broker.pb-c.h"
 #include "github.com/TheThingsNetwork/api/protocol/protocol.pb-c.h"

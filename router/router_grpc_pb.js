@@ -8,7 +8,6 @@
 var grpc = require('grpc');
 var ttn_router_router_pb = require('../router/router_pb.js');
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
-
 var ttn_api_pb = require('../api_pb.js');
 var ttn_protocol_protocol_pb = require('../protocol/protocol_pb.js');
 var ttn_gateway_gateway_pb = require('../gateway/gateway_pb.js');

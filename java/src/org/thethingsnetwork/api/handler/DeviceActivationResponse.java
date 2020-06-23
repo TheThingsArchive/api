@@ -174,21 +174,21 @@ private static final long serialVersionUID = 0L;
   public static final int DOWNLINK_OPTION_FIELD_NUMBER = 11;
   private org.thethingsnetwork.api.broker.DownlinkOption downlinkOption_;
   /**
-   * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
+   * <code>.broker.DownlinkOption downlink_option = 11;</code>
    * @return Whether the downlinkOption field is set.
    */
   public boolean hasDownlinkOption() {
     return downlinkOption_ != null;
   }
   /**
-   * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
+   * <code>.broker.DownlinkOption downlink_option = 11;</code>
    * @return The downlinkOption.
    */
   public org.thethingsnetwork.api.broker.DownlinkOption getDownlinkOption() {
     return downlinkOption_ == null ? org.thethingsnetwork.api.broker.DownlinkOption.getDefaultInstance() : downlinkOption_;
   }
   /**
-   * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
+   * <code>.broker.DownlinkOption downlink_option = 11;</code>
    */
   public org.thethingsnetwork.api.broker.DownlinkOptionOrBuilder getDownlinkOptionOrBuilder() {
     return getDownlinkOption();
@@ -197,21 +197,21 @@ private static final long serialVersionUID = 0L;
   public static final int ACTIVATION_METADATA_FIELD_NUMBER = 23;
   private org.thethingsnetwork.api.protocol.ActivationMetadata activationMetadata_;
   /**
-   * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
+   * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
    * @return Whether the activationMetadata field is set.
    */
   public boolean hasActivationMetadata() {
     return activationMetadata_ != null;
   }
   /**
-   * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
+   * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
    * @return The activationMetadata.
    */
   public org.thethingsnetwork.api.protocol.ActivationMetadata getActivationMetadata() {
     return activationMetadata_ == null ? org.thethingsnetwork.api.protocol.ActivationMetadata.getDefaultInstance() : activationMetadata_;
   }
   /**
-   * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
+   * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
    */
   public org.thethingsnetwork.api.protocol.ActivationMetadataOrBuilder getActivationMetadataOrBuilder() {
     return getActivationMetadata();
@@ -818,14 +818,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.broker.DownlinkOption, org.thethingsnetwork.api.broker.DownlinkOption.Builder, org.thethingsnetwork.api.broker.DownlinkOptionOrBuilder> downlinkOptionBuilder_;
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
+     * <code>.broker.DownlinkOption downlink_option = 11;</code>
      * @return Whether the downlinkOption field is set.
      */
     public boolean hasDownlinkOption() {
       return downlinkOptionBuilder_ != null || downlinkOption_ != null;
     }
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
+     * <code>.broker.DownlinkOption downlink_option = 11;</code>
      * @return The downlinkOption.
      */
     public org.thethingsnetwork.api.broker.DownlinkOption getDownlinkOption() {
@@ -836,7 +836,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
+     * <code>.broker.DownlinkOption downlink_option = 11;</code>
      */
     public Builder setDownlinkOption(org.thethingsnetwork.api.broker.DownlinkOption value) {
       if (downlinkOptionBuilder_ == null) {
@@ -852,7 +852,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
+     * <code>.broker.DownlinkOption downlink_option = 11;</code>
      */
     public Builder setDownlinkOption(
         org.thethingsnetwork.api.broker.DownlinkOption.Builder builderForValue) {
@@ -866,7 +866,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
+     * <code>.broker.DownlinkOption downlink_option = 11;</code>
      */
     public Builder mergeDownlinkOption(org.thethingsnetwork.api.broker.DownlinkOption value) {
       if (downlinkOptionBuilder_ == null) {
@@ -884,7 +884,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
+     * <code>.broker.DownlinkOption downlink_option = 11;</code>
      */
     public Builder clearDownlinkOption() {
       if (downlinkOptionBuilder_ == null) {
@@ -898,7 +898,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
+     * <code>.broker.DownlinkOption downlink_option = 11;</code>
      */
     public org.thethingsnetwork.api.broker.DownlinkOption.Builder getDownlinkOptionBuilder() {
       
@@ -906,7 +906,7 @@ private static final long serialVersionUID = 0L;
       return getDownlinkOptionFieldBuilder().getBuilder();
     }
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
+     * <code>.broker.DownlinkOption downlink_option = 11;</code>
      */
     public org.thethingsnetwork.api.broker.DownlinkOptionOrBuilder getDownlinkOptionOrBuilder() {
       if (downlinkOptionBuilder_ != null) {
@@ -917,7 +917,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.broker.DownlinkOption downlink_option = 11 [(.gogoproto.nullable) = false];</code>
+     * <code>.broker.DownlinkOption downlink_option = 11;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.broker.DownlinkOption, org.thethingsnetwork.api.broker.DownlinkOption.Builder, org.thethingsnetwork.api.broker.DownlinkOptionOrBuilder> 
@@ -937,14 +937,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.ActivationMetadata, org.thethingsnetwork.api.protocol.ActivationMetadata.Builder, org.thethingsnetwork.api.protocol.ActivationMetadataOrBuilder> activationMetadataBuilder_;
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
+     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
      * @return Whether the activationMetadata field is set.
      */
     public boolean hasActivationMetadata() {
       return activationMetadataBuilder_ != null || activationMetadata_ != null;
     }
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
+     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
      * @return The activationMetadata.
      */
     public org.thethingsnetwork.api.protocol.ActivationMetadata getActivationMetadata() {
@@ -955,7 +955,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
+     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
      */
     public Builder setActivationMetadata(org.thethingsnetwork.api.protocol.ActivationMetadata value) {
       if (activationMetadataBuilder_ == null) {
@@ -971,7 +971,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
+     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
      */
     public Builder setActivationMetadata(
         org.thethingsnetwork.api.protocol.ActivationMetadata.Builder builderForValue) {
@@ -985,7 +985,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
+     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
      */
     public Builder mergeActivationMetadata(org.thethingsnetwork.api.protocol.ActivationMetadata value) {
       if (activationMetadataBuilder_ == null) {
@@ -1003,7 +1003,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
+     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
      */
     public Builder clearActivationMetadata() {
       if (activationMetadataBuilder_ == null) {
@@ -1017,7 +1017,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
+     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
      */
     public org.thethingsnetwork.api.protocol.ActivationMetadata.Builder getActivationMetadataBuilder() {
       
@@ -1025,7 +1025,7 @@ private static final long serialVersionUID = 0L;
       return getActivationMetadataFieldBuilder().getBuilder();
     }
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
+     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
      */
     public org.thethingsnetwork.api.protocol.ActivationMetadataOrBuilder getActivationMetadataOrBuilder() {
       if (activationMetadataBuilder_ != null) {
@@ -1036,7 +1036,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.protocol.ActivationMetadata activation_metadata = 23 [(.gogoproto.nullable) = false];</code>
+     * <code>.protocol.ActivationMetadata activation_metadata = 23;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.ActivationMetadata, org.thethingsnetwork.api.protocol.ActivationMetadata.Builder, org.thethingsnetwork.api.protocol.ActivationMetadataOrBuilder> 

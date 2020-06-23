@@ -181,7 +181,7 @@ private static final long serialVersionUID = 0L;
      * Received signal power in dBm
      * </pre>
      *
-     * <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
+     * <code>float rssi = 3;</code>
      * @return The rssi.
      */
     float getRssi();
@@ -191,7 +191,7 @@ private static final long serialVersionUID = 0L;
      * Received channel power in dBm
      * </pre>
      *
-     * <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
+     * <code>float channel_rssi = 5;</code>
      * @return The channelRssi.
      */
     float getChannelRssi();
@@ -201,7 +201,7 @@ private static final long serialVersionUID = 0L;
      * Standard deviation of the RSSI
      * </pre>
      *
-     * <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
+     * <code>float rssi_standard_deviation = 6;</code>
      * @return The rssiStandardDeviation.
      */
     float getRssiStandardDeviation();
@@ -221,7 +221,7 @@ private static final long serialVersionUID = 0L;
      * Signal-to-noise-ratio in dB
      * </pre>
      *
-     * <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
+     * <code>float snr = 4;</code>
      * @return The snr.
      */
     float getSnr();
@@ -396,7 +396,7 @@ private static final long serialVersionUID = 0L;
      * Received signal power in dBm
      * </pre>
      *
-     * <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
+     * <code>float rssi = 3;</code>
      * @return The rssi.
      */
     public float getRssi() {
@@ -410,7 +410,7 @@ private static final long serialVersionUID = 0L;
      * Received channel power in dBm
      * </pre>
      *
-     * <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
+     * <code>float channel_rssi = 5;</code>
      * @return The channelRssi.
      */
     public float getChannelRssi() {
@@ -424,7 +424,7 @@ private static final long serialVersionUID = 0L;
      * Standard deviation of the RSSI
      * </pre>
      *
-     * <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
+     * <code>float rssi_standard_deviation = 6;</code>
      * @return The rssiStandardDeviation.
      */
     public float getRssiStandardDeviation() {
@@ -452,7 +452,7 @@ private static final long serialVersionUID = 0L;
      * Signal-to-noise-ratio in dB
      * </pre>
      *
-     * <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
+     * <code>float snr = 4;</code>
      * @return The snr.
      */
     public float getSnr() {
@@ -1001,7 +1001,7 @@ private static final long serialVersionUID = 0L;
        * Received signal power in dBm
        * </pre>
        *
-       * <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
+       * <code>float rssi = 3;</code>
        * @return The rssi.
        */
       public float getRssi() {
@@ -1012,7 +1012,7 @@ private static final long serialVersionUID = 0L;
        * Received signal power in dBm
        * </pre>
        *
-       * <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
+       * <code>float rssi = 3;</code>
        * @param value The rssi to set.
        * @return This builder for chaining.
        */
@@ -1027,7 +1027,7 @@ private static final long serialVersionUID = 0L;
        * Received signal power in dBm
        * </pre>
        *
-       * <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
+       * <code>float rssi = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRssi() {
@@ -1043,7 +1043,7 @@ private static final long serialVersionUID = 0L;
        * Received channel power in dBm
        * </pre>
        *
-       * <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
+       * <code>float channel_rssi = 5;</code>
        * @return The channelRssi.
        */
       public float getChannelRssi() {
@@ -1054,7 +1054,7 @@ private static final long serialVersionUID = 0L;
        * Received channel power in dBm
        * </pre>
        *
-       * <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
+       * <code>float channel_rssi = 5;</code>
        * @param value The channelRssi to set.
        * @return This builder for chaining.
        */
@@ -1069,7 +1069,7 @@ private static final long serialVersionUID = 0L;
        * Received channel power in dBm
        * </pre>
        *
-       * <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
+       * <code>float channel_rssi = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearChannelRssi() {
@@ -1085,7 +1085,7 @@ private static final long serialVersionUID = 0L;
        * Standard deviation of the RSSI
        * </pre>
        *
-       * <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
+       * <code>float rssi_standard_deviation = 6;</code>
        * @return The rssiStandardDeviation.
        */
       public float getRssiStandardDeviation() {
@@ -1096,7 +1096,7 @@ private static final long serialVersionUID = 0L;
        * Standard deviation of the RSSI
        * </pre>
        *
-       * <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
+       * <code>float rssi_standard_deviation = 6;</code>
        * @param value The rssiStandardDeviation to set.
        * @return This builder for chaining.
        */
@@ -1111,7 +1111,7 @@ private static final long serialVersionUID = 0L;
        * Standard deviation of the RSSI
        * </pre>
        *
-       * <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
+       * <code>float rssi_standard_deviation = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearRssiStandardDeviation() {
@@ -1169,7 +1169,7 @@ private static final long serialVersionUID = 0L;
        * Signal-to-noise-ratio in dB
        * </pre>
        *
-       * <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
+       * <code>float snr = 4;</code>
        * @return The snr.
        */
       public float getSnr() {
@@ -1180,7 +1180,7 @@ private static final long serialVersionUID = 0L;
        * Signal-to-noise-ratio in dB
        * </pre>
        *
-       * <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
+       * <code>float snr = 4;</code>
        * @param value The snr to set.
        * @return This builder for chaining.
        */
@@ -1195,7 +1195,7 @@ private static final long serialVersionUID = 0L;
        * Signal-to-noise-ratio in dB
        * </pre>
        *
-       * <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
+       * <code>float snr = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearSnr() {
@@ -1347,7 +1347,7 @@ private static final long serialVersionUID = 0L;
   public static final int GATEWAY_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object gatewayId_;
   /**
-   * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+   * <code>string gateway_id = 1;</code>
    * @return The gatewayId.
    */
   public java.lang.String getGatewayId() {
@@ -1363,7 +1363,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+   * <code>string gateway_id = 1;</code>
    * @return The bytes for gatewayId.
    */
   public com.google.protobuf.ByteString
@@ -1512,7 +1512,7 @@ private static final long serialVersionUID = 0L;
    * Received signal strength in dBm
    * </pre>
    *
-   * <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
+   * <code>float rssi = 32;</code>
    * @return The rssi.
    */
   public float getRssi() {
@@ -1526,7 +1526,7 @@ private static final long serialVersionUID = 0L;
    * Signal-to-noise-ratio in dB
    * </pre>
    *
-   * <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
+   * <code>float snr = 33;</code>
    * @return The snr.
    */
   public float getSnr() {
@@ -2107,7 +2107,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object gatewayId_ = "";
     /**
-     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * <code>string gateway_id = 1;</code>
      * @return The gatewayId.
      */
     public java.lang.String getGatewayId() {
@@ -2123,7 +2123,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * <code>string gateway_id = 1;</code>
      * @return The bytes for gatewayId.
      */
     public com.google.protobuf.ByteString
@@ -2140,7 +2140,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * <code>string gateway_id = 1;</code>
      * @param value The gatewayId to set.
      * @return This builder for chaining.
      */
@@ -2155,7 +2155,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * <code>string gateway_id = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearGatewayId() {
@@ -2165,7 +2165,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
+     * <code>string gateway_id = 1;</code>
      * @param value The bytes for gatewayId to set.
      * @return This builder for chaining.
      */
@@ -2700,7 +2700,7 @@ private static final long serialVersionUID = 0L;
      * Received signal strength in dBm
      * </pre>
      *
-     * <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
+     * <code>float rssi = 32;</code>
      * @return The rssi.
      */
     public float getRssi() {
@@ -2711,7 +2711,7 @@ private static final long serialVersionUID = 0L;
      * Received signal strength in dBm
      * </pre>
      *
-     * <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
+     * <code>float rssi = 32;</code>
      * @param value The rssi to set.
      * @return This builder for chaining.
      */
@@ -2726,7 +2726,7 @@ private static final long serialVersionUID = 0L;
      * Received signal strength in dBm
      * </pre>
      *
-     * <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
+     * <code>float rssi = 32;</code>
      * @return This builder for chaining.
      */
     public Builder clearRssi() {
@@ -2742,7 +2742,7 @@ private static final long serialVersionUID = 0L;
      * Signal-to-noise-ratio in dB
      * </pre>
      *
-     * <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
+     * <code>float snr = 33;</code>
      * @return The snr.
      */
     public float getSnr() {
@@ -2753,7 +2753,7 @@ private static final long serialVersionUID = 0L;
      * Signal-to-noise-ratio in dB
      * </pre>
      *
-     * <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
+     * <code>float snr = 33;</code>
      * @param value The snr to set.
      * @return This builder for chaining.
      */
@@ -2768,7 +2768,7 @@ private static final long serialVersionUID = 0L;
      * Signal-to-noise-ratio in dB
      * </pre>
      *
-     * <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
+     * <code>float snr = 33;</code>
      * @return This builder for chaining.
      */
     public Builder clearSnr() {

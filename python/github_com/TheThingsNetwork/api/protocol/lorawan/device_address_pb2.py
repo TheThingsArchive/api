@@ -13,15 +13,13 @@ _sym_db = _symbol_database.Default()
 
 
 
-
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/TheThingsNetwork/api/protocol/lorawan/device_address.proto',
   package='lorawan',
   syntax='proto3',
   serialized_options=b'\n)org.thethingsnetwork.api.protocol.lorawanB\031LoRaWANDeviceAddressProtoP\001Z0github.com/TheThingsNetwork/api/protocol/lorawan\252\002$TheThingsNetwork.API.LoRaWANProtocol',
-  serialized_pb=b'\nEgithub.com/TheThingsNetwork/api/protocol/lorawan/device_address.proto\x12\x07lorawan\x1a-github.com/gogo/protobuf/gogoproto/gogo.proto\"\x11\n\x0fPrefixesRequest\"}\n\x10PrefixesResponse\x12\x39\n\x08prefixes\x18\x01 \x03(\x0b\x32\'.lorawan.PrefixesResponse.PrefixMapping\x1a.\n\rPrefixMapping\x12\x0e\n\x06prefix\x18\x01 \x01(\t\x12\r\n\x05usage\x18\x02 \x03(\t\"\x1f\n\x0e\x44\x65vAddrRequest\x12\r\n\x05usage\x18\x01 \x03(\t\"_\n\x0f\x44\x65vAddrResponse\x12L\n\x08\x64\x65v_addr\x18\x01 \x01(\x0c\x42:\xc8\xde\x1f\x00\xda\xde\x1f\x32github.com/TheThingsNetwork/ttn/core/types.DevAddr2\x95\x01\n\x0e\x44\x65vAddrManager\x12\x42\n\x0bGetPrefixes\x12\x18.lorawan.PrefixesRequest\x1a\x19.lorawan.PrefixesResponse\x12?\n\nGetDevAddr\x12\x17.lorawan.DevAddrRequest\x1a\x18.lorawan.DevAddrResponseB\xa1\x01\n)org.thethingsnetwork.api.protocol.lorawanB\x19LoRaWANDeviceAddressProtoP\x01Z0github.com/TheThingsNetwork/api/protocol/lorawan\xaa\x02$TheThingsNetwork.API.LoRaWANProtocolb\x06proto3'
-  ,
-  dependencies=[])
+  serialized_pb=b'\nEgithub.com/TheThingsNetwork/api/protocol/lorawan/device_address.proto\x12\x07lorawan\"\x11\n\x0fPrefixesRequest\"}\n\x10PrefixesResponse\x12\x39\n\x08prefixes\x18\x01 \x03(\x0b\x32\'.lorawan.PrefixesResponse.PrefixMapping\x1a.\n\rPrefixMapping\x12\x0e\n\x06prefix\x18\x01 \x01(\t\x12\r\n\x05usage\x18\x02 \x03(\t\"\x1f\n\x0e\x44\x65vAddrRequest\x12\r\n\x05usage\x18\x01 \x03(\t\"#\n\x0f\x44\x65vAddrResponse\x12\x10\n\x08\x64\x65v_addr\x18\x01 \x01(\x0c\x32\x95\x01\n\x0e\x44\x65vAddrManager\x12\x42\n\x0bGetPrefixes\x12\x18.lorawan.PrefixesRequest\x1a\x19.lorawan.PrefixesResponse\x12?\n\nGetDevAddr\x12\x17.lorawan.DevAddrRequest\x1a\x18.lorawan.DevAddrResponseB\xa1\x01\n)org.thethingsnetwork.api.protocol.lorawanB\x19LoRaWANDeviceAddressProtoP\x01Z0github.com/TheThingsNetwork/api/protocol/lorawan\xaa\x02$TheThingsNetwork.API.LoRaWANProtocolb\x06proto3'
+)
 
 
 
@@ -45,8 +43,8 @@ _PREFIXESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=129,
-  serialized_end=146,
+  serialized_start=82,
+  serialized_end=99,
 )
 
 
@@ -83,8 +81,8 @@ _PREFIXESRESPONSE_PREFIXMAPPING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=227,
-  serialized_end=273,
+  serialized_start=180,
+  serialized_end=226,
 )
 
 _PREFIXESRESPONSE = _descriptor.Descriptor(
@@ -113,8 +111,8 @@ _PREFIXESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=148,
-  serialized_end=273,
+  serialized_start=101,
+  serialized_end=226,
 )
 
 
@@ -144,8 +142,8 @@ _DEVADDRREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=275,
-  serialized_end=306,
+  serialized_start=228,
+  serialized_end=259,
 )
 
 
@@ -162,7 +160,7 @@ _DEVADDRRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\310\336\037\000\332\336\0372github.com/TheThingsNetwork/ttn/core/types.DevAddr', file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -175,8 +173,8 @@ _DEVADDRRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=308,
-  serialized_end=403,
+  serialized_start=261,
+  serialized_end=296,
 )
 
 _PREFIXESRESPONSE_PREFIXMAPPING.containing_type = _PREFIXESRESPONSE
@@ -225,7 +223,6 @@ _sym_db.RegisterMessage(DevAddrResponse)
 
 
 DESCRIPTOR._options = None
-_DEVADDRRESPONSE.fields_by_name['dev_addr']._options = None
 
 _DEVADDRMANAGER = _descriptor.ServiceDescriptor(
   name='DevAddrManager',
@@ -233,8 +230,8 @@ _DEVADDRMANAGER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=406,
-  serialized_end=555,
+  serialized_start=299,
+  serialized_end=448,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetPrefixes',

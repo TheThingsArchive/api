@@ -16,7 +16,7 @@ class GetByAppIDRequest extends \Google\Protobuf\Internal\Message
     /**
      * compatible with Metadata message
      *
-     * Generated from protobuf field <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 30;</code>
      */
     protected $app_id = '';
 
@@ -38,7 +38,7 @@ class GetByAppIDRequest extends \Google\Protobuf\Internal\Message
     /**
      * compatible with Metadata message
      *
-     * Generated from protobuf field <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 30;</code>
      * @return string
      */
     public function getAppId()
@@ -49,7 +49,7 @@ class GetByAppIDRequest extends \Google\Protobuf\Internal\Message
     /**
      * compatible with Metadata message
      *
-     * Generated from protobuf field <code>string app_id = 30 [(.gogoproto.customname) = "AppID"];</code>
+     * Generated from protobuf field <code>string app_id = 30;</code>
      * @param string $var
      * @return $this
      */

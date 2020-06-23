@@ -29,53 +29,53 @@ public interface DeduplicatedDeviceActivationRequestOrBuilder extends
   org.thethingsnetwork.api.protocol.MessageOrBuilder getMessageOrBuilder();
 
   /**
-   * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
+   * <code>bytes dev_eui = 11;</code>
    * @return The devEui.
    */
   com.google.protobuf.ByteString getDevEui();
 
   /**
-   * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
+   * <code>bytes app_eui = 12;</code>
    * @return The appEui.
    */
   com.google.protobuf.ByteString getAppEui();
 
   /**
-   * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+   * <code>string app_id = 13;</code>
    * @return The appId.
    */
   java.lang.String getAppId();
   /**
-   * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
+   * <code>string app_id = 13;</code>
    * @return The bytes for appId.
    */
   com.google.protobuf.ByteString
       getAppIdBytes();
 
   /**
-   * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+   * <code>string dev_id = 14;</code>
    * @return The devId.
    */
   java.lang.String getDevId();
   /**
-   * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
+   * <code>string dev_id = 14;</code>
    * @return The bytes for devId.
    */
   com.google.protobuf.ByteString
       getDevIdBytes();
 
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
    * @return Whether the protocolMetadata field is set.
    */
   boolean hasProtocolMetadata();
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
    * @return The protocolMetadata.
    */
   org.thethingsnetwork.api.protocol.RxMetadata getProtocolMetadata();
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
    */
   org.thethingsnetwork.api.protocol.RxMetadataOrBuilder getProtocolMetadataOrBuilder();
 

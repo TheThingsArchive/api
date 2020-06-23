@@ -8,13 +8,13 @@ public interface DLSettingsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
+   * <code>uint32 rx1_dr_offset = 1;</code>
    * @return The rx1DrOffset.
    */
   int getRx1DrOffset();
 
   /**
-   * <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
+   * <code>uint32 rx2_dr = 2;</code>
    * @return The rx2Dr.
    */
   int getRx2Dr();

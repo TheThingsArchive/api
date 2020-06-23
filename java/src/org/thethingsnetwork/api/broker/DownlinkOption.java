@@ -181,7 +181,7 @@ private static final long serialVersionUID = 0L;
    * ID of the gateway where this downlink should be sent
    * </pre>
    *
-   * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+   * <code>string gateway_id = 2;</code>
    * @return The gatewayId.
    */
   public java.lang.String getGatewayId() {
@@ -201,7 +201,7 @@ private static final long serialVersionUID = 0L;
    * ID of the gateway where this downlink should be sent
    * </pre>
    *
-   * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+   * <code>string gateway_id = 2;</code>
    * @return The bytes for gatewayId.
    */
   public com.google.protobuf.ByteString
@@ -249,21 +249,21 @@ private static final long serialVersionUID = 0L;
   public static final int PROTOCOL_CONFIGURATION_FIELD_NUMBER = 5;
   private org.thethingsnetwork.api.protocol.TxConfiguration protocolConfiguration_;
   /**
-   * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+   * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
    * @return Whether the protocolConfiguration field is set.
    */
   public boolean hasProtocolConfiguration() {
     return protocolConfiguration_ != null;
   }
   /**
-   * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+   * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
    * @return The protocolConfiguration.
    */
   public org.thethingsnetwork.api.protocol.TxConfiguration getProtocolConfiguration() {
     return protocolConfiguration_ == null ? org.thethingsnetwork.api.protocol.TxConfiguration.getDefaultInstance() : protocolConfiguration_;
   }
   /**
-   * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+   * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
    */
   public org.thethingsnetwork.api.protocol.TxConfigurationOrBuilder getProtocolConfigurationOrBuilder() {
     return getProtocolConfiguration();
@@ -272,21 +272,21 @@ private static final long serialVersionUID = 0L;
   public static final int GATEWAY_CONFIGURATION_FIELD_NUMBER = 6;
   private org.thethingsnetwork.api.gateway.TxConfiguration gatewayConfiguration_;
   /**
-   * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+   * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
    * @return Whether the gatewayConfiguration field is set.
    */
   public boolean hasGatewayConfiguration() {
     return gatewayConfiguration_ != null;
   }
   /**
-   * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+   * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
    * @return The gatewayConfiguration.
    */
   public org.thethingsnetwork.api.gateway.TxConfiguration getGatewayConfiguration() {
     return gatewayConfiguration_ == null ? org.thethingsnetwork.api.gateway.TxConfiguration.getDefaultInstance() : gatewayConfiguration_;
   }
   /**
-   * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+   * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
    */
   public org.thethingsnetwork.api.gateway.TxConfigurationOrBuilder getGatewayConfigurationOrBuilder() {
     return getGatewayConfiguration();
@@ -808,7 +808,7 @@ private static final long serialVersionUID = 0L;
      * ID of the gateway where this downlink should be sent
      * </pre>
      *
-     * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+     * <code>string gateway_id = 2;</code>
      * @return The gatewayId.
      */
     public java.lang.String getGatewayId() {
@@ -828,7 +828,7 @@ private static final long serialVersionUID = 0L;
      * ID of the gateway where this downlink should be sent
      * </pre>
      *
-     * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+     * <code>string gateway_id = 2;</code>
      * @return The bytes for gatewayId.
      */
     public com.google.protobuf.ByteString
@@ -849,7 +849,7 @@ private static final long serialVersionUID = 0L;
      * ID of the gateway where this downlink should be sent
      * </pre>
      *
-     * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+     * <code>string gateway_id = 2;</code>
      * @param value The gatewayId to set.
      * @return This builder for chaining.
      */
@@ -868,7 +868,7 @@ private static final long serialVersionUID = 0L;
      * ID of the gateway where this downlink should be sent
      * </pre>
      *
-     * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+     * <code>string gateway_id = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearGatewayId() {
@@ -882,7 +882,7 @@ private static final long serialVersionUID = 0L;
      * ID of the gateway where this downlink should be sent
      * </pre>
      *
-     * <code>string gateway_id = 2 [(.gogoproto.customname) = "GatewayID"];</code>
+     * <code>string gateway_id = 2;</code>
      * @param value The bytes for gatewayId to set.
      * @return This builder for chaining.
      */
@@ -986,14 +986,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.TxConfiguration, org.thethingsnetwork.api.protocol.TxConfiguration.Builder, org.thethingsnetwork.api.protocol.TxConfigurationOrBuilder> protocolConfigurationBuilder_;
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      * @return Whether the protocolConfiguration field is set.
      */
     public boolean hasProtocolConfiguration() {
       return protocolConfigurationBuilder_ != null || protocolConfiguration_ != null;
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      * @return The protocolConfiguration.
      */
     public org.thethingsnetwork.api.protocol.TxConfiguration getProtocolConfiguration() {
@@ -1004,7 +1004,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      */
     public Builder setProtocolConfiguration(org.thethingsnetwork.api.protocol.TxConfiguration value) {
       if (protocolConfigurationBuilder_ == null) {
@@ -1020,7 +1020,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      */
     public Builder setProtocolConfiguration(
         org.thethingsnetwork.api.protocol.TxConfiguration.Builder builderForValue) {
@@ -1034,7 +1034,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      */
     public Builder mergeProtocolConfiguration(org.thethingsnetwork.api.protocol.TxConfiguration value) {
       if (protocolConfigurationBuilder_ == null) {
@@ -1052,7 +1052,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      */
     public Builder clearProtocolConfiguration() {
       if (protocolConfigurationBuilder_ == null) {
@@ -1066,7 +1066,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      */
     public org.thethingsnetwork.api.protocol.TxConfiguration.Builder getProtocolConfigurationBuilder() {
       
@@ -1074,7 +1074,7 @@ private static final long serialVersionUID = 0L;
       return getProtocolConfigurationFieldBuilder().getBuilder();
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      */
     public org.thethingsnetwork.api.protocol.TxConfigurationOrBuilder getProtocolConfigurationOrBuilder() {
       if (protocolConfigurationBuilder_ != null) {
@@ -1085,7 +1085,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.protocol.TxConfiguration protocol_configuration = 5 [(.gogoproto.nullable) = false];</code>
+     * <code>.protocol.TxConfiguration protocol_configuration = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.TxConfiguration, org.thethingsnetwork.api.protocol.TxConfiguration.Builder, org.thethingsnetwork.api.protocol.TxConfigurationOrBuilder> 
@@ -1105,14 +1105,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.gateway.TxConfiguration, org.thethingsnetwork.api.gateway.TxConfiguration.Builder, org.thethingsnetwork.api.gateway.TxConfigurationOrBuilder> gatewayConfigurationBuilder_;
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      * @return Whether the gatewayConfiguration field is set.
      */
     public boolean hasGatewayConfiguration() {
       return gatewayConfigurationBuilder_ != null || gatewayConfiguration_ != null;
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      * @return The gatewayConfiguration.
      */
     public org.thethingsnetwork.api.gateway.TxConfiguration getGatewayConfiguration() {
@@ -1123,7 +1123,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      */
     public Builder setGatewayConfiguration(org.thethingsnetwork.api.gateway.TxConfiguration value) {
       if (gatewayConfigurationBuilder_ == null) {
@@ -1139,7 +1139,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      */
     public Builder setGatewayConfiguration(
         org.thethingsnetwork.api.gateway.TxConfiguration.Builder builderForValue) {
@@ -1153,7 +1153,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      */
     public Builder mergeGatewayConfiguration(org.thethingsnetwork.api.gateway.TxConfiguration value) {
       if (gatewayConfigurationBuilder_ == null) {
@@ -1171,7 +1171,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      */
     public Builder clearGatewayConfiguration() {
       if (gatewayConfigurationBuilder_ == null) {
@@ -1185,7 +1185,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      */
     public org.thethingsnetwork.api.gateway.TxConfiguration.Builder getGatewayConfigurationBuilder() {
       
@@ -1193,7 +1193,7 @@ private static final long serialVersionUID = 0L;
       return getGatewayConfigurationFieldBuilder().getBuilder();
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      */
     public org.thethingsnetwork.api.gateway.TxConfigurationOrBuilder getGatewayConfigurationOrBuilder() {
       if (gatewayConfigurationBuilder_ != null) {
@@ -1204,7 +1204,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.gateway.TxConfiguration gateway_configuration = 6 [(.gogoproto.nullable) = false];</code>
+     * <code>.gateway.TxConfiguration gateway_configuration = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.gateway.TxConfiguration, org.thethingsnetwork.api.gateway.TxConfiguration.Builder, org.thethingsnetwork.api.gateway.TxConfigurationOrBuilder> 

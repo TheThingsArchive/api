@@ -8,7 +8,7 @@ public interface MACCommandOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint32 cid = 1 [(.gogoproto.customname) = "CID"];</code>
+   * <code>uint32 cid = 1;</code>
    * @return The cid.
    */
   int getCid();

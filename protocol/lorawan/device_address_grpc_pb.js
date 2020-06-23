@@ -8,7 +8,6 @@
 var grpc = require('grpc');
 var ttn_protocol_lorawan_device_address_pb = require('../../protocol/lorawan/device_address_pb.js');
 
-
 function serialize_lorawan_DevAddrRequest(arg) {
   if (!(arg instanceof ttn_protocol_lorawan_device_address_pb.DevAddrRequest)) {
     throw new Error('Expected argument of type lorawan.DevAddrRequest');

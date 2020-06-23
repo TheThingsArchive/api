@@ -15,7 +15,6 @@ PROTOBUF_C__BEGIN_DECLS
 #endif
 
 #include "google/protobuf/empty.pb-c.h"
-#include "github.com/gogo/protobuf/gogoproto/gogo.pb-c.h"
 #include "github.com/TheThingsNetwork/api/api.pb-c.h"
 #include "github.com/TheThingsNetwork/api/protocol/protocol.pb-c.h"
 #include "github.com/TheThingsNetwork/api/gateway/gateway.pb-c.h"

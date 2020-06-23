@@ -8,38 +8,38 @@ public interface MessageOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+   * <code>.lorawan.MHDR m_hdr = 1;</code>
    * @return Whether the mHdr field is set.
    */
   boolean hasMHdr();
   /**
-   * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+   * <code>.lorawan.MHDR m_hdr = 1;</code>
    * @return The mHdr.
    */
   org.thethingsnetwork.api.protocol.lorawan.MHDR getMHdr();
   /**
-   * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
+   * <code>.lorawan.MHDR m_hdr = 1;</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.MHDROrBuilder getMHdrOrBuilder();
 
   /**
-   * <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
+   * <code>bytes mic = 2;</code>
    * @return The mic.
    */
   com.google.protobuf.ByteString getMic();
 
   /**
-   * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
+   * <code>.lorawan.MACPayload mac_payload = 3;</code>
    * @return Whether the macPayload field is set.
    */
   boolean hasMacPayload();
   /**
-   * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
+   * <code>.lorawan.MACPayload mac_payload = 3;</code>
    * @return The macPayload.
    */
   org.thethingsnetwork.api.protocol.lorawan.MACPayload getMacPayload();
   /**
-   * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
+   * <code>.lorawan.MACPayload mac_payload = 3;</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.MACPayloadOrBuilder getMacPayloadOrBuilder();
 

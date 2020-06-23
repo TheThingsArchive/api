@@ -187,7 +187,7 @@ private static final long serialVersionUID = 0L;
    * The ID of the component
    * </pre>
    *
-   * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+   * <code>string id = 1;</code>
    * @return The id.
    */
   public java.lang.String getId() {
@@ -207,7 +207,7 @@ private static final long serialVersionUID = 0L;
    * The ID of the component
    * </pre>
    *
-   * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+   * <code>string id = 1;</code>
    * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
@@ -1326,7 +1326,7 @@ private static final long serialVersionUID = 0L;
      * The ID of the component
      * </pre>
      *
-     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * <code>string id = 1;</code>
      * @return The id.
      */
     public java.lang.String getId() {
@@ -1346,7 +1346,7 @@ private static final long serialVersionUID = 0L;
      * The ID of the component
      * </pre>
      *
-     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * <code>string id = 1;</code>
      * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
@@ -1367,7 +1367,7 @@ private static final long serialVersionUID = 0L;
      * The ID of the component
      * </pre>
      *
-     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * <code>string id = 1;</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -1386,7 +1386,7 @@ private static final long serialVersionUID = 0L;
      * The ID of the component
      * </pre>
      *
-     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * <code>string id = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
@@ -1400,7 +1400,7 @@ private static final long serialVersionUID = 0L;
      * The ID of the component
      * </pre>
      *
-     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
+     * <code>string id = 1;</code>
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */

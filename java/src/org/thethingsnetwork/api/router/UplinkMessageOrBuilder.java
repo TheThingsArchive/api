@@ -29,32 +29,32 @@ public interface UplinkMessageOrBuilder extends
   org.thethingsnetwork.api.protocol.MessageOrBuilder getMessageOrBuilder();
 
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 11;</code>
    * @return Whether the protocolMetadata field is set.
    */
   boolean hasProtocolMetadata();
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 11;</code>
    * @return The protocolMetadata.
    */
   org.thethingsnetwork.api.protocol.RxMetadata getProtocolMetadata();
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 11;</code>
    */
   org.thethingsnetwork.api.protocol.RxMetadataOrBuilder getProtocolMetadataOrBuilder();
 
   /**
-   * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
+   * <code>.gateway.RxMetadata gateway_metadata = 12;</code>
    * @return Whether the gatewayMetadata field is set.
    */
   boolean hasGatewayMetadata();
   /**
-   * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
+   * <code>.gateway.RxMetadata gateway_metadata = 12;</code>
    * @return The gatewayMetadata.
    */
   org.thethingsnetwork.api.gateway.RxMetadata getGatewayMetadata();
   /**
-   * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
+   * <code>.gateway.RxMetadata gateway_metadata = 12;</code>
    */
   org.thethingsnetwork.api.gateway.RxMetadataOrBuilder getGatewayMetadataOrBuilder();
 
