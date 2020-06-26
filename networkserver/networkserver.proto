@@ -3,6 +3,8 @@
 
 syntax = "proto3";
 
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
 import "github.com/TheThingsNetwork/api/api.proto";
 import "github.com/TheThingsNetwork/api/protocol/lorawan/device.proto";
 import "github.com/TheThingsNetwork/api/broker/broker.proto";
@@ -18,7 +20,7 @@ option java_multiple_files = true;
 
 message DevicesRequest {
   // Device address from the uplink message
-  bytes  dev_addr = 1;
+  bytes  dev_addr = 1 [(gogoproto.nullable) = false, (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];
   // Frame counter from the uplink message
   uint32 f_cnt    = 2;
 }
@@ -49,8 +51,8 @@ message StatusRequest {}
 
 // message Status is the response to the StatusRequest
 message Status {
-  api.SystemStats    system    = 1;
-  api.ComponentStats component = 2;
+  api.SystemStats    system    = 1 [(gogoproto.nullable) = false];
+  api.ComponentStats component = 2 [(gogoproto.nullable) = false];
 
   api.Rates uplink      = 11;
   api.Rates downlink    = 12;

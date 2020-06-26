@@ -5,6 +5,8 @@ syntax = "proto3";
 
 import "google/protobuf/empty.proto";
 
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
 import "github.com/TheThingsNetwork/api/api.proto";
 import "github.com/TheThingsNetwork/api/protocol/protocol.proto";
 import "github.com/TheThingsNetwork/api/gateway/gateway.proto";
@@ -23,26 +25,26 @@ message SubscribeRequest {}
 message UplinkMessage {
   bytes                payload            = 1;
   protocol.Message     message            = 2;
-  protocol.RxMetadata  protocol_metadata  = 11;
-  gateway.RxMetadata   gateway_metadata   = 12;
+  protocol.RxMetadata  protocol_metadata  = 11 [(gogoproto.nullable) = false];
+  gateway.RxMetadata   gateway_metadata   = 12 [(gogoproto.nullable) = false];
   trace.Trace          trace              = 21;
 }
 
 message DownlinkMessage {
   bytes                     payload                 = 1;
   protocol.Message          message                 = 2;
-  protocol.TxConfiguration  protocol_configuration  = 11;
-  gateway.TxConfiguration   gateway_configuration   = 12;
+  protocol.TxConfiguration  protocol_configuration  = 11 [(gogoproto.nullable) = false];
+  gateway.TxConfiguration   gateway_configuration   = 12 [(gogoproto.nullable) = false];
   trace.Trace               trace                   = 21;
 }
 
 message DeviceActivationRequest {
   bytes                        payload              = 1;
   protocol.Message             message              = 2;
-  bytes                        dev_eui              = 11;
-  bytes                        app_eui              = 12;
-  protocol.RxMetadata          protocol_metadata    = 21;
-  gateway.RxMetadata           gateway_metadata     = 22;
+  bytes                        dev_eui              = 11 [(gogoproto.customname) = "DevEUI", (gogoproto.nullable) = false, (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI"];
+  bytes                        app_eui              = 12 [(gogoproto.customname) = "AppEUI", (gogoproto.nullable) = false, (gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI"];
+  protocol.RxMetadata          protocol_metadata    = 21 [(gogoproto.nullable) = false];
+  gateway.RxMetadata           gateway_metadata     = 22 [(gogoproto.nullable) = false];
   protocol.ActivationMetadata  activation_metadata  = 23;
   trace.Trace                  trace                = 31;
 }
@@ -78,12 +80,12 @@ service Router {
 // message GatewayStatusRequest is used to request the status of a gateway from
 // this Router
 message GatewayStatusRequest {
-  string gateway_id = 1;
+  string gateway_id = 1 [(gogoproto.customname) = "GatewayID"];
 }
 
 message GatewayStatusResponse {
   int64           last_seen  = 1;
-  gateway.Status  status     = 2;
+  gateway.Status  status     = 2 [(gogoproto.nullable) = false];
 }
 
 // message StatusRequest is used to request the status of this Router

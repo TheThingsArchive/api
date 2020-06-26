@@ -3,6 +3,8 @@
 
 syntax = "proto3";
 
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
 package gateway;
 
 option csharp_namespace = "TheThingsNetwork.API.Gateway";
@@ -45,7 +47,7 @@ message LocationMetadata {
 }
 
 message RxMetadata {
-  string  gateway_id = 1;
+  string  gateway_id = 1 [(gogoproto.customname) = "GatewayID"];
 
   // Indicates whether the gateway is trusted. Components that are able to verify gateway trust MUST do so and set this value accordingly
   bool    gateway_trusted = 2;
@@ -66,28 +68,28 @@ message RxMetadata {
   // Frequency in Hz
   uint64  frequency  = 31;
   // Received signal strength in dBm
-  float   rssi       = 32;
+  float   rssi       = 32 [(gogoproto.customname) = "RSSI"];
   // Signal-to-noise-ratio in dB
-  float   snr        = 33;
+  float   snr        = 33 [(gogoproto.customname) = "SNR"];
 
   message Antenna {
     uint32 antenna = 1;
     uint32 channel = 2;
 
     // Received signal power in dBm
-    float  rssi         = 3;
+    float  rssi         = 3 [(gogoproto.customname) = "RSSI"];
 
     // Received channel power in dBm
-    float  channel_rssi = 5;
+    float  channel_rssi = 5 [(gogoproto.customname) = "ChannelRSSI"];
 
     // Standard deviation of the RSSI
-    float  rssi_standard_deviation = 6;
+    float  rssi_standard_deviation = 6 [(gogoproto.customname) = "RSSIStandardDeviation"];
 
     // Frequency offset (Hz)
     int64 frequency_offset = 7;
 
     // Signal-to-noise-ratio in dB
-    float  snr     = 4;
+    float  snr     = 4 [(gogoproto.customname) = "SNR"];
 
     // Encrypted fine timestamp from the Gateway FPGA
     bytes encrypted_time = 10;
@@ -133,7 +135,7 @@ message Status {
   // These values may be left out if they don't change
   // Reset using "-"
 
-  repeated string ip     = 11;
+  repeated string ip     = 11 [(gogoproto.customname) = "IP"];
   string  platform       = 12;
   string  contact_email  = 13;
   string  description    = 14;
@@ -145,18 +147,18 @@ message Status {
   // The value of Router is set by the Router
   string  router         = 17;
   // Version of Gateway FPGA
-  uint32  fpga           = 18;
+  uint32  fpga           = 18 [(gogoproto.customname) = "FPGA"];
   // Version of Gateway DSP software
-  uint32  dsp            = 19;
+  uint32  dsp            = 19 [(gogoproto.customname) = "DSP"];
   // Version of gateway driver (in X.X.X format)
-  string  hal            = 20;
+  string  hal            = 20 [(gogoproto.customname) = "HAL"];
 
   LocationMetadata location = 21;
 
   // Network (internet) stuff
 
   // Round-trip time to the server in milliseconds
-  uint32  rtt            = 31;
+  uint32  rtt            = 31 [(gogoproto.customname) = "RTT"];
 
   // Rx and Tx stuff
 
@@ -175,7 +177,7 @@ message Status {
   // Sequence number of the last packet received from the link testing mote
   uint32  lm_nw          = 47;
   // Number of lost PPS pulses
-  uint32  l_pps       = 48;
+  uint32  l_pps       = 48 [(gogoproto.customname) = "LPPS"];
 
   // Additional metrics from the operating system
   message OSMetrics {
@@ -183,14 +185,14 @@ message Status {
     float   load_5            = 2;
     float   load_15           = 3;
 
-    float   cpu_percentage    = 11;
+    float   cpu_percentage    = 11 [(gogoproto.customname) = "CPUPercentage"];
 
     float   memory_percentage = 21;
 
     float   temperature       = 31;
   }
 
-  OSMetrics os = 51;
+  OSMetrics os = 51 [(gogoproto.customname) = "OS"];
 
   // debug or warning messages from the gateway
   repeated string messages = 52;
