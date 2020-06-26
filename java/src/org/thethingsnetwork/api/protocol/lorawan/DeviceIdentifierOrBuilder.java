@@ -12,7 +12,7 @@ public interface DeviceIdentifierOrBuilder extends
    * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
    * </pre>
    *
-   * <code>bytes app_eui = 1;</code>
+   * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
    * @return The appEui.
    */
   com.google.protobuf.ByteString getAppEui();
@@ -22,7 +22,7 @@ public interface DeviceIdentifierOrBuilder extends
    * The DevEUI is a unique, 8 byte identifier for the device.
    * </pre>
    *
-   * <code>bytes dev_eui = 2;</code>
+   * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
    * @return The devEui.
    */
   com.google.protobuf.ByteString getDevEui();

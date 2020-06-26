@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class MACPayload extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.lorawan.FHDR f_hdr = 1;</code>
+     * Generated from protobuf field <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     protected $f_hdr = null;
     /**
@@ -22,7 +22,7 @@ class MACPayload extends \Google\Protobuf\Internal\Message
      */
     protected $f_port = 0;
     /**
-     * Generated from protobuf field <code>bytes frm_payload = 3;</code>
+     * Generated from protobuf field <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
      */
     protected $frm_payload = '';
 
@@ -43,7 +43,7 @@ class MACPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.FHDR f_hdr = 1;</code>
+     * Generated from protobuf field <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      * @return \Lorawan\FHDR
      */
     public function getFHdr()
@@ -52,7 +52,7 @@ class MACPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.FHDR f_hdr = 1;</code>
+     * Generated from protobuf field <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      * @param \Lorawan\FHDR $var
      * @return $this
      */
@@ -87,7 +87,7 @@ class MACPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes frm_payload = 3;</code>
+     * Generated from protobuf field <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
      * @return string
      */
     public function getFrmPayload()
@@ -96,7 +96,7 @@ class MACPayload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes frm_payload = 3;</code>
+     * Generated from protobuf field <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
      * @param string $var
      * @return $this
      */

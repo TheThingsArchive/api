@@ -29,44 +29,44 @@ public interface DeviceActivationRequestOrBuilder extends
   org.thethingsnetwork.api.protocol.MessageOrBuilder getMessageOrBuilder();
 
   /**
-   * <code>bytes dev_eui = 11;</code>
+   * <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
    * @return The devEui.
    */
   com.google.protobuf.ByteString getDevEui();
 
   /**
-   * <code>bytes app_eui = 12;</code>
+   * <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
    * @return The appEui.
    */
   com.google.protobuf.ByteString getAppEui();
 
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
    * @return Whether the protocolMetadata field is set.
    */
   boolean hasProtocolMetadata();
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
    * @return The protocolMetadata.
    */
   org.thethingsnetwork.api.protocol.RxMetadata getProtocolMetadata();
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
    */
   org.thethingsnetwork.api.protocol.RxMetadataOrBuilder getProtocolMetadataOrBuilder();
 
   /**
-   * <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+   * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
    * @return Whether the gatewayMetadata field is set.
    */
   boolean hasGatewayMetadata();
   /**
-   * <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+   * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
    * @return The gatewayMetadata.
    */
   org.thethingsnetwork.api.gateway.RxMetadata getGatewayMetadata();
   /**
-   * <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+   * <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
    */
   org.thethingsnetwork.api.gateway.RxMetadataOrBuilder getGatewayMetadataOrBuilder();
 

@@ -163,7 +163,7 @@ private static final long serialVersionUID = 0L;
    * Generated ID
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
    * @return The id.
    */
   public java.lang.String getId() {
@@ -183,7 +183,7 @@ private static final long serialVersionUID = 0L;
    * Generated ID
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
    * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
@@ -221,7 +221,7 @@ private static final long serialVersionUID = 0L;
    * The ID of the component
    * </pre>
    *
-   * <code>string service_id = 3;</code>
+   * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
    * @return The serviceId.
    */
   public java.lang.String getServiceId() {
@@ -241,7 +241,7 @@ private static final long serialVersionUID = 0L;
    * The ID of the component
    * </pre>
    *
-   * <code>string service_id = 3;</code>
+   * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
    * @return The bytes for serviceId.
    */
   public com.google.protobuf.ByteString
@@ -980,7 +980,7 @@ private static final long serialVersionUID = 0L;
      * Generated ID
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      * @return The id.
      */
     public java.lang.String getId() {
@@ -1000,7 +1000,7 @@ private static final long serialVersionUID = 0L;
      * Generated ID
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
@@ -1021,7 +1021,7 @@ private static final long serialVersionUID = 0L;
      * Generated ID
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -1040,7 +1040,7 @@ private static final long serialVersionUID = 0L;
      * Generated ID
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
@@ -1054,7 +1054,7 @@ private static final long serialVersionUID = 0L;
      * Generated ID
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
@@ -1118,7 +1118,7 @@ private static final long serialVersionUID = 0L;
      * The ID of the component
      * </pre>
      *
-     * <code>string service_id = 3;</code>
+     * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
      * @return The serviceId.
      */
     public java.lang.String getServiceId() {
@@ -1138,7 +1138,7 @@ private static final long serialVersionUID = 0L;
      * The ID of the component
      * </pre>
      *
-     * <code>string service_id = 3;</code>
+     * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
      * @return The bytes for serviceId.
      */
     public com.google.protobuf.ByteString
@@ -1159,7 +1159,7 @@ private static final long serialVersionUID = 0L;
      * The ID of the component
      * </pre>
      *
-     * <code>string service_id = 3;</code>
+     * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
      * @param value The serviceId to set.
      * @return This builder for chaining.
      */
@@ -1178,7 +1178,7 @@ private static final long serialVersionUID = 0L;
      * The ID of the component
      * </pre>
      *
-     * <code>string service_id = 3;</code>
+     * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
      * @return This builder for chaining.
      */
     public Builder clearServiceId() {
@@ -1192,7 +1192,7 @@ private static final long serialVersionUID = 0L;
      * The ID of the component
      * </pre>
      *
-     * <code>string service_id = 3;</code>
+     * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
      * @param value The bytes for serviceId to set.
      * @return This builder for chaining.
      */

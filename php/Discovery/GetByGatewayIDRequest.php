@@ -16,7 +16,7 @@ class GetByGatewayIDRequest extends \Google\Protobuf\Internal\Message
     /**
      * compatible with Metadata message
      *
-     * Generated from protobuf field <code>string gateway_id = 30;</code>
+     * Generated from protobuf field <code>string gateway_id = 30 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     protected $gateway_id = '';
 
@@ -38,7 +38,7 @@ class GetByGatewayIDRequest extends \Google\Protobuf\Internal\Message
     /**
      * compatible with Metadata message
      *
-     * Generated from protobuf field <code>string gateway_id = 30;</code>
+     * Generated from protobuf field <code>string gateway_id = 30 [(.gogoproto.customname) = "GatewayID"];</code>
      * @return string
      */
     public function getGatewayId()
@@ -49,7 +49,7 @@ class GetByGatewayIDRequest extends \Google\Protobuf\Internal\Message
     /**
      * compatible with Metadata message
      *
-     * Generated from protobuf field <code>string gateway_id = 30;</code>
+     * Generated from protobuf field <code>string gateway_id = 30 [(.gogoproto.customname) = "GatewayID"];</code>
      * @param string $var
      * @return $this
      */

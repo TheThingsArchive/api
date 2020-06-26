@@ -94,7 +94,7 @@ private static final long serialVersionUID = 0L;
    * compatible with Metadata message
    * </pre>
    *
-   * <code>string gateway_id = 30;</code>
+   * <code>string gateway_id = 30 [(.gogoproto.customname) = "GatewayID"];</code>
    * @return The gatewayId.
    */
   public java.lang.String getGatewayId() {
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
    * compatible with Metadata message
    * </pre>
    *
-   * <code>string gateway_id = 30;</code>
+   * <code>string gateway_id = 30 [(.gogoproto.customname) = "GatewayID"];</code>
    * @return The bytes for gatewayId.
    */
   public com.google.protobuf.ByteString
@@ -439,7 +439,7 @@ private static final long serialVersionUID = 0L;
      * compatible with Metadata message
      * </pre>
      *
-     * <code>string gateway_id = 30;</code>
+     * <code>string gateway_id = 30 [(.gogoproto.customname) = "GatewayID"];</code>
      * @return The gatewayId.
      */
     public java.lang.String getGatewayId() {
@@ -459,7 +459,7 @@ private static final long serialVersionUID = 0L;
      * compatible with Metadata message
      * </pre>
      *
-     * <code>string gateway_id = 30;</code>
+     * <code>string gateway_id = 30 [(.gogoproto.customname) = "GatewayID"];</code>
      * @return The bytes for gatewayId.
      */
     public com.google.protobuf.ByteString
@@ -480,7 +480,7 @@ private static final long serialVersionUID = 0L;
      * compatible with Metadata message
      * </pre>
      *
-     * <code>string gateway_id = 30;</code>
+     * <code>string gateway_id = 30 [(.gogoproto.customname) = "GatewayID"];</code>
      * @param value The gatewayId to set.
      * @return This builder for chaining.
      */
@@ -499,7 +499,7 @@ private static final long serialVersionUID = 0L;
      * compatible with Metadata message
      * </pre>
      *
-     * <code>string gateway_id = 30;</code>
+     * <code>string gateway_id = 30 [(.gogoproto.customname) = "GatewayID"];</code>
      * @return This builder for chaining.
      */
     public Builder clearGatewayId() {
@@ -513,7 +513,7 @@ private static final long serialVersionUID = 0L;
      * compatible with Metadata message
      * </pre>
      *
-     * <code>string gateway_id = 30;</code>
+     * <code>string gateway_id = 30 [(.gogoproto.customname) = "GatewayID"];</code>
      * @param value The bytes for gatewayId to set.
      * @return This builder for chaining.
      */

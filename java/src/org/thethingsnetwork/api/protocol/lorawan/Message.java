@@ -187,21 +187,21 @@ private static final long serialVersionUID = 0L;
   public static final int M_HDR_FIELD_NUMBER = 1;
   private org.thethingsnetwork.api.protocol.lorawan.MHDR mHdr_;
   /**
-   * <code>.lorawan.MHDR m_hdr = 1;</code>
+   * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
    * @return Whether the mHdr field is set.
    */
   public boolean hasMHdr() {
     return mHdr_ != null;
   }
   /**
-   * <code>.lorawan.MHDR m_hdr = 1;</code>
+   * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
    * @return The mHdr.
    */
   public org.thethingsnetwork.api.protocol.lorawan.MHDR getMHdr() {
     return mHdr_ == null ? org.thethingsnetwork.api.protocol.lorawan.MHDR.getDefaultInstance() : mHdr_;
   }
   /**
-   * <code>.lorawan.MHDR m_hdr = 1;</code>
+   * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
    */
   public org.thethingsnetwork.api.protocol.lorawan.MHDROrBuilder getMHdrOrBuilder() {
     return getMHdr();
@@ -210,7 +210,7 @@ private static final long serialVersionUID = 0L;
   public static final int MIC_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString mic_;
   /**
-   * <code>bytes mic = 2;</code>
+   * <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
    * @return The mic.
    */
   public com.google.protobuf.ByteString getMic() {
@@ -219,14 +219,14 @@ private static final long serialVersionUID = 0L;
 
   public static final int MAC_PAYLOAD_FIELD_NUMBER = 3;
   /**
-   * <code>.lorawan.MACPayload mac_payload = 3;</code>
+   * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
    * @return Whether the macPayload field is set.
    */
   public boolean hasMacPayload() {
     return payloadCase_ == 3;
   }
   /**
-   * <code>.lorawan.MACPayload mac_payload = 3;</code>
+   * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
    * @return The macPayload.
    */
   public org.thethingsnetwork.api.protocol.lorawan.MACPayload getMacPayload() {
@@ -236,7 +236,7 @@ private static final long serialVersionUID = 0L;
     return org.thethingsnetwork.api.protocol.lorawan.MACPayload.getDefaultInstance();
   }
   /**
-   * <code>.lorawan.MACPayload mac_payload = 3;</code>
+   * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
    */
   public org.thethingsnetwork.api.protocol.lorawan.MACPayloadOrBuilder getMacPayloadOrBuilder() {
     if (payloadCase_ == 3) {
@@ -747,14 +747,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.MHDR, org.thethingsnetwork.api.protocol.lorawan.MHDR.Builder, org.thethingsnetwork.api.protocol.lorawan.MHDROrBuilder> mHdrBuilder_;
     /**
-     * <code>.lorawan.MHDR m_hdr = 1;</code>
+     * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      * @return Whether the mHdr field is set.
      */
     public boolean hasMHdr() {
       return mHdrBuilder_ != null || mHdr_ != null;
     }
     /**
-     * <code>.lorawan.MHDR m_hdr = 1;</code>
+     * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      * @return The mHdr.
      */
     public org.thethingsnetwork.api.protocol.lorawan.MHDR getMHdr() {
@@ -765,7 +765,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.lorawan.MHDR m_hdr = 1;</code>
+     * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     public Builder setMHdr(org.thethingsnetwork.api.protocol.lorawan.MHDR value) {
       if (mHdrBuilder_ == null) {
@@ -781,7 +781,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.MHDR m_hdr = 1;</code>
+     * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     public Builder setMHdr(
         org.thethingsnetwork.api.protocol.lorawan.MHDR.Builder builderForValue) {
@@ -795,7 +795,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.MHDR m_hdr = 1;</code>
+     * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     public Builder mergeMHdr(org.thethingsnetwork.api.protocol.lorawan.MHDR value) {
       if (mHdrBuilder_ == null) {
@@ -813,7 +813,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.MHDR m_hdr = 1;</code>
+     * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     public Builder clearMHdr() {
       if (mHdrBuilder_ == null) {
@@ -827,7 +827,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.MHDR m_hdr = 1;</code>
+     * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.MHDR.Builder getMHdrBuilder() {
       
@@ -835,7 +835,7 @@ private static final long serialVersionUID = 0L;
       return getMHdrFieldBuilder().getBuilder();
     }
     /**
-     * <code>.lorawan.MHDR m_hdr = 1;</code>
+     * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.MHDROrBuilder getMHdrOrBuilder() {
       if (mHdrBuilder_ != null) {
@@ -846,7 +846,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.lorawan.MHDR m_hdr = 1;</code>
+     * <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.MHDR, org.thethingsnetwork.api.protocol.lorawan.MHDR.Builder, org.thethingsnetwork.api.protocol.lorawan.MHDROrBuilder> 
@@ -864,14 +864,14 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString mic_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes mic = 2;</code>
+     * <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
      * @return The mic.
      */
     public com.google.protobuf.ByteString getMic() {
       return mic_;
     }
     /**
-     * <code>bytes mic = 2;</code>
+     * <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
      * @param value The mic to set.
      * @return This builder for chaining.
      */
@@ -885,7 +885,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bytes mic = 2;</code>
+     * <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
      * @return This builder for chaining.
      */
     public Builder clearMic() {
@@ -898,14 +898,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.MACPayload, org.thethingsnetwork.api.protocol.lorawan.MACPayload.Builder, org.thethingsnetwork.api.protocol.lorawan.MACPayloadOrBuilder> macPayloadBuilder_;
     /**
-     * <code>.lorawan.MACPayload mac_payload = 3;</code>
+     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      * @return Whether the macPayload field is set.
      */
     public boolean hasMacPayload() {
       return payloadCase_ == 3;
     }
     /**
-     * <code>.lorawan.MACPayload mac_payload = 3;</code>
+     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      * @return The macPayload.
      */
     public org.thethingsnetwork.api.protocol.lorawan.MACPayload getMacPayload() {
@@ -922,7 +922,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.lorawan.MACPayload mac_payload = 3;</code>
+     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      */
     public Builder setMacPayload(org.thethingsnetwork.api.protocol.lorawan.MACPayload value) {
       if (macPayloadBuilder_ == null) {
@@ -938,7 +938,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.MACPayload mac_payload = 3;</code>
+     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      */
     public Builder setMacPayload(
         org.thethingsnetwork.api.protocol.lorawan.MACPayload.Builder builderForValue) {
@@ -952,7 +952,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.MACPayload mac_payload = 3;</code>
+     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      */
     public Builder mergeMacPayload(org.thethingsnetwork.api.protocol.lorawan.MACPayload value) {
       if (macPayloadBuilder_ == null) {
@@ -974,7 +974,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.MACPayload mac_payload = 3;</code>
+     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      */
     public Builder clearMacPayload() {
       if (macPayloadBuilder_ == null) {
@@ -993,13 +993,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.MACPayload mac_payload = 3;</code>
+     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.MACPayload.Builder getMacPayloadBuilder() {
       return getMacPayloadFieldBuilder().getBuilder();
     }
     /**
-     * <code>.lorawan.MACPayload mac_payload = 3;</code>
+     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.MACPayloadOrBuilder getMacPayloadOrBuilder() {
       if ((payloadCase_ == 3) && (macPayloadBuilder_ != null)) {
@@ -1012,7 +1012,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.lorawan.MACPayload mac_payload = 3;</code>
+     * <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.MACPayload, org.thethingsnetwork.api.protocol.lorawan.MACPayload.Builder, org.thethingsnetwork.api.protocol.lorawan.MACPayloadOrBuilder> 

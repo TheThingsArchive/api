@@ -98,7 +98,7 @@ private static final long serialVersionUID = 0L;
    * Device address from the uplink message
    * </pre>
    *
-   * <code>bytes dev_addr = 1;</code>
+   * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
    * @return The devAddr.
    */
   public com.google.protobuf.ByteString getDevAddr() {
@@ -444,7 +444,7 @@ private static final long serialVersionUID = 0L;
      * Device address from the uplink message
      * </pre>
      *
-     * <code>bytes dev_addr = 1;</code>
+     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      * @return The devAddr.
      */
     public com.google.protobuf.ByteString getDevAddr() {
@@ -455,7 +455,7 @@ private static final long serialVersionUID = 0L;
      * Device address from the uplink message
      * </pre>
      *
-     * <code>bytes dev_addr = 1;</code>
+     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      * @param value The devAddr to set.
      * @return This builder for chaining.
      */
@@ -473,7 +473,7 @@ private static final long serialVersionUID = 0L;
      * Device address from the uplink message
      * </pre>
      *
-     * <code>bytes dev_addr = 1;</code>
+     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDevAddr() {

@@ -45,41 +45,45 @@ public final class NetworkServerProto {
     java.lang.String[] descriptorData = {
       "\nAgithub.com/TheThingsNetwork/api/networ" +
       "kserver/networkserver.proto\022\rnetworkserv" +
-      "er\032)github.com/TheThingsNetwork/api/api." +
-      "proto\032=github.com/TheThingsNetwork/api/p" +
-      "rotocol/lorawan/device.proto\0323github.com" +
-      "/TheThingsNetwork/api/broker/broker.prot" +
-      "o\0325github.com/TheThingsNetwork/api/handl" +
-      "er/handler.proto\"1\n\016DevicesRequest\022\020\n\010de" +
-      "v_addr\030\001 \001(\014\022\r\n\005f_cnt\030\002 \001(\r\"3\n\017DevicesRe" +
-      "sponse\022 \n\007results\030\001 \003(\0132\017.lorawan.Device" +
-      "\"\017\n\rStatusRequest\"\334\001\n\006Status\022 \n\006system\030\001" +
-      " \001(\0132\020.api.SystemStats\022&\n\tcomponent\030\002 \001(" +
-      "\0132\023.api.ComponentStats\022\032\n\006uplink\030\013 \001(\0132\n" +
-      ".api.Rates\022\034\n\010downlink\030\014 \001(\0132\n.api.Rates" +
-      "\022\037\n\013activations\030\r \001(\0132\n.api.Rates\022-\n\023dev" +
-      "ices_per_address\030\025 \001(\0132\020.api.Percentiles" +
-      "2\253\003\n\rNetworkServer\022K\n\nGetDevices\022\035.netwo" +
-      "rkserver.DevicesRequest\032\036.networkserver." +
-      "DevicesResponse\022m\n\021PrepareActivation\022+.b" +
-      "roker.DeduplicatedDeviceActivationReques" +
-      "t\032+.broker.DeduplicatedDeviceActivationR" +
-      "equest\022P\n\010Activate\022!.handler.DeviceActiv" +
-      "ationResponse\032!.handler.DeviceActivation" +
-      "Response\022N\n\006Uplink\022!.broker.Deduplicated" +
-      "UplinkMessage\032!.broker.DeduplicatedUplin" +
-      "kMessage\022<\n\010Downlink\022\027.broker.DownlinkMe" +
-      "ssage\032\027.broker.DownlinkMessage2X\n\024Networ" +
-      "kServerManager\022@\n\tGetStatus\022\034.networkser" +
-      "ver.StatusRequest\032\025.networkserver.Status" +
-      "B\214\001\n&org.thethingsnetwork.api.networkser" +
-      "verB\022NetworkServerProtoP\001Z-github.com/Th" +
-      "eThingsNetwork/api/networkserver\252\002\034TheTh" +
-      "ingsNetwork.API.Monitorb\006proto3"
+      "er\032-github.com/gogo/protobuf/gogoproto/g" +
+      "ogo.proto\032)github.com/TheThingsNetwork/a" +
+      "pi/api.proto\032=github.com/TheThingsNetwor" +
+      "k/api/protocol/lorawan/device.proto\0323git" +
+      "hub.com/TheThingsNetwork/api/broker/brok" +
+      "er.proto\0325github.com/TheThingsNetwork/ap" +
+      "i/handler/handler.proto\"m\n\016DevicesReques" +
+      "t\022L\n\010dev_addr\030\001 \001(\014B:\310\336\037\000\332\336\0372github.com/" +
+      "TheThingsNetwork/ttn/core/types.DevAddr\022" +
+      "\r\n\005f_cnt\030\002 \001(\r\"3\n\017DevicesResponse\022 \n\007res" +
+      "ults\030\001 \003(\0132\017.lorawan.Device\"\017\n\rStatusReq" +
+      "uest\"\350\001\n\006Status\022&\n\006system\030\001 \001(\0132\020.api.Sy" +
+      "stemStatsB\004\310\336\037\000\022,\n\tcomponent\030\002 \001(\0132\023.api" +
+      ".ComponentStatsB\004\310\336\037\000\022\032\n\006uplink\030\013 \001(\0132\n." +
+      "api.Rates\022\034\n\010downlink\030\014 \001(\0132\n.api.Rates\022" +
+      "\037\n\013activations\030\r \001(\0132\n.api.Rates\022-\n\023devi" +
+      "ces_per_address\030\025 \001(\0132\020.api.Percentiles2" +
+      "\253\003\n\rNetworkServer\022K\n\nGetDevices\022\035.networ" +
+      "kserver.DevicesRequest\032\036.networkserver.D" +
+      "evicesResponse\022m\n\021PrepareActivation\022+.br" +
+      "oker.DeduplicatedDeviceActivationRequest" +
+      "\032+.broker.DeduplicatedDeviceActivationRe" +
+      "quest\022P\n\010Activate\022!.handler.DeviceActiva" +
+      "tionResponse\032!.handler.DeviceActivationR" +
+      "esponse\022N\n\006Uplink\022!.broker.DeduplicatedU" +
+      "plinkMessage\032!.broker.DeduplicatedUplink" +
+      "Message\022<\n\010Downlink\022\027.broker.DownlinkMes" +
+      "sage\032\027.broker.DownlinkMessage2X\n\024Network" +
+      "ServerManager\022@\n\tGetStatus\022\034.networkserv" +
+      "er.StatusRequest\032\025.networkserver.StatusB" +
+      "\214\001\n&org.thethingsnetwork.api.networkserv" +
+      "erB\022NetworkServerProtoP\001Z-github.com/The" +
+      "ThingsNetwork/api/networkserver\252\002\034TheThi" +
+      "ngsNetwork.API.Monitorb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.GoGoProtos.getDescriptor(),
           org.thethingsnetwork.api.APIProto.getDescriptor(),
           org.thethingsnetwork.api.protocol.lorawan.LoRaWANDeviceProto.getDescriptor(),
           org.thethingsnetwork.api.broker.BrokerProto.getDescriptor(),
@@ -109,6 +113,13 @@ public final class NetworkServerProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_networkserver_Status_descriptor,
         new java.lang.String[] { "System", "Component", "Uplink", "Downlink", "Activations", "DevicesPerAddress", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.protobuf.GoGoProtos.customtype);
+    registry.add(com.google.protobuf.GoGoProtos.nullable);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
+    com.google.protobuf.GoGoProtos.getDescriptor();
     org.thethingsnetwork.api.APIProto.getDescriptor();
     org.thethingsnetwork.api.protocol.lorawan.LoRaWANDeviceProto.getDescriptor();
     org.thethingsnetwork.api.broker.BrokerProto.getDescriptor();

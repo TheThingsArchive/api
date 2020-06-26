@@ -16,6 +16,8 @@ var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb
 goog.object.extend(proto, google_protobuf_empty_pb);
 
 
+
+
 goog.exportSymbol('proto.discovery.Announcement', null, global);
 goog.exportSymbol('proto.discovery.AnnouncementsResponse', null, global);
 goog.exportSymbol('proto.discovery.GetByAppEUIRequest', null, global);

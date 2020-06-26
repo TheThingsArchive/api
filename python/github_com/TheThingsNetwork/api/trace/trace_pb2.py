@@ -13,13 +13,15 @@ _sym_db = _symbol_database.Default()
 
 
 
+
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/TheThingsNetwork/api/trace/trace.proto',
   package='trace',
   syntax='proto3',
   serialized_options=b'\n\036org.thethingsnetwork.api.traceB\nTraceProtoP\001Z%github.com/TheThingsNetwork/api/trace\252\002\032TheThingsNetwork.API.Trace',
-  serialized_pb=b'\n1github.com/TheThingsNetwork/api/trace/trace.proto\x12\x05trace\"\xd8\x01\n\x05Trace\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04time\x18\x02 \x01(\x03\x12\x12\n\nservice_id\x18\x03 \x01(\t\x12\x14\n\x0cservice_name\x18\x04 \x01(\t\x12\r\n\x05\x65vent\x18\x05 \x01(\t\x12,\n\x08metadata\x18\x06 \x03(\x0b\x32\x1a.trace.Trace.MetadataEntry\x12\x1d\n\x07parents\x18\x0b \x03(\x0b\x32\x0c.trace.Trace\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42r\n\x1eorg.thethingsnetwork.api.traceB\nTraceProtoP\x01Z%github.com/TheThingsNetwork/api/trace\xaa\x02\x1aTheThingsNetwork.API.Traceb\x06proto3'
-)
+  serialized_pb=b'\n1github.com/TheThingsNetwork/api/trace/trace.proto\x12\x05trace\x1a-github.com/gogo/protobuf/gogoproto/gogo.proto\"\xef\x01\n\x05Trace\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xe2\xde\x1f\x02ID\x12\x0c\n\x04time\x18\x02 \x01(\x03\x12!\n\nservice_id\x18\x03 \x01(\tB\r\xe2\xde\x1f\tServiceID\x12\x14\n\x0cservice_name\x18\x04 \x01(\t\x12\r\n\x05\x65vent\x18\x05 \x01(\t\x12,\n\x08metadata\x18\x06 \x03(\x0b\x32\x1a.trace.Trace.MetadataEntry\x12\x1d\n\x07parents\x18\x0b \x03(\x0b\x32\x0c.trace.Trace\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42r\n\x1eorg.thethingsnetwork.api.traceB\nTraceProtoP\x01Z%github.com/TheThingsNetwork/api/trace\xaa\x02\x1aTheThingsNetwork.API.Traceb\x06proto3'
+  ,
+  dependencies=[])
 
 
 
@@ -57,8 +59,8 @@ _TRACE_METADATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=230,
-  serialized_end=277,
+  serialized_start=300,
+  serialized_end=347,
 )
 
 _TRACE = _descriptor.Descriptor(
@@ -74,7 +76,7 @@ _TRACE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\342\336\037\002ID', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='time', full_name='trace.Trace.time', index=1,
       number=2, type=3, cpp_type=2, label=1,
@@ -88,7 +90,7 @@ _TRACE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\342\336\037\tServiceID', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='service_name', full_name='trace.Trace.service_name', index=3,
       number=4, type=9, cpp_type=9, label=1,
@@ -129,8 +131,8 @@ _TRACE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=61,
-  serialized_end=277,
+  serialized_start=108,
+  serialized_end=347,
 )
 
 _TRACE_METADATAENTRY.containing_type = _TRACE
@@ -157,4 +159,6 @@ _sym_db.RegisterMessage(Trace.MetadataEntry)
 
 DESCRIPTOR._options = None
 _TRACE_METADATAENTRY._options = None
+_TRACE.fields_by_name['id']._options = None
+_TRACE.fields_by_name['service_id']._options = None
 # @@protoc_insertion_point(module_scope)

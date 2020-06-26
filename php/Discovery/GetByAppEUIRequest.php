@@ -16,7 +16,7 @@ class GetByAppEUIRequest extends \Google\Protobuf\Internal\Message
     /**
      * compatible with Metadata message
      *
-     * Generated from protobuf field <code>bytes app_eui = 31;</code>
+     * Generated from protobuf field <code>bytes app_eui = 31 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     protected $app_eui = '';
 
@@ -38,7 +38,7 @@ class GetByAppEUIRequest extends \Google\Protobuf\Internal\Message
     /**
      * compatible with Metadata message
      *
-     * Generated from protobuf field <code>bytes app_eui = 31;</code>
+     * Generated from protobuf field <code>bytes app_eui = 31 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      * @return string
      */
     public function getAppEui()
@@ -49,7 +49,7 @@ class GetByAppEUIRequest extends \Google\Protobuf\Internal\Message
     /**
      * compatible with Metadata message
      *
-     * Generated from protobuf field <code>bytes app_eui = 31;</code>
+     * Generated from protobuf field <code>bytes app_eui = 31 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      * @param string $var
      * @return $this
      */

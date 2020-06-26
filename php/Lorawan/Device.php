@@ -16,51 +16,51 @@ class Device extends \Google\Protobuf\Internal\Message
     /**
      * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
      *
-     * Generated from protobuf field <code>bytes app_eui = 1;</code>
+     * Generated from protobuf field <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     protected $app_eui = '';
     /**
      * The DevEUI is a unique, 8 byte identifier for the device.
      *
-     * Generated from protobuf field <code>bytes dev_eui = 2;</code>
+     * Generated from protobuf field <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     protected $dev_eui = '';
     /**
      * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
      *
-     * Generated from protobuf field <code>string app_id = 3;</code>
+     * Generated from protobuf field <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
      */
     protected $app_id = '';
     /**
      * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
      *
-     * Generated from protobuf field <code>string dev_id = 4;</code>
+     * Generated from protobuf field <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
      */
     protected $dev_id = '';
     /**
      * The DevAddr is a dynamic, 4 byte session address for the device.
      *
-     * Generated from protobuf field <code>bytes dev_addr = 5;</code>
+     * Generated from protobuf field <code>bytes dev_addr = 5 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
     protected $dev_addr = '';
     /**
      * The NwkSKey is a 16 byte session key that is known by the device and the network. It is used for routing and MAC related functionality.
      * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
      *
-     * Generated from protobuf field <code>bytes nwk_s_key = 6;</code>
+     * Generated from protobuf field <code>bytes nwk_s_key = 6 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
      */
     protected $nwk_s_key = '';
     /**
      * The AppSKey is a 16 byte session key that is known by the device and the application. It is used for payload encryption.
      * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
      *
-     * Generated from protobuf field <code>bytes app_s_key = 7;</code>
+     * Generated from protobuf field <code>bytes app_s_key = 7 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppSKey"];</code>
      */
     protected $app_s_key = '';
     /**
      * The AppKey is a 16 byte static key that is known by the device and the application. It is used for negotiating session keys (OTAA).
      *
-     * Generated from protobuf field <code>bytes app_key = 8;</code>
+     * Generated from protobuf field <code>bytes app_key = 8 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppKey"];</code>
      */
     protected $app_key = '';
     /**
@@ -97,13 +97,13 @@ class Device extends \Google\Protobuf\Internal\Message
     /**
      * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
      *
-     * Generated from protobuf field <code>repeated bytes used_dev_nonces = 14;</code>
+     * Generated from protobuf field <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
      */
     private $used_dev_nonces;
     /**
      * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
      *
-     * Generated from protobuf field <code>repeated bytes used_app_nonces = 15;</code>
+     * Generated from protobuf field <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
      */
     private $used_app_nonces;
     /**
@@ -164,7 +164,7 @@ class Device extends \Google\Protobuf\Internal\Message
     /**
      * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
      *
-     * Generated from protobuf field <code>bytes app_eui = 1;</code>
+     * Generated from protobuf field <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      * @return string
      */
     public function getAppEui()
@@ -175,7 +175,7 @@ class Device extends \Google\Protobuf\Internal\Message
     /**
      * The AppEUI is a unique, 8 byte identifier for the application a device belongs to.
      *
-     * Generated from protobuf field <code>bytes app_eui = 1;</code>
+     * Generated from protobuf field <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      * @param string $var
      * @return $this
      */
@@ -190,7 +190,7 @@ class Device extends \Google\Protobuf\Internal\Message
     /**
      * The DevEUI is a unique, 8 byte identifier for the device.
      *
-     * Generated from protobuf field <code>bytes dev_eui = 2;</code>
+     * Generated from protobuf field <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      * @return string
      */
     public function getDevEui()
@@ -201,7 +201,7 @@ class Device extends \Google\Protobuf\Internal\Message
     /**
      * The DevEUI is a unique, 8 byte identifier for the device.
      *
-     * Generated from protobuf field <code>bytes dev_eui = 2;</code>
+     * Generated from protobuf field <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      * @param string $var
      * @return $this
      */
@@ -216,7 +216,7 @@ class Device extends \Google\Protobuf\Internal\Message
     /**
      * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
      *
-     * Generated from protobuf field <code>string app_id = 3;</code>
+     * Generated from protobuf field <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
      * @return string
      */
     public function getAppId()
@@ -227,7 +227,7 @@ class Device extends \Google\Protobuf\Internal\Message
     /**
      * The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.
      *
-     * Generated from protobuf field <code>string app_id = 3;</code>
+     * Generated from protobuf field <code>string app_id = 3 [(.gogoproto.customname) = "AppID"];</code>
      * @param string $var
      * @return $this
      */
@@ -242,7 +242,7 @@ class Device extends \Google\Protobuf\Internal\Message
     /**
      * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
      *
-     * Generated from protobuf field <code>string dev_id = 4;</code>
+     * Generated from protobuf field <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
      * @return string
      */
     public function getDevId()
@@ -253,7 +253,7 @@ class Device extends \Google\Protobuf\Internal\Message
     /**
      * The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.
      *
-     * Generated from protobuf field <code>string dev_id = 4;</code>
+     * Generated from protobuf field <code>string dev_id = 4 [(.gogoproto.customname) = "DevID"];</code>
      * @param string $var
      * @return $this
      */
@@ -268,7 +268,7 @@ class Device extends \Google\Protobuf\Internal\Message
     /**
      * The DevAddr is a dynamic, 4 byte session address for the device.
      *
-     * Generated from protobuf field <code>bytes dev_addr = 5;</code>
+     * Generated from protobuf field <code>bytes dev_addr = 5 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      * @return string
      */
     public function getDevAddr()
@@ -279,7 +279,7 @@ class Device extends \Google\Protobuf\Internal\Message
     /**
      * The DevAddr is a dynamic, 4 byte session address for the device.
      *
-     * Generated from protobuf field <code>bytes dev_addr = 5;</code>
+     * Generated from protobuf field <code>bytes dev_addr = 5 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      * @param string $var
      * @return $this
      */
@@ -295,7 +295,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The NwkSKey is a 16 byte session key that is known by the device and the network. It is used for routing and MAC related functionality.
      * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
      *
-     * Generated from protobuf field <code>bytes nwk_s_key = 6;</code>
+     * Generated from protobuf field <code>bytes nwk_s_key = 6 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
      * @return string
      */
     public function getNwkSKey()
@@ -307,7 +307,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The NwkSKey is a 16 byte session key that is known by the device and the network. It is used for routing and MAC related functionality.
      * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
      *
-     * Generated from protobuf field <code>bytes nwk_s_key = 6;</code>
+     * Generated from protobuf field <code>bytes nwk_s_key = 6 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
      * @param string $var
      * @return $this
      */
@@ -323,7 +323,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The AppSKey is a 16 byte session key that is known by the device and the application. It is used for payload encryption.
      * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
      *
-     * Generated from protobuf field <code>bytes app_s_key = 7;</code>
+     * Generated from protobuf field <code>bytes app_s_key = 7 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppSKey"];</code>
      * @return string
      */
     public function getAppSKey()
@@ -335,7 +335,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * The AppSKey is a 16 byte session key that is known by the device and the application. It is used for payload encryption.
      * This key is negotiated during the OTAA join procedure, or statically configured using ABP.
      *
-     * Generated from protobuf field <code>bytes app_s_key = 7;</code>
+     * Generated from protobuf field <code>bytes app_s_key = 7 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppSKey"];</code>
      * @param string $var
      * @return $this
      */
@@ -350,7 +350,7 @@ class Device extends \Google\Protobuf\Internal\Message
     /**
      * The AppKey is a 16 byte static key that is known by the device and the application. It is used for negotiating session keys (OTAA).
      *
-     * Generated from protobuf field <code>bytes app_key = 8;</code>
+     * Generated from protobuf field <code>bytes app_key = 8 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppKey"];</code>
      * @return string
      */
     public function getAppKey()
@@ -361,7 +361,7 @@ class Device extends \Google\Protobuf\Internal\Message
     /**
      * The AppKey is a 16 byte static key that is known by the device and the application. It is used for negotiating session keys (OTAA).
      *
-     * Generated from protobuf field <code>bytes app_key = 8;</code>
+     * Generated from protobuf field <code>bytes app_key = 8 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppKey"];</code>
      * @param string $var
      * @return $this
      */
@@ -508,7 +508,7 @@ class Device extends \Google\Protobuf\Internal\Message
     /**
      * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
      *
-     * Generated from protobuf field <code>repeated bytes used_dev_nonces = 14;</code>
+     * Generated from protobuf field <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getUsedDevNonces()
@@ -519,7 +519,7 @@ class Device extends \Google\Protobuf\Internal\Message
     /**
      * The DevNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
      *
-     * Generated from protobuf field <code>repeated bytes used_dev_nonces = 14;</code>
+     * Generated from protobuf field <code>repeated bytes used_dev_nonces = 14 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevNonce"];</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -534,7 +534,7 @@ class Device extends \Google\Protobuf\Internal\Message
     /**
      * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
      *
-     * Generated from protobuf field <code>repeated bytes used_app_nonces = 15;</code>
+     * Generated from protobuf field <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getUsedAppNonces()
@@ -545,7 +545,7 @@ class Device extends \Google\Protobuf\Internal\Message
     /**
      * The AppNonces that have been used in joins. This field is read-only. Reset the nonces by changing the AppKey.
      *
-     * Generated from protobuf field <code>repeated bytes used_app_nonces = 15;</code>
+     * Generated from protobuf field <code>repeated bytes used_app_nonces = 15 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppNonce"];</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

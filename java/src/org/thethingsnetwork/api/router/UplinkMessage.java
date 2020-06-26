@@ -174,21 +174,21 @@ private static final long serialVersionUID = 0L;
   public static final int PROTOCOL_METADATA_FIELD_NUMBER = 11;
   private org.thethingsnetwork.api.protocol.RxMetadata protocolMetadata_;
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 11;</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
    * @return Whether the protocolMetadata field is set.
    */
   public boolean hasProtocolMetadata() {
     return protocolMetadata_ != null;
   }
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 11;</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
    * @return The protocolMetadata.
    */
   public org.thethingsnetwork.api.protocol.RxMetadata getProtocolMetadata() {
     return protocolMetadata_ == null ? org.thethingsnetwork.api.protocol.RxMetadata.getDefaultInstance() : protocolMetadata_;
   }
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 11;</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.protocol.RxMetadataOrBuilder getProtocolMetadataOrBuilder() {
     return getProtocolMetadata();
@@ -197,21 +197,21 @@ private static final long serialVersionUID = 0L;
   public static final int GATEWAY_METADATA_FIELD_NUMBER = 12;
   private org.thethingsnetwork.api.gateway.RxMetadata gatewayMetadata_;
   /**
-   * <code>.gateway.RxMetadata gateway_metadata = 12;</code>
+   * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
    * @return Whether the gatewayMetadata field is set.
    */
   public boolean hasGatewayMetadata() {
     return gatewayMetadata_ != null;
   }
   /**
-   * <code>.gateway.RxMetadata gateway_metadata = 12;</code>
+   * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
    * @return The gatewayMetadata.
    */
   public org.thethingsnetwork.api.gateway.RxMetadata getGatewayMetadata() {
     return gatewayMetadata_ == null ? org.thethingsnetwork.api.gateway.RxMetadata.getDefaultInstance() : gatewayMetadata_;
   }
   /**
-   * <code>.gateway.RxMetadata gateway_metadata = 12;</code>
+   * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.gateway.RxMetadataOrBuilder getGatewayMetadataOrBuilder() {
     return getGatewayMetadata();
@@ -818,14 +818,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.RxMetadata, org.thethingsnetwork.api.protocol.RxMetadata.Builder, org.thethingsnetwork.api.protocol.RxMetadataOrBuilder> protocolMetadataBuilder_;
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 11;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
      * @return Whether the protocolMetadata field is set.
      */
     public boolean hasProtocolMetadata() {
       return protocolMetadataBuilder_ != null || protocolMetadata_ != null;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 11;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
      * @return The protocolMetadata.
      */
     public org.thethingsnetwork.api.protocol.RxMetadata getProtocolMetadata() {
@@ -836,7 +836,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 11;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setProtocolMetadata(org.thethingsnetwork.api.protocol.RxMetadata value) {
       if (protocolMetadataBuilder_ == null) {
@@ -852,7 +852,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 11;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setProtocolMetadata(
         org.thethingsnetwork.api.protocol.RxMetadata.Builder builderForValue) {
@@ -866,7 +866,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 11;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
      */
     public Builder mergeProtocolMetadata(org.thethingsnetwork.api.protocol.RxMetadata value) {
       if (protocolMetadataBuilder_ == null) {
@@ -884,7 +884,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 11;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
      */
     public Builder clearProtocolMetadata() {
       if (protocolMetadataBuilder_ == null) {
@@ -898,7 +898,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 11;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.RxMetadata.Builder getProtocolMetadataBuilder() {
       
@@ -906,7 +906,7 @@ private static final long serialVersionUID = 0L;
       return getProtocolMetadataFieldBuilder().getBuilder();
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 11;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.RxMetadataOrBuilder getProtocolMetadataOrBuilder() {
       if (protocolMetadataBuilder_ != null) {
@@ -917,7 +917,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 11;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 11 [(.gogoproto.nullable) = false];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.RxMetadata, org.thethingsnetwork.api.protocol.RxMetadata.Builder, org.thethingsnetwork.api.protocol.RxMetadataOrBuilder> 
@@ -937,14 +937,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.gateway.RxMetadata, org.thethingsnetwork.api.gateway.RxMetadata.Builder, org.thethingsnetwork.api.gateway.RxMetadataOrBuilder> gatewayMetadataBuilder_;
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 12;</code>
+     * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
      * @return Whether the gatewayMetadata field is set.
      */
     public boolean hasGatewayMetadata() {
       return gatewayMetadataBuilder_ != null || gatewayMetadata_ != null;
     }
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 12;</code>
+     * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
      * @return The gatewayMetadata.
      */
     public org.thethingsnetwork.api.gateway.RxMetadata getGatewayMetadata() {
@@ -955,7 +955,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 12;</code>
+     * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setGatewayMetadata(org.thethingsnetwork.api.gateway.RxMetadata value) {
       if (gatewayMetadataBuilder_ == null) {
@@ -971,7 +971,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 12;</code>
+     * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setGatewayMetadata(
         org.thethingsnetwork.api.gateway.RxMetadata.Builder builderForValue) {
@@ -985,7 +985,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 12;</code>
+     * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public Builder mergeGatewayMetadata(org.thethingsnetwork.api.gateway.RxMetadata value) {
       if (gatewayMetadataBuilder_ == null) {
@@ -1003,7 +1003,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 12;</code>
+     * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public Builder clearGatewayMetadata() {
       if (gatewayMetadataBuilder_ == null) {
@@ -1017,7 +1017,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 12;</code>
+     * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.gateway.RxMetadata.Builder getGatewayMetadataBuilder() {
       
@@ -1025,7 +1025,7 @@ private static final long serialVersionUID = 0L;
       return getGatewayMetadataFieldBuilder().getBuilder();
     }
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 12;</code>
+     * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.gateway.RxMetadataOrBuilder getGatewayMetadataOrBuilder() {
       if (gatewayMetadataBuilder_ != null) {
@@ -1036,7 +1036,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.gateway.RxMetadata gateway_metadata = 12;</code>
+     * <code>.gateway.RxMetadata gateway_metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.gateway.RxMetadata, org.thethingsnetwork.api.gateway.RxMetadata.Builder, org.thethingsnetwork.api.gateway.RxMetadataOrBuilder> 

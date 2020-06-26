@@ -14,11 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeviceIdentifier extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string app_id = 1;</code>
+     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      */
     protected $app_id = '';
     /**
-     * Generated from protobuf field <code>string dev_id = 2;</code>
+     * Generated from protobuf field <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      */
     protected $dev_id = '';
 
@@ -38,7 +38,7 @@ class DeviceIdentifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string app_id = 1;</code>
+     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      * @return string
      */
     public function getAppId()
@@ -47,7 +47,7 @@ class DeviceIdentifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string app_id = 1;</code>
+     * Generated from protobuf field <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      * @param string $var
      * @return $this
      */
@@ -60,7 +60,7 @@ class DeviceIdentifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string dev_id = 2;</code>
+     * Generated from protobuf field <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      * @return string
      */
     public function getDevId()
@@ -69,7 +69,7 @@ class DeviceIdentifier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string dev_id = 2;</code>
+     * Generated from protobuf field <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      * @param string $var
      * @return $this
      */

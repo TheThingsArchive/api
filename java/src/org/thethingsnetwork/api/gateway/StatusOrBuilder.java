@@ -48,24 +48,24 @@ public interface StatusOrBuilder extends
   long getBootTime();
 
   /**
-   * <code>repeated string ip = 11;</code>
+   * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
    * @return A list containing the ip.
    */
   java.util.List<java.lang.String>
       getIpList();
   /**
-   * <code>repeated string ip = 11;</code>
+   * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
    * @return The count of ip.
    */
   int getIpCount();
   /**
-   * <code>repeated string ip = 11;</code>
+   * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
    * @param index The index of the element to return.
    * @return The ip at the given index.
    */
   java.lang.String getIp(int index);
   /**
-   * <code>repeated string ip = 11;</code>
+   * <code>repeated string ip = 11 [(.gogoproto.customname) = "IP"];</code>
    * @param index The index of the value to return.
    * @return The bytes of the ip at the given index.
    */
@@ -173,7 +173,7 @@ public interface StatusOrBuilder extends
    * Version of Gateway FPGA
    * </pre>
    *
-   * <code>uint32 fpga = 18;</code>
+   * <code>uint32 fpga = 18 [(.gogoproto.customname) = "FPGA"];</code>
    * @return The fpga.
    */
   int getFpga();
@@ -183,7 +183,7 @@ public interface StatusOrBuilder extends
    * Version of Gateway DSP software
    * </pre>
    *
-   * <code>uint32 dsp = 19;</code>
+   * <code>uint32 dsp = 19 [(.gogoproto.customname) = "DSP"];</code>
    * @return The dsp.
    */
   int getDsp();
@@ -193,7 +193,7 @@ public interface StatusOrBuilder extends
    * Version of gateway driver (in X.X.X format)
    * </pre>
    *
-   * <code>string hal = 20;</code>
+   * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
    * @return The hal.
    */
   java.lang.String getHal();
@@ -202,7 +202,7 @@ public interface StatusOrBuilder extends
    * Version of gateway driver (in X.X.X format)
    * </pre>
    *
-   * <code>string hal = 20;</code>
+   * <code>string hal = 20 [(.gogoproto.customname) = "HAL"];</code>
    * @return The bytes for hal.
    */
   com.google.protobuf.ByteString
@@ -228,7 +228,7 @@ public interface StatusOrBuilder extends
    * Round-trip time to the server in milliseconds
    * </pre>
    *
-   * <code>uint32 rtt = 31;</code>
+   * <code>uint32 rtt = 31 [(.gogoproto.customname) = "RTT"];</code>
    * @return The rtt.
    */
   int getRtt();
@@ -308,23 +308,23 @@ public interface StatusOrBuilder extends
    * Number of lost PPS pulses
    * </pre>
    *
-   * <code>uint32 l_pps = 48;</code>
+   * <code>uint32 l_pps = 48 [(.gogoproto.customname) = "LPPS"];</code>
    * @return The lPps.
    */
   int getLPps();
 
   /**
-   * <code>.gateway.Status.OSMetrics os = 51;</code>
+   * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
    * @return Whether the os field is set.
    */
   boolean hasOs();
   /**
-   * <code>.gateway.Status.OSMetrics os = 51;</code>
+   * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
    * @return The os.
    */
   org.thethingsnetwork.api.gateway.Status.OSMetrics getOs();
   /**
-   * <code>.gateway.Status.OSMetrics os = 51;</code>
+   * <code>.gateway.Status.OSMetrics os = 51 [(.gogoproto.customname) = "OS"];</code>
    */
   org.thethingsnetwork.api.gateway.Status.OSMetricsOrBuilder getOsOrBuilder();
 

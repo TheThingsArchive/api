@@ -11,6 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+
 from github_com.TheThingsNetwork.api.protocol.lorawan import lorawan_pb2 as github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_lorawan__pb2
 
 
@@ -19,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='protocol',
   syntax='proto3',
   serialized_options=b'\n!org.thethingsnetwork.api.protocolB\rProtocolProtoP\001Z(github.com/TheThingsNetwork/api/protocol\252\002\035TheThingsNetwork.API.Protocol',
-  serialized_pb=b'\n7github.com/TheThingsNetwork/api/protocol/protocol.proto\x12\x08protocol\x1a>github.com/TheThingsNetwork/api/protocol/lorawan/lorawan.proto\":\n\x07Message\x12#\n\x07lorawan\x18\x01 \x01(\x0b\x32\x10.lorawan.MessageH\x00\x42\n\n\x08protocol\">\n\nRxMetadata\x12$\n\x07lorawan\x18\x01 \x01(\x0b\x32\x11.lorawan.MetadataH\x00\x42\n\n\x08protocol\"J\n\x0fTxConfiguration\x12+\n\x07lorawan\x18\x01 \x01(\x0b\x32\x18.lorawan.TxConfigurationH\x00\x42\n\n\x08protocol\"P\n\x12\x41\x63tivationMetadata\x12.\n\x07lorawan\x18\x01 \x01(\x0b\x32\x1b.lorawan.ActivationMetadataH\x00\x42\n\n\x08protocolB~\n!org.thethingsnetwork.api.protocolB\rProtocolProtoP\x01Z(github.com/TheThingsNetwork/api/protocol\xaa\x02\x1dTheThingsNetwork.API.Protocolb\x06proto3'
+  serialized_pb=b'\n7github.com/TheThingsNetwork/api/protocol/protocol.proto\x12\x08protocol\x1a-github.com/gogo/protobuf/gogoproto/gogo.proto\x1a>github.com/TheThingsNetwork/api/protocol/lorawan/lorawan.proto\"G\n\x07Message\x12\x30\n\x07lorawan\x18\x01 \x01(\x0b\x32\x10.lorawan.MessageB\x0b\xe2\xde\x1f\x07LoRaWANH\x00\x42\n\n\x08protocol\"K\n\nRxMetadata\x12\x31\n\x07lorawan\x18\x01 \x01(\x0b\x32\x11.lorawan.MetadataB\x0b\xe2\xde\x1f\x07LoRaWANH\x00\x42\n\n\x08protocol\"W\n\x0fTxConfiguration\x12\x38\n\x07lorawan\x18\x01 \x01(\x0b\x32\x18.lorawan.TxConfigurationB\x0b\xe2\xde\x1f\x07LoRaWANH\x00\x42\n\n\x08protocol\"]\n\x12\x41\x63tivationMetadata\x12;\n\x07lorawan\x18\x01 \x01(\x0b\x32\x1b.lorawan.ActivationMetadataB\x0b\xe2\xde\x1f\x07LoRaWANH\x00\x42\n\n\x08protocolB~\n!org.thethingsnetwork.api.protocolB\rProtocolProtoP\x01Z(github.com/TheThingsNetwork/api/protocol\xaa\x02\x1dTheThingsNetwork.API.Protocolb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_lorawan__pb2.DESCRIPTOR,])
 
@@ -39,7 +40,7 @@ _MESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\342\336\037\007LoRaWAN', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -55,8 +56,8 @@ _MESSAGE = _descriptor.Descriptor(
       name='protocol', full_name='protocol.Message.protocol',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=133,
-  serialized_end=191,
+  serialized_start=180,
+  serialized_end=251,
 )
 
 
@@ -73,7 +74,7 @@ _RXMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\342\336\037\007LoRaWAN', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -89,8 +90,8 @@ _RXMETADATA = _descriptor.Descriptor(
       name='protocol', full_name='protocol.RxMetadata.protocol',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=193,
-  serialized_end=255,
+  serialized_start=253,
+  serialized_end=328,
 )
 
 
@@ -107,7 +108,7 @@ _TXCONFIGURATION = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\342\336\037\007LoRaWAN', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -123,8 +124,8 @@ _TXCONFIGURATION = _descriptor.Descriptor(
       name='protocol', full_name='protocol.TxConfiguration.protocol',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=257,
-  serialized_end=331,
+  serialized_start=330,
+  serialized_end=417,
 )
 
 
@@ -141,7 +142,7 @@ _ACTIVATIONMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\342\336\037\007LoRaWAN', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -157,8 +158,8 @@ _ACTIVATIONMETADATA = _descriptor.Descriptor(
       name='protocol', full_name='protocol.ActivationMetadata.protocol',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=333,
-  serialized_end=413,
+  serialized_start=419,
+  serialized_end=512,
 )
 
 _MESSAGE.fields_by_name['lorawan'].message_type = github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_lorawan__pb2._MESSAGE
@@ -213,4 +214,8 @@ _sym_db.RegisterMessage(ActivationMetadata)
 
 
 DESCRIPTOR._options = None
+_MESSAGE.fields_by_name['lorawan']._options = None
+_RXMETADATA.fields_by_name['lorawan']._options = None
+_TXCONFIGURATION.fields_by_name['lorawan']._options = None
+_ACTIVATIONMETADATA.fields_by_name['lorawan']._options = None
 # @@protoc_insertion_point(module_scope)

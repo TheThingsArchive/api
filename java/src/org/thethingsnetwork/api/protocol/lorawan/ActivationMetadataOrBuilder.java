@@ -8,37 +8,37 @@ public interface ActivationMetadataOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>bytes app_eui = 1;</code>
+   * <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
    * @return The appEui.
    */
   com.google.protobuf.ByteString getAppEui();
 
   /**
-   * <code>bytes dev_eui = 2;</code>
+   * <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
    * @return The devEui.
    */
   com.google.protobuf.ByteString getDevEui();
 
   /**
-   * <code>bytes dev_addr = 3;</code>
+   * <code>bytes dev_addr = 3 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
    * @return The devAddr.
    */
   com.google.protobuf.ByteString getDevAddr();
 
   /**
-   * <code>bytes nwk_s_key = 4;</code>
+   * <code>bytes nwk_s_key = 4 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
    * @return The nwkSKey.
    */
   com.google.protobuf.ByteString getNwkSKey();
 
   /**
-   * <code>uint32 rx1_dr_offset = 11;</code>
+   * <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
    * @return The rx1DrOffset.
    */
   int getRx1DrOffset();
 
   /**
-   * <code>uint32 rx2_dr = 12;</code>
+   * <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
    * @return The rx2Dr.
    */
   int getRx2Dr();
@@ -50,17 +50,17 @@ public interface ActivationMetadataOrBuilder extends
   int getRxDelay();
 
   /**
-   * <code>.lorawan.CFList cf_list = 14;</code>
+   * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
    * @return Whether the cfList field is set.
    */
   boolean hasCfList();
   /**
-   * <code>.lorawan.CFList cf_list = 14;</code>
+   * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
    * @return The cfList.
    */
   org.thethingsnetwork.api.protocol.lorawan.CFList getCfList();
   /**
-   * <code>.lorawan.CFList cf_list = 14;</code>
+   * <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.CFListOrBuilder getCfListOrBuilder();
 

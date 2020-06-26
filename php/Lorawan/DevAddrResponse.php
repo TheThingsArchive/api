@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class DevAddrResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>bytes dev_addr = 1;</code>
+     * Generated from protobuf field <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
     protected $dev_addr = '';
 
@@ -33,7 +33,7 @@ class DevAddrResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_addr = 1;</code>
+     * Generated from protobuf field <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      * @return string
      */
     public function getDevAddr()
@@ -42,7 +42,7 @@ class DevAddrResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_addr = 1;</code>
+     * Generated from protobuf field <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      * @param string $var
      * @return $this
      */

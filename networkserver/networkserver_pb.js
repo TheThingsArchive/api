@@ -12,6 +12,8 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
+
+
 var ttn_api_pb = require('../api_pb.js');
 goog.object.extend(proto, ttn_api_pb);
 var ttn_protocol_lorawan_device_pb = require('../protocol/lorawan/device_pb.js');

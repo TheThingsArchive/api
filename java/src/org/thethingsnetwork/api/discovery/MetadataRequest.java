@@ -118,7 +118,7 @@ private static final long serialVersionUID = 0L;
    * The ID of the service that should be modified
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
    * @return The id.
    */
   public java.lang.String getId() {
@@ -138,7 +138,7 @@ private static final long serialVersionUID = 0L;
    * The ID of the service that should be modified
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
    * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
@@ -206,7 +206,7 @@ private static final long serialVersionUID = 0L;
    * Metadata to add or remove
    * </pre>
    *
-   * <code>.discovery.Metadata metadata = 12;</code>
+   * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
    * @return Whether the metadata field is set.
    */
   public boolean hasMetadata() {
@@ -217,7 +217,7 @@ private static final long serialVersionUID = 0L;
    * Metadata to add or remove
    * </pre>
    *
-   * <code>.discovery.Metadata metadata = 12;</code>
+   * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
    * @return The metadata.
    */
   public org.thethingsnetwork.api.discovery.Metadata getMetadata() {
@@ -228,7 +228,7 @@ private static final long serialVersionUID = 0L;
    * Metadata to add or remove
    * </pre>
    *
-   * <code>.discovery.Metadata metadata = 12;</code>
+   * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.discovery.MetadataOrBuilder getMetadataOrBuilder() {
     return getMetadata();
@@ -593,7 +593,7 @@ private static final long serialVersionUID = 0L;
      * The ID of the service that should be modified
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      * @return The id.
      */
     public java.lang.String getId() {
@@ -613,7 +613,7 @@ private static final long serialVersionUID = 0L;
      * The ID of the service that should be modified
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
@@ -634,7 +634,7 @@ private static final long serialVersionUID = 0L;
      * The ID of the service that should be modified
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -653,7 +653,7 @@ private static final long serialVersionUID = 0L;
      * The ID of the service that should be modified
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
@@ -667,7 +667,7 @@ private static final long serialVersionUID = 0L;
      * The ID of the service that should be modified
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
@@ -787,7 +787,7 @@ private static final long serialVersionUID = 0L;
      * Metadata to add or remove
      * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12;</code>
+     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
@@ -798,7 +798,7 @@ private static final long serialVersionUID = 0L;
      * Metadata to add or remove
      * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12;</code>
+     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      * @return The metadata.
      */
     public org.thethingsnetwork.api.discovery.Metadata getMetadata() {
@@ -813,7 +813,7 @@ private static final long serialVersionUID = 0L;
      * Metadata to add or remove
      * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12;</code>
+     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setMetadata(org.thethingsnetwork.api.discovery.Metadata value) {
       if (metadataBuilder_ == null) {
@@ -833,7 +833,7 @@ private static final long serialVersionUID = 0L;
      * Metadata to add or remove
      * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12;</code>
+     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setMetadata(
         org.thethingsnetwork.api.discovery.Metadata.Builder builderForValue) {
@@ -851,7 +851,7 @@ private static final long serialVersionUID = 0L;
      * Metadata to add or remove
      * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12;</code>
+     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public Builder mergeMetadata(org.thethingsnetwork.api.discovery.Metadata value) {
       if (metadataBuilder_ == null) {
@@ -873,7 +873,7 @@ private static final long serialVersionUID = 0L;
      * Metadata to add or remove
      * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12;</code>
+     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public Builder clearMetadata() {
       if (metadataBuilder_ == null) {
@@ -891,7 +891,7 @@ private static final long serialVersionUID = 0L;
      * Metadata to add or remove
      * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12;</code>
+     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.discovery.Metadata.Builder getMetadataBuilder() {
       
@@ -903,7 +903,7 @@ private static final long serialVersionUID = 0L;
      * Metadata to add or remove
      * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12;</code>
+     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.discovery.MetadataOrBuilder getMetadataOrBuilder() {
       if (metadataBuilder_ != null) {
@@ -918,7 +918,7 @@ private static final long serialVersionUID = 0L;
      * Metadata to add or remove
      * </pre>
      *
-     * <code>.discovery.Metadata metadata = 12;</code>
+     * <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.discovery.Metadata, org.thethingsnetwork.api.discovery.Metadata.Builder, org.thethingsnetwork.api.discovery.MetadataOrBuilder> 

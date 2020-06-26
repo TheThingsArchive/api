@@ -93,7 +93,7 @@ private static final long serialVersionUID = 0L;
   public static final int RX1_DR_OFFSET_FIELD_NUMBER = 1;
   private int rx1DrOffset_;
   /**
-   * <code>uint32 rx1_dr_offset = 1;</code>
+   * <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
    * @return The rx1DrOffset.
    */
   public int getRx1DrOffset() {
@@ -103,7 +103,7 @@ private static final long serialVersionUID = 0L;
   public static final int RX2_DR_FIELD_NUMBER = 2;
   private int rx2Dr_;
   /**
-   * <code>uint32 rx2_dr = 2;</code>
+   * <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
    * @return The rx2Dr.
    */
   public int getRx2Dr() {
@@ -431,14 +431,14 @@ private static final long serialVersionUID = 0L;
 
     private int rx1DrOffset_ ;
     /**
-     * <code>uint32 rx1_dr_offset = 1;</code>
+     * <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      * @return The rx1DrOffset.
      */
     public int getRx1DrOffset() {
       return rx1DrOffset_;
     }
     /**
-     * <code>uint32 rx1_dr_offset = 1;</code>
+     * <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      * @param value The rx1DrOffset to set.
      * @return This builder for chaining.
      */
@@ -449,7 +449,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>uint32 rx1_dr_offset = 1;</code>
+     * <code>uint32 rx1_dr_offset = 1 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      * @return This builder for chaining.
      */
     public Builder clearRx1DrOffset() {
@@ -461,14 +461,14 @@ private static final long serialVersionUID = 0L;
 
     private int rx2Dr_ ;
     /**
-     * <code>uint32 rx2_dr = 2;</code>
+     * <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
      * @return The rx2Dr.
      */
     public int getRx2Dr() {
       return rx2Dr_;
     }
     /**
-     * <code>uint32 rx2_dr = 2;</code>
+     * <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
      * @param value The rx2Dr to set.
      * @return This builder for chaining.
      */
@@ -479,7 +479,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>uint32 rx2_dr = 2;</code>
+     * <code>uint32 rx2_dr = 2 [(.gogoproto.customname) = "Rx2DR"];</code>
      * @return This builder for chaining.
      */
     public Builder clearRx2Dr() {

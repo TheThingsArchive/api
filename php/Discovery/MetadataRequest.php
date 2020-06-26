@@ -18,7 +18,7 @@ class MetadataRequest extends \Google\Protobuf\Internal\Message
     /**
      * The ID of the service that should be modified
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     protected $id = '';
     /**
@@ -30,7 +30,7 @@ class MetadataRequest extends \Google\Protobuf\Internal\Message
     /**
      * Metadata to add or remove
      *
-     * Generated from protobuf field <code>.discovery.Metadata metadata = 12;</code>
+     * Generated from protobuf field <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      */
     protected $metadata = null;
 
@@ -56,7 +56,7 @@ class MetadataRequest extends \Google\Protobuf\Internal\Message
     /**
      * The ID of the service that should be modified
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      * @return string
      */
     public function getId()
@@ -67,7 +67,7 @@ class MetadataRequest extends \Google\Protobuf\Internal\Message
     /**
      * The ID of the service that should be modified
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      * @param string $var
      * @return $this
      */
@@ -108,7 +108,7 @@ class MetadataRequest extends \Google\Protobuf\Internal\Message
     /**
      * Metadata to add or remove
      *
-     * Generated from protobuf field <code>.discovery.Metadata metadata = 12;</code>
+     * Generated from protobuf field <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      * @return \Discovery\Metadata
      */
     public function getMetadata()
@@ -119,7 +119,7 @@ class MetadataRequest extends \Google\Protobuf\Internal\Message
     /**
      * Metadata to add or remove
      *
-     * Generated from protobuf field <code>.discovery.Metadata metadata = 12;</code>
+     * Generated from protobuf field <code>.discovery.Metadata metadata = 12 [(.gogoproto.nullable) = false];</code>
      * @param \Discovery\Metadata $var
      * @return $this
      */

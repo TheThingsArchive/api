@@ -30,7 +30,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.ActivationMetadata lorawan = 1;</code>
+     * Generated from protobuf field <code>.lorawan.ActivationMetadata lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
      * @return \Lorawan\ActivationMetadata
      */
     public function getLorawan()
@@ -39,7 +39,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.ActivationMetadata lorawan = 1;</code>
+     * Generated from protobuf field <code>.lorawan.ActivationMetadata lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
      * @param \Lorawan\ActivationMetadata $var
      * @return $this
      */

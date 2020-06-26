@@ -152,21 +152,21 @@ private static final long serialVersionUID = 0L;
   public static final int SYSTEM_FIELD_NUMBER = 1;
   private org.thethingsnetwork.api.SystemStats system_;
   /**
-   * <code>.api.SystemStats system = 1;</code>
+   * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
    * @return Whether the system field is set.
    */
   public boolean hasSystem() {
     return system_ != null;
   }
   /**
-   * <code>.api.SystemStats system = 1;</code>
+   * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
    * @return The system.
    */
   public org.thethingsnetwork.api.SystemStats getSystem() {
     return system_ == null ? org.thethingsnetwork.api.SystemStats.getDefaultInstance() : system_;
   }
   /**
-   * <code>.api.SystemStats system = 1;</code>
+   * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.SystemStatsOrBuilder getSystemOrBuilder() {
     return getSystem();
@@ -175,21 +175,21 @@ private static final long serialVersionUID = 0L;
   public static final int COMPONENT_FIELD_NUMBER = 2;
   private org.thethingsnetwork.api.ComponentStats component_;
   /**
-   * <code>.api.ComponentStats component = 2;</code>
+   * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
    * @return Whether the component field is set.
    */
   public boolean hasComponent() {
     return component_ != null;
   }
   /**
-   * <code>.api.ComponentStats component = 2;</code>
+   * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
    * @return The component.
    */
   public org.thethingsnetwork.api.ComponentStats getComponent() {
     return component_ == null ? org.thethingsnetwork.api.ComponentStats.getDefaultInstance() : component_;
   }
   /**
-   * <code>.api.ComponentStats component = 2;</code>
+   * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.ComponentStatsOrBuilder getComponentOrBuilder() {
     return getComponent();
@@ -707,14 +707,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.SystemStats, org.thethingsnetwork.api.SystemStats.Builder, org.thethingsnetwork.api.SystemStatsOrBuilder> systemBuilder_;
     /**
-     * <code>.api.SystemStats system = 1;</code>
+     * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
      * @return Whether the system field is set.
      */
     public boolean hasSystem() {
       return systemBuilder_ != null || system_ != null;
     }
     /**
-     * <code>.api.SystemStats system = 1;</code>
+     * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
      * @return The system.
      */
     public org.thethingsnetwork.api.SystemStats getSystem() {
@@ -725,7 +725,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.api.SystemStats system = 1;</code>
+     * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setSystem(org.thethingsnetwork.api.SystemStats value) {
       if (systemBuilder_ == null) {
@@ -741,7 +741,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.api.SystemStats system = 1;</code>
+     * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setSystem(
         org.thethingsnetwork.api.SystemStats.Builder builderForValue) {
@@ -755,7 +755,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.api.SystemStats system = 1;</code>
+     * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
      */
     public Builder mergeSystem(org.thethingsnetwork.api.SystemStats value) {
       if (systemBuilder_ == null) {
@@ -773,7 +773,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.api.SystemStats system = 1;</code>
+     * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
      */
     public Builder clearSystem() {
       if (systemBuilder_ == null) {
@@ -787,7 +787,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.api.SystemStats system = 1;</code>
+     * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.SystemStats.Builder getSystemBuilder() {
       
@@ -795,7 +795,7 @@ private static final long serialVersionUID = 0L;
       return getSystemFieldBuilder().getBuilder();
     }
     /**
-     * <code>.api.SystemStats system = 1;</code>
+     * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.SystemStatsOrBuilder getSystemOrBuilder() {
       if (systemBuilder_ != null) {
@@ -806,7 +806,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.api.SystemStats system = 1;</code>
+     * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.SystemStats, org.thethingsnetwork.api.SystemStats.Builder, org.thethingsnetwork.api.SystemStatsOrBuilder> 
@@ -826,14 +826,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.ComponentStats, org.thethingsnetwork.api.ComponentStats.Builder, org.thethingsnetwork.api.ComponentStatsOrBuilder> componentBuilder_;
     /**
-     * <code>.api.ComponentStats component = 2;</code>
+     * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
      * @return Whether the component field is set.
      */
     public boolean hasComponent() {
       return componentBuilder_ != null || component_ != null;
     }
     /**
-     * <code>.api.ComponentStats component = 2;</code>
+     * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
      * @return The component.
      */
     public org.thethingsnetwork.api.ComponentStats getComponent() {
@@ -844,7 +844,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.api.ComponentStats component = 2;</code>
+     * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setComponent(org.thethingsnetwork.api.ComponentStats value) {
       if (componentBuilder_ == null) {
@@ -860,7 +860,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.api.ComponentStats component = 2;</code>
+     * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setComponent(
         org.thethingsnetwork.api.ComponentStats.Builder builderForValue) {
@@ -874,7 +874,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.api.ComponentStats component = 2;</code>
+     * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
      */
     public Builder mergeComponent(org.thethingsnetwork.api.ComponentStats value) {
       if (componentBuilder_ == null) {
@@ -892,7 +892,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.api.ComponentStats component = 2;</code>
+     * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
      */
     public Builder clearComponent() {
       if (componentBuilder_ == null) {
@@ -906,7 +906,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.api.ComponentStats component = 2;</code>
+     * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.ComponentStats.Builder getComponentBuilder() {
       
@@ -914,7 +914,7 @@ private static final long serialVersionUID = 0L;
       return getComponentFieldBuilder().getBuilder();
     }
     /**
-     * <code>.api.ComponentStats component = 2;</code>
+     * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.ComponentStatsOrBuilder getComponentOrBuilder() {
       if (componentBuilder_ != null) {
@@ -925,7 +925,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.api.ComponentStats component = 2;</code>
+     * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.ComponentStats, org.thethingsnetwork.api.ComponentStats.Builder, org.thethingsnetwork.api.ComponentStatsOrBuilder> 

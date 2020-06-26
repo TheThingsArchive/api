@@ -7,6 +7,7 @@ import (
 	bytes "bytes"
 	encoding_binary "encoding/binary"
 	fmt "fmt"
+	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	golang_proto "github.com/golang/protobuf/proto"
 	io "io"
@@ -155,7 +156,7 @@ func (m *LocationMetadata) GetSource() LocationMetadata_LocationSource {
 }
 
 type RxMetadata struct {
-	GatewayId string `protobuf:"bytes,1,opt,name=gateway_id,json=gatewayId,proto3" json:"gateway_id,omitempty"`
+	GatewayID string `protobuf:"bytes,1,opt,name=gateway_id,json=gatewayId,proto3" json:"gateway_id,omitempty"`
 	// Indicates whether the gateway is trusted. Components that are able to verify gateway trust MUST do so and set this value accordingly
 	GatewayTrusted bool `protobuf:"varint,2,opt,name=gateway_trusted,json=gatewayTrusted,proto3" json:"gateway_trusted,omitempty"`
 	// Timestamp (uptime of LoRa module) in microseconds with rollover
@@ -170,9 +171,9 @@ type RxMetadata struct {
 	// Frequency in Hz
 	Frequency uint64 `protobuf:"varint,31,opt,name=frequency,proto3" json:"frequency,omitempty"`
 	// Received signal strength in dBm
-	Rssi float32 `protobuf:"fixed32,32,opt,name=rssi,proto3" json:"rssi,omitempty"`
+	RSSI float32 `protobuf:"fixed32,32,opt,name=rssi,proto3" json:"rssi,omitempty"`
 	// Signal-to-noise-ratio in dB
-	Snr                  float32           `protobuf:"fixed32,33,opt,name=snr,proto3" json:"snr,omitempty"`
+	SNR                  float32           `protobuf:"fixed32,33,opt,name=snr,proto3" json:"snr,omitempty"`
 	Location             *LocationMetadata `protobuf:"bytes,41,opt,name=location,proto3" json:"location,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
 	XXX_sizecache        int32             `json:"-"`
@@ -210,9 +211,9 @@ func (m *RxMetadata) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_RxMetadata proto.InternalMessageInfo
 
-func (m *RxMetadata) GetGatewayId() string {
+func (m *RxMetadata) GetGatewayID() string {
 	if m != nil {
-		return m.GatewayId
+		return m.GatewayID
 	}
 	return ""
 }
@@ -273,16 +274,16 @@ func (m *RxMetadata) GetFrequency() uint64 {
 	return 0
 }
 
-func (m *RxMetadata) GetRssi() float32 {
+func (m *RxMetadata) GetRSSI() float32 {
 	if m != nil {
-		return m.Rssi
+		return m.RSSI
 	}
 	return 0
 }
 
-func (m *RxMetadata) GetSnr() float32 {
+func (m *RxMetadata) GetSNR() float32 {
 	if m != nil {
-		return m.Snr
+		return m.SNR
 	}
 	return 0
 }
@@ -298,15 +299,15 @@ type RxMetadata_Antenna struct {
 	Antenna uint32 `protobuf:"varint,1,opt,name=antenna,proto3" json:"antenna,omitempty"`
 	Channel uint32 `protobuf:"varint,2,opt,name=channel,proto3" json:"channel,omitempty"`
 	// Received signal power in dBm
-	Rssi float32 `protobuf:"fixed32,3,opt,name=rssi,proto3" json:"rssi,omitempty"`
+	RSSI float32 `protobuf:"fixed32,3,opt,name=rssi,proto3" json:"rssi,omitempty"`
 	// Received channel power in dBm
-	ChannelRssi float32 `protobuf:"fixed32,5,opt,name=channel_rssi,json=channelRssi,proto3" json:"channel_rssi,omitempty"`
+	ChannelRSSI float32 `protobuf:"fixed32,5,opt,name=channel_rssi,json=channelRssi,proto3" json:"channel_rssi,omitempty"`
 	// Standard deviation of the RSSI
-	RssiStandardDeviation float32 `protobuf:"fixed32,6,opt,name=rssi_standard_deviation,json=rssiStandardDeviation,proto3" json:"rssi_standard_deviation,omitempty"`
+	RSSIStandardDeviation float32 `protobuf:"fixed32,6,opt,name=rssi_standard_deviation,json=rssiStandardDeviation,proto3" json:"rssi_standard_deviation,omitempty"`
 	// Frequency offset (Hz)
 	FrequencyOffset int64 `protobuf:"varint,7,opt,name=frequency_offset,json=frequencyOffset,proto3" json:"frequency_offset,omitempty"`
 	// Signal-to-noise-ratio in dB
-	Snr float32 `protobuf:"fixed32,4,opt,name=snr,proto3" json:"snr,omitempty"`
+	SNR float32 `protobuf:"fixed32,4,opt,name=snr,proto3" json:"snr,omitempty"`
 	// Encrypted fine timestamp from the Gateway FPGA
 	EncryptedTime []byte `protobuf:"bytes,10,opt,name=encrypted_time,json=encryptedTime,proto3" json:"encrypted_time,omitempty"`
 	// Fine timestamp from the Gateway FPGA (decrypted)
@@ -361,23 +362,23 @@ func (m *RxMetadata_Antenna) GetChannel() uint32 {
 	return 0
 }
 
-func (m *RxMetadata_Antenna) GetRssi() float32 {
+func (m *RxMetadata_Antenna) GetRSSI() float32 {
 	if m != nil {
-		return m.Rssi
+		return m.RSSI
 	}
 	return 0
 }
 
-func (m *RxMetadata_Antenna) GetChannelRssi() float32 {
+func (m *RxMetadata_Antenna) GetChannelRSSI() float32 {
 	if m != nil {
-		return m.ChannelRssi
+		return m.ChannelRSSI
 	}
 	return 0
 }
 
-func (m *RxMetadata_Antenna) GetRssiStandardDeviation() float32 {
+func (m *RxMetadata_Antenna) GetRSSIStandardDeviation() float32 {
 	if m != nil {
-		return m.RssiStandardDeviation
+		return m.RSSIStandardDeviation
 	}
 	return 0
 }
@@ -389,9 +390,9 @@ func (m *RxMetadata_Antenna) GetFrequencyOffset() int64 {
 	return 0
 }
 
-func (m *RxMetadata_Antenna) GetSnr() float32 {
+func (m *RxMetadata_Antenna) GetSNR() float32 {
 	if m != nil {
-		return m.Snr
+		return m.SNR
 	}
 	return 0
 }
@@ -510,7 +511,7 @@ type Status struct {
 	GatewayTrusted bool `protobuf:"varint,3,opt,name=gateway_trusted,json=gatewayTrusted,proto3" json:"gateway_trusted,omitempty"`
 	// Boot time in Unix nanoseconds
 	BootTime     int64    `protobuf:"varint,4,opt,name=boot_time,json=bootTime,proto3" json:"boot_time,omitempty"`
-	Ip           []string `protobuf:"bytes,11,rep,name=ip,proto3" json:"ip,omitempty"`
+	IP           []string `protobuf:"bytes,11,rep,name=ip,proto3" json:"ip,omitempty"`
 	Platform     string   `protobuf:"bytes,12,opt,name=platform,proto3" json:"platform,omitempty"`
 	ContactEmail string   `protobuf:"bytes,13,opt,name=contact_email,json=contactEmail,proto3" json:"contact_email,omitempty"`
 	Description  string   `protobuf:"bytes,14,opt,name=description,proto3" json:"description,omitempty"`
@@ -521,14 +522,14 @@ type Status struct {
 	// The value of Router is set by the Router
 	Router string `protobuf:"bytes,17,opt,name=router,proto3" json:"router,omitempty"`
 	// Version of Gateway FPGA
-	Fpga uint32 `protobuf:"varint,18,opt,name=fpga,proto3" json:"fpga,omitempty"`
+	FPGA uint32 `protobuf:"varint,18,opt,name=fpga,proto3" json:"fpga,omitempty"`
 	// Version of Gateway DSP software
-	Dsp uint32 `protobuf:"varint,19,opt,name=dsp,proto3" json:"dsp,omitempty"`
+	DSP uint32 `protobuf:"varint,19,opt,name=dsp,proto3" json:"dsp,omitempty"`
 	// Version of gateway driver (in X.X.X format)
-	Hal      string            `protobuf:"bytes,20,opt,name=hal,proto3" json:"hal,omitempty"`
+	HAL      string            `protobuf:"bytes,20,opt,name=hal,proto3" json:"hal,omitempty"`
 	Location *LocationMetadata `protobuf:"bytes,21,opt,name=location,proto3" json:"location,omitempty"`
 	// Round-trip time to the server in milliseconds
-	Rtt uint32 `protobuf:"varint,31,opt,name=rtt,proto3" json:"rtt,omitempty"`
+	RTT uint32 `protobuf:"varint,31,opt,name=rtt,proto3" json:"rtt,omitempty"`
 	// Total number of received uplink packets since boot
 	RxIn uint32 `protobuf:"varint,41,opt,name=rx_in,json=rxIn,proto3" json:"rx_in,omitempty"`
 	// Total number of successful (correct) uplink packets since boot
@@ -544,8 +545,8 @@ type Status struct {
 	// Sequence number of the last packet received from the link testing mote
 	LmNw uint32 `protobuf:"varint,47,opt,name=lm_nw,json=lmNw,proto3" json:"lm_nw,omitempty"`
 	// Number of lost PPS pulses
-	LPps uint32            `protobuf:"varint,48,opt,name=l_pps,json=lPps,proto3" json:"l_pps,omitempty"`
-	Os   *Status_OSMetrics `protobuf:"bytes,51,opt,name=os,proto3" json:"os,omitempty"`
+	LPPS uint32            `protobuf:"varint,48,opt,name=l_pps,json=lPps,proto3" json:"l_pps,omitempty"`
+	OS   *Status_OSMetrics `protobuf:"bytes,51,opt,name=os,proto3" json:"os,omitempty"`
 	// debug or warning messages from the gateway
 	Messages             []string `protobuf:"bytes,52,rep,name=messages,proto3" json:"messages,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -612,9 +613,9 @@ func (m *Status) GetBootTime() int64 {
 	return 0
 }
 
-func (m *Status) GetIp() []string {
+func (m *Status) GetIP() []string {
 	if m != nil {
-		return m.Ip
+		return m.IP
 	}
 	return nil
 }
@@ -661,23 +662,23 @@ func (m *Status) GetRouter() string {
 	return ""
 }
 
-func (m *Status) GetFpga() uint32 {
+func (m *Status) GetFPGA() uint32 {
 	if m != nil {
-		return m.Fpga
+		return m.FPGA
 	}
 	return 0
 }
 
-func (m *Status) GetDsp() uint32 {
+func (m *Status) GetDSP() uint32 {
 	if m != nil {
-		return m.Dsp
+		return m.DSP
 	}
 	return 0
 }
 
-func (m *Status) GetHal() string {
+func (m *Status) GetHAL() string {
 	if m != nil {
-		return m.Hal
+		return m.HAL
 	}
 	return ""
 }
@@ -689,9 +690,9 @@ func (m *Status) GetLocation() *LocationMetadata {
 	return nil
 }
 
-func (m *Status) GetRtt() uint32 {
+func (m *Status) GetRTT() uint32 {
 	if m != nil {
-		return m.Rtt
+		return m.RTT
 	}
 	return 0
 }
@@ -745,16 +746,16 @@ func (m *Status) GetLmNw() uint32 {
 	return 0
 }
 
-func (m *Status) GetLPps() uint32 {
+func (m *Status) GetLPPS() uint32 {
 	if m != nil {
-		return m.LPps
+		return m.LPPS
 	}
 	return 0
 }
 
-func (m *Status) GetOs() *Status_OSMetrics {
+func (m *Status) GetOS() *Status_OSMetrics {
 	if m != nil {
-		return m.Os
+		return m.OS
 	}
 	return nil
 }
@@ -771,7 +772,7 @@ type Status_OSMetrics struct {
 	Load_1               float32  `protobuf:"fixed32,1,opt,name=load_1,json=load1,proto3" json:"load_1,omitempty"`
 	Load_5               float32  `protobuf:"fixed32,2,opt,name=load_5,json=load5,proto3" json:"load_5,omitempty"`
 	Load_15              float32  `protobuf:"fixed32,3,opt,name=load_15,json=load15,proto3" json:"load_15,omitempty"`
-	CpuPercentage        float32  `protobuf:"fixed32,11,opt,name=cpu_percentage,json=cpuPercentage,proto3" json:"cpu_percentage,omitempty"`
+	CPUPercentage        float32  `protobuf:"fixed32,11,opt,name=cpu_percentage,json=cpuPercentage,proto3" json:"cpu_percentage,omitempty"`
 	MemoryPercentage     float32  `protobuf:"fixed32,21,opt,name=memory_percentage,json=memoryPercentage,proto3" json:"memory_percentage,omitempty"`
 	Temperature          float32  `protobuf:"fixed32,31,opt,name=temperature,proto3" json:"temperature,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -831,9 +832,9 @@ func (m *Status_OSMetrics) GetLoad_15() float32 {
 	return 0
 }
 
-func (m *Status_OSMetrics) GetCpuPercentage() float32 {
+func (m *Status_OSMetrics) GetCPUPercentage() float32 {
 	if m != nil {
-		return m.CpuPercentage
+		return m.CPUPercentage
 	}
 	return 0
 }
@@ -877,85 +878,93 @@ func init() {
 }
 
 var fileDescriptor_a36d13542519003f = []byte{
-	// 1240 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x96, 0x3b, 0x8c, 0x13, 0xc7,
-	0x1f, 0xc7, 0x77, 0xd6, 0xef, 0xf1, 0xd9, 0x67, 0x06, 0xee, 0x18, 0x1e, 0xff, 0x61, 0xb9, 0xbf,
-	0x22, 0x4c, 0x48, 0x7c, 0x01, 0xe2, 0xa4, 0x0d, 0x5c, 0xc8, 0xc9, 0x0a, 0xd8, 0xd6, 0xda, 0x51,
-	0x94, 0x34, 0xab, 0xb9, 0xf5, 0xd8, 0x5e, 0xb1, 0xde, 0xdd, 0xcc, 0x8e, 0xb9, 0xbb, 0x54, 0x34,
-	0x91, 0x28, 0x53, 0xa6, 0x4c, 0x89, 0x22, 0x45, 0xa2, 0xa4, 0xa4, 0x8a, 0x28, 0x29, 0x29, 0xb1,
-	0x2d, 0x45, 0x54, 0x11, 0x25, 0x65, 0x34, 0xb3, 0x0f, 0xfb, 0x2e, 0x07, 0xa2, 0xba, 0xf9, 0x7d,
-	0xbe, 0xdf, 0xdd, 0x9b, 0xf9, 0x3d, 0xd6, 0x03, 0x9b, 0x23, 0x47, 0x8c, 0xa7, 0x7b, 0x0d, 0xdb,
-	0x9f, 0x6c, 0xf7, 0xc7, 0xac, 0x3f, 0x76, 0xbc, 0x51, 0xd8, 0x66, 0x62, 0xdf, 0xe7, 0xf7, 0xb7,
-	0x69, 0xe0, 0x6c, 0x8f, 0xa8, 0x60, 0xfb, 0xf4, 0x30, 0xf9, 0xdb, 0x08, 0xb8, 0x2f, 0x7c, 0x54,
-	0x88, 0xc3, 0xad, 0x27, 0x3a, 0xac, 0xdd, 0xf5, 0x6d, 0x2a, 0x1c, 0xdf, 0xbb, 0xc7, 0x04, 0x1d,
-	0x50, 0x41, 0x11, 0x82, 0x59, 0xe1, 0x4c, 0x18, 0x06, 0x06, 0xa8, 0x67, 0x4c, 0xb5, 0x46, 0xe7,
-	0x61, 0xd1, 0xa5, 0xc2, 0x11, 0xd3, 0x01, 0xc3, 0xba, 0x01, 0xea, 0xba, 0x99, 0xc6, 0xe8, 0x22,
-	0x2c, 0xb9, 0xbe, 0x37, 0x8a, 0xc4, 0x8c, 0x12, 0x97, 0x40, 0x3e, 0x49, 0xdd, 0xf8, 0xc9, 0xac,
-	0x01, 0xea, 0x39, 0x33, 0x8d, 0x95, 0x66, 0xdb, 0x53, 0x4e, 0xed, 0x43, 0x9c, 0x8b, 0xb5, 0x38,
-	0x46, 0x5f, 0xc1, 0x7c, 0xe8, 0x4f, 0xb9, 0xcd, 0x70, 0xde, 0x00, 0xf5, 0xea, 0x8d, 0x7a, 0x23,
-	0x39, 0xc3, 0xf1, 0x0d, 0xa7, 0xa0, 0xa7, 0xfc, 0x66, 0xfc, 0xdc, 0x56, 0x1f, 0x56, 0x8f, 0x2a,
-	0xa8, 0x0c, 0x0b, 0xdf, 0xb5, 0xbf, 0x6d, 0x77, 0xbe, 0x6f, 0xd7, 0x34, 0x54, 0x80, 0x99, 0xdd,
-	0x6e, 0xaf, 0x06, 0x10, 0x84, 0xf9, 0x9d, 0x4e, 0xfb, 0x9b, 0xd6, 0x6e, 0x4d, 0x47, 0x6b, 0xb0,
-	0x68, 0xde, 0xd9, 0x6d, 0xf5, 0xfa, 0xe6, 0x0f, 0xb5, 0x0c, 0x42, 0xb0, 0xda, 0xea, 0x5a, 0xbb,
-	0x77, 0x3a, 0x77, 0x3b, 0x3b, 0xb7, 0xfa, 0xad, 0x4e, 0xbb, 0x96, 0xdd, 0xfa, 0x2b, 0x07, 0xa1,
-	0x79, 0x90, 0x26, 0xeb, 0x7f, 0x10, 0xc6, 0xfb, 0xb2, 0x9c, 0x81, 0x4a, 0x59, 0xc9, 0x2c, 0xc5,
-	0xa4, 0x35, 0x40, 0x57, 0xe0, 0x7a, 0x22, 0x0b, 0x3e, 0x0d, 0x05, 0x1b, 0xa8, 0xf4, 0x15, 0xcd,
-	0x6a, 0x8c, 0xfb, 0x11, 0x95, 0x49, 0x94, 0x89, 0x0e, 0x05, 0x9d, 0x04, 0xb8, 0x6c, 0x80, 0x7a,
-	0xc5, 0x5c, 0x82, 0xb4, 0x24, 0x6b, 0x2b, 0x25, 0xf9, 0x08, 0x56, 0x99, 0x67, 0xf3, 0xc3, 0x40,
-	0xb0, 0x81, 0xa5, 0xd4, 0x8a, 0x01, 0xea, 0x6b, 0x66, 0x25, 0xa5, 0x7d, 0x69, 0x3b, 0x07, 0x8b,
-	0x7c, 0x68, 0xd9, 0x63, 0xea, 0x78, 0x78, 0x43, 0xbd, 0xb7, 0xc0, 0x87, 0x3b, 0x32, 0x44, 0x18,
-	0x16, 0xec, 0x31, 0xf5, 0x3c, 0xe6, 0xe2, 0xcd, 0x48, 0x89, 0x43, 0xf4, 0x25, 0x2c, 0x52, 0x4f,
-	0x30, 0xcf, 0xa3, 0x21, 0x26, 0x46, 0xa6, 0x5e, 0xbe, 0x71, 0x21, 0x4d, 0xff, 0xf2, 0xf0, 0x8d,
-	0x5b, 0x91, 0xc7, 0x4c, 0xcd, 0xf2, 0x18, 0x43, 0xce, 0x7e, 0x9a, 0x32, 0xcf, 0x3e, 0xc4, 0x97,
-	0x0c, 0x50, 0xcf, 0x9a, 0x4b, 0x20, 0x8f, 0xc1, 0xc3, 0xd0, 0xc1, 0x86, 0x6a, 0x12, 0xb5, 0x46,
-	0x35, 0x98, 0x09, 0x3d, 0x8e, 0x2f, 0x2b, 0x24, 0x97, 0xa8, 0x09, 0x8b, 0x6e, 0x5c, 0x37, 0x7c,
-	0xd5, 0x00, 0xf5, 0xf2, 0x8d, 0x73, 0xef, 0xac, 0xbd, 0x99, 0x5a, 0xcf, 0xff, 0xa9, 0xc3, 0x42,
-	0xbc, 0x21, 0x79, 0xb2, 0x78, 0x4b, 0xaa, 0x24, 0x15, 0x33, 0x09, 0x57, 0xcf, 0xac, 0x1f, 0x3d,
-	0x73, 0xb2, 0xb9, 0xcc, 0xca, 0xe6, 0x2e, 0xc3, 0xb5, 0x58, 0xb6, 0x94, 0x96, 0x53, 0x5a, 0x39,
-	0x66, 0xa6, 0xb4, 0x7c, 0x01, 0xcf, 0x4a, 0xc9, 0x0a, 0x05, 0xf5, 0x06, 0x94, 0x0f, 0xac, 0x01,
-	0x7b, 0xe0, 0x44, 0x9b, 0xcf, 0x2b, 0xf7, 0x86, 0x94, 0x7b, 0xb1, 0xfa, 0x75, 0x22, 0xa2, 0xab,
-	0xb0, 0x96, 0x26, 0xc6, 0xf2, 0x87, 0xc3, 0x90, 0x09, 0x5c, 0x50, 0xe5, 0x5d, 0x4f, 0x79, 0x47,
-	0xe1, 0x24, 0x45, 0xd9, 0x65, 0x8a, 0xfe, 0x5b, 0x7b, 0x78, 0x52, 0xed, 0x2f, 0xc0, 0xd2, 0xd0,
-	0xf1, 0x58, 0xe4, 0x28, 0xab, 0x97, 0x17, 0x25, 0x90, 0xe2, 0xd6, 0xdf, 0x00, 0xae, 0xf7, 0x0f,
-	0x76, 0x7c, 0x6f, 0xe8, 0x8c, 0xa6, 0x3c, 0xda, 0xd4, 0xfb, 0xbb, 0xf0, 0x3d, 0xad, 0x74, 0xa4,
-	0xee, 0x9b, 0xc7, 0xeb, 0x7e, 0x06, 0xe6, 0x02, 0x7f, 0x9f, 0x71, 0x7c, 0x56, 0x0d, 0x79, 0x14,
-	0xa0, 0x26, 0xdc, 0x0c, 0x7c, 0x97, 0x72, 0xe7, 0x67, 0xf5, 0xcf, 0x2d, 0xc7, 0x7b, 0xc0, 0x78,
-	0x28, 0x13, 0x77, 0x49, 0x8d, 0xc8, 0xc6, 0xaa, 0xda, 0x4a, 0x44, 0xb4, 0x0d, 0x4f, 0x2f, 0x13,
-	0xb7, 0x4c, 0xb6, 0xa1, 0x36, 0x84, 0x52, 0x29, 0xcd, 0xf4, 0xd6, 0x2f, 0x05, 0x98, 0xef, 0x09,
-	0x2a, 0xa6, 0xe1, 0xd1, 0xf3, 0x81, 0x77, 0x4d, 0x99, 0xbe, 0x32, 0x65, 0x27, 0x0c, 0x70, 0xe6,
-	0xc4, 0x01, 0xbe, 0x00, 0x4b, 0x7b, 0xbe, 0x2f, 0xa2, 0x5c, 0x67, 0xa3, 0x5c, 0x4b, 0xa0, 0x0a,
-	0x51, 0x85, 0xba, 0x23, 0x13, 0x9a, 0xa9, 0x97, 0x4c, 0xdd, 0x09, 0xe4, 0x87, 0x2f, 0x70, 0xa9,
-	0x18, 0xfa, 0x7c, 0xa2, 0x66, 0xba, 0x64, 0xa6, 0x31, 0xfa, 0x3f, 0xac, 0xd8, 0xbe, 0x27, 0xa8,
-	0x2d, 0x2c, 0x36, 0xa1, 0x8e, 0xab, 0xc6, 0xba, 0x64, 0xae, 0xc5, 0xf0, 0x8e, 0x64, 0xc8, 0x80,
-	0xe5, 0x01, 0x0b, 0x6d, 0xee, 0x04, 0xea, 0xf0, 0x55, 0x65, 0x59, 0x45, 0xb2, 0x45, 0x96, 0x69,
-	0x0a, 0x5c, 0xea, 0xe1, 0x75, 0x65, 0xaa, 0xa4, 0xb4, 0xeb, 0x52, 0x0f, 0x6d, 0xc2, 0xfc, 0x1e,
-	0x77, 0x06, 0x23, 0x86, 0x6b, 0x4a, 0x8e, 0x23, 0xc9, 0xb9, 0x3f, 0x15, 0x8c, 0xe3, 0x53, 0x11,
-	0x8f, 0x22, 0x99, 0xa3, 0x61, 0x30, 0xa2, 0x18, 0xa9, 0xe4, 0xa9, 0xb5, 0xec, 0xcf, 0x41, 0x18,
-	0xe0, 0xd3, 0x0a, 0xc9, 0xa5, 0x24, 0x63, 0xea, 0xe2, 0x33, 0xea, 0x51, 0xb9, 0x3c, 0x32, 0xd4,
-	0x1b, 0x1f, 0x3c, 0xd4, 0xf2, 0x45, 0x5c, 0x08, 0xd5, 0x10, 0x15, 0x53, 0x2e, 0xd1, 0x69, 0x98,
-	0xe3, 0x07, 0x96, 0x13, 0x7d, 0x1a, 0x2a, 0x66, 0x96, 0x1f, 0xb4, 0xbc, 0x18, 0xfa, 0xf7, 0xf1,
-	0xc7, 0x09, 0xec, 0xdc, 0x97, 0x50, 0x28, 0xe7, 0xb5, 0x08, 0x8a, 0xd8, 0x29, 0x94, 0xf3, 0x93,
-	0x04, 0x46, 0x4e, 0x77, 0x22, 0xe1, 0xa7, 0x11, 0x74, 0x27, 0x29, 0x0c, 0x05, 0x6e, 0x24, 0xb0,
-	0x27, 0x62, 0xe8, 0xed, 0xe3, 0xed, 0x04, 0xb6, 0xf7, 0x15, 0xb4, 0x82, 0x20, 0xc4, 0x9f, 0xc5,
-	0xb0, 0x1b, 0x84, 0xe8, 0x2a, 0xd4, 0xfd, 0x10, 0xdf, 0x3c, 0x76, 0xd4, 0xa8, 0x0f, 0x1b, 0x9d,
-	0xde, 0x3d, 0x26, 0xb8, 0x63, 0x87, 0xa6, 0xee, 0x87, 0xb2, 0x1b, 0x26, 0x2c, 0x0c, 0xe9, 0x88,
-	0x85, 0xf8, 0x73, 0xd5, 0x23, 0x69, 0x7c, 0xfe, 0x39, 0x80, 0xa5, 0xd4, 0x8d, 0x36, 0x60, 0xde,
-	0xf5, 0xe9, 0xc0, 0xba, 0xae, 0x9a, 0x57, 0x37, 0x73, 0x32, 0xba, 0x9e, 0xe2, 0x66, 0xfc, 0xdb,
-	0xac, 0x70, 0x13, 0x9d, 0x85, 0x85, 0xc8, 0xdd, 0x8c, 0x3f, 0x6a, 0xca, 0x75, 0xbd, 0x29, 0x7b,
-	0xc3, 0x0e, 0xa6, 0x56, 0xc0, 0xb8, 0xcd, 0x3c, 0x41, 0x47, 0xd1, 0xc7, 0x41, 0x37, 0x2b, 0x76,
-	0x30, 0xed, 0xa6, 0x10, 0x5d, 0x83, 0xa7, 0x26, 0x6c, 0xe2, 0xf3, 0xc3, 0x55, 0xe7, 0x86, 0x72,
-	0xd6, 0x22, 0x61, 0xc5, 0x6c, 0xc0, 0xb2, 0x60, 0x93, 0x80, 0x71, 0x2a, 0xa6, 0x9c, 0xa9, 0x8a,
-	0xe9, 0xe6, 0x2a, 0xba, 0xfd, 0x0f, 0x78, 0x3e, 0x23, 0xe0, 0xc5, 0x8c, 0x80, 0x97, 0x33, 0xa2,
-	0xbd, 0x9a, 0x11, 0xed, 0xf5, 0x8c, 0x68, 0x6f, 0x66, 0x44, 0x7b, 0x3b, 0x23, 0xe0, 0xe1, 0x9c,
-	0x80, 0x47, 0x73, 0xa2, 0x3d, 0x9e, 0x13, 0xf0, 0x64, 0x4e, 0xb4, 0xa7, 0x73, 0xa2, 0x3d, 0x9b,
-	0x13, 0xed, 0xf9, 0x9c, 0x80, 0x17, 0x73, 0x02, 0x5e, 0xce, 0x89, 0xf6, 0x6a, 0x4e, 0xc0, 0xeb,
-	0x39, 0xd1, 0xde, 0xcc, 0x09, 0x78, 0x3b, 0x27, 0xda, 0xc3, 0x05, 0xd1, 0x1e, 0x2d, 0x08, 0xf8,
-	0x75, 0x41, 0xb4, 0xdf, 0x16, 0x04, 0xfc, 0xbe, 0x20, 0xda, 0xe3, 0x05, 0xd1, 0x9e, 0x2c, 0x08,
-	0x78, 0xba, 0x20, 0xe0, 0xd9, 0x82, 0x00, 0x68, 0xf8, 0x7c, 0xd4, 0x10, 0x63, 0x26, 0xd4, 0xe5,
-	0xc8, 0x8b, 0x2e, 0x47, 0x0d, 0x1a, 0x38, 0x49, 0x51, 0x6e, 0xaf, 0xed, 0x46, 0x8b, 0xae, 0xbc,
-	0x1c, 0x75, 0xc1, 0x8f, 0x57, 0x3e, 0xf0, 0x56, 0xf5, 0x87, 0x7e, 0xf1, 0xb8, 0xdc, 0xb8, 0xd5,
-	0x6d, 0x35, 0xe2, 0xd7, 0xed, 0xe5, 0xd5, 0x6d, 0xeb, 0xe6, 0xbf, 0x01, 0x00, 0x00, 0xff, 0xff,
-	0xb9, 0xdd, 0xdb, 0xb1, 0xa6, 0x09, 0x00, 0x00,
+	// 1370 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x96, 0x4f, 0x6c, 0x13, 0xc7,
+	0x17, 0xc7, 0x77, 0xd6, 0x8e, 0xff, 0x8c, 0xe3, 0xc4, 0x0c, 0x24, 0x6c, 0x02, 0xbf, 0xb1, 0x7f,
+	0xa9, 0x2a, 0x4c, 0x01, 0xa7, 0x09, 0x8d, 0xda, 0x63, 0x93, 0x00, 0xa9, 0xd5, 0x60, 0xbb, 0x63,
+	0xa3, 0xaa, 0xbd, 0x58, 0x93, 0xf5, 0xd8, 0x59, 0xb1, 0xde, 0xdd, 0xce, 0x8e, 0x49, 0xd2, 0x13,
+	0x47, 0x8e, 0x3d, 0xf6, 0xd8, 0x5b, 0x51, 0x4f, 0x1c, 0x39, 0x72, 0xe4, 0xc8, 0xad, 0x48, 0x95,
+	0x22, 0xbc, 0x96, 0x2a, 0x0e, 0x55, 0xc5, 0x91, 0x63, 0x35, 0xb3, 0xeb, 0xb5, 0x13, 0x02, 0xe2,
+	0x64, 0xbf, 0xcf, 0xfb, 0xbe, 0xdd, 0x99, 0xef, 0xbc, 0x7d, 0x1a, 0xb8, 0xd1, 0xb3, 0xc4, 0xfe,
+	0x60, 0xaf, 0x62, 0xba, 0xfd, 0xd5, 0xd6, 0x3e, 0x6b, 0xed, 0x5b, 0x4e, 0xcf, 0xaf, 0x31, 0x71,
+	0xe0, 0xf2, 0xfb, 0xab, 0xd4, 0xb3, 0x56, 0x7b, 0x54, 0xb0, 0x03, 0x7a, 0x34, 0xfe, 0xad, 0x78,
+	0xdc, 0x15, 0x2e, 0x4a, 0x47, 0xe1, 0xf2, 0x8d, 0xa9, 0xfa, 0x9e, 0xdb, 0x73, 0x57, 0x55, 0x7e,
+	0x6f, 0xd0, 0x55, 0x91, 0x0a, 0xd4, 0xbf, 0xb0, 0x6e, 0xe5, 0x89, 0x0e, 0x0b, 0xbb, 0xae, 0x49,
+	0x85, 0xe5, 0x3a, 0x77, 0x99, 0xa0, 0x1d, 0x2a, 0x28, 0x42, 0x30, 0x29, 0xac, 0x3e, 0x33, 0x40,
+	0x09, 0x94, 0x13, 0x44, 0xfd, 0x47, 0xcb, 0x30, 0x63, 0x53, 0x61, 0x89, 0x41, 0x87, 0x19, 0x7a,
+	0x09, 0x94, 0x75, 0x12, 0xc7, 0xe8, 0x32, 0xcc, 0xda, 0xae, 0xd3, 0x0b, 0x93, 0x09, 0x95, 0x9c,
+	0x00, 0x59, 0x49, 0xed, 0xa8, 0x32, 0x59, 0x02, 0xe5, 0x19, 0x12, 0xc7, 0x2a, 0x67, 0x9a, 0x03,
+	0x4e, 0xcd, 0x23, 0x63, 0x26, 0xca, 0x45, 0x31, 0xfa, 0x1a, 0xa6, 0x7c, 0x77, 0xc0, 0x4d, 0x66,
+	0xa4, 0x4a, 0xa0, 0x3c, 0xb7, 0x5e, 0xae, 0x8c, 0xb7, 0x7c, 0x7a, 0xc1, 0x31, 0x68, 0x2a, 0x3d,
+	0x89, 0xea, 0x56, 0x5a, 0x70, 0xee, 0x64, 0x06, 0xe5, 0x60, 0xfa, 0x5e, 0xed, 0xdb, 0x5a, 0xfd,
+	0xfb, 0x5a, 0x41, 0x43, 0x69, 0x98, 0xd8, 0x69, 0x34, 0x0b, 0x00, 0x41, 0x98, 0xda, 0xae, 0xd7,
+	0xee, 0x54, 0x77, 0x0a, 0x3a, 0x9a, 0x85, 0x19, 0x72, 0x7b, 0xa7, 0xda, 0x6c, 0x91, 0x1f, 0x0a,
+	0x09, 0x84, 0xe0, 0x5c, 0xb5, 0xd1, 0xde, 0xb9, 0x5d, 0xdf, 0xad, 0x6f, 0x6f, 0xb6, 0xaa, 0xf5,
+	0x5a, 0x21, 0xb9, 0xf2, 0x7b, 0x0a, 0x42, 0x72, 0x18, 0x9b, 0x75, 0x1d, 0xc2, 0x68, 0x5d, 0x6d,
+	0xab, 0xa3, 0x2c, 0xcb, 0x6e, 0xe5, 0x83, 0xe3, 0x62, 0x76, 0x27, 0xa4, 0xd5, 0x5b, 0x24, 0x1b,
+	0x09, 0xaa, 0x1d, 0x74, 0x05, 0xce, 0x8f, 0xd5, 0x82, 0x0f, 0x7c, 0xc1, 0x3a, 0xca, 0xcd, 0x0c,
+	0x99, 0x8b, 0x70, 0x2b, 0xa4, 0xd2, 0x53, 0xe9, 0xbb, 0x2f, 0x68, 0xdf, 0x33, 0x72, 0x25, 0x50,
+	0xce, 0x93, 0x09, 0x88, 0x4f, 0x68, 0x76, 0xea, 0x84, 0x3e, 0x85, 0x73, 0xcc, 0x31, 0xf9, 0x91,
+	0x27, 0x58, 0xa7, 0xad, 0xb2, 0xf9, 0x12, 0x28, 0xcf, 0x92, 0x7c, 0x4c, 0x5b, 0x52, 0xb6, 0x04,
+	0x33, 0xbc, 0xdb, 0x36, 0xf7, 0xa9, 0xe5, 0x18, 0x0b, 0xea, 0xb9, 0x69, 0xde, 0xdd, 0x96, 0x21,
+	0x32, 0x60, 0xda, 0xdc, 0xa7, 0x8e, 0xc3, 0x6c, 0x63, 0x31, 0xcc, 0x44, 0x21, 0xfa, 0x12, 0x66,
+	0xa8, 0x23, 0x98, 0xe3, 0x50, 0xdf, 0xc0, 0xa5, 0x44, 0x39, 0xb7, 0x7e, 0x29, 0x3e, 0x8d, 0x89,
+	0x17, 0x95, 0xcd, 0x50, 0x43, 0x62, 0xb1, 0xdc, 0x46, 0x97, 0xb3, 0x9f, 0x06, 0xcc, 0x31, 0x8f,
+	0x8c, 0x62, 0x09, 0x94, 0x93, 0x64, 0x02, 0xd0, 0x65, 0x98, 0xe4, 0xbe, 0x6f, 0x19, 0x25, 0xd9,
+	0x33, 0x5b, 0x99, 0xe0, 0xb8, 0x98, 0x24, 0xcd, 0x66, 0x95, 0x28, 0x8a, 0x96, 0x60, 0xc2, 0x77,
+	0xb8, 0xf1, 0x7f, 0x95, 0x4c, 0x07, 0xc7, 0xc5, 0x44, 0xb3, 0x46, 0x88, 0x64, 0x68, 0x03, 0x66,
+	0xec, 0xe8, 0x64, 0x8d, 0xab, 0x25, 0x50, 0xce, 0xad, 0x2f, 0xbd, 0xb7, 0x3b, 0x48, 0x2c, 0x5d,
+	0xfe, 0x47, 0x87, 0xe9, 0x68, 0x8d, 0x72, 0xb3, 0xd1, 0x2a, 0xd5, 0xa1, 0xe5, 0xc9, 0x38, 0x9c,
+	0xb6, 0x41, 0x3f, 0x69, 0xc3, 0x78, 0xbd, 0x89, 0x33, 0xd7, 0xbb, 0x0e, 0x67, 0x23, 0x61, 0x5b,
+	0xa9, 0x66, 0x94, 0x6a, 0x3e, 0x38, 0x2e, 0xe6, 0xb6, 0x43, 0xae, 0xc4, 0xb9, 0x48, 0x44, 0x64,
+	0xcd, 0x77, 0xf0, 0xa2, 0xd4, 0xb6, 0x7d, 0x41, 0x9d, 0x0e, 0xe5, 0x9d, 0x76, 0x87, 0x3d, 0xb0,
+	0xc2, 0x7d, 0xa5, 0x54, 0xf9, 0x52, 0x70, 0x5c, 0x5c, 0x90, 0x75, 0xcd, 0x48, 0x71, 0x6b, 0x2c,
+	0x20, 0x0b, 0xb2, 0xf2, 0x1d, 0x8c, 0xae, 0xc2, 0x42, 0xec, 0x70, 0xdb, 0xed, 0x76, 0x7d, 0x26,
+	0x8c, 0xb4, 0xea, 0x93, 0xf9, 0x98, 0xd7, 0x15, 0x1e, 0x3b, 0x9c, 0x3c, 0xc3, 0xe1, 0x77, 0xbb,
+	0x09, 0x9e, 0xd5, 0x4d, 0x97, 0x60, 0xb6, 0x6b, 0x39, 0x2c, 0x54, 0xe4, 0xd4, 0x5b, 0x32, 0x12,
+	0xc8, 0xe4, 0xca, 0xdf, 0x00, 0xce, 0xb7, 0x0e, 0xb7, 0x5d, 0xa7, 0x6b, 0xf5, 0x06, 0x3c, 0x5c,
+	0xdd, 0x87, 0xfb, 0xfa, 0x03, 0xcd, 0x79, 0xa2, 0x93, 0x16, 0x4f, 0x77, 0xd2, 0x05, 0x38, 0xe3,
+	0xb9, 0x07, 0x8c, 0x1b, 0x17, 0xd5, 0x14, 0x09, 0x03, 0xb4, 0x01, 0x17, 0x3d, 0xd7, 0xa6, 0xdc,
+	0xfa, 0x59, 0xbd, 0xbc, 0x6d, 0x39, 0x0f, 0x18, 0xf7, 0xa5, 0xb9, 0x45, 0xf5, 0xd1, 0x2d, 0x4c,
+	0x67, 0xab, 0xe3, 0x24, 0x5a, 0x85, 0xe7, 0x27, 0x0e, 0x4e, 0x0e, 0xa4, 0xa4, 0x16, 0x84, 0xe2,
+	0x54, 0x6c, 0xf9, 0xca, 0x9f, 0x69, 0x98, 0x6a, 0x0a, 0x2a, 0x06, 0xfe, 0xc9, 0xfd, 0x81, 0xf7,
+	0x7d, 0xb7, 0xfa, 0xd4, 0x77, 0x7b, 0xc6, 0x48, 0x48, 0x9c, 0x39, 0x12, 0x2e, 0xc1, 0xec, 0x9e,
+	0xeb, 0x8a, 0xd0, 0xeb, 0x64, 0xe8, 0xb5, 0x04, 0xea, 0x20, 0x16, 0xa1, 0x6e, 0x49, 0x43, 0x13,
+	0xe5, 0xec, 0x56, 0x2a, 0x38, 0x2e, 0xea, 0xd5, 0x06, 0xd1, 0x2d, 0x4f, 0x4e, 0x58, 0xcf, 0xa6,
+	0xa2, 0xeb, 0xf2, 0xbe, 0x9a, 0x16, 0x59, 0x12, 0xc7, 0xe8, 0x13, 0x98, 0x37, 0x5d, 0x47, 0x50,
+	0x53, 0xb4, 0x59, 0x9f, 0x5a, 0xb6, 0x1a, 0x18, 0x59, 0x32, 0x1b, 0xc1, 0xdb, 0x92, 0xa1, 0x12,
+	0xcc, 0x75, 0x98, 0x6f, 0x72, 0xcb, 0x53, 0x26, 0xcc, 0x29, 0xc9, 0x34, 0x92, 0xad, 0x32, 0xb1,
+	0xcb, 0xb3, 0xa9, 0x63, 0xcc, 0x2b, 0x51, 0x3e, 0xa6, 0x0d, 0x9b, 0x3a, 0x68, 0x11, 0xa6, 0xf6,
+	0xb8, 0xd5, 0xe9, 0x31, 0xa3, 0xa0, 0xd2, 0x51, 0x24, 0x39, 0x77, 0x07, 0x82, 0x71, 0xe3, 0x5c,
+	0xc8, 0xc3, 0x48, 0x7e, 0x6c, 0x5d, 0xaf, 0x47, 0x0d, 0x24, 0x4d, 0x0c, 0x3f, 0xb6, 0x3b, 0x8d,
+	0x9d, 0x4d, 0xa2, 0xa8, 0x6c, 0xdd, 0x8e, 0xef, 0x19, 0xe7, 0x55, 0x52, 0xb5, 0xee, 0xad, 0x66,
+	0x83, 0x48, 0x26, 0x53, 0xfb, 0xd4, 0x36, 0x2e, 0xa8, 0x51, 0xac, 0x52, 0xdf, 0x6c, 0xee, 0x12,
+	0xc9, 0x4e, 0xcc, 0x8d, 0x85, 0x8f, 0x9e, 0x1b, 0xf2, 0x89, 0x5c, 0x08, 0xd5, 0x34, 0xd1, 0xcb,
+	0x48, 0xab, 0x45, 0x24, 0x43, 0xe7, 0xe1, 0x0c, 0x3f, 0x6c, 0x5b, 0xe1, 0x18, 0xca, 0x93, 0x24,
+	0x3f, 0xac, 0x3a, 0x11, 0x74, 0xef, 0x1b, 0x9f, 0x8d, 0x61, 0xfd, 0xbe, 0x84, 0x42, 0x29, 0xaf,
+	0x85, 0x50, 0x44, 0x4a, 0xa1, 0x94, 0xd7, 0xc7, 0x30, 0x54, 0xda, 0x7d, 0x09, 0x6f, 0x84, 0xd0,
+	0xee, 0xc7, 0xd0, 0x17, 0x46, 0x65, 0x0c, 0x9b, 0x22, 0x82, 0xce, 0x81, 0xb1, 0x3a, 0x86, 0xb5,
+	0x03, 0xf4, 0x3f, 0x38, 0x63, 0xb7, 0x3d, 0xcf, 0x37, 0x3e, 0x9f, 0x38, 0xb7, 0xdb, 0x68, 0x34,
+	0x49, 0xd2, 0x6e, 0x78, 0x3e, 0x5a, 0x83, 0xba, 0xeb, 0x1b, 0x37, 0x4f, 0xed, 0x3e, 0x6c, 0xdf,
+	0x4a, 0xbd, 0x79, 0x97, 0x09, 0x6e, 0x99, 0x7e, 0xd8, 0x44, 0xf5, 0x26, 0xd1, 0x5d, 0x5f, 0x36,
+	0x51, 0x9f, 0xf9, 0x3e, 0xed, 0x31, 0xdf, 0xf8, 0x42, 0xb6, 0x18, 0x89, 0xe3, 0xe5, 0xbf, 0x00,
+	0xcc, 0xc6, 0x55, 0x68, 0x01, 0xa6, 0x6c, 0x97, 0x76, 0xda, 0x6b, 0xaa, 0xf7, 0x75, 0x32, 0x23,
+	0xa3, 0xb5, 0x18, 0x6f, 0x44, 0x77, 0x07, 0x85, 0x37, 0xd0, 0x45, 0x98, 0x0e, 0xd5, 0x1b, 0xd1,
+	0xb5, 0x41, 0xa9, 0xd6, 0x36, 0xd0, 0x57, 0x70, 0xce, 0xf4, 0x06, 0x6d, 0x8f, 0x71, 0x93, 0x39,
+	0x82, 0xf6, 0xc2, 0xd9, 0xa2, 0x6f, 0x9d, 0x0b, 0x8e, 0x8b, 0xf9, 0xed, 0xc6, 0xbd, 0x46, 0x9c,
+	0x20, 0x79, 0xd3, 0x1b, 0x4c, 0x42, 0x74, 0x0d, 0x9e, 0xeb, 0xb3, 0xbe, 0xcb, 0x8f, 0xa6, 0x8b,
+	0x17, 0xd4, 0xc3, 0x0b, 0x61, 0x62, 0x4a, 0x5c, 0x82, 0x39, 0xc1, 0xfa, 0x1e, 0xe3, 0x54, 0x0c,
+	0x38, 0x53, 0xe7, 0xab, 0x93, 0x69, 0xb4, 0xf5, 0x2f, 0x78, 0x3e, 0xc4, 0xe0, 0xc5, 0x10, 0x83,
+	0x97, 0x43, 0xac, 0xbd, 0x1a, 0x62, 0xed, 0xf5, 0x10, 0x6b, 0x6f, 0x86, 0x58, 0x7b, 0x3b, 0xc4,
+	0xe0, 0x61, 0x80, 0xc1, 0xa3, 0x00, 0x6b, 0x8f, 0x03, 0x0c, 0x9e, 0x04, 0x58, 0x7b, 0x1a, 0x60,
+	0xed, 0x59, 0x80, 0xb5, 0xe7, 0x01, 0x06, 0x2f, 0x02, 0x0c, 0x5e, 0x06, 0x58, 0x7b, 0x15, 0x60,
+	0xf0, 0x3a, 0xc0, 0xda, 0x9b, 0x00, 0x83, 0xb7, 0x01, 0xd6, 0x1e, 0x8e, 0xb0, 0xf6, 0x68, 0x84,
+	0xc1, 0x2f, 0x23, 0xac, 0xfd, 0x3a, 0xc2, 0xe0, 0xb7, 0x11, 0xd6, 0x1e, 0x8f, 0xb0, 0xf6, 0x64,
+	0x84, 0xc1, 0xd3, 0x11, 0x06, 0xcf, 0x46, 0x18, 0xc0, 0x92, 0xcb, 0x7b, 0x15, 0xb1, 0xcf, 0x84,
+	0xba, 0xfe, 0x39, 0xe1, 0xf5, 0xaf, 0x42, 0x3d, 0x6b, 0x7c, 0x5e, 0x5b, 0xb3, 0xd1, 0xf5, 0xa2,
+	0x21, 0xaf, 0x71, 0x0d, 0xf0, 0xe3, 0x95, 0x8f, 0xbc, 0x37, 0xfe, 0xa1, 0x5f, 0x3e, 0x9d, 0xae,
+	0x6c, 0x36, 0xaa, 0x95, 0xe8, 0x71, 0x7b, 0x29, 0x75, 0x2f, 0xbc, 0xf9, 0x5f, 0x00, 0x00, 0x00,
+	0xff, 0xff, 0x02, 0x9f, 0x3d, 0x54, 0x88, 0x0a, 0x00, 0x00,
 }
 
 func (x LocationMetadata_LocationSource) String() string {
@@ -1023,7 +1032,7 @@ func (this *RxMetadata) Equal(that interface{}) bool {
 	} else if this == nil {
 		return false
 	}
-	if this.GatewayId != that1.GatewayId {
+	if this.GatewayID != that1.GatewayID {
 		return false
 	}
 	if this.GatewayTrusted != that1.GatewayTrusted {
@@ -1055,10 +1064,10 @@ func (this *RxMetadata) Equal(that interface{}) bool {
 	if this.Frequency != that1.Frequency {
 		return false
 	}
-	if this.Rssi != that1.Rssi {
+	if this.RSSI != that1.RSSI {
 		return false
 	}
-	if this.Snr != that1.Snr {
+	if this.SNR != that1.SNR {
 		return false
 	}
 	if !this.Location.Equal(that1.Location) {
@@ -1091,19 +1100,19 @@ func (this *RxMetadata_Antenna) Equal(that interface{}) bool {
 	if this.Channel != that1.Channel {
 		return false
 	}
-	if this.Rssi != that1.Rssi {
+	if this.RSSI != that1.RSSI {
 		return false
 	}
-	if this.ChannelRssi != that1.ChannelRssi {
+	if this.ChannelRSSI != that1.ChannelRSSI {
 		return false
 	}
-	if this.RssiStandardDeviation != that1.RssiStandardDeviation {
+	if this.RSSIStandardDeviation != that1.RSSIStandardDeviation {
 		return false
 	}
 	if this.FrequencyOffset != that1.FrequencyOffset {
 		return false
 	}
-	if this.Snr != that1.Snr {
+	if this.SNR != that1.SNR {
 		return false
 	}
 	if !bytes.Equal(this.EncryptedTime, that1.EncryptedTime) {
@@ -1184,11 +1193,11 @@ func (this *Status) Equal(that interface{}) bool {
 	if this.BootTime != that1.BootTime {
 		return false
 	}
-	if len(this.Ip) != len(that1.Ip) {
+	if len(this.IP) != len(that1.IP) {
 		return false
 	}
-	for i := range this.Ip {
-		if this.Ip[i] != that1.Ip[i] {
+	for i := range this.IP {
+		if this.IP[i] != that1.IP[i] {
 			return false
 		}
 	}
@@ -1210,19 +1219,19 @@ func (this *Status) Equal(that interface{}) bool {
 	if this.Router != that1.Router {
 		return false
 	}
-	if this.Fpga != that1.Fpga {
+	if this.FPGA != that1.FPGA {
 		return false
 	}
-	if this.Dsp != that1.Dsp {
+	if this.DSP != that1.DSP {
 		return false
 	}
-	if this.Hal != that1.Hal {
+	if this.HAL != that1.HAL {
 		return false
 	}
 	if !this.Location.Equal(that1.Location) {
 		return false
 	}
-	if this.Rtt != that1.Rtt {
+	if this.RTT != that1.RTT {
 		return false
 	}
 	if this.RxIn != that1.RxIn {
@@ -1246,10 +1255,10 @@ func (this *Status) Equal(that interface{}) bool {
 	if this.LmNw != that1.LmNw {
 		return false
 	}
-	if this.LPps != that1.LPps {
+	if this.LPPS != that1.LPPS {
 		return false
 	}
-	if !this.Os.Equal(that1.Os) {
+	if !this.OS.Equal(that1.OS) {
 		return false
 	}
 	if len(this.Messages) != len(that1.Messages) {
@@ -1290,7 +1299,7 @@ func (this *Status_OSMetrics) Equal(that interface{}) bool {
 	if this.Load_15 != that1.Load_15 {
 		return false
 	}
-	if this.CpuPercentage != that1.CpuPercentage {
+	if this.CPUPercentage != that1.CPUPercentage {
 		return false
 	}
 	if this.MemoryPercentage != that1.MemoryPercentage {
@@ -1390,17 +1399,17 @@ func (m *RxMetadata) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0xca
 	}
-	if m.Snr != 0 {
+	if m.SNR != 0 {
 		i -= 4
-		encoding_binary.LittleEndian.PutUint32(dAtA[i:], uint32(math.Float32bits(float32(m.Snr))))
+		encoding_binary.LittleEndian.PutUint32(dAtA[i:], uint32(math.Float32bits(float32(m.SNR))))
 		i--
 		dAtA[i] = 0x2
 		i--
 		dAtA[i] = 0x8d
 	}
-	if m.Rssi != 0 {
+	if m.RSSI != 0 {
 		i -= 4
-		encoding_binary.LittleEndian.PutUint32(dAtA[i:], uint32(math.Float32bits(float32(m.Rssi))))
+		encoding_binary.LittleEndian.PutUint32(dAtA[i:], uint32(math.Float32bits(float32(m.RSSI))))
 		i--
 		dAtA[i] = 0x2
 		i--
@@ -1470,10 +1479,10 @@ func (m *RxMetadata) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x10
 	}
-	if len(m.GatewayId) > 0 {
-		i -= len(m.GatewayId)
-		copy(dAtA[i:], m.GatewayId)
-		i = encodeVarintGateway(dAtA, i, uint64(len(m.GatewayId)))
+	if len(m.GatewayID) > 0 {
+		i -= len(m.GatewayID)
+		copy(dAtA[i:], m.GatewayID)
+		i = encodeVarintGateway(dAtA, i, uint64(len(m.GatewayID)))
 		i--
 		dAtA[i] = 0xa
 	}
@@ -1517,27 +1526,27 @@ func (m *RxMetadata_Antenna) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x38
 	}
-	if m.RssiStandardDeviation != 0 {
+	if m.RSSIStandardDeviation != 0 {
 		i -= 4
-		encoding_binary.LittleEndian.PutUint32(dAtA[i:], uint32(math.Float32bits(float32(m.RssiStandardDeviation))))
+		encoding_binary.LittleEndian.PutUint32(dAtA[i:], uint32(math.Float32bits(float32(m.RSSIStandardDeviation))))
 		i--
 		dAtA[i] = 0x35
 	}
-	if m.ChannelRssi != 0 {
+	if m.ChannelRSSI != 0 {
 		i -= 4
-		encoding_binary.LittleEndian.PutUint32(dAtA[i:], uint32(math.Float32bits(float32(m.ChannelRssi))))
+		encoding_binary.LittleEndian.PutUint32(dAtA[i:], uint32(math.Float32bits(float32(m.ChannelRSSI))))
 		i--
 		dAtA[i] = 0x2d
 	}
-	if m.Snr != 0 {
+	if m.SNR != 0 {
 		i -= 4
-		encoding_binary.LittleEndian.PutUint32(dAtA[i:], uint32(math.Float32bits(float32(m.Snr))))
+		encoding_binary.LittleEndian.PutUint32(dAtA[i:], uint32(math.Float32bits(float32(m.SNR))))
 		i--
 		dAtA[i] = 0x25
 	}
-	if m.Rssi != 0 {
+	if m.RSSI != 0 {
 		i -= 4
-		encoding_binary.LittleEndian.PutUint32(dAtA[i:], uint32(math.Float32bits(float32(m.Rssi))))
+		encoding_binary.LittleEndian.PutUint32(dAtA[i:], uint32(math.Float32bits(float32(m.RSSI))))
 		i--
 		dAtA[i] = 0x1d
 	}
@@ -1653,9 +1662,9 @@ func (m *Status) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 			dAtA[i] = 0xa2
 		}
 	}
-	if m.Os != nil {
+	if m.OS != nil {
 		{
-			size, err := m.Os.MarshalToSizedBuffer(dAtA[:i])
+			size, err := m.OS.MarshalToSizedBuffer(dAtA[:i])
 			if err != nil {
 				return 0, err
 			}
@@ -1667,8 +1676,8 @@ func (m *Status) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x9a
 	}
-	if m.LPps != 0 {
-		i = encodeVarintGateway(dAtA, i, uint64(m.LPps))
+	if m.LPPS != 0 {
+		i = encodeVarintGateway(dAtA, i, uint64(m.LPPS))
 		i--
 		dAtA[i] = 0x3
 		i--
@@ -1723,8 +1732,8 @@ func (m *Status) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0xc8
 	}
-	if m.Rtt != 0 {
-		i = encodeVarintGateway(dAtA, i, uint64(m.Rtt))
+	if m.RTT != 0 {
+		i = encodeVarintGateway(dAtA, i, uint64(m.RTT))
 		i--
 		dAtA[i] = 0x1
 		i--
@@ -1744,24 +1753,24 @@ func (m *Status) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0xaa
 	}
-	if len(m.Hal) > 0 {
-		i -= len(m.Hal)
-		copy(dAtA[i:], m.Hal)
-		i = encodeVarintGateway(dAtA, i, uint64(len(m.Hal)))
+	if len(m.HAL) > 0 {
+		i -= len(m.HAL)
+		copy(dAtA[i:], m.HAL)
+		i = encodeVarintGateway(dAtA, i, uint64(len(m.HAL)))
 		i--
 		dAtA[i] = 0x1
 		i--
 		dAtA[i] = 0xa2
 	}
-	if m.Dsp != 0 {
-		i = encodeVarintGateway(dAtA, i, uint64(m.Dsp))
+	if m.DSP != 0 {
+		i = encodeVarintGateway(dAtA, i, uint64(m.DSP))
 		i--
 		dAtA[i] = 0x1
 		i--
 		dAtA[i] = 0x98
 	}
-	if m.Fpga != 0 {
-		i = encodeVarintGateway(dAtA, i, uint64(m.Fpga))
+	if m.FPGA != 0 {
+		i = encodeVarintGateway(dAtA, i, uint64(m.FPGA))
 		i--
 		dAtA[i] = 0x1
 		i--
@@ -1813,11 +1822,11 @@ func (m *Status) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x62
 	}
-	if len(m.Ip) > 0 {
-		for iNdEx := len(m.Ip) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.Ip[iNdEx])
-			copy(dAtA[i:], m.Ip[iNdEx])
-			i = encodeVarintGateway(dAtA, i, uint64(len(m.Ip[iNdEx])))
+	if len(m.IP) > 0 {
+		for iNdEx := len(m.IP) - 1; iNdEx >= 0; iNdEx-- {
+			i -= len(m.IP[iNdEx])
+			copy(dAtA[i:], m.IP[iNdEx])
+			i = encodeVarintGateway(dAtA, i, uint64(len(m.IP[iNdEx])))
 			i--
 			dAtA[i] = 0x5a
 		}
@@ -1886,9 +1895,9 @@ func (m *Status_OSMetrics) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0xad
 	}
-	if m.CpuPercentage != 0 {
+	if m.CPUPercentage != 0 {
 		i -= 4
-		encoding_binary.LittleEndian.PutUint32(dAtA[i:], uint32(math.Float32bits(float32(m.CpuPercentage))))
+		encoding_binary.LittleEndian.PutUint32(dAtA[i:], uint32(math.Float32bits(float32(m.CPUPercentage))))
 		i--
 		dAtA[i] = 0x5d
 	}
@@ -1954,7 +1963,7 @@ func NewPopulatedLocationMetadata(r randyGateway, easy bool) *LocationMetadata {
 
 func NewPopulatedRxMetadata(r randyGateway, easy bool) *RxMetadata {
 	this := &RxMetadata{}
-	this.GatewayId = string(randStringGateway(r))
+	this.GatewayID = string(randStringGateway(r))
 	this.GatewayTrusted = bool(bool(r.Intn(2) == 0))
 	this.Timestamp = uint32(r.Uint32())
 	this.Time = int64(r.Int63())
@@ -1976,13 +1985,13 @@ func NewPopulatedRxMetadata(r randyGateway, easy bool) *RxMetadata {
 		}
 	}
 	this.Frequency = uint64(uint64(r.Uint32()))
-	this.Rssi = float32(r.Float32())
+	this.RSSI = float32(r.Float32())
 	if r.Intn(2) == 0 {
-		this.Rssi *= -1
+		this.RSSI *= -1
 	}
-	this.Snr = float32(r.Float32())
+	this.SNR = float32(r.Float32())
 	if r.Intn(2) == 0 {
-		this.Snr *= -1
+		this.SNR *= -1
 	}
 	if r.Intn(5) != 0 {
 		this.Location = NewPopulatedLocationMetadata(r, easy)
@@ -1996,21 +2005,21 @@ func NewPopulatedRxMetadata_Antenna(r randyGateway, easy bool) *RxMetadata_Anten
 	this := &RxMetadata_Antenna{}
 	this.Antenna = uint32(r.Uint32())
 	this.Channel = uint32(r.Uint32())
-	this.Rssi = float32(r.Float32())
+	this.RSSI = float32(r.Float32())
 	if r.Intn(2) == 0 {
-		this.Rssi *= -1
+		this.RSSI *= -1
 	}
-	this.Snr = float32(r.Float32())
+	this.SNR = float32(r.Float32())
 	if r.Intn(2) == 0 {
-		this.Snr *= -1
+		this.SNR *= -1
 	}
-	this.ChannelRssi = float32(r.Float32())
+	this.ChannelRSSI = float32(r.Float32())
 	if r.Intn(2) == 0 {
-		this.ChannelRssi *= -1
+		this.ChannelRSSI *= -1
 	}
-	this.RssiStandardDeviation = float32(r.Float32())
+	this.RSSIStandardDeviation = float32(r.Float32())
 	if r.Intn(2) == 0 {
-		this.RssiStandardDeviation *= -1
+		this.RSSIStandardDeviation *= -1
 	}
 	this.FrequencyOffset = int64(r.Int63())
 	if r.Intn(2) == 0 {
@@ -2059,9 +2068,9 @@ func NewPopulatedStatus(r randyGateway, easy bool) *Status {
 		this.BootTime *= -1
 	}
 	v4 := r.Intn(10)
-	this.Ip = make([]string, v4)
+	this.IP = make([]string, v4)
 	for i := 0; i < v4; i++ {
-		this.Ip[i] = string(randStringGateway(r))
+		this.IP[i] = string(randStringGateway(r))
 	}
 	this.Platform = string(randStringGateway(r))
 	this.ContactEmail = string(randStringGateway(r))
@@ -2069,13 +2078,13 @@ func NewPopulatedStatus(r randyGateway, easy bool) *Status {
 	this.FrequencyPlan = string(randStringGateway(r))
 	this.Bridge = string(randStringGateway(r))
 	this.Router = string(randStringGateway(r))
-	this.Fpga = uint32(r.Uint32())
-	this.Dsp = uint32(r.Uint32())
-	this.Hal = string(randStringGateway(r))
+	this.FPGA = uint32(r.Uint32())
+	this.DSP = uint32(r.Uint32())
+	this.HAL = string(randStringGateway(r))
 	if r.Intn(5) != 0 {
 		this.Location = NewPopulatedLocationMetadata(r, easy)
 	}
-	this.Rtt = uint32(r.Uint32())
+	this.RTT = uint32(r.Uint32())
 	this.RxIn = uint32(r.Uint32())
 	this.RxOk = uint32(r.Uint32())
 	this.TxIn = uint32(r.Uint32())
@@ -2083,9 +2092,9 @@ func NewPopulatedStatus(r randyGateway, easy bool) *Status {
 	this.LmOk = uint32(r.Uint32())
 	this.LmSt = uint32(r.Uint32())
 	this.LmNw = uint32(r.Uint32())
-	this.LPps = uint32(r.Uint32())
+	this.LPPS = uint32(r.Uint32())
 	if r.Intn(5) != 0 {
-		this.Os = NewPopulatedStatus_OSMetrics(r, easy)
+		this.OS = NewPopulatedStatus_OSMetrics(r, easy)
 	}
 	v5 := r.Intn(10)
 	this.Messages = make([]string, v5)
@@ -2111,9 +2120,9 @@ func NewPopulatedStatus_OSMetrics(r randyGateway, easy bool) *Status_OSMetrics {
 	if r.Intn(2) == 0 {
 		this.Load_15 *= -1
 	}
-	this.CpuPercentage = float32(r.Float32())
+	this.CPUPercentage = float32(r.Float32())
 	if r.Intn(2) == 0 {
-		this.CpuPercentage *= -1
+		this.CPUPercentage *= -1
 	}
 	this.MemoryPercentage = float32(r.Float32())
 	if r.Intn(2) == 0 {
@@ -2233,7 +2242,7 @@ func (m *RxMetadata) Size() (n int) {
 	}
 	var l int
 	_ = l
-	l = len(m.GatewayId)
+	l = len(m.GatewayID)
 	if l > 0 {
 		n += 1 + l + sovGateway(uint64(l))
 	}
@@ -2265,10 +2274,10 @@ func (m *RxMetadata) Size() (n int) {
 	if m.Frequency != 0 {
 		n += 2 + sovGateway(uint64(m.Frequency))
 	}
-	if m.Rssi != 0 {
+	if m.RSSI != 0 {
 		n += 6
 	}
-	if m.Snr != 0 {
+	if m.SNR != 0 {
 		n += 6
 	}
 	if m.Location != nil {
@@ -2290,16 +2299,16 @@ func (m *RxMetadata_Antenna) Size() (n int) {
 	if m.Channel != 0 {
 		n += 1 + sovGateway(uint64(m.Channel))
 	}
-	if m.Rssi != 0 {
+	if m.RSSI != 0 {
 		n += 5
 	}
-	if m.Snr != 0 {
+	if m.SNR != 0 {
 		n += 5
 	}
-	if m.ChannelRssi != 0 {
+	if m.ChannelRSSI != 0 {
 		n += 5
 	}
-	if m.RssiStandardDeviation != 0 {
+	if m.RSSIStandardDeviation != 0 {
 		n += 5
 	}
 	if m.FrequencyOffset != 0 {
@@ -2360,8 +2369,8 @@ func (m *Status) Size() (n int) {
 	if m.BootTime != 0 {
 		n += 1 + sovGateway(uint64(m.BootTime))
 	}
-	if len(m.Ip) > 0 {
-		for _, s := range m.Ip {
+	if len(m.IP) > 0 {
+		for _, s := range m.IP {
 			l = len(s)
 			n += 1 + l + sovGateway(uint64(l))
 		}
@@ -2390,13 +2399,13 @@ func (m *Status) Size() (n int) {
 	if l > 0 {
 		n += 2 + l + sovGateway(uint64(l))
 	}
-	if m.Fpga != 0 {
-		n += 2 + sovGateway(uint64(m.Fpga))
+	if m.FPGA != 0 {
+		n += 2 + sovGateway(uint64(m.FPGA))
 	}
-	if m.Dsp != 0 {
-		n += 2 + sovGateway(uint64(m.Dsp))
+	if m.DSP != 0 {
+		n += 2 + sovGateway(uint64(m.DSP))
 	}
-	l = len(m.Hal)
+	l = len(m.HAL)
 	if l > 0 {
 		n += 2 + l + sovGateway(uint64(l))
 	}
@@ -2404,8 +2413,8 @@ func (m *Status) Size() (n int) {
 		l = m.Location.Size()
 		n += 2 + l + sovGateway(uint64(l))
 	}
-	if m.Rtt != 0 {
-		n += 2 + sovGateway(uint64(m.Rtt))
+	if m.RTT != 0 {
+		n += 2 + sovGateway(uint64(m.RTT))
 	}
 	if m.RxIn != 0 {
 		n += 2 + sovGateway(uint64(m.RxIn))
@@ -2428,11 +2437,11 @@ func (m *Status) Size() (n int) {
 	if m.LmNw != 0 {
 		n += 2 + sovGateway(uint64(m.LmNw))
 	}
-	if m.LPps != 0 {
-		n += 2 + sovGateway(uint64(m.LPps))
+	if m.LPPS != 0 {
+		n += 2 + sovGateway(uint64(m.LPPS))
 	}
-	if m.Os != nil {
-		l = m.Os.Size()
+	if m.OS != nil {
+		l = m.OS.Size()
 		n += 2 + l + sovGateway(uint64(l))
 	}
 	if len(m.Messages) > 0 {
@@ -2459,7 +2468,7 @@ func (m *Status_OSMetrics) Size() (n int) {
 	if m.Load_15 != 0 {
 		n += 5
 	}
-	if m.CpuPercentage != 0 {
+	if m.CPUPercentage != 0 {
 		n += 5
 	}
 	if m.MemoryPercentage != 0 {
@@ -2502,7 +2511,7 @@ func (this *RxMetadata) String() string {
 	}
 	repeatedStringForAntennas += "}"
 	s := strings.Join([]string{`&RxMetadata{`,
-		`GatewayId:` + fmt.Sprintf("%v", this.GatewayId) + `,`,
+		`GatewayID:` + fmt.Sprintf("%v", this.GatewayID) + `,`,
 		`GatewayTrusted:` + fmt.Sprintf("%v", this.GatewayTrusted) + `,`,
 		`Timestamp:` + fmt.Sprintf("%v", this.Timestamp) + `,`,
 		`Time:` + fmt.Sprintf("%v", this.Time) + `,`,
@@ -2511,8 +2520,8 @@ func (this *RxMetadata) String() string {
 		`Channel:` + fmt.Sprintf("%v", this.Channel) + `,`,
 		`Antennas:` + repeatedStringForAntennas + `,`,
 		`Frequency:` + fmt.Sprintf("%v", this.Frequency) + `,`,
-		`Rssi:` + fmt.Sprintf("%v", this.Rssi) + `,`,
-		`Snr:` + fmt.Sprintf("%v", this.Snr) + `,`,
+		`RSSI:` + fmt.Sprintf("%v", this.RSSI) + `,`,
+		`SNR:` + fmt.Sprintf("%v", this.SNR) + `,`,
 		`Location:` + strings.Replace(this.Location.String(), "LocationMetadata", "LocationMetadata", 1) + `,`,
 		`}`,
 	}, "")
@@ -2525,10 +2534,10 @@ func (this *RxMetadata_Antenna) String() string {
 	s := strings.Join([]string{`&RxMetadata_Antenna{`,
 		`Antenna:` + fmt.Sprintf("%v", this.Antenna) + `,`,
 		`Channel:` + fmt.Sprintf("%v", this.Channel) + `,`,
-		`Rssi:` + fmt.Sprintf("%v", this.Rssi) + `,`,
-		`Snr:` + fmt.Sprintf("%v", this.Snr) + `,`,
-		`ChannelRssi:` + fmt.Sprintf("%v", this.ChannelRssi) + `,`,
-		`RssiStandardDeviation:` + fmt.Sprintf("%v", this.RssiStandardDeviation) + `,`,
+		`RSSI:` + fmt.Sprintf("%v", this.RSSI) + `,`,
+		`SNR:` + fmt.Sprintf("%v", this.SNR) + `,`,
+		`ChannelRSSI:` + fmt.Sprintf("%v", this.ChannelRSSI) + `,`,
+		`RSSIStandardDeviation:` + fmt.Sprintf("%v", this.RSSIStandardDeviation) + `,`,
 		`FrequencyOffset:` + fmt.Sprintf("%v", this.FrequencyOffset) + `,`,
 		`EncryptedTime:` + fmt.Sprintf("%v", this.EncryptedTime) + `,`,
 		`FineTime:` + fmt.Sprintf("%v", this.FineTime) + `,`,
@@ -2560,18 +2569,18 @@ func (this *Status) String() string {
 		`Time:` + fmt.Sprintf("%v", this.Time) + `,`,
 		`GatewayTrusted:` + fmt.Sprintf("%v", this.GatewayTrusted) + `,`,
 		`BootTime:` + fmt.Sprintf("%v", this.BootTime) + `,`,
-		`Ip:` + fmt.Sprintf("%v", this.Ip) + `,`,
+		`IP:` + fmt.Sprintf("%v", this.IP) + `,`,
 		`Platform:` + fmt.Sprintf("%v", this.Platform) + `,`,
 		`ContactEmail:` + fmt.Sprintf("%v", this.ContactEmail) + `,`,
 		`Description:` + fmt.Sprintf("%v", this.Description) + `,`,
 		`FrequencyPlan:` + fmt.Sprintf("%v", this.FrequencyPlan) + `,`,
 		`Bridge:` + fmt.Sprintf("%v", this.Bridge) + `,`,
 		`Router:` + fmt.Sprintf("%v", this.Router) + `,`,
-		`Fpga:` + fmt.Sprintf("%v", this.Fpga) + `,`,
-		`Dsp:` + fmt.Sprintf("%v", this.Dsp) + `,`,
-		`Hal:` + fmt.Sprintf("%v", this.Hal) + `,`,
+		`FPGA:` + fmt.Sprintf("%v", this.FPGA) + `,`,
+		`DSP:` + fmt.Sprintf("%v", this.DSP) + `,`,
+		`HAL:` + fmt.Sprintf("%v", this.HAL) + `,`,
 		`Location:` + strings.Replace(this.Location.String(), "LocationMetadata", "LocationMetadata", 1) + `,`,
-		`Rtt:` + fmt.Sprintf("%v", this.Rtt) + `,`,
+		`RTT:` + fmt.Sprintf("%v", this.RTT) + `,`,
 		`RxIn:` + fmt.Sprintf("%v", this.RxIn) + `,`,
 		`RxOk:` + fmt.Sprintf("%v", this.RxOk) + `,`,
 		`TxIn:` + fmt.Sprintf("%v", this.TxIn) + `,`,
@@ -2579,8 +2588,8 @@ func (this *Status) String() string {
 		`LmOk:` + fmt.Sprintf("%v", this.LmOk) + `,`,
 		`LmSt:` + fmt.Sprintf("%v", this.LmSt) + `,`,
 		`LmNw:` + fmt.Sprintf("%v", this.LmNw) + `,`,
-		`LPps:` + fmt.Sprintf("%v", this.LPps) + `,`,
-		`Os:` + strings.Replace(fmt.Sprintf("%v", this.Os), "Status_OSMetrics", "Status_OSMetrics", 1) + `,`,
+		`LPPS:` + fmt.Sprintf("%v", this.LPPS) + `,`,
+		`OS:` + strings.Replace(fmt.Sprintf("%v", this.OS), "Status_OSMetrics", "Status_OSMetrics", 1) + `,`,
 		`Messages:` + fmt.Sprintf("%v", this.Messages) + `,`,
 		`}`,
 	}, "")
@@ -2594,7 +2603,7 @@ func (this *Status_OSMetrics) String() string {
 		`Load_1:` + fmt.Sprintf("%v", this.Load_1) + `,`,
 		`Load_5:` + fmt.Sprintf("%v", this.Load_5) + `,`,
 		`Load_15:` + fmt.Sprintf("%v", this.Load_15) + `,`,
-		`CpuPercentage:` + fmt.Sprintf("%v", this.CpuPercentage) + `,`,
+		`CPUPercentage:` + fmt.Sprintf("%v", this.CPUPercentage) + `,`,
 		`MemoryPercentage:` + fmt.Sprintf("%v", this.MemoryPercentage) + `,`,
 		`Temperature:` + fmt.Sprintf("%v", this.Temperature) + `,`,
 		`}`,
@@ -2791,7 +2800,7 @@ func (m *RxMetadata) Unmarshal(dAtA []byte) error {
 		switch fieldNum {
 		case 1:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field GatewayId", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field GatewayID", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -2819,7 +2828,7 @@ func (m *RxMetadata) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.GatewayId = string(dAtA[iNdEx:postIndex])
+			m.GatewayID = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 0 {
@@ -3006,7 +3015,7 @@ func (m *RxMetadata) Unmarshal(dAtA []byte) error {
 			}
 		case 32:
 			if wireType != 5 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Rssi", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field RSSI", wireType)
 			}
 			var v uint32
 			if (iNdEx + 4) > l {
@@ -3014,10 +3023,10 @@ func (m *RxMetadata) Unmarshal(dAtA []byte) error {
 			}
 			v = uint32(encoding_binary.LittleEndian.Uint32(dAtA[iNdEx:]))
 			iNdEx += 4
-			m.Rssi = float32(math.Float32frombits(v))
+			m.RSSI = float32(math.Float32frombits(v))
 		case 33:
 			if wireType != 5 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Snr", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field SNR", wireType)
 			}
 			var v uint32
 			if (iNdEx + 4) > l {
@@ -3025,7 +3034,7 @@ func (m *RxMetadata) Unmarshal(dAtA []byte) error {
 			}
 			v = uint32(encoding_binary.LittleEndian.Uint32(dAtA[iNdEx:]))
 			iNdEx += 4
-			m.Snr = float32(math.Float32frombits(v))
+			m.SNR = float32(math.Float32frombits(v))
 		case 41:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Location", wireType)
@@ -3155,7 +3164,7 @@ func (m *RxMetadata_Antenna) Unmarshal(dAtA []byte) error {
 			}
 		case 3:
 			if wireType != 5 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Rssi", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field RSSI", wireType)
 			}
 			var v uint32
 			if (iNdEx + 4) > l {
@@ -3163,10 +3172,10 @@ func (m *RxMetadata_Antenna) Unmarshal(dAtA []byte) error {
 			}
 			v = uint32(encoding_binary.LittleEndian.Uint32(dAtA[iNdEx:]))
 			iNdEx += 4
-			m.Rssi = float32(math.Float32frombits(v))
+			m.RSSI = float32(math.Float32frombits(v))
 		case 4:
 			if wireType != 5 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Snr", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field SNR", wireType)
 			}
 			var v uint32
 			if (iNdEx + 4) > l {
@@ -3174,10 +3183,10 @@ func (m *RxMetadata_Antenna) Unmarshal(dAtA []byte) error {
 			}
 			v = uint32(encoding_binary.LittleEndian.Uint32(dAtA[iNdEx:]))
 			iNdEx += 4
-			m.Snr = float32(math.Float32frombits(v))
+			m.SNR = float32(math.Float32frombits(v))
 		case 5:
 			if wireType != 5 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ChannelRssi", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field ChannelRSSI", wireType)
 			}
 			var v uint32
 			if (iNdEx + 4) > l {
@@ -3185,10 +3194,10 @@ func (m *RxMetadata_Antenna) Unmarshal(dAtA []byte) error {
 			}
 			v = uint32(encoding_binary.LittleEndian.Uint32(dAtA[iNdEx:]))
 			iNdEx += 4
-			m.ChannelRssi = float32(math.Float32frombits(v))
+			m.ChannelRSSI = float32(math.Float32frombits(v))
 		case 6:
 			if wireType != 5 {
-				return fmt.Errorf("proto: wrong wireType = %d for field RssiStandardDeviation", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field RSSIStandardDeviation", wireType)
 			}
 			var v uint32
 			if (iNdEx + 4) > l {
@@ -3196,7 +3205,7 @@ func (m *RxMetadata_Antenna) Unmarshal(dAtA []byte) error {
 			}
 			v = uint32(encoding_binary.LittleEndian.Uint32(dAtA[iNdEx:]))
 			iNdEx += 4
-			m.RssiStandardDeviation = float32(math.Float32frombits(v))
+			m.RSSIStandardDeviation = float32(math.Float32frombits(v))
 		case 7:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field FrequencyOffset", wireType)
@@ -3569,7 +3578,7 @@ func (m *Status) Unmarshal(dAtA []byte) error {
 			}
 		case 11:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Ip", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field IP", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -3597,7 +3606,7 @@ func (m *Status) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Ip = append(m.Ip, string(dAtA[iNdEx:postIndex]))
+			m.IP = append(m.IP, string(dAtA[iNdEx:postIndex]))
 			iNdEx = postIndex
 		case 12:
 			if wireType != 2 {
@@ -3793,9 +3802,9 @@ func (m *Status) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 18:
 			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Fpga", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field FPGA", wireType)
 			}
-			m.Fpga = 0
+			m.FPGA = 0
 			for shift := uint(0); ; shift += 7 {
 				if shift >= 64 {
 					return ErrIntOverflowGateway
@@ -3805,16 +3814,16 @@ func (m *Status) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.Fpga |= uint32(b&0x7F) << shift
+				m.FPGA |= uint32(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
 			}
 		case 19:
 			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Dsp", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field DSP", wireType)
 			}
-			m.Dsp = 0
+			m.DSP = 0
 			for shift := uint(0); ; shift += 7 {
 				if shift >= 64 {
 					return ErrIntOverflowGateway
@@ -3824,14 +3833,14 @@ func (m *Status) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.Dsp |= uint32(b&0x7F) << shift
+				m.DSP |= uint32(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
 			}
 		case 20:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Hal", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field HAL", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -3859,7 +3868,7 @@ func (m *Status) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Hal = string(dAtA[iNdEx:postIndex])
+			m.HAL = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 21:
 			if wireType != 2 {
@@ -3899,9 +3908,9 @@ func (m *Status) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 31:
 			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Rtt", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field RTT", wireType)
 			}
-			m.Rtt = 0
+			m.RTT = 0
 			for shift := uint(0); ; shift += 7 {
 				if shift >= 64 {
 					return ErrIntOverflowGateway
@@ -3911,7 +3920,7 @@ func (m *Status) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.Rtt |= uint32(b&0x7F) << shift
+				m.RTT |= uint32(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -4051,9 +4060,9 @@ func (m *Status) Unmarshal(dAtA []byte) error {
 			}
 		case 48:
 			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field LPps", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field LPPS", wireType)
 			}
-			m.LPps = 0
+			m.LPPS = 0
 			for shift := uint(0); ; shift += 7 {
 				if shift >= 64 {
 					return ErrIntOverflowGateway
@@ -4063,14 +4072,14 @@ func (m *Status) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.LPps |= uint32(b&0x7F) << shift
+				m.LPPS |= uint32(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
 			}
 		case 51:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Os", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field OS", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -4097,10 +4106,10 @@ func (m *Status) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if m.Os == nil {
-				m.Os = &Status_OSMetrics{}
+			if m.OS == nil {
+				m.OS = &Status_OSMetrics{}
 			}
-			if err := m.Os.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.OS.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -4224,7 +4233,7 @@ func (m *Status_OSMetrics) Unmarshal(dAtA []byte) error {
 			m.Load_15 = float32(math.Float32frombits(v))
 		case 11:
 			if wireType != 5 {
-				return fmt.Errorf("proto: wrong wireType = %d for field CpuPercentage", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field CPUPercentage", wireType)
 			}
 			var v uint32
 			if (iNdEx + 4) > l {
@@ -4232,7 +4241,7 @@ func (m *Status_OSMetrics) Unmarshal(dAtA []byte) error {
 			}
 			v = uint32(encoding_binary.LittleEndian.Uint32(dAtA[iNdEx:]))
 			iNdEx += 4
-			m.CpuPercentage = float32(math.Float32frombits(v))
+			m.CPUPercentage = float32(math.Float32frombits(v))
 		case 21:
 			if wireType != 5 {
 				return fmt.Errorf("proto: wrong wireType = %d for field MemoryPercentage", wireType)

@@ -24,19 +24,19 @@ class Antenna extends \Google\Protobuf\Internal\Message
     /**
      * Received signal power in dBm
      *
-     * Generated from protobuf field <code>float rssi = 3;</code>
+     * Generated from protobuf field <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
      */
     protected $rssi = 0.0;
     /**
      * Received channel power in dBm
      *
-     * Generated from protobuf field <code>float channel_rssi = 5;</code>
+     * Generated from protobuf field <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
      */
     protected $channel_rssi = 0.0;
     /**
      * Standard deviation of the RSSI
      *
-     * Generated from protobuf field <code>float rssi_standard_deviation = 6;</code>
+     * Generated from protobuf field <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
      */
     protected $rssi_standard_deviation = 0.0;
     /**
@@ -48,7 +48,7 @@ class Antenna extends \Google\Protobuf\Internal\Message
     /**
      * Signal-to-noise-ratio in dB
      *
-     * Generated from protobuf field <code>float snr = 4;</code>
+     * Generated from protobuf field <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
      */
     protected $snr = 0.0;
     /**
@@ -140,7 +140,7 @@ class Antenna extends \Google\Protobuf\Internal\Message
     /**
      * Received signal power in dBm
      *
-     * Generated from protobuf field <code>float rssi = 3;</code>
+     * Generated from protobuf field <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
      * @return float
      */
     public function getRssi()
@@ -151,7 +151,7 @@ class Antenna extends \Google\Protobuf\Internal\Message
     /**
      * Received signal power in dBm
      *
-     * Generated from protobuf field <code>float rssi = 3;</code>
+     * Generated from protobuf field <code>float rssi = 3 [(.gogoproto.customname) = "RSSI"];</code>
      * @param float $var
      * @return $this
      */
@@ -166,7 +166,7 @@ class Antenna extends \Google\Protobuf\Internal\Message
     /**
      * Received channel power in dBm
      *
-     * Generated from protobuf field <code>float channel_rssi = 5;</code>
+     * Generated from protobuf field <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
      * @return float
      */
     public function getChannelRssi()
@@ -177,7 +177,7 @@ class Antenna extends \Google\Protobuf\Internal\Message
     /**
      * Received channel power in dBm
      *
-     * Generated from protobuf field <code>float channel_rssi = 5;</code>
+     * Generated from protobuf field <code>float channel_rssi = 5 [(.gogoproto.customname) = "ChannelRSSI"];</code>
      * @param float $var
      * @return $this
      */
@@ -192,7 +192,7 @@ class Antenna extends \Google\Protobuf\Internal\Message
     /**
      * Standard deviation of the RSSI
      *
-     * Generated from protobuf field <code>float rssi_standard_deviation = 6;</code>
+     * Generated from protobuf field <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
      * @return float
      */
     public function getRssiStandardDeviation()
@@ -203,7 +203,7 @@ class Antenna extends \Google\Protobuf\Internal\Message
     /**
      * Standard deviation of the RSSI
      *
-     * Generated from protobuf field <code>float rssi_standard_deviation = 6;</code>
+     * Generated from protobuf field <code>float rssi_standard_deviation = 6 [(.gogoproto.customname) = "RSSIStandardDeviation"];</code>
      * @param float $var
      * @return $this
      */
@@ -244,7 +244,7 @@ class Antenna extends \Google\Protobuf\Internal\Message
     /**
      * Signal-to-noise-ratio in dB
      *
-     * Generated from protobuf field <code>float snr = 4;</code>
+     * Generated from protobuf field <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
      * @return float
      */
     public function getSnr()
@@ -255,7 +255,7 @@ class Antenna extends \Google\Protobuf\Internal\Message
     /**
      * Signal-to-noise-ratio in dB
      *
-     * Generated from protobuf field <code>float snr = 4;</code>
+     * Generated from protobuf field <code>float snr = 4 [(.gogoproto.customname) = "SNR"];</code>
      * @param float $var
      * @return $this
      */

@@ -103,7 +103,7 @@ private static final long serialVersionUID = 0L;
   public static final int ADR_FIELD_NUMBER = 1;
   private boolean adr_;
   /**
-   * <code>bool adr = 1;</code>
+   * <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
    * @return The adr.
    */
   public boolean getAdr() {
@@ -113,7 +113,7 @@ private static final long serialVersionUID = 0L;
   public static final int ADR_ACK_REQ_FIELD_NUMBER = 2;
   private boolean adrAckReq_;
   /**
-   * <code>bool adr_ack_req = 2;</code>
+   * <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
    * @return The adrAckReq.
    */
   public boolean getAdrAckReq() {
@@ -499,14 +499,14 @@ private static final long serialVersionUID = 0L;
 
     private boolean adr_ ;
     /**
-     * <code>bool adr = 1;</code>
+     * <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
      * @return The adr.
      */
     public boolean getAdr() {
       return adr_;
     }
     /**
-     * <code>bool adr = 1;</code>
+     * <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
      * @param value The adr to set.
      * @return This builder for chaining.
      */
@@ -517,7 +517,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool adr = 1;</code>
+     * <code>bool adr = 1 [(.gogoproto.customname) = "ADR"];</code>
      * @return This builder for chaining.
      */
     public Builder clearAdr() {
@@ -529,14 +529,14 @@ private static final long serialVersionUID = 0L;
 
     private boolean adrAckReq_ ;
     /**
-     * <code>bool adr_ack_req = 2;</code>
+     * <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
      * @return The adrAckReq.
      */
     public boolean getAdrAckReq() {
       return adrAckReq_;
     }
     /**
-     * <code>bool adr_ack_req = 2;</code>
+     * <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
      * @param value The adrAckReq to set.
      * @return This builder for chaining.
      */
@@ -547,7 +547,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool adr_ack_req = 2;</code>
+     * <code>bool adr_ack_req = 2 [(.gogoproto.customname) = "ADRAckReq"];</code>
      * @return This builder for chaining.
      */
     public Builder clearAdrAckReq() {

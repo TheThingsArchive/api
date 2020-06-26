@@ -14,11 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class Message extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.lorawan.MHDR m_hdr = 1;</code>
+     * Generated from protobuf field <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     protected $m_hdr = null;
     /**
-     * Generated from protobuf field <code>bytes mic = 2;</code>
+     * Generated from protobuf field <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
      */
     protected $mic = '';
     protected $Payload;
@@ -42,7 +42,7 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.MHDR m_hdr = 1;</code>
+     * Generated from protobuf field <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      * @return \Lorawan\MHDR
      */
     public function getMHdr()
@@ -51,7 +51,7 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.MHDR m_hdr = 1;</code>
+     * Generated from protobuf field <code>.lorawan.MHDR m_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      * @param \Lorawan\MHDR $var
      * @return $this
      */
@@ -64,7 +64,7 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes mic = 2;</code>
+     * Generated from protobuf field <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
      * @return string
      */
     public function getMic()
@@ -73,7 +73,7 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes mic = 2;</code>
+     * Generated from protobuf field <code>bytes mic = 2 [(.gogoproto.customname) = "MIC"];</code>
      * @param string $var
      * @return $this
      */
@@ -86,7 +86,7 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.MACPayload mac_payload = 3;</code>
+     * Generated from protobuf field <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      * @return \Lorawan\MACPayload
      */
     public function getMacPayload()
@@ -95,7 +95,7 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.MACPayload mac_payload = 3;</code>
+     * Generated from protobuf field <code>.lorawan.MACPayload mac_payload = 3 [(.gogoproto.customname) = "MACPayload"];</code>
      * @param \Lorawan\MACPayload $var
      * @return $this
      */

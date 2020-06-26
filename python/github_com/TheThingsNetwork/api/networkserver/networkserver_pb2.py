@@ -11,6 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+
 from github_com.TheThingsNetwork.api import api_pb2 as github_dot_com_dot_TheThingsNetwork_dot_api_dot_api__pb2
 from github_com.TheThingsNetwork.api.protocol.lorawan import device_pb2 as github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__pb2
 from github_com.TheThingsNetwork.api.broker import broker_pb2 as github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2
@@ -22,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='networkserver',
   syntax='proto3',
   serialized_options=b'\n&org.thethingsnetwork.api.networkserverB\022NetworkServerProtoP\001Z-github.com/TheThingsNetwork/api/networkserver\252\002\034TheThingsNetwork.API.Monitor',
-  serialized_pb=b'\nAgithub.com/TheThingsNetwork/api/networkserver/networkserver.proto\x12\rnetworkserver\x1a)github.com/TheThingsNetwork/api/api.proto\x1a=github.com/TheThingsNetwork/api/protocol/lorawan/device.proto\x1a\x33github.com/TheThingsNetwork/api/broker/broker.proto\x1a\x35github.com/TheThingsNetwork/api/handler/handler.proto\"1\n\x0e\x44\x65vicesRequest\x12\x10\n\x08\x64\x65v_addr\x18\x01 \x01(\x0c\x12\r\n\x05\x66_cnt\x18\x02 \x01(\r\"3\n\x0f\x44\x65vicesResponse\x12 \n\x07results\x18\x01 \x03(\x0b\x32\x0f.lorawan.Device\"\x0f\n\rStatusRequest\"\xdc\x01\n\x06Status\x12 \n\x06system\x18\x01 \x01(\x0b\x32\x10.api.SystemStats\x12&\n\tcomponent\x18\x02 \x01(\x0b\x32\x13.api.ComponentStats\x12\x1a\n\x06uplink\x18\x0b \x01(\x0b\x32\n.api.Rates\x12\x1c\n\x08\x64ownlink\x18\x0c \x01(\x0b\x32\n.api.Rates\x12\x1f\n\x0b\x61\x63tivations\x18\r \x01(\x0b\x32\n.api.Rates\x12-\n\x13\x64\x65vices_per_address\x18\x15 \x01(\x0b\x32\x10.api.Percentiles2\xab\x03\n\rNetworkServer\x12K\n\nGetDevices\x12\x1d.networkserver.DevicesRequest\x1a\x1e.networkserver.DevicesResponse\x12m\n\x11PrepareActivation\x12+.broker.DeduplicatedDeviceActivationRequest\x1a+.broker.DeduplicatedDeviceActivationRequest\x12P\n\x08\x41\x63tivate\x12!.handler.DeviceActivationResponse\x1a!.handler.DeviceActivationResponse\x12N\n\x06Uplink\x12!.broker.DeduplicatedUplinkMessage\x1a!.broker.DeduplicatedUplinkMessage\x12<\n\x08\x44ownlink\x12\x17.broker.DownlinkMessage\x1a\x17.broker.DownlinkMessage2X\n\x14NetworkServerManager\x12@\n\tGetStatus\x12\x1c.networkserver.StatusRequest\x1a\x15.networkserver.StatusB\x8c\x01\n&org.thethingsnetwork.api.networkserverB\x12NetworkServerProtoP\x01Z-github.com/TheThingsNetwork/api/networkserver\xaa\x02\x1cTheThingsNetwork.API.Monitorb\x06proto3'
+  serialized_pb=b'\nAgithub.com/TheThingsNetwork/api/networkserver/networkserver.proto\x12\rnetworkserver\x1a-github.com/gogo/protobuf/gogoproto/gogo.proto\x1a)github.com/TheThingsNetwork/api/api.proto\x1a=github.com/TheThingsNetwork/api/protocol/lorawan/device.proto\x1a\x33github.com/TheThingsNetwork/api/broker/broker.proto\x1a\x35github.com/TheThingsNetwork/api/handler/handler.proto\"m\n\x0e\x44\x65vicesRequest\x12L\n\x08\x64\x65v_addr\x18\x01 \x01(\x0c\x42:\xc8\xde\x1f\x00\xda\xde\x1f\x32github.com/TheThingsNetwork/ttn/core/types.DevAddr\x12\r\n\x05\x66_cnt\x18\x02 \x01(\r\"3\n\x0f\x44\x65vicesResponse\x12 \n\x07results\x18\x01 \x03(\x0b\x32\x0f.lorawan.Device\"\x0f\n\rStatusRequest\"\xe8\x01\n\x06Status\x12&\n\x06system\x18\x01 \x01(\x0b\x32\x10.api.SystemStatsB\x04\xc8\xde\x1f\x00\x12,\n\tcomponent\x18\x02 \x01(\x0b\x32\x13.api.ComponentStatsB\x04\xc8\xde\x1f\x00\x12\x1a\n\x06uplink\x18\x0b \x01(\x0b\x32\n.api.Rates\x12\x1c\n\x08\x64ownlink\x18\x0c \x01(\x0b\x32\n.api.Rates\x12\x1f\n\x0b\x61\x63tivations\x18\r \x01(\x0b\x32\n.api.Rates\x12-\n\x13\x64\x65vices_per_address\x18\x15 \x01(\x0b\x32\x10.api.Percentiles2\xab\x03\n\rNetworkServer\x12K\n\nGetDevices\x12\x1d.networkserver.DevicesRequest\x1a\x1e.networkserver.DevicesResponse\x12m\n\x11PrepareActivation\x12+.broker.DeduplicatedDeviceActivationRequest\x1a+.broker.DeduplicatedDeviceActivationRequest\x12P\n\x08\x41\x63tivate\x12!.handler.DeviceActivationResponse\x1a!.handler.DeviceActivationResponse\x12N\n\x06Uplink\x12!.broker.DeduplicatedUplinkMessage\x1a!.broker.DeduplicatedUplinkMessage\x12<\n\x08\x44ownlink\x12\x17.broker.DownlinkMessage\x1a\x17.broker.DownlinkMessage2X\n\x14NetworkServerManager\x12@\n\tGetStatus\x12\x1c.networkserver.StatusRequest\x1a\x15.networkserver.StatusB\x8c\x01\n&org.thethingsnetwork.api.networkserverB\x12NetworkServerProtoP\x01Z-github.com/TheThingsNetwork/api/networkserver\xaa\x02\x1cTheThingsNetwork.API.Monitorb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_TheThingsNetwork_dot_api_dot_api__pb2.DESCRIPTOR,github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__pb2.DESCRIPTOR,github_dot_com_dot_TheThingsNetwork_dot_api_dot_broker_dot_broker__pb2.DESCRIPTOR,github_dot_com_dot_TheThingsNetwork_dot_api_dot_handler_dot_handler__pb2.DESCRIPTOR,])
 
@@ -42,7 +43,7 @@ _DEVICESREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\310\336\037\000\332\336\0372github.com/TheThingsNetwork/ttn/core/types.DevAddr', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='f_cnt', full_name='networkserver.DevicesRequest.f_cnt', index=1,
       number=2, type=13, cpp_type=3, label=1,
@@ -62,8 +63,8 @@ _DEVICESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=298,
-  serialized_end=347,
+  serialized_start=345,
+  serialized_end=454,
 )
 
 
@@ -93,8 +94,8 @@ _DEVICESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=349,
-  serialized_end=400,
+  serialized_start=456,
+  serialized_end=507,
 )
 
 
@@ -117,8 +118,8 @@ _STATUSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=402,
-  serialized_end=417,
+  serialized_start=509,
+  serialized_end=524,
 )
 
 
@@ -135,14 +136,14 @@ _STATUS = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\310\336\037\000', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='component', full_name='networkserver.Status.component', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\310\336\037\000', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='uplink', full_name='networkserver.Status.uplink', index=2,
       number=11, type=11, cpp_type=10, label=1,
@@ -183,8 +184,8 @@ _STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=420,
-  serialized_end=640,
+  serialized_start=527,
+  serialized_end=759,
 )
 
 _DEVICESRESPONSE.fields_by_name['results'].message_type = github_dot_com_dot_TheThingsNetwork_dot_api_dot_protocol_dot_lorawan_dot_device__pb2._DEVICE
@@ -230,6 +231,9 @@ _sym_db.RegisterMessage(Status)
 
 
 DESCRIPTOR._options = None
+_DEVICESREQUEST.fields_by_name['dev_addr']._options = None
+_STATUS.fields_by_name['system']._options = None
+_STATUS.fields_by_name['component']._options = None
 
 _NETWORKSERVER = _descriptor.ServiceDescriptor(
   name='NetworkServer',
@@ -237,8 +241,8 @@ _NETWORKSERVER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=643,
-  serialized_end=1070,
+  serialized_start=762,
+  serialized_end=1189,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetDevices',
@@ -297,8 +301,8 @@ _NETWORKSERVERMANAGER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=1,
   serialized_options=None,
-  serialized_start=1072,
-  serialized_end=1160,
+  serialized_start=1191,
+  serialized_end=1279,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetStatus',

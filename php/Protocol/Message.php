@@ -30,7 +30,7 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.Message lorawan = 1;</code>
+     * Generated from protobuf field <code>.lorawan.Message lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
      * @return \Lorawan\Message
      */
     public function getLorawan()
@@ -39,7 +39,7 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.Message lorawan = 1;</code>
+     * Generated from protobuf field <code>.lorawan.Message lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
      * @param \Lorawan\Message $var
      * @return $this
      */

@@ -89,7 +89,7 @@ private static final long serialVersionUID = 0L;
   public static final int DEV_ADDR_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString devAddr_;
   /**
-   * <code>bytes dev_addr = 1;</code>
+   * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
    * @return The devAddr.
    */
   public com.google.protobuf.ByteString getDevAddr() {
@@ -400,14 +400,14 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString devAddr_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes dev_addr = 1;</code>
+     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      * @return The devAddr.
      */
     public com.google.protobuf.ByteString getDevAddr() {
       return devAddr_;
     }
     /**
-     * <code>bytes dev_addr = 1;</code>
+     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      * @param value The devAddr to set.
      * @return This builder for chaining.
      */
@@ -421,7 +421,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bytes dev_addr = 1;</code>
+     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDevAddr() {

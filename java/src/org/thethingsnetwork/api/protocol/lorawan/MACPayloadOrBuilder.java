@@ -8,17 +8,17 @@ public interface MACPayloadOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.lorawan.FHDR f_hdr = 1;</code>
+   * <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
    * @return Whether the fHdr field is set.
    */
   boolean hasFHdr();
   /**
-   * <code>.lorawan.FHDR f_hdr = 1;</code>
+   * <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
    * @return The fHdr.
    */
   org.thethingsnetwork.api.protocol.lorawan.FHDR getFHdr();
   /**
-   * <code>.lorawan.FHDR f_hdr = 1;</code>
+   * <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.FHDROrBuilder getFHdrOrBuilder();
 
@@ -29,7 +29,7 @@ public interface MACPayloadOrBuilder extends
   int getFPort();
 
   /**
-   * <code>bytes frm_payload = 3;</code>
+   * <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
    * @return The frmPayload.
    */
   com.google.protobuf.ByteString getFrmPayload();

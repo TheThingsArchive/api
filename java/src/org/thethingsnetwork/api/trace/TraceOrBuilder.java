@@ -12,7 +12,7 @@ public interface TraceOrBuilder extends
    * Generated ID
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
    * @return The id.
    */
   java.lang.String getId();
@@ -21,7 +21,7 @@ public interface TraceOrBuilder extends
    * Generated ID
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
    * @return The bytes for id.
    */
   com.google.protobuf.ByteString
@@ -42,7 +42,7 @@ public interface TraceOrBuilder extends
    * The ID of the component
    * </pre>
    *
-   * <code>string service_id = 3;</code>
+   * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
    * @return The serviceId.
    */
   java.lang.String getServiceId();
@@ -51,7 +51,7 @@ public interface TraceOrBuilder extends
    * The ID of the component
    * </pre>
    *
-   * <code>string service_id = 3;</code>
+   * <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
    * @return The bytes for serviceId.
    */
   com.google.protobuf.ByteString

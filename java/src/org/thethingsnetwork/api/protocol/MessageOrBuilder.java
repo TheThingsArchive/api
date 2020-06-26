@@ -8,17 +8,17 @@ public interface MessageOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.lorawan.Message lorawan = 1;</code>
+   * <code>.lorawan.Message lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
    * @return Whether the lorawan field is set.
    */
   boolean hasLorawan();
   /**
-   * <code>.lorawan.Message lorawan = 1;</code>
+   * <code>.lorawan.Message lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
    * @return The lorawan.
    */
   org.thethingsnetwork.api.protocol.lorawan.Message getLorawan();
   /**
-   * <code>.lorawan.Message lorawan = 1;</code>
+   * <code>.lorawan.Message lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.MessageOrBuilder getLorawanOrBuilder();
 

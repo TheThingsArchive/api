@@ -14,11 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class Status extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.api.SystemStats system = 1;</code>
+     * Generated from protobuf field <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
      */
     protected $system = null;
     /**
-     * Generated from protobuf field <code>.api.ComponentStats component = 2;</code>
+     * Generated from protobuf field <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
      */
     protected $component = null;
     /**
@@ -81,7 +81,7 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.api.SystemStats system = 1;</code>
+     * Generated from protobuf field <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
      * @return \Api\SystemStats
      */
     public function getSystem()
@@ -90,7 +90,7 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.api.SystemStats system = 1;</code>
+     * Generated from protobuf field <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
      * @param \Api\SystemStats $var
      * @return $this
      */
@@ -103,7 +103,7 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.api.ComponentStats component = 2;</code>
+     * Generated from protobuf field <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
      * @return \Api\ComponentStats
      */
     public function getComponent()
@@ -112,7 +112,7 @@ class Status extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.api.ComponentStats component = 2;</code>
+     * Generated from protobuf field <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
      * @param \Api\ComponentStats $var
      * @return $this
      */

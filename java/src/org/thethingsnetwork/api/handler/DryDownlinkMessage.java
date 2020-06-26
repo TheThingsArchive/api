@@ -180,7 +180,7 @@ private static final long serialVersionUID = 0L;
    * The Application containing the payload functions that should be executed
    * </pre>
    *
-   * <code>.handler.Application app = 3;</code>
+   * <code>.handler.Application app = 3 [(.gogoproto.nullable) = false];</code>
    * @return Whether the app field is set.
    */
   public boolean hasApp() {
@@ -191,7 +191,7 @@ private static final long serialVersionUID = 0L;
    * The Application containing the payload functions that should be executed
    * </pre>
    *
-   * <code>.handler.Application app = 3;</code>
+   * <code>.handler.Application app = 3 [(.gogoproto.nullable) = false];</code>
    * @return The app.
    */
   public org.thethingsnetwork.api.handler.Application getApp() {
@@ -202,7 +202,7 @@ private static final long serialVersionUID = 0L;
    * The Application containing the payload functions that should be executed
    * </pre>
    *
-   * <code>.handler.Application app = 3;</code>
+   * <code>.handler.Application app = 3 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.handler.ApplicationOrBuilder getAppOrBuilder() {
     return getApp();
@@ -741,7 +741,7 @@ private static final long serialVersionUID = 0L;
      * The Application containing the payload functions that should be executed
      * </pre>
      *
-     * <code>.handler.Application app = 3;</code>
+     * <code>.handler.Application app = 3 [(.gogoproto.nullable) = false];</code>
      * @return Whether the app field is set.
      */
     public boolean hasApp() {
@@ -752,7 +752,7 @@ private static final long serialVersionUID = 0L;
      * The Application containing the payload functions that should be executed
      * </pre>
      *
-     * <code>.handler.Application app = 3;</code>
+     * <code>.handler.Application app = 3 [(.gogoproto.nullable) = false];</code>
      * @return The app.
      */
     public org.thethingsnetwork.api.handler.Application getApp() {
@@ -767,7 +767,7 @@ private static final long serialVersionUID = 0L;
      * The Application containing the payload functions that should be executed
      * </pre>
      *
-     * <code>.handler.Application app = 3;</code>
+     * <code>.handler.Application app = 3 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setApp(org.thethingsnetwork.api.handler.Application value) {
       if (appBuilder_ == null) {
@@ -787,7 +787,7 @@ private static final long serialVersionUID = 0L;
      * The Application containing the payload functions that should be executed
      * </pre>
      *
-     * <code>.handler.Application app = 3;</code>
+     * <code>.handler.Application app = 3 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setApp(
         org.thethingsnetwork.api.handler.Application.Builder builderForValue) {
@@ -805,7 +805,7 @@ private static final long serialVersionUID = 0L;
      * The Application containing the payload functions that should be executed
      * </pre>
      *
-     * <code>.handler.Application app = 3;</code>
+     * <code>.handler.Application app = 3 [(.gogoproto.nullable) = false];</code>
      */
     public Builder mergeApp(org.thethingsnetwork.api.handler.Application value) {
       if (appBuilder_ == null) {
@@ -827,7 +827,7 @@ private static final long serialVersionUID = 0L;
      * The Application containing the payload functions that should be executed
      * </pre>
      *
-     * <code>.handler.Application app = 3;</code>
+     * <code>.handler.Application app = 3 [(.gogoproto.nullable) = false];</code>
      */
     public Builder clearApp() {
       if (appBuilder_ == null) {
@@ -845,7 +845,7 @@ private static final long serialVersionUID = 0L;
      * The Application containing the payload functions that should be executed
      * </pre>
      *
-     * <code>.handler.Application app = 3;</code>
+     * <code>.handler.Application app = 3 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.handler.Application.Builder getAppBuilder() {
       
@@ -857,7 +857,7 @@ private static final long serialVersionUID = 0L;
      * The Application containing the payload functions that should be executed
      * </pre>
      *
-     * <code>.handler.Application app = 3;</code>
+     * <code>.handler.Application app = 3 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.handler.ApplicationOrBuilder getAppOrBuilder() {
       if (appBuilder_ != null) {
@@ -872,7 +872,7 @@ private static final long serialVersionUID = 0L;
      * The Application containing the payload functions that should be executed
      * </pre>
      *
-     * <code>.handler.Application app = 3;</code>
+     * <code>.handler.Application app = 3 [(.gogoproto.nullable) = false];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.handler.Application, org.thethingsnetwork.api.handler.Application.Builder, org.thethingsnetwork.api.handler.ApplicationOrBuilder> 

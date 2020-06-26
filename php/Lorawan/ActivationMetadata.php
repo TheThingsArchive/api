@@ -14,27 +14,27 @@ use Google\Protobuf\Internal\GPBUtil;
 class ActivationMetadata extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>bytes app_eui = 1;</code>
+     * Generated from protobuf field <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     protected $app_eui = '';
     /**
-     * Generated from protobuf field <code>bytes dev_eui = 2;</code>
+     * Generated from protobuf field <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     protected $dev_eui = '';
     /**
-     * Generated from protobuf field <code>bytes dev_addr = 3;</code>
+     * Generated from protobuf field <code>bytes dev_addr = 3 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
     protected $dev_addr = '';
     /**
-     * Generated from protobuf field <code>bytes nwk_s_key = 4;</code>
+     * Generated from protobuf field <code>bytes nwk_s_key = 4 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
      */
     protected $nwk_s_key = '';
     /**
-     * Generated from protobuf field <code>uint32 rx1_dr_offset = 11;</code>
+     * Generated from protobuf field <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      */
     protected $rx1_dr_offset = 0;
     /**
-     * Generated from protobuf field <code>uint32 rx2_dr = 12;</code>
+     * Generated from protobuf field <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
      */
     protected $rx2_dr = 0;
     /**
@@ -42,7 +42,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
      */
     protected $rx_delay = 0;
     /**
-     * Generated from protobuf field <code>.lorawan.CFList cf_list = 14;</code>
+     * Generated from protobuf field <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
      */
     protected $cf_list = null;
     /**
@@ -73,7 +73,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes app_eui = 1;</code>
+     * Generated from protobuf field <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      * @return string
      */
     public function getAppEui()
@@ -82,7 +82,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes app_eui = 1;</code>
+     * Generated from protobuf field <code>bytes app_eui = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      * @param string $var
      * @return $this
      */
@@ -95,7 +95,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_eui = 2;</code>
+     * Generated from protobuf field <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      * @return string
      */
     public function getDevEui()
@@ -104,7 +104,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_eui = 2;</code>
+     * Generated from protobuf field <code>bytes dev_eui = 2 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      * @param string $var
      * @return $this
      */
@@ -117,7 +117,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_addr = 3;</code>
+     * Generated from protobuf field <code>bytes dev_addr = 3 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      * @return string
      */
     public function getDevAddr()
@@ -126,7 +126,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_addr = 3;</code>
+     * Generated from protobuf field <code>bytes dev_addr = 3 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      * @param string $var
      * @return $this
      */
@@ -139,7 +139,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes nwk_s_key = 4;</code>
+     * Generated from protobuf field <code>bytes nwk_s_key = 4 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
      * @return string
      */
     public function getNwkSKey()
@@ -148,7 +148,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes nwk_s_key = 4;</code>
+     * Generated from protobuf field <code>bytes nwk_s_key = 4 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.NwkSKey"];</code>
      * @param string $var
      * @return $this
      */
@@ -161,7 +161,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 rx1_dr_offset = 11;</code>
+     * Generated from protobuf field <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      * @return int
      */
     public function getRx1DrOffset()
@@ -170,7 +170,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 rx1_dr_offset = 11;</code>
+     * Generated from protobuf field <code>uint32 rx1_dr_offset = 11 [(.gogoproto.customname) = "Rx1DROffset"];</code>
      * @param int $var
      * @return $this
      */
@@ -183,7 +183,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 rx2_dr = 12;</code>
+     * Generated from protobuf field <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
      * @return int
      */
     public function getRx2Dr()
@@ -192,7 +192,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 rx2_dr = 12;</code>
+     * Generated from protobuf field <code>uint32 rx2_dr = 12 [(.gogoproto.customname) = "Rx2DR"];</code>
      * @param int $var
      * @return $this
      */
@@ -227,7 +227,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.CFList cf_list = 14;</code>
+     * Generated from protobuf field <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
      * @return \Lorawan\CFList
      */
     public function getCfList()
@@ -236,7 +236,7 @@ class ActivationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.CFList cf_list = 14;</code>
+     * Generated from protobuf field <code>.lorawan.CFList cf_list = 14 [(.gogoproto.customname) = "CFList"];</code>
      * @param \Lorawan\CFList $var
      * @return $this
      */

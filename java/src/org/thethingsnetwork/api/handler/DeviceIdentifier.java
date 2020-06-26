@@ -97,7 +97,7 @@ private static final long serialVersionUID = 0L;
   public static final int APP_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object appId_;
   /**
-   * <code>string app_id = 1;</code>
+   * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
    * @return The appId.
    */
   public java.lang.String getAppId() {
@@ -113,7 +113,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string app_id = 1;</code>
+   * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
    * @return The bytes for appId.
    */
   public com.google.protobuf.ByteString
@@ -133,7 +133,7 @@ private static final long serialVersionUID = 0L;
   public static final int DEV_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object devId_;
   /**
-   * <code>string dev_id = 2;</code>
+   * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
    * @return The devId.
    */
   public java.lang.String getDevId() {
@@ -149,7 +149,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string dev_id = 2;</code>
+   * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
    * @return The bytes for devId.
    */
   public com.google.protobuf.ByteString
@@ -487,7 +487,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object appId_ = "";
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      * @return The appId.
      */
     public java.lang.String getAppId() {
@@ -503,7 +503,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      * @return The bytes for appId.
      */
     public com.google.protobuf.ByteString
@@ -520,7 +520,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      * @param value The appId to set.
      * @return This builder for chaining.
      */
@@ -535,7 +535,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      * @return This builder for chaining.
      */
     public Builder clearAppId() {
@@ -545,7 +545,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      * @param value The bytes for appId to set.
      * @return This builder for chaining.
      */
@@ -563,7 +563,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object devId_ = "";
     /**
-     * <code>string dev_id = 2;</code>
+     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      * @return The devId.
      */
     public java.lang.String getDevId() {
@@ -579,7 +579,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string dev_id = 2;</code>
+     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      * @return The bytes for devId.
      */
     public com.google.protobuf.ByteString
@@ -596,7 +596,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string dev_id = 2;</code>
+     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      * @param value The devId to set.
      * @return This builder for chaining.
      */
@@ -611,7 +611,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string dev_id = 2;</code>
+     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDevId() {
@@ -621,7 +621,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string dev_id = 2;</code>
+     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      * @param value The bytes for devId to set.
      * @return This builder for chaining.
      */

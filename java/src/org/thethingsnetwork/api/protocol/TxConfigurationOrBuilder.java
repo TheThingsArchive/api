@@ -8,17 +8,17 @@ public interface TxConfigurationOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.lorawan.TxConfiguration lorawan = 1;</code>
+   * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
    * @return Whether the lorawan field is set.
    */
   boolean hasLorawan();
   /**
-   * <code>.lorawan.TxConfiguration lorawan = 1;</code>
+   * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
    * @return The lorawan.
    */
   org.thethingsnetwork.api.protocol.lorawan.TxConfiguration getLorawan();
   /**
-   * <code>.lorawan.TxConfiguration lorawan = 1;</code>
+   * <code>.lorawan.TxConfiguration lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
    */
   org.thethingsnetwork.api.protocol.lorawan.TxConfigurationOrBuilder getLorawanOrBuilder();
 

@@ -107,21 +107,21 @@ private static final long serialVersionUID = 0L;
   public static final int F_HDR_FIELD_NUMBER = 1;
   private org.thethingsnetwork.api.protocol.lorawan.FHDR fHdr_;
   /**
-   * <code>.lorawan.FHDR f_hdr = 1;</code>
+   * <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
    * @return Whether the fHdr field is set.
    */
   public boolean hasFHdr() {
     return fHdr_ != null;
   }
   /**
-   * <code>.lorawan.FHDR f_hdr = 1;</code>
+   * <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
    * @return The fHdr.
    */
   public org.thethingsnetwork.api.protocol.lorawan.FHDR getFHdr() {
     return fHdr_ == null ? org.thethingsnetwork.api.protocol.lorawan.FHDR.getDefaultInstance() : fHdr_;
   }
   /**
-   * <code>.lorawan.FHDR f_hdr = 1;</code>
+   * <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
    */
   public org.thethingsnetwork.api.protocol.lorawan.FHDROrBuilder getFHdrOrBuilder() {
     return getFHdr();
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
   public static final int FRM_PAYLOAD_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString frmPayload_;
   /**
-   * <code>bytes frm_payload = 3;</code>
+   * <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
    * @return The frmPayload.
    */
   public com.google.protobuf.ByteString getFrmPayload() {
@@ -500,14 +500,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.FHDR, org.thethingsnetwork.api.protocol.lorawan.FHDR.Builder, org.thethingsnetwork.api.protocol.lorawan.FHDROrBuilder> fHdrBuilder_;
     /**
-     * <code>.lorawan.FHDR f_hdr = 1;</code>
+     * <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      * @return Whether the fHdr field is set.
      */
     public boolean hasFHdr() {
       return fHdrBuilder_ != null || fHdr_ != null;
     }
     /**
-     * <code>.lorawan.FHDR f_hdr = 1;</code>
+     * <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      * @return The fHdr.
      */
     public org.thethingsnetwork.api.protocol.lorawan.FHDR getFHdr() {
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.lorawan.FHDR f_hdr = 1;</code>
+     * <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     public Builder setFHdr(org.thethingsnetwork.api.protocol.lorawan.FHDR value) {
       if (fHdrBuilder_ == null) {
@@ -534,7 +534,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.FHDR f_hdr = 1;</code>
+     * <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     public Builder setFHdr(
         org.thethingsnetwork.api.protocol.lorawan.FHDR.Builder builderForValue) {
@@ -548,7 +548,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.FHDR f_hdr = 1;</code>
+     * <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     public Builder mergeFHdr(org.thethingsnetwork.api.protocol.lorawan.FHDR value) {
       if (fHdrBuilder_ == null) {
@@ -566,7 +566,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.FHDR f_hdr = 1;</code>
+     * <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     public Builder clearFHdr() {
       if (fHdrBuilder_ == null) {
@@ -580,7 +580,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.FHDR f_hdr = 1;</code>
+     * <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.FHDR.Builder getFHdrBuilder() {
       
@@ -588,7 +588,7 @@ private static final long serialVersionUID = 0L;
       return getFHdrFieldBuilder().getBuilder();
     }
     /**
-     * <code>.lorawan.FHDR f_hdr = 1;</code>
+     * <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.FHDROrBuilder getFHdrOrBuilder() {
       if (fHdrBuilder_ != null) {
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.lorawan.FHDR f_hdr = 1;</code>
+     * <code>.lorawan.FHDR f_hdr = 1 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.FHDR, org.thethingsnetwork.api.protocol.lorawan.FHDR.Builder, org.thethingsnetwork.api.protocol.lorawan.FHDROrBuilder> 
@@ -647,14 +647,14 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString frmPayload_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes frm_payload = 3;</code>
+     * <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
      * @return The frmPayload.
      */
     public com.google.protobuf.ByteString getFrmPayload() {
       return frmPayload_;
     }
     /**
-     * <code>bytes frm_payload = 3;</code>
+     * <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
      * @param value The frmPayload to set.
      * @return This builder for chaining.
      */
@@ -668,7 +668,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bytes frm_payload = 3;</code>
+     * <code>bytes frm_payload = 3 [(.gogoproto.customname) = "FRMPayload"];</code>
      * @return This builder for chaining.
      */
     public Builder clearFrmPayload() {

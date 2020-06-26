@@ -18,7 +18,7 @@ class Trace extends \Google\Protobuf\Internal\Message
     /**
      * Generated ID
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      */
     protected $id = '';
     /**
@@ -30,7 +30,7 @@ class Trace extends \Google\Protobuf\Internal\Message
     /**
      * The ID of the component
      *
-     * Generated from protobuf field <code>string service_id = 3;</code>
+     * Generated from protobuf field <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
      */
     protected $service_id = '';
     /**
@@ -88,7 +88,7 @@ class Trace extends \Google\Protobuf\Internal\Message
     /**
      * Generated ID
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      * @return string
      */
     public function getId()
@@ -99,7 +99,7 @@ class Trace extends \Google\Protobuf\Internal\Message
     /**
      * Generated ID
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
      * @param string $var
      * @return $this
      */
@@ -140,7 +140,7 @@ class Trace extends \Google\Protobuf\Internal\Message
     /**
      * The ID of the component
      *
-     * Generated from protobuf field <code>string service_id = 3;</code>
+     * Generated from protobuf field <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
      * @return string
      */
     public function getServiceId()
@@ -151,7 +151,7 @@ class Trace extends \Google\Protobuf\Internal\Message
     /**
      * The ID of the component
      *
-     * Generated from protobuf field <code>string service_id = 3;</code>
+     * Generated from protobuf field <code>string service_id = 3 [(.gogoproto.customname) = "ServiceID"];</code>
      * @param string $var
      * @return $this
      */

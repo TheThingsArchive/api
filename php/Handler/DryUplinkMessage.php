@@ -24,7 +24,7 @@ class DryUplinkMessage extends \Google\Protobuf\Internal\Message
     /**
      * The Application containing the payload functions that should be executed
      *
-     * Generated from protobuf field <code>.handler.Application app = 2;</code>
+     * Generated from protobuf field <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
      */
     protected $app = null;
     /**
@@ -82,7 +82,7 @@ class DryUplinkMessage extends \Google\Protobuf\Internal\Message
     /**
      * The Application containing the payload functions that should be executed
      *
-     * Generated from protobuf field <code>.handler.Application app = 2;</code>
+     * Generated from protobuf field <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
      * @return \Handler\Application
      */
     public function getApp()
@@ -93,7 +93,7 @@ class DryUplinkMessage extends \Google\Protobuf\Internal\Message
     /**
      * The Application containing the payload functions that should be executed
      *
-     * Generated from protobuf field <code>.handler.Application app = 2;</code>
+     * Generated from protobuf field <code>.handler.Application app = 2 [(.gogoproto.nullable) = false];</code>
      * @param \Handler\Application $var
      * @return $this
      */

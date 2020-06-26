@@ -7,6 +7,8 @@ import (
 	bytes "bytes"
 	context "context"
 	fmt "fmt"
+	github_com_TheThingsNetwork_ttn_core_types "github.com/TheThingsNetwork/ttn/core/types"
+	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	types "github.com/gogo/protobuf/types"
 	golang_proto "github.com/golang/protobuf/proto"
@@ -35,10 +37,10 @@ const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 type Metadata struct {
 	// Types that are valid to be assigned to Metadata:
-	//	*Metadata_GatewayId
+	//	*Metadata_GatewayID
 	//	*Metadata_DevAddrPrefix
-	//	*Metadata_AppId
-	//	*Metadata_AppEui
+	//	*Metadata_AppID
+	//	*Metadata_AppEUI
 	Metadata             isMetadata_Metadata `protobuf_oneof:"metadata"`
 	XXX_NoUnkeyedLiteral struct{}            `json:"-"`
 	XXX_sizecache        int32               `json:"-"`
@@ -83,23 +85,23 @@ type isMetadata_Metadata interface {
 	Size() int
 }
 
-type Metadata_GatewayId struct {
-	GatewayId string `protobuf:"bytes,10,opt,name=gateway_id,json=gatewayId,proto3,oneof" json:"gateway_id,omitempty"`
+type Metadata_GatewayID struct {
+	GatewayID string `protobuf:"bytes,10,opt,name=gateway_id,json=gatewayId,proto3,oneof" json:"gateway_id,omitempty"`
 }
 type Metadata_DevAddrPrefix struct {
 	DevAddrPrefix []byte `protobuf:"bytes,20,opt,name=dev_addr_prefix,json=devAddrPrefix,proto3,oneof" json:"dev_addr_prefix,omitempty"`
 }
-type Metadata_AppId struct {
-	AppId string `protobuf:"bytes,30,opt,name=app_id,json=appId,proto3,oneof" json:"app_id,omitempty"`
+type Metadata_AppID struct {
+	AppID string `protobuf:"bytes,30,opt,name=app_id,json=appId,proto3,oneof" json:"app_id,omitempty"`
 }
-type Metadata_AppEui struct {
-	AppEui []byte `protobuf:"bytes,31,opt,name=app_eui,json=appEui,proto3,oneof" json:"app_eui,omitempty"`
+type Metadata_AppEUI struct {
+	AppEUI []byte `protobuf:"bytes,31,opt,name=app_eui,json=appEui,proto3,oneof" json:"app_eui,omitempty"`
 }
 
-func (*Metadata_GatewayId) isMetadata_Metadata()     {}
+func (*Metadata_GatewayID) isMetadata_Metadata()     {}
 func (*Metadata_DevAddrPrefix) isMetadata_Metadata() {}
-func (*Metadata_AppId) isMetadata_Metadata()         {}
-func (*Metadata_AppEui) isMetadata_Metadata()        {}
+func (*Metadata_AppID) isMetadata_Metadata()         {}
+func (*Metadata_AppEUI) isMetadata_Metadata()        {}
 
 func (m *Metadata) GetMetadata() isMetadata_Metadata {
 	if m != nil {
@@ -108,9 +110,9 @@ func (m *Metadata) GetMetadata() isMetadata_Metadata {
 	return nil
 }
 
-func (m *Metadata) GetGatewayId() string {
-	if x, ok := m.GetMetadata().(*Metadata_GatewayId); ok {
-		return x.GatewayId
+func (m *Metadata) GetGatewayID() string {
+	if x, ok := m.GetMetadata().(*Metadata_GatewayID); ok {
+		return x.GatewayID
 	}
 	return ""
 }
@@ -122,16 +124,16 @@ func (m *Metadata) GetDevAddrPrefix() []byte {
 	return nil
 }
 
-func (m *Metadata) GetAppId() string {
-	if x, ok := m.GetMetadata().(*Metadata_AppId); ok {
-		return x.AppId
+func (m *Metadata) GetAppID() string {
+	if x, ok := m.GetMetadata().(*Metadata_AppID); ok {
+		return x.AppID
 	}
 	return ""
 }
 
-func (m *Metadata) GetAppEui() []byte {
-	if x, ok := m.GetMetadata().(*Metadata_AppEui); ok {
-		return x.AppEui
+func (m *Metadata) GetAppEUI() []byte {
+	if x, ok := m.GetMetadata().(*Metadata_AppEUI); ok {
+		return x.AppEUI
 	}
 	return nil
 }
@@ -139,17 +141,17 @@ func (m *Metadata) GetAppEui() []byte {
 // XXX_OneofWrappers is for the internal use of the proto package.
 func (*Metadata) XXX_OneofWrappers() []interface{} {
 	return []interface{}{
-		(*Metadata_GatewayId)(nil),
+		(*Metadata_GatewayID)(nil),
 		(*Metadata_DevAddrPrefix)(nil),
-		(*Metadata_AppId)(nil),
-		(*Metadata_AppEui)(nil),
+		(*Metadata_AppID)(nil),
+		(*Metadata_AppEUI)(nil),
 	}
 }
 
 // The Announcement of a service (also called component)
 type Announcement struct {
 	// The ID of the component
-	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ID string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// The name of the component (router/broker/handler)
 	ServiceName string `protobuf:"bytes,2,opt,name=service_name,json=serviceName,proto3" json:"service_name,omitempty"`
 	// Service version in the form "[version]-[commit] ([build date])"
@@ -228,9 +230,9 @@ func (m *Announcement) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Announcement proto.InternalMessageInfo
 
-func (m *Announcement) GetId() string {
+func (m *Announcement) GetID() string {
 	if m != nil {
-		return m.Id
+		return m.ID
 	}
 	return ""
 }
@@ -368,7 +370,7 @@ func (m *GetServiceRequest) GetServiceName() string {
 // The identifier of the service that should be returned
 type GetRequest struct {
 	// The ID of the service
-	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ID string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// The name of the service (router/broker/handler)
 	ServiceName          string   `protobuf:"bytes,2,opt,name=service_name,json=serviceName,proto3" json:"service_name,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -407,9 +409,9 @@ func (m *GetRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_GetRequest proto.InternalMessageInfo
 
-func (m *GetRequest) GetId() string {
+func (m *GetRequest) GetID() string {
 	if m != nil {
-		return m.Id
+		return m.ID
 	}
 	return ""
 }
@@ -424,13 +426,13 @@ func (m *GetRequest) GetServiceName() string {
 // The metadata to add or remove from an announement
 type MetadataRequest struct {
 	// The ID of the service that should be modified
-	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ID string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// The name of the service (router/broker/handler) that should be modified
 	ServiceName string `protobuf:"bytes,2,opt,name=service_name,json=serviceName,proto3" json:"service_name,omitempty"`
 	// Metadata to add or remove
-	Metadata             *Metadata `protobuf:"bytes,12,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
-	XXX_sizecache        int32     `json:"-"`
+	Metadata             Metadata `protobuf:"bytes,12,opt,name=metadata,proto3" json:"metadata"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
 func (m *MetadataRequest) Reset()      { *m = MetadataRequest{} }
@@ -465,9 +467,9 @@ func (m *MetadataRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_MetadataRequest proto.InternalMessageInfo
 
-func (m *MetadataRequest) GetId() string {
+func (m *MetadataRequest) GetID() string {
 	if m != nil {
-		return m.Id
+		return m.ID
 	}
 	return ""
 }
@@ -479,11 +481,11 @@ func (m *MetadataRequest) GetServiceName() string {
 	return ""
 }
 
-func (m *MetadataRequest) GetMetadata() *Metadata {
+func (m *MetadataRequest) GetMetadata() Metadata {
 	if m != nil {
 		return m.Metadata
 	}
-	return nil
+	return Metadata{}
 }
 
 // A list of announcements
@@ -533,7 +535,7 @@ func (m *AnnouncementsResponse) GetServices() []*Announcement {
 }
 
 type GetByAppIDRequest struct {
-	AppId                string   `protobuf:"bytes,30,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
+	AppID                string   `protobuf:"bytes,30,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
@@ -570,15 +572,15 @@ func (m *GetByAppIDRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_GetByAppIDRequest proto.InternalMessageInfo
 
-func (m *GetByAppIDRequest) GetAppId() string {
+func (m *GetByAppIDRequest) GetAppID() string {
 	if m != nil {
-		return m.AppId
+		return m.AppID
 	}
 	return ""
 }
 
 type GetByGatewayIDRequest struct {
-	GatewayId            string   `protobuf:"bytes,30,opt,name=gateway_id,json=gatewayId,proto3" json:"gateway_id,omitempty"`
+	GatewayID            string   `protobuf:"bytes,30,opt,name=gateway_id,json=gatewayId,proto3" json:"gateway_id,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
@@ -615,17 +617,17 @@ func (m *GetByGatewayIDRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_GetByGatewayIDRequest proto.InternalMessageInfo
 
-func (m *GetByGatewayIDRequest) GetGatewayId() string {
+func (m *GetByGatewayIDRequest) GetGatewayID() string {
 	if m != nil {
-		return m.GatewayId
+		return m.GatewayID
 	}
 	return ""
 }
 
 type GetByAppEUIRequest struct {
-	AppEui               []byte   `protobuf:"bytes,31,opt,name=app_eui,json=appEui,proto3" json:"app_eui,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	AppEUI               github_com_TheThingsNetwork_ttn_core_types.AppEUI `protobuf:"bytes,31,opt,name=app_eui,json=appEui,proto3,customtype=github.com/TheThingsNetwork/ttn/core/types.AppEUI" json:"app_eui"`
+	XXX_NoUnkeyedLiteral struct{}                                          `json:"-"`
+	XXX_sizecache        int32                                             `json:"-"`
 }
 
 func (m *GetByAppEUIRequest) Reset()      { *m = GetByAppEUIRequest{} }
@@ -660,13 +662,6 @@ func (m *GetByAppEUIRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_GetByAppEUIRequest proto.InternalMessageInfo
 
-func (m *GetByAppEUIRequest) GetAppEui() []byte {
-	if m != nil {
-		return m.AppEui
-	}
-	return nil
-}
-
 func init() {
 	proto.RegisterType((*Metadata)(nil), "discovery.Metadata")
 	golang_proto.RegisterType((*Metadata)(nil), "discovery.Metadata")
@@ -696,66 +691,72 @@ func init() {
 }
 
 var fileDescriptor_4eb652a73347df9a = []byte{
-	// 939 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x55, 0x3d, 0x6c, 0xdb, 0x56,
-	0x10, 0xe6, 0xb3, 0x12, 0x55, 0x3a, 0x29, 0xb2, 0xfb, 0x5a, 0xdb, 0xac, 0x1a, 0x3f, 0x2b, 0x44,
-	0x8b, 0xaa, 0x01, 0x4a, 0x01, 0x0e, 0x10, 0xa0, 0xe8, 0x50, 0xc8, 0xb5, 0xa1, 0x08, 0x69, 0x02,
-	0x43, 0x4d, 0x3b, 0x74, 0x11, 0x9e, 0xc5, 0xb3, 0xfc, 0x10, 0x89, 0xa4, 0xc9, 0x27, 0xa5, 0x42,
-	0x10, 0x20, 0xe8, 0x94, 0xb1, 0x40, 0x51, 0xa0, 0x63, 0xc7, 0xa0, 0x93, 0xc7, 0x8c, 0x19, 0x33,
-	0x06, 0xe8, 0x92, 0x31, 0x22, 0x3b, 0x64, 0xcc, 0x54, 0x64, 0x2a, 0x0a, 0xfe, 0x8a, 0x92, 0xa3,
-	0xfe, 0x65, 0x23, 0xef, 0xbe, 0xfb, 0xee, 0xde, 0xdd, 0x77, 0xef, 0xc1, 0xa7, 0x7d, 0x21, 0x8f,
-	0x47, 0x87, 0x7a, 0xcf, 0x1a, 0x36, 0x6e, 0x1d, 0xe3, 0xad, 0x63, 0x61, 0xf6, 0xdd, 0x9b, 0x28,
-	0xef, 0x58, 0xce, 0xed, 0x06, 0xb7, 0x45, 0xc3, 0x10, 0x6e, 0xcf, 0x1a, 0xa3, 0x33, 0x99, 0x7d,
-	0xe9, 0xb6, 0x63, 0x49, 0x8b, 0x16, 0x53, 0x43, 0xf5, 0xfd, 0xbe, 0x65, 0xf5, 0x07, 0xd8, 0x08,
-	0x1d, 0x87, 0xa3, 0xa3, 0x06, 0x0e, 0x6d, 0x19, 0xe3, 0xaa, 0x17, 0x63, 0x67, 0xc0, 0xc6, 0x4d,
-	0xd3, 0x92, 0x5c, 0x0a, 0xcb, 0x74, 0x23, 0xaf, 0xf6, 0x13, 0x81, 0xc2, 0x0d, 0x94, 0xdc, 0xe0,
-	0x92, 0xd3, 0x6d, 0x80, 0x3e, 0x97, 0x78, 0x87, 0x4f, 0xba, 0xc2, 0x50, 0xa1, 0x46, 0xea, 0xc5,
-	0x6b, 0x4a, 0xa7, 0x18, 0xdb, 0xda, 0x06, 0xad, 0xc3, 0xaa, 0x81, 0xe3, 0x2e, 0x37, 0x0c, 0xa7,
-	0x6b, 0x3b, 0x78, 0x24, 0xbe, 0x53, 0xdf, 0xad, 0x91, 0x7a, 0xf9, 0x9a, 0xd2, 0xb9, 0x60, 0xe0,
-	0xb8, 0x69, 0x18, 0xce, 0x41, 0x68, 0xa6, 0x9b, 0x90, 0xe7, 0xb6, 0x1d, 0xd0, 0xb0, 0x98, 0xe6,
-	0x3c, 0xb7, 0xed, 0xb6, 0x41, 0xdf, 0x83, 0xb7, 0x02, 0x07, 0x8e, 0x84, 0xba, 0x1d, 0x87, 0x06,
-	0xc8, 0xfd, 0x91, 0xd8, 0x05, 0x28, 0x0c, 0xe3, 0x52, 0xb4, 0xd3, 0x1c, 0x94, 0x9b, 0xa6, 0x69,
-	0x8d, 0xcc, 0x1e, 0x0e, 0xd1, 0x94, 0xb4, 0x02, 0x2b, 0xc2, 0x50, 0x49, 0x40, 0xd6, 0x59, 0x11,
-	0x06, 0xbd, 0x04, 0x65, 0x17, 0x9d, 0xb1, 0xe8, 0x61, 0xd7, 0xe4, 0x43, 0x54, 0x57, 0x42, 0x4f,
-	0x29, 0xb6, 0xdd, 0xe4, 0x43, 0xa4, 0x1f, 0xc1, 0x6a, 0x02, 0x19, 0xa3, 0xe3, 0x0a, 0xcb, 0x54,
-	0x73, 0x21, 0xaa, 0x12, 0x9b, 0xbf, 0x89, 0xac, 0xb4, 0x06, 0x25, 0x03, 0xdd, 0x9e, 0x23, 0xec,
-	0xa0, 0x35, 0xea, 0xb9, 0x88, 0x2a, 0x63, 0xa2, 0x6b, 0x90, 0x1b, 0x39, 0x03, 0xf5, 0x7c, 0xe8,
-	0x09, 0x3e, 0xe9, 0x06, 0xe4, 0xed, 0xd1, 0xe1, 0x40, 0xf4, 0xd4, 0x7c, 0x8d, 0xd4, 0x0b, 0x9d,
-	0xf8, 0x8f, 0x6e, 0x43, 0xc9, 0x44, 0x19, 0xb6, 0x08, 0x5d, 0x57, 0x2d, 0x85, 0x11, 0x60, 0xa2,
-	0x6c, 0x46, 0x16, 0xba, 0x05, 0x10, 0x41, 0xbb, 0xb7, 0x71, 0xa2, 0x96, 0x43, 0x7f, 0x31, 0xb2,
-	0x5c, 0xc7, 0x49, 0x50, 0x4b, 0x0f, 0x1d, 0x29, 0x8e, 0x44, 0x8f, 0x4b, 0x54, 0x2f, 0x44, 0xb5,
-	0x64, 0x4c, 0x41, 0x06, 0x6e, 0x8b, 0x34, 0x43, 0x25, 0xca, 0xc0, 0x6d, 0x91, 0x64, 0xb8, 0x04,
-	0xe5, 0xe1, 0x89, 0x9c, 0xd5, 0xb0, 0x1a, 0x71, 0x04, 0xb6, 0x0c, 0x84, 0x0f, 0x4f, 0xec, 0x14,
-	0xb2, 0x16, 0x41, 0x02, 0x5b, 0x02, 0x69, 0xcc, 0xa6, 0xa1, 0x6e, 0xd4, 0x72, 0xf5, 0xd2, 0xce,
-	0x3b, 0xfa, 0x4c, 0x83, 0x89, 0x66, 0x3a, 0xb3, 0x91, 0x5d, 0x85, 0xb7, 0x5b, 0x28, 0xbf, 0x8a,
-	0x5a, 0xdb, 0xc1, 0x93, 0x11, 0xba, 0xf2, 0xcc, 0x98, 0xc8, 0x99, 0x31, 0x69, 0x9f, 0x03, 0xb4,
-	0x50, 0x26, 0x01, 0xff, 0x7d, 0xce, 0xda, 0x08, 0x56, 0xd3, 0x72, 0xfe, 0x37, 0xcb, 0xdc, 0x79,
-	0x83, 0xa9, 0xfc, 0xe3, 0x79, 0xbf, 0x84, 0xf5, 0xac, 0x42, 0xdd, 0x0e, 0xba, 0xb6, 0x65, 0xba,
-	0x48, 0xaf, 0x40, 0x21, 0x26, 0x76, 0x55, 0x12, 0x76, 0x6e, 0x33, 0xc3, 0x94, 0x8d, 0xe9, 0xa4,
-	0x40, 0xed, 0x72, 0xd8, 0xbd, 0xdd, 0x49, 0xd3, 0xb6, 0xdb, 0x7b, 0xc9, 0x31, 0xd6, 0xe7, 0xb7,
-	0x28, 0xde, 0x21, 0xed, 0x2a, 0xac, 0x87, 0xd8, 0x56, 0xbc, 0x98, 0x29, 0x7e, 0x6b, 0x6e, 0x81,
-	0xa3, 0x98, 0xd9, 0xfa, 0x6a, 0x9f, 0x00, 0x4d, 0x72, 0xec, 0x7f, 0xdd, 0x4e, 0x82, 0x36, 0x17,
-	0x36, 0x32, 0xd9, 0xc7, 0x9d, 0x3f, 0xcf, 0x41, 0x71, 0x2f, 0xa9, 0x9b, 0x7e, 0x06, 0x85, 0xa4,
-	0x74, 0xba, 0xec, 0x3c, 0xd5, 0x0d, 0x3d, 0xba, 0x6d, 0xf4, 0xe4, 0x2a, 0xd2, 0xf7, 0x83, 0xab,
-	0x88, 0x5a, 0x90, 0x6f, 0xa1, 0x6c, 0x0e, 0x06, 0xf4, 0x62, 0x26, 0xf4, 0x8c, 0x5c, 0xaa, 0xb5,
-	0x25, 0xc4, 0x69, 0x73, 0xb5, 0x0f, 0xbf, 0xff, 0xed, 0xf7, 0x1f, 0x57, 0xb6, 0xe9, 0x56, 0x78,
-	0x99, 0xa5, 0xfe, 0xc6, 0xdd, 0xec, 0x7c, 0xef, 0x51, 0x0e, 0xb9, 0x16, 0x4a, 0xba, 0x3e, 0x9f,
-	0x2d, 0x49, 0xb3, 0xac, 0x7e, 0xed, 0x72, 0xc8, 0xfe, 0x01, 0xd5, 0xfe, 0x96, 0xbd, 0x71, 0x57,
-	0x18, 0xf7, 0x68, 0x13, 0x4a, 0x4d, 0xc3, 0x48, 0x2f, 0xcf, 0xea, 0xeb, 0xd4, 0x12, 0xe7, 0x5b,
-	0xd6, 0x96, 0x3d, 0xa8, 0xec, 0xe1, 0x00, 0x25, 0xbe, 0x11, 0xcb, 0x17, 0xe1, 0x02, 0xc5, 0xd2,
-	0x59, 0x6c, 0xf0, 0xbc, 0xa2, 0x96, 0x9e, 0x9c, 0x5e, 0x87, 0xca, 0xbc, 0xa6, 0x68, 0x6d, 0x91,
-	0x68, 0x51, 0x6e, 0xcb, 0xc9, 0xf6, 0xa1, 0x94, 0x11, 0x1a, 0xdd, 0x7a, 0x4d, 0x49, 0x33, 0x01,
-	0x2e, 0xa5, 0xd9, 0xa1, 0xb0, 0x96, 0xea, 0xef, 0x06, 0x37, 0x79, 0x1f, 0x9d, 0xdd, 0x3f, 0xc8,
-	0x93, 0x29, 0x23, 0x4f, 0xa7, 0x8c, 0x3c, 0x9b, 0x32, 0xe5, 0xf9, 0x94, 0x29, 0x2f, 0xa6, 0x4c,
-	0x79, 0x39, 0x65, 0xca, 0xab, 0x29, 0x23, 0xf7, 0x3d, 0x46, 0x1e, 0x78, 0x4c, 0x79, 0xe8, 0x31,
-	0x72, 0xea, 0x31, 0xe5, 0x91, 0xc7, 0x94, 0xc7, 0x1e, 0x53, 0x9e, 0x78, 0x8c, 0x3c, 0xf5, 0x18,
-	0x79, 0xe6, 0x31, 0xe5, 0xb9, 0xc7, 0xc8, 0x0b, 0x8f, 0x29, 0x2f, 0x3d, 0x46, 0x5e, 0x79, 0x4c,
-	0xb9, 0xef, 0x33, 0xe5, 0x81, 0xcf, 0xc8, 0x0f, 0x3e, 0x53, 0x7e, 0xf6, 0x19, 0xf9, 0xc5, 0x67,
-	0xca, 0x43, 0x9f, 0x29, 0xa7, 0x3e, 0x23, 0x8f, 0x7c, 0x46, 0x1e, 0xfb, 0x8c, 0x80, 0x66, 0x39,
-	0x7d, 0x5d, 0x1e, 0xa3, 0x0c, 0x5f, 0x68, 0x33, 0x7a, 0xa1, 0x75, 0x6e, 0x8b, 0x59, 0xed, 0xbb,
-	0x95, 0xb4, 0xd8, 0x83, 0x60, 0x40, 0x07, 0xe4, 0xdb, 0x8f, 0xff, 0xf5, 0xf3, 0xfe, 0xeb, 0x0a,
-	0x5b, 0x04, 0xe8, 0xcd, 0x83, 0xb6, 0x9e, 0x52, 0x1e, 0xe6, 0xc3, 0xa9, 0x5f, 0xf9, 0x2b, 0x00,
-	0x00, 0xff, 0xff, 0xbc, 0x38, 0xc3, 0x47, 0x33, 0x08, 0x00, 0x00,
+	// 1032 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x56, 0x4d, 0x6c, 0x1b, 0x45,
+	0x14, 0xde, 0x71, 0x5a, 0x13, 0x3f, 0xa7, 0x49, 0x18, 0x48, 0x58, 0x85, 0x66, 0xec, 0xae, 0xa8,
+	0x08, 0x08, 0xd6, 0x22, 0x55, 0x91, 0x10, 0x27, 0xbb, 0xb1, 0x1c, 0xab, 0xb4, 0x8a, 0x4c, 0xcb,
+	0x01, 0x21, 0x45, 0x13, 0xef, 0x8b, 0x33, 0xaa, 0xbd, 0xbb, 0xd9, 0x1d, 0xa7, 0x58, 0x55, 0xa5,
+	0x0a, 0x2e, 0x3d, 0x22, 0x71, 0xe1, 0xc8, 0xb1, 0xe2, 0xd4, 0x63, 0x24, 0x2e, 0x3d, 0xe6, 0x58,
+	0x89, 0x4b, 0xc5, 0xc1, 0xaa, 0xd7, 0x1c, 0x7a, 0xec, 0x09, 0xf5, 0x84, 0xd0, 0xce, 0xfe, 0x78,
+	0xf3, 0xe3, 0x0a, 0xd1, 0xdb, 0xce, 0x9b, 0x6f, 0xbe, 0xf7, 0xfc, 0xbd, 0xef, 0x3d, 0x19, 0xbe,
+	0xe8, 0x08, 0xb9, 0xd7, 0xdf, 0x31, 0xdb, 0x4e, 0xaf, 0x72, 0x6b, 0x0f, 0x6f, 0xed, 0x09, 0xbb,
+	0xe3, 0xdf, 0x44, 0x79, 0xd7, 0xf1, 0xee, 0x54, 0xb8, 0x2b, 0x2a, 0x96, 0xf0, 0xdb, 0xce, 0x01,
+	0x7a, 0x83, 0xc9, 0x97, 0xe9, 0x7a, 0x8e, 0x74, 0x68, 0x21, 0x0d, 0xac, 0xbc, 0xdf, 0x71, 0x9c,
+	0x4e, 0x17, 0x2b, 0xea, 0x62, 0xa7, 0xbf, 0x5b, 0xc1, 0x9e, 0x2b, 0x63, 0xdc, 0xca, 0xc5, 0xf8,
+	0x32, 0x64, 0xe3, 0xb6, 0xed, 0x48, 0x2e, 0x85, 0x63, 0xfb, 0xf1, 0xed, 0xa7, 0x99, 0x02, 0x3a,
+	0x4e, 0xc7, 0x99, 0x70, 0x84, 0x27, 0x75, 0x50, 0x5f, 0x11, 0xdc, 0xf8, 0x9d, 0xc0, 0xec, 0x0d,
+	0x94, 0xdc, 0xe2, 0x92, 0x53, 0x13, 0xa0, 0xc3, 0x25, 0xde, 0xe5, 0x83, 0x6d, 0x61, 0xe9, 0x50,
+	0x26, 0x6b, 0x85, 0xda, 0x85, 0x60, 0x58, 0x2a, 0x34, 0xa2, 0x68, 0x73, 0x63, 0x53, 0x6b, 0x15,
+	0x62, 0x48, 0xd3, 0xa2, 0x6b, 0xb0, 0x60, 0xe1, 0xc1, 0x36, 0xb7, 0x2c, 0x6f, 0xdb, 0xf5, 0x70,
+	0x57, 0x7c, 0xaf, 0xbf, 0x5b, 0x26, 0x6b, 0x73, 0x9b, 0x5a, 0xeb, 0x82, 0x85, 0x07, 0x55, 0xcb,
+	0xf2, 0xb6, 0x54, 0x98, 0x1a, 0x90, 0xe7, 0xae, 0x1b, 0xb2, 0x32, 0xc5, 0x5a, 0x08, 0x86, 0xa5,
+	0xf3, 0x55, 0xd7, 0x55, 0x8c, 0xe7, 0xb9, 0xeb, 0x36, 0x2d, 0x7a, 0x19, 0xde, 0x0a, 0x31, 0xd8,
+	0x17, 0x7a, 0x29, 0x64, 0xa9, 0x41, 0x30, 0x2c, 0xe5, 0xab, 0xae, 0x5b, 0xbf, 0xdd, 0xdc, 0xd4,
+	0x5a, 0x21, 0x41, 0xbd, 0x2f, 0x6a, 0x00, 0xb3, 0xbd, 0xb8, 0x60, 0xe3, 0x70, 0x06, 0xe6, 0xaa,
+	0xb6, 0xed, 0xf4, 0xed, 0x36, 0xf6, 0xd0, 0x96, 0x74, 0x19, 0x72, 0xc2, 0xd2, 0x89, 0xca, 0x91,
+	0x0f, 0x86, 0xa5, 0x5c, 0x73, 0xa3, 0x95, 0x13, 0x16, 0xbd, 0x04, 0x73, 0x3e, 0x7a, 0x07, 0xa2,
+	0x8d, 0xdb, 0x36, 0xef, 0xa1, 0x9e, 0x0b, 0x11, 0xad, 0x62, 0x1c, 0xbb, 0xc9, 0x7b, 0x48, 0x3f,
+	0x84, 0x85, 0x04, 0x72, 0x80, 0x9e, 0x2f, 0x1c, 0x5b, 0x9f, 0x51, 0xa8, 0xf9, 0x38, 0xfc, 0x4d,
+	0x14, 0xa5, 0x65, 0x28, 0x5a, 0xe8, 0xb7, 0x3d, 0xe1, 0x86, 0xba, 0xeb, 0xe7, 0x22, 0xaa, 0x4c,
+	0x88, 0x2e, 0xc2, 0x4c, 0xdf, 0xeb, 0xea, 0xe7, 0xd5, 0x4d, 0xf8, 0x49, 0x97, 0x21, 0xef, 0xf6,
+	0x77, 0xba, 0xa2, 0xad, 0xe7, 0xcb, 0x64, 0x6d, 0xb6, 0x15, 0x9f, 0x68, 0x09, 0x8a, 0x36, 0x4a,
+	0xa5, 0x20, 0xfa, 0xbe, 0x5e, 0x54, 0x2f, 0xc0, 0x46, 0x59, 0x8d, 0x22, 0x74, 0x15, 0x20, 0x82,
+	0x6e, 0xdf, 0xc1, 0x81, 0x3e, 0xa7, 0xee, 0x0b, 0x51, 0xe4, 0x3a, 0x0e, 0xc2, 0x5a, 0xda, 0xe8,
+	0x49, 0xb1, 0x2b, 0xda, 0x5c, 0xa2, 0x7e, 0x21, 0xaa, 0x25, 0x13, 0x0a, 0x33, 0x70, 0x57, 0xa4,
+	0x19, 0xe6, 0xa3, 0x0c, 0xdc, 0x15, 0x49, 0x86, 0x4b, 0x30, 0xd7, 0xdb, 0x97, 0x93, 0x1a, 0x16,
+	0x22, 0x8e, 0x30, 0x96, 0x81, 0xf0, 0xde, 0xbe, 0x9b, 0x42, 0x16, 0x23, 0x48, 0x18, 0x4b, 0x20,
+	0x95, 0x49, 0x57, 0xf4, 0xe5, 0xf2, 0xcc, 0x5a, 0x71, 0xfd, 0x1d, 0x73, 0x62, 0xf0, 0xc4, 0x61,
+	0xad, 0x49, 0xeb, 0x3e, 0x87, 0xb7, 0x1b, 0x28, 0xbf, 0x8e, 0xa4, 0x6d, 0xe1, 0x7e, 0x1f, 0x7d,
+	0x79, 0xaa, 0x4d, 0xe4, 0x54, 0x9b, 0x8c, 0x06, 0x40, 0x03, 0x65, 0xf2, 0xe0, 0xff, 0xf7, 0xdb,
+	0xf8, 0x91, 0xc0, 0x42, 0x5a, 0xd7, 0x1b, 0xd3, 0xd1, 0xab, 0x19, 0x01, 0xc2, 0x36, 0x9d, 0x2d,
+	0x40, 0xed, 0xdc, 0xd1, 0xb0, 0xa4, 0x65, 0x64, 0xf8, 0x0a, 0x96, 0xb2, 0x06, 0xf6, 0x5b, 0xe8,
+	0xbb, 0x8e, 0xed, 0x23, 0xbd, 0x02, 0xb3, 0x31, 0xbd, 0xaf, 0x13, 0x25, 0xe8, 0x7b, 0x19, 0xbe,
+	0xec, 0x9b, 0x56, 0x0a, 0x34, 0xae, 0x2a, 0x51, 0x6b, 0x03, 0x35, 0x59, 0xc9, 0x8f, 0x2a, 0x4f,
+	0x9d, 0xbd, 0x78, 0xf2, 0x8c, 0x3a, 0x2c, 0xa9, 0x67, 0xe9, 0x98, 0x27, 0x4f, 0x3f, 0x39, 0xb6,
+	0x10, 0xd8, 0x19, 0x0b, 0x21, 0xb3, 0x0e, 0x0c, 0x0f, 0x68, 0x92, 0xbd, 0x7e, 0xbb, 0x99, 0x70,
+	0x7c, 0x77, 0x72, 0xac, 0xaf, 0x85, 0x12, 0xfc, 0x39, 0x2c, 0x7d, 0xf6, 0xba, 0x55, 0x29, 0xa5,
+	0x5d, 0x69, 0x3b, 0x1e, 0x56, 0xe4, 0xc0, 0x45, 0xdf, 0x8c, 0x28, 0x27, 0xfb, 0x20, 0xd9, 0x06,
+	0xeb, 0xff, 0x9c, 0x83, 0xc2, 0x46, 0x22, 0x0b, 0xfd, 0x12, 0x66, 0x13, 0x65, 0xe8, 0x34, 0xb9,
+	0x56, 0x96, 0xcd, 0x68, 0x81, 0x9a, 0xc9, 0x66, 0x34, 0xeb, 0xe1, 0x76, 0xa5, 0x0e, 0xe4, 0x1b,
+	0x28, 0xab, 0xdd, 0x2e, 0xbd, 0x98, 0x79, 0x7a, 0xca, 0xa4, 0x2b, 0xe5, 0x29, 0xc4, 0x69, 0xef,
+	0x8c, 0xcb, 0x3f, 0xfc, 0xf1, 0xd7, 0xcf, 0xb9, 0x12, 0x5d, 0x55, 0xfb, 0x39, 0xbd, 0xaf, 0xdc,
+	0xcb, 0x9a, 0xe8, 0x3e, 0xe5, 0x30, 0xd3, 0x40, 0x49, 0x97, 0x8e, 0x67, 0x4b, 0xd2, 0x4c, 0xab,
+	0xdf, 0xf8, 0x58, 0xb1, 0x7f, 0x40, 0x8d, 0xd7, 0xb2, 0x57, 0xee, 0x09, 0xeb, 0x3e, 0xad, 0x42,
+	0xb1, 0x6a, 0x59, 0xe9, 0x82, 0x5f, 0x39, 0x6b, 0x26, 0xe3, 0x7c, 0xd3, 0x64, 0xd9, 0x80, 0xf9,
+	0x0d, 0xec, 0xa2, 0xc4, 0x37, 0x62, 0xb9, 0xa6, 0xc6, 0x36, 0x76, 0xe6, 0x49, 0x81, 0x8f, 0x1b,
+	0x76, 0xea, 0x2f, 0xa7, 0xd7, 0x61, 0xfe, 0xb8, 0x4f, 0x69, 0xf9, 0x24, 0xd1, 0x49, 0x0b, 0x4f,
+	0x27, 0xab, 0x43, 0x31, 0xe3, 0x56, 0xba, 0x7a, 0x46, 0x49, 0x13, 0x17, 0x4f, 0xa5, 0x59, 0xa7,
+	0xb0, 0x98, 0xfa, 0xef, 0x06, 0xb7, 0x79, 0x07, 0xbd, 0xda, 0xdf, 0xe4, 0x68, 0xc4, 0xc8, 0xd3,
+	0x11, 0x23, 0xcf, 0x46, 0x4c, 0x7b, 0x3e, 0x62, 0xda, 0x8b, 0x11, 0xd3, 0x5e, 0x8e, 0x98, 0xf6,
+	0x6a, 0xc4, 0xc8, 0x83, 0x80, 0x91, 0x87, 0x01, 0xd3, 0x1e, 0x05, 0x8c, 0x3c, 0x0e, 0x98, 0x76,
+	0x18, 0x30, 0xed, 0x49, 0xc0, 0xb4, 0xa3, 0x80, 0x91, 0xa7, 0x01, 0x23, 0xcf, 0x02, 0xa6, 0x3d,
+	0x0f, 0x18, 0x79, 0x11, 0x30, 0xed, 0x65, 0xc0, 0xc8, 0xab, 0x80, 0x69, 0x0f, 0xc6, 0x4c, 0x7b,
+	0x38, 0x66, 0xe4, 0xa7, 0x31, 0xd3, 0x7e, 0x19, 0x33, 0xf2, 0xeb, 0x98, 0x69, 0x8f, 0xc6, 0x4c,
+	0x7b, 0x3c, 0x66, 0xe4, 0x70, 0xcc, 0xc8, 0x93, 0x31, 0x23, 0x60, 0x38, 0x5e, 0xc7, 0x94, 0x7b,
+	0x28, 0xd5, 0x24, 0xd9, 0xd1, 0x24, 0x99, 0xdc, 0x15, 0x93, 0xda, 0x6b, 0xf3, 0x69, 0xb1, 0x5b,
+	0x61, 0x83, 0xb6, 0xc8, 0xb7, 0x1f, 0xfd, 0xe7, 0x7f, 0x2c, 0xbf, 0xe5, 0xd8, 0x49, 0x80, 0x59,
+	0xdd, 0x6a, 0x9a, 0x29, 0xe5, 0x4e, 0x5e, 0x75, 0xfd, 0xca, 0xbf, 0x01, 0x00, 0x00, 0xff, 0xff,
+	0x8f, 0x90, 0x23, 0xf8, 0x06, 0x09, 0x00, 0x00,
 }
 
 func (this *Metadata) Equal(that interface{}) bool {
@@ -788,14 +789,14 @@ func (this *Metadata) Equal(that interface{}) bool {
 	}
 	return true
 }
-func (this *Metadata_GatewayId) Equal(that interface{}) bool {
+func (this *Metadata_GatewayID) Equal(that interface{}) bool {
 	if that == nil {
 		return this == nil
 	}
 
-	that1, ok := that.(*Metadata_GatewayId)
+	that1, ok := that.(*Metadata_GatewayID)
 	if !ok {
-		that2, ok := that.(Metadata_GatewayId)
+		that2, ok := that.(Metadata_GatewayID)
 		if ok {
 			that1 = &that2
 		} else {
@@ -807,7 +808,7 @@ func (this *Metadata_GatewayId) Equal(that interface{}) bool {
 	} else if this == nil {
 		return false
 	}
-	if this.GatewayId != that1.GatewayId {
+	if this.GatewayID != that1.GatewayID {
 		return false
 	}
 	return true
@@ -836,14 +837,14 @@ func (this *Metadata_DevAddrPrefix) Equal(that interface{}) bool {
 	}
 	return true
 }
-func (this *Metadata_AppId) Equal(that interface{}) bool {
+func (this *Metadata_AppID) Equal(that interface{}) bool {
 	if that == nil {
 		return this == nil
 	}
 
-	that1, ok := that.(*Metadata_AppId)
+	that1, ok := that.(*Metadata_AppID)
 	if !ok {
-		that2, ok := that.(Metadata_AppId)
+		that2, ok := that.(Metadata_AppID)
 		if ok {
 			that1 = &that2
 		} else {
@@ -855,19 +856,19 @@ func (this *Metadata_AppId) Equal(that interface{}) bool {
 	} else if this == nil {
 		return false
 	}
-	if this.AppId != that1.AppId {
+	if this.AppID != that1.AppID {
 		return false
 	}
 	return true
 }
-func (this *Metadata_AppEui) Equal(that interface{}) bool {
+func (this *Metadata_AppEUI) Equal(that interface{}) bool {
 	if that == nil {
 		return this == nil
 	}
 
-	that1, ok := that.(*Metadata_AppEui)
+	that1, ok := that.(*Metadata_AppEUI)
 	if !ok {
-		that2, ok := that.(Metadata_AppEui)
+		that2, ok := that.(Metadata_AppEUI)
 		if ok {
 			that1 = &that2
 		} else {
@@ -879,7 +880,7 @@ func (this *Metadata_AppEui) Equal(that interface{}) bool {
 	} else if this == nil {
 		return false
 	}
-	if !bytes.Equal(this.AppEui, that1.AppEui) {
+	if !bytes.Equal(this.AppEUI, that1.AppEUI) {
 		return false
 	}
 	return true
@@ -903,7 +904,7 @@ func (this *Announcement) Equal(that interface{}) bool {
 	} else if this == nil {
 		return false
 	}
-	if this.Id != that1.Id {
+	if this.ID != that1.ID {
 		return false
 	}
 	if this.ServiceName != that1.ServiceName {
@@ -992,7 +993,7 @@ func (this *GetRequest) Equal(that interface{}) bool {
 	} else if this == nil {
 		return false
 	}
-	if this.Id != that1.Id {
+	if this.ID != that1.ID {
 		return false
 	}
 	if this.ServiceName != that1.ServiceName {
@@ -1019,13 +1020,13 @@ func (this *MetadataRequest) Equal(that interface{}) bool {
 	} else if this == nil {
 		return false
 	}
-	if this.Id != that1.Id {
+	if this.ID != that1.ID {
 		return false
 	}
 	if this.ServiceName != that1.ServiceName {
 		return false
 	}
-	if !this.Metadata.Equal(that1.Metadata) {
+	if !this.Metadata.Equal(&that1.Metadata) {
 		return false
 	}
 	return true
@@ -1078,7 +1079,7 @@ func (this *GetByAppIDRequest) Equal(that interface{}) bool {
 	} else if this == nil {
 		return false
 	}
-	if this.AppId != that1.AppId {
+	if this.AppID != that1.AppID {
 		return false
 	}
 	return true
@@ -1102,7 +1103,7 @@ func (this *GetByGatewayIDRequest) Equal(that interface{}) bool {
 	} else if this == nil {
 		return false
 	}
-	if this.GatewayId != that1.GatewayId {
+	if this.GatewayID != that1.GatewayID {
 		return false
 	}
 	return true
@@ -1126,7 +1127,7 @@ func (this *GetByAppEUIRequest) Equal(that interface{}) bool {
 	} else if this == nil {
 		return false
 	}
-	if !bytes.Equal(this.AppEui, that1.AppEui) {
+	if !this.AppEUI.Equal(that1.AppEUI) {
 		return false
 	}
 	return true
@@ -1544,16 +1545,16 @@ func (m *Metadata) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *Metadata_GatewayId) MarshalTo(dAtA []byte) (int, error) {
+func (m *Metadata_GatewayID) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *Metadata_GatewayId) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *Metadata_GatewayID) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
-	i -= len(m.GatewayId)
-	copy(dAtA[i:], m.GatewayId)
-	i = encodeVarintDiscovery(dAtA, i, uint64(len(m.GatewayId)))
+	i -= len(m.GatewayID)
+	copy(dAtA[i:], m.GatewayID)
+	i = encodeVarintDiscovery(dAtA, i, uint64(len(m.GatewayID)))
 	i--
 	dAtA[i] = 0x52
 	return len(dAtA) - i, nil
@@ -1576,33 +1577,33 @@ func (m *Metadata_DevAddrPrefix) MarshalToSizedBuffer(dAtA []byte) (int, error) 
 	}
 	return len(dAtA) - i, nil
 }
-func (m *Metadata_AppId) MarshalTo(dAtA []byte) (int, error) {
+func (m *Metadata_AppID) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *Metadata_AppId) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *Metadata_AppID) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
-	i -= len(m.AppId)
-	copy(dAtA[i:], m.AppId)
-	i = encodeVarintDiscovery(dAtA, i, uint64(len(m.AppId)))
+	i -= len(m.AppID)
+	copy(dAtA[i:], m.AppID)
+	i = encodeVarintDiscovery(dAtA, i, uint64(len(m.AppID)))
 	i--
 	dAtA[i] = 0x1
 	i--
 	dAtA[i] = 0xf2
 	return len(dAtA) - i, nil
 }
-func (m *Metadata_AppEui) MarshalTo(dAtA []byte) (int, error) {
+func (m *Metadata_AppEUI) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *Metadata_AppEui) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *Metadata_AppEUI) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
-	if m.AppEui != nil {
-		i -= len(m.AppEui)
-		copy(dAtA[i:], m.AppEui)
-		i = encodeVarintDiscovery(dAtA, i, uint64(len(m.AppEui)))
+	if m.AppEUI != nil {
+		i -= len(m.AppEUI)
+		copy(dAtA[i:], m.AppEUI)
+		i = encodeVarintDiscovery(dAtA, i, uint64(len(m.AppEUI)))
 		i--
 		dAtA[i] = 0x1
 		i--
@@ -1728,10 +1729,10 @@ func (m *Announcement) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x12
 	}
-	if len(m.Id) > 0 {
-		i -= len(m.Id)
-		copy(dAtA[i:], m.Id)
-		i = encodeVarintDiscovery(dAtA, i, uint64(len(m.Id)))
+	if len(m.ID) > 0 {
+		i -= len(m.ID)
+		copy(dAtA[i:], m.ID)
+		i = encodeVarintDiscovery(dAtA, i, uint64(len(m.ID)))
 		i--
 		dAtA[i] = 0xa
 	}
@@ -1795,10 +1796,10 @@ func (m *GetRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x12
 	}
-	if len(m.Id) > 0 {
-		i -= len(m.Id)
-		copy(dAtA[i:], m.Id)
-		i = encodeVarintDiscovery(dAtA, i, uint64(len(m.Id)))
+	if len(m.ID) > 0 {
+		i -= len(m.ID)
+		copy(dAtA[i:], m.ID)
+		i = encodeVarintDiscovery(dAtA, i, uint64(len(m.ID)))
 		i--
 		dAtA[i] = 0xa
 	}
@@ -1825,18 +1826,16 @@ func (m *MetadataRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
-	if m.Metadata != nil {
-		{
-			size, err := m.Metadata.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintDiscovery(dAtA, i, uint64(size))
+	{
+		size, err := m.Metadata.MarshalToSizedBuffer(dAtA[:i])
+		if err != nil {
+			return 0, err
 		}
-		i--
-		dAtA[i] = 0x62
+		i -= size
+		i = encodeVarintDiscovery(dAtA, i, uint64(size))
 	}
+	i--
+	dAtA[i] = 0x62
 	if len(m.ServiceName) > 0 {
 		i -= len(m.ServiceName)
 		copy(dAtA[i:], m.ServiceName)
@@ -1844,10 +1843,10 @@ func (m *MetadataRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x12
 	}
-	if len(m.Id) > 0 {
-		i -= len(m.Id)
-		copy(dAtA[i:], m.Id)
-		i = encodeVarintDiscovery(dAtA, i, uint64(len(m.Id)))
+	if len(m.ID) > 0 {
+		i -= len(m.ID)
+		copy(dAtA[i:], m.ID)
+		i = encodeVarintDiscovery(dAtA, i, uint64(len(m.ID)))
 		i--
 		dAtA[i] = 0xa
 	}
@@ -1911,10 +1910,10 @@ func (m *GetByAppIDRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
-	if len(m.AppId) > 0 {
-		i -= len(m.AppId)
-		copy(dAtA[i:], m.AppId)
-		i = encodeVarintDiscovery(dAtA, i, uint64(len(m.AppId)))
+	if len(m.AppID) > 0 {
+		i -= len(m.AppID)
+		copy(dAtA[i:], m.AppID)
+		i = encodeVarintDiscovery(dAtA, i, uint64(len(m.AppID)))
 		i--
 		dAtA[i] = 0x1
 		i--
@@ -1943,10 +1942,10 @@ func (m *GetByGatewayIDRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
-	if len(m.GatewayId) > 0 {
-		i -= len(m.GatewayId)
-		copy(dAtA[i:], m.GatewayId)
-		i = encodeVarintDiscovery(dAtA, i, uint64(len(m.GatewayId)))
+	if len(m.GatewayID) > 0 {
+		i -= len(m.GatewayID)
+		copy(dAtA[i:], m.GatewayID)
+		i = encodeVarintDiscovery(dAtA, i, uint64(len(m.GatewayID)))
 		i--
 		dAtA[i] = 0x1
 		i--
@@ -1975,15 +1974,18 @@ func (m *GetByAppEUIRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
-	if len(m.AppEui) > 0 {
-		i -= len(m.AppEui)
-		copy(dAtA[i:], m.AppEui)
-		i = encodeVarintDiscovery(dAtA, i, uint64(len(m.AppEui)))
-		i--
-		dAtA[i] = 0x1
-		i--
-		dAtA[i] = 0xfa
+	{
+		size := m.AppEUI.Size()
+		i -= size
+		if _, err := m.AppEUI.MarshalTo(dAtA[i:]); err != nil {
+			return 0, err
+		}
+		i = encodeVarintDiscovery(dAtA, i, uint64(size))
 	}
+	i--
+	dAtA[i] = 0x1
+	i--
+	dAtA[i] = 0xfa
 	return len(dAtA) - i, nil
 }
 
@@ -2003,22 +2005,22 @@ func NewPopulatedMetadata(r randyDiscovery, easy bool) *Metadata {
 	oneofNumber_Metadata := []int32{10, 20, 30, 31}[r.Intn(4)]
 	switch oneofNumber_Metadata {
 	case 10:
-		this.Metadata = NewPopulatedMetadata_GatewayId(r, easy)
+		this.Metadata = NewPopulatedMetadata_GatewayID(r, easy)
 	case 20:
 		this.Metadata = NewPopulatedMetadata_DevAddrPrefix(r, easy)
 	case 30:
-		this.Metadata = NewPopulatedMetadata_AppId(r, easy)
+		this.Metadata = NewPopulatedMetadata_AppID(r, easy)
 	case 31:
-		this.Metadata = NewPopulatedMetadata_AppEui(r, easy)
+		this.Metadata = NewPopulatedMetadata_AppEUI(r, easy)
 	}
 	if !easy && r.Intn(10) != 0 {
 	}
 	return this
 }
 
-func NewPopulatedMetadata_GatewayId(r randyDiscovery, easy bool) *Metadata_GatewayId {
-	this := &Metadata_GatewayId{}
-	this.GatewayId = string(randStringDiscovery(r))
+func NewPopulatedMetadata_GatewayID(r randyDiscovery, easy bool) *Metadata_GatewayID {
+	this := &Metadata_GatewayID{}
+	this.GatewayID = string(randStringDiscovery(r))
 	return this
 }
 func NewPopulatedMetadata_DevAddrPrefix(r randyDiscovery, easy bool) *Metadata_DevAddrPrefix {
@@ -2030,23 +2032,23 @@ func NewPopulatedMetadata_DevAddrPrefix(r randyDiscovery, easy bool) *Metadata_D
 	}
 	return this
 }
-func NewPopulatedMetadata_AppId(r randyDiscovery, easy bool) *Metadata_AppId {
-	this := &Metadata_AppId{}
-	this.AppId = string(randStringDiscovery(r))
+func NewPopulatedMetadata_AppID(r randyDiscovery, easy bool) *Metadata_AppID {
+	this := &Metadata_AppID{}
+	this.AppID = string(randStringDiscovery(r))
 	return this
 }
-func NewPopulatedMetadata_AppEui(r randyDiscovery, easy bool) *Metadata_AppEui {
-	this := &Metadata_AppEui{}
+func NewPopulatedMetadata_AppEUI(r randyDiscovery, easy bool) *Metadata_AppEUI {
+	this := &Metadata_AppEUI{}
 	v2 := r.Intn(100)
-	this.AppEui = make([]byte, v2)
+	this.AppEUI = make([]byte, v2)
 	for i := 0; i < v2; i++ {
-		this.AppEui[i] = byte(r.Intn(256))
+		this.AppEUI[i] = byte(r.Intn(256))
 	}
 	return this
 }
 func NewPopulatedAnnouncement(r randyDiscovery, easy bool) *Announcement {
 	this := &Announcement{}
-	this.Id = string(randStringDiscovery(r))
+	this.ID = string(randStringDiscovery(r))
 	this.ServiceName = string(randStringDiscovery(r))
 	this.ServiceVersion = string(randStringDiscovery(r))
 	this.Description = string(randStringDiscovery(r))
@@ -2080,7 +2082,7 @@ func NewPopulatedGetServiceRequest(r randyDiscovery, easy bool) *GetServiceReque
 
 func NewPopulatedGetRequest(r randyDiscovery, easy bool) *GetRequest {
 	this := &GetRequest{}
-	this.Id = string(randStringDiscovery(r))
+	this.ID = string(randStringDiscovery(r))
 	this.ServiceName = string(randStringDiscovery(r))
 	if !easy && r.Intn(10) != 0 {
 	}
@@ -2089,11 +2091,10 @@ func NewPopulatedGetRequest(r randyDiscovery, easy bool) *GetRequest {
 
 func NewPopulatedMetadataRequest(r randyDiscovery, easy bool) *MetadataRequest {
 	this := &MetadataRequest{}
-	this.Id = string(randStringDiscovery(r))
+	this.ID = string(randStringDiscovery(r))
 	this.ServiceName = string(randStringDiscovery(r))
-	if r.Intn(5) != 0 {
-		this.Metadata = NewPopulatedMetadata(r, easy)
-	}
+	v4 := NewPopulatedMetadata(r, easy)
+	this.Metadata = *v4
 	if !easy && r.Intn(10) != 0 {
 	}
 	return this
@@ -2102,9 +2103,9 @@ func NewPopulatedMetadataRequest(r randyDiscovery, easy bool) *MetadataRequest {
 func NewPopulatedAnnouncementsResponse(r randyDiscovery, easy bool) *AnnouncementsResponse {
 	this := &AnnouncementsResponse{}
 	if r.Intn(5) != 0 {
-		v4 := r.Intn(5)
-		this.Services = make([]*Announcement, v4)
-		for i := 0; i < v4; i++ {
+		v5 := r.Intn(5)
+		this.Services = make([]*Announcement, v5)
+		for i := 0; i < v5; i++ {
 			this.Services[i] = NewPopulatedAnnouncement(r, easy)
 		}
 	}
@@ -2115,7 +2116,7 @@ func NewPopulatedAnnouncementsResponse(r randyDiscovery, easy bool) *Announcemen
 
 func NewPopulatedGetByAppIDRequest(r randyDiscovery, easy bool) *GetByAppIDRequest {
 	this := &GetByAppIDRequest{}
-	this.AppId = string(randStringDiscovery(r))
+	this.AppID = string(randStringDiscovery(r))
 	if !easy && r.Intn(10) != 0 {
 	}
 	return this
@@ -2123,7 +2124,7 @@ func NewPopulatedGetByAppIDRequest(r randyDiscovery, easy bool) *GetByAppIDReque
 
 func NewPopulatedGetByGatewayIDRequest(r randyDiscovery, easy bool) *GetByGatewayIDRequest {
 	this := &GetByGatewayIDRequest{}
-	this.GatewayId = string(randStringDiscovery(r))
+	this.GatewayID = string(randStringDiscovery(r))
 	if !easy && r.Intn(10) != 0 {
 	}
 	return this
@@ -2131,11 +2132,8 @@ func NewPopulatedGetByGatewayIDRequest(r randyDiscovery, easy bool) *GetByGatewa
 
 func NewPopulatedGetByAppEUIRequest(r randyDiscovery, easy bool) *GetByAppEUIRequest {
 	this := &GetByAppEUIRequest{}
-	v5 := r.Intn(100)
-	this.AppEui = make([]byte, v5)
-	for i := 0; i < v5; i++ {
-		this.AppEui[i] = byte(r.Intn(256))
-	}
+	v6 := github_com_TheThingsNetwork_ttn_core_types.NewPopulatedAppEUI(r)
+	this.AppEUI = *v6
 	if !easy && r.Intn(10) != 0 {
 	}
 	return this
@@ -2160,9 +2158,9 @@ func randUTF8RuneDiscovery(r randyDiscovery) rune {
 	return rune(ru + 61)
 }
 func randStringDiscovery(r randyDiscovery) string {
-	v6 := r.Intn(100)
-	tmps := make([]rune, v6)
-	for i := 0; i < v6; i++ {
+	v7 := r.Intn(100)
+	tmps := make([]rune, v7)
+	for i := 0; i < v7; i++ {
 		tmps[i] = randUTF8RuneDiscovery(r)
 	}
 	return string(tmps)
@@ -2184,11 +2182,11 @@ func randFieldDiscovery(dAtA []byte, r randyDiscovery, fieldNumber int, wire int
 	switch wire {
 	case 0:
 		dAtA = encodeVarintPopulateDiscovery(dAtA, uint64(key))
-		v7 := r.Int63()
+		v8 := r.Int63()
 		if r.Intn(2) == 0 {
-			v7 *= -1
+			v8 *= -1
 		}
-		dAtA = encodeVarintPopulateDiscovery(dAtA, uint64(v7))
+		dAtA = encodeVarintPopulateDiscovery(dAtA, uint64(v8))
 	case 1:
 		dAtA = encodeVarintPopulateDiscovery(dAtA, uint64(key))
 		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
@@ -2225,13 +2223,13 @@ func (m *Metadata) Size() (n int) {
 	return n
 }
 
-func (m *Metadata_GatewayId) Size() (n int) {
+func (m *Metadata_GatewayID) Size() (n int) {
 	if m == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = len(m.GatewayId)
+	l = len(m.GatewayID)
 	n += 1 + l + sovDiscovery(uint64(l))
 	return n
 }
@@ -2247,24 +2245,24 @@ func (m *Metadata_DevAddrPrefix) Size() (n int) {
 	}
 	return n
 }
-func (m *Metadata_AppId) Size() (n int) {
+func (m *Metadata_AppID) Size() (n int) {
 	if m == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	l = len(m.AppId)
+	l = len(m.AppID)
 	n += 2 + l + sovDiscovery(uint64(l))
 	return n
 }
-func (m *Metadata_AppEui) Size() (n int) {
+func (m *Metadata_AppEUI) Size() (n int) {
 	if m == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	if m.AppEui != nil {
-		l = len(m.AppEui)
+	if m.AppEUI != nil {
+		l = len(m.AppEUI)
 		n += 2 + l + sovDiscovery(uint64(l))
 	}
 	return n
@@ -2275,7 +2273,7 @@ func (m *Announcement) Size() (n int) {
 	}
 	var l int
 	_ = l
-	l = len(m.Id)
+	l = len(m.ID)
 	if l > 0 {
 		n += 1 + l + sovDiscovery(uint64(l))
 	}
@@ -2350,7 +2348,7 @@ func (m *GetRequest) Size() (n int) {
 	}
 	var l int
 	_ = l
-	l = len(m.Id)
+	l = len(m.ID)
 	if l > 0 {
 		n += 1 + l + sovDiscovery(uint64(l))
 	}
@@ -2367,7 +2365,7 @@ func (m *MetadataRequest) Size() (n int) {
 	}
 	var l int
 	_ = l
-	l = len(m.Id)
+	l = len(m.ID)
 	if l > 0 {
 		n += 1 + l + sovDiscovery(uint64(l))
 	}
@@ -2375,10 +2373,8 @@ func (m *MetadataRequest) Size() (n int) {
 	if l > 0 {
 		n += 1 + l + sovDiscovery(uint64(l))
 	}
-	if m.Metadata != nil {
-		l = m.Metadata.Size()
-		n += 1 + l + sovDiscovery(uint64(l))
-	}
+	l = m.Metadata.Size()
+	n += 1 + l + sovDiscovery(uint64(l))
 	return n
 }
 
@@ -2403,7 +2399,7 @@ func (m *GetByAppIDRequest) Size() (n int) {
 	}
 	var l int
 	_ = l
-	l = len(m.AppId)
+	l = len(m.AppID)
 	if l > 0 {
 		n += 2 + l + sovDiscovery(uint64(l))
 	}
@@ -2416,7 +2412,7 @@ func (m *GetByGatewayIDRequest) Size() (n int) {
 	}
 	var l int
 	_ = l
-	l = len(m.GatewayId)
+	l = len(m.GatewayID)
 	if l > 0 {
 		n += 2 + l + sovDiscovery(uint64(l))
 	}
@@ -2429,10 +2425,8 @@ func (m *GetByAppEUIRequest) Size() (n int) {
 	}
 	var l int
 	_ = l
-	l = len(m.AppEui)
-	if l > 0 {
-		n += 2 + l + sovDiscovery(uint64(l))
-	}
+	l = m.AppEUI.Size()
+	n += 2 + l + sovDiscovery(uint64(l))
 	return n
 }
 
@@ -2452,12 +2446,12 @@ func (this *Metadata) String() string {
 	}, "")
 	return s
 }
-func (this *Metadata_GatewayId) String() string {
+func (this *Metadata_GatewayID) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&Metadata_GatewayId{`,
-		`GatewayId:` + fmt.Sprintf("%v", this.GatewayId) + `,`,
+	s := strings.Join([]string{`&Metadata_GatewayID{`,
+		`GatewayID:` + fmt.Sprintf("%v", this.GatewayID) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -2472,22 +2466,22 @@ func (this *Metadata_DevAddrPrefix) String() string {
 	}, "")
 	return s
 }
-func (this *Metadata_AppId) String() string {
+func (this *Metadata_AppID) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&Metadata_AppId{`,
-		`AppId:` + fmt.Sprintf("%v", this.AppId) + `,`,
+	s := strings.Join([]string{`&Metadata_AppID{`,
+		`AppID:` + fmt.Sprintf("%v", this.AppID) + `,`,
 		`}`,
 	}, "")
 	return s
 }
-func (this *Metadata_AppEui) String() string {
+func (this *Metadata_AppEUI) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&Metadata_AppEui{`,
-		`AppEui:` + fmt.Sprintf("%v", this.AppEui) + `,`,
+	s := strings.Join([]string{`&Metadata_AppEUI{`,
+		`AppEUI:` + fmt.Sprintf("%v", this.AppEUI) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -2502,7 +2496,7 @@ func (this *Announcement) String() string {
 	}
 	repeatedStringForMetadata += "}"
 	s := strings.Join([]string{`&Announcement{`,
-		`Id:` + fmt.Sprintf("%v", this.Id) + `,`,
+		`ID:` + fmt.Sprintf("%v", this.ID) + `,`,
 		`ServiceName:` + fmt.Sprintf("%v", this.ServiceName) + `,`,
 		`ServiceVersion:` + fmt.Sprintf("%v", this.ServiceVersion) + `,`,
 		`Description:` + fmt.Sprintf("%v", this.Description) + `,`,
@@ -2534,7 +2528,7 @@ func (this *GetRequest) String() string {
 		return "nil"
 	}
 	s := strings.Join([]string{`&GetRequest{`,
-		`Id:` + fmt.Sprintf("%v", this.Id) + `,`,
+		`ID:` + fmt.Sprintf("%v", this.ID) + `,`,
 		`ServiceName:` + fmt.Sprintf("%v", this.ServiceName) + `,`,
 		`}`,
 	}, "")
@@ -2545,9 +2539,9 @@ func (this *MetadataRequest) String() string {
 		return "nil"
 	}
 	s := strings.Join([]string{`&MetadataRequest{`,
-		`Id:` + fmt.Sprintf("%v", this.Id) + `,`,
+		`ID:` + fmt.Sprintf("%v", this.ID) + `,`,
 		`ServiceName:` + fmt.Sprintf("%v", this.ServiceName) + `,`,
-		`Metadata:` + strings.Replace(this.Metadata.String(), "Metadata", "Metadata", 1) + `,`,
+		`Metadata:` + strings.Replace(strings.Replace(this.Metadata.String(), "Metadata", "Metadata", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -2572,7 +2566,7 @@ func (this *GetByAppIDRequest) String() string {
 		return "nil"
 	}
 	s := strings.Join([]string{`&GetByAppIDRequest{`,
-		`AppId:` + fmt.Sprintf("%v", this.AppId) + `,`,
+		`AppID:` + fmt.Sprintf("%v", this.AppID) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -2582,7 +2576,7 @@ func (this *GetByGatewayIDRequest) String() string {
 		return "nil"
 	}
 	s := strings.Join([]string{`&GetByGatewayIDRequest{`,
-		`GatewayId:` + fmt.Sprintf("%v", this.GatewayId) + `,`,
+		`GatewayID:` + fmt.Sprintf("%v", this.GatewayID) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -2592,7 +2586,7 @@ func (this *GetByAppEUIRequest) String() string {
 		return "nil"
 	}
 	s := strings.Join([]string{`&GetByAppEUIRequest{`,
-		`AppEui:` + fmt.Sprintf("%v", this.AppEui) + `,`,
+		`AppEUI:` + fmt.Sprintf("%v", this.AppEUI) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -2636,7 +2630,7 @@ func (m *Metadata) Unmarshal(dAtA []byte) error {
 		switch fieldNum {
 		case 10:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field GatewayId", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field GatewayID", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -2664,7 +2658,7 @@ func (m *Metadata) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Metadata = &Metadata_GatewayId{string(dAtA[iNdEx:postIndex])}
+			m.Metadata = &Metadata_GatewayID{string(dAtA[iNdEx:postIndex])}
 			iNdEx = postIndex
 		case 20:
 			if wireType != 2 {
@@ -2701,7 +2695,7 @@ func (m *Metadata) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 30:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AppId", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field AppID", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -2729,11 +2723,11 @@ func (m *Metadata) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Metadata = &Metadata_AppId{string(dAtA[iNdEx:postIndex])}
+			m.Metadata = &Metadata_AppID{string(dAtA[iNdEx:postIndex])}
 			iNdEx = postIndex
 		case 31:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AppEui", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field AppEUI", wireType)
 			}
 			var byteLen int
 			for shift := uint(0); ; shift += 7 {
@@ -2762,7 +2756,7 @@ func (m *Metadata) Unmarshal(dAtA []byte) error {
 			}
 			v := make([]byte, postIndex-iNdEx)
 			copy(v, dAtA[iNdEx:postIndex])
-			m.Metadata = &Metadata_AppEui{v}
+			m.Metadata = &Metadata_AppEUI{v}
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -2819,7 +2813,7 @@ func (m *Announcement) Unmarshal(dAtA []byte) error {
 		switch fieldNum {
 		case 1:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field ID", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -2847,7 +2841,7 @@ func (m *Announcement) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Id = string(dAtA[iNdEx:postIndex])
+			m.ID = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
@@ -3363,7 +3357,7 @@ func (m *GetRequest) Unmarshal(dAtA []byte) error {
 		switch fieldNum {
 		case 1:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field ID", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -3391,7 +3385,7 @@ func (m *GetRequest) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Id = string(dAtA[iNdEx:postIndex])
+			m.ID = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
@@ -3480,7 +3474,7 @@ func (m *MetadataRequest) Unmarshal(dAtA []byte) error {
 		switch fieldNum {
 		case 1:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field ID", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -3508,7 +3502,7 @@ func (m *MetadataRequest) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Id = string(dAtA[iNdEx:postIndex])
+			m.ID = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
@@ -3570,9 +3564,6 @@ func (m *MetadataRequest) Unmarshal(dAtA []byte) error {
 			}
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
-			}
-			if m.Metadata == nil {
-				m.Metadata = &Metadata{}
 			}
 			if err := m.Metadata.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -3720,7 +3711,7 @@ func (m *GetByAppIDRequest) Unmarshal(dAtA []byte) error {
 		switch fieldNum {
 		case 30:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AppId", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field AppID", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -3748,7 +3739,7 @@ func (m *GetByAppIDRequest) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.AppId = string(dAtA[iNdEx:postIndex])
+			m.AppID = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -3805,7 +3796,7 @@ func (m *GetByGatewayIDRequest) Unmarshal(dAtA []byte) error {
 		switch fieldNum {
 		case 30:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field GatewayId", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field GatewayID", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -3833,7 +3824,7 @@ func (m *GetByGatewayIDRequest) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.GatewayId = string(dAtA[iNdEx:postIndex])
+			m.GatewayID = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -3890,7 +3881,7 @@ func (m *GetByAppEUIRequest) Unmarshal(dAtA []byte) error {
 		switch fieldNum {
 		case 31:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AppEui", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field AppEUI", wireType)
 			}
 			var byteLen int
 			for shift := uint(0); ; shift += 7 {
@@ -3917,9 +3908,8 @@ func (m *GetByAppEUIRequest) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.AppEui = append(m.AppEui[:0], dAtA[iNdEx:postIndex]...)
-			if m.AppEui == nil {
-				m.AppEui = []byte{}
+			if err := m.AppEUI.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
 			}
 			iNdEx = postIndex
 		default:

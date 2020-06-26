@@ -24,19 +24,19 @@ class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
      */
     protected $message = null;
     /**
-     * Generated from protobuf field <code>bytes dev_eui = 11;</code>
+     * Generated from protobuf field <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     protected $dev_eui = '';
     /**
-     * Generated from protobuf field <code>bytes app_eui = 12;</code>
+     * Generated from protobuf field <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     protected $app_eui = '';
     /**
-     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     protected $protocol_metadata = null;
     /**
-     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
      */
     protected $gateway_metadata = null;
     /**
@@ -119,7 +119,7 @@ class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_eui = 11;</code>
+     * Generated from protobuf field <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      * @return string
      */
     public function getDevEui()
@@ -128,7 +128,7 @@ class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_eui = 11;</code>
+     * Generated from protobuf field <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      * @param string $var
      * @return $this
      */
@@ -141,7 +141,7 @@ class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes app_eui = 12;</code>
+     * Generated from protobuf field <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      * @return string
      */
     public function getAppEui()
@@ -150,7 +150,7 @@ class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes app_eui = 12;</code>
+     * Generated from protobuf field <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      * @param string $var
      * @return $this
      */
@@ -163,7 +163,7 @@ class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      * @return \Protocol\RxMetadata
      */
     public function getProtocolMetadata()
@@ -172,7 +172,7 @@ class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      * @param \Protocol\RxMetadata $var
      * @return $this
      */
@@ -185,7 +185,7 @@ class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
      * @return \Gateway\RxMetadata
      */
     public function getGatewayMetadata()
@@ -194,7 +194,7 @@ class DeviceActivationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
      * @param \Gateway\RxMetadata $var
      * @return $this
      */

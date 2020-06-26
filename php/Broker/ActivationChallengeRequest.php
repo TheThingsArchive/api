@@ -22,19 +22,19 @@ class ActivationChallengeRequest extends \Google\Protobuf\Internal\Message
      */
     protected $message = null;
     /**
-     * Generated from protobuf field <code>bytes dev_eui = 11;</code>
+     * Generated from protobuf field <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     protected $dev_eui = '';
     /**
-     * Generated from protobuf field <code>bytes app_eui = 12;</code>
+     * Generated from protobuf field <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     protected $app_eui = '';
     /**
-     * Generated from protobuf field <code>string app_id = 13;</code>
+     * Generated from protobuf field <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
      */
     protected $app_id = '';
     /**
-     * Generated from protobuf field <code>string dev_id = 14;</code>
+     * Generated from protobuf field <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
      */
     protected $dev_id = '';
 
@@ -102,7 +102,7 @@ class ActivationChallengeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_eui = 11;</code>
+     * Generated from protobuf field <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      * @return string
      */
     public function getDevEui()
@@ -111,7 +111,7 @@ class ActivationChallengeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_eui = 11;</code>
+     * Generated from protobuf field <code>bytes dev_eui = 11 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      * @param string $var
      * @return $this
      */
@@ -124,7 +124,7 @@ class ActivationChallengeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes app_eui = 12;</code>
+     * Generated from protobuf field <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      * @return string
      */
     public function getAppEui()
@@ -133,7 +133,7 @@ class ActivationChallengeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes app_eui = 12;</code>
+     * Generated from protobuf field <code>bytes app_eui = 12 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      * @param string $var
      * @return $this
      */
@@ -146,7 +146,7 @@ class ActivationChallengeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string app_id = 13;</code>
+     * Generated from protobuf field <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
      * @return string
      */
     public function getAppId()
@@ -155,7 +155,7 @@ class ActivationChallengeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string app_id = 13;</code>
+     * Generated from protobuf field <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
      * @param string $var
      * @return $this
      */
@@ -168,7 +168,7 @@ class ActivationChallengeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string dev_id = 14;</code>
+     * Generated from protobuf field <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
      * @return string
      */
     public function getDevId()
@@ -177,7 +177,7 @@ class ActivationChallengeRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string dev_id = 14;</code>
+     * Generated from protobuf field <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
      * @param string $var
      * @return $this
      */

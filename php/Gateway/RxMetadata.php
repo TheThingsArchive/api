@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class RxMetadata extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string gateway_id = 1;</code>
+     * Generated from protobuf field <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
      */
     protected $gateway_id = '';
     /**
@@ -62,13 +62,13 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     /**
      * Received signal strength in dBm
      *
-     * Generated from protobuf field <code>float rssi = 32;</code>
+     * Generated from protobuf field <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
      */
     protected $rssi = 0.0;
     /**
      * Signal-to-noise-ratio in dB
      *
-     * Generated from protobuf field <code>float snr = 33;</code>
+     * Generated from protobuf field <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
      */
     protected $snr = 0.0;
     /**
@@ -109,7 +109,7 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string gateway_id = 1;</code>
+     * Generated from protobuf field <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
      * @return string
      */
     public function getGatewayId()
@@ -118,7 +118,7 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string gateway_id = 1;</code>
+     * Generated from protobuf field <code>string gateway_id = 1 [(.gogoproto.customname) = "GatewayID"];</code>
      * @param string $var
      * @return $this
      */
@@ -329,7 +329,7 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     /**
      * Received signal strength in dBm
      *
-     * Generated from protobuf field <code>float rssi = 32;</code>
+     * Generated from protobuf field <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
      * @return float
      */
     public function getRssi()
@@ -340,7 +340,7 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     /**
      * Received signal strength in dBm
      *
-     * Generated from protobuf field <code>float rssi = 32;</code>
+     * Generated from protobuf field <code>float rssi = 32 [(.gogoproto.customname) = "RSSI"];</code>
      * @param float $var
      * @return $this
      */
@@ -355,7 +355,7 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     /**
      * Signal-to-noise-ratio in dB
      *
-     * Generated from protobuf field <code>float snr = 33;</code>
+     * Generated from protobuf field <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
      * @return float
      */
     public function getSnr()
@@ -366,7 +366,7 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     /**
      * Signal-to-noise-ratio in dB
      *
-     * Generated from protobuf field <code>float snr = 33;</code>
+     * Generated from protobuf field <code>float snr = 33 [(.gogoproto.customname) = "SNR"];</code>
      * @param float $var
      * @return $this
      */

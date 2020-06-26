@@ -28,7 +28,7 @@ class OSMetrics extends \Google\Protobuf\Internal\Message
      */
     protected $load_15 = 0.0;
     /**
-     * Generated from protobuf field <code>float cpu_percentage = 11;</code>
+     * Generated from protobuf field <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
      */
     protected $cpu_percentage = 0.0;
     /**
@@ -126,7 +126,7 @@ class OSMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>float cpu_percentage = 11;</code>
+     * Generated from protobuf field <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
      * @return float
      */
     public function getCpuPercentage()
@@ -135,7 +135,7 @@ class OSMetrics extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>float cpu_percentage = 11;</code>
+     * Generated from protobuf field <code>float cpu_percentage = 11 [(.gogoproto.customname) = "CPUPercentage"];</code>
      * @param float $var
      * @return $this
      */

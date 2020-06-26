@@ -12,7 +12,7 @@ public interface GetRequestOrBuilder extends
    * The ID of the service
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
    * @return The id.
    */
   java.lang.String getId();
@@ -21,7 +21,7 @@ public interface GetRequestOrBuilder extends
    * The ID of the service
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.gogoproto.customname) = "ID"];</code>
    * @return The bytes for id.
    */
   com.google.protobuf.ByteString

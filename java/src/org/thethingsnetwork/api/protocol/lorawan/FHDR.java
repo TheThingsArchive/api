@@ -121,7 +121,7 @@ private static final long serialVersionUID = 0L;
   public static final int DEV_ADDR_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString devAddr_;
   /**
-   * <code>bytes dev_addr = 1;</code>
+   * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
    * @return The devAddr.
    */
   public com.google.protobuf.ByteString getDevAddr() {
@@ -131,21 +131,21 @@ private static final long serialVersionUID = 0L;
   public static final int F_CTRL_FIELD_NUMBER = 2;
   private org.thethingsnetwork.api.protocol.lorawan.FCtrl fCtrl_;
   /**
-   * <code>.lorawan.FCtrl f_ctrl = 2;</code>
+   * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
    * @return Whether the fCtrl field is set.
    */
   public boolean hasFCtrl() {
     return fCtrl_ != null;
   }
   /**
-   * <code>.lorawan.FCtrl f_ctrl = 2;</code>
+   * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
    * @return The fCtrl.
    */
   public org.thethingsnetwork.api.protocol.lorawan.FCtrl getFCtrl() {
     return fCtrl_ == null ? org.thethingsnetwork.api.protocol.lorawan.FCtrl.getDefaultInstance() : fCtrl_;
   }
   /**
-   * <code>.lorawan.FCtrl f_ctrl = 2;</code>
+   * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
    */
   public org.thethingsnetwork.api.protocol.lorawan.FCtrlOrBuilder getFCtrlOrBuilder() {
     return getFCtrl();
@@ -164,32 +164,32 @@ private static final long serialVersionUID = 0L;
   public static final int F_OPTS_FIELD_NUMBER = 4;
   private java.util.List<org.thethingsnetwork.api.protocol.lorawan.MACCommand> fOpts_;
   /**
-   * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+   * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
    */
   public java.util.List<org.thethingsnetwork.api.protocol.lorawan.MACCommand> getFOptsList() {
     return fOpts_;
   }
   /**
-   * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+   * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
    */
   public java.util.List<? extends org.thethingsnetwork.api.protocol.lorawan.MACCommandOrBuilder> 
       getFOptsOrBuilderList() {
     return fOpts_;
   }
   /**
-   * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+   * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
    */
   public int getFOptsCount() {
     return fOpts_.size();
   }
   /**
-   * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+   * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.protocol.lorawan.MACCommand getFOpts(int index) {
     return fOpts_.get(index);
   }
   /**
-   * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+   * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.protocol.lorawan.MACCommandOrBuilder getFOptsOrBuilder(
       int index) {
@@ -604,14 +604,14 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString devAddr_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes dev_addr = 1;</code>
+     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      * @return The devAddr.
      */
     public com.google.protobuf.ByteString getDevAddr() {
       return devAddr_;
     }
     /**
-     * <code>bytes dev_addr = 1;</code>
+     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      * @param value The devAddr to set.
      * @return This builder for chaining.
      */
@@ -625,7 +625,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bytes dev_addr = 1;</code>
+     * <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDevAddr() {
@@ -639,14 +639,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.FCtrl, org.thethingsnetwork.api.protocol.lorawan.FCtrl.Builder, org.thethingsnetwork.api.protocol.lorawan.FCtrlOrBuilder> fCtrlBuilder_;
     /**
-     * <code>.lorawan.FCtrl f_ctrl = 2;</code>
+     * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      * @return Whether the fCtrl field is set.
      */
     public boolean hasFCtrl() {
       return fCtrlBuilder_ != null || fCtrl_ != null;
     }
     /**
-     * <code>.lorawan.FCtrl f_ctrl = 2;</code>
+     * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      * @return The fCtrl.
      */
     public org.thethingsnetwork.api.protocol.lorawan.FCtrl getFCtrl() {
@@ -657,7 +657,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.lorawan.FCtrl f_ctrl = 2;</code>
+     * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     public Builder setFCtrl(org.thethingsnetwork.api.protocol.lorawan.FCtrl value) {
       if (fCtrlBuilder_ == null) {
@@ -673,7 +673,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.FCtrl f_ctrl = 2;</code>
+     * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     public Builder setFCtrl(
         org.thethingsnetwork.api.protocol.lorawan.FCtrl.Builder builderForValue) {
@@ -687,7 +687,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.FCtrl f_ctrl = 2;</code>
+     * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     public Builder mergeFCtrl(org.thethingsnetwork.api.protocol.lorawan.FCtrl value) {
       if (fCtrlBuilder_ == null) {
@@ -705,7 +705,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.FCtrl f_ctrl = 2;</code>
+     * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     public Builder clearFCtrl() {
       if (fCtrlBuilder_ == null) {
@@ -719,7 +719,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.FCtrl f_ctrl = 2;</code>
+     * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.FCtrl.Builder getFCtrlBuilder() {
       
@@ -727,7 +727,7 @@ private static final long serialVersionUID = 0L;
       return getFCtrlFieldBuilder().getBuilder();
     }
     /**
-     * <code>.lorawan.FCtrl f_ctrl = 2;</code>
+     * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.FCtrlOrBuilder getFCtrlOrBuilder() {
       if (fCtrlBuilder_ != null) {
@@ -738,7 +738,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.lorawan.FCtrl f_ctrl = 2;</code>
+     * <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.FCtrl, org.thethingsnetwork.api.protocol.lorawan.FCtrl.Builder, org.thethingsnetwork.api.protocol.lorawan.FCtrlOrBuilder> 
@@ -797,7 +797,7 @@ private static final long serialVersionUID = 0L;
         org.thethingsnetwork.api.protocol.lorawan.MACCommand, org.thethingsnetwork.api.protocol.lorawan.MACCommand.Builder, org.thethingsnetwork.api.protocol.lorawan.MACCommandOrBuilder> fOptsBuilder_;
 
     /**
-     * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+     * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      */
     public java.util.List<org.thethingsnetwork.api.protocol.lorawan.MACCommand> getFOptsList() {
       if (fOptsBuilder_ == null) {
@@ -807,7 +807,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+     * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      */
     public int getFOptsCount() {
       if (fOptsBuilder_ == null) {
@@ -817,7 +817,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+     * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.MACCommand getFOpts(int index) {
       if (fOptsBuilder_ == null) {
@@ -827,7 +827,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+     * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setFOpts(
         int index, org.thethingsnetwork.api.protocol.lorawan.MACCommand value) {
@@ -844,7 +844,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+     * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setFOpts(
         int index, org.thethingsnetwork.api.protocol.lorawan.MACCommand.Builder builderForValue) {
@@ -858,7 +858,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+     * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      */
     public Builder addFOpts(org.thethingsnetwork.api.protocol.lorawan.MACCommand value) {
       if (fOptsBuilder_ == null) {
@@ -874,7 +874,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+     * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      */
     public Builder addFOpts(
         int index, org.thethingsnetwork.api.protocol.lorawan.MACCommand value) {
@@ -891,7 +891,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+     * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      */
     public Builder addFOpts(
         org.thethingsnetwork.api.protocol.lorawan.MACCommand.Builder builderForValue) {
@@ -905,7 +905,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+     * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      */
     public Builder addFOpts(
         int index, org.thethingsnetwork.api.protocol.lorawan.MACCommand.Builder builderForValue) {
@@ -919,7 +919,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+     * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      */
     public Builder addAllFOpts(
         java.lang.Iterable<? extends org.thethingsnetwork.api.protocol.lorawan.MACCommand> values) {
@@ -934,7 +934,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+     * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      */
     public Builder clearFOpts() {
       if (fOptsBuilder_ == null) {
@@ -947,7 +947,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+     * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      */
     public Builder removeFOpts(int index) {
       if (fOptsBuilder_ == null) {
@@ -960,14 +960,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+     * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.MACCommand.Builder getFOptsBuilder(
         int index) {
       return getFOptsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+     * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.MACCommandOrBuilder getFOptsOrBuilder(
         int index) {
@@ -977,7 +977,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+     * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      */
     public java.util.List<? extends org.thethingsnetwork.api.protocol.lorawan.MACCommandOrBuilder> 
          getFOptsOrBuilderList() {
@@ -988,14 +988,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+     * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.MACCommand.Builder addFOptsBuilder() {
       return getFOptsFieldBuilder().addBuilder(
           org.thethingsnetwork.api.protocol.lorawan.MACCommand.getDefaultInstance());
     }
     /**
-     * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+     * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.MACCommand.Builder addFOptsBuilder(
         int index) {
@@ -1003,7 +1003,7 @@ private static final long serialVersionUID = 0L;
           index, org.thethingsnetwork.api.protocol.lorawan.MACCommand.getDefaultInstance());
     }
     /**
-     * <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+     * <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      */
     public java.util.List<org.thethingsnetwork.api.protocol.lorawan.MACCommand.Builder> 
          getFOptsBuilderList() {

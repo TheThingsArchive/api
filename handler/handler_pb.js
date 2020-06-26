@@ -16,6 +16,8 @@ var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb
 goog.object.extend(proto, google_protobuf_empty_pb);
 
 
+
+
 var ttn_api_pb = require('../api_pb.js');
 goog.object.extend(proto, ttn_api_pb);
 var ttn_broker_broker_pb = require('../broker/broker_pb.js');

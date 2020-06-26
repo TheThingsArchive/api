@@ -14,11 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class FHDR extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>bytes dev_addr = 1;</code>
+     * Generated from protobuf field <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      */
     protected $dev_addr = '';
     /**
-     * Generated from protobuf field <code>.lorawan.FCtrl f_ctrl = 2;</code>
+     * Generated from protobuf field <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      */
     protected $f_ctrl = null;
     /**
@@ -26,7 +26,7 @@ class FHDR extends \Google\Protobuf\Internal\Message
      */
     protected $f_cnt = 0;
     /**
-     * Generated from protobuf field <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+     * Generated from protobuf field <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      */
     private $f_opts;
 
@@ -48,7 +48,7 @@ class FHDR extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_addr = 1;</code>
+     * Generated from protobuf field <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      * @return string
      */
     public function getDevAddr()
@@ -57,7 +57,7 @@ class FHDR extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_addr = 1;</code>
+     * Generated from protobuf field <code>bytes dev_addr = 1 [(.gogoproto.nullable) = false, (.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevAddr"];</code>
      * @param string $var
      * @return $this
      */
@@ -70,7 +70,7 @@ class FHDR extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.FCtrl f_ctrl = 2;</code>
+     * Generated from protobuf field <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      * @return \Lorawan\FCtrl
      */
     public function getFCtrl()
@@ -79,7 +79,7 @@ class FHDR extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.FCtrl f_ctrl = 2;</code>
+     * Generated from protobuf field <code>.lorawan.FCtrl f_ctrl = 2 [(.gogoproto.nullable) = false, (.gogoproto.embed) = true];</code>
      * @param \Lorawan\FCtrl $var
      * @return $this
      */
@@ -114,7 +114,7 @@ class FHDR extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+     * Generated from protobuf field <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getFOpts()
@@ -123,7 +123,7 @@ class FHDR extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .lorawan.MACCommand f_opts = 4;</code>
+     * Generated from protobuf field <code>repeated .lorawan.MACCommand f_opts = 4 [(.gogoproto.nullable) = false];</code>
      * @param \Lorawan\MACCommand[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

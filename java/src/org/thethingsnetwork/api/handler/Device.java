@@ -202,7 +202,7 @@ private static final long serialVersionUID = 0L;
   public static final int APP_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object appId_;
   /**
-   * <code>string app_id = 1;</code>
+   * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
    * @return The appId.
    */
   public java.lang.String getAppId() {
@@ -218,7 +218,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string app_id = 1;</code>
+   * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
    * @return The bytes for appId.
    */
   public com.google.protobuf.ByteString
@@ -238,7 +238,7 @@ private static final long serialVersionUID = 0L;
   public static final int DEV_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object devId_;
   /**
-   * <code>string dev_id = 2;</code>
+   * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
    * @return The devId.
    */
   public java.lang.String getDevId() {
@@ -254,7 +254,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string dev_id = 2;</code>
+   * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
    * @return The bytes for devId.
    */
   public com.google.protobuf.ByteString
@@ -273,14 +273,14 @@ private static final long serialVersionUID = 0L;
 
   public static final int LORAWAN_DEVICE_FIELD_NUMBER = 3;
   /**
-   * <code>.lorawan.Device lorawan_device = 3;</code>
+   * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
    * @return Whether the lorawanDevice field is set.
    */
   public boolean hasLorawanDevice() {
     return deviceCase_ == 3;
   }
   /**
-   * <code>.lorawan.Device lorawan_device = 3;</code>
+   * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
    * @return The lorawanDevice.
    */
   public org.thethingsnetwork.api.protocol.lorawan.Device getLorawanDevice() {
@@ -290,7 +290,7 @@ private static final long serialVersionUID = 0L;
     return org.thethingsnetwork.api.protocol.lorawan.Device.getDefaultInstance();
   }
   /**
-   * <code>.lorawan.Device lorawan_device = 3;</code>
+   * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
    */
   public org.thethingsnetwork.api.protocol.lorawan.DeviceOrBuilder getLorawanDeviceOrBuilder() {
     if (deviceCase_ == 3) {
@@ -947,7 +947,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object appId_ = "";
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      * @return The appId.
      */
     public java.lang.String getAppId() {
@@ -963,7 +963,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      * @return The bytes for appId.
      */
     public com.google.protobuf.ByteString
@@ -980,7 +980,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      * @param value The appId to set.
      * @return This builder for chaining.
      */
@@ -995,7 +995,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      * @return This builder for chaining.
      */
     public Builder clearAppId() {
@@ -1005,7 +1005,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string app_id = 1;</code>
+     * <code>string app_id = 1 [(.gogoproto.customname) = "AppID"];</code>
      * @param value The bytes for appId to set.
      * @return This builder for chaining.
      */
@@ -1023,7 +1023,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object devId_ = "";
     /**
-     * <code>string dev_id = 2;</code>
+     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      * @return The devId.
      */
     public java.lang.String getDevId() {
@@ -1039,7 +1039,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string dev_id = 2;</code>
+     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      * @return The bytes for devId.
      */
     public com.google.protobuf.ByteString
@@ -1056,7 +1056,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string dev_id = 2;</code>
+     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      * @param value The devId to set.
      * @return This builder for chaining.
      */
@@ -1071,7 +1071,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string dev_id = 2;</code>
+     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDevId() {
@@ -1081,7 +1081,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string dev_id = 2;</code>
+     * <code>string dev_id = 2 [(.gogoproto.customname) = "DevID"];</code>
      * @param value The bytes for devId to set.
      * @return This builder for chaining.
      */
@@ -1100,14 +1100,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.Device, org.thethingsnetwork.api.protocol.lorawan.Device.Builder, org.thethingsnetwork.api.protocol.lorawan.DeviceOrBuilder> lorawanDeviceBuilder_;
     /**
-     * <code>.lorawan.Device lorawan_device = 3;</code>
+     * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
      * @return Whether the lorawanDevice field is set.
      */
     public boolean hasLorawanDevice() {
       return deviceCase_ == 3;
     }
     /**
-     * <code>.lorawan.Device lorawan_device = 3;</code>
+     * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
      * @return The lorawanDevice.
      */
     public org.thethingsnetwork.api.protocol.lorawan.Device getLorawanDevice() {
@@ -1124,7 +1124,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.lorawan.Device lorawan_device = 3;</code>
+     * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
      */
     public Builder setLorawanDevice(org.thethingsnetwork.api.protocol.lorawan.Device value) {
       if (lorawanDeviceBuilder_ == null) {
@@ -1140,7 +1140,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.Device lorawan_device = 3;</code>
+     * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
      */
     public Builder setLorawanDevice(
         org.thethingsnetwork.api.protocol.lorawan.Device.Builder builderForValue) {
@@ -1154,7 +1154,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.Device lorawan_device = 3;</code>
+     * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
      */
     public Builder mergeLorawanDevice(org.thethingsnetwork.api.protocol.lorawan.Device value) {
       if (lorawanDeviceBuilder_ == null) {
@@ -1176,7 +1176,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.Device lorawan_device = 3;</code>
+     * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
      */
     public Builder clearLorawanDevice() {
       if (lorawanDeviceBuilder_ == null) {
@@ -1195,13 +1195,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.lorawan.Device lorawan_device = 3;</code>
+     * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.Device.Builder getLorawanDeviceBuilder() {
       return getLorawanDeviceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.lorawan.Device lorawan_device = 3;</code>
+     * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
      */
     public org.thethingsnetwork.api.protocol.lorawan.DeviceOrBuilder getLorawanDeviceOrBuilder() {
       if ((deviceCase_ == 3) && (lorawanDeviceBuilder_ != null)) {
@@ -1214,7 +1214,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.lorawan.Device lorawan_device = 3;</code>
+     * <code>.lorawan.Device lorawan_device = 3 [(.gogoproto.customname) = "LoRaWANDevice"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.lorawan.Device, org.thethingsnetwork.api.protocol.lorawan.Device.Builder, org.thethingsnetwork.api.protocol.lorawan.DeviceOrBuilder> 

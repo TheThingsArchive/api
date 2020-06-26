@@ -24,27 +24,27 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
      */
     protected $message = null;
     /**
-     * Generated from protobuf field <code>bytes dev_eui = 11;</code>
+     * Generated from protobuf field <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      */
     protected $dev_eui = '';
     /**
-     * Generated from protobuf field <code>bytes app_eui = 12;</code>
+     * Generated from protobuf field <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      */
     protected $app_eui = '';
     /**
-     * Generated from protobuf field <code>string app_id = 13;</code>
+     * Generated from protobuf field <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
      */
     protected $app_id = '';
     /**
-     * Generated from protobuf field <code>string dev_id = 14;</code>
+     * Generated from protobuf field <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
      */
     protected $dev_id = '';
     /**
-     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     protected $protocol_metadata = null;
     /**
-     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
      */
     protected $gateway_metadata = null;
     /**
@@ -124,7 +124,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_eui = 11;</code>
+     * Generated from protobuf field <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      * @return string
      */
     public function getDevEui()
@@ -133,7 +133,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes dev_eui = 11;</code>
+     * Generated from protobuf field <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      * @param string $var
      * @return $this
      */
@@ -146,7 +146,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes app_eui = 12;</code>
+     * Generated from protobuf field <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      * @return string
      */
     public function getAppEui()
@@ -155,7 +155,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes app_eui = 12;</code>
+     * Generated from protobuf field <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      * @param string $var
      * @return $this
      */
@@ -168,7 +168,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string app_id = 13;</code>
+     * Generated from protobuf field <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
      * @return string
      */
     public function getAppId()
@@ -177,7 +177,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string app_id = 13;</code>
+     * Generated from protobuf field <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
      * @param string $var
      * @return $this
      */
@@ -190,7 +190,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string dev_id = 14;</code>
+     * Generated from protobuf field <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
      * @return string
      */
     public function getDevId()
@@ -199,7 +199,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string dev_id = 14;</code>
+     * Generated from protobuf field <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
      * @param string $var
      * @return $this
      */
@@ -212,7 +212,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      * @return \Protocol\RxMetadata
      */
     public function getProtocolMetadata()
@@ -221,7 +221,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * Generated from protobuf field <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      * @param \Protocol\RxMetadata $var
      * @return $this
      */
@@ -234,7 +234,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
      * @return \Gateway\RxMetadata
      */
     public function getGatewayMetadata()
@@ -243,7 +243,7 @@ class UplinkMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 22;</code>
+     * Generated from protobuf field <code>.gateway.RxMetadata gateway_metadata = 22 [(.gogoproto.nullable) = false];</code>
      * @param \Gateway\RxMetadata $var
      * @return $this
      */

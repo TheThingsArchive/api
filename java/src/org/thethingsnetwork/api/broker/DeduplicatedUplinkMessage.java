@@ -223,7 +223,7 @@ private static final long serialVersionUID = 0L;
   public static final int DEV_EUI_FIELD_NUMBER = 11;
   private com.google.protobuf.ByteString devEui_;
   /**
-   * <code>bytes dev_eui = 11;</code>
+   * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
    * @return The devEui.
    */
   public com.google.protobuf.ByteString getDevEui() {
@@ -233,7 +233,7 @@ private static final long serialVersionUID = 0L;
   public static final int APP_EUI_FIELD_NUMBER = 12;
   private com.google.protobuf.ByteString appEui_;
   /**
-   * <code>bytes app_eui = 12;</code>
+   * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
    * @return The appEui.
    */
   public com.google.protobuf.ByteString getAppEui() {
@@ -243,7 +243,7 @@ private static final long serialVersionUID = 0L;
   public static final int APP_ID_FIELD_NUMBER = 13;
   private volatile java.lang.Object appId_;
   /**
-   * <code>string app_id = 13;</code>
+   * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
    * @return The appId.
    */
   public java.lang.String getAppId() {
@@ -259,7 +259,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string app_id = 13;</code>
+   * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
    * @return The bytes for appId.
    */
   public com.google.protobuf.ByteString
@@ -279,7 +279,7 @@ private static final long serialVersionUID = 0L;
   public static final int DEV_ID_FIELD_NUMBER = 14;
   private volatile java.lang.Object devId_;
   /**
-   * <code>string dev_id = 14;</code>
+   * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
    * @return The devId.
    */
   public java.lang.String getDevId() {
@@ -295,7 +295,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string dev_id = 14;</code>
+   * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
    * @return The bytes for devId.
    */
   public com.google.protobuf.ByteString
@@ -315,21 +315,21 @@ private static final long serialVersionUID = 0L;
   public static final int PROTOCOL_METADATA_FIELD_NUMBER = 21;
   private org.thethingsnetwork.api.protocol.RxMetadata protocolMetadata_;
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
    * @return Whether the protocolMetadata field is set.
    */
   public boolean hasProtocolMetadata() {
     return protocolMetadata_ != null;
   }
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
    * @return The protocolMetadata.
    */
   public org.thethingsnetwork.api.protocol.RxMetadata getProtocolMetadata() {
     return protocolMetadata_ == null ? org.thethingsnetwork.api.protocol.RxMetadata.getDefaultInstance() : protocolMetadata_;
   }
   /**
-   * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+   * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
    */
   public org.thethingsnetwork.api.protocol.RxMetadataOrBuilder getProtocolMetadataOrBuilder() {
     return getProtocolMetadata();
@@ -1149,14 +1149,14 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString devEui_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes dev_eui = 11;</code>
+     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      * @return The devEui.
      */
     public com.google.protobuf.ByteString getDevEui() {
       return devEui_;
     }
     /**
-     * <code>bytes dev_eui = 11;</code>
+     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      * @param value The devEui to set.
      * @return This builder for chaining.
      */
@@ -1170,7 +1170,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bytes dev_eui = 11;</code>
+     * <code>bytes dev_eui = 11 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.DevEUI", (.gogoproto.customname) = "DevEUI"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDevEui() {
@@ -1182,14 +1182,14 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString appEui_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes app_eui = 12;</code>
+     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      * @return The appEui.
      */
     public com.google.protobuf.ByteString getAppEui() {
       return appEui_;
     }
     /**
-     * <code>bytes app_eui = 12;</code>
+     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      * @param value The appEui to set.
      * @return This builder for chaining.
      */
@@ -1203,7 +1203,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bytes app_eui = 12;</code>
+     * <code>bytes app_eui = 12 [(.gogoproto.customtype) = "github.com/TheThingsNetwork/ttn/core/types.AppEUI", (.gogoproto.customname) = "AppEUI"];</code>
      * @return This builder for chaining.
      */
     public Builder clearAppEui() {
@@ -1215,7 +1215,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object appId_ = "";
     /**
-     * <code>string app_id = 13;</code>
+     * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
      * @return The appId.
      */
     public java.lang.String getAppId() {
@@ -1231,7 +1231,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string app_id = 13;</code>
+     * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
      * @return The bytes for appId.
      */
     public com.google.protobuf.ByteString
@@ -1248,7 +1248,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string app_id = 13;</code>
+     * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
      * @param value The appId to set.
      * @return This builder for chaining.
      */
@@ -1263,7 +1263,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string app_id = 13;</code>
+     * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
      * @return This builder for chaining.
      */
     public Builder clearAppId() {
@@ -1273,7 +1273,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string app_id = 13;</code>
+     * <code>string app_id = 13 [(.gogoproto.customname) = "AppID"];</code>
      * @param value The bytes for appId to set.
      * @return This builder for chaining.
      */
@@ -1291,7 +1291,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object devId_ = "";
     /**
-     * <code>string dev_id = 14;</code>
+     * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
      * @return The devId.
      */
     public java.lang.String getDevId() {
@@ -1307,7 +1307,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string dev_id = 14;</code>
+     * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
      * @return The bytes for devId.
      */
     public com.google.protobuf.ByteString
@@ -1324,7 +1324,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string dev_id = 14;</code>
+     * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
      * @param value The devId to set.
      * @return This builder for chaining.
      */
@@ -1339,7 +1339,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string dev_id = 14;</code>
+     * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDevId() {
@@ -1349,7 +1349,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string dev_id = 14;</code>
+     * <code>string dev_id = 14 [(.gogoproto.customname) = "DevID"];</code>
      * @param value The bytes for devId to set.
      * @return This builder for chaining.
      */
@@ -1369,14 +1369,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.RxMetadata, org.thethingsnetwork.api.protocol.RxMetadata.Builder, org.thethingsnetwork.api.protocol.RxMetadataOrBuilder> protocolMetadataBuilder_;
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      * @return Whether the protocolMetadata field is set.
      */
     public boolean hasProtocolMetadata() {
       return protocolMetadataBuilder_ != null || protocolMetadata_ != null;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      * @return The protocolMetadata.
      */
     public org.thethingsnetwork.api.protocol.RxMetadata getProtocolMetadata() {
@@ -1387,7 +1387,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setProtocolMetadata(org.thethingsnetwork.api.protocol.RxMetadata value) {
       if (protocolMetadataBuilder_ == null) {
@@ -1403,7 +1403,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public Builder setProtocolMetadata(
         org.thethingsnetwork.api.protocol.RxMetadata.Builder builderForValue) {
@@ -1417,7 +1417,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public Builder mergeProtocolMetadata(org.thethingsnetwork.api.protocol.RxMetadata value) {
       if (protocolMetadataBuilder_ == null) {
@@ -1435,7 +1435,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public Builder clearProtocolMetadata() {
       if (protocolMetadataBuilder_ == null) {
@@ -1449,7 +1449,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.RxMetadata.Builder getProtocolMetadataBuilder() {
       
@@ -1457,7 +1457,7 @@ private static final long serialVersionUID = 0L;
       return getProtocolMetadataFieldBuilder().getBuilder();
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     public org.thethingsnetwork.api.protocol.RxMetadataOrBuilder getProtocolMetadataOrBuilder() {
       if (protocolMetadataBuilder_ != null) {
@@ -1468,7 +1468,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.protocol.RxMetadata protocol_metadata = 21;</code>
+     * <code>.protocol.RxMetadata protocol_metadata = 21 [(.gogoproto.nullable) = false];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.thethingsnetwork.api.protocol.RxMetadata, org.thethingsnetwork.api.protocol.RxMetadata.Builder, org.thethingsnetwork.api.protocol.RxMetadataOrBuilder> 

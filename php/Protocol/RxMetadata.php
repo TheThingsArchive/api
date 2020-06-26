@@ -30,7 +30,7 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.Metadata lorawan = 1;</code>
+     * Generated from protobuf field <code>.lorawan.Metadata lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
      * @return \Lorawan\Metadata
      */
     public function getLorawan()
@@ -39,7 +39,7 @@ class RxMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.lorawan.Metadata lorawan = 1;</code>
+     * Generated from protobuf field <code>.lorawan.Metadata lorawan = 1 [(.gogoproto.customname) = "LoRaWAN"];</code>
      * @param \Lorawan\Metadata $var
      * @return $this
      */

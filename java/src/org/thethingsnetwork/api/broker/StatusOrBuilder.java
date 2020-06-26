@@ -8,32 +8,32 @@ public interface StatusOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.api.SystemStats system = 1;</code>
+   * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
    * @return Whether the system field is set.
    */
   boolean hasSystem();
   /**
-   * <code>.api.SystemStats system = 1;</code>
+   * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
    * @return The system.
    */
   org.thethingsnetwork.api.SystemStats getSystem();
   /**
-   * <code>.api.SystemStats system = 1;</code>
+   * <code>.api.SystemStats system = 1 [(.gogoproto.nullable) = false];</code>
    */
   org.thethingsnetwork.api.SystemStatsOrBuilder getSystemOrBuilder();
 
   /**
-   * <code>.api.ComponentStats component = 2;</code>
+   * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
    * @return Whether the component field is set.
    */
   boolean hasComponent();
   /**
-   * <code>.api.ComponentStats component = 2;</code>
+   * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
    * @return The component.
    */
   org.thethingsnetwork.api.ComponentStats getComponent();
   /**
-   * <code>.api.ComponentStats component = 2;</code>
+   * <code>.api.ComponentStats component = 2 [(.gogoproto.nullable) = false];</code>
    */
   org.thethingsnetwork.api.ComponentStatsOrBuilder getComponentOrBuilder();
 

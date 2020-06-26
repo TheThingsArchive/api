@@ -14,12 +14,13 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
+
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/TheThingsNetwork/api/protocol/lorawan/device.proto',
   package='lorawan',
   syntax='proto3',
   serialized_options=b'\n)org.thethingsnetwork.api.protocol.lorawanB\022LoRaWANDeviceProtoP\001Z0github.com/TheThingsNetwork/api/protocol/lorawan\252\002$TheThingsNetwork.API.LoRaWANProtocol',
-  serialized_pb=b'\n=github.com/TheThingsNetwork/api/protocol/lorawan/device.proto\x12\x07lorawan\x1a\x1bgoogle/protobuf/empty.proto\"4\n\x10\x44\x65viceIdentifier\x12\x0f\n\x07\x61pp_eui\x18\x01 \x01(\x0c\x12\x0f\n\x07\x64\x65v_eui\x18\x02 \x01(\x0c\"\xd5\x02\n\x06\x44\x65vice\x12\x0f\n\x07\x61pp_eui\x18\x01 \x01(\x0c\x12\x0f\n\x07\x64\x65v_eui\x18\x02 \x01(\x0c\x12\x0e\n\x06\x61pp_id\x18\x03 \x01(\t\x12\x0e\n\x06\x64\x65v_id\x18\x04 \x01(\t\x12\x10\n\x08\x64\x65v_addr\x18\x05 \x01(\x0c\x12\x11\n\tnwk_s_key\x18\x06 \x01(\x0c\x12\x11\n\tapp_s_key\x18\x07 \x01(\x0c\x12\x0f\n\x07\x61pp_key\x18\x08 \x01(\x0c\x12\x10\n\x08\x66_cnt_up\x18\t \x01(\r\x12\x12\n\nf_cnt_down\x18\n \x01(\r\x12\x1b\n\x13\x64isable_f_cnt_check\x18\x0b \x01(\x08\x12\x18\n\x10uses32_bit_f_cnt\x18\x0c \x01(\x08\x12\x1e\n\x16\x61\x63tivation_constraints\x18\r \x01(\t\x12\x17\n\x0fused_dev_nonces\x18\x0e \x03(\x0c\x12\x17\n\x0fused_app_nonces\x18\x0f \x03(\x0c\x12\x11\n\tlast_seen\x18\x15 \x01(\x03\x32\xc1\x01\n\rDeviceManager\x12\x37\n\tGetDevice\x12\x19.lorawan.DeviceIdentifier\x1a\x0f.lorawan.Device\x12\x34\n\tSetDevice\x12\x0f.lorawan.Device\x1a\x16.google.protobuf.Empty\x12\x41\n\x0c\x44\x65leteDevice\x12\x19.lorawan.DeviceIdentifier\x1a\x16.google.protobuf.EmptyB\x9a\x01\n)org.thethingsnetwork.api.protocol.lorawanB\x12LoRaWANDeviceProtoP\x01Z0github.com/TheThingsNetwork/api/protocol/lorawan\xaa\x02$TheThingsNetwork.API.LoRaWANProtocolb\x06proto3'
+  serialized_pb=b'\n=github.com/TheThingsNetwork/api/protocol/lorawan/device.proto\x12\x07lorawan\x1a\x1bgoogle/protobuf/empty.proto\x1a-github.com/gogo/protobuf/gogoproto/gogo.proto\"\xbe\x01\n\x10\x44\x65viceIdentifier\x12T\n\x07\x61pp_eui\x18\x01 \x01(\x0c\x42\x43\xe2\xde\x1f\x06\x41ppEUI\xc8\xde\x1f\x00\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.AppEUI\x12T\n\x07\x64\x65v_eui\x18\x02 \x01(\x0c\x42\x43\xe2\xde\x1f\x06\x44\x65vEUI\xc8\xde\x1f\x00\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.DevEUI\"\xc6\x06\n\x06\x44\x65vice\x12T\n\x07\x61pp_eui\x18\x01 \x01(\x0c\x42\x43\xe2\xde\x1f\x06\x41ppEUI\xc8\xde\x1f\x00\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.AppEUI\x12T\n\x07\x64\x65v_eui\x18\x02 \x01(\x0c\x42\x43\xe2\xde\x1f\x06\x44\x65vEUI\xc8\xde\x1f\x00\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.DevEUI\x12\x19\n\x06\x61pp_id\x18\x03 \x01(\tB\t\xe2\xde\x1f\x05\x41ppID\x12\x19\n\x06\x64\x65v_id\x18\x04 \x01(\tB\t\xe2\xde\x1f\x05\x44\x65vID\x12H\n\x08\x64\x65v_addr\x18\x05 \x01(\x0c\x42\x36\xda\xde\x1f\x32github.com/TheThingsNetwork/ttn/core/types.DevAddr\x12I\n\tnwk_s_key\x18\x06 \x01(\x0c\x42\x36\xda\xde\x1f\x32github.com/TheThingsNetwork/ttn/core/types.NwkSKey\x12I\n\tapp_s_key\x18\x07 \x01(\x0c\x42\x36\xda\xde\x1f\x32github.com/TheThingsNetwork/ttn/core/types.AppSKey\x12\x46\n\x07\x61pp_key\x18\x08 \x01(\x0c\x42\x35\xda\xde\x1f\x31github.com/TheThingsNetwork/ttn/core/types.AppKey\x12\x10\n\x08\x66_cnt_up\x18\t \x01(\r\x12\x12\n\nf_cnt_down\x18\n \x01(\r\x12\x1b\n\x13\x64isable_f_cnt_check\x18\x0b \x01(\x08\x12\x18\n\x10uses32_bit_f_cnt\x18\x0c \x01(\x08\x12\x1e\n\x16\x61\x63tivation_constraints\x18\r \x01(\t\x12P\n\x0fused_dev_nonces\x18\x0e \x03(\x0c\x42\x37\xda\xde\x1f\x33github.com/TheThingsNetwork/ttn/core/types.DevNonce\x12P\n\x0fused_app_nonces\x18\x0f \x03(\x0c\x42\x37\xda\xde\x1f\x33github.com/TheThingsNetwork/ttn/core/types.AppNonce\x12\x11\n\tlast_seen\x18\x15 \x01(\x03\x32\xc1\x01\n\rDeviceManager\x12\x37\n\tGetDevice\x12\x19.lorawan.DeviceIdentifier\x1a\x0f.lorawan.Device\x12\x34\n\tSetDevice\x12\x0f.lorawan.Device\x1a\x16.google.protobuf.Empty\x12\x41\n\x0c\x44\x65leteDevice\x12\x19.lorawan.DeviceIdentifier\x1a\x16.google.protobuf.EmptyB\x9a\x01\n)org.thethingsnetwork.api.protocol.lorawanB\x12LoRaWANDeviceProtoP\x01Z0github.com/TheThingsNetwork/api/protocol/lorawan\xaa\x02$TheThingsNetwork.API.LoRaWANProtocolb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
@@ -39,14 +40,14 @@ _DEVICEIDENTIFIER = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\342\336\037\006AppEUI\310\336\037\000\332\336\0371github.com/TheThingsNetwork/ttn/core/types.AppEUI', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='lorawan.DeviceIdentifier.dev_eui', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\342\336\037\006DevEUI\310\336\037\000\332\336\0371github.com/TheThingsNetwork/ttn/core/types.DevEUI', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -59,8 +60,8 @@ _DEVICEIDENTIFIER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=103,
-  serialized_end=155,
+  serialized_start=151,
+  serialized_end=341,
 )
 
 
@@ -77,56 +78,56 @@ _DEVICE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\342\336\037\006AppEUI\310\336\037\000\332\336\0371github.com/TheThingsNetwork/ttn/core/types.AppEUI', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dev_eui', full_name='lorawan.Device.dev_eui', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\342\336\037\006DevEUI\310\336\037\000\332\336\0371github.com/TheThingsNetwork/ttn/core/types.DevEUI', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_id', full_name='lorawan.Device.app_id', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\342\336\037\005AppID', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dev_id', full_name='lorawan.Device.dev_id', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\342\336\037\005DevID', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dev_addr', full_name='lorawan.Device.dev_addr', index=4,
       number=5, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\332\336\0372github.com/TheThingsNetwork/ttn/core/types.DevAddr', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='nwk_s_key', full_name='lorawan.Device.nwk_s_key', index=5,
       number=6, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\332\336\0372github.com/TheThingsNetwork/ttn/core/types.NwkSKey', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_s_key', full_name='lorawan.Device.app_s_key', index=6,
       number=7, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\332\336\0372github.com/TheThingsNetwork/ttn/core/types.AppSKey', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_key', full_name='lorawan.Device.app_key', index=7,
       number=8, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\332\336\0371github.com/TheThingsNetwork/ttn/core/types.AppKey', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='f_cnt_up', full_name='lorawan.Device.f_cnt_up', index=8,
       number=9, type=13, cpp_type=3, label=1,
@@ -168,14 +169,14 @@ _DEVICE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\332\336\0373github.com/TheThingsNetwork/ttn/core/types.DevNonce', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='used_app_nonces', full_name='lorawan.Device.used_app_nonces', index=14,
       number=15, type=12, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\332\336\0373github.com/TheThingsNetwork/ttn/core/types.AppNonce', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='last_seen', full_name='lorawan.Device.last_seen', index=15,
       number=21, type=3, cpp_type=2, label=1,
@@ -195,8 +196,8 @@ _DEVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=158,
-  serialized_end=499,
+  serialized_start=344,
+  serialized_end=1182,
 )
 
 DESCRIPTOR.message_types_by_name['DeviceIdentifier'] = _DEVICEIDENTIFIER
@@ -219,6 +220,18 @@ _sym_db.RegisterMessage(Device)
 
 
 DESCRIPTOR._options = None
+_DEVICEIDENTIFIER.fields_by_name['app_eui']._options = None
+_DEVICEIDENTIFIER.fields_by_name['dev_eui']._options = None
+_DEVICE.fields_by_name['app_eui']._options = None
+_DEVICE.fields_by_name['dev_eui']._options = None
+_DEVICE.fields_by_name['app_id']._options = None
+_DEVICE.fields_by_name['dev_id']._options = None
+_DEVICE.fields_by_name['dev_addr']._options = None
+_DEVICE.fields_by_name['nwk_s_key']._options = None
+_DEVICE.fields_by_name['app_s_key']._options = None
+_DEVICE.fields_by_name['app_key']._options = None
+_DEVICE.fields_by_name['used_dev_nonces']._options = None
+_DEVICE.fields_by_name['used_app_nonces']._options = None
 
 _DEVICEMANAGER = _descriptor.ServiceDescriptor(
   name='DeviceManager',
@@ -226,8 +239,8 @@ _DEVICEMANAGER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=502,
-  serialized_end=695,
+  serialized_start=1185,
+  serialized_end=1378,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetDevice',
