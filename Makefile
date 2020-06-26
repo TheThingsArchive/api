@@ -163,11 +163,13 @@ clean/swift:
 
 .PHONY: %.pb.csharp
 
+csharp_replace := -pe 's!global::Gogoproto\.GogoReflection\.Descriptor, !!;'
+
 %.pb.csharp: %.proto
 	@$(PROTOC) --csharp_out=$(PROTOC_API_PATH)/csharp --csharp_opt=base_namespace=TheThingsNetwork $(PROTOC_API_PATH)/$<
 
 postprocess/csharp:
-	@#nothing
+	@find . -type f -name '*.cs' -exec perl -i $(csharp_replace) {} \;
 
 clean/csharp:
 	rm -rf csharp/API
