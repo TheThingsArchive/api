@@ -412,19 +412,7 @@ func (c *DefaultClient) GetAllHandlersForAppID(appID string) (announcements []*d
 	if err != nil {
 		return nil, err
 	}
-	seen := make(map[*discovery.Announcement]struct{})
-	for announced, handlers := range all.announcementsByAppID {
-		if appID == announced {
-			for _, handler := range handlers {
-				if _, seen := seen[handler]; seen {
-					continue
-				}
-				announcements = append(announcements, handler)
-				seen[handler] = struct{}{}
-			}
-		}
-	}
-	return
+	return all.announcementsByAppID[appID], nil
 }
 
 // GetAllRoutersForGatewayID returns all routers that can handle the given GatewayID
@@ -433,19 +421,7 @@ func (c *DefaultClient) GetAllRoutersForGatewayID(gatewayID string) (announcemen
 	if err != nil {
 		return nil, err
 	}
-	seen := make(map[*discovery.Announcement]struct{})
-	for announced, routers := range all.announcementsByGatewayID {
-		if gatewayID == announced {
-			for _, router := range routers {
-				if _, seen := seen[router]; seen {
-					continue
-				}
-				announcements = append(announcements, router)
-				seen[router] = struct{}{}
-			}
-		}
-	}
-	return
+	return all.announcementsByGatewayID[gatewayID], nil
 }
 
 // Close purges the cache and closes the connection with the Discovery server
