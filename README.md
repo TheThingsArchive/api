@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/TheThingsNetwork/api.svg?branch=master)](https://travis-ci.org/TheThingsNetwork/api)
 
-# The Things Network API
+# The Things Network V2 API
+
+> Warning: This API and SDK clients are for the V2 of The Things Network. If you are using The Things Stack (V3), please have a look at https://www.thethingsindustries.com/docs/reference/api/
 
 ## Languages
 
